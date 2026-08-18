@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Padho Aur Kamao — Real Integration Ready</title>
+<style>
+body{margin:0;font-family:Arial;background:#f5f8fd;color:#17233a}.nav{background:#fff;padding:18px 6%;display:flex;justify-content:space-between;font-weight:800}.logo{color:#1463ff;font-size:24px}.wrap{max-width:1100px;margin:auto;padding:35px 18px}.hero{background:linear-gradient(135deg,#eaf2ff,#fff3df);padding:55px 18px}.hero h1{font-size:48px}.btn{display:inline-block;background:#1463ff;color:#fff;padding:12px 18px;border-radius:9px;text-decoration:none;font-weight:700}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card{background:#fff;border:1px solid #e1e8f2;border-radius:15px;padding:20px}.num{font-size:28px;font-weight:800}.muted{color:#66758a}.notice{background:#fff7df;border:1px solid #f1d98a;padding:16px;border-radius:12px}.links{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}footer{background:#10213b;color:#d9e1ed;text-align:center;padding:30px}@media(max-width:800px){.grid,.links{grid-template-columns:1fr 1fr}.hero h1{font-size:38px}}@media(max-width:500px){.grid,.links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="nav"><div class="logo">Padho <span style="color:#ff8a00">Aur Kamao</span></div><a class="btn" href="/admin.html">Admin</a></div>
+<div class="hero"><div class="wrap"><h1>Learn • Promote • Earn</h1><p>Education courses और affiliate earning dashboard — real integration के लिए तैयार frontend.</p><a class="btn" href="#courses">Courses देखें</a></div></div>
+<div class="wrap">
+<div class="notice"><b>Integration status:</b> Frontend तैयार है। Real earnings तभी आएंगी जब आपके चुने हुए affiliate network की API/reporting और credentials configure होंगे।</div>
+<h2>Live-style Earning Dashboard</h2>
+<div class="grid">
+<div class="card"><span class="muted">Total Earnings</span><div class="num" id="earn">₹0</div></div>
+<div class="card"><span class="muted">This Month</span><div class="num" id="month">₹0</div></div>
+<div class="card"><span class="muted">Clicks</span><div class="num" id="clicks">0</div></div>
+<div class="card"><span class="muted">Conversions</span><div class="num" id="conv">0</div></div>
+</div>
+<h2 id="courses">Affiliate Courses</h2>
+<div class="links">
+<div class="card"><h3>SSC GD Preparation</h3><p class="muted">YOUR_AFFILIATE_LINK_1</p><a class="btn" href="YOUR_AFFILIATE_LINK_1" rel="nofollow sponsored">Course देखें</a></div>
+<div class="card"><h3>Computer Skills</h3><p class="muted">YOUR_AFFILIATE_LINK_2</p><a class="btn" href="YOUR_AFFILIATE_LINK_2" rel="nofollow sponsored">Course देखें</a></div>
+<div class="card"><h3>Career Skills</h3><p class="muted">YOUR_AFFILIATE_LINK_3</p><a class="btn" href="YOUR_AFFILIATE_LINK_3" rel="nofollow sponsored">Course देखें</a></div>
+</div>
+<h2>Setup</h2><ol><li><b>config.json</b> में affiliate provider चुनें।</li><li>Provider की API credentials server environment में रखें — frontend में नहीं।</li><li><b>server.js</b> चलाएँ।</li><li>Provider के webhook/reporting endpoint को <b>/webhook/affiliate</b> पर configure करें, अगर provider support करता है।</li></ol>
+</div>
+<footer>Affiliate Disclosure: commissions program terms के अनुसार होती हैं। Earnings guaranteed नहीं हैं।</footer>
+<script>
+fetch('/api/earnings').then(r=>r.json()).then(d=>{
+document.getElementById('earn').textContent='₹'+Number(d.total_earnings||0).toLocaleString('en-IN');
+document.getElementById('month').textContent='₹'+Number(d.month_earnings||0).toLocaleString('en-IN');
+document.getElementById('clicks').textContent=Number(d.clicks||0).toLocaleString('en-IN');
+document.getElementById('conv').textContent=Number(d.conversions||0).toLocaleString('en-IN');
+}).catch(()=>{});
+</script>
+</body></html>
