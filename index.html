@@ -2,352 +2,309 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Login - Padho Aur Kamao</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Padho Aur Kamao</title>
 
 <style>
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f4f7fb;
-}
-.box{
-  max-width:420px;
-  margin:60px auto;
-  background:white;
-  padding:30px;
-  border-radius:20px;
-  box-shadow:0 5px 25px #0002;
-}
-h1{
-  text-align:center;
-  color:#5b21b6;
-}
-input{
-  width:100%;
-  padding:13px;
-  margin:8px 0 15px;
-  border:1px solid #ddd;
-  border-radius:8px;
+*{
   box-sizing:border-box;
 }
-button{
-  width:100%;
-  padding:13px;
-  border:0;
-  border-radius:9px;
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f5f7ff;
+  color:#172033;
+}
+
+header{
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  color:white;
+  padding:18px 20px;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+.login-btn{
+  background:white;
+  color:#5b21b6;
+  padding:10px 18px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.hero{
+  max-width:1100px;
+  margin:auto;
+  padding:55px 20px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:42px;
+  margin:10px 0;
+}
+
+.hero p{
+  font-size:18px;
+  color:#5f6778;
+}
+
+.start-btn{
+  display:inline-block;
+  margin-top:20px;
   background:#6d28d9;
   color:white;
+  padding:14px 25px;
+  border-radius:10px;
+  text-decoration:none;
   font-weight:bold;
-  cursor:pointer;
-  margin-top:8px;
 }
-.google{
-  background:#111827;
+
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
 }
-.message{
-  margin-top:15px;
+
+.section h2{
   text-align:center;
+  margin-bottom:25px;
 }
-.home{
+
+.courses{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.course{
+  background:white;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 5px 20px #0001;
+  transition:.2s;
+}
+
+.course:hover{
+  transform:translateY(-4px);
+}
+
+.icon{
+  font-size:45px;
+}
+
+.course h3{
+  margin:12px 0 8px;
+}
+
+.course p{
+  color:#687083;
+  line-height:1.5;
+}
+
+.course-btn{
   display:block;
   text-align:center;
-  margin-top:20px;
-  color:#5b21b6;
+  background:#eef2ff;
+  color:#4f46e5;
+  padding:11px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:15px;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  margin-top:30px;
+}
+
+.feature{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 3px 15px #0001;
+}
+
+footer{
+  margin-top:50px;
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="box">
+<header>
+  <div class="nav">
+    <div class="logo">📚 Padho Aur Kamao</div>
 
-<h1>📚 Padho Aur Kamao</h1>
+    <a class="login-btn" href="login.html">
+      Login / Signup
+    </a>
+  </div>
+</header>
 
-<h2 id="title">Create Account</h2>
+<section class="hero">
 
-<input
-  id="name"
-  type="text"
-  placeholder="आपका नाम">
+  <h1>Padho Aur Kamao 🚀</h1>
 
-<input
-  id="email"
-  type="email"
-  placeholder="Email">
+  <p>
+    सीखें • Skill बढ़ाएँ • अपने ज्ञान का सही उपयोग करें
+  </p>
 
-<input
-  id="password"
-  type="password"
-  placeholder="Password">
+  <a class="start-btn" href="login.html">
+    शुरू करें →
+  </a>
 
-<button onclick="signup()">
-  Create Account
-</button>
+</section>
 
-<button onclick="login()">
-  Login
-</button>
+<section class="section">
 
-<button class="google" onclick="googleLogin()">
-  Continue with Google
-</button>
+  <h2>🎓 हमारे 4 Courses</h2>
 
-<p class="message" id="message"></p>
+  <div class="courses">
 
-<a class="home" href="index.html">
-  ← Home पर जाएँ
-</a>
+    <div class="course">
+      <div class="icon">📈</div>
 
-</div>
+      <h3>Affiliate Marketing</h3>
 
+      <p>
+        Affiliate marketing की basics से लेकर
+        practical strategy तक सीखें।
+      </p>
 
-<script type="module">
+      <a class="course-btn" href="course1.html">
+        Course देखें
+      </a>
+    </div>
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
-  updateProfile
-}
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+    <div class="course">
+      <div class="icon">📱</div>
 
-import {
-  getFirestore,
-  doc,
-  setDoc
-}
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+      <h3>Instagram Mastery</h3>
 
+      <p>
+        Instagram content, audience और
+        growth की जानकारी सीखें।
+      </p>
 
-const firebaseConfig = {
+      <a class="course-btn" href="course2.html">
+        Course देखें
+      </a>
+    </div>
 
-  apiKey:
-  "AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
-  authDomain:
-  "padho-aur-kamao-3eeae.firebaseapp.com",
+    <div class="course">
+      <div class="icon">🎯</div>
 
-  projectId:
-  "padho-aur-kamao-3eeae",
+      <h3>Lead Generation</h3>
 
-  storageBucket:
-  "padho-aur-kamao-3eeae.firebasestorage.app",
+      <p>
+        Leads को समझना, manage करना और
+        ethical तरीके से generate करना सीखें।
+      </p>
 
-  messagingSenderId:
-  "670063905617",
+      <a class="course-btn" href="course3.html">
+        Course देखें
+      </a>
+    </div>
 
-  appId:
-  "1:670063905617:web:9b3a7e62fdeea14fbfa170",
 
-  measurementId:
-  "G-7J1YV8HN3F"
-};
+    <div class="course">
+      <div class="icon">🚀</div>
 
+      <h3>Step To Success</h3>
 
-const app = initializeApp(firebaseConfig);
+      <p>
+        Skills, planning और productivity
+        के practical lessons।
+      </p>
 
-const auth = getAuth(app);
+      <a class="course-btn" href="course4.html">
+        Course देखें
+      </a>
+    </div>
 
-const db = getFirestore(app);
+  </div>
 
+</section>
 
-const message =
-document.getElementById("message");
 
+<section class="section">
 
-/* SIGNUP */
+  <h2>✨ Platform Features</h2>
 
-window.signup = async function(){
+  <div class="features">
 
-  const name =
-  document.getElementById("name").value.trim();
+    <div class="feature">
+      🔐
+      <h3>Secure Login</h3>
+      <p>Firebase Authentication</p>
+    </div>
 
-  const email =
-  document.getElementById("email").value.trim();
+    <div class="feature">
+      🎥
+      <h3>Video Lessons</h3>
+      <p>Course lessons और videos</p>
+    </div>
 
-  const password =
-  document.getElementById("password").value;
+    <div class="feature">
+      📊
+      <h3>Progress</h3>
+      <p>अपनी learning progress देखें</p>
+    </div>
 
+    <div class="feature">
+      🏆
+      <h3>Leaderboard</h3>
+      <p>Learning performance देखें</p>
+    </div>
 
-  if(!name || !email || !password){
+  </div>
 
-    message.innerText =
-    "⚠️ सभी fields भरें।";
+</section>
 
-    return;
 
-  }
+<footer>
 
+  <h3>📚 Padho Aur Kamao</h3>
 
-  if(password.length < 6){
+  <p>
+    Learn • Practice • Grow
+  </p>
 
-    message.innerText =
-    "⚠️ Password कम से कम 6 characters का रखें।";
+  <p>
+    © 2026 Padho Aur Kamao
+  </p>
 
-    return;
-
-  }
-
-
-  try{
-
-    const result =
-    await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-
-
-    await updateProfile(
-      result.user,
-      {
-        displayName:name
-      }
-    );
-
-
-    await setDoc(
-      doc(db,"users",result.user.uid),
-      {
-        name:name,
-        email:email,
-        enrolledCourses:[],
-        createdAt:new Date().toISOString()
-      }
-    );
-
-
-    message.innerText =
-    "✅ Account बन गया! Dashboard खुल रहा है...";
-
-
-    setTimeout(function(){
-
-      window.location.href =
-      "dashboard.html";
-
-    },1000);
-
-
-  }catch(error){
-
-    message.innerText =
-    "❌ " + error.message;
-
-  }
-
-};
-
-
-/* LOGIN */
-
-window.login = async function(){
-
-  const email =
-  document.getElementById("email").value.trim();
-
-  const password =
-  document.getElementById("password").value;
-
-
-  if(!email || !password){
-
-    message.innerText =
-    "⚠️ Email और Password भरें।";
-
-    return;
-
-  }
-
-
-  try{
-
-    await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-
-
-    message.innerText =
-    "✅ Login successful!";
-
-
-    setTimeout(function(){
-
-      window.location.href =
-      "dashboard.html";
-
-    },700);
-
-
-  }catch(error){
-
-    message.innerText =
-    "❌ Email या Password गलत है।";
-
-  }
-
-};
-
-
-/* GOOGLE LOGIN */
-
-window.googleLogin = async function(){
-
-  try{
-
-    const provider =
-    new GoogleAuthProvider();
-
-    const result =
-    await signInWithPopup(
-      auth,
-      provider
-    );
-
-
-    await setDoc(
-      doc(db,"users",result.user.uid),
-      {
-        name:
-        result.user.displayName || "",
-
-        email:
-        result.user.email || "",
-
-        enrolledCourses:[],
-
-        updatedAt:
-        new Date().toISOString()
-      },
-      {
-        merge:true
-      }
-    );
-
-
-    window.location.href =
-    "dashboard.html";
-
-
-  }catch(error){
-
-    message.innerText =
-    "❌ Google Login नहीं हो पाया।";
-
-  }
-
-};
-
-</script>
+</footer>
 
 </body>
 </html>
