@@ -1,272 +1,787 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Padho Aur Kamao</title>
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,sans-serif;
-}
-
-body{
-  background:#f4f7fb;
-  color:#172033;
-}
-
-header{
-  background:linear-gradient(135deg,#4f46e5,#7c3aed);
-  color:white;
-  padding:22px 16px;
-  border-radius:0 0 25px 25px;
-}
-
-.top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.logo{
-  font-size:22px;
-  font-weight:bold;
-}
-
-.menu{
-  font-size:25px;
-}
-
-.hero{
-  padding:25px 0 10px;
-}
-
-.hero h1{
-  font-size:30px;
-  margin-bottom:8px;
-}
-
-.hero p{
-  opacity:.9;
-  line-height:1.5;
-}
-
-.container{
-  width:94%;
-  max-width:900px;
-  margin:auto;
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-top:18px;
-}
-
-.stat{
-  background:white;
-  padding:18px;
-  border-radius:16px;
-  box-shadow:0 4px 15px #00000012;
-}
-
-.stat small{
-  color:#777;
-}
-
-.stat h2{
-  margin-top:7px;
-  color:#4f46e5;
-}
-
-.section{
-  margin-top:25px;
-}
-
-.section h2{
-  margin-bottom:14px;
-}
-
-.card{
-  background:white;
-  padding:18px;
-  border-radius:18px;
-  margin-bottom:14px;
-  box-shadow:0 4px 15px #00000010;
-}
-
-.card h3{
-  margin-bottom:8px;
-}
-
-.card p{
-  color:#666;
-  line-height:1.5;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:12px;
-  padding:11px 18px;
-  border-radius:10px;
-  background:#4f46e5;
-  color:white;
-  text-decoration:none;
-  border:0;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.btn.green{
-  background:#16a34a;
-}
-
-.btn.orange{
-  background:#ea580c;
-}
-
-.course-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-
-.course{
-  background:white;
-  padding:17px;
-  border-radius:16px;
-  box-shadow:0 4px 15px #0000000d;
-}
-
-.course-icon{
-  font-size:32px;
-  margin-bottom:8px;
-}
-
-.progress{
-  height:8px;
-  background:#e5e7eb;
-  border-radius:10px;
-  margin-top:12px;
-  overflow:hidden;
-}
-
-.progress div{
-  height:100%;
-  background:#4f46e5;
-}
-
-.product{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  align-items:center;
-}
-
-.rank{
-  display:flex;
-  justify-content:space-between;
-  padding:14px;
-  border-bottom:1px solid #eee;
-}
-
-.rank:last-child{
-  border-bottom:0;
-}
-
-.referral{
-  background:linear-gradient(135deg,#111827,#312e81);
-  color:white;
-  padding:22px;
-  border-radius:20px;
-}
-
-.referral input{
-  width:100%;
-  padding:12px;
-  margin-top:12px;
-  border:0;
-  border-radius:9px;
-}
-
-nav{
-  position:sticky;
-  bottom:0;
-  background:white;
-  display:flex;
-  justify-content:space-around;
-  padding:12px 5px;
-  box-shadow:0 -3px 15px #00000015;
-  margin-top:30px;
-}
-
-nav a{
-  text-decoration:none;
-  color:#555;
-  text-align:center;
-  font-size:12px;
-}
-
-nav span{
-  display:block;
-  font-size:21px;
-  margin-bottom:3px;
-}
-
-footer{
-  text-align:center;
-  padding:25px;
-  color:#777;
-}
-
-@media(max-width:500px){
-  .course-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .hero h1{
-    font-size:26px;
-  }
-}
-</style>
+<title>Padho Aur Kamao - Affiliate Academy</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-  <div class="container">
+  <div class="nav">
+    <h2>📚 Padho Aur Kamao</h2>
 
-    <div class="top">
-      <div class="logo">📚 Padho Aur Kamao</div>
-      <div class="menu">☰</div>
-    </div>
-
-    <div class="hero">
-      <h1>पढ़ो भी, कमाओ भी 🚀</h1>
-      <p>
-        Skills सीखें, courses complete करें और affiliate opportunities
-        के बारे में जानें।
-      </p>
-    </div>
-
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
   </div>
 </header>
 
-<main class="container">
+<section class="hero">
+  <h1>Affiliate Marketing Academy 🚀</h1>
+  <p>Learn skills • Build knowledge • Grow responsibly</p>
+  <a class="btn" href="#courses">Courses देखें</a>
+</section>
 
-  <!-- Dashboard -->
+<main>
 
-  <section class="stats">
+<h2>🎓 4 Affiliate Marketing Courses</h2>
 
-    <div class="stat">
-      <small>आज की Earning</small>
-      <h2>₹250</h2>
-    </div>
+<div class="courses">
 
-    <div class="stat">
-      <small>इस Week</small>
-      <h2>₹1,750
+<div class="course">
+  <div class="icon">📱</div>
+  <h3>Affiliate Marketing Basics</h3>
+  <p>Affiliate Marketing की शुरुआत बिल्कुल basic level से करें।</p>
+  <a class="btn" href="course1.html">Start Course</a>
+</div>
+
+<div class="course">
+  <div class="icon">🚀</div>
+  <h3>Instagram & YouTube Marketing</h3>
+  <p>Content और audience building की basics सीखें।</p>
+  <a class="btn" href="course2.html">Start Course</a>
+</div>
+
+<div class="course">
+  <div class="icon">🔗</div>
+  <h3>Affiliate Link & Promotion</h3>
+  <p>Affiliate links और responsible promotion समझें।</p>
+  <a class="btn" href="course3.html">Start Course</a>
+</div>
+
+<div class="course">
+  <div class="icon">💰</div>
+  <h3>Advanced Affiliate Marketing</h3>
+  <p>Analytics, funnel और long-term strategy सीखें।</p>
+  <a class="btn" href="course4.html">Start Course</a>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+  <h3>📚 Padho Aur Kamao</h3>
+  <p>© 2026 Padho Aur Kamao</p>
+</footer>
+
+</body>
+</html>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f4f7fb;
+  color:#172033;
+}
+
+header{
+  background:white;
+  box-shadow:0 2px 10px #0001;
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  padding:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.nav h2{
+  color:#5b21b6;
+}
+
+.nav a{
+  text-decoration:none;
+  margin-left:15px;
+  color:#172033;
+  font-weight:bold;
+}
+
+.hero{
+  max-width:1100px;
+  margin:25px auto;
+  padding:65px 20px;
+  text-align:center;
+  color:white;
+  border-radius:25px;
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+}
+
+.hero h1{
+  font-size:38px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:18px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:12px 20px;
+  border-radius:10px;
+  background:#6d28d9;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+}
+
+.hero .btn{
+  background:white;
+  color:#5b21b6;
+}
+
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+main > h2{
+  text-align:center;
+  margin:30px 0;
+}
+
+.courses{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.course{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 5px 20px #0001;
+}
+
+.course:hover{
+  transform:translateY(-5px);
+}
+
+.icon{
+  font-size:45px;
+  margin-bottom:15px;
+}
+
+.course h3{
+  margin-bottom:10px;
+}
+
+.course p{
+  color:#667085;
+  line-height:1.5;
+}
+
+.lesson{
+  background:white;
+  max-width:900px;
+  margin:30px auto;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 5px 20px #0001;
+}
+
+.lesson h1{
+  margin-bottom:15px;
+}
+
+.video{
+  height:300px;
+  margin:25px 0;
+  background:#111827;
+  color:white;
+  border-radius:15px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.video input{
+  display:none;
+}
+
+.video label{
+  display:inline-block;
+  background:white;
+  color:#111827;
+  padding:12px 18px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.lesson li{
+  margin:12px 0;
+}
+
+.form{
+  max-width:450px;
+  margin:40px auto;
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 5px 20px #0001;
+}
+
+.form h2{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.form input{
+  width:100%;
+  padding:13px;
+  margin:8px 0 15px;
+  border:1px solid #ddd;
+  border-radius:8px;
+}
+
+.dashboard{
+  max-width:1100px;
+  margin:30px auto;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.stat{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 5px 20px #0001;
+}
+
+.stat h2{
+  color:#6d28d9;
+  margin-top:10px;
+}
+
+.leaderboard{
+  background:white;
+  margin-top:25px;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 5px 20px #0001;
+}
+
+.rank{
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+  border-bottom:1px solid #eee;
+}
+
+footer{
+  margin-top:40px;
+  padding:30px;
+  background:#111827;
+  color:white;
+  text-align:center;
+}
+
+@media(max-width:800px){
+
+.courses{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.stats{
+  grid-template-columns:1fr;
+}
+
+.nav{
+  flex-direction:column;
+  gap:12px;
+}
+
+}
+
+@media(max-width:500px){
+
+.courses{
+  grid-template-columns:1fr;
+}
+
+.hero h1{
+  font-size:28px;
+}
+
+.video{
+  height:220px;
+}
+
+}
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Login - Padho Aur Kamao</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<h2>📚 Padho Aur Kamao</h2>
+
+<a href="index.html">Home</a>
+
+</div>
+
+</header>
+
+<main>
+
+<div class="form">
+
+<h2>🔐 Login / Signup</h2>
+
+<label>Name</label>
+
+<input
+id="name"
+type="text"
+placeholder="अपना नाम लिखें">
+
+<label>Email</label>
+
+<input
+id="email"
+type="email"
+placeholder="Email लिखें">
+
+<label>Password</label>
+
+<input
+id="password"
+type="password"
+placeholder="Password">
+
+<button
+class="btn"
+onclick="login()">
+
+Login / Create Account
+
+</button>
+
+<p id="message"></p>
+
+</div>
+
+</main>
+
+<script>
+
+function login(){
+
+let name=document.getElementById("name").value.trim();
+
+let email=document.getElementById("email").value.trim();
+
+if(name==="" || email===""){
+
+document.getElementById("message").innerText=
+"⚠️ Name और Email भरें।";
+
+return;
+
+}
+
+localStorage.setItem("userName",name);
+
+localStorage.setItem("userEmail",email);
+
+document.getElementById("message").innerText=
+"✅ Login successful!";
+
+setTimeout(function(){
+
+window.location.href="dashboard.html";
+
+},700);
+
+}
+
+</script>
+
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<h2>📊 My Dashboard</h2>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="login.html">Login</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<main>
+
+<div class="lesson">
+
+<h1>
+Welcome,
+<span id="username">Student</span> 👋
+</h1>
+
+<p>
+आपका Affiliate Marketing Dashboard
+</p>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+
+<p>Courses Completed</p>
+
+<h2 id="completed">0</h2>
+
+</div>
+
+<div class="stat">
+
+<p>Learning Progress</p>
+
+<h2 id="progress">0%</h2>
+
+</div>
+
+<div class="stat">
+
+<p>My Earnings</p>
+
+<h2>₹0</h2>
+
+</div>
+
+</div>
+
+<div class="leaderboard">
+
+<h2>🏆 Leaderboard</h2>
+
+<div class="rank">
+
+<span>🥇 Rahul</span>
+
+<b>₹12,500</b>
+
+</div>
+
+<div class="rank">
+
+<span>🥈 Aman</span>
+
+<b>₹9,800</b>
+
+</div>
+
+<div class="rank">
+
+<span>🥉 Priya</span>
+
+<b>₹7,600</b>
+
+</div>
+
+<div class="rank">
+
+<span>4️⃣ You</span>
+
+<b>₹0</b>
+
+</div>
+
+</div>
+
+</main>
+
+<script>
+
+let user=
+localStorage.getItem("userName") || "Student";
+
+document.getElementById("username").innerText=user;
+
+let completed=
+Number(
+localStorage.getItem("completedCourses") || 0
+);
+
+document.getElementById("completed").innerText=
+completed;
+
+document.getElementById("progress").innerText=
+Math.min(completed*25,100)+"%";
+
+</script>
+
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Course 1</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<h2>📚 Padho Aur Kamao</h2>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="dashboard.html">Dashboard</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<main>
+
+<div class="lesson">
+
+<h1>📱 Affiliate Marketing Basics</h1>
+
+<p>
+इस course में Affiliate Marketing की basic knowledge सीखें।
+</p>
+
+<h2>🎥 Course Video</h2>
+
+<div class="video">
+
+<div>
+
+<h2>▶️ Video यहाँ लगेगा</h2>
+
+<p>अपना video select करें</p>
+
+<label>
+
+📹 Select Video
+
+<input
+type="file"
+accept="video/*"
+onchange="videoSelected(this)">
+
+</label>
+
+<p id="videoName"></p>
+
+</div>
+
+</div>
+
+<h2>📚 Lessons</h2>
+
+<ol>
+
+<li>Affiliate Marketing क्या है?</li>
+
+<li>Niche Selection</li>
+
+<li>Audience Research</li>
+
+<li>Product Research</li>
+
+<li>Affiliate Disclosure</li>
+
+</ol>
+
+<button
+class="btn"
+onclick="completeCourse()">
+
+✅ Course Complete
+
+</button>
+
+<a
+class="btn"
+href="dashboard.html">
+
+📊 Dashboard
+
+</a>
+
+<p id="message"></p>
+
+</div>
+
+</main>
+
+<script>
+
+function videoSelected(input){
+
+if(input.files.length>0){
+
+document.getElementById("videoName").innerText=
+"Selected: "+input.files[0].name;
+
+}
+
+}
+
+function completeCourse(){
+
+let completed=
+Number(
+localStorage.getItem("completedCourses") || 0
+);
+
+if(completed<4){
+
+completed++;
+
+}
+
+localStorage.setItem(
+"completedCourses",
+completed
+);
+
+document.getElementById("message").innerText=
+"🎉 Course completed!";
+
+}
+
+</script>
+
+</body>
+
+</html>
+<h1>🚀 Instagram & YouTube Marketing</h1>
+
+<p>
+Social Media पर content और audience building सीखें।
+</p>
+
+<ol>
+
+<li>Content Strategy</li>
+
+<li>Instagram Reels Basics</li>
+
+<li>YouTube Channel Basics</li>
+
+<li>Audience Growth</li>
+
+<li>Engagement Strategy</li>
+
+</ol>
+<h1>🔗 Affiliate Link & Promotion</h1>
+
+<p>
+Affiliate links और responsible product promotion सीखें।
+</p>
+
+<ol>
+
+<li>Affiliate Links कैसे काम करते हैं?</li>
+
+<li>Product Promotion</li>
+
+<li>Call To Action</li>
+
+<li>Link Tracking Basics</li>
+
+<li>Affiliate Disclosure</li>
+
+</ol>
+<h1>💰 Advanced Affiliate Marketing</h1>
+
+<p>
+Analytics और long-term affiliate strategy की basics सीखें।
+</p>
+
+<ol>
+
+<li>Analytics Basics</li>
+
+<li>Content Funnel</li>
+
+<li>Conversion Basics</li>
+
+<li>Long-Term Strategy</li>
+
+<li>Growth Planning</li>
+
+</ol>
