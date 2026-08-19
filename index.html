@@ -1,139 +1,236 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Padho Aur Kamao - Affiliate Marketing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Padho Aur Kamao</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
 body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#f5f7fb;
- color:#172033
+  background:#f4f7fb;
+  color:#172033;
 }
+
 header{
- background:linear-gradient(135deg,#4f46e5,#7c3aed);
- color:#fff;
- padding:18px 14px;
- position:sticky;
- top:0;
- z-index:10
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  color:white;
+  padding:22px 16px;
+  border-radius:0 0 25px 25px;
 }
-.head{
- max-width:1100px;
- margin:auto;
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:10px
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
-.logo{font-size:22px;font-weight:800}
-.small{font-size:12px;opacity:.9}
-nav{
- max-width:1100px;
- margin:14px auto 0;
- display:flex;
- gap:7px;
- overflow-x:auto
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
 }
-nav button{
- border:0;
- background:#ffffff22;
- color:white;
- padding:10px 13px;
- border-radius:10px;
- white-space:nowrap
+
+.menu{
+  font-size:25px;
 }
-main{max-width:1100px;margin:auto;padding:20px 14px 50px}
-.page{display:none}
-.page.active{display:block}
+
 .hero{
- background:#fff;
- padding:30px;
- border-radius:20px;
- box-shadow:0 5px 20px #0000000b
+  padding:25px 0 10px;
 }
-.hero h1{font-size:30px;margin-top:0}
-.grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:16px;
- margin-top:18px
+
+.hero h1{
+  font-size:30px;
+  margin-bottom:8px;
 }
+
+.hero p{
+  opacity:.9;
+  line-height:1.5;
+}
+
+.container{
+  width:94%;
+  max-width:900px;
+  margin:auto;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+
+.stat{
+  background:white;
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 4px 15px #00000012;
+}
+
+.stat small{
+  color:#777;
+}
+
+.stat h2{
+  margin-top:7px;
+  color:#4f46e5;
+}
+
+.section{
+  margin-top:25px;
+}
+
+.section h2{
+  margin-bottom:14px;
+}
+
 .card{
- background:#fff;
- padding:18px;
- border-radius:16px;
- box-shadow:0 4px 16px #0000000a
+  background:white;
+  padding:18px;
+  border-radius:18px;
+  margin-bottom:14px;
+  box-shadow:0 4px 15px #00000010;
 }
-.price{font-size:26px;font-weight:800;margin:12px 0}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#666;
+  line-height:1.5;
+}
+
 .btn{
- border:0;
- border-radius:10px;
- padding:11px 15px;
- background:#4f46e5;
- color:#fff;
- font-weight:700;
- cursor:pointer
+  display:inline-block;
+  margin-top:12px;
+  padding:11px 18px;
+  border-radius:10px;
+  background:#4f46e5;
+  color:white;
+  text-decoration:none;
+  border:0;
+  cursor:pointer;
+  font-weight:bold;
 }
-.btn.red{background:#dc2626}
-.btn.light{background:#eef2ff;color:#4338ca}
-input,textarea,select{
- width:100%;
- padding:11px;
- margin:6px 0 12px;
- border:1px solid #d7dce5;
- border-radius:10px;
- font-size:15px
+
+.btn.green{
+  background:#16a34a;
 }
-textarea{min-height:90px}
-.row{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:12px
+
+.btn.orange{
+  background:#ea580c;
 }
-.video{
- width:100%;
- height:210px;
- border:0;
- border-radius:12px;
- background:#111
+
+.course-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
 }
-.lesson{
- padding:14px;
- border-top:1px solid #eee
+
+.course{
+  background:white;
+  padding:17px;
+  border-radius:16px;
+  box-shadow:0 4px 15px #0000000d;
 }
-.badge{
- display:inline-block;
- padding:5px 9px;
- border-radius:20px;
- background:#dcfce7;
- color:#166534;
- font-size:12px;
- font-weight:bold
+
+.course-icon{
+  font-size:32px;
+  margin-bottom:8px;
 }
-.stat{font-size:28px;font-weight:800}
-.muted{color:#687386;font-size:14px}
-.notice{
- margin-top:15px;
- padding:13px;
- background:#fff7ed;
- color:#9a3412;
- border-radius:10px;
- font-size:13px
+
+.progress{
+  height:8px;
+  background:#e5e7eb;
+  border-radius:10px;
+  margin-top:12px;
+  overflow:hidden;
 }
+
+.progress div{
+  height:100%;
+  background:#4f46e5;
+}
+
+.product{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center;
+}
+
+.rank{
+  display:flex;
+  justify-content:space-between;
+  padding:14px;
+  border-bottom:1px solid #eee;
+}
+
+.rank:last-child{
+  border-bottom:0;
+}
+
+.referral{
+  background:linear-gradient(135deg,#111827,#312e81);
+  color:white;
+  padding:22px;
+  border-radius:20px;
+}
+
+.referral input{
+  width:100%;
+  padding:12px;
+  margin-top:12px;
+  border:0;
+  border-radius:9px;
+}
+
+nav{
+  position:sticky;
+  bottom:0;
+  background:white;
+  display:flex;
+  justify-content:space-around;
+  padding:12px 5px;
+  box-shadow:0 -3px 15px #00000015;
+  margin-top:30px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#555;
+  text-align:center;
+  font-size:12px;
+}
+
+nav span{
+  display:block;
+  font-size:21px;
+  margin-bottom:3px;
+}
+
 footer{
- text-align:center;
- padding:25px;
- color:#687386
+  text-align:center;
+  padding:25px;
+  color:#777;
 }
-@media(max-width:600px){
- .head{flex-direction:column;align-items:flex-start}
- .row{grid-template-columns:1fr}
- .hero h1{font-size:25px}
+
+@media(max-width:500px){
+  .course-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero h1{
+    font-size:26px;
+  }
 }
 </style>
 </head>
@@ -141,907 +238,35 @@ footer{
 <body>
 
 <header>
-<div class="head">
-<div>
-<div class="logo">📚 Padho Aur Kamao</div>
-<div class="small">Affiliate Marketing • Courses • Learning</div>
-</div>
+  <div class="container">
 
-<button class="btn" onclick="page('admin')">⚙️ Manage</button>
-</div>
+    <div class="top">
+      <div class="logo">📚 Padho Aur Kamao</div>
+      <div class="menu">☰</div>
+    </div>
 
-<nav>
-<button onclick="page('home')">🏠 Home</button>
-<button onclick="page('courses')">🎓 Courses</button>
-<button onclick="page('affiliate')">🔗 Affiliate</button>
-<button onclick="page('earn')">💰 Earnings</button>
-</nav>
+    <div class="hero">
+      <h1>पढ़ो भी, कमाओ भी 🚀</h1>
+      <p>
+        Skills सीखें, courses complete करें और affiliate opportunities
+        के बारे में जानें।
+      </p>
+    </div>
+
+  </div>
 </header>
 
-<main>
+<main class="container">
 
-<!-- HOME -->
+  <!-- Dashboard -->
 
-<section id="home" class="page active">
+  <section class="stats">
 
-<div class="hero">
-<h1>Affiliate Marketing सीखें 🚀</h1>
+    <div class="stat">
+      <small>आज की Earning</small>
+      <h2>₹250</h2>
+    </div>
 
-<p>
-Affiliate marketing को step-by-step समझें और practical skills विकसित करें।
-</p>
-
-<button class="btn" onclick="page('courses')">
-🎓 Course देखें
-</button>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<h3>🎬 Video Learning</h3>
-<p class="muted">
-Chapter-wise video lessons।
-</p>
-</div>
-
-<div class="card">
-<h3>💰 Course Business</h3>
-<p class="muted">
-अपना course और price सेट करें।
-</p>
-</div>
-
-<div class="card">
-<h3>🔗 Affiliate Resources</h3>
-<p class="muted">
-अपने affiliate links manage करें।
-</p>
-</div>
-
-<div class="card">
-<h3>📊 Dashboard</h3>
-<p class="muted">
-Sales और estimated earnings देखें।
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- COURSES -->
-
-<section id="courses" class="page">
-
-<h2>🎓 Affiliate Marketing Courses</h2>
-
-<div id="courseList" class="grid"></div>
-
-</section>
-
-
-<!-- COURSE DETAIL -->
-
-<section id="courseDetail" class="page">
-
-<div id="courseDetailContent"></div>
-
-</section>
-
-
-<!-- AFFILIATE -->
-
-<section id="affiliate" class="page">
-
-<h2>🔗 Affiliate Products</h2>
-
-<div id="affiliateList" class="grid"></div>
-
-</section>
-
-
-<!-- EARNING -->
-
-<section id="earn" class="page">
-
-<h2>💰 Earning Dashboard</h2>
-
-<div class="grid">
-
-<div class="card">
-<div class="muted">Course Sales</div>
-<div class="stat" id="courseSales">₹0</div>
-</div>
-
-<div class="card">
-<div class="muted">Affiliate Commission</div>
-<div class="stat" id="affiliateCommission">₹0</div>
-</div>
-
-<div class="card">
-<div class="muted">Total Estimated</div>
-<div class="stat" id="totalEarn">₹0</div>
-</div>
-
-<div class="card">
-<div class="muted">Affiliate Clicks</div>
-<div class="stat" id="clickCount">0</div>
-</div>
-
-</div>
-
-<div class="card" style="margin-top:18px">
-<h3>📊 Sales History</h3>
-<div id="history"></div>
-</div>
-
-<div class="notice">
-यह dashboard अभी demo/local data पर चलता है। वास्तविक payment और withdrawal के लिए secure backend और payment gateway आवश्यक होगा।
-</div>
-
-</section>
-
-
-<!-- ADMIN -->
-
-<section id="admin" class="page">
-
-<h2>⚙️ Course Manager</h2>
-
-<div class="card">
-
-<h3>🎓 नया Course बनाएं</h3>
-
-<label>Course Name</label>
-<input id="courseName"
-placeholder="Affiliate Marketing Masterclass">
-
-<label>Course Price ₹</label>
-<input id="coursePrice"
-type="number"
-placeholder="499">
-
-<label>Course Description</label>
-<textarea id="courseDescription"
-placeholder="Course के बारे में जानकारी"></textarea>
-
-<button class="btn" onclick="addCourse()">
-➕ Course बनाएं
-</button>
-
-</div>
-
-
-<div class="card" style="margin-top:18px">
-
-<h3>🎬 Course में Lesson जोड़ें</h3>
-
-<label>Select Course</label>
-<select id="lessonCourse"></select>
-
-<label>Lesson Title</label>
-<input id="lessonTitle"
-placeholder="Affiliate Marketing क्या है?">
-
-<label>Video URL</label>
-<input id="lessonVideo"
-placeholder="YouTube URL">
-
-<label>Lesson Type</label>
-<select id="lessonType">
-<option value="free">🆓 Free Preview</option>
-<option value="paid">🔒 Paid Lesson</option>
-</select>
-
-<button class="btn" onclick="addLesson()">
-➕ Lesson जोड़ें
-</button>
-
-</div>
-
-
-<div class="card" style="margin-top:18px">
-
-<h3>🔗 Affiliate Product</h3>
-
-<label>Product Name</label>
-<input id="affiliateName"
-placeholder="Affiliate Product">
-
-<label>Product Price ₹</label>
-<input id="affiliatePrice"
-type="number"
-placeholder="299">
-
-<label>Estimated Commission ₹</label>
-<input id="affiliateComm"
-type="number"
-placeholder="30">
-
-<label>Affiliate Link</label>
-<input id="affiliateLink"
-placeholder="https://example.com/affiliate">
-
-<button class="btn" onclick="addAffiliate()">
-➕ Affiliate जोड़ें
-</button>
-
-</div>
-
-
-<div class="card" style="margin-top:18px">
-
-<h3>🗂️ Manage Content</h3>
-
-<div id="manageContent"></div>
-
-<br>
-
-<button class="btn red" onclick="resetData()">
-🗑️ सभी Demo Data हटाएं
-</button>
-
-</div>
-
-</section>
-
-</main>
-
-<footer>
-© 2026 Padho Aur Kamao
-</footer>
-
-
-<script>
-
-const KEY="pakAffiliatePlatform";
-
-let data=JSON.parse(
-localStorage.getItem(KEY)
-)||{
- courses:[],
- affiliates:[],
- sales:[],
- clicks:0
-};
-
-
-function save(){
- localStorage.setItem(KEY,JSON.stringify(data));
- render();
-}
-
-
-function money(n){
- return "₹"+Number(n||0).toLocaleString("en-IN");
-}
-
-
-function page(id){
-
-document.querySelectorAll(".page")
-.forEach(x=>x.classList.remove("active"));
-
-document.getElementById(id)
-.classList.add("active");
-
-render();
-
-}
-
-
-function addCourse(){
-
-let name=document.getElementById("courseName").value.trim();
-
-let price=Number(
-document.getElementById("coursePrice").value||0
-);
-
-let desc=document.getElementById("courseDescription").value.trim();
-
-if(!name){
- alert("Course name डालें");
- return;
-}
-
-data.courses.push({
- id:Date.now(),
- name,
- price,
- desc,
- lessons:[]
-});
-
-save();
-
-document.getElementById("courseName").value="";
-document.getElementById("coursePrice").value="";
-document.getElementById("courseDescription").value="";
-
-alert("Course बन गया!");
-
-}
-
-
-function addLesson(){
-
-let courseId=Number(
-document.getElementById("lessonCourse").value
-);
-
-let title=document.getElementById("lessonTitle").value.trim();
-
-let video=document.getElementById("lessonVideo").value.trim();
-
-let type=document.getElementById("lessonType").value;
-
-let course=data.courses.find(
-c=>c.id===courseId
-);
-
-if(!course){
- alert("पहले Course बनाएं");
- return;
-}
-
-if(!title){
- alert("Lesson title डालें");
- return;
-}
-
-course.lessons.push({
- id:Date.now(),
- title,
- video,
- type
-});
-
-save();
-
-document.getElementById("lessonTitle").value="";
-document.getElementById("lessonVideo").value="";
-
-alert("Lesson जोड़ दिया गया!");
-
-}
-
-
-function addAffiliate(){
-
-let name=document.getElementById("affiliateName").value.trim();
-
-let price=Number(
-document.getElementById("affiliatePrice").value||0
-);
-
-let commission=Number(
-document.getElementById("affiliateComm").value||0
-);
-
-let link=document.getElementById("affiliateLink").value.trim();
-
-if(!name||!link){
- alert("Product और Affiliate Link डालें");
- return;
-}
-
-data.affiliates.push({
- id:Date.now(),
- name,
- price,
- commission,
- clicks:0,
- link
-});
-
-save();
-
-document.getElementById("affiliateName").value="";
-document.getElementById("affiliatePrice").value="";
-document.getElementById("affiliateComm").value="";
-document.getElementById("affiliateLink").value="";
-
-alert("Affiliate product जोड़ दिया गया!");
-
-}
-
-
-function openCourse(id){
-
-let c=data.courses.find(x=>x.id===id);
-
-if(!c)return;
-
-document.getElementById("courseDetailContent").innerHTML=`
-
-<div class="card">
-
-<h2>${escapeHTML(c.name)}</h2>
-
-<p class="muted">
-${escapeHTML(c.desc)}
-</p>
-
-<div class="price">
-${money(c.price)}
-</div>
-
-<button class="btn"
-onclick="buyCourse(${c.id})">
-🛒 Buy Course
-</button>
-
-</div>
-
-<div class="card" style="margin-top:18px">
-
-<h3>📚 Course Lessons</h3>
-
-${c.lessons.length?
-
-c.lessons.map((l,i)=>`
-
-<div class="lesson">
-
-<b>
-${i+1}. ${escapeHTML(l.title)}
-</b>
-
-<br><br>
-
-<span class="badge">
-${l.type==="free"?"🆓 Free Preview":"🔒 Paid"}
-</span>
-
-<br><br>
-
-${l.type==="free"?
-video(l.video):
-`<button class="btn light"
-onclick="buyCourse(${c.id})">
-🔒 Buy Course to Watch
-</button>`
-}
-
-</div>
-
-`).join("")
-
-:
-
-"<p class='muted'>अभी कोई lesson नहीं है।</p>"
-
-}
-
-</div>
-`;
-
-page("courseDetail");
-
-}
-
-
-function buyCourse(id){
-
-let c=data.courses.find(x=>x.id===id);
-
-if(!c)return;
-
-if(!confirm(
-c.name+
-" - "+
-money(c.price)+
-"\n\nयह अभी Demo Purchase है।"
-))return;
-
-data.sales.push({
- name:c.name,
- amount:c.price,
- date:new Date().toLocaleString("hi-IN")
-});
-
-save();
-
-alert("Demo purchase record हो गई!");
-
-}
-
-
-function openAffiliate(id){
-
-let a=data.affiliates.find(x=>x.id===id);
-
-if(!a)return;
-
-a.clicks++;
-
-data.clicks++;
-
-save();
-
-window.open(a.link,"_blank");
-
-}
-
-
-function video(url){
-
-if(!url)return "";
-
-try{
-
-let u=new URL(url);
-
-if(u.hostname.includes("youtube.com")){
-
-let id=u.searchParams.get("v");
-
-if(id){
-
-return `
-<iframe
-class="video"
-src="https://www.youtube.com/embed/${id}"
-allowfullscreen>
-</iframe>
-`;
-
-}
-
-}
-
-if(u.hostname.includes("youtu.be")){
-
-let id=u.pathname.substring(1);
-
-return `
-<iframe
-class="video"
-src="https://www.youtube.com/embed/${id}"
-allowfullscreen>
-</iframe>
-`;
-
-}
-
-}catch(e){}
-
-return "";
-
-}
-
-
-function escapeHTML(s){
-
-return String(s)
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
-
-}
-
-
-function deleteCourse(id){
-
-data.courses=data.courses.filter(
-c=>c.id!==id
-);
-
-save();
-
-}
-
-
-function deleteAffiliate(id){
-
-data.affiliates=data.affiliates.filter(
-a=>a.id!==id
-);
-
-save();
-
-}
-
-
-function resetData(){
-
-if(!confirm(
-"क्या सभी data हटाना चाहते हैं?"
-))return;
-
-data={
- courses:[],
- affiliates:[],
- sales:[],
- clicks:0
-};
-
-save();
-
-}
-
-
-function render(){
-
-/* COURSE LIST */
-
-let courses=document.getElementById("courseList");
-
-if(data.courses.length===0){
-
-courses.innerHTML=`
-
-<div class="card">
-<h3>अभी कोई Course नहीं है</h3>
-<p class="muted">
-Manage में जाकर अपना पहला course बनाएं।
-</p>
-</div>
-
-`;
-
-}else{
-
-courses.innerHTML=data.courses.map(c=>`
-
-<div class="card">
-
-<span class="badge">
-🎓 Course
-</span>
-
-<h3>
-${escapeHTML(c.name)}
-</h3>
-
-<p class="muted">
-${escapeHTML(c.desc)}
-</p>
-
-<p>
-📚 ${c.lessons.length} Lessons
-</p>
-
-<div class="price">
-${money(c.price)}
-</div>
-
-<button class="btn"
-onclick="openCourse(${c.id})">
-
-View Course
-
-</button>
-
-</div>
-
-`).join("");
-
-}
-
-
-/* AFFILIATE */
-
-let affiliate=document.getElementById("affiliateList");
-
-if(data.affiliates.length===0){
-
-affiliate.innerHTML=`
-
-<div class="card">
-<h3>अभी Affiliate Product नहीं है</h3>
-<p class="muted">
-Manage से affiliate product जोड़ें।
-</p>
-</div>
-
-`;
-
-}else{
-
-affiliate.innerHTML=data.affiliates.map(a=>`
-
-<div class="card">
-
-<span class="badge">
-🔗 Affiliate
-</span>
-
-<h3>
-${escapeHTML(a.name)}
-</h3>
-
-<div class="price">
-${money(a.price)}
-</div>
-
-<p class="muted">
-Estimated Commission:
-${money(a.commission)}
-</p>
-
-<p class="muted">
-Clicks: ${a.clicks}
-</p>
-
-<button class="btn"
-onclick="openAffiliate(${a.id})">
-
-🛒 Buy Now
-
-</button>
-
-</div>
-
-`).join("");
-
-}
-
-
-/* COURSE SELECT */
-
-let select=document.getElementById("lessonCourse");
-
-select.innerHTML=data.courses.map(c=>`
-
-<option value="${c.id}">
-${escapeHTML(c.name)}
-</option>
-
-`).join("");
-
-
-/* EARNINGS */
-
-let courseSales=data.sales.reduce(
-(sum,x)=>sum+Number(x.amount),
-0
-);
-
-let affiliateEarn=data.affiliates.reduce(
-(sum,x)=>sum+
-Number(x.commission||0)*
-Number(x.clicks||0),
-0
-);
-
-document.getElementById("courseSales")
-.textContent=money(courseSales);
-
-document.getElementById("affiliateCommission")
-.textContent=money(affiliateEarn);
-
-document.getElementById("totalEarn")
-.textContent=money(
-courseSales+affiliateEarn
-);
-
-document.getElementById("clickCount")
-.textContent=data.clicks;
-
-
-/* HISTORY */
-
-let history=document.getElementById("history");
-
-if(!data.sales.length){
-
-history.innerHTML=
-"<p class='muted'>अभी कोई sale नहीं है।</p>";
-
-}else{
-
-history.innerHTML=data.sales
-.slice().reverse()
-.map(x=>`
-
-<div class="lesson">
-
-<b>
-${escapeHTML(x.name)}
-</b>
-
-<br>
-
-<span class="muted">
-${x.date}
-</span>
-
-<br>
-
-<strong>
-${money(x.amount)}
-</strong>
-
-</div>
-
-`).join("");
-
-}
-
-
-/* MANAGE */
-
-let manage=document.getElementById("manageContent");
-
-let html="";
-
-data.courses.forEach(c=>{
-
-html+=`
-
-<div class="lesson">
-
-<b>
-🎓 ${escapeHTML(c.name)}
-</b>
-
--
-${money(c.price)}
-
-<br><br>
-
-Lessons:
-${c.lessons.length}
-
-<br><br>
-
-<button class="btn red"
-onclick="deleteCourse(${c.id})">
-Delete Course
-</button>
-
-</div>
-
-`;
-
-});
-
-data.affiliates.forEach(a=>{
-
-html+=`
-
-<div class="lesson">
-
-<b>
-🔗 ${escapeHTML(a.name)}
-</b>
-
--
-${money(a.price)}
-
-<br><br>
-
-Clicks:
-${a.clicks}
-
-<br><br>
-
-<button class="btn red"
-onclick="deleteAffiliate(${a.id})">
-Delete Affiliate
-</button>
-
-</div>
-
-`;
-
-});
-
-manage.innerHTML=
-html||
-"<p class='muted'>अभी कोई content नहीं है।</p>";
-
-}
-
-render();
-
-</script>
-
-</body>
-</html>
+    <div class="stat">
+      <small>इस Week</small>
+      <h2>₹1,750
