@@ -785,3 +785,1168 @@ Analytics और long-term affiliate strategy की basics सीखें।
 <li>Growth Planning</li>
 
 </ol>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Padho Aur Kamao - Dashboard</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#172033;
+}
+
+/* TOP HEADER */
+
+.header{
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    color:white;
+    padding:20px;
+}
+
+.header-inner{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    margin-left:15px;
+    font-size:14px;
+}
+
+/* MAIN */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+/* WELCOME */
+
+.welcome{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 5px 20px #00000010;
+}
+
+.welcome h1{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.welcome p{
+    color:#667085;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.stat{
+    background:white;
+    border-radius:16px;
+    padding:20px;
+    box-shadow:0 5px 20px #0000000d;
+}
+
+.stat-icon{
+    font-size:30px;
+}
+
+.stat h3{
+    margin-top:10px;
+    color:#4f46e5;
+}
+
+.stat p{
+    color:#667085;
+    font-size:14px;
+    margin-top:5px;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:25px 0 15px;
+}
+
+.section-title h2{
+    font-size:22px;
+}
+
+.view{
+    color:#6d28d9;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* COURSES */
+
+.courses{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.course{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 20px #0000000d;
+}
+
+.course-top{
+    height:120px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+    background:#ede9fe;
+}
+
+.course-content{
+    padding:17px;
+}
+
+.course-content h3{
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.course-content p{
+    color:#667085;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.progress-box{
+    margin-top:14px;
+}
+
+.progress-bg{
+    height:8px;
+    background:#e5e7eb;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.progress{
+    height:100%;
+    background:#6d28d9;
+    border-radius:10px;
+}
+
+.progress-text{
+    display:flex;
+    justify-content:space-between;
+    margin-top:6px;
+    font-size:12px;
+    color:#667085;
+}
+
+.course-btn{
+    display:block;
+    text-align:center;
+    background:#6d28d9;
+    color:white;
+    padding:10px;
+    border-radius:9px;
+    text-decoration:none;
+    margin-top:14px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* RECENT VIDEO */
+
+.recent{
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 5px 20px #0000000d;
+}
+
+.video-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+.video-item:last-child{
+    border-bottom:none;
+}
+
+.video-icon{
+    min-width:60px;
+    height:60px;
+    background:#111827;
+    color:white;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+}
+
+.video-info{
+    flex:1;
+}
+
+.video-info h3{
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.video-info p{
+    font-size:13px;
+    color:#667085;
+}
+
+.watch{
+    background:#6d28d9;
+    color:white;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:8px;
+    font-size:12px;
+}
+
+/* EARNINGS */
+
+.earnings{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:18px;
+    margin-top:20px;
+}
+
+.earning-card{
+    background:white;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 5px 20px #0000000d;
+}
+
+.earning-number{
+    font-size:32px;
+    font-weight:bold;
+    color:#16a34a;
+    margin:12px 0;
+}
+
+.earning-note{
+    color:#667085;
+    font-size:13px;
+}
+
+/* LEADERBOARD */
+
+.leaderboard{
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    margin-top:20px;
+    box-shadow:0 5px 20px #0000000d;
+}
+
+.rank{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 5px;
+    border-bottom:1px solid #eee;
+}
+
+.rank:last-child{
+    border-bottom:none;
+}
+
+.rank-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.avatar{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#ede9fe;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* COMMUNITY */
+
+.community{
+    background:linear-gradient(135deg,#111827,#312e81);
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    margin-top:25px;
+}
+
+.community h2{
+    margin-bottom:8px;
+}
+
+.community p{
+    color:#d1d5db;
+    font-size:14px;
+}
+
+.community-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:18px;
+    flex-wrap:wrap;
+}
+
+.community-btn{
+    color:white;
+    text-decoration:none;
+    padding:11px 16px;
+    border-radius:9px;
+    background:#6d28d9;
+    font-weight:bold;
+    font-size:14px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:35px;
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+footer p{
+    color:#9ca3af;
+    margin-top:7px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .courses{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .header-inner{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .menu a{
+        margin:0 6px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .courses{
+        grid-template-columns:1fr;
+    }
+
+    .earnings{
+        grid-template-columns:1fr;
+    }
+
+    .welcome h1{
+        font-size:23px;
+    }
+
+    .video-item{
+        align-items:flex-start;
+    }
+
+    .watch{
+        display:none;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+<div class="header-inner">
+
+<div class="logo">
+📚 Padho Aur Kamao
+</div>
+
+<div class="menu">
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="login.html">Login</a>
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<!-- WELCOME -->
+
+<section class="welcome">
+
+<h1>
+Welcome! <span id="userName">Student</span> 👋
+</h1>
+
+<p>
+Learn something new every day and build useful digital skills.
+</p>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat">
+
+<div class="stat-icon">🎓</div>
+
+<h3 id="completedCourses">
+0
+</h3>
+
+<p>
+Courses Completed
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">📈</div>
+
+<h3 id="progress">
+0%
+</h3>
+
+<p>
+Learning Progress
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">💰</div>
+
+<h3>
+₹0
+</h3>
+
+<p>
+Demo Earnings
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">🏆</div>
+
+<h3>
+#4
+</h3>
+
+<p>
+Leaderboard Rank
+</p>
+
+</div>
+
+</section>
+
+
+<!-- COURSES -->
+
+<div class="section-title">
+
+<h2>
+📦 My Courses
+</h2>
+
+<a class="view" href="index.html">
+View All →
+</a>
+
+</div>
+
+
+<section class="courses">
+
+
+<!-- COURSE 1 -->
+
+<div class="course">
+
+<div class="course-top">
+📱
+</div>
+
+<div class="course-content">
+
+<h3>
+Affiliate Marketing Basics
+</h3>
+
+<p>
+Affiliate Marketing की शुरुआत और basic concepts.
+</p>
+
+<div class="progress-box">
+
+<div class="progress-bg">
+
+<div
+class="progress"
+style="width:25%">
+</div>
+
+</div>
+
+<div class="progress-text">
+
+<span>Progress</span>
+
+<span>25%</span>
+
+</div>
+
+</div>
+
+<a
+class="course-btn"
+href="course1.html">
+
+Continue Course →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- COURSE 2 -->
+
+<div class="course">
+
+<div class="course-top">
+🚀
+</div>
+
+<div class="course-content">
+
+<h3>
+Instagram & YouTube Marketing
+</h3>
+
+<p>
+Content creation और audience building basics.
+</p>
+
+<div class="progress-box">
+
+<div class="progress-bg">
+
+<div
+class="progress"
+style="width:0%">
+</div>
+
+</div>
+
+<div class="progress-text">
+
+<span>Progress</span>
+
+<span>0%</span>
+
+</div>
+
+</div>
+
+<a
+class="course-btn"
+href="course2.html">
+
+Start Course →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- COURSE 3 -->
+
+<div class="course">
+
+<div class="course-top">
+🔗
+</div>
+
+<div class="course-content">
+
+<h3>
+Affiliate Link & Promotion
+</h3>
+
+<p>
+Affiliate links और responsible promotion.
+</p>
+
+<div class="progress-box">
+
+<div class="progress-bg">
+
+<div
+class="progress"
+style="width:0%">
+</div>
+
+</div>
+
+<div class="progress-text">
+
+<span>Progress</span>
+
+<span>0%</span>
+
+</div>
+
+</div>
+
+<a
+class="course-btn"
+href="course3.html">
+
+Start Course →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- COURSE 4 -->
+
+<div class="course">
+
+<div class="course-top">
+💰
+</div>
+
+<div class="course-content">
+
+<h3>
+Advanced Affiliate Marketing
+</h3>
+
+<p>
+Analytics, funnel और long-term growth.
+</p>
+
+<div class="progress-box">
+
+<div class="progress-bg">
+
+<div
+class="progress"
+style="width:0%">
+</div>
+
+</div>
+
+<div class="progress-text">
+
+<span>Progress</span>
+
+<span>0%</span>
+
+</div>
+
+</div>
+
+<a
+class="course-btn"
+href="course4.html">
+
+Start Course →
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RECENT WATCH -->
+
+<div class="section-title">
+
+<h2>
+▶️ Recent Watch Video
+</h2>
+
+</div>
+
+
+<section class="recent">
+
+
+<div class="video-item">
+
+<div class="video-icon">
+▶️
+</div>
+
+<div class="video-info">
+
+<h3>
+1. Affiliate Marketing Introduction
+</h3>
+
+<p>
+Affiliate Marketing Basics
+</p>
+
+</div>
+
+<a
+class="watch"
+href="course1.html">
+
+Watch
+
+</a>
+
+</div>
+
+
+<div class="video-item">
+
+<div class="video-icon">
+▶️
+</div>
+
+<div class="video-info">
+
+<h3>
+2. Niche Selection
+</h3>
+
+<p>
+Affiliate Marketing Basics
+</p>
+
+</div>
+
+<a
+class="watch"
+href="course1.html">
+
+Watch
+
+</a>
+
+</div>
+
+
+<div class="video-item">
+
+<div class="video-icon">
+▶️
+</div>
+
+<div class="video-info">
+
+<h3>
+3. Content Strategy
+</h3>
+
+<p>
+Instagram & YouTube Marketing
+</p>
+
+</div>
+
+<a
+class="watch"
+href="course2.html">
+
+Watch
+
+</a>
+
+</div>
+
+
+<div class="video-item">
+
+<div class="video-icon">
+▶️
+</div>
+
+<div class="video-info">
+
+<h3>
+4. Affiliate Links Basics
+</h3>
+
+<p>
+Affiliate Link & Promotion
+</p>
+
+</div>
+
+<a
+class="watch"
+href="course3.html">
+
+Watch
+
+</a>
+
+</div>
+
+
+</section>
+
+
+<!-- EARNINGS -->
+
+<div class="section-title">
+
+<h2>
+💰 Earnings Dashboard
+</h2>
+
+</div>
+
+
+<section class="earnings">
+
+
+<div class="earning-card">
+
+<p>
+Total Earnings
+</p>
+
+<div class="earning-number">
+₹0
+</div>
+
+<p class="earning-note">
+Your actual affiliate commission depends on
+eligible sales and the affiliate program's terms.
+</p>
+
+</div>
+
+
+<div class="earning-card">
+
+<p>
+This Month
+</p>
+
+<div class="earning-number">
+₹0
+</div>
+
+<p class="earning-note">
+Monthly demo amount
+</p>
+
+</div>
+
+
+</section>
+
+
+<!-- LEADERBOARD -->
+
+<section class="leaderboard">
+
+<h2>
+🏆 Top Learners
+</h2>
+
+
+<div class="rank">
+
+<div class="rank-left">
+
+<div class="avatar">
+🥇
+</div>
+
+<div>
+<b>Rahul</b>
+<br>
+<small>12 Courses</small>
+</div>
+
+</div>
+
+<strong>
+₹12,500
+</strong>
+
+</div>
+
+
+<div class="rank">
+
+<div class="rank-left">
+
+<div class="avatar">
+🥈
+</div>
+
+<div>
+<b>Aman</b>
+<br>
+<small>10 Courses</small>
+</div>
+
+</div>
+
+<strong>
+₹9,800
+</strong>
+
+</div>
+
+
+<div class="rank">
+
+<div class="rank-left">
+
+<div class="avatar">
+🥉
+</div>
+
+<div>
+<b>Priya</b>
+<br>
+<small>8 Courses</small>
+</div>
+
+</div>
+
+<strong>
+₹7,600
+</strong>
+
+</div>
+
+
+<div class="rank">
+
+<div class="rank-left">
+
+<div class="avatar">
+👤
+</div>
+
+<div>
+<b id="leaderName">
+You
+</b>
+
+<br>
+
+<small>
+Your Progress
+</small>
+
+</div>
+
+</div>
+
+<strong>
+₹0
+</strong>
+
+</div>
+
+
+</section>
+
+
+<!-- COMMUNITY -->
+
+<section class="community">
+
+<h2>
+💬 Join Our Learning Community
+</h2>
+
+<p>
+Learning updates और educational discussions के लिए community से जुड़ें।
+</p>
+
+<div class="community-buttons">
+
+<a
+class="community-btn"
+href="#"
+onclick="alert('अपना WhatsApp Channel link यहाँ लगाएँ');return false;">
+
+💬 WhatsApp Community
+
+</a>
+
+<a
+class="community-btn"
+href="#"
+onclick="alert('अपना Telegram Group link यहाँ लगाएँ');return false;">
+
+✈️ Telegram Group
+
+</a>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>
+📚 Padho Aur Kamao
+</h3>
+
+<p>
+Learn • Grow • Build Skills
+</p>
+
+<p>
+© 2026 Padho Aur Kamao
+</p>
+
+</footer>
+
+
+<script>
+
+/* USER NAME */
+
+let savedName =
+localStorage.getItem("userName");
+
+if(savedName){
+
+document.getElementById("userName")
+.innerText = savedName;
+
+document.getElementById("leaderName")
+.innerText = savedName;
+
+}
+
+
+/* COURSE PROGRESS */
+
+let completed =
+Number(
+localStorage.getItem("completedCourses") || 0
+);
+
+document.getElementById("completedCourses")
+.innerText = completed;
+
+
+let progress =
+Math.min(
+completed * 25,
+100
+);
+
+document.getElementById("progress")
+.innerText =
+progress + "%";
+
+
+</script>
+
+</body>
+</html>
