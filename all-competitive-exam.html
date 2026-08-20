@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -23,9 +22,6 @@ header{
   background:linear-gradient(135deg,#5b21b6,#7c3aed);
   color:white;
   padding:16px 20px;
-  position:sticky;
-  top:0;
-  z-index:10;
 }
 
 .nav{
@@ -53,11 +49,11 @@ header{
 .container{
   max-width:1100px;
   margin:auto;
-  padding:25px 18px 60px;
+  padding:25px 15px 70px;
 }
 
 .hero{
-  background:linear-gradient(135deg,#5b21b6,#7c3aed);
+  background:linear-gradient(135deg,#5b21b6,#8b5cf6);
   color:white;
   padding:30px;
   border-radius:22px;
@@ -66,7 +62,6 @@ header{
 
 .hero h1{
   margin:0 0 10px;
-  font-size:32px;
 }
 
 .hero p{
@@ -74,194 +69,69 @@ header{
   line-height:1.6;
 }
 
-.info{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  margin-bottom:25px;
-}
-
-.info-card{
-  background:white;
-  padding:20px;
-  border-radius:17px;
-  box-shadow:0 5px 20px #0001;
-  text-align:center;
-}
-
-.info-icon{
-  font-size:30px;
-}
-
-.info-card strong{
-  display:block;
-  margin-top:8px;
-  font-size:20px;
-  color:#5b21b6;
-}
-
 .section-title{
-  margin:28px 0 15px;
+  margin:30px 0 15px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
 }
 
 .card{
   background:white;
   padding:22px;
   border-radius:18px;
-  margin-bottom:18px;
   box-shadow:0 5px 20px #0001;
 }
 
-.exam-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:15px;
+.card h3{
+  margin-top:0;
 }
 
-.exam{
-  background:#f5f3ff;
-  padding:20px;
-  border-radius:15px;
-}
-
-.exam-icon{
-  font-size:38px;
-}
-
-.exam h3{
-  margin:10px 0 7px;
-}
-
-.exam p{
-  color:#6b7280;
-  line-height:1.5;
-}
-
-.subjects{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
-
-.subject{
-  background:#f9fafb;
-  border:1px solid #e5e7eb;
-  padding:16px;
-  border-radius:12px;
-}
-
-.lesson{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  padding:17px 0;
-  border-bottom:1px solid #eee;
-}
-
-.lesson:last-child{
-  border-bottom:0;
-}
-
-.lesson-info{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.lesson-icon{
-  font-size:28px;
-}
-
-.lesson h3{
-  margin:0 0 4px;
-}
-
-.lesson p{
-  margin:0;
-  color:#6b7280;
-  font-size:14px;
-}
-
-.watch{
+.btn{
+  display:block;
+  text-align:center;
   background:#6d28d9;
   color:white;
-  border:0;
-  padding:10px 15px;
-  border-radius:9px;
+  text-decoration:none;
+  padding:12px;
+  border-radius:10px;
   font-weight:bold;
-  cursor:pointer;
+  margin-top:15px;
 }
 
-.assessment{
+.board{
   background:#eef2ff;
-  padding:22px;
-  border-radius:15px;
+  padding:18px;
+  border-radius:14px;
+  margin-top:12px;
 }
 
-.assessment-btn{
+.board a{
   display:inline-block;
-  margin-top:10px;
-  background:#5b21b6;
-  color:white;
-  padding:12px 18px;
-  border-radius:9px;
+  margin:6px 5px 0 0;
+  padding:9px 13px;
+  background:white;
+  color:#5b21b6;
+  border-radius:8px;
   text-decoration:none;
   font-weight:bold;
 }
 
-.note{
-  background:#fff7ed;
-  border-left:4px solid #f59e0b;
-  padding:15px;
-  border-radius:8px;
-  line-height:1.6;
-}
-
-@media(max-width:750px){
-
-  .info{
+@media(max-width:650px){
+  .grid{
     grid-template-columns:1fr;
   }
 
-  .exam-grid{
-    grid-template-columns:1fr;
+  .hero{
+    padding:23px;
   }
-
-  .subjects{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .hero h1{
-    font-size:26px;
-  }
-
-}
-
-@media(max-width:500px){
 
   .logo{
     font-size:16px;
   }
-
-  .back{
-    padding:8px 11px;
-    font-size:13px;
-  }
-
-  .subjects{
-    grid-template-columns:1fr;
-  }
-
-  .lesson{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .watch{
-    width:100%;
-  }
-
 }
 </style>
 </head>
@@ -270,127 +140,325 @@ header{
 
 <header>
 
-  <div class="nav">
+<div class="nav">
 
-    <div class="logo">
-      📚 Padho Aur Kamao
-    </div>
+<div class="logo">
+📚 Padho Aur Kamao
+</div>
 
-    <a
-      href="dashboard.html"
-      class="back">
+<a href="dashboard.html" class="back">
+← Dashboard
+</a>
 
-      ← Dashboard
-
-    </a>
-
-  </div>
+</div>
 
 </header>
 
 
 <main class="container">
 
+<section class="hero">
 
-  <!-- HERO -->
+<h1>
+🎓 All Competitive Exam
+</h1>
 
-  <section class="hero">
+<p>
+10वीं • 12वीं • सभी Boards • Competitive Exams
+</p>
 
-    <h1>
-      🎓 All Competitive Exam
-    </h1>
+<p>
+अपने level और exam के अनुसार course चुनें।
+</p>
 
-    <p>
-      10th और 12th level exams के लिए
-      preparation, practice और assessment।
-    </p>
-
-  </section>
-
-
-  <!-- COURSE INFO -->
-
-  <section class="info">
-
-    <div class="info-card">
-
-      <div class="info-icon">
-        💰
-      </div>
-
-      <strong>
-        ₹399
-      </strong>
-
-      <span>
-        Course Price
-      </span>
-
-    </div>
+</section>
 
 
-    <div class="info-card">
+<!-- 10TH -->
 
-      <div class="info-icon">
-        🎓
-      </div>
+<h2 class="section-title">
+📘 10वीं कक्षा
+</h2>
 
-      <strong>
-        10th + 12th
-      </strong>
+<section class="grid">
 
-      <span>
-        Exam Level
-      </span>
+<div class="card">
 
-    </div>
+<h3>🇮🇳 UP Board Class 10</h3>
 
+<p>
+UP Board के Class 10 subjects और chapters।
+</p>
 
-    <div class="info-card">
+<a href="10th.html?board=up" class="btn">
+Open UP Board 10th
+</a>
 
-      <div class="info-icon">
-        📝
-      </div>
-
-      <strong>
-        Assessment
-      </strong>
-
-      <span>
-        Practice & Test
-      </span>
-
-    </div>
-
-  </section>
+</div>
 
 
-  <!-- ABOUT -->
+<div class="card">
 
-  <h2 class="section-title">
-    📖 Course के बारे में
-  </h2>
+<h3>📚 CBSE Class 10</h3>
 
-  <section class="card">
+<p>
+CBSE Class 10 subjects और chapter-wise learning।
+</p>
 
-    <p style="line-height:1.7;">
+<a href="10th.html?board=cbse" class="btn">
+Open CBSE 10th
+</a>
 
-      All Competitive Exam course में 10th और 12th
-      level की exam preparation के लिए study material,
-      practice questions और assessment उपलब्ध कराया
-      जा सकता है।
-
-    </p>
-
-  </section>
+</div>
 
 
-  <!-- EXAM LEVEL -->
+<div class="card">
 
-  <h2 class="section-title">
-    🎓 Exam Levels
-  </h2>
+<h3>📚 Bihar Board Class 10</h3>
 
-  <section class="card">
+<p>
+Bihar Board Class 10 preparation।
+</p>
 
-    <div class="exam
+<a href="10th.html?board=bihar" class="btn">
+Open Bihar Board
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>📚 Other Boards</h3>
+
+<p>
+अन्य Boards के लिए अलग section।
+</p>
+
+<a href="10th.html?board=other" class="btn">
+Open Other Boards
+</a>
+
+</div>
+
+</section>
+
+
+<!-- 12TH -->
+
+<h2 class="section-title">
+📕 12वीं कक्षा
+</h2>
+
+<section class="grid">
+
+<div class="card">
+
+<h3>🇮🇳 UP Board Class 12</h3>
+
+<p>
+UP Board Class 12 subjects और chapters।
+</p>
+
+<a href="12th.html?board=up" class="btn">
+Open UP Board 12th
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>📚 CBSE Class 12</h3>
+
+<p>
+CBSE Class 12 chapter-wise preparation।
+</p>
+
+<a href="12th.html?board=cbse" class="btn">
+Open CBSE 12th
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>📚 Bihar Board Class 12</h3>
+
+<p>
+Bihar Board Class 12 preparation।
+</p>
+
+<a href="12th.html?board=bihar" class="btn">
+Open Bihar Board
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>📚 Other Boards</h3>
+
+<p>
+अन्य Boards के लिए अलग section।
+</p>
+
+<a href="12th.html?board=other" class="btn">
+Open Other Boards
+</a>
+
+</div>
+
+</section>
+
+
+<!-- COMPETITIVE -->
+
+<h2 class="section-title">
+🏆 All Competitive Exams
+</h2>
+
+<section class="grid">
+
+<div class="card">
+
+<h3>👮 SSC</h3>
+
+<p>
+SSC GD, CGL, CHSL और अन्य exams।
+</p>
+
+<a href="competitive.html?exam=ssc" class="btn">
+SSC Chapters
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>🚂 Railway</h3>
+
+<p>
+Railway exams के subjects और chapters।
+</p>
+
+<a href="competitive.html?exam=railway" class="btn">
+Railway Chapters
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>🏦 Banking</h3>
+
+<p>
+Banking exams के लिए chapter-wise learning।
+</p>
+
+<a href="competitive.html?exam=banking" class="btn">
+Banking Chapters
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>👮 Police & Defence</h3>
+
+<p>
+Police, Defence और अन्य exams की preparation।
+</p>
+
+<a href="competitive.html?exam=police" class="btn">
+Police & Defence
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>📝 General Competitive</h3>
+
+<p>
+Maths, Reasoning, Hindi, English, GS और Current Affairs।
+</p>
+
+<a href="competitive.html?exam=general" class="btn">
+All Subjects
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>🎯 Practice & Assessment</h3>
+
+<p>
+Chapter-wise practice और assessment।
+</p>
+
+<a href="competitive.html?exam=test" class="btn">
+Start Practice
+</a>
+
+</div>
+
+</section>
+
+
+<!-- BOARD LIST -->
+
+<h2 class="section-title">
+📚 Boards
+</h2>
+
+<section class="card">
+
+<div class="board">
+
+<strong>10th & 12th Boards</strong>
+
+<br>
+
+<a href="10th.html?board=up">UP Board</a>
+
+<a href="10th.html?board=cbse">CBSE</a>
+
+<a href="10th.html?board=bihar">Bihar Board</a>
+
+<a href="10th.html?board=other">Other Boards</a>
+
+</div>
+
+</section>
+
+
+<section class="card" style="margin-top:20px;">
+
+<h3>💡 Course Structure</h3>
+
+<p>
+हर Board और Competitive Exam के अंदर
+subjects → chapters → videos → practice
+का structure रखा जा सकता है।
+</p>
+
+<p>
+आप बाद में हर chapter में अपना video,
+notes और assessment जोड़ सकते हैं।
+</p>
+
+</section>
+
+</main>
+
+</body>
+</html>
