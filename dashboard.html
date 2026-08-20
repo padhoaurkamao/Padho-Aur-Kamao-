@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -8,7 +7,6 @@
 <title>Dashboard - Padho Aur Kamao</title>
 
 <style>
-
 *{
   box-sizing:border-box;
 }
@@ -281,9 +279,7 @@ header{
   width:97px;
   height:110px;
   background:linear-gradient(135deg,#ffffff,#dbeafe);
-  box-shadow:
-    inset 0 0 8px #0001,
-    0 5px 10px #0003;
+  box-shadow:inset 0 0 8px #0001,0 5px 10px #0003;
 }
 
 .book-left{
@@ -388,40 +384,32 @@ header{
   font-weight:bold;
 }
 
-/* BUTTONS */
-
-.course-btn,
-.buy-btn,
-.access-btn{
+.course-btn{
   display:block;
   width:100%;
   text-align:center;
-  border:0;
   background:#6d28d9;
   color:white;
-  padding:13px;
+  padding:12px;
   border-radius:10px;
   text-decoration:none;
   font-weight:bold;
   margin-top:18px;
+  border:0;
   cursor:pointer;
+  font-size:15px;
 }
 
-.course-btn:hover,
-.buy-btn:hover{
+.course-btn:hover{
   background:#5b21b6;
 }
 
-.access-btn{
+.open-btn{
   background:#16a34a;
 }
 
-.access-btn:hover{
+.open-btn:hover{
   background:#15803d;
-}
-
-.buy-btn{
-  background:#2563eb;
 }
 
 /* PROFILE */
@@ -447,148 +435,6 @@ header{
 
 .label{
   color:#6b7280;
-}
-
-/* MODAL */
-
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:#0009;
-  z-index:9999;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-}
-
-.modal-box{
-  width:100%;
-  max-width:450px;
-  background:white;
-  border-radius:22px;
-  padding:25px;
-  box-shadow:0 15px 50px #0005;
-  animation:popup .2s ease;
-}
-
-@keyframes popup{
-  from{
-    transform:scale(.9);
-    opacity:0;
-  }
-  to{
-    transform:scale(1);
-    opacity:1;
-  }
-}
-
-.modal-title{
-  margin-top:0;
-  color:#5b21b6;
-}
-
-.modal-price{
-  font-size:25px;
-  font-weight:bold;
-  color:#16a34a;
-  margin:15px 0;
-}
-
-.coupon-title{
-  font-weight:bold;
-  margin-top:18px;
-}
-
-.coupon-box{
-  display:flex;
-  gap:8px;
-  margin-top:8px;
-}
-
-.coupon-box input{
-  flex:1;
-  padding:13px;
-  border:1px solid #d1d5db;
-  border-radius:10px;
-  outline:none;
-}
-
-.coupon-box button{
-  border:0;
-  background:#f59e0b;
-  color:white;
-  padding:0 15px;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.discount-text{
-  margin-top:10px;
-  color:#16a34a;
-  font-weight:bold;
-  display:none;
-}
-
-.final-price{
-  background:#f5f3ff;
-  padding:14px;
-  border-radius:12px;
-  margin-top:15px;
-  text-align:center;
-}
-
-.final-price span{
-  font-size:25px;
-  font-weight:bold;
-  color:#6d28d9;
-}
-
-.confirm-btn{
-  width:100%;
-  border:0;
-  background:#16a34a;
-  color:white;
-  padding:14px;
-  border-radius:11px;
-  margin-top:15px;
-  font-weight:bold;
-  font-size:16px;
-  cursor:pointer;
-}
-
-.confirm-btn:hover{
-  background:#15803d;
-}
-
-.close-btn{
-  width:100%;
-  border:0;
-  background:#e5e7eb;
-  color:#374151;
-  padding:13px;
-  border-radius:11px;
-  margin-top:10px;
-  cursor:pointer;
-}
-
-.modal-message{
-  margin-top:12px;
-  padding:12px;
-  border-radius:10px;
-  display:none;
-  font-weight:bold;
-}
-
-.success{
-  background:#dcfce7;
-  color:#166534;
-}
-
-.error{
-  background:#fee2e2;
-  color:#991b1b;
 }
 
 /* BOTTOM NAV */
@@ -617,6 +463,153 @@ header{
   display:block;
   font-size:22px;
   margin-bottom:2px;
+}
+
+/* =================================
+   PURCHASE POPUP
+================================= */
+
+.purchase-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#0009;
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+
+.purchase-box{
+  width:100%;
+  max-width:430px;
+  background:white;
+  border-radius:24px;
+  padding:28px;
+  position:relative;
+  box-shadow:0 20px 60px #0005;
+  animation:popup .25s ease;
+}
+
+@keyframes popup{
+  from{
+    transform:scale(.85);
+    opacity:0;
+  }
+
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.close-purchase{
+  position:absolute;
+  right:14px;
+  top:12px;
+  border:0;
+  background:#f3f4f6;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.purchase-logo{
+  width:70px;
+  height:70px;
+  margin:auto;
+  border-radius:20px;
+  background:linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:38px;
+}
+
+.purchase-box h2{
+  text-align:center;
+  margin:15px 0 8px;
+}
+
+.purchase-box p{
+  text-align:center;
+  color:#6b7280;
+}
+
+.purchase-price{
+  text-align:center;
+  font-size:30px;
+  font-weight:bold;
+  color:#16a34a;
+  margin:15px;
+}
+
+.purchase-box label{
+  display:block;
+  font-weight:bold;
+  margin-bottom:7px;
+}
+
+.purchase-box input{
+  width:100%;
+  padding:13px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  font-size:16px;
+  outline:none;
+}
+
+.purchase-box input:focus{
+  border-color:#7c3aed;
+}
+
+.apply-coupon{
+  width:100%;
+  margin-top:10px;
+  padding:12px;
+  border:0;
+  border-radius:10px;
+  background:#ede9fe;
+  color:#6d28d9;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.coupon-message{
+  margin-top:10px;
+  text-align:center;
+  font-weight:bold;
+  min-height:20px;
+}
+
+.final-price{
+  text-align:center;
+  font-size:20px;
+  font-weight:bold;
+  margin:18px 0;
+}
+
+.confirm-purchase{
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:12px;
+  background:#16a34a;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.confirm-purchase:disabled{
+  opacity:.6;
+  cursor:not-allowed;
 }
 
 /* MOBILE */
@@ -696,16 +689,11 @@ header{
     height:170px;
   }
 
-  .coupon-box{
-    flex-direction:column;
-  }
-
-  .coupon-box button{
-    padding:12px;
+  .purchase-box{
+    padding:22px;
   }
 
 }
-
 </style>
 </head>
 
@@ -713,397 +701,471 @@ header{
 
 <header>
 
-<div class="header">
+  <div class="header">
 
-<div class="logo">
-📚 Padho Aur Kamao
-</div>
+    <div class="logo">
+      📚 Padho Aur Kamao
+    </div>
 
-<button id="logoutBtn" class="logout">
-🚪 Logout
-</button>
+    <button id="logoutBtn" class="logout">
+      🚪 Logout
+    </button>
 
-</div>
+  </div>
 
 </header>
 
 
 <main class="container">
 
+<!-- WELCOME -->
 
 <section class="welcome">
 
-<h1>
-👋 Welcome to Padho Aur Kamao
-</h1>
+  <h1>
+    👋 Welcome to Padho Aur Kamao
+  </h1>
 
-<p id="welcomeText">
-आपका Dashboard तैयार है।
-</p>
+  <p id="welcomeText">
+    आपका Dashboard तैयार है।
+  </p>
 
 </section>
 
+
+<!-- STATS -->
 
 <section class="stats">
 
-<div class="stat">
-<div class="stat-icon">💰</div>
-<div class="stat-title">Total Earnings</div>
-<div class="stat-value">₹0</div>
-</div>
+  <div class="stat">
+    <div class="stat-icon">💰</div>
+    <div class="stat-title">
+      Total Earnings
+    </div>
+    <div class="stat-value">
+      ₹0
+    </div>
+  </div>
 
-<div class="stat">
-<div class="stat-icon">📅</div>
-<div class="stat-title">This Week</div>
-<div class="stat-value">₹0</div>
-</div>
+  <div class="stat">
+    <div class="stat-icon">📅</div>
+    <div class="stat-title">
+      This Week
+    </div>
+    <div class="stat-value">
+      ₹0
+    </div>
+  </div>
 
-<div class="stat">
-<div class="stat-icon">📆</div>
-<div class="stat-title">This Month</div>
-<div class="stat-value">₹0</div>
-</div>
+  <div class="stat">
+    <div class="stat-icon">📆</div>
+    <div class="stat-title">
+      This Month
+    </div>
+    <div class="stat-value">
+      ₹0
+    </div>
+  </div>
 
-<div class="stat">
-<div class="stat-icon">📈</div>
-<div class="stat-title">This Year</div>
-<div class="stat-value">₹0</div>
-</div>
+  <div class="stat">
+    <div class="stat-icon">📈</div>
+    <div class="stat-title">
+      This Year
+    </div>
+    <div class="stat-value">
+      ₹0
+    </div>
+  </div>
 
 </section>
 
 
+<!-- QUICK ACCESS -->
+
 <h2 class="section-title">
-⚡ Quick Access
+  ⚡ Quick Access
 </h2>
 
 <section class="actions">
 
-<a class="action" href="#courses">
-<div class="action-icon">📚</div>
-<h3>My Courses</h3>
-<p>अपने courses और lessons देखें</p>
-</a>
+  <a class="action" href="#courses">
+    <div class="action-icon">📚</div>
+    <h3>My Courses</h3>
+    <p>अपने courses और lessons देखें</p>
+  </a>
 
-<a class="action" href="#videos">
-<div class="action-icon">🎥</div>
-<h3>Learning Videos</h3>
-<p>अपने learning videos देखें</p>
-</a>
+  <a class="action" href="#videos">
+    <div class="action-icon">🎥</div>
+    <h3>Learning Videos</h3>
+    <p>अपने learning videos देखें</p>
+  </a>
 
-<a class="action" href="#leaderboard">
-<div class="action-icon">🏆</div>
-<h3>Leaderboard</h3>
-<p>Learning performance देखें</p>
-</a>
+  <a class="action" href="#leaderboard">
+    <div class="action-icon">🏆</div>
+    <h3>Leaderboard</h3>
+    <p>Learning performance देखें</p>
+  </a>
 
-<a class="action" href="#profile">
-<div class="action-icon">👤</div>
-<h3>My Profile</h3>
-<p>Account details देखें</p>
-</a>
+  <a class="action" href="#profile">
+    <div class="action-icon">👤</div>
+    <h3>My Profile</h3>
+    <p>Account details देखें</p>
+  </a>
 
 </section>
 
 
+<!-- REFERRAL -->
+
 <h2 class="section-title">
-🔗 My Referral
+  🔗 My Referral
 </h2>
 
 <section class="referral">
 
-<h3>
-आपका Referral Link
-</h3>
+  <h3>
+    आपका Referral Link
+  </h3>
 
-<p>
-इस link को share करके लोगों को आपके platform तक
-पहुँचाया जा सकता है।
-</p>
+  <p>
+    इस link को share करके लोगों को आपके platform तक
+    पहुँचाया जा सकता है।
+  </p>
 
-<div class="referral-box">
+  <div class="referral-box">
 
-<input
-id="referralLink"
-type="text"
-readonly
-placeholder="Referral link तैयार हो रहा है..."
->
+    <input
+      id="referralLink"
+      type="text"
+      readonly
+      placeholder="Referral link तैयार हो रहा है..."
+    >
 
-<button
-id="copyBtn"
-class="copy-btn">
-Copy
-</button>
+    <button
+      id="copyBtn"
+      class="copy-btn">
+      Copy
+    </button>
 
-</div>
+  </div>
 
-<div class="referral-stats">
+  <div class="referral-stats">
 
-<div class="ref-card">
-👥 Referrals
-<strong id="referralCount">0</strong>
-</div>
+    <div class="ref-card">
+      👥 Referrals
+      <strong id="referralCount">
+        0
+      </strong>
+    </div>
 
-<div class="ref-card">
-⭐ Points
-<strong id="referralPoints">0</strong>
-</div>
+    <div class="ref-card">
+      ⭐ Points
+      <strong id="referralPoints">
+        0
+      </strong>
+    </div>
 
-<div class="ref-card">
-🎯 Status
-<strong id="referralStatus">Active</strong>
-</div>
+    <div class="ref-card">
+      🎯 Status
+      <strong>
+        Active
+      </strong>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
 
-<h2 class="section-title" id="courses">
-📚 My Courses
-</h2>
+<!-- COURSES -->
 
+<h2 class="section-title" id="courses">
+  📚 Courses
+</h2>
 
 <section class="courses">
 
 
-<!-- COURSE 1 -->
+<!-- STEP TO SUCCESS -->
 
 <div class="course">
 
-<div class="course-icon">
+  <div class="course-icon">
 
-<div class="book">
+    <div class="book">
 
-<div class="book-page book-left"></div>
+      <div class="book-page book-left"></div>
 
-<div class="book-page book-right"></div>
+      <div class="book-page book-right"></div>
 
-<div class="book-center"></div>
+      <div class="book-center"></div>
 
-<div class="book-brand">
+      <div class="book-brand">
 
-<span class="top-text">
-PADHO
-</span>
+        <span class="top-text">
+          PADHO
+        </span>
 
-<span class="and">
-&
-</span>
+        <span class="and">
+          &
+        </span>
 
-<span class="bottom-text">
-KAMAO
-</span>
+        <span class="bottom-text">
+          KAMAO
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="course-content">
+
+    <h3>
+      Step To Success
+    </h3>
+
+    <p>
+      Lead Generation, Communication Skills,
+      Maths, Reasoning, Hindi और General Studies
+      (GS) की learning।
+    </p>
+
+    <div class="course-details">
+
+      <div class="price">
+        💰 Price: ₹199
+      </div>
+
+      <div class="commission">
+        🎯 Commission per Sale: ₹100
+      </div>
+
+      <div class="passive">
+        🔗 Passive Income: ₹20
+      </div>
+
+    </div>
+
+
+    <!-- BUY BUTTON -->
+
+    <button
+      class="course-btn buy-btn"
+      data-course="step"
+      data-title="Step To Success"
+      data-price="199">
+
+      🛒 Buy Course ₹199
+
+    </button>
+
+
+    <!-- OPEN BUTTON -->
+
+    <a
+      class="course-btn open-btn"
+      id="open-step"
+      href="step-to-success.html"
+      style="display:none;">
+
+      ▶️ Open Course
+
+    </a>
+
+  </div>
 
 </div>
 
-</div>
 
-</div>
-
-
-<div class="course-content">
-
-<h3>
-Step To Success
-</h3>
-
-<p>
-Lead Generation, Communication Skills,
-Maths, Reasoning, Hindi और General Studies
-(GS) की learning।
-</p>
-
-<div class="course-details">
-
-<div class="price">
-💰 Price: ₹199
-</div>
-
-<div class="commission">
-🎯 Commission per Sale: ₹100
-</div>
-
-<div class="passive">
-🔗 Passive Income: ₹20
-</div>
-
-</div>
-
-<button
-class="buy-btn"
-data-course="step">
-
-🛒 Buy Course ₹199
-
-</button>
-
-<div
-id="status-step"
-style="margin-top:10px;text-align:center;font-weight:bold;">
-</div>
-
-</div>
-
-</div>
-
-
-<!-- COURSE 2 -->
+<!-- ALL COMPETITIVE EXAM -->
 
 <div class="course">
 
-<div class="course-icon">
+  <div class="course-icon">
 
-<div class="book">
+    <div class="book">
 
-<div class="book-page book-left"></div>
+      <div class="book-page book-left"></div>
 
-<div class="book-page book-right"></div>
+      <div class="book-page book-right"></div>
 
-<div class="book-center"></div>
+      <div class="book-center"></div>
 
-<div class="book-brand">
+      <div class="book-brand">
 
-<span class="top-text">
-PADHO
-</span>
+        <span class="top-text">
+          PADHO
+        </span>
 
-<span class="and">
-&
-</span>
+        <span class="and">
+          &
+        </span>
 
-<span class="bottom-text">
-KAMAO
-</span>
+        <span class="bottom-text">
+          KAMAO
+        </span>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 
-<div class="course-content">
+  <div class="course-content">
 
-<h3>
-All Competitive Exam
-</h3>
+    <h3>
+      All Competitive Exam
+    </h3>
 
-<p>
-10th और 12th level exams की preparation,
-practice और assessment।
-</p>
+    <p>
+      10th और 12th level exams की preparation,
+      practice और assessment।
+    </p>
 
-<div class="course-details">
+    <div class="course-details">
 
-<div class="price">
-💰 Price: ₹399
-</div>
+      <div class="price">
+        💰 Price: ₹399
+      </div>
 
-<div class="commission">
-🎯 Commission per Sale: ₹200
-</div>
+      <div class="commission">
+        🎯 Commission per Sale: ₹200
+      </div>
 
-<div class="passive">
-🔗 Passive Income: ₹50
-</div>
+      <div class="passive">
+        🔗 Passive Income: ₹50
+      </div>
 
-</div>
+    </div>
 
-<button
-class="buy-btn"
-data-course="competitive">
 
-🛒 Buy Course ₹399
+    <!-- BUY BUTTON -->
 
-</button>
+    <button
+      class="course-btn buy-btn"
+      data-course="competitive"
+      data-title="All Competitive Exam"
+      data-price="399">
 
-<div
-id="status-competitive"
-style="margin-top:10px;text-align:center;font-weight:bold;">
-</div>
+      🛒 Buy Course ₹399
 
-</div>
+    </button>
+
+
+    <!-- OPEN BUTTON -->
+
+    <a
+      class="course-btn open-btn"
+      id="open-competitive"
+      href="all-competitive-exam.html"
+      style="display:none;">
+
+      ▶️ Open Course
+
+    </a>
+
+  </div>
 
 </div>
 
 </section>
 
+
+<!-- VIDEOS -->
 
 <h2 class="section-title" id="videos">
-🎥 Learning Videos
+  🎥 Learning Videos
 </h2>
 
 <section class="profile">
 
-<p>
-Course purchase करने के बाद संबंधित course
-को access करके videos देख सकते हैं।
-</p>
+  <p>
+    आपके course videos संबंधित course page पर
+    उपलब्ध होंगे।
+  </p>
+
+  <a
+    href="step-to-success.html"
+    class="course-btn">
+    🚀 Step To Success Videos
+  </a>
+
+  <a
+    href="all-competitive-exam.html"
+    class="course-btn">
+    🎓 Competitive Exam Videos
+  </a>
 
 </section>
 
+
+<!-- LEADERBOARD -->
 
 <h2 class="section-title" id="leaderboard">
-🏆 Leaderboard
+  🏆 Leaderboard
 </h2>
 
 <section class="profile">
 
-<p>
-Leaderboard learning activity और progress
-के आधार पर दिखाया जा सकता है।
-</p>
+  <p>
+    Leaderboard learning activity और progress
+    के आधार पर दिखाया जा सकता है।
+  </p>
 
-<strong>
-आपका वर्तमान score: 0
-</strong>
+  <strong>
+    आपका वर्तमान score: 0
+  </strong>
 
 </section>
 
 
+<!-- PROFILE -->
+
 <h2 class="section-title" id="profile">
-👤 My Profile
+  👤 My Profile
 </h2>
 
 <section class="profile">
 
-<div class="profile-row">
+  <div class="profile-row">
 
-<span class="label">
-Name
-</span>
+    <span class="label">
+      Name
+    </span>
 
-<strong id="userName">
-Loading...
-</strong>
+    <strong id="userName">
+      Loading...
+    </strong>
 
-</div>
+  </div>
 
-<div class="profile-row">
+  <div class="profile-row">
 
-<span class="label">
-Email
-</span>
+    <span class="label">
+      Email
+    </span>
 
-<strong id="userEmail">
-Loading...
-</strong>
+    <strong id="userEmail">
+      Loading...
+    </strong>
 
-</div>
+  </div>
 
-<div class="profile-row">
+  <div class="profile-row">
 
-<span class="label">
-User ID
-</span>
+    <span class="label">
+      User ID
+    </span>
 
-<strong id="userId">
-Loading...
-</strong>
+    <strong id="userId">
+      Loading...
+    </strong>
 
-</div>
+  </div>
 
 </section>
 
@@ -1114,178 +1176,172 @@ Loading...
 
 <nav class="bottom-nav">
 
-<a href="dashboard.html">
-<span>🏠</span>
-Home
-</a>
+  <a href="dashboard.html">
+    <span>🏠</span>
+    Home
+  </a>
 
-<a href="#courses">
-<span>📚</span>
-Courses
-</a>
+  <a href="#courses">
+    <span>📚</span>
+    Courses
+  </a>
 
-<a href="#leaderboard">
-<span>🏆</span>
-Rank
-</a>
+  <a href="#leaderboard">
+    <span>🏆</span>
+    Rank
+  </a>
 
-<a href="#profile">
-<span>👤</span>
-Profile
-</a>
+  <a href="#profile">
+    <span>👤</span>
+    Profile
+  </a>
 
 </nav>
 
 
-<!-- PURCHASE POPUP -->
+<!-- =================================
+     PURCHASE POPUP
+================================= -->
 
 <div
-id="purchaseModal"
-class="modal">
+  id="purchaseModal"
+  class="purchase-modal">
 
-<div class="modal-box">
+  <div class="purchase-box">
 
-<h2
-id="modalCourseTitle"
-class="modal-title">
-Course
-</h2>
-
-<p id="modalDescription">
-</p>
-
-<div class="modal-price">
-Original Price:
-₹<span id="originalPrice">0</span>
-</div>
+    <button
+      id="closePurchase"
+      class="close-purchase">
+      ×
+    </button>
 
 
-<div class="coupon-title">
-🎟️ Coupon Code
-</div>
-
-<div class="coupon-box">
-
-<input
-id="couponInput"
-type="text"
-placeholder="Coupon code डालें"
-autocomplete="off"
->
-
-<button id="applyCoupon">
-Apply
-</button>
-
-</div>
+    <div class="purchase-logo">
+      📚
+    </div>
 
 
-<div
-id="discountText"
-class="discount-text">
-🎉 Coupon applied!
-</div>
+    <h2 id="purchaseTitle">
+      Course Purchase
+    </h2>
 
 
-<div class="final-price">
-
-Payable Amount
-
-<br>
-
-₹<span id="finalPrice">0</span>
-
-</div>
+    <p>
+      Course access पाने के लिए coupon code
+      डालें और Confirm Purchase करें।
+    </p>
 
 
-<button
-id="confirmPurchase"
-class="confirm-btn">
-
-✅ Confirm Enrollment
-
-</button>
+    <div class="purchase-price">
+      ₹<span id="purchasePrice">0</span>
+    </div>
 
 
-<button
-id="closeModal"
-class="close-btn">
-
-Cancel
-
-</button>
+    <label>
+      🎟️ Coupon Code
+    </label>
 
 
-<div
-id="modalMessage"
-class="modal-message">
-</div>
+    <input
+      id="couponInput"
+      type="text"
+      placeholder="Coupon code डालें">
+
+
+    <button
+      id="applyCoupon"
+      class="apply-coupon">
+
+      Apply Coupon
+
+    </button>
+
+
+    <div
+      id="couponMessage"
+      class="coupon-message">
+    </div>
+
+
+    <div class="final-price">
+
+      Payable:
+      ₹<span id="finalPrice">0</span>
+
+    </div>
+
+
+    <button
+      id="confirmPurchase"
+      class="confirm-purchase">
+
+      ✅ Confirm Purchase
+
+    </button>
+
+  </div>
 
 </div>
 
-</div>
 
+<!-- FIREBASE -->
 
 <script type="module">
 
-
-/* FIREBASE */
-
 import {
-initializeApp
-}
-from
+  initializeApp
+} from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
 import {
-getAuth,
-onAuthStateChanged,
-signOut
-}
-from
+  getAuth,
+  onAuthStateChanged,
+  signOut
+} from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
 import {
-getFirestore,
-doc,
-getDoc,
-setDoc,
-collection,
-query,
-where,
-getDocs,
-serverTimestamp
-}
-from
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  query,
+  where,
+  getDocs,
+  serverTimestamp
+} from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-/* FIREBASE CONFIG */
+/* =================================
+   FIREBASE CONFIG
+================================= */
 
 const firebaseConfig = {
 
-apiKey:
-"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+  apiKey:
+  "AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
-authDomain:
-"padho-aur-kamao-3eeae.firebaseapp.com",
+  authDomain:
+  "padho-aur-kamao-3eeae.firebaseapp.com",
 
-projectId:
-"padho-aur-kamao-3eeae",
+  projectId:
+  "padho-aur-kamao-3eeae",
 
-storageBucket:
-"padho-aur-kamao-3eeae.firebasestorage.app",
+  storageBucket:
+  "padho-aur-kamao-3eeae.firebasestorage.app",
 
-messagingSenderId:
-"670063905617",
+  messagingSenderId:
+  "670063905617",
 
-appId:
-"1:670063905617:web:9b3a7e62fdeea14fbfa170",
+  appId:
+  "1:670063905617:web:9b3a7e62fdeea14fbfa170",
 
-measurementId:
-"G-7J1YV8HN3F"
+  measurementId:
+  "G-7J1YV8HN3F"
 
 };
 
@@ -1293,986 +1349,1014 @@ measurementId:
 /* INITIALIZE */
 
 const app =
-initializeApp(firebaseConfig);
+  initializeApp(firebaseConfig);
 
 const auth =
-getAuth(app);
+  getAuth(app);
 
 const db =
-getFirestore(app);
+  getFirestore(app);
 
 
 /* ELEMENTS */
 
 const welcomeText =
-document.getElementById("welcomeText");
+  document.getElementById(
+    "welcomeText"
+  );
 
 const userName =
-document.getElementById("userName");
+  document.getElementById(
+    "userName"
+  );
 
 const userEmail =
-document.getElementById("userEmail");
+  document.getElementById(
+    "userEmail"
+  );
 
 const userId =
-document.getElementById("userId");
+  document.getElementById(
+    "userId"
+  );
 
 const referralLink =
-document.getElementById("referralLink");
+  document.getElementById(
+    "referralLink"
+  );
 
 const copyBtn =
-document.getElementById("copyBtn");
+  document.getElementById(
+    "copyBtn"
+  );
 
 const logoutBtn =
-document.getElementById("logoutBtn");
+  document.getElementById(
+    "logoutBtn"
+  );
 
 const referralCount =
-document.getElementById("referralCount");
+  document.getElementById(
+    "referralCount"
+  );
 
 const referralPoints =
-document.getElementById("referralPoints");
+  document.getElementById(
+    "referralPoints"
+  );
 
 
-/* CURRENT USER */
+/* PURCHASE ELEMENTS */
+
+const purchaseModal =
+  document.getElementById(
+    "purchaseModal"
+  );
+
+const purchaseTitle =
+  document.getElementById(
+    "purchaseTitle"
+  );
+
+const purchasePrice =
+  document.getElementById(
+    "purchasePrice"
+  );
+
+const finalPrice =
+  document.getElementById(
+    "finalPrice"
+  );
+
+const couponInput =
+  document.getElementById(
+    "couponInput"
+  );
+
+const couponMessage =
+  document.getElementById(
+    "couponMessage"
+  );
+
+const confirmPurchase =
+  document.getElementById(
+    "confirmPurchase"
+  );
+
+
+/* GLOBAL */
 
 let currentUser = null;
 
-
-/* SELECTED COURSE */
-
 let selectedCourse = null;
 
-
-/* COUPON */
+let selectedPrice = 0;
 
 let couponApplied = false;
 
 
-/*
-  DEMO COUPON
+/* =================================
+   COUPONS
+================================= */
 
-  इसे बाद में बदल सकते हैं।
-*/
+const coupons = {
 
-const DEMO_COUPON =
-"PADHO100";
+  "WELCOME":{
+    type:"percent",
+    value:100
+  },
 
+  "PADHO100":{
+    type:"fixed",
+    value:100
+  },
 
-/* COURSE DATA */
-
-const courses = {
-
-step: {
-
-id:"step-to-success",
-
-title:"Step To Success",
-
-description:
-"Lead Generation, Communication Skills, Maths, Reasoning, Hindi और General Studies (GS) की learning।",
-
-price:199,
-
-page:"step-to-success.html"
-
-},
-
-competitive: {
-
-id:"all-competitive-exam",
-
-title:"All Competitive Exam",
-
-description:
-"10th और 12th level exams की preparation, practice और assessment।",
-
-price:399,
-
-page:"all-competitive-exam.html"
-
-}
+  "PADHO50":{
+    type:"fixed",
+    value:50
+  }
 
 };
 
 
-/* REFERRAL CODE */
+/* =================================
+   REFERRAL CODE
+================================= */
 
 function generateReferralCode(uid){
 
-return "PAK" +
-uid
-.substring(0,8)
-.toUpperCase();
+  return "PAK" +
+    uid
+      .substring(0,8)
+      .toUpperCase();
 
 }
 
 
-/* AUTH */
+/* =================================
+   AUTH
+================================= */
 
 onAuthStateChanged(
-auth,
-async function(user){
+  auth,
+  async function(user){
 
-if(!user){
+    if(!user){
 
-window.location.href =
-"login.html";
+      window.location.href =
+        "login.html";
 
-return;
+      return;
 
-}
-
-
-currentUser =
-user;
+    }
 
 
-const name =
-user.displayName ||
-"Student";
+    currentUser =
+      user;
 
 
-welcomeText.innerText =
-"Welcome " +
-name +
-" 👋 सीखें, practice करें और आगे बढ़ें।";
+    const name =
+      user.displayName ||
+      "Student";
 
 
-userName.innerText =
-name;
+    welcomeText.innerText =
+      "Welcome " +
+      name +
+      " 👋 सीखें, practice करें और आगे बढ़ें।";
 
 
-userEmail.innerText =
-user.email ||
-"Not available";
+    userName.innerText =
+      name;
 
 
-userId.innerText =
-user.uid;
+    userEmail.innerText =
+      user.email ||
+      "Not available";
 
 
-/* USER DOCUMENT */
+    userId.innerText =
+      user.uid;
 
-const userRef =
-doc(
-db,
-"users",
-user.uid
+
+    try{
+
+      const userRef =
+        doc(
+          db,
+          "users",
+          user.uid
+        );
+
+
+      let userData;
+
+
+      const userSnap =
+        await getDoc(
+          userRef
+        );
+
+
+      if(userSnap.exists()){
+
+        userData =
+          userSnap.data();
+
+      }else{
+
+        userData = {
+
+          name:name,
+
+          email:
+            user.email || "",
+
+          referralCode:
+            generateReferralCode(
+              user.uid
+            ),
+
+          referredBy:null,
+
+          points:0,
+
+          totalReferrals:0,
+
+          createdAt:
+            new Date()
+              .toISOString()
+
+        };
+
+
+        await setDoc(
+          userRef,
+          userData
+        );
+
+      }
+
+
+      const referralCode =
+        userData.referralCode ||
+        generateReferralCode(
+          user.uid
+        );
+
+
+      const link =
+        "https://yaduvanshimonu432-wq.github.io/" +
+        "Padho-Aur-Kamao-/" +
+        "index.html?ref=" +
+        encodeURIComponent(
+          referralCode
+        );
+
+
+      referralLink.value =
+        link;
+
+
+      await loadReferralStats(
+        user.uid,
+        userData
+      );
+
+
+      /*
+        Check existing courses
+      */
+
+      await checkPurchasedCourses(
+        user.uid
+      );
+
+
+    }catch(error){
+
+      console.error(
+        "Dashboard error:",
+        error
+      );
+
+    }
+
+  }
 );
 
 
-try{
-
-const userSnap =
-await getDoc(userRef);
-
-
-let userData;
-
-
-if(userSnap.exists()){
-
-userData =
-userSnap.data();
-
-}else{
-
-userData = {
-
-name:name,
-
-email:
-user.email || "",
-
-referralCode:
-generateReferralCode(
-user.uid
-),
-
-referredBy:null,
-
-points:0,
-
-totalReferrals:0,
-
-createdAt:
-new Date().toISOString()
-
-};
-
-
-await setDoc(
-userRef,
-userData
-);
-
-}
-
-
-/* REFERRAL */
-
-const referralCode =
-userData.referralCode ||
-generateReferralCode(
-user.uid
-);
-
-
-const link =
-"https://yaduvanshimonu432-wq.github.io/" +
-"Padho-Aur-Kamao-/" +
-"index.html?ref=" +
-encodeURIComponent(
-referralCode
-);
-
-
-referralLink.value =
-link;
-
-
-await loadReferralStats(
-user.uid,
-userData
-);
-
-
-/* CHECK PURCHASES */
-
-await checkAllEnrollments();
-
-
-}catch(error){
-
-console.error(
-"Dashboard error:",
-error
-);
-
-}
-
-});
-
-
-/* REFERRAL STATS */
+/* =================================
+   REFERRAL STATS
+================================= */
 
 async function loadReferralStats(
-uid,
-userData
+  uid,
+  userData
 ){
 
-try{
+  try{
 
-const referralsRef =
-collection(
-db,
-"referrals"
-);
-
-
-const q =
-query(
-referralsRef,
-where(
-"referrerUid",
-"==",
-uid
-)
-);
+    const referralsRef =
+      collection(
+        db,
+        "referrals"
+      );
 
 
-const snapshot =
-await getDocs(q);
+    const q =
+      query(
+        referralsRef,
+        where(
+          "referrerUid",
+          "==",
+          uid
+        )
+      );
 
 
-referralCount.innerText =
-snapshot.size;
+    const snapshot =
+      await getDocs(q);
 
 
-referralPoints.innerText =
-userData.points || 0;
+    referralCount.innerText =
+      snapshot.size;
 
 
-}catch(error){
-
-console.error(error);
-
-
-referralCount.innerText =
-userData.totalReferrals || 0;
+    referralPoints.innerText =
+      userData.points || 0;
 
 
-referralPoints.innerText =
-userData.points || 0;
+  }catch(error){
+
+    console.error(
+      "Referral stats:",
+      error
+    );
+
+
+    referralCount.innerText =
+      userData.totalReferrals ||
+      0;
+
+
+    referralPoints.innerText =
+      userData.points ||
+      0;
+
+  }
 
 }
 
-}
 
-
-/* COPY REFERRAL */
+/* =================================
+   COPY REFERRAL
+================================= */
 
 copyBtn.addEventListener(
-"click",
-async function(){
+  "click",
+  async function(){
 
-const text =
-referralLink.value;
-
-
-if(!text){
-return;
-}
+    const text =
+      referralLink.value;
 
 
-try{
+    if(!text){
+      return;
+    }
 
-await navigator.clipboard.writeText(
-text
+
+    try{
+
+      await navigator.clipboard
+        .writeText(text);
+
+
+      copyBtn.innerText =
+        "Copied ✓";
+
+
+      setTimeout(
+        function(){
+
+          copyBtn.innerText =
+            "Copy";
+
+        },
+        1500
+      );
+
+
+    }catch(error){
+
+      referralLink.select();
+
+      document.execCommand(
+        "copy"
+      );
+
+      copyBtn.innerText =
+        "Copied ✓";
+
+    }
+
+  }
 );
 
-copyBtn.innerText =
-"Copied ✓";
 
-
-setTimeout(
-function(){
-
-copyBtn.innerText =
-"Copy";
-
-},
-1500
-);
-
-
-}catch(error){
-
-referralLink.select();
-
-document.execCommand(
-"copy"
-);
-
-copyBtn.innerText =
-"Copied ✓";
-
-}
-
-});
-
-
-/* =========================
-   BUY BUTTONS
-========================= */
+/* =================================
+   BUY COURSE BUTTONS
+================================= */
 
 document
-.querySelectorAll(".buy-btn")
-.forEach(
-button => {
+  .querySelectorAll(".buy-btn")
+  .forEach(
+    function(button){
 
-button.addEventListener(
-"click",
-function(){
+      button.addEventListener(
+        "click",
+        function(){
 
-const key =
-button.dataset.course;
+          if(!currentUser){
 
-openPurchaseModal(
-courses[key]
-);
+            alert(
+              "कृपया पहले login करें।"
+            );
 
-});
+            return;
 
-});
-
-
-/* OPEN PURCHASE MODAL */
-
-function openPurchaseModal(course){
-
-selectedCourse =
-course;
-
-couponApplied =
-false;
+          }
 
 
-document.getElementById(
-"modalCourseTitle"
-).innerText =
-course.title;
+          selectedCourse = {
+
+            id:
+              button.dataset.course,
+
+            title:
+              button.dataset.title,
+
+            price:
+              Number(
+                button.dataset.price
+              )
+
+          };
 
 
-document.getElementById(
-"modalDescription"
-).innerText =
-course.description;
+          selectedPrice =
+            selectedCourse.price;
 
 
-document.getElementById(
-"originalPrice"
-).innerText =
-course.price;
+          couponApplied =
+            false;
 
 
-document.getElementById(
-"finalPrice"
-).innerText =
-course.price;
+          purchaseTitle.textContent =
+            selectedCourse.title;
 
 
-document.getElementById(
-"couponInput"
-).value =
-"";
+          purchasePrice.textContent =
+            selectedPrice;
 
 
-document.getElementById(
-"discountText"
-).style.display =
-"none";
+          finalPrice.textContent =
+            selectedPrice;
 
 
-document.getElementById(
-"modalMessage"
-).style.display =
-"none";
+          couponInput.value =
+            "";
 
 
-document.getElementById(
-"purchaseModal"
-).style.display =
-"flex";
-
-}
+          couponMessage.textContent =
+            "";
 
 
-/* APPLY COUPON */
+          purchaseModal.style.display =
+            "flex";
+
+        }
+      );
+
+    }
+  );
+
+
+/* =================================
+   CLOSE POPUP
+================================= */
 
 document
-.getElementById(
-"applyCoupon"
-)
-.addEventListener(
-"click",
-function(){
+  .getElementById(
+    "closePurchase"
+  )
+  .addEventListener(
+    "click",
+    function(){
 
-const input =
-document
-.getElementById(
-"couponInput"
-)
-.value
-.trim()
-.toUpperCase();
+      purchaseModal.style.display =
+        "none";
 
-
-if(!input){
-
-showModalMessage(
-"कृपया coupon code डालें।",
-true
-);
-
-return;
-
-}
-
-
-/*
-  DEMO FREE COUPON
-*/
-
-if(input === DEMO_COUPON){
-
-couponApplied =
-true;
-
-
-document.getElementById(
-"finalPrice"
-).innerText =
-"0";
-
-
-document.getElementById(
-"discountText"
-).innerText =
-"🎉 Coupon applied! आपको demo में 100% discount मिला।";
-
-
-document.getElementById(
-"discountText"
-).style.display =
-"block";
-
-
-showModalMessage(
-"Coupon successfully applied.",
-false
-);
-
-}else{
-
-couponApplied =
-false;
-
-
-document.getElementById(
-"finalPrice"
-).innerText =
-selectedCourse.price;
-
-
-document.getElementById(
-"discountText"
-).style.display =
-"none";
-
-
-showModalMessage(
-"❌ Invalid coupon code.",
-true
-);
-
-}
-
-});
-
-
-/* CLOSE MODAL */
-
-document
-.getElementById(
-"closeModal"
-)
-.addEventListener(
-"click",
-closePurchaseModal
-);
-
-
-function closePurchaseModal(){
-
-document.getElementById(
-"purchaseModal"
-).style.display =
-"none";
-
-}
+    }
+  );
 
 
 /* CLICK OUTSIDE */
 
-document
-.getElementById(
-"purchaseModal"
-)
-.addEventListener(
-"click",
-function(event){
+purchaseModal.addEventListener(
+  "click",
+  function(event){
 
-if(
-event.target ===
-this
-){
+    if(
+      event.target ===
+      purchaseModal
+    ){
 
-closePurchaseModal();
+      purchaseModal.style.display =
+        "none";
 
-}
+    }
 
-});
+  }
+);
 
 
-/* =========================
-   CONFIRM ENROLLMENT
-========================= */
+/* =================================
+   APPLY COUPON
+================================= */
 
 document
-.getElementById(
-"confirmPurchase"
-)
-.addEventListener(
-"click",
-async function(){
+  .getElementById(
+    "applyCoupon"
+  )
+  .addEventListener(
+    "click",
+    function(){
 
-if(!currentUser){
+      const code =
+        couponInput.value
+          .trim()
+          .toUpperCase();
 
-showModalMessage(
-"कृपया पहले login करें।",
-true
+
+      if(!code){
+
+        couponMessage.textContent =
+          "⚠️ Coupon code डालें।";
+
+        couponMessage.style.color =
+          "#dc2626";
+
+        return;
+
+      }
+
+
+      const coupon =
+        coupons[code];
+
+
+      if(!coupon){
+
+        couponMessage.textContent =
+          "❌ Invalid coupon code";
+
+        couponMessage.style.color =
+          "#dc2626";
+
+        finalPrice.textContent =
+          selectedPrice;
+
+        couponApplied =
+          false;
+
+        return;
+
+      }
+
+
+      let newPrice =
+        selectedPrice;
+
+
+      if(
+        coupon.type ===
+        "fixed"
+      ){
+
+        newPrice =
+          Math.max(
+            0,
+            selectedPrice -
+            coupon.value
+          );
+
+      }
+
+
+      if(
+        coupon.type ===
+        "percent"
+      ){
+
+        newPrice =
+          Math.round(
+            selectedPrice -
+            (
+              selectedPrice *
+              coupon.value /
+              100
+            )
+          );
+
+      }
+
+
+      finalPrice.textContent =
+        newPrice;
+
+
+      couponApplied =
+        true;
+
+
+      couponMessage.textContent =
+        "🎉 Coupon applied successfully!";
+
+      couponMessage.style.color =
+        "#16a34a";
+
+    }
+  );
+
+
+/* =================================
+   CONFIRM PURCHASE
+================================= */
+
+confirmPurchase.addEventListener(
+  "click",
+  async function(){
+
+    if(!currentUser){
+
+      alert(
+        "पहले login करें।"
+      );
+
+      return;
+
+    }
+
+
+    if(!selectedCourse){
+
+      return;
+
+    }
+
+
+    confirmPurchase.disabled =
+      true;
+
+
+    confirmPurchase.textContent =
+      "⏳ Processing...";
+
+
+    try{
+
+      const uid =
+        currentUser.uid;
+
+
+      const enrollmentId =
+        uid +
+        "_" +
+        selectedCourse.id;
+
+
+      const enrollmentRef =
+        doc(
+          db,
+          "enrollments",
+          enrollmentId
+        );
+
+
+      const existing =
+        await getDoc(
+          enrollmentRef
+        );
+
+
+      if(existing.exists()){
+
+        alert(
+          "यह course आपके account में पहले से active है।"
+        );
+
+
+        purchaseModal.style.display =
+          "none";
+
+
+        showOpenButton(
+          selectedCourse.id
+        );
+
+
+        return;
+
+      }
+
+
+      let payable =
+        selectedPrice;
+
+
+      const code =
+        couponInput.value
+          .trim()
+          .toUpperCase();
+
+
+      const coupon =
+        coupons[code];
+
+
+      if(
+        couponApplied &&
+        coupon
+      ){
+
+        if(
+          coupon.type ===
+          "fixed"
+        ){
+
+          payable =
+            Math.max(
+              0,
+              selectedPrice -
+              coupon.value
+            );
+
+        }
+
+
+        if(
+          coupon.type ===
+          "percent"
+        ){
+
+          payable =
+            Math.round(
+              selectedPrice -
+              (
+                selectedPrice *
+                coupon.value /
+                100
+              )
+            );
+
+        }
+
+      }
+
+
+      /*
+        TEST PURCHASE
+
+        अभी कोई real payment नहीं है।
+      */
+
+      await setDoc(
+        enrollmentRef,
+        {
+
+          userId:
+            uid,
+
+          courseId:
+            selectedCourse.id,
+
+          courseTitle:
+            selectedCourse.title,
+
+          originalPrice:
+            selectedPrice,
+
+          payableAmount:
+            payable,
+
+          couponCode:
+            code || null,
+
+          paymentStatus:
+            "test",
+
+          status:
+            "active",
+
+          purchasedAt:
+            serverTimestamp()
+
+        }
+      );
+
+
+      purchaseModal.style.display =
+        "none";
+
+
+      showOpenButton(
+        selectedCourse.id
+      );
+
+
+      alert(
+        "🎉 Course successfully purchased!\n\nअब आपका course active है।"
+      );
+
+
+    }catch(error){
+
+      console.error(
+        "Purchase error:",
+        error
+      );
+
+
+      alert(
+        "Purchase नहीं हो पाया:\n" +
+        error.message
+      );
+
+
+    }finally{
+
+      confirmPurchase.disabled =
+        false;
+
+
+      confirmPurchase.textContent =
+        "✅ Confirm Purchase";
+
+    }
+
+  }
 );
 
-return;
 
-}
+/* =================================
+   CHECK PURCHASED COURSES
+================================= */
 
-
-if(!selectedCourse){
-
-showModalMessage(
-"Course select नहीं हुआ।",
-true
-);
-
-return;
-
-}
-
-
-/*
-  अभी payment नहीं है।
-
-  Enrollment तभी होगा जब
-  valid demo coupon लगाया गया हो।
-*/
-
-if(!couponApplied){
-
-showModalMessage(
-"अभी payment system चालू नहीं है। Demo enrollment के लिए PADHO100 coupon लगाएँ।",
-true
-);
-
-return;
-
-}
-
-
-const button =
-document.getElementById(
-"confirmPurchase"
-);
-
-
-button.disabled =
-true;
-
-
-button.innerText =
-"⏳ Enrollment हो रहा है...";
-
-
-try{
-
-
-/*
-  UNIQUE ENROLLMENT ID
-
-  user UID + course ID
-*/
-
-const enrollmentId =
-currentUser.uid +
-"_" +
-selectedCourse.id;
-
-
-const enrollmentRef =
-doc(
-db,
-"enrollments",
-enrollmentId
-);
-
-
-/* CHECK EXISTING */
-
-const existing =
-await getDoc(
-enrollmentRef
-);
-
-
-if(existing.exists()){
-
-showModalMessage(
-"🎓 यह course पहले से आपके account में है।",
-true
-);
-
-button.disabled =
-false;
-
-button.innerText =
-"✅ Confirm Enrollment";
-
-return;
-
-}
-
-
-/* SAVE ENROLLMENT */
-
-await setDoc(
-enrollmentRef,
-{
-
-userId:
-currentUser.uid,
-
-courseId:
-selectedCourse.id,
-
-courseTitle:
-selectedCourse.title,
-
-originalPrice:
-selectedCourse.price,
-
-paidAmount:0,
-
-couponCode:
-DEMO_COUPON,
-
-status:
-"active",
-
-paymentStatus:
-"coupon-demo",
-
-accessGranted:
-true,
-
-purchasedAt:
-serverTimestamp()
-
-}
-);
-
-
-/* SUCCESS */
-
-showModalMessage(
-"🎉 Course successfully enrolled! अब आप course access कर सकते हैं।",
-false
-);
-
-
-setTimeout(
-async function(){
-
-closePurchaseModal();
-
-await checkAllEnrollments();
-
-},
-1200
-);
-
-
-}catch(error){
-
-console.error(
-"Enrollment error:",
-error
-);
-
-
-showModalMessage(
-"Enrollment failed: " +
-error.message,
-true
-);
-
-}
-
-
-button.disabled =
-false;
-
-button.innerText =
-"✅ Confirm Enrollment";
-
-});
-
-
-/* =========================
-   CHECK ENROLLMENTS
-========================= */
-
-async function checkAllEnrollments(){
-
-if(!currentUser){
-return;
-}
-
-
-await checkEnrollment(
-courses.step,
-"status-step"
-);
-
-
-await checkEnrollment(
-courses.competitive,
-"status-competitive"
-);
-
-}
-
-
-/* CHECK ONE COURSE */
-
-async function checkEnrollment(
-course,
-statusId
+async function checkPurchasedCourses(
+  uid
 ){
 
-const statusBox =
-document.getElementById(
-statusId
-);
+  const courseIds = [
+    "step",
+    "competitive"
+  ];
 
 
-try{
+  for(
+    const courseId
+    of courseIds
+  ){
 
-const enrollmentId =
-currentUser.uid +
-"_" +
-course.id;
+    try{
 
-
-const enrollmentSnap =
-await getDoc(
-
-doc(
-db,
-"enrollments",
-enrollmentId
-)
-
-);
+      const enrollmentId =
+        uid +
+        "_" +
+        courseId;
 
 
-if(
-enrollmentSnap.exists() &&
-enrollmentSnap.data().status ===
-"active" &&
-enrollmentSnap.data().accessGranted ===
-true
+      const enrollmentRef =
+        doc(
+          db,
+          "enrollments",
+          enrollmentId
+        );
+
+
+      const enrollmentSnap =
+        await getDoc(
+          enrollmentRef
+        );
+
+
+      if(
+        enrollmentSnap.exists() &&
+        enrollmentSnap.data().status ===
+        "active"
+      ){
+
+        showOpenButton(
+          courseId
+        );
+
+      }
+
+    }catch(error){
+
+      console.error(
+        "Enrollment check:",
+        error
+      );
+
+    }
+
+  }
+
+}
+
+
+/* =================================
+   SHOW OPEN BUTTON
+================================= */
+
+function showOpenButton(
+  courseId
 ){
 
-
-statusBox.innerHTML = `
-
-<button
-class="access-btn"
-data-page="${course.page}">
-
-🎓 Access Course →
-
-</button>
-
-`;
+  const buyButton =
+    document.querySelector(
+      '.buy-btn[data-course="' +
+      courseId +
+      '"]'
+    );
 
 
-statusBox
-.querySelector(".access-btn")
-.addEventListener(
-"click",
-function(){
+  if(buyButton){
 
-window.location.href =
-course.page;
+    buyButton.style.display =
+      "none";
 
-});
+  }
 
 
-}else{
+  const openButton =
+    document.querySelector(
+      "#open-" +
+      courseId
+    );
 
 
-statusBox.innerHTML = `
+  if(openButton){
 
-<span style="color:#6b7280;">
-Course खरीदने के बाद access मिलेगा।
-</span>
+    openButton.style.display =
+      "block";
 
-`;
-
-}
-
-}catch(error){
-
-console.error(
-"Enrollment check:",
-error
-);
-
-statusBox.innerHTML =
-"";
-
-}
+  }
 
 }
 
 
-/* MODAL MESSAGE */
-
-function showModalMessage(
-text,
-isError
-){
-
-const box =
-document.getElementById(
-"modalMessage"
-);
-
-
-box.innerText =
-text;
-
-
-box.className =
-"modal-message " +
-(
-isError
-?
-"error"
-:
-"success"
-);
-
-
-box.style.display =
-"block";
-
-}
-
-
-/* LOGOUT */
+/* =================================
+   LOGOUT
+================================= */
 
 logoutBtn.addEventListener(
-"click",
-async function(){
+  "click",
+  async function(){
 
-logoutBtn.disabled =
-true;
-
-
-try{
-
-await signOut(auth);
-
-window.location.href =
-"login.html";
+    logoutBtn.disabled =
+      true;
 
 
-}catch(error){
+    try{
 
-console.error(error);
+      await signOut(auth);
 
-logoutBtn.disabled =
-false;
 
-alert(
-"Logout नहीं हो पाया। फिर कोशिश करें।"
+      window.location.href =
+        "login.html";
+
+
+    }catch(error){
+
+      console.error(
+        error
+      );
+
+
+      logoutBtn.disabled =
+        false;
+
+
+      alert(
+        "Logout नहीं हो पाया। फिर कोशिश करें।"
+      );
+
+    }
+
+  }
 );
-
-}
-
-});
 
 </script>
 
