@@ -647,36 +647,91 @@ container.appendChild(div);
 
 function openVideo(chapter){
 
-const area =
-document.getElementById("videoArea");
+  const videos = {
 
-area.innerHTML=`
+    "Ancient History":
+      "https://www.youtube.com/embed/Vp0OZroGDpA",
 
-<div style="font-size:45px;">
-▶️
-</div>
+    "Medieval History":
+      "https://www.youtube.com/embed/ODPcedfOLd0",
 
-<h3>
-${chapter}
-</h3>
+    "Modern History":
+      "https://www.youtube.com/embed/lrYbQopVuPY",
 
-<p>
-इस chapter का आपका video यहाँ जोड़ा जाएगा।
-</p>
+    "Indian Geography":
+      "https://www.youtube.com/embed/g_MiJXGnMaY",
 
-<p>
-अपना YouTube या अन्य video link
-<strong>openVideo()</strong> function में जोड़ सकते हैं।
-</p>
+    "World Geography":
+      "https://www.youtube.com/embed/OwVLEE4o058",
 
-`;
+    "Indian Polity":
+      "https://www.youtube.com/embed/eSX7VeLFnks",
 
-area.scrollIntoView({
-behavior:"smooth"
-});
+    "Indian Economy":
+      "https://www.youtube.com/embed/svxbMRVsfdw"
+
+  };
+
+  const area =
+    document.getElementById("videoArea");
+
+  const videoUrl = videos[chapter];
+
+  if(videoUrl){
+
+    area.innerHTML = `
+
+      <h3>${chapter}</h3>
+
+      <div style="
+        position:relative;
+        width:100%;
+        padding-bottom:56.25%;
+        height:0;
+        overflow:hidden;
+        border-radius:12px;
+      ">
+
+        <iframe
+          src="${videoUrl}"
+          style="
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            border:0;
+          "
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+    `;
+
+  }else{
+
+    area.innerHTML = `
+
+      <div style="font-size:45px;">
+        ▶️
+      </div>
+
+      <h3>${chapter}</h3>
+
+      <p>
+        इस chapter का video अभी उपलब्ध नहीं है।
+      </p>
+
+    `;
+
+  }
+
+  area.scrollIntoView({
+    behavior:"smooth"
+  });
 
 }
-
 
 /* =========================
    10TH MATH
