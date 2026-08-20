@@ -25,7 +25,7 @@ header{
   padding:16px 20px;
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:100;
 }
 
 .nav{
@@ -53,7 +53,7 @@ header{
 .container{
   max-width:1100px;
   margin:auto;
-  padding:25px 18px 60px;
+  padding:25px 15px 70px;
 }
 
 .hero{
@@ -78,7 +78,7 @@ header{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:15px;
-  margin-bottom:25px;
+  margin-bottom:30px;
 }
 
 .info-card{
@@ -100,104 +100,111 @@ header{
 }
 
 .section-title{
-  margin:28px 0 15px;
+  margin:30px 0 15px;
 }
 
 .card{
   background:white;
   padding:22px;
   border-radius:18px;
-  margin-bottom:18px;
+  margin-bottom:20px;
   box-shadow:0 5px 20px #0001;
 }
 
-.topics{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:15px;
+/* SUBJECT */
+
+.subject{
+  margin-bottom:15px;
+  border:1px solid #e5e7eb;
+  border-radius:15px;
+  overflow:hidden;
 }
 
-.topic{
-  background:#f5f3ff;
+.subject-title{
+  width:100%;
+  border:0;
   padding:18px;
-  border-radius:14px;
+  background:#f5f3ff;
+  color:#4c1d95;
+  font-size:18px;
+  font-weight:bold;
+  text-align:left;
+  cursor:pointer;
 }
 
-.topic h3{
-  margin:0 0 7px;
+.subject-title:hover{
+  background:#ede9fe;
 }
 
-.topic p{
-  color:#6b7280;
-  line-height:1.5;
+.chapters{
+  display:none;
+  padding:15px;
+  background:white;
 }
 
-.lesson{
+.chapters.active{
+  display:block;
+}
+
+.chapter{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:15px;
-  padding:17px 0;
+  padding:14px 5px;
   border-bottom:1px solid #eee;
 }
 
-.lesson:last-child{
+.chapter:last-child{
   border-bottom:0;
 }
 
-.lesson-info{
-  display:flex;
-  align-items:center;
-  gap:12px;
+.chapter-name{
+  font-weight:bold;
 }
 
-.lesson-icon{
-  font-size:27px;
-}
-
-.lesson h3{
-  margin:0 0 4px;
-}
-
-.lesson p{
-  margin:0;
-  color:#6b7280;
-  font-size:14px;
-}
-
-.watch{
+.video-btn{
   background:#6d28d9;
   color:white;
-  border:0;
-  padding:10px 15px;
-  border-radius:9px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.assessment{
-  background:#eef2ff;
-  padding:22px;
-  border-radius:15px;
-}
-
-.assessment-btn{
-  display:inline-block;
-  margin-top:10px;
-  background:#5b21b6;
-  color:white;
-  padding:12px 18px;
-  border-radius:9px;
+  padding:9px 14px;
+  border-radius:8px;
   text-decoration:none;
+  font-size:14px;
   font-weight:bold;
+  white-space:nowrap;
 }
+
+.video-btn:hover{
+  background:#5b21b6;
+}
+
+/* OTHER TOPICS */
+
+.other-topic{
+  background:#f9fafb;
+  padding:18px;
+  border-radius:14px;
+  margin-bottom:12px;
+}
+
+.other-topic h3{
+  margin:0 0 7px;
+}
+
+.other-topic p{
+  margin:0;
+  color:#6b7280;
+  line-height:1.5;
+}
+
+/* NOTE */
 
 .note{
   background:#fff7ed;
   border-left:4px solid #f59e0b;
   padding:15px;
   border-radius:8px;
-  line-height:1.5;
+  line-height:1.6;
 }
 
 @media(max-width:700px){
@@ -206,25 +213,17 @@ header{
     grid-template-columns:1fr;
   }
 
-  .topics{
-    grid-template-columns:1fr;
-  }
-
   .hero h1{
     font-size:26px;
   }
 
-  .lesson{
+  .chapter{
     align-items:flex-start;
-  }
-
-  .watch{
-    padding:8px 12px;
   }
 
 }
 
-@media(max-width:450px){
+@media(max-width:500px){
 
   .logo{
     font-size:16px;
@@ -235,12 +234,14 @@ header{
     font-size:13px;
   }
 
-  .lesson{
+  .chapter{
     flex-direction:column;
+    align-items:flex-start;
   }
 
-  .watch{
+  .video-btn{
     width:100%;
+    text-align:center;
   }
 
 }
@@ -273,481 +274,928 @@ header{
 <main class="container">
 
 
-  <!-- HERO -->
+<!-- HERO -->
 
-  <section class="hero">
+<section class="hero">
 
-    <h1>
-      🚀 Step To Success
-    </h1>
+  <h1>
+    🚀 Step To Success
+  </h1>
 
-    <p>
-      Skills सीखें • Practice करें • Knowledge बढ़ाएँ
-    </p>
+  <p>
+    Skills सीखें • Practice करें • Knowledge बढ़ाएँ
+  </p>
 
-  </section>
+</section>
 
 
-  <!-- COURSE INFO -->
+<!-- COURSE INFO -->
 
-  <section class="info">
+<section class="info">
 
-    <div class="info-card">
+  <div class="info-card">
 
-      <div class="icon">
-        💰
-      </div>
-
-      <strong>
-        ₹199
-      </strong>
-
-      <span>
-        Course Price
-      </span>
-
+    <div class="icon">
+      💰
     </div>
 
+    <strong>
+      ₹199
+    </strong>
 
-    <div class="info-card">
+    <span>
+      Course Price
+    </span>
 
-      <div class="icon">
-        📚
-      </div>
+  </div>
 
-      <strong>
-        6 Topics
-      </strong>
 
-      <span>
-        Learning Topics
-      </span>
+  <div class="info-card">
 
+    <div class="icon">
+      📚
     </div>
 
+    <strong>
+      6 Subjects
+    </strong>
 
-    <div class="info-card">
+    <span>
+      Learning Subjects
+    </span>
 
-      <div class="icon">
-        📝
-      </div>
+  </div>
 
-      <strong>
-        Assessment
-      </strong>
 
-      <span>
-        Practice & Test
-      </span>
+  <div class="info-card">
 
+    <div class="icon">
+      🎥
     </div>
 
-  </section>
+    <strong>
+      Video Course
+    </strong>
+
+    <span>
+      Chapter Lessons
+    </span>
+
+  </div>
+
+</section>
 
 
-  <!-- ABOUT -->
+<!-- ABOUT -->
 
-  <h2 class="section-title">
-    📖 Course के बारे में
-  </h2>
+<h2 class="section-title">
+  📖 Course के बारे में
+</h2>
 
-  <section class="card">
+<section class="card">
 
-    <p style="line-height:1.7;">
+  <p style="line-height:1.7;margin:0;">
 
-      Step To Success एक learning course है जिसमें
-      Lead Generation, Communication Skills, Maths,
-      Reasoning, Hindi और General Studies (GS) जैसे
-      topics को step-by-step सीखने के लिए lessons
-      दिए जा सकते हैं।
+    Step To Success एक complete learning course है।
+    इसमें Lead Generation, Communication Skills,
+    Mathematics, Reasoning, Hindi और General Studies
+    के अलग-अलग chapters दिए गए हैं।
 
-    </p>
+    हर chapter के सामने Video button है,
+    जहाँ आपका actual learning video लगाया जा सकता है।
 
-  </section>
+  </p>
+
+</section>
 
 
-  <!-- TOPICS -->
+<!-- COURSE CONTENT -->
 
-  <h2 class="section-title">
-    📚 Course Topics
-  </h2>
+<h2 class="section-title">
+  📚 Course Content
+</h2>
 
-  <section class="card">
+<section class="card">
 
-    <div class="topics">
 
-      <div class="topic">
+<!-- LEAD GENERATION -->
 
-        <h3>
-          🎯 Lead Generation
-        </h3>
+<div class="subject">
 
-        <p>
-          Lead generation के basic concepts,
-          process और practical learning।
-        </p>
+  <button
+    class="subject-title"
+    onclick="toggleSubject('lead')">
 
+    🎯 Lead Generation ▼
+
+  </button>
+
+  <div
+    id="lead"
+    class="chapters">
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 1 — Lead Generation Introduction
       </div>
-
-
-      <div class="topic">
-
-        <h3>
-          🗣️ Communication Skills
-        </h3>
-
-        <p>
-          Communication और presentation skills
-          को बेहतर बनाने की learning।
-        </p>
-
-      </div>
-
-
-      <div class="topic">
-
-        <h3>
-          ➗ Mathematics
-        </h3>
-
-        <p>
-          Maths concepts और practice questions।
-        </p>
-
-      </div>
-
-
-      <div class="topic">
-
-        <h3>
-          🧠 Reasoning
-        </h3>
-
-        <p>
-          Reasoning concepts और practice exercises।
-        </p>
-
-      </div>
-
-
-      <div class="topic">
-
-        <h3>
-          🇮🇳 Hindi
-        </h3>
-
-        <p>
-          Hindi language और exam-oriented practice।
-        </p>
-
-      </div>
-
-
-      <div class="topic">
-
-        <h3>
-          🌍 General Studies
-        </h3>
-
-        <p>
-          GS के महत्वपूर्ण topics और practice material।
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- LESSONS -->
-
-  <h2 class="section-title">
-    🎥 Course Lessons
-  </h2>
-
-  <section class="card">
-
-
-    <div class="lesson">
-
-      <div class="lesson-info">
-
-        <div class="lesson-icon">
-          ▶️
-        </div>
-
-        <div>
-
-          <h3>
-            Lesson 1
-          </h3>
-
-          <p>
-            Course Introduction
-          </p>
-
-        </div>
-
-      </div>
-
-      <button
-        class="watch"
-        onclick="showVideo('Lesson 1')">
-
-        Watch
-
-      </button>
-
-    </div>
-
-
-    <div class="lesson">
-
-      <div class="lesson-info">
-
-        <div class="lesson-icon">
-          ▶️
-        </div>
-
-        <div>
-
-          <h3>
-            Lesson 2
-          </h3>
-
-          <p>
-            Lead Generation
-          </p>
-
-        </div>
-
-      </div>
-
-      <button
-        class="watch"
-        onclick="showVideo('Lesson 2')">
-
-        Watch
-
-      </button>
-
-    </div>
-
-
-    <div class="lesson">
-
-      <div class="lesson-info">
-
-        <div class="lesson-icon">
-          ▶️
-        </div>
-
-        <div>
-
-          <h3>
-            Lesson 3
-          </h3>
-
-          <p>
-            Communication Skills
-          </p>
-
-        </div>
-
-      </div>
-
-      <button
-        class="watch"
-        onclick="showVideo('Lesson 3')">
-
-        Watch
-
-      </button>
-
-    </div>
-
-
-    <div class="lesson">
-
-      <div class="lesson-info">
-
-        <div class="lesson-icon">
-          ▶️
-        </div>
-
-        <div>
-
-          <h3>
-            Lesson 4
-          </h3>
-
-          <p>
-            Mathematics
-          </p>
-
-        </div>
-
-      </div>
-
-      <button
-        class="watch"
-        onclick="showVideo('Lesson 4')">
-
-        Watch
-
-      </button>
-
-    </div>
-
-
-    <div class="lesson">
-
-      <div class="lesson-info">
-
-        <div class="lesson-icon">
-          ▶️
-        </div>
-
-        <div>
-
-          <h3>
-            Lesson 5
-          </h3>
-
-          <p>
-            Reasoning
-          </p>
-
-        </div>
-
-      </div>
-
-      <button
-        class="watch"
-        onclick="showVideo('Lesson 5')">
-
-        Watch
-
-      </button>
-
-    </div>
-
-
-    <div class="lesson">
-
-      <div class="lesson-info">
-
-        <div class="lesson-icon">
-          ▶️
-        </div>
-
-        <div>
-
-          <h3>
-            Lesson 6
-          </h3>
-
-          <p>
-            Hindi & General Studies
-          </p>
-
-        </div>
-
-      </div>
-
-      <button
-        class="watch"
-        onclick="showVideo('Lesson 6')">
-
-        Watch
-
-      </button>
-
-    </div>
-
-
-  </section>
-
-
-  <!-- VIDEO AREA -->
-
-  <h2 class="section-title">
-    🎬 Video Player
-  </h2>
-
-  <section class="card">
-
-    <div
-      id="videoArea"
-      style="
-      background:#111827;
-      color:white;
-      padding:45px 20px;
-      text-align:center;
-      border-radius:14px;
-      ">
-
-      <div style="font-size:45px;">
-        ▶️
-      </div>
-
-      <p>
-        Lesson select करने के बाद video यहाँ दिखाई देगा।
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- ASSESSMENT -->
-
-  <h2 class="section-title">
-    📝 Assessment
-  </h2>
-
-  <section class="card">
-
-    <div class="assessment">
-
-      <h3>
-        📋 Course Assessment
-      </h3>
-
-      <p>
-        Course lessons पूरा करने के बाद यहाँ
-        assessment/test जोड़ा जा सकता है।
-      </p>
 
       <a
         href="#"
-        class="assessment-btn"
-        onclick="assessmentMessage(); return false;">
+        class="video-btn"
+        onclick="videoMessage();return false;">
 
-        Start Assessment
+        🎥 Video
 
       </a>
 
     </div>
 
-  </section>
 
+    <div class="chapter">
 
-  <!-- NOTE -->
+      <div class="chapter-name">
+        Chapter 2 — Lead Generation Basics
+      </div>
 
-  <section class="card">
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
 
-    <div class="note">
+        🎥 Video
 
-      💡 <strong>Note:</strong>
-      अभी video और assessment placeholders हैं।
-      आप अपने वास्तविक videos, notes और questions
-      बाद में यहाँ जोड़ सकते हैं।
+      </a>
 
     </div>
 
-  </section>
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 3 — Lead Generation Strategy
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- COMMUNICATION -->
+
+<div class="subject">
+
+  <button
+    class="subject-title"
+    onclick="toggleSubject('communication')">
+
+    🗣️ Communication Skills ▼
+
+  </button>
+
+  <div
+    id="communication"
+    class="chapters">
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 1 — Communication Basics
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 2 — Speaking Skills
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 3 — Presentation Skills
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- MATHEMATICS -->
+
+<div class="subject">
+
+  <button
+    class="subject-title"
+    onclick="toggleSubject('math')">
+
+    ➗ Mathematics — Maths Chapters ▼
+
+  </button>
+
+  <div
+    id="math"
+    class="chapters">
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 1 — Number System
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 2 — Simplification
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 3 — Percentage
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 4 — Profit and Loss
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 5 — Ratio and Proportion
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 6 — Average
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 7 — Time and Work
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 8 — Speed, Time and Distance
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 9 — Simple Interest
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 10 — Compound Interest
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 11 — Algebra
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 12 — Geometry
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 13 — Mensuration
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 14 — Data Interpretation
+      </div>
+
+      <a
+        href="#"
+        class="video-btn"
+        onclick="videoMessage();return false;">
+
+        🎥 Video
+
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- REASONING -->
+
+<div class="subject">
+
+  <button
+    class="subject-title"
+    onclick="toggleSubject('reasoning')">
+
+    🧠 Reasoning — Reasoning Chapters ▼
+
+  </button>
+
+  <div
+    id="reasoning"
+    class="chapters">
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 1 — Analogy
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 2 — Classification
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 3 — Number Series
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 4 — Alphabet Series
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 5 — Coding Decoding
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 6 — Blood Relation
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 7 — Direction Test
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 8 — Ranking
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 9 — Venn Diagram
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 10 — Syllogism
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- HINDI -->
+
+<div class="subject">
+
+  <button
+    class="subject-title"
+    onclick="toggleSubject('hindi')">
+
+    🇮🇳 Hindi — Hindi Chapters ▼
+
+  </button>
+
+  <div
+    id="hindi"
+    class="chapters">
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 1 — संधि
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 2 — समास
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 3 — पर्यायवाची शब्द
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 4 — विलोम शब्द
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 5 — मुहावरे और लोकोक्तियाँ
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 6 — वाक्य शुद्धि
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 7 — शब्द शुद्धि
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- GS -->
+
+<div class="subject">
+
+  <button
+    class="subject-title"
+    onclick="toggleSubject('gs')">
+
+    🌍 General Studies — GS Chapters ▼
+
+  </button>
+
+  <div
+    id="gs"
+    class="chapters">
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 1 — Indian History
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 2 — Indian Geography
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 3 — Indian Polity
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 4 — Indian Economy
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 5 — General Science
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+
+    <div class="chapter">
+
+      <div class="chapter-name">
+        Chapter 6 — Current Affairs
+      </div>
+
+      <a href="#" class="video-btn"
+      onclick="videoMessage();return false;">
+        🎥 Video
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- NOTE -->
+
+<section class="card">
+
+  <div class="note">
+
+    💡 <strong>Important:</strong>
+    अभी सभी Video buttons placeholder हैं।
+    जब आपके videos तैयार हों, तो किसी भी
+    <strong>href="#"</strong> में अपने video का link लगाया जा सकता है।
+
+  </div>
+
+</section>
 
 
 </main>
@@ -755,42 +1203,24 @@ header{
 
 <script>
 
-function showVideo(lesson){
+/* SUBJECT OPEN/CLOSE */
 
-  const area =
-  document.getElementById("videoArea");
+function toggleSubject(id){
 
-  area.innerHTML = `
+  const section =
+  document.getElementById(id);
 
-    <div style="font-size:45px;">
-      ▶️
-    </div>
-
-    <h3>
-      ${lesson}
-    </h3>
-
-    <p>
-      यहाँ आपका actual course video आएगा।
-    </p>
-
-    <p style="color:#c4b5fd;">
-      Video link बाद में यहाँ लगाया जा सकता है।
-    </p>
-
-  `;
-
-  area.scrollIntoView({
-    behavior:"smooth"
-  });
+  section.classList.toggle("active");
 
 }
 
 
-function assessmentMessage(){
+/* VIDEO MESSAGE */
+
+function videoMessage(){
 
   alert(
-    "Assessment अभी तैयार किया जा रहा है। आप अपने questions बाद में जोड़ सकते हैं।"
+    "🎥 यह chapter video अभी जोड़ा नहीं गया है। अपना video link यहाँ लगाया जा सकता है।"
   );
 
 }
