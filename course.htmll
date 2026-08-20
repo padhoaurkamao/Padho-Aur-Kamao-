@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>My Course</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f4f7fb;
+}
+
+header{
+background:#2563eb;
+color:white;
+padding:18px;
+font-size:20px;
+}
+
+main{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.box{
+background:white;
+padding:22px;
+border-radius:16px;
+box-shadow:0 3px 12px #0001;
+}
+
+.lesson{
+background:#f8fafc;
+border:1px solid #ddd;
+padding:16px;
+border-radius:10px;
+margin:12px 0;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<header>
+
+📚 Padho Aur Kamao
+
+</header>
+
+
+<main>
+
+<div class="box"
+id="content">
+
+⏳ Course loading...
+
+</div>
+
+</main>
+
+
+<script type="module">
+
+
+import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+getAuth,
+onAuthStateChanged
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+import {
+getFirestore,
+doc,
+getDoc
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+/* 🔥 SAME FIREBASE CONFIG */
+
+const firebaseConfig={
+
+apiKey:"YOUR_API_KEY",
+
+authDomain:
+"YOUR_PROJECT.firebaseapp.com",
+
+projectId:
+"YOUR_PROJECT_ID",
+
+storageBucket:
+"YOUR_PROJECT.firebasestorage.app",
+
+messagingSenderId:
+"YOUR_SENDER_ID",
+
+appId:
+"YOUR_APP_ID"
+
+};
+
+
+const app=
+initializeApp(firebaseConfig);
+
+const auth=
+getAuth(app);
+
+const db=
+getFirestore(app);
+
+
+/* COURSE ID */
+
+const params=
+new URLSearchParams(
+location.search
+);
+
+const courseId=
+params.get("id");
+
+
+/* USER CHECK */
+
+onAuthStateChanged(
+auth,
+async user=>{
+
+if(!user){
+
+location.href="login.html";
+
+return;
+
+}
+
+
+if(!courseId){
+
+document.getElementById("content")
+.innerHTML=
+"<h2>Course ID नहीं मिला।</h2>";
+
+return;
+
+}
+
+
+/* ACCESS CHECK */
+
+const enrollmentId=
+user.uid+"_"+courseId;
+
+
+const enrollment=
+await getDoc(
+
+doc(
+db,
+"enrollments",
+enrollmentId
+)
+
+);
+
+
+if(
+
+!enrollment.exists() ||
+
+enrollment.data().status!=="active"
+
+){
+
+document.getElementById("content")
+.innerHTML=`
+
+<h2>🔒 Access Denied</h2>
+
+<p>
+आपने यह course purchase नहीं किया है।
+</p>
+
+`;
+
+return;
+
+}
+
+
+/* COURSE */
+
+const course=
+await getDoc(
+
+doc(
+db,
+"courses",
+courseId
+)
+
+);
+
+
+if(!course.exists()){
+
+document.getElementById("content")
+.innerHTML=
+"<h2>Course नहीं मिला।</h2>";
+
+return;
+
+}
+
+
+const c=course.data();
+
+
+document.getElementById("content")
+.innerHTML=`
+
+<h1>
+🎓 ${safe(c.title)}
+</h1>
+
+<p>
+${safe(c.description||"")}
+</p>
+
+<hr>
+
+<h2>📖 Course Lessons</h2>
+
+
+<div class="lesson">
+
+<h3>Lesson 1</h3>
+
+<p>
+Introduction
+</p>
+
+</div>
+
+
+<div class="lesson">
+
+<h3>Lesson 2</h3>
+
+<p>
+Basic Concepts
+</p>
+
+</div>
+
+
+<div class="lesson">
+
+<h3>Lesson 3</h3>
+
+<p>
+Practice
+</p>
+
+</div>
+
+
+<div class="lesson">
+
+<h3>Lesson 4</h3>
+
+<p>
+Final Test
+</p>
+
+</div>
+
+`;
+
+});
+
+
+function safe(v){
+
+return String(v)
+
+.replaceAll("&","&amp;")
+
+.replaceAll("<","&lt;")
+
+.replaceAll(">","&gt;")
+
+.replaceAll('"',"&quot;")
+
+.replaceAll("'","&#039;");
+
+}
+
+
+</script>
+
+</body>
+
+</html>
