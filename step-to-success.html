@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step To Success - Padho Aur Kamao</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#111827;
+}
+
+header{
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
+  color:white;
+  padding:18px 20px;
+}
+
+.header{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:bold;
+}
+
+.back{
+  color:#5b21b6;
+  background:white;
+  padding:9px 15px;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:25px 18px 50px;
+}
+
+.hero{
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
+  color:white;
+  padding:30px;
+  border-radius:22px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  margin-top:0;
+  font-size:32px;
+}
+
+.card{
+  background:white;
+  padding:22px;
+  border-radius:18px;
+  margin-bottom:20px;
+  box-shadow:0 5px 20px #0001;
+}
+
+.price{
+  font-size:28px;
+  font-weight:bold;
+  color:#5b21b6;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.topic{
+  background:#f5f3ff;
+  padding:18px;
+  border-radius:14px;
+}
+
+.topic h3{
+  margin-top:0;
+}
+
+.lesson{
+  padding:14px 0;
+  border-bottom:1px solid #eee;
+}
+
+.lesson:last-child{
+  border-bottom:0;
+}
+
+@media(max-width:600px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:26px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header">
+
+    <div class="logo">
+      📚 Padho Aur Kamao
+    </div>
+
+    <a class="back" href="dashboard.html">
+      ← Dashboard
+    </a>
+
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+
+    <h1>🚀 Step To Success</h1>
+
+    <p>
+      Skills सीखें • Practice करें • अपने knowledge को बेहतर बनाएं
+    </p>
+
+  </section>
+
+  <section class="card">
+
+    <h2>📌 Course Details</h2>
+
+    <p class="price">₹199</p>
+
+    <p>
+      यह course Lead Generation, Communication Skills,
+      Maths, Reasoning, Hindi और General Studies जैसे topics
+      पर learning material प्रदान करेगा।
+    </p>
+
+  </section>
+
+  <section class="card">
+
+    <h2>📚 Course Topics</h2>
+
+    <div class="grid">
+
+      <div class="topic">
+        <h3>🎯 Lead Generation</h3>
+        <p>Lead generation के fundamentals और practical concepts।</p>
+      </div>
+
+      <div class="topic">
+        <h3>🗣️ Communication Skills</h3>
+        <p>Communication को बेहतर बनाने के practical lessons।</p>
+      </div>
+
+      <div class="topic">
+        <h3>➗ Mathematics</h3>
+        <p>Maths concepts और practice questions।</p>
+      </div>
+
+      <div class="topic">
+        <h3>🧠 Reasoning</h3>
+        <p>Reasoning concepts और practice exercises।</p>
+      </div>
+
+      <div class="topic">
+        <h3>🇮🇳 Hindi</h3>
+        <p>Hindi language और exam-oriented practice।</p>
+      </div>
+
+      <div class="topic">
+        <h3>🌍 General Studies</h3>
+        <p>GS के महत्वपूर्ण topics और practice material।</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="card">
+
+    <h2>🎥 Course Lessons</h2>
+
+    <div class="lesson">
+      📹 Lesson 1 — Introduction
+    </div>
+
+    <div class="lesson">
+      📹 Lesson 2 — Lead Generation
+    </div>
+
+    <div class="lesson">
+      📹 Lesson 3 — Communication Skills
+    </div>
+
+    <div class="lesson">
+      📹 Lesson 4 — Mathematics
+    </div>
+
+    <div class="lesson">
+      📹 Lesson 5 — Reasoning
+    </div>
+
+    <div class="lesson">
+      📹 Lesson 6 — Hindi & GS
+    </div>
+
+  </section>
+
+</main>
+
+</body>
+</html>
