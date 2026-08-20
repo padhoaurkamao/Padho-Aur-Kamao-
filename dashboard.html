@@ -3,11 +3,12 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Dashboard - Padho Aur Kamao</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
@@ -15,18 +16,21 @@
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background:#f4f7fb;
+  background:#f5f7fb;
   color:#111827;
 }
 
 header{
   background:linear-gradient(135deg,#5b21b6,#7c3aed);
   color:white;
-  padding:22px 16px;
+  padding:16px 20px;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
-.header-inner{
-  max-width:1100px;
+.header{
+  max-width:1150px;
   margin:auto;
   display:flex;
   justify-content:space-between;
@@ -34,105 +38,136 @@ header{
 }
 
 .logo{
-  font-size:23px;
+  font-size:22px;
   font-weight:bold;
 }
 
-.user{
-  text-align:right;
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
-.user-name{
-  font-weight:bold;
-}
-
-.user-email{
-  font-size:13px;
-  opacity:.85;
-  margin-top:4px;
-}
-
-.logout{
-  margin-top:8px;
-  padding:8px 14px;
+.settings-btn{
   border:0;
-  border-radius:8px;
   background:white;
   color:#5b21b6;
-  font-weight:bold;
+  padding:10px 13px;
+  border-radius:10px;
+  font-size:18px;
   cursor:pointer;
 }
 
-.container{
-  width:94%;
-  max-width:1100px;
-  margin:25px auto;
+.menu-btn{
+  display:none;
+  border:0;
+  background:white;
+  color:#5b21b6;
+  padding:10px;
+  border-radius:10px;
+  font-size:20px;
+}
+
+.layout{
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  min-height:calc(100vh - 70px);
+}
+
+.sidebar{
+  width:230px;
+  background:white;
+  padding:20px 12px;
+  border-right:1px solid #e5e7eb;
+}
+
+.nav{
+  display:block;
+  padding:13px;
+  margin:5px 0;
+  border-radius:10px;
+  color:#374151;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+.nav:hover,
+.nav.active{
+  background:#ede9fe;
+  color:#5b21b6;
+  font-weight:bold;
+}
+
+.main{
+  flex:1;
+  padding:25px;
 }
 
 .welcome{
   background:white;
-  padding:22px;
   border-radius:18px;
+  padding:23px;
   box-shadow:0 5px 20px #0001;
-  margin-bottom:22px;
+  margin-bottom:20px;
 }
 
 .welcome h1{
-  margin:0 0 8px;
+  margin:0 0 7px;
 }
 
-.welcome p{
-  margin:0;
+.muted{
   color:#6b7280;
 }
 
 
-/* TOP STATS */
+/* STATS */
 
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:15px;
-  margin-bottom:28px;
+  gap:14px;
+  margin-bottom:25px;
 }
 
 .stat{
   background:white;
-  padding:20px;
-  border-radius:16px;
-  box-shadow:0 5px 18px #0001;
+  padding:18px;
+  border-radius:15px;
+  box-shadow:0 4px 15px #0001;
 }
 
 .stat-icon{
-  font-size:26px;
+  font-size:25px;
 }
 
 .stat-number{
-  font-size:25px;
+  font-size:23px;
   font-weight:bold;
-  margin-top:8px;
+  margin-top:7px;
 }
 
-.stat-title{
+.stat-label{
   color:#6b7280;
-  font-size:14px;
+  font-size:13px;
 }
 
 
-/* COURSE */
+/* COURSES */
 
 .section-title{
-  margin:28px 0 15px;
+  margin:25px 0 15px;
 }
 
 .course{
   background:white;
-  border-radius:18px;
   padding:22px;
+  border-radius:18px;
+  margin-bottom:20px;
   box-shadow:0 5px 20px #0001;
 }
 
-.course-top{
+.course-header{
   display:flex;
   gap:15px;
   align-items:center;
@@ -141,16 +176,17 @@ header{
 .course-icon{
   width:58px;
   height:58px;
+  border-radius:15px;
+  background:#ede9fe;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#ede9fe;
-  border-radius:15px;
   font-size:30px;
+  flex-shrink:0;
 }
 
 .course h2{
-  margin:0 0 5px;
+  margin:0 0 6px;
 }
 
 .description{
@@ -159,927 +195,8 @@ header{
 }
 
 
-/* MONEY CARDS */
+/* MONEY */
 
-.money-cards{
+.money{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  margin-top:22px;
-}
-
-.money-card{
-  border-radius:16px;
-  padding:20px;
-  background:#fff;
-  box-shadow:0 5px 18px #0001;
-}
-
-.money-icon{
-  font-size:28px;
-}
-
-.money-title{
-  color:#6b7280;
-  margin-top:8px;
-  font-size:14px;
-}
-
-.money-value{
-  font-size:26px;
-  font-weight:bold;
-  margin-top:6px;
-}
-
-.price-card{
-  border-left:5px solid #7c3aed;
-}
-
-.commission-card{
-  border-left:5px solid #16a34a;
-}
-
-.passive-card{
-  border-left:5px solid #f59e0b;
-}
-
-
-/* PROGRESS */
-
-.progress-box{
-  margin-top:22px;
-}
-
-.progress-info{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:7px;
-  font-size:14px;
-}
-
-.progress{
-  height:10px;
-  background:#e5e7eb;
-  border-radius:20px;
-  overflow:hidden;
-}
-
-.progress-bar{
-  height:100%;
-  width:0%;
-  background:#7c3aed;
-  border-radius:20px;
-}
-
-
-/* LESSONS */
-
-.lessons{
-  margin-top:22px;
-}
-
-.lesson{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  padding:13px;
-  margin-top:8px;
-  border:1px solid #e5e7eb;
-  border-radius:10px;
-}
-
-.lesson a{
-  color:#5b21b6;
-  text-decoration:none;
-  font-weight:bold;
-  white-space:nowrap;
-}
-
-
-/* EARNINGS */
-
-.earnings{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.earning{
-  background:white;
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 5px 18px #0001;
-}
-
-.earning strong{
-  display:block;
-  font-size:22px;
-  margin-top:8px;
-}
-
-
-/* LEADERBOARD */
-
-.leaderboard{
-  background:white;
-  border-radius:16px;
-  padding:20px;
-  box-shadow:0 5px 18px #0001;
-}
-
-.rank{
-  display:flex;
-  justify-content:space-between;
-  padding:14px 5px;
-  border-bottom:1px solid #eee;
-}
-
-.rank:last-child{
-  border-bottom:0;
-}
-
-footer{
-  text-align:center;
-  color:#6b7280;
-  padding:30px 10px;
-}
-
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-  .stats{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .money-cards{
-    grid-template-columns:1fr;
-  }
-
-  .earnings{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-}
-
-@media(max-width:500px){
-
-  .header-inner{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:12px;
-  }
-
-  .user{
-    text-align:left;
-  }
-
-  .stats,
-  .earnings{
-    grid-template-columns:1fr;
-  }
-
-  .lesson{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-}
-</style>
-
-</head>
-
-
-<body>
-
-
-<header>
-
-<div class="header-inner">
-
-<div class="logo">
-📚 Padho Aur Kamao
-</div>
-
-<div class="user">
-
-<div id="userName" class="user-name">
-Student
-</div>
-
-<div id="userEmail" class="user-email">
-</div>
-
-<button
-id="logoutBtn"
-class="logout">
-🚪 Logout
-</button>
-
-</div>
-
-</div>
-
-</header>
-
-
-<div class="container">
-
-
-<!-- WELCOME -->
-
-<div class="welcome">
-
-<h1>
-Hello, <span id="welcomeName">Student</span> 👋
-</h1>
-
-<p>
-Welcome to your learning dashboard.
-</p>
-
-</div>
-
-
-<!-- STATS -->
-
-<div class="stats">
-
-<div class="stat">
-
-<div class="stat-icon">
-🎓
-</div>
-
-<div
-id="courseCount"
-class="stat-number">
-1
-</div>
-
-<div class="stat-title">
-Course
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-icon">
-📚
-</div>
-
-<div
-id="lessonCount"
-class="stat-number">
-8
-</div>
-
-<div class="stat-title">
-Lessons
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-icon">
-📈
-</div>
-
-<div
-class="stat-number">
-0%
-</div>
-
-<div class="stat-title">
-Overall Progress
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-icon">
-🏆
-</div>
-
-<div class="stat-number">
-#10
-</div>
-
-<div class="stat-title">
-Leaderboard Rank
-</div>
-
-</div>
-
-</div>
-
-
-<!-- COURSE -->
-
-<h2 class="section-title">
-🎓 My Course
-</h2>
-
-
-<div class="course">
-
-
-<div class="course-top">
-
-<div class="course-icon">
-🚀
-</div>
-
-<div>
-
-<h2>
-Step To Success
-</h2>
-
-<div class="description">
-Content Creation, Lead Generation,
-Communication Skills, Math, Reasoning,
-Hindi और General Studies की practical learning।
-</div>
-
-</div>
-
-</div>
-<!-- COURSE 2 -->
-
-<div class="course" style="margin-top:20px;">
-
-  <div class="course-top">
-
-    <div class="course-icon">
-      🎯
-    </div>
-
-    <div>
-
-      <h2>
-        SSC & All Competitive Exams
-      </h2>
-
-      <div class="description">
-        SSC और सभी प्रमुख competitive exams की तैयारी,
-        exam pattern, syllabus, current affairs,
-        Maths, Reasoning, Hindi, English और General Studies।
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- MONEY CARDS -->
-
-  <div class="money-cards">
-
-    <div class="money-card price-card">
-
-      <div class="money-icon">
-        💰
-      </div>
-
-      <div class="money-title">
-        Course Price
-      </div>
-
-      <div class="money-value">
-        ₹399
-      </div>
-
-    </div>
-
-
-    <div class="money-card commission-card">
-
-      <div class="money-icon">
-        💵
-      </div>
-
-      <div class="money-title">
-        Commission Per Sale
-      </div>
-
-      <div class="money-value">
-        ₹200
-      </div>
-
-    </div>
-
-
-    <div class="money-card passive-card">
-
-      <div class="money-icon">
-        📈
-      </div>
-
-      <div class="money-title">
-        Passive Income
-      </div>
-
-      <div class="money-value">
-        ₹50
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- COURSE LESSONS -->
-
-  <div class="lessons">
-
-    <h3>
-      📚 Course Lessons
-    </h3>
-
-
-    <div class="lesson">
-      <span>📋 SSC Exam Pattern & Syllabus</span>
-      <a href="lesson.html?course=1&lesson=0">🎥 Open</a>
-    </div>
-
-
-    <div class="lesson">
-      <span>➗ SSC Maths</span>
-      <a href="lesson.html?course=1&lesson=1">🎥 Open</a>
-    </div>
-
-
-    <div class="lesson">
-      <span>🧠 SSC Reasoning</span>
-      <a href="lesson.html?course=1&lesson=2">🎥 Open</a>
-    </div>
-
-
-    <div class="lesson">
-      <span>📝 Hindi</span>
-      <a href="lesson.html?course=1&lesson=3">🎥 Open</a>
-    </div>
-
-
-    <div class="lesson">
-      <span>🌍 General Studies</span>
-      <a href="lesson.html?course=1&lesson=4">🎥 Open</a>
-    </div>
-
-
-    <div class="lesson">
-      <span>📰 Current Affairs</span>
-      <a href="lesson.html?course=1&lesson=5">🎥 Open</a>
-    </div>
-
-
-    <div class="lesson">
-      <span>🎯 SSC GD & Other SSC Exams</span>
-      <a href="lesson.html?course=1&lesson=6">🎥 Open</a>
-    </div>
-
-
-    <div class="lesson">
-      <span>🏆 All Competitive Exams Practice</span>
-      <a href="lesson.html?course=1&lesson=7">🎥 Open</a>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- MONEY CARDS -->
-
-<div class="money-cards">
-
-
-<div class="money-card price-card">
-
-<div class="money-icon">
-💰
-</div>
-
-<div class="money-title">
-Course Price
-</div>
-
-<div class="money-value">
-₹199
-</div>
-
-</div>
-
-
-<div class="money-card commission-card">
-
-<div class="money-icon">
-💵
-</div>
-
-<div class="money-title">
-Commission Per Sale
-</div>
-
-<div class="money-value">
-₹100
-</div>
-
-</div>
-
-
-<div class="money-card passive-card">
-
-<div class="money-icon">
-📈
-</div>
-
-<div class="money-title">
-Passive Income
-</div>
-
-<div class="money-value">
-₹20
-</div>
-
-</div>
-
-
-</div>
-
-
-<!-- PROGRESS -->
-
-<div class="progress-box">
-
-<div class="progress-info">
-
-<span>
-Course Progress
-</span>
-
-<strong>
-0%
-</strong>
-
-</div>
-
-<div class="progress">
-
-<div class="progress-bar">
-</div>
-
-</div>
-
-</div>
-
-
-<!-- LESSONS -->
-
-<div class="lessons">
-
-<h3>
-📚 Course Lessons
-</h3>
-
-
-<div class="lesson">
-
-<span>
-📱 Content Creation & Content Strategy
-</span>
-
-<a href="lesson.html?course=0&lesson=0">
-🎥 Open
-</a>
-
-</div>
-
-
-<div class="lesson">
-
-<span>
-🎯 Lead Generation
-</span>
-
-<a href="lesson.html?course=0&lesson=1">
-🎥 Open
-</a>
-
-</div>
-
-
-<div class="lesson">
-
-<span>
-💬 Communication Skills
-</span>
-
-<a href="lesson.html?course=0&lesson=2">
-🎥 Open
-</a>
-
-</div>
-
-
-<div class="lesson">
-
-<span>
-➗ Mathematics
-</span>
-
-<a href="lesson.html?course=0&lesson=3">
-🎥 Open
-</a>
-
-</div>
-
-
-<div class="lesson">
-
-<span>
-🧠 Reasoning
-</span>
-
-<a href="lesson.html?course=0&lesson=4">
-🎥 Open
-</a>
-
-</div>
-
-
-<div class="lesson">
-
-<span>
-📝 Hindi
-</span>
-
-<a href="lesson.html?course=0&lesson=5">
-🎥 Open
-</a>
-
-</div>
-
-
-<div class="lesson">
-
-<span>
-🌍 General Studies (GS)
-</span>
-
-<a href="lesson.html?course=0&lesson=6">
-🎥 Open
-</a>
-
-</div>
-
-
-<div class="lesson">
-
-<span>
-🚀 Practical Skill Project
-</span>
-
-<a href="lesson.html?course=0&lesson=7">
-🎥 Open
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- EARNINGS -->
-
-<h2 class="section-title">
-💰 Earnings Dashboard
-</h2>
-
-<div class="earnings">
-
-<div class="earning">
-
-💵 Today
-
-<strong>
-₹0
-</strong>
-
-</div>
-
-
-<div class="earning">
-
-📅 This Week
-
-<strong>
-₹0
-</strong>
-
-</div>
-
-
-<div class="earning">
-
-📆 This Month
-
-<strong>
-₹0
-</strong>
-
-</div>
-
-
-<div class="earning">
-
-📈 Total
-
-<strong>
-₹0
-</strong>
-
-</div>
-
-</div>
-
-
-<!-- LEADERBOARD -->
-
-<h2 class="section-title">
-🏆 Leaderboard
-</h2>
-
-<div class="leaderboard">
-
-<div class="rank">
-<span>🥇 Rahul</span>
-<strong>95%</strong>
-</div>
-
-<div class="rank">
-<span>🥈 Aman</span>
-<strong>90%</strong>
-</div>
-
-<div class="rank">
-<span>🥉 Priya</span>
-<strong>85%</strong>
-</div>
-
-<div class="rank">
-<span>4️⃣ Student</span>
-<strong>10%</strong>
-</div>
-
-</div>
-
-
-</div>
-
-
-<footer>
-
-📚 Padho Aur Kamao
-
-<br>
-
-Learn • Practice • Grow
-
-</footer>
-
-
-<!-- FIREBASE -->
-
-<script type="module">
-
-import {
-  initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
-
-import {
-  getAuth,
-  onAuthStateChanged,
-  signOut
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-
-
-const firebaseConfig = {
-
-apiKey:
-"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
-
-authDomain:
-"padho-aur-kamao-3eeae.firebaseapp.com",
-
-projectId:
-"padho-aur-kamao-3eeae",
-
-storageBucket:
-"padho-aur-kamao-3eeae.firebasestorage.app",
-
-messagingSenderId:
-"670063905617",
-
-appId:
-"1:670063905617:web:9b3a7e62fdeea14fbfa170",
-
-measurementId:
-"G-7J1YV8HN3F"
-
-};
-
-
-const app =
-initializeApp(firebaseConfig);
-
-const auth =
-getAuth(app);
-
-
-/* LOGIN CHECK */
-
-onAuthStateChanged(
-auth,
-function(user){
-
-if(!user){
-
-window.location.href =
-"login.html";
-
-return;
-
-}
-
-
-const name =
-user.displayName ||
-"Student";
-
-
-document.getElementById(
-"userName"
-).innerText =
-name;
-
-
-document.getElementById(
-"welcomeName"
-).innerText =
-name;
-
-
-document.getElementById(
-"userEmail"
-).innerText =
-user.email || "";
-
-});
-
-
-/* LOGOUT */
-
-document.getElementById(
-"logoutBtn"
-).addEventListener(
-"click",
-async function(){
-
-try{
-
-await signOut(auth);
-
-window.location.href =
-"login.html";
-
-}
-
-catch(error){
-
-console.error(error);
-
-}
-
-});
-
-</script>
-
-
-</body>
-
-</html>
+  grid-template
