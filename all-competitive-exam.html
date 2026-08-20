@@ -1,12 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>All Competitive Exam - Padho Aur Kamao</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -18,10 +22,13 @@ body{
 header{
   background:linear-gradient(135deg,#5b21b6,#7c3aed);
   color:white;
-  padding:18px 20px;
+  padding:16px 20px;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
-.header{
+.nav{
   max-width:1100px;
   margin:auto;
   display:flex;
@@ -35,8 +42,8 @@ header{
 }
 
 .back{
-  color:#5b21b6;
   background:white;
+  color:#5b21b6;
   padding:9px 15px;
   border-radius:20px;
   text-decoration:none;
@@ -46,7 +53,7 @@ header{
 .container{
   max-width:1100px;
   margin:auto;
-  padding:25px 18px 50px;
+  padding:25px 18px 60px;
 }
 
 .hero{
@@ -58,54 +65,203 @@ header{
 }
 
 .hero h1{
-  margin-top:0;
+  margin:0 0 10px;
   font-size:32px;
+}
+
+.hero p{
+  margin:0;
+  line-height:1.6;
+}
+
+.info{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.info-card{
+  background:white;
+  padding:20px;
+  border-radius:17px;
+  box-shadow:0 5px 20px #0001;
+  text-align:center;
+}
+
+.info-icon{
+  font-size:30px;
+}
+
+.info-card strong{
+  display:block;
+  margin-top:8px;
+  font-size:20px;
+  color:#5b21b6;
+}
+
+.section-title{
+  margin:28px 0 15px;
 }
 
 .card{
   background:white;
   padding:22px;
   border-radius:18px;
-  margin-bottom:20px;
+  margin-bottom:18px;
   box-shadow:0 5px 20px #0001;
 }
 
-.price{
-  font-size:28px;
-  font-weight:bold;
-  color:#5b21b6;
-}
-
-.grid{
+.exam-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:15px;
 }
 
-.topic{
+.exam{
   background:#f5f3ff;
-  padding:18px;
-  border-radius:14px;
+  padding:20px;
+  border-radius:15px;
 }
 
-.topic h3{
-  margin-top:0;
+.exam-icon{
+  font-size:38px;
+}
+
+.exam h3{
+  margin:10px 0 7px;
+}
+
+.exam p{
+  color:#6b7280;
+  line-height:1.5;
+}
+
+.subjects{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.subject{
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  padding:16px;
+  border-radius:12px;
+}
+
+.lesson{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  padding:17px 0;
+  border-bottom:1px solid #eee;
+}
+
+.lesson:last-child{
+  border-bottom:0;
+}
+
+.lesson-info{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.lesson-icon{
+  font-size:28px;
+}
+
+.lesson h3{
+  margin:0 0 4px;
+}
+
+.lesson p{
+  margin:0;
+  color:#6b7280;
+  font-size:14px;
+}
+
+.watch{
+  background:#6d28d9;
+  color:white;
+  border:0;
+  padding:10px 15px;
+  border-radius:9px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 .assessment{
   background:#eef2ff;
-  padding:20px;
-  border-radius:14px;
+  padding:22px;
+  border-radius:15px;
 }
 
-@media(max-width:600px){
-  .grid{
+.assessment-btn{
+  display:inline-block;
+  margin-top:10px;
+  background:#5b21b6;
+  color:white;
+  padding:12px 18px;
+  border-radius:9px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.note{
+  background:#fff7ed;
+  border-left:4px solid #f59e0b;
+  padding:15px;
+  border-radius:8px;
+  line-height:1.6;
+}
+
+@media(max-width:750px){
+
+  .info{
     grid-template-columns:1fr;
+  }
+
+  .exam-grid{
+    grid-template-columns:1fr;
+  }
+
+  .subjects{
+    grid-template-columns:repeat(2,1fr);
   }
 
   .hero h1{
     font-size:26px;
   }
+
+}
+
+@media(max-width:500px){
+
+  .logo{
+    font-size:16px;
+  }
+
+  .back{
+    padding:8px 11px;
+    font-size:13px;
+  }
+
+  .subjects{
+    grid-template-columns:1fr;
+  }
+
+  .lesson{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .watch{
+    width:100%;
+  }
+
 }
 </style>
 </head>
@@ -113,91 +269,128 @@ header{
 <body>
 
 <header>
-  <div class="header">
+
+  <div class="nav">
 
     <div class="logo">
       📚 Padho Aur Kamao
     </div>
 
-    <a class="back" href="dashboard.html">
+    <a
+      href="dashboard.html"
+      class="back">
+
       ← Dashboard
+
     </a>
 
   </div>
+
 </header>
+
 
 <main class="container">
 
+
+  <!-- HERO -->
+
   <section class="hero">
 
-    <h1>🎓 All Competitive Exam</h1>
+    <h1>
+      🎓 All Competitive Exam
+    </h1>
 
     <p>
-      10th और 12th level exams के लिए preparation और assessment।
+      10th और 12th level exams के लिए
+      preparation, practice और assessment।
     </p>
 
   </section>
 
-  <section class="card">
 
-    <h2>📌 Course Details</h2>
+  <!-- COURSE INFO -->
 
-    <p class="price">₹399</p>
+  <section class="info">
 
-    <p>
-      इस course में 10th और 12th level की exam preparation
-      के लिए आपके द्वारा तैयार किया गया learning material और
-      assessment शामिल किया जा सकता है।
-    </p>
+    <div class="info-card">
 
-  </section>
-
-  <section class="card">
-
-    <h2>📚 Exam Levels</h2>
-
-    <div class="grid">
-
-      <div class="topic">
-        <h3>📘 10th Level</h3>
-        <p>
-          10th level के अनुसार study material,
-          practice और assessment।
-        </p>
+      <div class="info-icon">
+        💰
       </div>
 
-      <div class="topic">
-        <h3>📗 12th Level</h3>
-        <p>
-          12th level के अनुसार study material,
-          practice और assessment।
-        </p>
+      <strong>
+        ₹399
+      </strong>
+
+      <span>
+        Course Price
+      </span>
+
+    </div>
+
+
+    <div class="info-card">
+
+      <div class="info-icon">
+        🎓
       </div>
+
+      <strong>
+        10th + 12th
+      </strong>
+
+      <span>
+        Exam Level
+      </span>
+
+    </div>
+
+
+    <div class="info-card">
+
+      <div class="info-icon">
+        📝
+      </div>
+
+      <strong>
+        Assessment
+      </strong>
+
+      <span>
+        Practice & Test
+      </span>
 
     </div>
 
   </section>
 
+
+  <!-- ABOUT -->
+
+  <h2 class="section-title">
+    📖 Course के बारे में
+  </h2>
+
   <section class="card">
 
-    <h2>📝 Assessment</h2>
+    <p style="line-height:1.7;">
 
-    <div class="assessment">
+      All Competitive Exam course में 10th और 12th
+      level की exam preparation के लिए study material,
+      practice questions और assessment उपलब्ध कराया
+      जा सकता है।
 
-      <h3>
-        आपका अपना Assessment System
-      </h3>
-
-      <p>
-        आप अपनी जरूरत और course structure के अनुसार
-        questions, tests और assessments बाद में add कर सकते हैं।
-      </p>
-
-    </div>
+    </p>
 
   </section>
 
-</main>
 
-</body>
-</html>
+  <!-- EXAM LEVEL -->
+
+  <h2 class="section-title">
+    🎓 Exam Levels
+  </h2>
+
+  <section class="card">
+
+    <div class="exam
