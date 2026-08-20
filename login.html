@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 
@@ -83,6 +84,10 @@ button:disabled{
   background:#111827;
 }
 
+.forgot{
+  background:#f59e0b;
+}
+
 .message{
   min-height:22px;
   text-align:center;
@@ -144,6 +149,19 @@ button:disabled{
   </button>
 
 
+  <!-- FORGOT PASSWORD -->
+
+  <button
+    id="forgotBtn"
+    class="forgot">
+
+    🔑 Forgot Password?
+
+  </button>
+
+
+  <!-- GOOGLE LOGIN -->
+
   <button
     id="googleBtn"
     class="google">
@@ -172,6 +190,9 @@ button:disabled{
 
 <script type="module">
 
+
+/* FIREBASE APP */
+
 import {
   initializeApp
 }
@@ -179,17 +200,22 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
+/* FIREBASE AUTH */
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  updateProfile
+  updateProfile,
+  sendPasswordResetEmail
 }
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
+
+/* FIRESTORE */
 
 import {
   getFirestore,
@@ -228,7 +254,7 @@ const firebaseConfig = {
 };
 
 
-/* INITIALIZE */
+/* INITIALIZE FIREBASE */
 
 const app =
 initializeApp(firebaseConfig);
@@ -242,23 +268,25 @@ const db =
 getFirestore(app);
 
 
+/* ELEMENTS */
+
 const message =
 document.getElementById("message");
-
 
 const signupBtn =
 document.getElementById("signupBtn");
 
-
 const loginBtn =
 document.getElementById("loginBtn");
 
+const forgotBtn =
+document.getElementById("forgotBtn");
 
 const googleBtn =
 document.getElementById("googleBtn");
 
 
-/* MESSAGE */
+/* MESSAGE FUNCTION */
 
 function showMessage(text){
 
@@ -267,7 +295,9 @@ function showMessage(text){
 }
 
 
-/* SIGNUP */
+/* =========================
+   CREATE ACCOUNT
+========================= */
 
 signupBtn.addEventListener(
 "click",
@@ -402,7 +432,9 @@ async function(){
 });
 
 
-/* LOGIN */
+/* =========================
+   LOGIN
+========================= */
 
 loginBtn.addEventListener(
 "click",
@@ -479,7 +511,74 @@ async function(){
 });
 
 
-/* GOOGLE LOGIN */
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+forgotBtn.addEventListener(
+"click",
+async function(){
+
+  const email =
+  document.getElementById("email")
+  .value
+  .trim();
+
+
+  if(!email){
+
+    showMessage(
+      "⚠️ पहले अपना Email डालें।"
+    );
+
+    document.getElementById("email")
+    .focus();
+
+    return;
+
+  }
+
+
+  forgotBtn.disabled = true;
+
+
+  try{
+
+    await sendPasswordResetEmail(
+      auth,
+      email
+    );
+
+
+    showMessage(
+      "✅ Password reset link आपके Email पर भेज दिया गया है। अपना Inbox/Spam folder check करें।"
+    );
+
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    showMessage(
+      "❌ " + getFriendlyError(error)
+    );
+
+  }
+
+  finally{
+
+    forgotBtn.disabled = false;
+
+  }
+
+});
+
+
+/* =========================
+   GOOGLE LOGIN
+========================= */
 
 googleBtn.addEventListener(
 "click",
@@ -551,7 +650,9 @@ async function(){
 });
 
 
-/* FRIENDLY ERRORS */
+/* =========================
+   FRIENDLY FIREBASE ERRORS
+========================= */
 
 function getFriendlyError(error){
 
@@ -592,6 +693,14 @@ function getFriendlyError(error){
 
 
   if(code ===
+  "auth/user-not-found"){
+
+    return "इस Email से कोई account नहीं मिला।";
+
+  }
+
+
+  if(code ===
   "auth/network-request-failed"){
 
     return "Firebase से connection नहीं हो रहा। Internet और Authorized Domain check करें।";
@@ -603,6 +712,14 @@ function getFriendlyError(error){
   "auth/popup-blocked"){
 
     return "Google Login popup block हो गया।";
+
+  }
+
+
+  if(code ===
+  "auth/too-many-requests"){
+
+    return "बहुत ज्यादा कोशिशें हो गई हैं। कुछ देर बाद फिर कोशिश करें।";
 
   }
 
