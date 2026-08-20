@@ -1,95 +1,587 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Course - Padho Aur Kamao</title>
+<title>Padho Aur Kamao - Dashboard</title>
 
 <style>
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
-  font-family:Arial;
+  font-family:Arial,sans-serif;
   background:#f4f7fb;
+  color:#111827;
 }
+
+/* HEADER */
+
 header{
-  background:#2563eb;
+  background:linear-gradient(135deg,#2563eb,#7c3aed);
   color:white;
-  padding:18px;
+  padding:16px;
 }
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo h2{
+  margin:0;
+}
+
+.logo small{
+  opacity:.9;
+}
+
+/* 3 DOT MENU */
+
+.menu{
+  position:relative;
+}
+
+.three-dot{
+  background:white;
+  color:#2563eb;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  font-size:28px;
+  padding:0;
+}
+
+.menu-box{
+  display:none;
+  position:absolute;
+  right:0;
+  top:52px;
+  width:210px;
+  background:white;
+  border-radius:14px;
+  box-shadow:0 5px 25px #0003;
+  padding:8px;
+  z-index:9999;
+}
+
+.menu-box a{
+  display:block;
+  padding:13px;
+  color:#111827;
+  text-decoration:none;
+  border-radius:9px;
+}
+
+.menu-box a:hover{
+  background:#f3f4f6;
+}
+
+.menu-box hr{
+  border:0;
+  border-top:1px solid #eee;
+  margin:6px 0;
+}
+
+.menu-box button{
+  width:100%;
+  background:#fee2e2;
+  color:#dc2626;
+}
+
+/* MAIN */
+
 main{
-  max-width:900px;
+  max-width:1100px;
   margin:auto;
   padding:20px;
 }
-.box{
+
+/* WELCOME */
+
+.welcome{
   background:white;
   padding:20px;
-  border-radius:15px;
-  margin-bottom:15px;
-  box-shadow:0 3px 10px #0001;
+  border-radius:16px;
+  margin-bottom:20px;
+  box-shadow:0 3px 12px #0001;
 }
-.lesson{
-  padding:15px;
-  border:1px solid #ddd;
-  border-radius:10px;
-  margin:10px 0;
+
+/* STATS */
+
+.stats{
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.stat{
+  background:white;
+  padding:18px;
+  border-radius:15px;
+  box-shadow:0 3px 12px #0001;
+}
+
+.stat h3{
+  margin:0 0 8px;
+}
+
+.stat p{
+  font-size:22px;
+  font-weight:bold;
+  margin:0;
+  color:#2563eb;
+}
+
+/* COURSE */
+
+.courses{
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+}
+
+.course{
+  background:white;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 3px 12px #0001;
+}
+
+.course-img{
+  height:150px;
+  background:
+  linear-gradient(135deg,#2563eb,#9333ea);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:45px;
+}
+
+.course-body{
+  padding:18px;
+}
+
+.course-body h3{
+  margin-top:0;
+}
+
+.price{
+  font-size:22px;
+  font-weight:bold;
+  color:#16a34a;
+  margin:12px 0;
+}
+
+.buy{
+  width:100%;
+  background:#2563eb;
+  color:white;
+}
+
+.access{
+  width:100%;
+  background:#16a34a;
+  color:white;
+}
+
+.empty{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 3px 12px #0001;
+}
+
+/* MODAL */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#0008;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:10000;
+}
+
+.modal-box{
+  background:white;
+  max-width:430px;
+  width:100%;
+  padding:25px;
+  border-radius:18px;
+}
+
+.modal-box .buy{
+  margin-top:10px;
+  padding:14px;
+}
+
+.close{
+  width:100%;
+  margin-top:10px;
+  background:#e5e7eb;
+}
+
+.message{
+  margin-top:12px;
+  padding:10px;
+  border-radius:8px;
+  display:none;
+}
+
+.success{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.error{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  main{
+    padding:14px;
+  }
+
+  .logo h2{
+    font-size:19px;
+  }
+
+  .logo small{
+    font-size:11px;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-  📚 Padho Aur Kamao
+
+<div class="top">
+
+  <div class="logo">
+
+    <h2>📚 Padho Aur Kamao</h2>
+
+    <small>
+      सीखें • Practice करें • आगे बढ़ें
+    </small>
+
+  </div>
+
+
+  <!-- THREE DOT -->
+
+  <div class="menu">
+
+    <button
+      class="three-dot"
+      id="menuBtn">
+
+      ⋮
+
+    </button>
+
+
+    <div
+      class="menu-box"
+      id="menuBox">
+
+      <a href="#myCourses">
+        🎓 My Course
+      </a>
+
+      <a href="leaderboard.html">
+        🏆 Leaderboard
+      </a>
+
+      <a href="profile.html">
+        👤 My Profile
+      </a>
+
+      <hr>
+
+      <button id="logout">
+        🚪 Logout
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
 </header>
+
+
+<!-- MAIN -->
 
 <main>
 
-<div id="content" class="box">
-  Course loading...
+
+<!-- WELCOME -->
+
+<div class="welcome">
+
+  <h2>
+    👋 Welcome
+    <span id="name">
+      Student
+    </span>
+  </h2>
+
+  <p id="email"></p>
+
 </div>
+
+
+<!-- EARNING STATS -->
+
+<div class="stats">
+
+  <div class="stat">
+
+    <h3>💰 Total Earnings</h3>
+
+    <p>
+      ₹0
+    </p>
+
+  </div>
+
+
+  <div class="stat">
+
+    <h3>📅 This Week</h3>
+
+    <p>
+      ₹0
+    </p>
+
+  </div>
+
+
+  <div class="stat">
+
+    <h3>📆 This Month</h3>
+
+    <p>
+      ₹0
+    </p>
+
+  </div>
+
+
+  <div class="stat">
+
+    <h3>📈 This Year</h3>
+
+    <p>
+      ₹0
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- BUY COURSE -->
+
+<h2>
+  🛒 Buy Course
+</h2>
+
+
+<div
+  id="courses"
+  class="courses">
+
+  <p>
+    Courses loading...
+  </p>
+
+</div>
+
+
+<!-- MY COURSES -->
+
+<h2
+  id="myCourses"
+  style="margin-top:35px">
+
+  🎓 My Courses
+
+</h2>
+
+
+<div
+  id="myCoursesList"
+  class="courses">
+
+  <div class="empty">
+
+    आपने अभी कोई course purchase नहीं किया है।
+
+  </div>
+
+</div>
+
 
 </main>
 
+
+<!-- PURCHASE MODAL -->
+
+<div
+  class="modal"
+  id="purchaseModal">
+
+
+  <div class="modal-box">
+
+
+    <h2 id="modalTitle">
+      Course
+    </h2>
+
+
+    <p id="modalDescription">
+    </p>
+
+
+    <h3>
+
+      Price:
+      ₹<span id="modalPrice">
+      </span>
+
+    </h3>
+
+
+    <p>
+
+      🧪 अभी यह
+      <b>Test Purchase Mode</b>
+      है।
+
+    </p>
+
+
+    <button
+      id="confirmPurchase"
+      class="buy">
+
+      ✅ Confirm Purchase
+
+    </button>
+
+
+    <button
+      id="closeModal"
+      class="close">
+
+      Cancel
+
+    </button>
+
+
+    <div
+      id="modalMessage"
+      class="message">
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
 <script type="module">
 
-import {initializeApp}
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+/* FIREBASE */
 
 import {
- getAuth,
- onAuthStateChanged
+  initializeApp
 }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
 
 import {
- getFirestore,
- doc,
- getDoc
+  getAuth,
+  onAuthStateChanged,
+  signOut
 }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
+
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+  doc,
+  getDoc,
+  setDoc,
+  serverTimestamp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+
+/* =================================
+   🔥 YOUR FIREBASE CONFIG
+================================= */
 
 const firebaseConfig = {
 
- apiKey:"YOUR_API_KEY",
+  apiKey:
+  "YOUR_API_KEY",
 
- authDomain:
- "YOUR_PROJECT.firebaseapp.com",
+  authDomain:
+  "YOUR_PROJECT.firebaseapp.com",
 
- projectId:
- "YOUR_PROJECT_ID",
+  projectId:
+  "YOUR_PROJECT_ID",
 
- storageBucket:
- "YOUR_PROJECT.firebasestorage.app",
+  storageBucket:
+  "YOUR_PROJECT.firebasestorage.app",
 
- messagingSenderId:
- "YOUR_SENDER_ID",
+  messagingSenderId:
+  "YOUR_SENDER_ID",
 
- appId:
- "YOUR_APP_ID"
+  appId:
+  "YOUR_APP_ID"
+
 };
 
+
+
+/* FIREBASE INITIALIZE */
 
 const app =
 initializeApp(firebaseConfig);
@@ -101,138 +593,870 @@ const db =
 getFirestore(app);
 
 
-const params =
-new URLSearchParams(
-window.location.search
-);
 
-const courseId =
-params.get("id");
+/* GLOBAL */
 
+let currentUser = null;
+
+let selectedCourse = null;
+
+
+
+/* =================================
+   AUTH CHECK
+================================= */
 
 onAuthStateChanged(
 auth,
-async(user)=>{
+async user => {
 
- if(!user){
+  if(!user){
 
-   location.href="login.html";
+    window.location.href =
+    "login.html";
 
-   return;
- }
+    return;
 
-
- if(!courseId){
-
-   document.getElementById("content")
-   .innerHTML=
-   "<h2>Course ID missing</h2>";
-
-   return;
- }
+  }
 
 
- const enrollmentId =
- user.uid + "_" + courseId;
+  currentUser = user;
 
 
- const enrollmentSnap =
- await getDoc(
-   doc(
-     db,
-     "enrollments",
-     enrollmentId
-   )
- );
+  document.getElementById(
+    "name"
+  ).textContent =
+  user.displayName ||
+  "Student";
 
 
- if(
-   !enrollmentSnap.exists() ||
-   enrollmentSnap.data().status !== "active"
- ){
-
-   document.getElementById("content")
-   .innerHTML=`
-     <h2>🔒 Access Denied</h2>
-     <p>
-       आपने यह course purchase नहीं किया है।
-     </p>
-   `;
-
-   return;
- }
+  document.getElementById(
+    "email"
+  ).textContent =
+  user.email || "";
 
 
- const courseSnap =
- await getDoc(
-   doc(
-     db,
-     "courses",
-     courseId
-   )
- );
+  await loadCourses();
 
-
- if(!courseSnap.exists()){
-
-   document.getElementById("content")
-   .innerHTML=
-   "<h2>Course नहीं मिला</h2>";
-
-   return;
- }
-
-
- const course =
- courseSnap.data();
-
-
- document.getElementById("content")
- .innerHTML=`
-
-   <h1>
-     🎓 ${escapeHTML(course.title)}
-   </h1>
-
-   <p>
-     ${escapeHTML(
-       course.description || ""
-     )}
-   </p>
-
-   <hr>
-
-   <h2>📖 Lessons</h2>
-
-   <div class="lesson">
-     Lesson 1 — Introduction
-   </div>
-
-   <div class="lesson">
-     Lesson 2 — Basic Concepts
-   </div>
-
-   <div class="lesson">
-     Lesson 3 — Practice
-   </div>
-
-   <div class="lesson">
-     Lesson 4 — Final Test
-   </div>
-
- `;
+  await loadMyCourses();
 
 });
 
 
-function escapeHTML(value){
 
- return String(value)
- .replaceAll("&","&amp;")
- .replaceAll("<","&lt;")
- .replaceAll(">","&gt;")
- .replaceAll('"',"&quot;")
- .replaceAll("'","&#039;");
+/* =================================
+   3 DOT MENU
+================================= */
+
+const menuBtn =
+document.getElementById(
+  "menuBtn"
+);
+
+const menuBox =
+document.getElementById(
+  "menuBox"
+);
+
+
+menuBtn.onclick = event => {
+
+  event.stopPropagation();
+
+  if(
+    menuBox.style.display ===
+    "block"
+  ){
+
+    menuBox.style.display =
+    "none";
+
+  }else{
+
+    menuBox.style.display =
+    "block";
+
+  }
+
+};
+
+
+document.addEventListener(
+"click",
+event => {
+
+  if(
+    !event.target.closest(
+      ".menu"
+    )
+  ){
+
+    menuBox.style.display =
+    "none";
+
+  }
+
+});
+
+
+
+/* =================================
+   LOAD COURSES
+================================= */
+
+async function loadCourses(){
+
+  const container =
+  document.getElementById(
+    "courses"
+  );
+
+
+  container.innerHTML =
+  "";
+
+
+  try{
+
+    const snapshot =
+    await getDocs(
+      collection(
+        db,
+        "courses"
+      )
+    );
+
+
+    if(snapshot.empty){
+
+      container.innerHTML = `
+
+        <div class="empty">
+
+          अभी कोई course उपलब्ध नहीं है।
+
+        </div>
+
+      `;
+
+      return;
+
+    }
+
+
+    snapshot.forEach(
+    courseDoc => {
+
+      const course =
+      courseDoc.data();
+
+
+      const id =
+      courseDoc.id;
+
+
+      const card =
+      document.createElement(
+        "div"
+      );
+
+
+      card.className =
+      "course";
+
+
+      card.innerHTML = `
+
+        <div class="course-img">
+
+          📚
+
+        </div>
+
+
+        <div class="course-body">
+
+          <h3>
+
+            ${safe(
+              course.title ||
+              "Course"
+            )}
+
+          </h3>
+
+
+          <p>
+
+            ${safe(
+              course.description ||
+              ""
+            )}
+
+          </p>
+
+
+          <div class="price">
+
+            ₹${course.price || 0}
+
+          </div>
+
+
+          <button
+            class="buy">
+
+            🛒 Buy Course
+
+          </button>
+
+        </div>
+
+      `;
+
+
+      card
+      .querySelector(".buy")
+      .addEventListener(
+        "click",
+        () => {
+
+          openPurchaseModal(
+            id,
+            course
+          );
+
+        }
+      );
+
+
+      container.appendChild(
+        card
+      );
+
+    });
+
+
+  }catch(error){
+
+    console.error(error);
+
+
+    container.innerHTML = `
+
+      <div class="empty">
+
+        Course load नहीं हो पाया।
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+
+/* =================================
+   PURCHASE MODAL
+================================= */
+
+function openPurchaseModal(
+id,
+course
+){
+
+  selectedCourse = {
+
+    id:id,
+
+    ...course
+
+  };
+
+
+  document.getElementById(
+    "modalTitle"
+  ).textContent =
+  course.title ||
+  "Course";
+
+
+  document.getElementById(
+    "modalDescription"
+  ).textContent =
+  course.description ||
+  "";
+
+
+  document.getElementById(
+    "modalPrice"
+  ).textContent =
+  course.price ||
+  0;
+
+
+  document.getElementById(
+    "modalMessage"
+  ).style.display =
+  "none";
+
+
+  document.getElementById(
+    "purchaseModal"
+  ).style.display =
+  "flex";
+
+}
+
+
+
+/* CLOSE MODAL */
+
+document
+.getElementById(
+  "closeModal"
+)
+.addEventListener(
+"click",
+() => {
+
+  document.getElementById(
+    "purchaseModal"
+  ).style.display =
+  "none";
+
+});
+
+
+
+/* =================================
+   TEST PURCHASE
+================================= */
+
+document
+.getElementById(
+  "confirmPurchase"
+)
+.addEventListener(
+"click",
+async () => {
+
+
+  if(
+    !currentUser ||
+    !selectedCourse
+  ){
+
+    showMessage(
+      "User या course नहीं मिला।",
+      true
+    );
+
+    return;
+
+  }
+
+
+  const button =
+  document.getElementById(
+    "confirmPurchase"
+  );
+
+
+  button.disabled =
+  true;
+
+
+  button.textContent =
+  "Processing...";
+
+
+  try{
+
+
+    const enrollmentId =
+
+      currentUser.uid +
+      "_" +
+      selectedCourse.id;
+
+
+    const enrollmentRef =
+
+      doc(
+        db,
+        "enrollments",
+        enrollmentId
+      );
+
+
+    const existing =
+
+      await getDoc(
+        enrollmentRef
+      );
+
+
+    if(existing.exists()){
+
+      showMessage(
+        "यह course पहले से खरीदा हुआ है।",
+        true
+      );
+
+      return;
+
+    }
+
+
+    /*
+      TEST PURCHASE
+
+      Real payment में
+      server-side verification
+      लगाना होगा।
+    */
+
+
+    await setDoc(
+      enrollmentRef,
+      {
+
+        userId:
+        currentUser.uid,
+
+        courseId:
+        selectedCourse.id,
+
+        courseTitle:
+        selectedCourse.title ||
+        "",
+
+        amount:
+        Number(
+          selectedCourse.price ||
+          0
+        ),
+
+        status:
+        "active",
+
+        paymentStatus:
+        "test",
+
+        purchasedAt:
+        serverTimestamp()
+
+      }
+    );
+
+
+    showMessage(
+      "🎉 Course successfully added!",
+      false
+    );
+
+
+    setTimeout(
+    async () => {
+
+      document.getElementById(
+        "purchaseModal"
+      ).style.display =
+      "none";
+
+
+      await loadMyCourses();
+
+    },
+    1000
+    );
+
+
+  }catch(error){
+
+    console.error(error);
+
+
+    showMessage(
+      "Purchase failed: " +
+      error.message,
+      true
+    );
+
+
+  }finally{
+
+    button.disabled =
+    false;
+
+
+    button.textContent =
+    "✅ Confirm Purchase";
+
+  }
+
+});
+
+
+
+/* =================================
+   MY COURSES
+================================= */
+
+async function loadMyCourses(){
+
+  const container =
+  document.getElementById(
+    "myCoursesList"
+  );
+
+
+  container.innerHTML =
+  "<p>Loading...</p>";
+
+
+  try{
+
+
+    const q =
+
+    query(
+
+      collection(
+        db,
+        "enrollments"
+      ),
+
+      where(
+        "userId",
+        "==",
+        currentUser.uid
+      ),
+
+      where(
+        "status",
+        "==",
+        "active"
+      )
+
+    );
+
+
+    const snapshot =
+    await getDocs(q);
+
+
+    container.innerHTML =
+    "";
+
+
+    if(snapshot.empty){
+
+      container.innerHTML = `
+
+        <div class="empty">
+
+          आपने अभी कोई course purchase नहीं किया है।
+
+        </div>
+
+      `;
+
+      return;
+
+    }
+
+
+    for(
+      const enrollmentDoc
+      of snapshot.docs
+    ){
+
+
+      const enrollment =
+      enrollmentDoc.data();
+
+
+      const courseRef =
+      doc(
+        db,
+        "courses",
+        enrollment.courseId
+      );
+
+
+      const courseSnap =
+      await getDoc(
+        courseRef
+      );
+
+
+      if(
+        !courseSnap.exists()
+      )
+      continue;
+
+
+      const course =
+      courseSnap.data();
+
+
+      const card =
+      document.createElement(
+        "div"
+      );
+
+
+      card.className =
+      "course";
+
+
+      card.innerHTML = `
+
+        <div class="course-img">
+
+          🎓
+
+        </div>
+
+
+        <div class="course-body">
+
+          <h3>
+
+            ${safe(
+              course.title
+            )}
+
+          </h3>
+
+
+          <p>
+
+            ${safe(
+              course.description ||
+              ""
+            )}
+
+          </p>
+
+
+          <button
+            class="access">
+
+            ▶️ Access Course
+
+          </button>
+
+        </div>
+
+      `;
+
+
+      card
+      .querySelector(".access")
+      .addEventListener(
+        "click",
+        () => {
+
+          openCourse(
+            enrollment.courseId
+          );
+
+        }
+      );
+
+
+      container.appendChild(
+        card
+      );
+
+    }
+
+
+  }catch(error){
+
+    console.error(error);
+
+
+    container.innerHTML = `
+
+      <div class="empty">
+
+        My Courses load नहीं हो पाया।
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+
+/* =================================
+   COURSE ACCESS
+================================= */
+
+async function openCourse(
+courseId
+){
+
+  try{
+
+
+    const enrollmentId =
+
+      currentUser.uid +
+      "_" +
+      courseId;
+
+
+    const enrollmentSnap =
+
+      await getDoc(
+
+        doc(
+          db,
+          "enrollments",
+          enrollmentId
+        )
+
+      );
+
+
+    if(
+      !enrollmentSnap.exists() ||
+      enrollmentSnap.data().status !==
+      "active"
+    ){
+
+      alert(
+        "आपके पास इस course का access नहीं है।"
+      );
+
+      return;
+
+    }
+
+
+    window.location.href =
+
+      "course.html?id=" +
+      encodeURIComponent(
+        courseId
+      );
+
+
+  }catch(error){
+
+    console.error(error);
+
+
+    alert(
+      "Course access check failed."
+    );
+
+  }
+
+}
+
+
+
+/* =================================
+   LOGOUT
+================================= */
+
+document
+.getElementById(
+  "logout"
+)
+.addEventListener(
+"click",
+async () => {
+
+  await signOut(auth);
+
+  window.location.href =
+  "login.html";
+
+});
+
+
+
+/* =================================
+   MESSAGE
+================================= */
+
+function showMessage(
+text,
+error
+){
+
+  const box =
+  document.getElementById(
+    "modalMessage"
+  );
+
+
+  box.textContent =
+  text;
+
+
+  box.className =
+  "message " +
+  (
+    error
+    ?
+    "error"
+    :
+    "success"
+  );
+
+
+  box.style.display =
+  "block";
+
+}
+
+
+
+/* =================================
+   HTML SECURITY
+================================= */
+
+function safe(value){
+
+  return String(value)
+
+    .replaceAll(
+      "&",
+      "&amp;"
+    )
+
+    .replaceAll(
+      "<",
+      "&lt;"
+    )
+
+    .replaceAll(
+      ">",
+      "&gt;"
+    )
+
+    .replaceAll(
+      '"',
+      "&quot;"
+    )
+
+    .replaceAll(
+      "'",
+      "&#039;"
+    );
 
 }
 
