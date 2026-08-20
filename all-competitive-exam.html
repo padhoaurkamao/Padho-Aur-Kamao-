@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -22,6 +23,9 @@ header{
   background:linear-gradient(135deg,#5b21b6,#7c3aed);
   color:white;
   padding:16px 20px;
+  position:sticky;
+  top:0;
+  z-index:100;
 }
 
 .nav{
@@ -62,27 +66,88 @@ header{
 
 .hero h1{
   margin:0 0 10px;
+  font-size:30px;
 }
 
 .hero p{
-  margin:0;
   line-height:1.6;
+  margin:5px 0;
+}
+
+/* MAIN COURSE BUTTONS */
+
+.main-buttons{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.main-card{
+  background:white;
+  padding:25px 20px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 5px 20px #0001;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.main-card:hover{
+  transform:translateY(-4px);
+}
+
+.main-icon{
+  font-size:45px;
+}
+
+.main-card h2{
+  margin:12px 0 8px;
+}
+
+.main-card p{
+  color:#6b7280;
+  line-height:1.5;
+}
+
+.open-btn{
+  display:block;
+  background:#6d28d9;
+  color:white;
+  padding:12px;
+  border-radius:10px;
+  font-weight:bold;
+  margin-top:15px;
+}
+
+/* SECTIONS */
+
+.course-section{
+  display:none;
+  margin-top:30px;
+}
+
+.course-section.active{
+  display:block;
 }
 
 .section-title{
-  margin:30px 0 15px;
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
+  color:white;
+  padding:18px;
+  border-radius:15px;
+  margin-bottom:18px;
 }
 
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:16px;
+  gap:15px;
 }
 
 .card{
   background:white;
-  padding:22px;
-  border-radius:18px;
+  padding:20px;
+  border-radius:17px;
   box-shadow:0 5px 20px #0001;
 }
 
@@ -90,48 +155,109 @@ header{
   margin-top:0;
 }
 
-.btn{
-  display:block;
-  text-align:center;
-  background:#6d28d9;
-  color:white;
-  text-decoration:none;
-  padding:12px;
-  border-radius:10px;
-  font-weight:bold;
-  margin-top:15px;
+.card p{
+  color:#6b7280;
+  line-height:1.5;
 }
 
-.board{
+.small-btn{
+  display:inline-block;
   background:#eef2ff;
-  padding:18px;
-  border-radius:14px;
+  color:#5b21b6;
+  padding:10px 14px;
+  border-radius:9px;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:8px;
+  cursor:pointer;
+}
+
+/* SUBJECT */
+
+.subjects{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.subject{
+  background:#f5f3ff;
+  padding:16px;
+  border-radius:13px;
+}
+
+.subject h3{
+  margin:0 0 8px;
+}
+
+/* CHAPTERS */
+
+.chapters{
+  display:none;
   margin-top:12px;
 }
 
-.board a{
-  display:inline-block;
-  margin:6px 5px 0 0;
-  padding:9px 13px;
-  background:white;
-  color:#5b21b6;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
+.chapters.active{
+  display:block;
 }
 
-@media(max-width:650px){
-  .grid{
+.chapter{
+  background:white;
+  border:1px solid #e5e7eb;
+  padding:13px;
+  border-radius:10px;
+  margin-top:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.video-btn{
+  background:#6d28d9;
+  color:white;
+  border:0;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* VIDEO */
+
+.video-area{
+  display:none;
+  margin-top:20px;
+  background:#111827;
+  color:white;
+  padding:30px;
+  border-radius:15px;
+  text-align:center;
+}
+
+.video-area.active{
+  display:block;
+}
+
+@media(max-width:700px){
+
+  .main-buttons{
     grid-template-columns:1fr;
   }
 
-  .hero{
-    padding:23px;
+  .grid,
+  .subjects{
+    grid-template-columns:1fr;
   }
 
-  .logo{
-    font-size:16px;
+  .chapter{
+    flex-direction:column;
+    align-items:flex-start;
   }
+
+  .video-btn{
+    width:100%;
+  }
+
 }
 </style>
 </head>
@@ -159,180 +285,627 @@ header{
 
 <section class="hero">
 
-<h1>
-🎓 All Competitive Exam
-</h1>
+<h1>🎓 All Competitive Exam</h1>
 
 <p>
-10वीं • 12वीं • सभी Boards • Competitive Exams
+10th • 12th • Competitive Exams
 </p>
 
 <p>
-अपने level और exam के अनुसार course चुनें।
+अपनी परीक्षा चुनें और chapter-wise videos सीखें।
 </p>
 
 </section>
 
 
-<!-- 10TH -->
+<!-- MAIN OPTIONS -->
 
-<h2 class="section-title">
-📘 10वीं कक्षा
-</h2>
+<section class="main-buttons">
 
-<section class="grid">
+<div class="main-card" onclick="openSection('class10')">
 
-<div class="card">
+<div class="main-icon">📘</div>
 
-<h3>🇮🇳 UP Board Class 10</h3>
+<h2>10th</h2>
 
 <p>
-UP Board के Class 10 subjects और chapters।
+10वीं के Boards और Subjects
 </p>
 
-<a href="10th.html?board=up" class="btn">
-Open UP Board 10th
-</a>
+<div class="open-btn">
+Open 10th
+</div>
 
 </div>
 
 
-<div class="card">
+<div class="main-card" onclick="openSection('class12')">
 
-<h3>📚 CBSE Class 10</h3>
+<div class="main-icon">📕</div>
+
+<h2>12th</h2>
 
 <p>
-CBSE Class 10 subjects और chapter-wise learning।
+12वीं के Boards और Subjects
 </p>
 
-<a href="10th.html?board=cbse" class="btn">
-Open CBSE 10th
-</a>
+<div class="open-btn">
+Open 12th
+</div>
 
 </div>
 
 
-<div class="card">
+<div class="main-card" onclick="openSection('competitive')">
 
-<h3>📚 Bihar Board Class 10</h3>
+<div class="main-icon">🏆</div>
+
+<h2>Competitive Exam</h2>
 
 <p>
-Bihar Board Class 10 preparation।
+SSC, Railway, Banking, Police और अन्य
 </p>
 
-<a href="10th.html?board=bihar" class="btn">
-Open Bihar Board
-</a>
-
+<div class="open-btn">
+Open Competitive
 </div>
-
-
-<div class="card">
-
-<h3>📚 Other Boards</h3>
-
-<p>
-अन्य Boards के लिए अलग section।
-</p>
-
-<a href="10th.html?board=other" class="btn">
-Open Other Boards
-</a>
 
 </div>
 
 </section>
 
 
-<!-- 12TH -->
+<!-- ================= 10TH ================= -->
 
-<h2 class="section-title">
-📕 12वीं कक्षा
-</h2>
+<section id="class10" class="course-section">
 
-<section class="grid">
+<div class="section-title">
+
+<h2>📘 10th Class</h2>
+
+<p>
+Board चुनें।
+</p>
+
+</div>
+
+
+<div class="grid">
 
 <div class="card">
 
-<h3>🇮🇳 UP Board Class 12</h3>
+<h3>🇮🇳 UP Board</h3>
 
 <p>
-UP Board Class 12 subjects और chapters।
+UP Board Class 10
 </p>
 
-<a href="12th.html?board=up" class="btn">
-Open UP Board 12th
-</a>
+<button
+class="small-btn"
+onclick="showSubjects('up10')">
+
+Subjects देखें
+
+</button>
+
+<div id="up10" class="chapters">
+
+<div class="subjects">
+
+<div class="subject">
+
+<h3>➗ Mathematics</h3>
+
+<div class="chapter">
+Number System
+<button class="video-btn"
+onclick="showVideo('10th UP Maths - Number System')">
+🎥 Video
+</button>
+</div>
+
+<div class="chapter">
+Algebra
+<button class="video-btn"
+onclick="showVideo('10th UP Maths - Algebra')">
+🎥 Video
+</button>
+</div>
+
+<div class="chapter">
+Geometry
+<button class="video-btn"
+onclick="showVideo('10th UP Maths - Geometry')">
+🎥 Video
+</button>
+</div>
+
+</div>
+
+
+<div class="subject">
+
+<h3>🔬 Science</h3>
+
+<div class="chapter">
+Chemical Reactions
+<button class="video-btn"
+onclick="showVideo('10th Science - Chemical Reactions')">
+🎥 Video
+</button>
+</div>
+
+<div class="chapter">
+Life Processes
+<button class="video-btn"
+onclick="showVideo('10th Science - Life Processes')">
+🎥 Video
+</button>
+</div>
+
+</div>
+
+
+<div class="subject">
+
+<h3>📖 Hindi</h3>
+
+<div class="chapter">
+Hindi Chapter 1
+<button class="video-btn"
+onclick="showVideo('10th Hindi - Chapter 1')">
+🎥 Video
+</button>
+</div>
+
+<div class="chapter">
+Hindi Chapter 2
+<button class="video-btn"
+onclick="showVideo('10th Hindi - Chapter 2')">
+🎥 Video
+</button>
+</div>
+
+</div>
+
+
+<div class="subject">
+
+<h3>🌍 Social Science</h3>
+
+<div class="chapter">
+History Chapter 1
+<button class="video-btn"
+onclick="showVideo('10th Social Science - History Chapter 1')">
+🎥 Video
+</button>
+</div>
+
+<div class="chapter">
+Geography Chapter 1
+<button class="video-btn"
+onclick="showVideo('10th Social Science - Geography Chapter 1')">
+🎥 Video
+</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
 
 <div class="card">
 
-<h3>📚 CBSE Class 12</h3>
+<h3>📚 CBSE</h3>
 
 <p>
-CBSE Class 12 chapter-wise preparation।
+CBSE Class 10
 </p>
 
-<a href="12th.html?board=cbse" class="btn">
-Open CBSE 12th
-</a>
+<button
+class="small-btn"
+onclick="showSubjects('cbse10')">
+
+Subjects देखें
+
+</button>
+
+<div id="cbse10" class="chapters">
+
+<div class="chapter">
+Mathematics Chapters
+
+<button class="video-btn"
+onclick="showVideo('CBSE 10 Mathematics')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Science Chapters
+
+<button class="video-btn"
+onclick="showVideo('CBSE 10 Science')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Social Science Chapters
+
+<button class="video-btn"
+onclick="showVideo('CBSE 10 Social Science')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Hindi Chapters
+
+<button class="video-btn"
+onclick="showVideo('CBSE 10 Hindi')">
+🎥 Video
+</button>
+
+</div>
+
+</div>
 
 </div>
 
 
 <div class="card">
 
-<h3>📚 Bihar Board Class 12</h3>
+<h3>📚 Bihar Board</h3>
 
 <p>
-Bihar Board Class 12 preparation।
+Bihar Board Class 10
 </p>
 
-<a href="12th.html?board=bihar" class="btn">
-Open Bihar Board
-</a>
+<button
+class="small-btn"
+onclick="showSubjects('bihar10')">
+
+Subjects देखें
+
+</button>
+
+<div id="bihar10" class="chapters">
+
+<div class="chapter">
+Mathematics
+
+<button class="video-btn"
+onclick="showVideo('Bihar Board 10 Maths')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Science
+
+<button class="video-btn"
+onclick="showVideo('Bihar Board 10 Science')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Hindi
+
+<button class="video-btn"
+onclick="showVideo('Bihar Board 10 Hindi')">
+🎥 Video
+</button>
+
+</div>
+
+</div>
 
 </div>
 
 
 <div class="card">
 
-<h3>📚 Other Boards</h3>
+<h3>🌐 Other Boards</h3>
 
 <p>
-अन्य Boards के लिए अलग section।
+अन्य Boards के लिए content बाद में जोड़ा जा सकता है।
 </p>
 
-<a href="12th.html?board=other" class="btn">
-Open Other Boards
-</a>
+</div>
 
 </div>
 
 </section>
 
 
-<!-- COMPETITIVE -->
+<!-- ================= 12TH ================= -->
 
-<h2 class="section-title">
-🏆 All Competitive Exams
-</h2>
+<section id="class12" class="course-section">
 
-<section class="grid">
+<div class="section-title">
+
+<h2>📕 12th Class</h2>
+
+<p>
+Board और subject चुनें।
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card">
+
+<h3>🇮🇳 UP Board 12th</h3>
+
+<p>
+Class 12 UP Board
+</p>
+
+<button
+class="small-btn"
+onclick="showSubjects('up12')">
+
+Subjects देखें
+
+</button>
+
+<div id="up12" class="chapters">
+
+<div class="chapter">
+Hindi
+
+<button class="video-btn"
+onclick="showVideo('UP Board 12 Hindi')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Mathematics
+
+<button class="video-btn"
+onclick="showVideo('UP Board 12 Mathematics')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Physics
+
+<button class="video-btn"
+onclick="showVideo('UP Board 12 Physics')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Chemistry
+
+<button class="video-btn"
+onclick="showVideo('UP Board 12 Chemistry')">
+🎥 Video
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>📚 CBSE 12th</h3>
+
+<p>
+CBSE Class 12
+</p>
+
+<button
+class="small-btn"
+onclick="showSubjects('cbse12')">
+
+Subjects देखें
+
+</button>
+
+<div id="cbse12" class="chapters">
+
+<div class="chapter">
+Mathematics
+
+<button class="video-btn"
+onclick="showVideo('CBSE 12 Mathematics')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Physics
+
+<button class="video-btn"
+onclick="showVideo('CBSE 12 Physics')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Chemistry
+
+<button class="video-btn"
+onclick="showVideo('CBSE 12 Chemistry')">
+🎥 Video
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>📚 Bihar Board 12th</h3>
+
+<p>
+Bihar Board Class 12
+</p>
+
+<button
+class="small-btn"
+onclick="showSubjects('bihar12')">
+
+Subjects देखें
+
+</button>
+
+<div id="bihar12" class="chapters">
+
+<div class="chapter">
+Hindi
+
+<button class="video-btn"
+onclick="showVideo('Bihar 12 Hindi')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Mathematics
+
+<button class="video-btn"
+onclick="showVideo('Bihar 12 Mathematics')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Science
+
+<button class="video-btn"
+onclick="showVideo('Bihar 12 Science')">
+🎥 Video
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>🌐 Other Boards</h3>
+
+<p>
+अन्य Boards का content बाद में जोड़ा जा सकता है।
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= COMPETITIVE ================= -->
+
+<section id="competitive" class="course-section">
+
+<div class="section-title">
+
+<h2>🏆 Competitive Exams</h2>
+
+<p>
+Exam चुनें और subject-wise preparation करें।
+</p>
+
+</div>
+
+
+<div class="grid">
 
 <div class="card">
 
 <h3>👮 SSC</h3>
 
 <p>
-SSC GD, CGL, CHSL और अन्य exams।
+SSC GD, CGL, CHSL आदि।
 </p>
 
-<a href="competitive.html?exam=ssc" class="btn">
-SSC Chapters
-</a>
+<button
+class="small-btn"
+onclick="showSubjects('ssc')">
+
+Subjects देखें
+
+</button>
+
+<div id="ssc" class="chapters">
+
+<div class="chapter">
+Mathematics
+
+<button class="video-btn"
+onclick="showVideo('SSC Mathematics')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Reasoning
+
+<button class="video-btn"
+onclick="showVideo('SSC Reasoning')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+General Knowledge
+
+<button class="video-btn"
+onclick="showVideo('SSC General Knowledge')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Hindi
+
+<button class="video-btn"
+onclick="showVideo('SSC Hindi')">
+🎥 Video
+</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -342,12 +915,50 @@ SSC Chapters
 <h3>🚂 Railway</h3>
 
 <p>
-Railway exams के subjects और chapters।
+Railway exams की preparation।
 </p>
 
-<a href="competitive.html?exam=railway" class="btn">
-Railway Chapters
-</a>
+<button
+class="small-btn"
+onclick="showSubjects('railway')">
+
+Subjects देखें
+
+</button>
+
+<div id="railway" class="chapters">
+
+<div class="chapter">
+Maths
+
+<button class="video-btn"
+onclick="showVideo('Railway Maths')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Reasoning
+
+<button class="video-btn"
+onclick="showVideo('Railway Reasoning')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+General Science
+
+<button class="video-btn"
+onclick="showVideo('Railway General Science')">
+🎥 Video
+</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -357,12 +968,50 @@ Railway Chapters
 <h3>🏦 Banking</h3>
 
 <p>
-Banking exams के लिए chapter-wise learning।
+Banking exams।
 </p>
 
-<a href="competitive.html?exam=banking" class="btn">
-Banking Chapters
-</a>
+<button
+class="small-btn"
+onclick="showSubjects('banking')">
+
+Subjects देखें
+
+</button>
+
+<div id="banking" class="chapters">
+
+<div class="chapter">
+Quantitative Aptitude
+
+<button class="video-btn"
+onclick="showVideo('Banking Quantitative Aptitude')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+Reasoning
+
+<button class="video-btn"
+onclick="showVideo('Banking Reasoning')">
+🎥 Video
+</button>
+
+</div>
+
+<div class="chapter">
+English
+
+<button class="video-btn"
+onclick="showVideo('Banking English')">
+🎥 Video
+</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -372,93 +1021,152 @@ Banking Chapters
 <h3>👮 Police & Defence</h3>
 
 <p>
-Police, Defence और अन्य exams की preparation।
+Police और Defence exams।
 </p>
 
-<a href="competitive.html?exam=police" class="btn">
-Police & Defence
-</a>
+<button
+class="small-btn"
+onclick="showSubjects('police')">
+
+Subjects देखें
+
+</button>
+
+<div id="police" class="chapters">
+
+<div class="chapter">
+Maths
+
+<button class="video-btn"
+onclick="showVideo('Police Defence Maths')">
+🎥 Video
+</button>
 
 </div>
 
+<div class="chapter">
+Reasoning
 
-<div class="card">
-
-<h3>📝 General Competitive</h3>
-
-<p>
-Maths, Reasoning, Hindi, English, GS और Current Affairs।
-</p>
-
-<a href="competitive.html?exam=general" class="btn">
-All Subjects
-</a>
+<button class="video-btn"
+onclick="showVideo('Police Defence Reasoning')">
+🎥 Video
+</button>
 
 </div>
 
+<div class="chapter">
+GK / GS
 
-<div class="card">
+<button class="video-btn"
+onclick="showVideo('Police Defence GK GS')">
+🎥 Video
+</button>
 
-<h3>🎯 Practice & Assessment</h3>
+</div>
 
-<p>
-Chapter-wise practice और assessment।
-</p>
+</div>
 
-<a href="competitive.html?exam=test" class="btn">
-Start Practice
-</a>
+</div>
 
 </div>
 
 </section>
 
 
-<!-- BOARD LIST -->
+<!-- VIDEO PLAYER -->
 
-<h2 class="section-title">
-📚 Boards
+<section id="videoArea" class="video-area">
+
+<div style="font-size:45px;">
+▶️
+</div>
+
+<h2 id="videoTitle">
+Video Player
 </h2>
 
-<section class="card">
-
-<div class="board">
-
-<strong>10th & 12th Boards</strong>
-
-<br>
-
-<a href="10th.html?board=up">UP Board</a>
-
-<a href="10th.html?board=cbse">CBSE</a>
-
-<a href="10th.html?board=bihar">Bihar Board</a>
-
-<a href="10th.html?board=other">Other Boards</a>
-
-</div>
-
-</section>
-
-
-<section class="card" style="margin-top:20px;">
-
-<h3>💡 Course Structure</h3>
-
 <p>
-हर Board और Competitive Exam के अंदर
-subjects → chapters → videos → practice
-का structure रखा जा सकता है।
+यहाँ आपका actual chapter video लगाया जाएगा।
 </p>
 
-<p>
-आप बाद में हर chapter में अपना video,
-notes और assessment जोड़ सकते हैं।
+<p style="color:#c4b5fd;">
+अभी यह video placeholder है।
 </p>
 
 </section>
 
 </main>
+
+
+<script>
+
+/* OPEN MAIN SECTION */
+
+function openSection(id){
+
+  const sections =
+  document.querySelectorAll(".course-section");
+
+  sections.forEach(function(section){
+
+    section.classList.remove("active");
+
+  });
+
+  const selected =
+  document.getElementById(id);
+
+  selected.classList.add("active");
+
+  selected.scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+/* OPEN SUBJECTS / CHAPTERS */
+
+function showSubjects(id){
+
+  const element =
+  document.getElementById(id);
+
+  if(element.classList.contains("active")){
+
+    element.classList.remove("active");
+
+  }else{
+
+    element.classList.add("active");
+
+  }
+
+}
+
+
+/* VIDEO */
+
+function showVideo(title){
+
+  const area =
+  document.getElementById("videoArea");
+
+  const videoTitle =
+  document.getElementById("videoTitle");
+
+  videoTitle.innerText =
+  title;
+
+  area.classList.add("active");
+
+  area.scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+</script>
 
 </body>
 </html>
