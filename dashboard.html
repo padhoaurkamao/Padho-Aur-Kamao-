@@ -11,600 +11,603 @@
 *{box-sizing:border-box}
 
 body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#f4f7fb;
- color:#172033;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f4f7fb;
+color:#172033;
 }
 
 header{
- background:linear-gradient(135deg,#5b21b6,#7c3aed);
- color:#fff;
- padding:18px 20px;
- position:sticky;
- top:0;
- z-index:100;
+background:linear-gradient(135deg,#5b21b6,#7c3aed);
+color:#fff;
+padding:18px 20px;
+position:sticky;
+top:0;
+z-index:100;
 }
 
 .header{
- max-width:1150px;
- margin:auto;
- display:flex;
- align-items:center;
- justify-content:space-between;
+max-width:1150px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
 .logo{
- font-size:21px;
- font-weight:bold;
+font-size:21px;
+font-weight:bold;
 }
 
 .logout{
- border:0;
- background:#fff;
- color:#5b21b6;
- padding:9px 15px;
- border-radius:20px;
- font-weight:bold;
- cursor:pointer;
+border:0;
+background:#fff;
+color:#5b21b6;
+padding:9px 15px;
+border-radius:20px;
+font-weight:bold;
+cursor:pointer;
 }
 
 .container{
- max-width:1150px;
- margin:auto;
- padding:25px 18px 100px;
+max-width:1150px;
+margin:auto;
+padding:25px 18px 100px;
 }
 
 .welcome{
- background:linear-gradient(135deg,#5b21b6,#8b5cf6);
- color:#fff;
- padding:28px;
- border-radius:22px;
- margin-bottom:25px;
- box-shadow:0 8px 25px #4f46e544;
+background:linear-gradient(135deg,#5b21b6,#8b5cf6);
+color:#fff;
+padding:28px;
+border-radius:22px;
+margin-bottom:25px;
+box-shadow:0 8px 25px #4f46e544;
 }
 
 .welcome h1{
- margin:0 0 8px;
- font-size:30px;
+margin:0 0 8px;
+font-size:30px;
 }
 
 .welcome p{
- margin:0;
- opacity:.9;
+margin:0;
+opacity:.9;
 }
 
 .stats{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:15px;
- margin-bottom:25px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:25px;
 }
 
 .stat{
- background:#fff;
- padding:20px;
- border-radius:18px;
- box-shadow:0 5px 20px #0001;
+background:#fff;
+padding:20px;
+border-radius:18px;
+box-shadow:0 5px 20px #0001;
 }
 
 .stat-icon{
- font-size:28px;
+font-size:28px;
 }
 
 .stat-title{
- color:#6b7280;
- margin-top:8px;
- font-size:14px;
+color:#6b7280;
+margin-top:8px;
+font-size:14px;
 }
 
 .stat-value{
- font-size:24px;
- font-weight:bold;
- margin-top:5px;
+font-size:24px;
+font-weight:bold;
+margin-top:5px;
 }
 
 .section-title{
- font-size:21px;
- margin:28px 0 15px;
+font-size:21px;
+margin:28px 0 15px;
 }
 
 .actions{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:15px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
 }
 
 .action{
- background:#fff;
- padding:22px;
- border-radius:18px;
- text-decoration:none;
- color:#172033;
- box-shadow:0 5px 20px #0001;
- transition:.2s;
+background:#fff;
+padding:22px;
+border-radius:18px;
+text-decoration:none;
+color:#172033;
+box-shadow:0 5px 20px #0001;
+transition:.2s;
 }
 
 .action:hover{
- transform:translateY(-3px);
+transform:translateY(-3px);
 }
 
 .action-icon{
- font-size:34px;
+font-size:34px;
 }
 
 .action h3{
- margin:10px 0 5px;
+margin:10px 0 5px;
 }
 
 .action p{
- margin:0;
- color:#6b7280;
- font-size:14px;
+margin:0;
+color:#6b7280;
+font-size:14px;
 }
 
 .referral{
- background:#fff;
- padding:22px;
- border-radius:18px;
- box-shadow:0 5px 20px #0001;
+background:#fff;
+padding:22px;
+border-radius:18px;
+box-shadow:0 5px 20px #0001;
 }
 
 .referral-box{
- display:flex;
- gap:10px;
- margin-top:15px;
+display:flex;
+gap:10px;
+margin-top:15px;
 }
 
 .referral-box input{
- flex:1;
- padding:13px;
- border:1px solid #d1d5db;
- border-radius:10px;
- font-size:14px;
+flex:1;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:10px;
+font-size:14px;
 }
 
 .copy-btn{
- border:0;
- background:#6d28d9;
- color:#fff;
- padding:0 18px;
- border-radius:10px;
- font-weight:bold;
- cursor:pointer;
+border:0;
+background:#6d28d9;
+color:#fff;
+padding:0 18px;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
 }
 
 .referral-stats{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:12px;
- margin-top:18px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-top:18px;
 }
 
 .ref-card{
- background:#f5f3ff;
- padding:15px;
- border-radius:12px;
- text-align:center;
+background:#f5f3ff;
+padding:15px;
+border-radius:12px;
+text-align:center;
 }
 
 .ref-card strong{
- display:block;
- font-size:22px;
- color:#6d28d9;
- margin-top:5px;
+display:block;
+font-size:22px;
+color:#6d28d9;
+margin-top:5px;
 }
 
 .courses{
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:20px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
 }
 
 .course{
- background:#fff;
- border-radius:22px;
- box-shadow:0 5px 20px #0001;
- overflow:hidden;
- transition:.3s;
+background:#fff;
+border-radius:22px;
+box-shadow:0 5px 20px #0001;
+overflow:hidden;
+transition:.3s;
 }
 
 .course:hover{
- transform:translateY(-5px);
- box-shadow:0 12px 30px #0002;
+transform:translateY(-5px);
+box-shadow:0 12px 30px #0002;
 }
 
 .course-icon{
- height:185px;
- background:
- radial-gradient(circle at 50% 15%,#60a5fa66,transparent 45%),
- linear-gradient(135deg,#1d4ed8,#7c3aed);
- display:flex;
- align-items:center;
- justify-content:center;
- position:relative;
+height:185px;
+background:
+radial-gradient(circle at 50% 15%,#60a5fa66,transparent 45%),
+linear-gradient(135deg,#1d4ed8,#7c3aed);
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 .book{
- position:relative;
- width:200px;
- height:130px;
- filter:drop-shadow(0 12px 12px #0006);
+position:relative;
+width:200px;
+height:130px;
+filter:drop-shadow(0 12px 12px #0006);
 }
 
 .book-page{
- position:absolute;
- top:10px;
- width:97px;
- height:110px;
- background:linear-gradient(135deg,#fff,#dbeafe);
- box-shadow:inset 0 0 8px #0001,0 5px 10px #0003;
+position:absolute;
+top:10px;
+width:97px;
+height:110px;
+background:linear-gradient(135deg,#fff,#dbeafe);
+box-shadow:inset 0 0 8px #0001,0 5px 10px #0003;
 }
 
 .book-left{
- left:3px;
- border-radius:11px 3px 3px 11px;
- transform:perspective(400px) rotateY(10deg) skewY(4deg);
+left:3px;
+border-radius:11px 3px 3px 11px;
+transform:perspective(400px) rotateY(10deg) skewY(4deg);
 }
 
 .book-right{
- right:3px;
- border-radius:3px 11px 11px 3px;
- transform:perspective(400px) rotateY(-10deg) skewY(-4deg);
+right:3px;
+border-radius:3px 11px 11px 3px;
+transform:perspective(400px) rotateY(-10deg) skewY(-4deg);
 }
 
 .book-center{
- position:absolute;
- left:50%;
- top:8px;
- transform:translateX(-50%);
- width:10px;
- height:112px;
- background:linear-gradient(90deg,#b45309,#fbbf24,#b45309);
- border-radius:7px;
- z-index:5;
+position:absolute;
+left:50%;
+top:8px;
+transform:translateX(-50%);
+width:10px;
+height:112px;
+background:linear-gradient(90deg,#b45309,#fbbf24,#b45309);
+border-radius:7px;
+z-index:5;
 }
 
 .book-brand{
- position:absolute;
- left:50%;
- top:40px;
- transform:translateX(-50%);
- z-index:10;
- width:180px;
- text-align:center;
- color:#1e3a8a;
- font-weight:900;
- line-height:19px;
+position:absolute;
+left:50%;
+top:40px;
+transform:translateX(-50%);
+z-index:10;
+width:180px;
+text-align:center;
+color:#1e3a8a;
+font-weight:900;
+line-height:19px;
 }
 
 .book-brand .top-text,
 .book-brand .bottom-text{
- display:block;
- font-size:14px;
+display:block;
+font-size:14px;
 }
 
 .book-brand .and{
- color:#f59e0b;
- font-size:20px;
+color:#f59e0b;
+font-size:20px;
 }
 
 .course-content{
- padding:22px;
+padding:22px;
 }
 
 .course h3{
- margin:0 0 7px;
- font-size:21px;
+margin:0 0 7px;
+font-size:21px;
 }
 
 .course p{
- color:#6b7280;
- font-size:14px;
- line-height:1.6;
+color:#6b7280;
+font-size:14px;
+line-height:1.6;
 }
 
 .course-details{
- margin-top:14px;
- line-height:1.9;
+margin-top:14px;
+line-height:1.9;
 }
 
 .price{
- font-weight:bold;
- font-size:18px;
+font-weight:bold;
+font-size:18px;
 }
 
 .commission{
- color:#16a34a;
- font-weight:bold;
+color:#16a34a;
+font-weight:bold;
 }
 
 .passive{
- color:#7c3aed;
- font-weight:bold;
+color:#7c3aed;
+font-weight:bold;
 }
 
 .course-btn{
- display:block;
- text-align:center;
- background:#6d28d9;
- color:#fff;
- padding:12px;
- border-radius:10px;
- text-decoration:none;
- font-weight:bold;
- margin-top:18px;
- border:0;
- width:100%;
- cursor:pointer;
- font-size:15px;
+display:block;
+text-align:center;
+background:#6d28d9;
+color:#fff;
+padding:12px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+margin-top:18px;
+border:0;
+width:100%;
+cursor:pointer;
+font-size:15px;
 }
 
 .course-btn:hover{
- background:#5b21b6;
+background:#5b21b6;
 }
 
 .profile{
- background:#fff;
- padding:22px;
- border-radius:18px;
- box-shadow:0 5px 20px #0001;
+background:#fff;
+padding:22px;
+border-radius:18px;
+box-shadow:0 5px 20px #0001;
 }
 
 .profile-row{
- display:flex;
- justify-content:space-between;
- gap:15px;
- padding:12px 0;
- border-bottom:1px solid #eee;
+display:flex;
+justify-content:space-between;
+gap:15px;
+padding:12px 0;
+border-bottom:1px solid #eee;
 }
 
 .profile-row:last-child{
- border-bottom:0;
+border-bottom:0;
 }
 
 .label{
- color:#6b7280;
+color:#6b7280;
 }
 
 .bottom-nav{
- position:fixed;
- bottom:0;
- left:0;
- right:0;
- background:#fff;
- box-shadow:0 -3px 15px #0002;
- display:flex;
- justify-content:space-around;
- padding:9px 5px;
- z-index:200;
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#fff;
+box-shadow:0 -3px 15px #0002;
+display:flex;
+justify-content:space-around;
+padding:9px 5px;
+z-index:200;
 }
 
 .bottom-nav a{
- text-decoration:none;
- color:#6b7280;
- text-align:center;
- font-size:12px;
+text-decoration:none;
+color:#6b7280;
+text-align:center;
+font-size:12px;
 }
 
 .bottom-nav span{
- display:block;
- font-size:22px;
- margin-bottom:2px;
+display:block;
+font-size:22px;
+margin-bottom:2px;
 }
 
-/* =========================
-   PURCHASE POPUP
-========================= */
+/* MODAL */
 
 .modal{
- display:none;
- position:fixed;
- inset:0;
- background:#0008;
- z-index:999;
- align-items:center;
- justify-content:center;
- padding:15px;
+display:none;
+position:fixed;
+inset:0;
+background:#0008;
+z-index:999;
+align-items:center;
+justify-content:center;
+padding:15px;
 }
 
 .modal.show{
- display:flex;
+display:flex;
 }
 
 .modal-box{
- background:#fff;
- width:100%;
- max-width:430px;
- border-radius:22px;
- padding:25px;
- box-shadow:0 20px 60px #0005;
- animation:popup .2s ease;
-}
-
-@keyframes popup{
- from{
-  transform:scale(.9);
-  opacity:0;
- }
- to{
-  transform:scale(1);
-  opacity:1;
- }
+background:#fff;
+width:100%;
+max-width:430px;
+border-radius:22px;
+padding:25px;
+box-shadow:0 20px 60px #0005;
 }
 
 .modal-title{
- font-size:23px;
- font-weight:bold;
- margin-bottom:8px;
+font-size:23px;
+font-weight:bold;
+margin-bottom:8px;
 }
 
 .modal-subtitle{
- color:#6b7280;
- font-size:14px;
- margin-bottom:18px;
+color:#6b7280;
+font-size:14px;
+margin-bottom:18px;
 }
 
 .original-price{
- font-size:28px;
- font-weight:bold;
- margin-bottom:15px;
+font-size:28px;
+font-weight:bold;
+margin-bottom:15px;
 }
 
 .coupon-row{
- display:flex;
- gap:8px;
+display:flex;
+gap:8px;
 }
 
 .coupon-row input{
- flex:1;
- padding:13px;
- border:1px solid #d1d5db;
- border-radius:10px;
- outline:none;
+flex:1;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:10px;
+outline:none;
 }
 
 .apply-btn{
- border:0;
- background:#111827;
- color:#fff;
- border-radius:10px;
- padding:0 15px;
- font-weight:bold;
- cursor:pointer;
+border:0;
+background:#111827;
+color:#fff;
+border-radius:10px;
+padding:0 15px;
+font-weight:bold;
+cursor:pointer;
 }
 
 .coupon-message{
- margin-top:12px;
- padding:12px;
- border-radius:10px;
- display:none;
- font-size:14px;
+margin-top:12px;
+padding:12px;
+border-radius:10px;
+display:none;
+font-size:14px;
 }
 
 .coupon-success{
- background:#dcfce7;
- color:#166534;
- display:block;
+background:#dcfce7;
+color:#166534;
+display:block;
 }
 
 .coupon-error{
- background:#fee2e2;
- color:#991b1b;
- display:block;
+background:#fee2e2;
+color:#991b1b;
+display:block;
 }
 
 .payable{
- margin-top:18px;
- padding:15px;
- background:#f5f3ff;
- border-radius:12px;
- display:flex;
- justify-content:space-between;
- align-items:center;
+margin-top:18px;
+padding:15px;
+background:#f5f3ff;
+border-radius:12px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .payable strong{
- font-size:24px;
- color:#6d28d9;
+font-size:24px;
+color:#6d28d9;
 }
 
 .modal-buttons{
- display:flex;
- gap:10px;
- margin-top:18px;
+display:flex;
+gap:10px;
+margin-top:18px;
 }
 
 .confirm-btn{
- flex:1;
- border:0;
- background:#16a34a;
- color:#fff;
- padding:13px;
- border-radius:10px;
- font-weight:bold;
- cursor:pointer;
+flex:1;
+border:0;
+background:#16a34a;
+color:#fff;
+padding:13px;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
 }
 
 .cancel-btn{
- flex:1;
- border:0;
- background:#e5e7eb;
- color:#111827;
- padding:13px;
- border-radius:10px;
- font-weight:bold;
- cursor:pointer;
+flex:1;
+border:0;
+background:#e5e7eb;
+color:#111827;
+padding:13px;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
 }
 
 .status-box{
- margin-top:15px;
- font-size:14px;
- text-align:center;
- color:#6b7280;
+margin-top:15px;
+font-size:14px;
+text-align:center;
+color:#6b7280;
 }
 
-/* MOBILE */
-
 @media(max-width:850px){
- .stats{
-  grid-template-columns:repeat(2,1fr);
- }
- .actions{
-  grid-template-columns:repeat(2,1fr);
- }
- .courses{
-  grid-template-columns:1fr;
- }
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+.actions{
+grid-template-columns:repeat(2,1fr);
+}
+
+.courses{
+grid-template-columns:1fr;
+}
+
 }
 
 @media(max-width:550px){
- .container{
-  padding:18px 13px 90px;
- }
- .welcome{
-  padding:22px;
- }
- .welcome h1{
-  font-size:25px;
- }
- .logo{
-  font-size:17px;
- }
- .stat{
-  padding:15px;
- }
- .stat-value{
-  font-size:20px;
- }
- .action{
-  padding:16px;
- }
- .referral-box{
-  flex-direction:column;
- }
- .copy-btn{
-  padding:12px;
- }
- .referral-stats{
-  grid-template-columns:1fr;
- }
- .profile-row{
-  flex-direction:column;
-  gap:5px;
- }
- .course-icon{
-  height:170px;
- }
- .modal-box{
-  padding:20px;
- }
- .coupon-row{
-  flex-direction:column;
- }
- .apply-btn{
-  padding:12px;
- }
+
+.container{
+padding:18px 13px 90px;
+}
+
+.welcome{
+padding:22px;
+}
+
+.welcome h1{
+font-size:25px;
+}
+
+.logo{
+font-size:17px;
+}
+
+.stat{
+padding:15px;
+}
+
+.stat-value{
+font-size:20px;
+}
+
+.action{
+padding:16px;
+}
+
+.referral-box{
+flex-direction:column;
+}
+
+.copy-btn{
+padding:12px;
+}
+
+.referral-stats{
+grid-template-columns:1fr;
+}
+
+.profile-row{
+flex-direction:column;
+gap:5px;
+}
+
+.course-icon{
+height:170px;
+}
+
+.modal-box{
+padding:20px;
+}
+
+.coupon-row{
+flex-direction:column;
+}
+
+.apply-btn{
+padding:12px;
+}
+
 }
 </style>
 </head>
@@ -625,7 +628,6 @@ header{
 </div>
 </header>
 
-
 <main class="container">
 
 <section class="welcome">
@@ -639,7 +641,6 @@ header{
 </p>
 
 </section>
-
 
 <section class="stats">
 
@@ -668,7 +669,6 @@ header{
 </div>
 
 </section>
-
 
 <h2 class="section-title">
 ⚡ Quick Access
@@ -702,16 +702,13 @@ header{
 
 </section>
 
-
 <h2 class="section-title">
 🔗 My Referral
 </h2>
 
 <section class="referral">
 
-<h3>
-आपका Referral Link
-</h3>
+<h3>आपका Referral Link</h3>
 
 <p>
 इस link को share करके लोगों को आपके platform तक पहुँचाया जा सकता है।
@@ -746,20 +743,18 @@ Copy
 
 <div class="ref-card">
 🎯 Status
-<strong id="referralStatus">Active</strong>
+<strong>Active</strong>
 </div>
 
 </div>
 
 </section>
 
-
 <h2 class="section-title" id="courses">
-📚 My Courses
+📚 Courses
 </h2>
 
 <section class="courses">
-
 
 <!-- COURSE 1 -->
 
@@ -774,19 +769,9 @@ Copy
 <div class="book-center"></div>
 
 <div class="book-brand">
-
-<span class="top-text">
-PADHO
-</span>
-
-<span class="and">
-&
-</span>
-
-<span class="bottom-text">
-KAMAO
-</span>
-
+<span class="top-text">PADHO</span>
+<span class="and">&</span>
+<span class="bottom-text">KAMAO</span>
 </div>
 
 </div>
@@ -795,9 +780,7 @@ KAMAO
 
 <div class="course-content">
 
-<h3>
-Step To Success
-</h3>
+<h3>Step To Success</h3>
 
 <p>
 Lead Generation, Communication Skills, Maths,
@@ -834,7 +817,6 @@ data-course-url="step-to-success.html">
 </div>
 </div>
 
-
 <!-- COURSE 2 -->
 
 <div class="course">
@@ -848,19 +830,9 @@ data-course-url="step-to-success.html">
 <div class="book-center"></div>
 
 <div class="book-brand">
-
-<span class="top-text">
-PADHO
-</span>
-
-<span class="and">
-&
-</span>
-
-<span class="bottom-text">
-KAMAO
-</span>
-
+<span class="top-text">PADHO</span>
+<span class="and">&</span>
+<span class="bottom-text">KAMAO</span>
 </div>
 
 </div>
@@ -869,9 +841,7 @@ KAMAO
 
 <div class="course-content">
 
-<h3>
-All Competitive Exam
-</h3>
+<h3>All Competitive Exam</h3>
 
 <p>
 10th और 12th level exams की preparation,
@@ -910,7 +880,6 @@ data-course-url="all-competitive-exam.html">
 
 </section>
 
-
 <h2 class="section-title" id="videos">
 🎥 Learning Videos
 </h2>
@@ -918,27 +887,22 @@ data-course-url="all-competitive-exam.html">
 <section class="profile">
 
 <p>
-आपके purchased course videos यहाँ से access किए जा सकते हैं।
+Purchased course के videos यहाँ से access करें।
 </p>
 
 <a
 href="step-to-success.html"
 class="course-btn">
-
-🚀 Step To Success Videos
-
+🚀 Step To Success
 </a>
 
 <a
 href="all-competitive-exam.html"
 class="course-btn">
-
-🎓 Competitive Exam Videos
-
+🎓 All Competitive Exam
 </a>
 
 </section>
-
 
 <h2 class="section-title" id="leaderboard">
 🏆 Leaderboard
@@ -947,7 +911,7 @@ class="course-btn">
 <section class="profile">
 
 <p>
-Leaderboard learning activity और progress के आधार पर दिखाया जा सकता है।
+Learning activity और progress के आधार पर leaderboard।
 </p>
 
 <strong>
@@ -955,7 +919,6 @@ Leaderboard learning activity और progress के आधार पर दि�
 </strong>
 
 </section>
-
 
 <h2 class="section-title" id="profile">
 👤 My Profile
@@ -982,7 +945,6 @@ Leaderboard learning activity और progress के आधार पर दि�
 
 </main>
 
-
 <nav class="bottom-nav">
 
 <a href="dashboard.html">
@@ -1007,10 +969,7 @@ Profile
 
 </nav>
 
-
-<!-- =========================
-     PURCHASE MODAL
-========================= -->
+<!-- PURCHASE MODAL -->
 
 <div id="purchaseModal" class="modal">
 
@@ -1041,26 +1000,17 @@ placeholder="Coupon code डालें"
 autocomplete="off"
 >
 
-<button
-id="applyCouponBtn"
-class="apply-btn">
-
+<button id="applyCouponBtn" class="apply-btn">
 Apply
-
 </button>
 
 </div>
 
-<div
-id="couponMessage"
-class="coupon-message">
-</div>
+<div id="couponMessage" class="coupon-message"></div>
 
 <div class="payable">
 
-<span>
-Payable Amount
-</span>
+<span>Payable Amount</span>
 
 <strong>
 ₹<span id="payableAmount">0</span>
@@ -1073,354 +1023,247 @@ Payable Amount
 <button
 id="confirmEnrollmentBtn"
 class="confirm-btn">
-
 ✅ Confirm Enrollment
-
 </button>
 
 <button
 id="cancelPurchaseBtn"
 class="cancel-btn">
-
 Cancel
-
 </button>
 
 </div>
 
-<div
-id="enrollmentStatus"
-class="status-box">
-</div>
+<div id="enrollmentStatus" class="status-box"></div>
 
 </div>
 </div>
-
 
 <script type="module">
 
 import {
- initializeApp
+initializeApp
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
- getAuth,
- onAuthStateChanged,
- signOut
+getAuth,
+onAuthStateChanged,
+signOut
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 import {
- getFirestore,
- doc,
- getDoc,
- setDoc,
- collection,
- query,
- where,
- getDocs,
- serverTimestamp
+getFirestore,
+doc,
+getDoc,
+setDoc,
+collection,
+query,
+where,
+getDocs,
+serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-/* FIREBASE CONFIG */
+/* FIREBASE */
 
 const firebaseConfig = {
 
-apiKey:
-"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+apiKey:"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
-authDomain:
-"padho-aur-kamao-3eeae.firebaseapp.com",
+authDomain:"padho-aur-kamao-3eeae.firebaseapp.com",
 
-projectId:
-"padho-aur-kamao-3eeae",
+projectId:"padho-aur-kamao-3eeae",
 
-storageBucket:
-"padho-aur-kamao-3eeae.firebasestorage.app",
+storageBucket:"padho-aur-kamao-3eeae.firebasestorage.app",
 
-messagingSenderId:
-"670063905617",
+messagingSenderId:"670063905617",
 
-appId:
-"1:670063905617:web:9b3a7e62fdeea14fbfa170",
+appId:"1:670063905617:web:9b3a7e62fdeea14fbfa170",
 
-measurementId:
-"G-7J1YV8HN3F"
+measurementId:"G-7J1YV8HN3F"
 
 };
 
+const app=initializeApp(firebaseConfig);
 
-/* INITIALIZE */
+const auth=getAuth(app);
 
-const app = initializeApp(firebaseConfig);
-
-const auth = getAuth(app);
-
-const db = getFirestore(app);
+const db=getFirestore(app);
 
 
 /* ELEMENTS */
 
-const welcomeText =
-document.getElementById("welcomeText");
+const welcomeText=document.getElementById("welcomeText");
+const userName=document.getElementById("userName");
+const userEmail=document.getElementById("userEmail");
+const userId=document.getElementById("userId");
 
-const userName =
-document.getElementById("userName");
+const referralLink=document.getElementById("referralLink");
+const copyBtn=document.getElementById("copyBtn");
+const logoutBtn=document.getElementById("logoutBtn");
 
-const userEmail =
-document.getElementById("userEmail");
+const referralCount=document.getElementById("referralCount");
+const referralPoints=document.getElementById("referralPoints");
 
-const userId =
-document.getElementById("userId");
+const modal=document.getElementById("purchaseModal");
+const modalCourseName=document.getElementById("modalCourseName");
+const originalPrice=document.getElementById("originalPrice");
+const payableAmount=document.getElementById("payableAmount");
 
-const referralLink =
-document.getElementById("referralLink");
+const couponInput=document.getElementById("couponInput");
+const applyCouponBtn=document.getElementById("applyCouponBtn");
+const couponMessage=document.getElementById("couponMessage");
 
-const copyBtn =
-document.getElementById("copyBtn");
-
-const logoutBtn =
-document.getElementById("logoutBtn");
-
-const referralCount =
-document.getElementById("referralCount");
-
-const referralPoints =
-document.getElementById("referralPoints");
-
-
-/* PURCHASE ELEMENTS */
-
-const modal =
-document.getElementById("purchaseModal");
-
-const modalCourseName =
-document.getElementById("modalCourseName");
-
-const originalPrice =
-document.getElementById("originalPrice");
-
-const payableAmount =
-document.getElementById("payableAmount");
-
-const couponInput =
-document.getElementById("couponInput");
-
-const applyCouponBtn =
-document.getElementById("applyCouponBtn");
-
-const couponMessage =
-document.getElementById("couponMessage");
-
-const confirmEnrollmentBtn =
+const confirmEnrollmentBtn=
 document.getElementById("confirmEnrollmentBtn");
 
-const cancelPurchaseBtn =
+const cancelPurchaseBtn=
 document.getElementById("cancelPurchaseBtn");
 
-const enrollmentStatus =
+const enrollmentStatus=
 document.getElementById("enrollmentStatus");
 
 
-/* CURRENT USER */
+/* STATE */
 
-let currentUser = null;
+let currentUser=null;
+let selectedCourse=null;
+let couponApplied=false;
 
-let selectedCourse = null;
-
-let couponApplied = false;
-
-
-/* COUPON */
-
-const DEMO_COUPON = "PADHO100";
+const DEMO_COUPON="PADHO100";
 
 
-/* REFERRAL CODE */
+/* REFERRAL */
 
 function generateReferralCode(uid){
 
-return "PAK" +
-uid.substring(0,8).toUpperCase();
+return "PAK"+uid.substring(0,8).toUpperCase();
 
 }
 
 
 /* AUTH */
 
-onAuthStateChanged(
-auth,
-async function(user){
+onAuthStateChanged(auth,async(user)=>{
 
 if(!user){
 
-window.location.href =
-"login.html";
-
+window.location.href="login.html";
 return;
 
 }
 
-currentUser = user;
+currentUser=user;
 
-const name =
-user.displayName ||
-"Student";
+const name=user.displayName || "Student";
 
-
-welcomeText.innerText =
-"Welcome " +
-name +
+welcomeText.innerText=
+"Welcome "+name+
 " 👋 सीखें, practice करें और आगे बढ़ें।";
 
-
-userName.innerText = name;
-
-userEmail.innerText =
-user.email || "Not available";
-
-userId.innerText = user.uid;
+userName.innerText=name;
+userEmail.innerText=user.email || "Not available";
+userId.innerText=user.uid;
 
 
-/* USER DOCUMENT */
-
-const userRef =
-doc(db,"users",user.uid);
-
-let userData;
-
+/* USER */
 
 try{
 
-const userSnap =
-await getDoc(userRef);
+const userRef=doc(db,"users",user.uid);
 
+const snap=await getDoc(userRef);
 
-if(userSnap.exists()){
+let userData;
 
-userData = userSnap.data();
+if(snap.exists()){
+
+userData=snap.data();
 
 }else{
 
-userData = {
-
+userData={
 name:name,
-
 email:user.email || "",
-
-referralCode:
-generateReferralCode(user.uid),
-
+referralCode:generateReferralCode(user.uid),
 referredBy:null,
-
 points:0,
-
 totalReferrals:0,
-
-createdAt:
-new Date().toISOString()
-
+createdAt:serverTimestamp()
 };
 
-
-await setDoc(
-userRef,
-userData
-);
+await setDoc(userRef,userData);
 
 }
 
 
-const referralCode =
+const referralCode=
 userData.referralCode ||
 generateReferralCode(user.uid);
 
-
-const link =
-"https://yaduvanshimonu432-wq.github.io/" +
-"Padho-Aur-Kamao-/" +
-"index.html?ref=" +
+referralLink.value=
+window.location.origin+
+window.location.pathname.replace(
+"dashboard.html",
+"index.html"
+)+
+"?ref="+
 encodeURIComponent(referralCode);
 
 
-referralLink.value = link;
-
-
-await loadReferralStats(
-user.uid,
-userData
-);
-
-
-/* CHECK COURSES */
+await loadReferralStats(user.uid,userData);
 
 await checkAllEnrollments();
 
-
 }catch(error){
 
-console.error(
-"Dashboard error:",
-error
-);
+console.error("Dashboard error:",error);
 
 }
 
 });
 
 
-/* =========================
-   CHECK ENROLLMENTS
-========================= */
+/* CHECK ENROLLMENTS */
 
 async function checkAllEnrollments(){
 
-if(!currentUser){
-return;
-}
+if(!currentUser)return;
 
-const buttons =
+const buttons=
 document.querySelectorAll(".buy-btn");
 
 for(const button of buttons){
 
-const courseId =
-button.dataset.courseId;
+const courseId=button.dataset.courseId;
 
-const enrollmentId =
-currentUser.uid +
-"_" +
-courseId;
+const enrollmentId=
+currentUser.uid+"_"+courseId;
 
 try{
 
-const enrollmentRef =
-doc(
-db,
-"enrollments",
-enrollmentId
-);
+const ref=
+doc(db,"enrollments",enrollmentId);
 
-const enrollmentSnap =
-await getDoc(enrollmentRef);
+const snap=await getDoc(ref);
 
+if(snap.exists()){
 
-if(enrollmentSnap.exists()){
+const data=snap.data();
 
-button.innerText =
-"📖 Open Course";
+if(data.access===true){
 
-button.dataset.enrolled =
-"true";
+button.innerText="📖 Open Course";
+
+button.dataset.enrolled="true";
+
+}
 
 }
 
 }catch(error){
 
-console.error(
-"Enrollment check:",
-error
-);
+console.error("Enrollment check:",error);
 
 }
 
@@ -1429,157 +1272,103 @@ error
 }
 
 
-/* =========================
-   BUY BUTTONS
-========================= */
+/* BUY BUTTON */
 
 document.querySelectorAll(".buy-btn")
-.forEach(function(button){
+.forEach(button=>{
 
-button.addEventListener(
-"click",
-async function(){
+button.addEventListener("click",()=>{
 
 if(!currentUser){
 
-alert(
-"पहले login करें।"
-);
-
+alert("पहले login करें।");
 return;
 
 }
 
+if(button.dataset.enrolled==="true"){
 
-const courseId =
-button.dataset.courseId;
-
-const courseName =
-button.dataset.courseName;
-
-const coursePrice =
-Number(button.dataset.coursePrice);
-
-const courseUrl =
+window.location.href=
 button.dataset.courseUrl;
 
-
-/* ALREADY ENROLLED */
-
-if(button.dataset.enrolled === "true"){
-
-window.location.href =
-courseUrl;
-
 return;
 
 }
 
+selectedCourse={
 
-selectedCourse = {
+id:button.dataset.courseId,
 
-id:courseId,
+name:button.dataset.courseName,
 
-name:courseName,
+price:Number(button.dataset.coursePrice),
 
-price:coursePrice,
-
-url:courseUrl
+url:button.dataset.courseUrl
 
 };
 
-
-modalCourseName.innerText =
+modalCourseName.innerText=
 selectedCourse.name;
 
-
-originalPrice.innerText =
+originalPrice.innerText=
 selectedCourse.price;
 
-
-payableAmount.innerText =
+payableAmount.innerText=
 selectedCourse.price;
 
+couponInput.value="";
 
-couponInput.value = "";
+couponApplied=false;
 
-couponApplied = false;
+couponMessage.innerText="";
+couponMessage.className="coupon-message";
 
-couponMessage.innerText = "";
+enrollmentStatus.innerText="";
 
-couponMessage.className =
-"coupon-message";
+confirmEnrollmentBtn.disabled=false;
 
-enrollmentStatus.innerText =
-"";
-
-
-confirmEnrollmentBtn.disabled =
-false;
-
-confirmEnrollmentBtn.innerText =
+confirmEnrollmentBtn.innerText=
 "✅ Confirm Enrollment";
-
 
 modal.classList.add("show");
 
-}
-
-);
+});
 
 });
 
 
-/* =========================
-   APPLY COUPON
-========================= */
+/* APPLY COUPON */
 
-applyCouponBtn.addEventListener(
-"click",
-function(){
+applyCouponBtn.addEventListener("click",()=>{
 
-if(!selectedCourse){
-return;
-}
+if(!selectedCourse)return;
 
+const coupon=
+couponInput.value.trim().toUpperCase();
 
-const enteredCoupon =
-couponInput.value
-.trim()
-.toUpperCase();
+if(coupon===DEMO_COUPON){
 
+couponApplied=true;
 
-if(enteredCoupon === DEMO_COUPON){
+payableAmount.innerText="0";
 
-couponApplied = true;
-
-
-payableAmount.innerText =
-"0";
-
-
-couponMessage.innerText =
+couponMessage.innerText=
 "🎉 Coupon applied successfully! आपको demo में 100% discount मिला।";
 
-
-couponMessage.className =
+couponMessage.className=
 "coupon-message coupon-success";
-
 
 }else{
 
-couponApplied = false;
+couponApplied=false;
 
-
-payableAmount.innerText =
+payableAmount.innerText=
 selectedCourse.price;
 
+couponMessage.innerText=
+"❌ Invalid coupon code।";
 
-couponMessage.innerText =
-"❌ Invalid coupon code। सही coupon code डालें।";
-
-
-couponMessage.className =
+couponMessage.className=
 "coupon-message coupon-error";
 
 }
@@ -1587,67 +1376,41 @@ couponMessage.className =
 });
 
 
-/* =========================
-   CONFIRM ENROLLMENT
-========================= */
+/* CONFIRM */
 
 confirmEnrollmentBtn.addEventListener(
 "click",
-async function(){
+async()=>{
 
-if(!currentUser){
-
-alert(
-"Login required."
-);
-
-return;
-
-}
-
-
-if(!selectedCourse){
-
-return;
-
-}
-
-
-/* PAYMENT NOT CONNECTED */
+if(!currentUser || !selectedCourse)return;
 
 if(!couponApplied){
 
-couponMessage.innerText =
+couponMessage.innerText=
 "पहले valid coupon code apply करें।";
 
-
-couponMessage.className =
+couponMessage.className=
 "coupon-message coupon-error";
 
 return;
 
 }
 
+confirmEnrollmentBtn.disabled=true;
 
-confirmEnrollmentBtn.disabled =
-true;
-
-confirmEnrollmentBtn.innerText =
+confirmEnrollmentBtn.innerText=
 "⏳ Enrolling...";
 
-enrollmentStatus.innerText =
+enrollmentStatus.innerText=
 "Enrollment save हो रहा है...";
-
 
 try{
 
-const enrollmentId =
-currentUser.uid +
-"_" +
-selectedCourse.id;
+const enrollmentId=
+currentUser.uid+
+"_"+selectedCourse.id;
 
-
-const enrollmentRef =
+const enrollmentRef=
 doc(
 db,
 "enrollments",
@@ -1655,72 +1418,57 @@ enrollmentId
 );
 
 
-/* CHECK EXISTING */
+/* EXISTING */
 
-const existing =
+const existing=
 await getDoc(enrollmentRef);
-
 
 if(existing.exists()){
 
-enrollmentStatus.innerText =
+enrollmentStatus.innerText=
 "✅ आप पहले से enrolled हैं।";
 
-setTimeout(
-function(){
+setTimeout(()=>{
 
-window.location.href =
+window.location.href=
 selectedCourse.url;
 
-},
-800
-);
+},800);
 
 return;
 
 }
 
 
-/* SAVE ENROLLMENT */
+/* SAVE */
 
 await setDoc(
 enrollmentRef,
 {
 
-userId:
-currentUser.uid,
+userId:currentUser.uid,
 
-userEmail:
-currentUser.email || "",
+userEmail:currentUser.email || "",
 
-courseId:
-selectedCourse.id,
+courseId:selectedCourse.id,
 
-courseName:
-selectedCourse.name,
+courseName:selectedCourse.name,
 
-originalPrice:
-selectedCourse.price,
+originalPrice:selectedCourse.price,
 
-discount:
-selectedCourse.price,
+discount:selectedCourse.price,
 
 payableAmount:0,
 
-couponCode:
-DEMO_COUPON,
+couponCode:DEMO_COUPON,
 
-paymentStatus:
-"demo_coupon",
+paymentStatus:"demo_coupon",
 
-enrollmentStatus:
-"active",
+enrollmentStatus:"active",
 
-access:
-true,
+access:true,
 
-createdAt:
-serverTimestamp()
+createdAt:serverTimestamp()
 
 }
 );
@@ -1728,65 +1476,47 @@ serverTimestamp()
 
 /* SUCCESS */
 
-enrollmentStatus.innerText =
+enrollmentStatus.innerText=
 "🎉 Enrollment Successful! Course access मिल गया।";
 
-
-confirmEnrollmentBtn.innerText =
+confirmEnrollmentBtn.innerText=
 "✅ Enrolled";
 
 
-/* UPDATE BUTTON */
-
-const courseButton =
+const courseButton=
 document.querySelector(
-'.buy-btn[data-course-id="' +
-selectedCourse.id +
-'"]'
+'.buy-btn[data-course-id="'+
+selectedCourse.id+'"]'
 );
-
 
 if(courseButton){
 
-courseButton.innerText =
+courseButton.innerText=
 "📖 Open Course";
 
-courseButton.dataset.enrolled =
-"true";
+courseButton.dataset.enrolled="true";
 
 }
 
+setTimeout(()=>{
 
-/* OPEN COURSE */
-
-setTimeout(
-function(){
-
-window.location.href =
+window.location.href=
 selectedCourse.url;
 
-},
-1000
-);
+},1000);
 
 
 }catch(error){
 
-console.error(
-"Enrollment error:",
-error
-);
+console.error("Enrollment error:",error);
 
-enrollmentStatus.innerText =
-"❌ Enrollment failed: " +
-(error.message ||
-"Unknown error");
+enrollmentStatus.innerText=
+"❌ Enrollment failed: "+
+error.message;
 
+confirmEnrollmentBtn.disabled=false;
 
-confirmEnrollmentBtn.disabled =
-false;
-
-confirmEnrollmentBtn.innerText =
+confirmEnrollmentBtn.innerText=
 "✅ Confirm Enrollment";
 
 }
@@ -1794,96 +1524,63 @@ confirmEnrollmentBtn.innerText =
 });
 
 
-/* =========================
-   CANCEL
-========================= */
+/* CANCEL */
 
-cancelPurchaseBtn.addEventListener(
-"click",
-function(){
+cancelPurchaseBtn.addEventListener("click",()=>{
 
 modal.classList.remove("show");
 
-selectedCourse = null;
+selectedCourse=null;
 
-couponApplied = false;
+couponApplied=false;
 
 });
 
 
-/* CLICK OUTSIDE MODAL */
+modal.addEventListener("click",(event)=>{
 
-modal.addEventListener(
-"click",
-function(event){
-
-if(event.target === modal){
+if(event.target===modal){
 
 modal.classList.remove("show");
 
-selectedCourse = null;
+selectedCourse=null;
 
-couponApplied = false;
+couponApplied=false;
 
 }
 
 });
 
 
-/* =========================
-   REFERRAL STATS
-========================= */
+/* REFERRAL STATS */
 
-async function loadReferralStats(
-uid,
-userData
-){
+async function loadReferralStats(uid,userData){
 
 try{
 
-const referralsRef =
-collection(
-db,
-"referrals"
-);
+const referralsRef=
+collection(db,"referrals");
 
-
-const q =
-query(
+const q=query(
 referralsRef,
-where(
-"referrerUid",
-"==",
-uid
-)
+where("referrerUid","==",uid)
 );
 
-
-const snapshot =
+const snapshot=
 await getDocs(q);
 
-
-referralCount.innerText =
+referralCount.innerText=
 snapshot.size;
 
-
-referralPoints.innerText =
+referralPoints.innerText=
 userData.points || 0;
-
 
 }catch(error){
 
-console.error(
-"Referral stats:",
-error
-);
-
-
-referralCount.innerText =
+referralCount.innerText=
 userData.totalReferrals || 0;
 
-
-referralPoints.innerText =
+referralPoints.innerText=
 userData.points || 0;
 
 }
@@ -1891,43 +1588,23 @@ userData.points || 0;
 }
 
 
-/* =========================
-   COPY REFERRAL
-========================= */
+/* COPY */
 
-copyBtn.addEventListener(
-"click",
-async function(){
+copyBtn.addEventListener("click",async()=>{
 
-const text =
-referralLink.value;
-
-
-if(!text){
-return;
-}
-
+if(!referralLink.value)return;
 
 try{
 
-await navigator.clipboard
-.writeText(text);
-
-
-copyBtn.innerText =
-"Copied ✓";
-
-
-setTimeout(
-function(){
-
-copyBtn.innerText =
-"Copy";
-
-},
-1500
+await navigator.clipboard.writeText(
+referralLink.value
 );
 
+copyBtn.innerText="Copied ✓";
+
+setTimeout(()=>{
+copyBtn.innerText="Copy";
+},1500);
 
 }catch(error){
 
@@ -1935,40 +1612,32 @@ referralLink.select();
 
 document.execCommand("copy");
 
-copyBtn.innerText =
-"Copied ✓";
+copyBtn.innerText="Copied ✓";
 
 }
 
 });
 
 
-/* =========================
-   LOGOUT
-========================= */
+/* LOGOUT */
 
-logoutBtn.addEventListener(
-"click",
-async function(){
+logoutBtn.addEventListener("click",async()=>{
 
-logoutBtn.disabled = true;
+logoutBtn.disabled=true;
 
 try{
 
 await signOut(auth);
 
-window.location.href =
-"login.html";
+window.location.href="login.html";
 
 }catch(error){
 
 console.error(error);
 
-logoutBtn.disabled = false;
+logoutBtn.disabled=false;
 
-alert(
-"Logout नहीं हो पाया। फिर कोशिश करें।"
-);
+alert("Logout नहीं हो पाया।");
 
 }
 
