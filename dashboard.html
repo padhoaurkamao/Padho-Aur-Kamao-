@@ -8,6 +8,7 @@
 <title>Dashboard - Padho Aur Kamao</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
@@ -22,7 +23,7 @@ body{
 /* HEADER */
 
 header{
-  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
   color:white;
   padding:18px 20px;
   position:sticky;
@@ -64,7 +65,7 @@ header{
 /* WELCOME */
 
 .welcome{
-  background:linear-gradient(135deg,#4f46e5,#8b5cf6);
+  background:linear-gradient(135deg,#5b21b6,#8b5cf6);
   color:white;
   padding:28px;
   border-radius:22px;
@@ -114,7 +115,7 @@ header{
   margin-top:5px;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 .section-title{
   font-size:21px;
@@ -194,41 +195,66 @@ header{
 
 .courses{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
 }
 
 .course{
   background:white;
-  padding:20px;
-  border-radius:18px;
+  padding:22px;
+  border-radius:20px;
   box-shadow:0 5px 20px #0001;
 }
 
 .course-icon{
-  font-size:38px;
+  font-size:42px;
 }
 
 .course h3{
   margin:10px 0 7px;
+  font-size:21px;
 }
 
 .course p{
   color:#6b7280;
   font-size:14px;
-  line-height:1.5;
+  line-height:1.6;
+}
+
+.course-details{
+  margin-top:14px;
+  line-height:1.9;
+}
+
+.price{
+  font-weight:bold;
+  font-size:18px;
+}
+
+.commission{
+  color:#16a34a;
+  font-weight:bold;
+}
+
+.passive{
+  color:#7c3aed;
+  font-weight:bold;
 }
 
 .course-btn{
   display:block;
   text-align:center;
-  background:#eef2ff;
-  color:#4f46e5;
-  padding:11px;
-  border-radius:9px;
+  background:#6d28d9;
+  color:white;
+  padding:12px;
+  border-radius:10px;
   text-decoration:none;
   font-weight:bold;
-  margin-top:15px;
+  margin-top:18px;
+}
+
+.course-btn:hover{
+  background:#5b21b6;
 }
 
 /* PROFILE */
@@ -243,6 +269,7 @@ header{
 .profile-row{
   display:flex;
   justify-content:space-between;
+  gap:15px;
   padding:12px 0;
   border-bottom:1px solid #eee;
 }
@@ -296,7 +323,7 @@ header{
   }
 
   .courses{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr;
   }
 
 }
@@ -339,10 +366,6 @@ header{
     padding:16px;
   }
 
-  .courses{
-    grid-template-columns:1fr;
-  }
-
   .referral-box{
     flex-direction:column;
   }
@@ -351,7 +374,13 @@ header{
     padding:12px;
   }
 
+  .profile-row{
+    flex-direction:column;
+    gap:5px;
+  }
+
 }
+
 </style>
 </head>
 
@@ -367,8 +396,12 @@ header{
       📚 Padho Aur Kamao
     </div>
 
-    <button id="logoutBtn" class="logout">
+    <button
+      id="logoutBtn"
+      class="logout">
+
       🚪 Logout
+
     </button>
 
   </div>
@@ -402,7 +435,9 @@ header{
 
     <div class="stat">
 
-      <div class="stat-icon">💰</div>
+      <div class="stat-icon">
+        💰
+      </div>
 
       <div class="stat-title">
         Total Earnings
@@ -417,7 +452,9 @@ header{
 
     <div class="stat">
 
-      <div class="stat-icon">📅</div>
+      <div class="stat-icon">
+        📅
+      </div>
 
       <div class="stat-title">
         This Week
@@ -432,7 +469,9 @@ header{
 
     <div class="stat">
 
-      <div class="stat-icon">📆</div>
+      <div class="stat-icon">
+        📆
+      </div>
 
       <div class="stat-title">
         This Month
@@ -447,7 +486,9 @@ header{
 
     <div class="stat">
 
-      <div class="stat-icon">📈</div>
+      <div class="stat-icon">
+        📈
+      </div>
 
       <div class="stat-title">
         This Year
@@ -462,7 +503,7 @@ header{
   </section>
 
 
-  <!-- QUICK ACTIONS -->
+  <!-- QUICK ACCESS -->
 
   <h2 class="section-title">
     ⚡ Quick Access
@@ -470,13 +511,18 @@ header{
 
   <section class="actions">
 
-    <a class="action" href="course1.html">
+
+    <a
+      class="action"
+      href="#courses">
 
       <div class="action-icon">
         📚
       </div>
 
-      <h3>My Courses</h3>
+      <h3>
+        My Courses
+      </h3>
 
       <p>
         अपने courses और lessons देखें
@@ -485,13 +531,17 @@ header{
     </a>
 
 
-    <a class="action" href="#videos">
+    <a
+      class="action"
+      href="#videos">
 
       <div class="action-icon">
         🎥
       </div>
 
-      <h3>Learning Videos</h3>
+      <h3>
+        Learning Videos
+      </h3>
 
       <p>
         अपने learning videos देखें
@@ -500,13 +550,17 @@ header{
     </a>
 
 
-    <a class="action" href="#leaderboard">
+    <a
+      class="action"
+      href="#leaderboard">
 
       <div class="action-icon">
         🏆
       </div>
 
-      <h3>Leaderboard</h3>
+      <h3>
+        Leaderboard
+      </h3>
 
       <p>
         Learning performance देखें
@@ -515,13 +569,17 @@ header{
     </a>
 
 
-    <a class="action" href="#profile">
+    <a
+      class="action"
+      href="#profile">
 
       <div class="action-icon">
         👤
       </div>
 
-      <h3>My Profile</h3>
+      <h3>
+        My Profile
+      </h3>
 
       <p>
         Account details देखें
@@ -545,7 +603,8 @@ header{
     </h3>
 
     <p>
-      इस link को share करके लोगों को आपके platform तक पहुँचाया जा सकता है।
+      इस link को share करके लोगों को आपके platform तक
+      पहुँचाया जा सकता है।
     </p>
 
     <div class="referral-box">
@@ -568,113 +627,148 @@ header{
   </section>
 
 
-  <!-- COURSES -->
+  <!-- MY COURSES -->
 
-  <h2 class="section-title">
+  <h2
+    class="section-title"
+    id="courses">
+
     📚 My Courses
-  <h2 class="section-title">
-  📚 My Courses
-</h2>
 
-<section class="courses">
+  </h2>
 
-  <!-- COURSE 1 -->
 
-  <div class="course">
+  <section class="courses">
 
-    <div class="course-icon">
-      🚀
+
+    <!-- COURSE 1 -->
+
+    <div class="course">
+
+      <div class="course-icon">
+        🚀
+      </div>
+
+      <h3>
+        Step To Success
+      </h3>
+
+      <p>
+        Lead Generation, Communication Skills,
+        Maths, Reasoning, Hindi और General Studies
+        (GS) की learning।
+      </p>
+
+      <div class="course-details">
+
+        <div class="price">
+          💰 Price: ₹199
+        </div>
+
+        <div class="commission">
+          🎯 Commission per Sale: ₹100
+        </div>
+
+        <div class="passive">
+          🔗 Passive Income: ₹20
+        </div>
+
+      </div>
+
+      <a
+        class="course-btn"
+        href="step-to-success.html">
+
+        Open Course →
+
+      </a>
+
     </div>
 
-    <h3>
-      Step To Success
-    </h3>
+
+    <!-- COURSE 2 -->
+
+    <div class="course">
+
+      <div class="course-icon">
+        🎓
+      </div>
+
+      <h3>
+        All Competitive Exam
+      </h3>
+
+      <p>
+        10th और 12th level exams की preparation,
+        practice और assessment।
+      </p>
+
+      <div class="course-details">
+
+        <div class="price">
+          💰 Price: ₹399
+        </div>
+
+        <div class="commission">
+          🎯 Commission per Sale: ₹200
+        </div>
+
+        <div class="passive">
+          🔗 Passive Income: ₹50
+        </div>
+
+      </div>
+
+      <a
+        class="course-btn"
+        href="all-competitive-exam.html">
+
+        Open Course →
+
+      </a>
+
+    </div>
+
+
+  </section>
+
+
+  <!-- VIDEOS -->
+
+  <h2
+    class="section-title"
+    id="videos">
+
+    🎥 Learning Videos
+
+  </h2>
+
+  <section class="profile">
 
     <p>
-      Lead Generation, Communication Skills,
-      Maths, Reasoning, Hindi और General Studies (GS)
-      की learning।
+      आपके course videos संबंधित course page पर
+      उपलब्ध होंगे।
     </p>
 
-    <div style="margin-top:12px;line-height:1.8;">
-
-      <strong>
-        💰 Price: ₹199
-      </strong>
-
-      <br>
-
-      <span style="color:#16a34a;">
-        🎯 Commission per Sale: ₹100
-      </span>
-
-      <br>
-
-      <span style="color:#7c3aed;">
-        🔗 Passive Income: ₹20
-      </span>
-
-    </div>
-
     <a
-      class="course-btn"
-      href="step-to-success.html">
+      href="step-to-success.html"
+      class="course-btn">
 
-      Open Course
+      🚀 Step To Success Videos
 
     </a>
 
-  </div>
-
-
-  <!-- COURSE 2 -->
-
-  <div class="course">
-
-    <div class="course-icon">
-      🎓
-    </div>
-
-    <h3>
-      All Competitive Exam
-    </h3>
-
-    <p>
-      10th और 12th level exams की
-      preparation, practice और assessment।
-    </p>
-
-    <div style="margin-top:12px;line-height:1.8;">
-
-      <strong>
-        💰 Price: ₹399
-      </strong>
-
-      <br>
-
-      <span style="color:#16a34a;">
-        🎯 Commission per Sale: ₹200
-      </span>
-
-      <br>
-
-      <span style="color:#7c3aed;">
-        🔗 Passive Income: ₹50
-      </span>
-
-    </div>
-
     <a
-      class="course-btn"
-      href="all-competitive-exam.html">
+      href="all-competitive-exam.html"
+      class="course-btn">
 
-      Open Course
+      🎓 Competitive Exam Videos
 
     </a>
 
-  </div>
+  </section>
 
-</section>
+
   <!-- LEADERBOARD -->
 
   <h2
@@ -688,7 +782,8 @@ header{
   <section class="profile">
 
     <p>
-      Leaderboard यहाँ learning activity और progress के आधार पर दिखाया जा सकता है।
+      Leaderboard learning activity और progress
+      के आधार पर दिखाया जा सकता है।
     </p>
 
     <strong>
@@ -750,31 +845,55 @@ header{
 
   </section>
 
+
 </main>
 
 
-<!-- MOBILE NAV -->
+<!-- BOTTOM NAV -->
 
 <nav class="bottom-nav">
 
   <a href="dashboard.html">
-    <span>🏠</span>
+
+    <span>
+      🏠
+    </span>
+
     Home
+
   </a>
 
-  <a href="course1.html">
-    <span>📚</span>
+
+  <a href="#courses">
+
+    <span>
+      📚
+    </span>
+
     Courses
+
   </a>
+
 
   <a href="#leaderboard">
-    <span>🏆</span>
+
+    <span>
+      🏆
+    </span>
+
     Rank
+
   </a>
 
+
   <a href="#profile">
-    <span>👤</span>
+
+    <span>
+      👤
+    </span>
+
     Profile
+
   </a>
 
 </nav>
@@ -869,11 +988,6 @@ onAuthStateChanged(
   auth,
   function(user){
 
-    /*
-      अगर Login नहीं है,
-      तो Login page पर वापस भेजें।
-    */
-
     if(!user){
 
       window.location.href =
@@ -883,8 +997,6 @@ onAuthStateChanged(
 
     }
 
-
-    /* USER NAME */
 
     const name =
     user.displayName ||
@@ -901,14 +1013,10 @@ onAuthStateChanged(
     name;
 
 
-    /* EMAIL */
-
     userEmail.innerText =
     user.email ||
     "Not available";
 
-
-    /* UID */
 
     userId.innerText =
     user.uid;
@@ -916,9 +1024,6 @@ onAuthStateChanged(
 
     /*
       REFERRAL LINK
-
-      Example:
-      ?ref=USER_UID
     */
 
     const baseUrl =
