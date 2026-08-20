@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Competitive Exam - Padho Aur Kamao</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#111827;
+}
+
+header{
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
+  color:white;
+  padding:18px 20px;
+}
+
+.header{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:bold;
+}
+
+.back{
+  color:#5b21b6;
+  background:white;
+  padding:9px 15px;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:25px 18px 50px;
+}
+
+.hero{
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
+  color:white;
+  padding:30px;
+  border-radius:22px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  margin-top:0;
+  font-size:32px;
+}
+
+.card{
+  background:white;
+  padding:22px;
+  border-radius:18px;
+  margin-bottom:20px;
+  box-shadow:0 5px 20px #0001;
+}
+
+.price{
+  font-size:28px;
+  font-weight:bold;
+  color:#5b21b6;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.topic{
+  background:#f5f3ff;
+  padding:18px;
+  border-radius:14px;
+}
+
+.topic h3{
+  margin-top:0;
+}
+
+.assessment{
+  background:#eef2ff;
+  padding:20px;
+  border-radius:14px;
+}
+
+@media(max-width:600px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:26px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header">
+
+    <div class="logo">
+      📚 Padho Aur Kamao
+    </div>
+
+    <a class="back" href="dashboard.html">
+      ← Dashboard
+    </a>
+
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+
+    <h1>🎓 All Competitive Exam</h1>
+
+    <p>
+      10th और 12th level exams के लिए preparation और assessment।
+    </p>
+
+  </section>
+
+  <section class="card">
+
+    <h2>📌 Course Details</h2>
+
+    <p class="price">₹399</p>
+
+    <p>
+      इस course में 10th और 12th level की exam preparation
+      के लिए आपके द्वारा तैयार किया गया learning material और
+      assessment शामिल किया जा सकता है।
+    </p>
+
+  </section>
+
+  <section class="card">
+
+    <h2>📚 Exam Levels</h2>
+
+    <div class="grid">
+
+      <div class="topic">
+        <h3>📘 10th Level</h3>
+        <p>
+          10th level के अनुसार study material,
+          practice और assessment।
+        </p>
+      </div>
+
+      <div class="topic">
+        <h3>📗 12th Level</h3>
+        <p>
+          12th level के अनुसार study material,
+          practice और assessment।
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="card">
+
+    <h2>📝 Assessment</h2>
+
+    <div class="assessment">
+
+      <h3>
+        आपका अपना Assessment System
+      </h3>
+
+      <p>
+        आप अपनी जरूरत और course structure के अनुसार
+        questions, tests और assessments बाद में add कर सकते हैं।
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+</body>
+</html>
