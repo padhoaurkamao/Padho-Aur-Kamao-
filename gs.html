@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GS - Step To Success</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#111827;
+}
+
+header{
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
+  color:white;
+  padding:16px 20px;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.nav{
+  max-width:1000px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:bold;
+}
+
+.back{
+  background:white;
+  color:#5b21b6;
+  padding:9px 15px;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:25px 15px 60px;
+}
+
+.hero{
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
+  color:white;
+  padding:30px;
+  border-radius:22px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  margin:0 0 10px;
+  font-size:32px;
+}
+
+.hero p{
+  margin:0;
+  line-height:1.6;
+}
+
+.card{
+  background:white;
+  padding:22px;
+  border-radius:18px;
+  margin-bottom:20px;
+  box-shadow:0 5px 20px #0001;
+}
+
+.chapter{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:17px 0;
+  border-bottom:1px solid #eee;
+}
+
+.chapter:last-child{
+  border-bottom:0;
+}
+
+.chapter-info{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.icon{
+  font-size:30px;
+}
+
+.chapter h3{
+  margin:0 0 5px;
+}
+
+.chapter p{
+  margin:0;
+  color:#6b7280;
+  font-size:14px;
+}
+
+.watch{
+  border:0;
+  background:#6d28d9;
+  color:white;
+  padding:10px 16px;
+  border-radius:9px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.watch:hover{
+  background:#5b21b6;
+}
+
+.video-title{
+  margin-top:0;
+}
+
+.video-box{
+  background:#111827;
+  padding:20px;
+  border-radius:15px;
+  color:white;
+  text-align:center;
+}
+
+.video-container{
+  position:relative;
+  width:100%;
+  padding-bottom:56.25%;
+  height:0;
+  overflow:hidden;
+  border-radius:12px;
+}
+
+.video-container iframe{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+@media(max-width:600px){
+
+  .hero h1{
+    font-size:26px;
+  }
+
+  .chapter{
+    align-items:flex-start;
+  }
+
+  .chapter-info{
+    align-items:flex-start;
+  }
+
+  .watch{
+    padding:9px 12px;
+  }
+
+}
+
+@media(max-width:450px){
+
+  .logo{
+    font-size:16px;
+  }
+
+  .back{
+    font-size:13px;
+    padding:8px 11px;
+  }
+
+  .chapter{
+    flex-direction:column;
+  }
+
+  .watch{
+    width:100%;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo">
+      📚 Padho Aur Kamao
+    </div>
+
+    <a href="step-to-success.html" class="back">
+      ← Step To Success
+    </a>
+
+  </div>
+
+</header>
+
+
+<main class="container">
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h1>🌍 General Studies (GS)</h1>
+
+    <p>
+      Step To Success के GS chapters सीखें और
+      video lessons देखें।
+    </p>
+
+  </section>
+
+
+  <!-- CHAPTERS -->
+
+  <section class="card">
+
+    <h2>
+      📚 GS Chapters
+    </h2>
+
+
+    <!-- ANCIENT HISTORY -->
+
+    <div class="chapter">
+
+      <div class="chapter-info">
+
+        <div class="icon">
+          🏺
+        </div>
+
+        <div>
+
+          <h3>
+            Ancient History
+          </h3>
+
+          <p>
+            प्राचीन भारतीय इतिहास
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="watch"
+        onclick="showVideo('Ancient History')">
+
+        🎥 Video
+
+      </button>
+
+    </div>
+
+
+    <!-- MEDIEVAL HISTORY -->
+
+    <div class="chapter">
+
+      <div class="chapter-info">
+
+        <div class="icon">
+          🏰
+        </div>
+
+        <div>
+
+          <h3>
+            Medieval History
+          </h3>
+
+          <p>
+            मध्यकालीन भारतीय इतिहास
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="watch"
+        onclick="showVideo('Medieval History')">
+
+        🎥 Video
+
+      </button>
+
+    </div>
+
+
+    <!-- MODERN HISTORY -->
+
+    <div class="chapter">
+
+      <div class="chapter-info">
+
+        <div class="icon">
+          🇮🇳
+        </div>
+
+        <div>
+
+          <h3>
+            Modern History
+          </h3>
+
+          <p>
+            आधुनिक भारतीय इतिहास
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="watch"
+        onclick="showVideo('Modern History')">
+
+        🎥 Video
+
+      </button>
+
+    </div>
+
+
+    <!-- INDIAN GEOGRAPHY -->
+
+    <div class="chapter">
+
+      <div class="chapter-info">
+
+        <div class="icon">
+          🗺️
+        </div>
+
+        <div>
+
+          <h3>
+            Indian Geography
+          </h3>
+
+          <p>
+            भारत का भूगोल
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="watch"
+        onclick="showVideo('Indian Geography')">
+
+        🎥 Video
+
+      </button>
+
+    </div>
+
+
+    <!-- WORLD GEOGRAPHY -->
+
+    <div class="chapter">
+
+      <div class="chapter-info">
+
+        <div class="icon">
+          🌍
+        </div>
+
+        <div>
+
+          <h3>
+            World Geography
+          </h3>
+
+          <p>
+            विश्व का भूगोल
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="watch"
+        onclick="showVideo('World Geography')">
+
+        🎥 Video
+
+      </button>
+
+    </div>
+
+
+    <!-- INDIAN POLITY -->
+
+    <div class="chapter">
+
+      <div class="chapter-info">
+
+        <div class="icon">
+          ⚖️
+        </div>
+
+        <div>
+
+          <h3>
+            Indian Polity
+          </h3>
+
+          <p>
+            भारतीय राजव्यवस्था
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="watch"
+        onclick="showVideo('Indian Polity')">
+
+        🎥 Video
+
+      </button>
+
+    </div>
+
+
+    <!-- INDIAN ECONOMY -->
+
+    <div class="chapter">
+
+      <div class="chapter-info">
+
+        <div class="icon">
+          💰
+        </div>
+
+        <div>
+
+          <h3>
+            Indian Economy
+          </h3>
+
+          <p>
+            भारतीय अर्थव्यवस्था
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="watch"
+        onclick="showVideo('Indian Economy')">
+
+        🎥 Video
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- VIDEO PLAYER -->
+
+  <section class="card">
+
+    <h2 class="video-title">
+      🎬 Video Player
+    </h2>
+
+    <div id="videoArea" class="video-box">
+
+      <div style="font-size:45px;">
+        ▶️
+      </div>
+
+      <h3>
+        कोई chapter चुनें
+      </h3>
+
+      <p>
+        ऊपर दिए गए किसी भी chapter के
+        🎥 Video button पर क्लिक करें।
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script>
+
+/* =========================
+   GS VIDEO LIST
+========================= */
+
+const videos = {
+
+  "Ancient History":
+  "Vp0OZroGDpA",
+
+  "Medieval History":
+  "ODPcedfOLd0",
+
+  "Modern History":
+  "lrYbQopVuPY",
+
+  "Indian Geography":
+  "g_MiJXGnMaY",
+
+  "World Geography":
+  "OwVLEE4o058",
+
+  "Indian Polity":
+  "eSX7VeLFnks",
+
+  "Indian Economy":
+  "svxbMRVsfdw"
+
+};
+
+
+/* =========================
+   SHOW VIDEO
+========================= */
+
+function showVideo(chapter){
+
+  const videoId =
+  videos[chapter];
+
+  const area =
+  document.getElementById("videoArea");
+
+
+  if(!videoId){
+
+    area.innerHTML = `
+
+      <div style="font-size:45px;">
+        ⚠️
+      </div>
+
+      <h3>
+        Video उपलब्ध नहीं है
+      </h3>
+
+    `;
+
+    return;
+
+  }
+
+
+  area.innerHTML = `
+
+    <h3>
+      🎥 ${chapter}
+    </h3>
+
+    <div class="video-container">
+
+      <iframe
+        src="https://www.youtube.com/embed/${videoId}"
+        title="${chapter}"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+
+    </div>
+
+  `;
+
+
+  area.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
+</script>
+
+</body>
+</html>
