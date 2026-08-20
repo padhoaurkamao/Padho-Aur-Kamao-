@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -7,6 +6,7 @@
 <title>Padho Aur Kamao - Dashboard</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
@@ -54,6 +54,8 @@ header{
   border-radius:50%;
   font-size:28px;
   padding:0;
+  border:none;
+  cursor:pointer;
 }
 
 .menu-box{
@@ -91,6 +93,10 @@ header{
   width:100%;
   background:#fee2e2;
   color:#dc2626;
+  border:none;
+  border-radius:9px;
+  padding:12px;
+  cursor:pointer;
 }
 
 /* MAIN */
@@ -150,21 +156,231 @@ main{
 
 .course{
   background:white;
-  border-radius:16px;
+  border-radius:18px;
   overflow:hidden;
-  box-shadow:0 3px 12px #0001;
+  box-shadow:0 5px 18px #0002;
+  transition:.3s;
 }
 
+.course:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 28px #0003;
+}
+
+
+/* =================================
+   📖 PREMIUM BOOK COURSE LOGO
+================================= */
+
 .course-img{
-  height:150px;
+  height:180px;
   background:
-  linear-gradient(135deg,#2563eb,#9333ea);
+    radial-gradient(
+      circle at top,
+      #60a5fa,
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #1d4ed8,
+      #7c3aed
+    );
+
   color:white;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:45px;
+
+  position:relative;
+  overflow:hidden;
 }
+
+
+/* LIGHT EFFECT */
+
+.course-img::before{
+  content:"";
+  position:absolute;
+
+  width:180px;
+  height:180px;
+
+  background:#ffffff22;
+
+  border-radius:50%;
+
+  filter:blur(5px);
+}
+
+
+/* BOOK */
+
+.book-logo{
+  position:relative;
+
+  width:190px;
+  height:125px;
+
+  z-index:2;
+
+  filter:
+    drop-shadow(
+      0 10px 12px #0005
+    );
+}
+
+
+/* BOOK PAGES */
+
+.book-page{
+  position:absolute;
+
+  top:10px;
+
+  width:92px;
+  height:105px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #dbeafe
+    );
+
+  box-shadow:
+    inset 0 0 8px #0001,
+    0 5px 10px #0003;
+}
+
+
+/* LEFT PAGE */
+
+.book-left{
+  left:4px;
+
+  border-radius:
+    10px 3px 3px 10px;
+
+  transform:
+    perspective(400px)
+    rotateY(10deg)
+    skewY(4deg);
+}
+
+
+/* RIGHT PAGE */
+
+.book-right{
+  right:4px;
+
+  border-radius:
+    3px 10px 10px 3px;
+
+  transform:
+    perspective(400px)
+    rotateY(-10deg)
+    skewY(-4deg);
+}
+
+
+/* BOOK CENTER */
+
+.book-center{
+  position:absolute;
+
+  left:50%;
+  top:8px;
+
+  transform:
+    translateX(-50%);
+
+  width:9px;
+  height:108px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #d97706,
+      #fbbf24,
+      #d97706
+    );
+
+  border-radius:6px;
+
+  z-index:5;
+
+  box-shadow:
+    0 0 10px #fbbf2488;
+}
+
+
+/* BOOK BRAND */
+
+.book-brand{
+  position:absolute;
+
+  left:50%;
+  top:42px;
+
+  transform:
+    translateX(-50%);
+
+  z-index:10;
+
+  width:170px;
+
+  text-align:center;
+
+  color:#1e3a8a;
+
+  font-weight:900;
+
+  font-size:14px;
+
+  line-height:18px;
+
+  pointer-events:none;
+}
+
+.book-brand .top-text{
+  display:block;
+  font-size:13px;
+}
+
+.book-brand .and{
+  color:#f59e0b;
+  font-size:18px;
+}
+
+.book-brand .bottom-text{
+  display:block;
+  font-size:13px;
+}
+
+
+/* GOLD GLOW */
+
+.book-glow{
+  position:absolute;
+
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #fbbf2433,
+      transparent 65%
+    );
+
+  z-index:1;
+}
+
+
+/* COURSE BODY */
 
 .course-body{
   padding:18px;
@@ -172,6 +388,7 @@ main{
 
 .course-body h3{
   margin-top:0;
+  font-size:20px;
 }
 
 .price{
@@ -185,12 +402,32 @@ main{
   width:100%;
   background:#2563eb;
   color:white;
+  border:none;
+  border-radius:10px;
+  padding:13px;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:bold;
+}
+
+.buy:hover{
+  background:#1d4ed8;
 }
 
 .access{
   width:100%;
   background:#16a34a;
   color:white;
+  border:none;
+  border-radius:10px;
+  padding:13px;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:bold;
+}
+
+.access:hover{
+  background:#15803d;
 }
 
 .empty{
@@ -199,6 +436,7 @@ main{
   border-radius:12px;
   box-shadow:0 3px 12px #0001;
 }
+
 
 /* MODAL */
 
@@ -230,6 +468,11 @@ main{
   width:100%;
   margin-top:10px;
   background:#e5e7eb;
+  color:#111827;
+  border:none;
+  border-radius:10px;
+  padding:13px;
+  cursor:pointer;
 }
 
 .message{
@@ -249,6 +492,7 @@ main{
   color:#991b1b;
 }
 
+
 /* MOBILE */
 
 @media(max-width:600px){
@@ -265,13 +509,26 @@ main{
     font-size:11px;
   }
 
+  .course-img{
+    height:170px;
+  }
+
+  .book-logo{
+    transform:scale(.9);
+  }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- HEADER -->
+
+<!-- =================================
+     HEADER
+================================= -->
 
 <header>
 
@@ -279,7 +536,9 @@ main{
 
   <div class="logo">
 
-    <h2>📚 Padho Aur Kamao</h2>
+    <h2>
+      📚 Padho Aur Kamao
+    </h2>
 
     <small>
       सीखें • Practice करें • आगे बढ़ें
@@ -332,7 +591,10 @@ main{
 </header>
 
 
-<!-- MAIN -->
+
+<!-- =================================
+     MAIN
+================================= -->
 
 <main>
 
@@ -342,10 +604,13 @@ main{
 <div class="welcome">
 
   <h2>
+
     👋 Welcome
+
     <span id="name">
       Student
     </span>
+
   </h2>
 
   <p id="email"></p>
@@ -353,13 +618,17 @@ main{
 </div>
 
 
+
 <!-- EARNING STATS -->
 
 <div class="stats">
 
+
   <div class="stat">
 
-    <h3>💰 Total Earnings</h3>
+    <h3>
+      💰 Total Earnings
+    </h3>
 
     <p>
       ₹0
@@ -370,7 +639,9 @@ main{
 
   <div class="stat">
 
-    <h3>📅 This Week</h3>
+    <h3>
+      📅 This Week
+    </h3>
 
     <p>
       ₹0
@@ -381,7 +652,9 @@ main{
 
   <div class="stat">
 
-    <h3>📆 This Month</h3>
+    <h3>
+      📆 This Month
+    </h3>
 
     <p>
       ₹0
@@ -392,7 +665,9 @@ main{
 
   <div class="stat">
 
-    <h3>📈 This Year</h3>
+    <h3>
+      📈 This Year
+    </h3>
 
     <p>
       ₹0
@@ -403,7 +678,10 @@ main{
 </div>
 
 
-<!-- BUY COURSE -->
+
+<!-- =================================
+     BUY COURSE
+================================= -->
 
 <h2>
   🛒 Buy Course
@@ -421,7 +699,10 @@ main{
 </div>
 
 
-<!-- MY COURSES -->
+
+<!-- =================================
+     MY COURSES
+================================= -->
 
 <h2
   id="myCourses"
@@ -448,7 +729,10 @@ main{
 </main>
 
 
-<!-- PURCHASE MODAL -->
+
+<!-- =================================
+     PURCHASE MODAL
+================================= -->
 
 <div
   class="modal"
@@ -470,6 +754,7 @@ main{
     <h3>
 
       Price:
+
       ₹<span id="modalPrice">
       </span>
 
@@ -519,7 +804,9 @@ main{
 <script type="module">
 
 
-/* FIREBASE */
+/* =================================
+   FIREBASE
+================================= */
 
 import {
   initializeApp
@@ -765,11 +1052,44 @@ async function loadCourses(){
       "course";
 
 
+      /*
+        📖 BOOK LOGO
+      */
+
       card.innerHTML = `
 
         <div class="course-img">
 
-          📚
+          <div class="book-glow"></div>
+
+          <div class="book-logo">
+
+            <div class="book-page book-left">
+            </div>
+
+            <div class="book-page book-right">
+            </div>
+
+            <div class="book-center">
+            </div>
+
+            <div class="book-brand">
+
+              <span class="top-text">
+                PADHO
+              </span>
+
+              <span class="and">
+                &
+              </span>
+
+              <span class="bottom-text">
+                KAMAO
+              </span>
+
+            </div>
+
+          </div>
 
         </div>
 
@@ -912,7 +1232,9 @@ course
 
 
 
-/* CLOSE MODAL */
+/* =================================
+   CLOSE MODAL
+================================= */
 
 document
 .getElementById(
@@ -1218,7 +1540,36 @@ async function loadMyCourses(){
 
         <div class="course-img">
 
-          🎓
+          <div class="book-glow"></div>
+
+          <div class="book-logo">
+
+            <div class="book-page book-left">
+            </div>
+
+            <div class="book-page book-right">
+            </div>
+
+            <div class="book-center">
+            </div>
+
+            <div class="book-brand">
+
+              <span class="top-text">
+                PADHO
+              </span>
+
+              <span class="and">
+                &
+              </span>
+
+              <span class="bottom-text">
+                KAMAO
+              </span>
+
+            </div>
+
+          </div>
 
         </div>
 
