@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dashboard - Padho Aur Kamao</title>
 
 <style>
-
 *{
   box-sizing:border-box;
 }
@@ -16,25 +14,23 @@
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background:#f5f7fb;
+  background:#f4f7fb;
   color:#111827;
 }
 
 header{
   background:linear-gradient(135deg,#5b21b6,#7c3aed);
   color:white;
-  padding:16px 20px;
-  position:sticky;
-  top:0;
-  z-index:10;
+  padding:22px 16px;
 }
 
-.header{
-  max-width:1150px;
+.header-inner{
+  max-width:1100px;
   margin:auto;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:15px;
 }
 
 .logo{
@@ -42,86 +38,27 @@ header{
   font-weight:bold;
 }
 
-.header-right{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.settings-btn{
-  border:0;
-  background:white;
-  color:#5b21b6;
-  padding:10px 13px;
+.settings{
+  background:#ffffff22;
+  color:white;
+  border:1px solid #ffffff44;
+  padding:10px 14px;
   border-radius:10px;
-  font-size:18px;
-  cursor:pointer;
 }
 
-.menu-btn{
-  display:none;
-  border:0;
-  background:white;
-  color:#5b21b6;
-  padding:10px;
-  border-radius:10px;
-  font-size:20px;
-}
-
-.layout{
-  max-width:1150px;
+.container{
+  max-width:1100px;
   margin:auto;
-  display:flex;
-  min-height:calc(100vh - 70px);
-}
-
-.sidebar{
-  width:230px;
-  background:white;
-  padding:20px 12px;
-  border-right:1px solid #e5e7eb;
-}
-
-.nav{
-  display:block;
-  padding:13px;
-  margin:5px 0;
-  border-radius:10px;
-  color:#374151;
-  text-decoration:none;
-  cursor:pointer;
-}
-
-.nav:hover,
-.nav.active{
-  background:#ede9fe;
-  color:#5b21b6;
-  font-weight:bold;
-}
-
-.main{
-  flex:1;
-  padding:25px;
+  padding:20px 15px 50px;
 }
 
 .welcome{
   background:white;
+  padding:20px;
   border-radius:18px;
-  padding:23px;
-  box-shadow:0 5px 20px #0001;
+  box-shadow:0 5px 20px #00000010;
   margin-bottom:20px;
 }
-
-.welcome h1{
-  margin:0 0 7px;
-}
-
-.muted{
-  color:#6b7280;
-}
-
-
-/* STATS */
 
 .stats{
   display:grid;
@@ -133,60 +70,47 @@ header{
 .stat{
   background:white;
   padding:18px;
-  border-radius:15px;
-  box-shadow:0 4px 15px #0001;
+  border-radius:16px;
+  box-shadow:0 4px 15px #0000000d;
 }
 
 .stat-icon{
   font-size:25px;
 }
 
-.stat-number{
-  font-size:23px;
-  font-weight:bold;
-  margin-top:7px;
+.stat h3{
+  margin:8px 0 3px;
+  font-size:24px;
 }
 
-.stat-label{
+.stat p{
+  margin:0;
   color:#6b7280;
-  font-size:13px;
 }
-
-
-/* COURSES */
 
 .section-title{
   margin:25px 0 15px;
 }
 
-.course{
-  background:white;
-  padding:22px;
-  border-radius:18px;
-  margin-bottom:20px;
-  box-shadow:0 5px 20px #0001;
+.courses{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
 }
 
-.course-header{
-  display:flex;
-  gap:15px;
-  align-items:center;
+.course{
+  background:white;
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 5px 20px #00000010;
 }
 
 .course-icon{
-  width:58px;
-  height:58px;
-  border-radius:15px;
-  background:#ede9fe;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:30px;
-  flex-shrink:0;
+  font-size:40px;
 }
 
 .course h2{
-  margin:0 0 6px;
+  margin:10px 0 5px;
 }
 
 .description{
@@ -194,9 +118,571 @@ header{
   line-height:1.5;
 }
 
-
-/* MONEY */
+.price{
+  font-size:28px;
+  font-weight:bold;
+  color:#5b21b6;
+  margin:15px 0;
+}
 
 .money{
   display:grid;
-  grid-template
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.money-card{
+  background:#f5f3ff;
+  padding:13px;
+  border-radius:12px;
+}
+
+.money-card strong{
+  display:block;
+  font-size:20px;
+  margin-top:5px;
+  color:#5b21b6;
+}
+
+.subjects{
+  margin:15px 0;
+}
+
+.subject{
+  display:inline-block;
+  background:#eef2ff;
+  color:#4338ca;
+  padding:7px 10px;
+  border-radius:20px;
+  margin:4px;
+  font-size:13px;
+}
+
+.teacher{
+  background:#f9fafb;
+  padding:12px;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+.video-list{
+  margin-top:15px;
+}
+
+.lesson{
+  padding:12px;
+  border-bottom:1px solid #eee;
+}
+
+.watch{
+  width:100%;
+  margin-top:15px;
+  padding:13px;
+  border:0;
+  border-radius:10px;
+  background:#6d28d9;
+  color:white;
+  font-weight:bold;
+  font-size:15px;
+}
+
+.logout{
+  display:block;
+  margin:30px auto 0;
+  padding:12px 25px;
+  border:0;
+  border-radius:10px;
+  background:#dc2626;
+  color:white;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  color:#6b7280;
+  padding:20px;
+}
+
+@media(max-width:800px){
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .courses{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:500px){
+  .header-inner{
+    align-items:flex-start;
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .money{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+
+    <div class="logo">
+      📚 Padho Aur Kamao
+    </div>
+
+    <button class="settings" onclick="showSettings()">
+      ⚙️ Settings
+    </button>
+
+  </div>
+</header>
+
+
+<div class="container">
+
+  <div class="welcome">
+    <h2 id="welcomeName">Hello 👋</h2>
+    <p id="userEmail">
+      Welcome to your learning dashboard.
+    </p>
+  </div>
+
+
+  <!-- STATS -->
+
+  <div class="stats">
+
+    <div class="stat">
+      <div class="stat-icon">🎓</div>
+      <h3>2</h3>
+      <p>Courses</p>
+    </div>
+
+    <div class="stat">
+      <div class="stat-icon">📚</div>
+      <h3>10+</h3>
+      <p>Lessons</p>
+    </div>
+
+    <div class="stat">
+      <div class="stat-icon">💰</div>
+      <h3>₹100</h3>
+      <p>Commission</p>
+    </div>
+
+    <div class="stat">
+      <div class="stat-icon">📈</div>
+      <h3>₹20</h3>
+      <p>Passive Income</p>
+    </div>
+
+  </div>
+
+
+  <h2 class="section-title">
+    🎓 My Courses
+  </h2>
+
+
+  <div class="courses">
+
+
+    <!-- COURSE 1 -->
+
+    <div class="course">
+
+      <div class="course-icon">🚀</div>
+
+      <h2>Step To Success</h2>
+
+      <p class="description">
+        Lead Generation, Communication Skills,
+        Math, Reasoning, Hindi और General Studies
+        की practical learning.
+      </p>
+
+      <div class="price">
+        ₹199
+      </div>
+
+
+      <div class="money">
+
+        <div class="money-card">
+          💰 Commission
+          <strong>₹100</strong>
+          <small>Per Sale</small>
+        </div>
+
+        <div class="money-card">
+          📈 Passive Income
+          <strong>₹20</strong>
+          <small>Target Amount</small>
+        </div>
+
+      </div>
+
+
+      <div class="subjects">
+
+        <span class="subject">Lead Generation</span>
+        <span class="subject">Communication</span>
+        <span class="subject">Math</span>
+        <span class="subject">Reasoning</span>
+        <span class="subject">Hindi</span>
+        <span class="subject">GS</span>
+
+      </div>
+
+
+      <h3>👨‍🏫 Teachers</h3>
+
+      <div class="teacher">
+        👨‍🏫 Lead Generation Teacher
+      </div>
+
+      <div class="teacher">
+        👩‍🏫 Communication Skills Teacher
+      </div>
+
+      <div class="teacher">
+        👨‍🏫 Math & Reasoning Teacher
+      </div>
+
+
+      <div class="video-list">
+
+        <div class="lesson">
+          🎥 Lesson 1 — Introduction
+        </div>
+
+        <div class="lesson">
+          🎥 Lesson 2 — Lead Generation
+        </div>
+
+        <div class="lesson">
+          🎥 Lesson 3 — Communication Skills
+        </div>
+
+        <div class="lesson">
+          🎥 Lesson 4 — Math & Reasoning
+        </div>
+
+      </div>
+
+
+      <button class="watch"
+        onclick="openCourse('Step To Success')">
+        ▶️ View Course
+      </button>
+
+    </div>
+
+
+    <!-- COURSE 2 -->
+
+    <div class="course">
+
+      <div class="course-icon">📚</div>
+
+      <h2>SSC & All Competitive Exams</h2>
+
+      <p class="description">
+        SSC और अन्य competitive exams की
+        तैयारी के लिए केवल पढ़ाई से संबंधित
+        video courses और lessons.
+      </p>
+
+      <div class="price">
+        ₹399
+      </div>
+
+
+      <div class="money">
+
+        <div class="money-card">
+          💰 Commission
+          <strong>₹200</strong>
+          <small>Per Sale</small>
+        </div>
+
+        <div class="money-card">
+          📈 Passive Income
+          <strong>₹50</strong>
+          <small>Target Amount</small>
+        </div>
+
+      </div>
+
+
+      <div class="subjects">
+
+        <span class="subject">SSC</span>
+        <span class="subject">Math</span>
+        <span class="subject">Reasoning</span>
+        <span class="subject">Hindi</span>
+        <span class="subject">General Studies</span>
+        <span class="subject">Current Affairs</span>
+
+      </div>
+
+
+      <h3>👨‍🏫 Subject Teachers</h3>
+
+      <div class="teacher">
+        👨‍🏫 Math Teacher
+      </div>
+
+      <div class="teacher">
+        👨‍🏫 Reasoning Teacher
+      </div>
+
+      <div class="teacher">
+        👩‍🏫 Hindi Teacher
+      </div>
+
+      <div class="teacher">
+        👨‍🏫 General Studies Teacher
+      </div>
+
+
+      <div class="video-list">
+
+        <div class="lesson">
+          🎥 SSC Math — Video Course
+        </div>
+
+        <div class="lesson">
+          🎥 SSC Reasoning — Video Course
+        </div>
+
+        <div class="lesson">
+          🎥 Hindi — Video Course
+        </div>
+
+        <div class="lesson">
+          🎥 General Studies — Video Course
+        </div>
+
+        <div class="lesson">
+          🎥 Current Affairs — Video Course
+        </div>
+
+      </div>
+
+
+      <button class="watch"
+        onclick="openCourse('SSC & All Competitive Exams')">
+        ▶️ View Course
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <h2 class="section-title">
+    💰 Earnings Dashboard
+  </h2>
+
+
+  <div class="stats">
+
+    <div class="stat">
+      <div class="stat-icon">💵</div>
+      <h3>₹0</h3>
+      <p>Today</p>
+    </div>
+
+    <div class="stat">
+      <div class="stat-icon">📅</div>
+      <h3>₹0</h3>
+      <p>This Week</p>
+    </div>
+
+    <div class="stat">
+      <div class="stat-icon">📆</div>
+      <h3>₹0</h3>
+      <p>This Month</p>
+    </div>
+
+    <div class="stat">
+      <div class="stat-icon">📈</div>
+      <h3>₹0</h3>
+      <p>Total</p>
+    </div>
+
+  </div>
+
+
+  <button class="logout" id="logoutBtn">
+    Logout
+  </button>
+
+</div>
+
+
+<footer>
+  📚 Padho Aur Kamao
+</footer>
+
+
+<script type="module">
+
+import {
+  initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+  getAuth,
+  onAuthStateChanged,
+  signOut
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+const firebaseConfig = {
+
+  apiKey:
+  "AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+
+  authDomain:
+  "padho-aur-kamao-3eeae.firebaseapp.com",
+
+  projectId:
+  "padho-aur-kamao-3eeae",
+
+  storageBucket:
+  "padho-aur-kamao-3eeae.firebasestorage.app",
+
+  messagingSenderId:
+  "670063905617",
+
+  appId:
+  "1:670063905617:web:9b3a7e62fdeea14fbfa170",
+
+  measurementId:
+  "G-7J1YV8HN3F"
+};
+
+
+const app =
+initializeApp(firebaseConfig);
+
+
+const auth =
+getAuth(app);
+
+
+/* CHECK LOGIN */
+
+onAuthStateChanged(
+  auth,
+  (user) => {
+
+    if(!user){
+
+      window.location.href =
+      "login.html";
+
+      return;
+
+    }
+
+
+    const name =
+      user.displayName ||
+      "Student";
+
+
+    document.getElementById(
+      "welcomeName"
+    ).innerText =
+      "Hello, " + name + " 👋";
+
+
+    document.getElementById(
+      "userEmail"
+    ).innerText =
+      user.email ||
+      "Welcome to your learning dashboard.";
+
+  }
+);
+
+
+/* LOGOUT */
+
+document.getElementById(
+  "logoutBtn"
+).addEventListener(
+  "click",
+  async () => {
+
+    try{
+
+      await signOut(auth);
+
+      window.location.href =
+        "login.html";
+
+    }
+    catch(error){
+
+      alert(
+        "Logout में समस्या हुई।"
+      );
+
+      console.error(error);
+
+    }
+
+  }
+);
+
+
+/* COURSE BUTTON */
+
+window.openCourse =
+function(courseName){
+
+  alert(
+    "🎓 " +
+    courseName +
+    "\n\nयहाँ आपके video lessons खुलेंगे।"
+  );
+
+};
+
+
+/* SETTINGS */
+
+window.showSettings =
+function(){
+
+  alert(
+    "⚙️ Settings\n\n" +
+    "Course information\n" +
+    "Video lessons\n" +
+    "Profile\n" +
+    "Account settings"
+  );
+
+};
+
+</script>
+
+</body>
+</html>
