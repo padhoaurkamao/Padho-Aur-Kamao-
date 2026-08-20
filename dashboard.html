@@ -8,7 +8,6 @@
 <title>Dashboard - Padho Aur Kamao</title>
 
 <style>
-
 *{
   box-sizing:border-box;
 }
@@ -19,8 +18,6 @@ body{
   background:#f4f7fb;
   color:#172033;
 }
-
-/* HEADER */
 
 header{
   background:linear-gradient(135deg,#5b21b6,#7c3aed);
@@ -54,15 +51,11 @@ header{
   cursor:pointer;
 }
 
-/* MAIN */
-
 .container{
   max-width:1150px;
   margin:auto;
   padding:25px 18px 100px;
 }
-
-/* WELCOME */
 
 .welcome{
   background:linear-gradient(135deg,#5b21b6,#8b5cf6);
@@ -82,8 +75,6 @@ header{
   margin:0;
   opacity:.9;
 }
-
-/* STATS */
 
 .stats{
   display:grid;
@@ -115,14 +106,10 @@ header{
   margin-top:5px;
 }
 
-/* SECTION */
-
 .section-title{
   font-size:21px;
   margin:28px 0 15px;
 }
-
-/* QUICK ACTIONS */
 
 .actions{
   display:grid;
@@ -158,8 +145,6 @@ header{
   font-size:14px;
 }
 
-/* REFERRAL */
-
 .referral{
   background:white;
   padding:22px;
@@ -191,7 +176,26 @@ header{
   cursor:pointer;
 }
 
-/* COURSES */
+.referral-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+
+.ref-card{
+  background:#f5f3ff;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.ref-card strong{
+  display:block;
+  font-size:22px;
+  color:#6d28d9;
+  margin-top:5px;
+}
 
 .courses{
   display:grid;
@@ -257,8 +261,6 @@ header{
   background:#5b21b6;
 }
 
-/* PROFILE */
-
 .profile{
   background:white;
   padding:22px;
@@ -281,8 +283,6 @@ header{
 .label{
   color:#6b7280;
 }
-
-/* BOTTOM NAV */
 
 .bottom-nav{
   position:fixed;
@@ -309,8 +309,6 @@ header{
   font-size:22px;
   margin-bottom:2px;
 }
-
-/* MOBILE */
 
 @media(max-width:850px){
 
@@ -374,19 +372,20 @@ header{
     padding:12px;
   }
 
+  .referral-stats{
+    grid-template-columns:1fr;
+  }
+
   .profile-row{
     flex-direction:column;
     gap:5px;
   }
 
 }
-
 </style>
 </head>
 
 <body>
-
-<!-- HEADER -->
 
 <header>
 
@@ -396,12 +395,8 @@ header{
       📚 Padho Aur Kamao
     </div>
 
-    <button
-      id="logoutBtn"
-      class="logout">
-
+    <button id="logoutBtn" class="logout">
       🚪 Logout
-
     </button>
 
   </div>
@@ -409,491 +404,364 @@ header{
 </header>
 
 
-<!-- MAIN -->
-
 <main class="container">
 
+<section class="welcome">
 
-  <!-- WELCOME -->
+  <h1>
+    👋 Welcome to Padho Aur Kamao
+  </h1>
 
-  <section class="welcome">
+  <p id="welcomeText">
+    आपका Dashboard तैयार है।
+  </p>
 
-    <h1>
-      👋 Welcome to Padho Aur Kamao
-    </h1>
-
-    <p id="welcomeText">
-      आपका Dashboard तैयार है।
-    </p>
-
-  </section>
+</section>
 
 
-  <!-- STATS -->
+<section class="stats">
 
-  <section class="stats">
+  <div class="stat">
+    <div class="stat-icon">💰</div>
+    <div class="stat-title">Total Earnings</div>
+    <div class="stat-value">₹0</div>
+  </div>
 
-    <div class="stat">
+  <div class="stat">
+    <div class="stat-icon">📅</div>
+    <div class="stat-title">This Week</div>
+    <div class="stat-value">₹0</div>
+  </div>
 
-      <div class="stat-icon">
-        💰
-      </div>
+  <div class="stat">
+    <div class="stat-icon">📆</div>
+    <div class="stat-title">This Month</div>
+    <div class="stat-value">₹0</div>
+  </div>
 
-      <div class="stat-title">
-        Total Earnings
-      </div>
+  <div class="stat">
+    <div class="stat-icon">📈</div>
+    <div class="stat-title">This Year</div>
+    <div class="stat-value">₹0</div>
+  </div>
 
-      <div class="stat-value">
-        ₹0
-      </div>
+</section>
+
+
+<h2 class="section-title">
+  ⚡ Quick Access
+</h2>
+
+<section class="actions">
+
+  <a class="action" href="#courses">
+    <div class="action-icon">📚</div>
+    <h3>My Courses</h3>
+    <p>अपने courses और lessons देखें</p>
+  </a>
+
+  <a class="action" href="#videos">
+    <div class="action-icon">🎥</div>
+    <h3>Learning Videos</h3>
+    <p>अपने learning videos देखें</p>
+  </a>
+
+  <a class="action" href="#leaderboard">
+    <div class="action-icon">🏆</div>
+    <h3>Leaderboard</h3>
+    <p>Learning performance देखें</p>
+  </a>
+
+  <a class="action" href="#profile">
+    <div class="action-icon">👤</div>
+    <h3>My Profile</h3>
+    <p>Account details देखें</p>
+  </a>
+
+</section>
+
+
+<h2 class="section-title">
+  🔗 My Referral
+</h2>
+
+<section class="referral">
+
+  <h3>
+    आपका Referral Link
+  </h3>
+
+  <p>
+    इस link को share करके लोगों को आपके platform तक
+    पहुँचाया जा सकता है।
+  </p>
+
+  <div class="referral-box">
+
+    <input
+      id="referralLink"
+      type="text"
+      readonly
+      placeholder="Referral link तैयार हो रहा है..."
+    >
+
+    <button
+      id="copyBtn"
+      class="copy-btn">
+
+      Copy
+
+    </button>
+
+  </div>
+
+
+  <div class="referral-stats">
+
+    <div class="ref-card">
+
+      👥 Referrals
+
+      <strong id="referralCount">
+        0
+      </strong>
 
     </div>
 
+    <div class="ref-card">
 
-    <div class="stat">
+      ⭐ Points
 
-      <div class="stat-icon">
-        📅
-      </div>
-
-      <div class="stat-title">
-        This Week
-      </div>
-
-      <div class="stat-value">
-        ₹0
-      </div>
+      <strong id="referralPoints">
+        0
+      </strong>
 
     </div>
 
+    <div class="ref-card">
 
-    <div class="stat">
+      🎯 Status
 
-      <div class="stat-icon">
-        📆
-      </div>
-
-      <div class="stat-title">
-        This Month
-      </div>
-
-      <div class="stat-value">
-        ₹0
-      </div>
+      <strong id="referralStatus">
+        Active
+      </strong>
 
     </div>
 
+  </div>
 
-    <div class="stat">
+</section>
 
-      <div class="stat-icon">
-        📈
-      </div>
 
-      <div class="stat-title">
-        This Year
-      </div>
+<h2 class="section-title" id="courses">
+  📚 My Courses
+</h2>
 
-      <div class="stat-value">
-        ₹0
-      </div>
+<section class="courses">
 
+
+<div class="course">
+
+  <div class="course-icon">
+    🚀
+  </div>
+
+  <h3>
+    Step To Success
+  </h3>
+
+  <p>
+    Lead Generation, Communication Skills,
+    Maths, Reasoning, Hindi और General Studies
+    (GS) की learning।
+  </p>
+
+  <div class="course-details">
+
+    <div class="price">
+      💰 Price: ₹199
     </div>
 
-  </section>
-
-
-  <!-- QUICK ACCESS -->
-
-  <h2 class="section-title">
-    ⚡ Quick Access
-  </h2>
-
-  <section class="actions">
-
-
-    <a
-      class="action"
-      href="#courses">
-
-      <div class="action-icon">
-        📚
-      </div>
-
-      <h3>
-        My Courses
-      </h3>
-
-      <p>
-        अपने courses और lessons देखें
-      </p>
-
-    </a>
-
-
-    <a
-      class="action"
-      href="#videos">
-
-      <div class="action-icon">
-        🎥
-      </div>
-
-      <h3>
-        Learning Videos
-      </h3>
-
-      <p>
-        अपने learning videos देखें
-      </p>
-
-    </a>
-
-
-    <a
-      class="action"
-      href="#leaderboard">
-
-      <div class="action-icon">
-        🏆
-      </div>
-
-      <h3>
-        Leaderboard
-      </h3>
-
-      <p>
-        Learning performance देखें
-      </p>
-
-    </a>
-
-
-    <a
-      class="action"
-      href="#profile">
-
-      <div class="action-icon">
-        👤
-      </div>
-
-      <h3>
-        My Profile
-      </h3>
-
-      <p>
-        Account details देखें
-      </p>
-
-    </a>
-
-  </section>
-
-
-  <!-- REFERRAL -->
-
-  <h2 class="section-title">
-    🔗 My Referral
-  </h2>
-
-  <section class="referral">
-
-    <h3>
-      आपका Referral Link
-    </h3>
-
-    <p>
-      इस link को share करके लोगों को आपके platform तक
-      पहुँचाया जा सकता है।
-    </p>
-
-    <div class="referral-box">
-
-      <input
-        id="referralLink"
-        type="text"
-        readonly>
-
-      <button
-        id="copyBtn"
-        class="copy-btn">
-
-        Copy
-
-      </button>
-
+    <div class="commission">
+      🎯 Commission per Sale: ₹100
     </div>
 
-  </section>
-
-
-  <!-- MY COURSES -->
-
-  <h2
-    class="section-title"
-    id="courses">
-
-    📚 My Courses
-
-  </h2>
-
-
-  <section class="courses">
-
-
-    <!-- COURSE 1 -->
-
-    <div class="course">
-
-      <div class="course-icon">
-        🚀
-      </div>
-
-      <h3>
-        Step To Success
-      </h3>
-
-      <p>
-        Lead Generation, Communication Skills,
-        Maths, Reasoning, Hindi और General Studies
-        (GS) की learning।
-      </p>
-
-      <div class="course-details">
-
-        <div class="price">
-          💰 Price: ₹199
-        </div>
-
-        <div class="commission">
-          🎯 Commission per Sale: ₹100
-        </div>
-
-        <div class="passive">
-          🔗 Passive Income: ₹20
-        </div>
-
-      </div>
-
-      <a
-        class="course-btn"
-        href="step-to-success.html">
-
-        Open Course →
-
-      </a>
-
+    <div class="passive">
+      🔗 Passive Income: ₹20
     </div>
 
+  </div>
 
-    <!-- COURSE 2 -->
+  <a
+    class="course-btn"
+    href="step-to-success.html">
 
-    <div class="course">
+    Open Course →
 
-      <div class="course-icon">
-        🎓
-      </div>
+  </a>
 
-      <h3>
-        All Competitive Exam
-      </h3>
+</div>
 
-      <p>
-        10th और 12th level exams की preparation,
-        practice और assessment।
-      </p>
 
-      <div class="course-details">
+<div class="course">
 
-        <div class="price">
-          💰 Price: ₹399
-        </div>
+  <div class="course-icon">
+    🎓
+  </div>
 
-        <div class="commission">
-          🎯 Commission per Sale: ₹200
-        </div>
+  <h3>
+    All Competitive Exam
+  </h3>
 
-        <div class="passive">
-          🔗 Passive Income: ₹50
-        </div>
+  <p>
+    10th और 12th level exams की preparation,
+    practice और assessment।
+  </p>
 
-      </div>
+  <div class="course-details">
 
-      <a
-        class="course-btn"
-        href="all-competitive-exam.html">
-
-        Open Course →
-
-      </a>
-
+    <div class="price">
+      💰 Price: ₹399
     </div>
 
+    <div class="commission">
+      🎯 Commission per Sale: ₹200
+    </div>
 
-  </section>
+    <div class="passive">
+      🔗 Passive Income: ₹50
+    </div>
 
+  </div>
 
-  <!-- VIDEOS -->
+  <a
+    class="course-btn"
+    href="all-competitive-exam.html">
 
-  <h2
-    class="section-title"
-    id="videos">
+    Open Course →
 
-    🎥 Learning Videos
+  </a>
 
-  </h2>
+</div>
 
-  <section class="profile">
-
-    <p>
-      आपके course videos संबंधित course page पर
-      उपलब्ध होंगे।
-    </p>
-
-    <a
-      href="step-to-success.html"
-      class="course-btn">
-
-      🚀 Step To Success Videos
-
-    </a>
-
-    <a
-      href="all-competitive-exam.html"
-      class="course-btn">
-
-      🎓 Competitive Exam Videos
-
-    </a>
-
-  </section>
+</section>
 
 
-  <!-- LEADERBOARD -->
+<h2 class="section-title" id="videos">
+  🎥 Learning Videos
+</h2>
 
-  <h2
-    class="section-title"
-    id="leaderboard">
+<section class="profile">
 
-    🏆 Leaderboard
+  <p>
+    आपके course videos संबंधित course page पर
+    उपलब्ध होंगे।
+  </p>
 
-  </h2>
+  <a
+    href="step-to-success.html"
+    class="course-btn">
 
-  <section class="profile">
+    🚀 Step To Success Videos
 
-    <p>
-      Leaderboard learning activity और progress
-      के आधार पर दिखाया जा सकता है।
-    </p>
+  </a>
 
-    <strong>
-      आपका वर्तमान score: 0
+  <a
+    href="all-competitive-exam.html"
+    class="course-btn">
+
+    🎓 Competitive Exam Videos
+
+  </a>
+
+</section>
+
+
+<h2 class="section-title" id="leaderboard">
+  🏆 Leaderboard
+</h2>
+
+<section class="profile">
+
+  <p>
+    Leaderboard learning activity और progress
+    के आधार पर दिखाया जा सकता है।
+  </p>
+
+  <strong>
+    आपका वर्तमान score: 0
+  </strong>
+
+</section>
+
+
+<h2 class="section-title" id="profile">
+  👤 My Profile
+</h2>
+
+<section class="profile">
+
+  <div class="profile-row">
+
+    <span class="label">
+      Name
+    </span>
+
+    <strong id="userName">
+      Loading...
     </strong>
 
-  </section>
+  </div>
 
+  <div class="profile-row">
 
-  <!-- PROFILE -->
+    <span class="label">
+      Email
+    </span>
 
-  <h2
-    class="section-title"
-    id="profile">
+    <strong id="userEmail">
+      Loading...
+    </strong>
 
-    👤 My Profile
+  </div>
 
-  </h2>
+  <div class="profile-row">
 
-  <section class="profile">
+    <span class="label">
+      User ID
+    </span>
 
-    <div class="profile-row">
+    <strong id="userId">
+      Loading...
+    </strong>
 
-      <span class="label">
-        Name
-      </span>
+  </div>
 
-      <strong id="userName">
-        Loading...
-      </strong>
-
-    </div>
-
-
-    <div class="profile-row">
-
-      <span class="label">
-        Email
-      </span>
-
-      <strong id="userEmail">
-        Loading...
-      </strong>
-
-    </div>
-
-
-    <div class="profile-row">
-
-      <span class="label">
-        User ID
-      </span>
-
-      <strong id="userId">
-        Loading...
-      </strong>
-
-    </div>
-
-  </section>
-
+</section>
 
 </main>
 
 
-<!-- BOTTOM NAV -->
-
 <nav class="bottom-nav">
 
   <a href="dashboard.html">
-
-    <span>
-      🏠
-    </span>
-
+    <span>🏠</span>
     Home
-
   </a>
-
 
   <a href="#courses">
-
-    <span>
-      📚
-    </span>
-
+    <span>📚</span>
     Courses
-
   </a>
-
 
   <a href="#leaderboard">
-
-    <span>
-      🏆
-    </span>
-
+    <span>🏆</span>
     Rank
-
   </a>
 
-
   <a href="#profile">
-
-    <span>
-      👤
-    </span>
-
+    <span>👤</span>
     Profile
-
   </a>
 
 </nav>
@@ -901,24 +769,26 @@ header{
 
 <script type="module">
 
-/* FIREBASE APP */
-
 import {
   initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
-
-/* FIREBASE AUTH */
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
   getAuth,
   onAuthStateChanged,
   signOut
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  query,
+  where,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
 /* FIREBASE CONFIG */
@@ -945,53 +815,71 @@ const firebaseConfig = {
 
   measurementId:
   "G-7J1YV8HN3F"
-
 };
 
 
 /* INITIALIZE */
 
 const app =
-initializeApp(firebaseConfig);
+  initializeApp(firebaseConfig);
 
 const auth =
-getAuth(app);
+  getAuth(app);
+
+const db =
+  getFirestore(app);
 
 
 /* ELEMENTS */
 
 const welcomeText =
-document.getElementById("welcomeText");
+  document.getElementById("welcomeText");
 
 const userName =
-document.getElementById("userName");
+  document.getElementById("userName");
 
 const userEmail =
-document.getElementById("userEmail");
+  document.getElementById("userEmail");
 
 const userId =
-document.getElementById("userId");
+  document.getElementById("userId");
 
 const referralLink =
-document.getElementById("referralLink");
+  document.getElementById("referralLink");
 
 const copyBtn =
-document.getElementById("copyBtn");
+  document.getElementById("copyBtn");
 
 const logoutBtn =
-document.getElementById("logoutBtn");
+  document.getElementById("logoutBtn");
+
+const referralCount =
+  document.getElementById("referralCount");
+
+const referralPoints =
+  document.getElementById("referralPoints");
 
 
-/* AUTH CHECK */
+/* REFERRAL CODE */
+
+function generateReferralCode(uid){
+
+  return "PAK" +
+    uid.substring(0,8).toUpperCase();
+
+}
+
+
+/* AUTH */
 
 onAuthStateChanged(
   auth,
-  function(user){
+  async function(user){
 
     if(!user){
 
       window.location.href =
-      "login.html";
+        "login.html";
 
       return;
 
@@ -999,65 +887,192 @@ onAuthStateChanged(
 
 
     const name =
-    user.displayName ||
-    "Student";
+      user.displayName ||
+      "Student";
 
 
     welcomeText.innerText =
-    "Welcome " +
-    name +
-    " 👋 सीखें, practice करें और आगे बढ़ें।";
+      "Welcome " +
+      name +
+      " 👋 सीखें, practice करें और आगे बढ़ें।";
 
 
     userName.innerText =
-    name;
-
+      name;
 
     userEmail.innerText =
-    user.email ||
-    "Not available";
-
+      user.email ||
+      "Not available";
 
     userId.innerText =
-    user.uid;
+      user.uid;
 
 
-    /*
-      REFERRAL LINK
-    */
-
-    const baseUrl =
-    window.location.origin +
-    window.location.pathname
-    .replace(
-      "dashboard.html",
-      "index.html"
-    );
+    const userRef =
+      doc(
+        db,
+        "users",
+        user.uid
+      );
 
 
-    const link =
-    baseUrl +
-    "?ref=" +
-    encodeURIComponent(
-      user.uid
-    );
+    let userData;
 
 
-    referralLink.value =
-    link;
+    try{
+
+      const userSnap =
+        await getDoc(userRef);
+
+
+      if(userSnap.exists()){
+
+        userData =
+          userSnap.data();
+
+      }else{
+
+        userData = {
+
+          name:name,
+
+          email:user.email || "",
+
+          referralCode:
+            generateReferralCode(user.uid),
+
+          referredBy:null,
+
+          points:0,
+
+          totalReferrals:0,
+
+          createdAt:
+            new Date().toISOString()
+
+        };
+
+
+        await setDoc(
+          userRef,
+          userData
+        );
+
+      }
+
+
+      const referralCode =
+        userData.referralCode ||
+        generateReferralCode(user.uid);
+
+
+      /*
+        GitHub Pages URL
+      */
+
+      const link =
+        "https://yaduvanshimonu432-wq.github.io/" +
+        "Padho-Aur-Kamao-/" +
+        "index.html?ref=" +
+        encodeURIComponent(
+          referralCode
+        );
+
+
+      referralLink.value =
+        link;
+
+
+      await loadReferralStats(
+        user.uid,
+        userData
+      );
+
+
+    }catch(error){
+
+      console.error(
+        "Dashboard error:",
+        error
+      );
+
+    }
 
   }
 );
 
 
-/* COPY REFERRAL */
+/* REFERRAL STATS */
+
+async function loadReferralStats(
+  uid,
+  userData
+){
+
+  try{
+
+    const referralsRef =
+      collection(
+        db,
+        "referrals"
+      );
+
+
+    const q =
+      query(
+        referralsRef,
+        where(
+          "referrerUid",
+          "==",
+          uid
+        )
+      );
+
+
+    const snapshot =
+      await getDocs(q);
+
+
+    referralCount.innerText =
+      snapshot.size;
+
+
+    referralPoints.innerText =
+      userData.points || 0;
+
+
+  }catch(error){
+
+    console.error(
+      "Referral stats:",
+      error
+    );
+
+    referralCount.innerText =
+      userData.totalReferrals || 0;
+
+    referralPoints.innerText =
+      userData.points || 0;
+
+  }
+
+}
+
+
+/* COPY */
 
 copyBtn.addEventListener(
   "click",
   async function(){
 
     const text =
-    referralLink.value;
+      referralLink.value;
+
+
+    if(!text){
+      return;
+    }
+
 
     try{
 
@@ -1066,22 +1081,21 @@ copyBtn.addEventListener(
       );
 
       copyBtn.innerText =
-      "Copied ✓";
+        "Copied ✓";
 
 
       setTimeout(
         function(){
 
           copyBtn.innerText =
-          "Copy";
+            "Copy";
 
         },
         1500
       );
 
-    }
 
-    catch(error){
+    }catch(error){
 
       referralLink.select();
 
@@ -1090,7 +1104,7 @@ copyBtn.addEventListener(
       );
 
       copyBtn.innerText =
-      "Copied ✓";
+        "Copied ✓";
 
     }
 
@@ -1105,23 +1119,23 @@ logoutBtn.addEventListener(
   async function(){
 
     logoutBtn.disabled =
-    true;
+      true;
+
 
     try{
 
       await signOut(auth);
 
       window.location.href =
-      "login.html";
+        "login.html";
 
-    }
 
-    catch(error){
+    }catch(error){
 
       console.error(error);
 
       logoutBtn.disabled =
-      false;
+        false;
 
       alert(
         "Logout नहीं हो पाया। फिर कोशिश करें।"
