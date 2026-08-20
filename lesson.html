@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lesson - Padho Aur Kamao</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f7fb;
+  color:#111827;
+}
+
+header{
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
+  color:white;
+  padding:20px;
+}
+
+.header-inner{
+  max-width:1000px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+.back{
+  color:#5b21b6;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.container{
+  width:94%;
+  max-width:1000px;
+  margin:25px auto;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 5px 20px #0001;
+  margin-bottom:20px;
+}
+
+.course-name{
+  color:#6d28d9;
+  font-weight:bold;
+}
+
+h1{
+  margin:8px 0;
+}
+
+.lesson-number{
+  color:#6b7280;
+}
+
+.video-container{
+  margin-top:20px;
+  background:#111827;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+.video-container video{
+  width:100%;
+  display:block;
+  max-height:600px;
+}
+
+.video-placeholder{
+  min-height:300px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  padding:30px;
+}
+
+.notice{
+  background:#fef3c7;
+  color:#92400e;
+  padding:14px;
+  border-radius:10px;
+  margin-top:15px;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:20px;
+}
+
+.nav a{
+  display:inline-block;
+  padding:12px 16px;
+  border-radius:9px;
+  background:#6d28d9;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.nav a.disabled{
+  background:#d1d5db;
+  pointer-events:none;
+}
+
+@media(max-width:600px){
+
+  .header-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .nav{
+    flex-direction:column;
+  }
+
+  .nav a{
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+
+    <div class="logo">
+      📚 Padho Aur Kamao
+    </div>
+
+    <a
+      href="dashboard.html"
+      style="color:white;text-decoration:none;font-weight:bold;">
+      ← Dashboard
+    </a>
+
+  </div>
+</header>
+
+
+<div class="container">
+
+  <div class="card">
+
+    <div
+      id="courseName"
+      class="course-name">
+      Loading...
+    </div>
+
+    <h1 id="lessonName">
+      Lesson Loading...
+    </h1>
+
+    <div
+      id="lessonNumber"
+      class="lesson-number">
+    </div>
+
+
+    <div class="video-container">
+
+      <div
+        id="videoArea"
+        class="video-placeholder">
+
+        🎥
+
+        <br><br>
+
+        Video Loading...
+
+      </div>
+
+    </div>
+
+
+    <div class="notice">
+
+      🔒 यह lesson केवल registered learners
+      के लिए है।
+
+    </div>
+
+
+    <div class="nav">
+
+      <a
+        id="previousBtn"
+        href="#">
+        ← Previous
+      </a>
+
+      <a
+        id="nextBtn"
+        href="#">
+        Next →
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script type="module">
+
+/* =========================
+   FIREBASE
+========================= */
+
+import {
+  initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+  getAuth,
+  onAuthStateChanged
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+const firebaseConfig = {
+
+  apiKey:
+  "AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+
+  authDomain:
+  "padho-aur-kamao-3eeae.firebaseapp.com",
+
+  projectId:
+  "padho-aur-kamao-3eeae",
+
+  storageBucket:
+  "padho-aur-kamao-3eeae.firebasestorage.app",
+
+  messagingSenderId:
+  "670063905617",
+
+  appId:
+  "1:670063905617:web:9b3a7e62fdeea14fbfa170"
+
+};
+
+
+const app =
+initializeApp(firebaseConfig);
+
+const auth =
+getAuth(app);
+
+
+/* =========================
+   COURSE DATA
+========================= */
+
+const courses = [
+
+{
+
+name:"Affiliate Marketing",
+
+lessons:[
+
+{
+name:"Affiliate Marketing Basics",
+
+video:""
+},
+
+{
+name:"Affiliate Links",
+
+video:""
+},
+
+{
+name:"Content Strategy",
+
+video:""
+},
+
+{
+name:"Promotion",
+
+video:""
+},
+
+{
+name:"Practical Project",
+
+video:""
+}
+
+]
+
+},
+
+
+{
+
+name:"Instagram Mastery",
+
+lessons:[
+
+{
+name:"Instagram Basics",
+
+video:""
+},
+
+{
+name:"Profile Setup",
+
+video:""
+},
+
+{
+name:"Content Creation",
+
+video:""
+},
+
+{
+name:"Audience Growth",
+
+video:""
+},
+
+{
+name:"Practical Project",
+
+video:""
+}
+
+]
+
+},
+
+
+{
+
+name:"Lead Generation",
+
+lessons:[
+
+{
+name:"Lead Generation Basics",
+
+video:""
+},
+
+{
+name:"Lead Management",
+
+video:""
+},
+
+{
+name:"Organic Leads",
+
+video:""
+},
+
+{
+name:"Collaboration",
+
+video:""
+},
+
+{
+name:"Practical Project",
+
+video:""
+}
+
+]
+
+},
+
+
+{
+
+name:"Step To Success",
+
+lessons:[
+
+{
+name:"Goal Setting",
+
+video:""
+},
+
+{
+name:"Time Management",
+
+video:""
+},
+
+{
+name:"Productivity",
+
+video:""
+},
+
+{
+name:"Digital Skills",
+
+video:""
+},
+
+{
+name:"Final Project",
+
+video:""
+}
+
+]
+
+}
+
+];
+
+
+/* =========================
+   URL PARAMETERS
+========================= */
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+
+const courseIndex =
+parseInt(
+params.get("course")
+);
+
+
+const lessonIndex =
+parseInt(
+params.get("lesson")
+);
+
+
+/* =========================
+   AUTH CHECK
+========================= */
+
+onAuthStateChanged(
+auth,
+function(user){
+
+  if(!user){
+
+    window.location.href =
+    "login.html";
+
+    return;
+
+  }
+
+  loadLesson();
+
+});
+
+
+/* =========================
+   LOAD LESSON
+========================= */
+
+function loadLesson(){
+
+  const course =
+  courses[courseIndex];
+
+
+  if(!course){
+
+    document.getElementById(
+    "lessonName"
+    ).innerText =
+    "Course नहीं मिला";
+
+    return;
+
+  }
+
+
+  const lesson =
+  course.lessons[lessonIndex];
+
+
+  if(!lesson){
+
+    document.getElementById(
+    "lessonName"
+    ).innerText =
+    "Lesson नहीं मिला";
+
+    return;
+
+  }
+
+
+  document.getElementById(
+  "courseName"
+  ).innerText =
+  course.name;
+
+
+  document.getElementById(
+  "lessonName"
+  ).innerText =
+  lesson.name;
+
+
+  document.getElementById(
+  "lessonNumber"
+  ).innerText =
+  "Lesson " +
+  (lessonIndex + 1) +
+  " of " +
+  course.lessons.length;
+
+
+  /* VIDEO */
+
+  const videoArea =
+  document.getElementById(
+  "videoArea"
+  );
+
+
+  if(lesson.video){
+
+    videoArea.innerHTML = `
+
+      <video
+        controls
+        controlsList="nodownload"
+        playsinline
+        src="${lesson.video}">
+
+      </video>
+
+    `;
+
+  }
+
+  else{
+
+    videoArea.innerHTML = `
+
+      <div>
+
+        🎥
+
+        <br><br>
+
+        इस lesson का video
+        अभी add नहीं किया गया है।
+
+      </div>
+
+    `;
+
+  }
+
+
+  /* PREVIOUS */
+
+  const previousBtn =
+  document.getElementById(
+  "previousBtn"
+  );
+
+
+  if(lessonIndex > 0){
+
+    previousBtn.href =
+    "lesson.html?course=" +
+    courseIndex +
+    "&lesson=" +
+    (lessonIndex - 1);
+
+  }
+
+  else{
+
+    previousBtn.classList.add(
+    "disabled"
+    );
+
+  }
+
+
+  /* NEXT */
+
+  const nextBtn =
+  document.getElementById(
+  "nextBtn"
+  );
+
+
+  if(
+    lessonIndex <
+    course.lessons.length - 1
+  ){
+
+    nextBtn.href =
+    "lesson.html?course=" +
+    courseIndex +
+    "&lesson=" +
+    (lessonIndex + 1);
+
+  }
+
+  else{
+
+    nextBtn.innerText =
+    "✓ Course Complete";
+
+    nextBtn.href =
+    "dashboard.html";
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
