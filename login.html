@@ -111,4 +111,667 @@
     }
 
     .btn:hover{
-      background:#1d
+      background:#1d4ed8;
+    }
+
+    .google-btn{
+      margin-top:12px;
+      background:#111827;
+    }
+
+    .google-btn:hover{
+      background:#000;
+    }
+
+    .forgot{
+      text-align:right;
+      margin:-8px 0 15px;
+    }
+
+    .forgot a{
+      color:#2563eb;
+      text-decoration:none;
+      font-size:14px;
+      cursor:pointer;
+    }
+
+    .message{
+      margin-top:15px;
+      padding:10px;
+      border-radius:8px;
+      text-align:center;
+      display:none;
+      font-size:14px;
+    }
+
+    .success{
+      display:block;
+      background:#dcfce7;
+      color:#166534;
+    }
+
+    .error{
+      display:block;
+      background:#fee2e2;
+      color:#991b1b;
+    }
+
+    .loading{
+      opacity:.7;
+      pointer-events:none;
+    }
+
+    .footer{
+      text-align:center;
+      margin-top:20px;
+      color:#6b7280;
+      font-size:13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="logo">📚 Padho Aur Kamao</div>
+
+  <div class="subtitle">
+    पढ़ाई करें • ज्ञान बढ़ाएँ • आगे बढ़ें
+  </div>
+
+  <div class="tabs">
+
+    <button class="tab active" id="loginTab">
+      Login
+    </button>
+
+    <button class="tab" id="signupTab">
+      Signup
+    </button>
+
+  </div>
+
+
+  <!-- LOGIN FORM -->
+
+  <form id="loginForm" class="form active">
+
+    <label>Email</label>
+
+    <input
+      type="email"
+      id="loginEmail"
+      placeholder="अपना Email डालें"
+      required
+    >
+
+    <label>Password</label>
+
+    <input
+      type="password"
+      id="loginPassword"
+      placeholder="अपना Password डालें"
+      required
+    >
+
+    <div class="forgot">
+      <a id="forgotPassword">
+        Password भूल गए?
+      </a>
+    </div>
+
+    <button
+      type="submit"
+      class="btn"
+      id="loginBtn"
+    >
+      Login
+    </button>
+
+    <button
+      type="button"
+      class="btn google-btn"
+      id="googleBtn"
+    >
+      🔵 Continue with Google
+    </button>
+
+  </form>
+
+
+  <!-- SIGNUP FORM -->
+
+  <form id="signupForm" class="form">
+
+    <label>नाम</label>
+
+    <input
+      type="text"
+      id="signupName"
+      placeholder="अपना नाम डालें"
+      required
+    >
+
+    <label>Email</label>
+
+    <input
+      type="email"
+      id="signupEmail"
+      placeholder="अपना Email डालें"
+      required
+    >
+
+    <label>Password</label>
+
+    <input
+      type="password"
+      id="signupPassword"
+      placeholder="कम से कम 6 characters"
+      minlength="6"
+      required
+    >
+
+    <label>Confirm Password</label>
+
+    <input
+      type="password"
+      id="confirmPassword"
+      placeholder="Password दोबारा डालें"
+      minlength="6"
+      required
+    >
+
+    <button
+      type="submit"
+      class="btn"
+      id="signupBtn"
+    >
+      Create Account
+    </button>
+
+  </form>
+
+
+  <div id="message" class="message"></div>
+
+  <div class="footer">
+    © 2026 Padho Aur Kamao
+  </div>
+
+</div>
+
+
+<!-- Firebase -->
+
+<script type="module">
+
+  import { initializeApp } from
+  "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    GoogleAuthProvider,
+    signInWithPopup,
+    sendPasswordResetEmail,
+    updateProfile
+  } from
+  "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+  /* Firebase Configuration */
+
+  const firebaseConfig = {
+
+    apiKey: "AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+
+    authDomain:
+    "padho-aur-kamao-3eeae.firebaseapp.com",
+
+    projectId:
+    "padho-aur-kamao-3eeae",
+
+    storageBucket:
+    "padho-aur-kamao-3eeae.firebasestorage.app",
+
+    messagingSenderId:
+    "670063905617",
+
+    appId:
+    "1:670063905617:web:9b3a7e62fdeea14fbfa170"
+
+  };
+
+
+  /* Initialize Firebase */
+
+  const app = initializeApp(firebaseConfig);
+
+  const auth = getAuth(app);
+
+  const googleProvider =
+    new GoogleAuthProvider();
+
+
+  /* Elements */
+
+  const loginTab =
+    document.getElementById("loginTab");
+
+  const signupTab =
+    document.getElementById("signupTab");
+
+  const loginForm =
+    document.getElementById("loginForm");
+
+  const signupForm =
+    document.getElementById("signupForm");
+
+  const message =
+    document.getElementById("message");
+
+
+  /* Message */
+
+  function showMessage(text,type){
+
+    message.textContent = text;
+
+    message.className =
+      "message " + type;
+
+  }
+
+
+  function clearMessage(){
+
+    message.textContent = "";
+
+    message.className = "message";
+
+  }
+
+
+  /* Tabs */
+
+  loginTab.addEventListener("click",()=>{
+
+    loginTab.classList.add("active");
+
+    signupTab.classList.remove("active");
+
+    loginForm.classList.add("active");
+
+    signupForm.classList.remove("active");
+
+    clearMessage();
+
+  });
+
+
+  signupTab.addEventListener("click",()=>{
+
+    signupTab.classList.add("active");
+
+    loginTab.classList.remove("active");
+
+    signupForm.classList.add("active");
+
+    loginForm.classList.remove("active");
+
+    clearMessage();
+
+  });
+
+
+  /* LOGIN */
+
+  loginForm.addEventListener("submit",async(e)=>{
+
+    e.preventDefault();
+
+    clearMessage();
+
+    const email =
+      document.getElementById("loginEmail")
+      .value.trim();
+
+    const password =
+      document.getElementById("loginPassword")
+      .value;
+
+    const button =
+      document.getElementById("loginBtn");
+
+    try{
+
+      button.textContent = "Login हो रहा है...";
+      button.classList.add("loading");
+
+      await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      showMessage(
+        "Login सफल! Dashboard खुल रहा है...",
+        "success"
+      );
+
+      setTimeout(()=>{
+
+        window.location.href =
+          "dashboard.html";
+
+      },1000);
+
+    }
+
+    catch(error){
+
+      console.error(error);
+
+      let text =
+        "Login नहीं हो पाया।";
+
+      if(
+        error.code ===
+        "auth/invalid-credential"
+      ){
+
+        text =
+          "Email या Password गलत है।";
+
+      }
+
+      else if(
+        error.code ===
+        "auth/user-not-found"
+      ){
+
+        text =
+          "यह Email registered नहीं है।";
+
+      }
+
+      else if(
+        error.code ===
+        "auth/wrong-password"
+      ){
+
+        text =
+          "Password गलत है।";
+
+      }
+
+      else if(
+        error.code ===
+        "auth/invalid-email"
+      ){
+
+        text =
+          "Email सही format में डालें।";
+
+      }
+
+      showMessage(text,"error");
+
+    }
+
+    finally{
+
+      button.textContent = "Login";
+
+      button.classList.remove("loading");
+
+    }
+
+  });
+
+
+  /* SIGNUP */
+
+  signupForm.addEventListener("submit",async(e)=>{
+
+    e.preventDefault();
+
+    clearMessage();
+
+    const name =
+      document.getElementById("signupName")
+      .value.trim();
+
+    const email =
+      document.getElementById("signupEmail")
+      .value.trim();
+
+    const password =
+      document.getElementById("signupPassword")
+      .value;
+
+    const confirmPassword =
+      document.getElementById("confirmPassword")
+      .value;
+
+    const button =
+      document.getElementById("signupBtn");
+
+
+    if(password !== confirmPassword){
+
+      showMessage(
+        "दोनों Password समान होने चाहिए।",
+        "error"
+      );
+
+      return;
+
+    }
+
+
+    if(password.length < 6){
+
+      showMessage(
+        "Password कम से कम 6 characters का होना चाहिए।",
+        "error"
+      );
+
+      return;
+
+    }
+
+
+    try{
+
+      button.textContent =
+        "Account बनाया जा रहा है...";
+
+      button.classList.add("loading");
+
+
+      const userCredential =
+        await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+
+
+      await updateProfile(
+        userCredential.user,
+        {
+          displayName:name
+        }
+      );
+
+
+      showMessage(
+        "Account सफलतापूर्वक बन गया!",
+        "success"
+      );
+
+
+      setTimeout(()=>{
+
+        window.location.href =
+          "dashboard.html";
+
+      },1200);
+
+    }
+
+    catch(error){
+
+      console.error(error);
+
+      let text =
+        "Account नहीं बन पाया।";
+
+
+      if(
+        error.code ===
+        "auth/email-already-in-use"
+      ){
+
+        text =
+          "यह Email पहले से registered है।";
+
+      }
+
+      else if(
+        error.code ===
+        "auth/invalid-email"
+      ){
+
+        text =
+          "Email सही format में डालें।";
+
+      }
+
+      else if(
+        error.code ===
+        "auth/weak-password"
+      ){
+
+        text =
+          "Password बहुत कमजोर है।";
+
+      }
+
+
+      showMessage(text,"error");
+
+    }
+
+    finally{
+
+      button.textContent =
+        "Create Account";
+
+      button.classList.remove("loading");
+
+    }
+
+  });
+
+
+  /* GOOGLE LOGIN */
+
+  document
+    .getElementById("googleBtn")
+    .addEventListener("click",async()=>{
+
+      try{
+
+        clearMessage();
+
+        await signInWithPopup(
+          auth,
+          googleProvider
+        );
+
+        showMessage(
+          "Google Login सफल!",
+          "success"
+        );
+
+        setTimeout(()=>{
+
+          window.location.href =
+            "dashboard.html";
+
+        },1000);
+
+      }
+
+      catch(error){
+
+        console.error(error);
+
+        showMessage(
+          "Google Login नहीं हो पाया।",
+          "error"
+        );
+
+      }
+
+    });
+
+
+  /* FORGOT PASSWORD */
+
+  document
+    .getElementById("forgotPassword")
+    .addEventListener("click",async()=>{
+
+      const email =
+        document.getElementById("loginEmail")
+        .value.trim();
+
+
+      if(!email){
+
+        showMessage(
+          "पहले अपना Email डालें।",
+          "error"
+        );
+
+        return;
+
+      }
+
+
+      try{
+
+        await sendPasswordResetEmail(
+          auth,
+          email
+        );
+
+        showMessage(
+          "Password reset link आपके Email पर भेज दिया गया है।",
+          "success"
+        );
+
+      }
+
+      catch(error){
+
+        console.error(error);
+
+        showMessage(
+          "Password reset नहीं हो पाया। Email check करें।",
+          "error"
+        );
+
+      }
+
+    });
+
+</script>
+
+</body>
+</html>
