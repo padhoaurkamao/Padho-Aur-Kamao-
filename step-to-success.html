@@ -1,12 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Step To Success - Padho Aur Kamao</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -18,10 +22,13 @@ body{
 header{
   background:linear-gradient(135deg,#5b21b6,#7c3aed);
   color:white;
-  padding:18px 20px;
+  padding:16px 20px;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
-.header{
+.nav{
   max-width:1100px;
   margin:auto;
   display:flex;
@@ -35,8 +42,8 @@ header{
 }
 
 .back{
-  color:#5b21b6;
   background:white;
+  color:#5b21b6;
   padding:9px 15px;
   border-radius:20px;
   text-decoration:none;
@@ -46,7 +53,7 @@ header{
 .container{
   max-width:1100px;
   margin:auto;
-  padding:25px 18px 50px;
+  padding:25px 18px 60px;
 }
 
 .hero{
@@ -58,25 +65,53 @@ header{
 }
 
 .hero h1{
-  margin-top:0;
+  margin:0 0 10px;
   font-size:32px;
+}
+
+.hero p{
+  margin:0;
+  line-height:1.6;
+}
+
+.info{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.info-card{
+  background:white;
+  padding:20px;
+  border-radius:17px;
+  box-shadow:0 5px 20px #0001;
+  text-align:center;
+}
+
+.info-card .icon{
+  font-size:30px;
+}
+
+.info-card strong{
+  display:block;
+  margin-top:8px;
+  font-size:20px;
+}
+
+.section-title{
+  margin:28px 0 15px;
 }
 
 .card{
   background:white;
   padding:22px;
   border-radius:18px;
-  margin-bottom:20px;
+  margin-bottom:18px;
   box-shadow:0 5px 20px #0001;
 }
 
-.price{
-  font-size:28px;
-  font-weight:bold;
-  color:#5b21b6;
-}
-
-.grid{
+.topics{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:15px;
@@ -89,11 +124,20 @@ header{
 }
 
 .topic h3{
-  margin-top:0;
+  margin:0 0 7px;
+}
+
+.topic p{
+  color:#6b7280;
+  line-height:1.5;
 }
 
 .lesson{
-  padding:14px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:17px 0;
   border-bottom:1px solid #eee;
 }
 
@@ -101,14 +145,104 @@ header{
   border-bottom:0;
 }
 
-@media(max-width:600px){
-  .grid{
+.lesson-info{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.lesson-icon{
+  font-size:27px;
+}
+
+.lesson h3{
+  margin:0 0 4px;
+}
+
+.lesson p{
+  margin:0;
+  color:#6b7280;
+  font-size:14px;
+}
+
+.watch{
+  background:#6d28d9;
+  color:white;
+  border:0;
+  padding:10px 15px;
+  border-radius:9px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.assessment{
+  background:#eef2ff;
+  padding:22px;
+  border-radius:15px;
+}
+
+.assessment-btn{
+  display:inline-block;
+  margin-top:10px;
+  background:#5b21b6;
+  color:white;
+  padding:12px 18px;
+  border-radius:9px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.note{
+  background:#fff7ed;
+  border-left:4px solid #f59e0b;
+  padding:15px;
+  border-radius:8px;
+  line-height:1.5;
+}
+
+@media(max-width:700px){
+
+  .info{
+    grid-template-columns:1fr;
+  }
+
+  .topics{
     grid-template-columns:1fr;
   }
 
   .hero h1{
     font-size:26px;
   }
+
+  .lesson{
+    align-items:flex-start;
+  }
+
+  .watch{
+    padding:8px 12px;
+  }
+
+}
+
+@media(max-width:450px){
+
+  .logo{
+    font-size:16px;
+  }
+
+  .back{
+    padding:8px 11px;
+    font-size:13px;
+  }
+
+  .lesson{
+    flex-direction:column;
+  }
+
+  .watch{
+    width:100%;
+  }
+
 }
 </style>
 </head>
@@ -116,116 +250,552 @@ header{
 <body>
 
 <header>
-  <div class="header">
+
+  <div class="nav">
 
     <div class="logo">
       📚 Padho Aur Kamao
     </div>
 
-    <a class="back" href="dashboard.html">
+    <a
+      href="dashboard.html"
+      class="back">
+
       ← Dashboard
+
     </a>
 
   </div>
+
 </header>
+
 
 <main class="container">
 
+
+  <!-- HERO -->
+
   <section class="hero">
 
-    <h1>🚀 Step To Success</h1>
+    <h1>
+      🚀 Step To Success
+    </h1>
 
     <p>
-      Skills सीखें • Practice करें • अपने knowledge को बेहतर बनाएं
+      Skills सीखें • Practice करें • Knowledge बढ़ाएँ
     </p>
 
   </section>
 
+
+  <!-- COURSE INFO -->
+
+  <section class="info">
+
+    <div class="info-card">
+
+      <div class="icon">
+        💰
+      </div>
+
+      <strong>
+        ₹199
+      </strong>
+
+      <span>
+        Course Price
+      </span>
+
+    </div>
+
+
+    <div class="info-card">
+
+      <div class="icon">
+        📚
+      </div>
+
+      <strong>
+        6 Topics
+      </strong>
+
+      <span>
+        Learning Topics
+      </span>
+
+    </div>
+
+
+    <div class="info-card">
+
+      <div class="icon">
+        📝
+      </div>
+
+      <strong>
+        Assessment
+      </strong>
+
+      <span>
+        Practice & Test
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <h2 class="section-title">
+    📖 Course के बारे में
+  </h2>
+
   <section class="card">
 
-    <h2>📌 Course Details</h2>
+    <p style="line-height:1.7;">
 
-    <p class="price">₹199</p>
+      Step To Success एक learning course है जिसमें
+      Lead Generation, Communication Skills, Maths,
+      Reasoning, Hindi और General Studies (GS) जैसे
+      topics को step-by-step सीखने के लिए lessons
+      दिए जा सकते हैं।
 
-    <p>
-      यह course Lead Generation, Communication Skills,
-      Maths, Reasoning, Hindi और General Studies जैसे topics
-      पर learning material प्रदान करेगा।
     </p>
 
   </section>
 
+
+  <!-- TOPICS -->
+
+  <h2 class="section-title">
+    📚 Course Topics
+  </h2>
+
   <section class="card">
 
-    <h2>📚 Course Topics</h2>
-
-    <div class="grid">
+    <div class="topics">
 
       <div class="topic">
-        <h3>🎯 Lead Generation</h3>
-        <p>Lead generation के fundamentals और practical concepts।</p>
+
+        <h3>
+          🎯 Lead Generation
+        </h3>
+
+        <p>
+          Lead generation के basic concepts,
+          process और practical learning।
+        </p>
+
       </div>
 
-      <div class="topic">
-        <h3>🗣️ Communication Skills</h3>
-        <p>Communication को बेहतर बनाने के practical lessons।</p>
-      </div>
 
       <div class="topic">
-        <h3>➗ Mathematics</h3>
-        <p>Maths concepts और practice questions।</p>
+
+        <h3>
+          🗣️ Communication Skills
+        </h3>
+
+        <p>
+          Communication और presentation skills
+          को बेहतर बनाने की learning।
+        </p>
+
       </div>
 
-      <div class="topic">
-        <h3>🧠 Reasoning</h3>
-        <p>Reasoning concepts और practice exercises।</p>
-      </div>
 
       <div class="topic">
-        <h3>🇮🇳 Hindi</h3>
-        <p>Hindi language और exam-oriented practice।</p>
+
+        <h3>
+          ➗ Mathematics
+        </h3>
+
+        <p>
+          Maths concepts और practice questions।
+        </p>
+
       </div>
 
+
       <div class="topic">
-        <h3>🌍 General Studies</h3>
-        <p>GS के महत्वपूर्ण topics और practice material।</p>
+
+        <h3>
+          🧠 Reasoning
+        </h3>
+
+        <p>
+          Reasoning concepts और practice exercises।
+        </p>
+
+      </div>
+
+
+      <div class="topic">
+
+        <h3>
+          🇮🇳 Hindi
+        </h3>
+
+        <p>
+          Hindi language और exam-oriented practice।
+        </p>
+
+      </div>
+
+
+      <div class="topic">
+
+        <h3>
+          🌍 General Studies
+        </h3>
+
+        <p>
+          GS के महत्वपूर्ण topics और practice material।
+        </p>
+
       </div>
 
     </div>
 
   </section>
 
+
+  <!-- LESSONS -->
+
+  <h2 class="section-title">
+    🎥 Course Lessons
+  </h2>
+
   <section class="card">
 
-    <h2>🎥 Course Lessons</h2>
 
     <div class="lesson">
-      📹 Lesson 1 — Introduction
+
+      <div class="lesson-info">
+
+        <div class="lesson-icon">
+          ▶️
+        </div>
+
+        <div>
+
+          <h3>
+            Lesson 1
+          </h3>
+
+          <p>
+            Course Introduction
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="watch"
+        onclick="showVideo('Lesson 1')">
+
+        Watch
+
+      </button>
+
     </div>
 
-    <div class="lesson">
-      📹 Lesson 2 — Lead Generation
-    </div>
 
     <div class="lesson">
-      📹 Lesson 3 — Communication Skills
+
+      <div class="lesson-info">
+
+        <div class="lesson-icon">
+          ▶️
+        </div>
+
+        <div>
+
+          <h3>
+            Lesson 2
+          </h3>
+
+          <p>
+            Lead Generation
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="watch"
+        onclick="showVideo('Lesson 2')">
+
+        Watch
+
+      </button>
+
     </div>
 
-    <div class="lesson">
-      📹 Lesson 4 — Mathematics
-    </div>
 
     <div class="lesson">
-      📹 Lesson 5 — Reasoning
+
+      <div class="lesson-info">
+
+        <div class="lesson-icon">
+          ▶️
+        </div>
+
+        <div>
+
+          <h3>
+            Lesson 3
+          </h3>
+
+          <p>
+            Communication Skills
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="watch"
+        onclick="showVideo('Lesson 3')">
+
+        Watch
+
+      </button>
+
     </div>
 
+
     <div class="lesson">
-      📹 Lesson 6 — Hindi & GS
+
+      <div class="lesson-info">
+
+        <div class="lesson-icon">
+          ▶️
+        </div>
+
+        <div>
+
+          <h3>
+            Lesson 4
+          </h3>
+
+          <p>
+            Mathematics
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="watch"
+        onclick="showVideo('Lesson 4')">
+
+        Watch
+
+      </button>
+
+    </div>
+
+
+    <div class="lesson">
+
+      <div class="lesson-info">
+
+        <div class="lesson-icon">
+          ▶️
+        </div>
+
+        <div>
+
+          <h3>
+            Lesson 5
+          </h3>
+
+          <p>
+            Reasoning
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="watch"
+        onclick="showVideo('Lesson 5')">
+
+        Watch
+
+      </button>
+
+    </div>
+
+
+    <div class="lesson">
+
+      <div class="lesson-info">
+
+        <div class="lesson-icon">
+          ▶️
+        </div>
+
+        <div>
+
+          <h3>
+            Lesson 6
+          </h3>
+
+          <p>
+            Hindi & General Studies
+          </p>
+
+        </div>
+
+      </div>
+
+      <button
+        class="watch"
+        onclick="showVideo('Lesson 6')">
+
+        Watch
+
+      </button>
+
+    </div>
+
+
+  </section>
+
+
+  <!-- VIDEO AREA -->
+
+  <h2 class="section-title">
+    🎬 Video Player
+  </h2>
+
+  <section class="card">
+
+    <div
+      id="videoArea"
+      style="
+      background:#111827;
+      color:white;
+      padding:45px 20px;
+      text-align:center;
+      border-radius:14px;
+      ">
+
+      <div style="font-size:45px;">
+        ▶️
+      </div>
+
+      <p>
+        Lesson select करने के बाद video यहाँ दिखाई देगा।
+      </p>
+
     </div>
 
   </section>
+
+
+  <!-- ASSESSMENT -->
+
+  <h2 class="section-title">
+    📝 Assessment
+  </h2>
+
+  <section class="card">
+
+    <div class="assessment">
+
+      <h3>
+        📋 Course Assessment
+      </h3>
+
+      <p>
+        Course lessons पूरा करने के बाद यहाँ
+        assessment/test जोड़ा जा सकता है।
+      </p>
+
+      <a
+        href="#"
+        class="assessment-btn"
+        onclick="assessmentMessage(); return false;">
+
+        Start Assessment
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- NOTE -->
+
+  <section class="card">
+
+    <div class="note">
+
+      💡 <strong>Note:</strong>
+      अभी video और assessment placeholders हैं।
+      आप अपने वास्तविक videos, notes और questions
+      बाद में यहाँ जोड़ सकते हैं।
+
+    </div>
+
+  </section>
+
 
 </main>
+
+
+<script>
+
+function showVideo(lesson){
+
+  const area =
+  document.getElementById("videoArea");
+
+  area.innerHTML = `
+
+    <div style="font-size:45px;">
+      ▶️
+    </div>
+
+    <h3>
+      ${lesson}
+    </h3>
+
+    <p>
+      यहाँ आपका actual course video आएगा।
+    </p>
+
+    <p style="color:#c4b5fd;">
+      Video link बाद में यहाँ लगाया जा सकता है।
+    </p>
+
+  `;
+
+  area.scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+function assessmentMessage(){
+
+  alert(
+    "Assessment अभी तैयार किया जा रहा है। आप अपने questions बाद में जोड़ सकते हैं।"
+  );
+
+}
+
+</script>
 
 </body>
 </html>
