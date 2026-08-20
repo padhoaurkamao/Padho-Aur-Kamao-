@@ -1,12 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dashboard - Padho Aur Kamao</title>
 
@@ -19,16 +17,14 @@
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background:#f4f7ff;
-  color:#172033;
+  background:#f4f7fb;
+  color:#111827;
 }
 
-/* HEADER */
-
 header{
-  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
   color:white;
-  padding:18px;
+  padding:25px 18px;
 }
 
 .header-inner{
@@ -41,36 +37,46 @@ header{
 }
 
 .logo{
-  font-size:21px;
+  font-size:24px;
   font-weight:bold;
 }
 
+.user{
+  text-align:right;
+}
+
+.user-name{
+  font-weight:bold;
+}
+
+.user-email{
+  font-size:13px;
+  opacity:.85;
+}
+
 .logout{
+  margin-top:7px;
+  padding:8px 14px;
   border:0;
+  border-radius:8px;
   background:white;
   color:#5b21b6;
-  padding:10px 16px;
-  border-radius:20px;
   font-weight:bold;
   cursor:pointer;
 }
 
-/* MAIN */
-
 .container{
+  width:94%;
   max-width:1100px;
-  margin:auto;
-  padding:25px 18px;
+  margin:25px auto;
 }
-
-/* WELCOME */
 
 .welcome{
   background:white;
+  padding:22px;
   border-radius:18px;
-  padding:25px;
   box-shadow:0 5px 20px #0001;
-  margin-bottom:20px;
+  margin-bottom:22px;
 }
 
 .welcome h1{
@@ -78,15 +84,13 @@ header{
 }
 
 .welcome p{
+  margin:0;
   color:#6b7280;
 }
 
-/* STATS */
-
 .stats{
   display:grid;
-  grid-template-columns:
-  repeat(auto-fit,minmax(180px,1fr));
+  grid-template-columns:repeat(4,1fr);
   gap:15px;
   margin-bottom:25px;
 }
@@ -95,150 +99,168 @@ header{
   background:white;
   padding:20px;
   border-radius:16px;
-  box-shadow:0 5px 20px #0001;
+  box-shadow:0 5px 18px #0001;
 }
 
 .stat-icon{
-  font-size:30px;
+  font-size:25px;
 }
 
-.stat h3{
-  margin:10px 0 5px;
+.stat-number{
+  font-size:25px;
+  font-weight:bold;
+  margin-top:8px;
 }
 
-.stat p{
-  margin:0;
+.stat-title{
   color:#6b7280;
+  font-size:14px;
 }
-
-/* COURSES */
 
 .section-title{
-  margin:30px 0 15px;
+  margin:28px 0 15px;
 }
 
 .courses{
   display:grid;
-  grid-template-columns:
-  repeat(auto-fit,minmax(240px,1fr));
+  grid-template-columns:repeat(2,1fr);
   gap:18px;
 }
 
 .course{
   background:white;
-  padding:20px;
   border-radius:18px;
+  padding:20px;
   box-shadow:0 5px 20px #0001;
 }
 
 .course-icon{
-  font-size:42px;
+  width:55px;
+  height:55px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#ede9fe;
+  font-size:28px;
 }
 
 .course h3{
-  margin:10px 0;
+  margin:14px 0 6px;
 }
 
-.course p{
+.description{
   color:#6b7280;
+  font-size:14px;
   line-height:1.5;
 }
 
-/* PROGRESS */
+.price{
+  font-size:22px;
+  font-weight:bold;
+  color:#5b21b6;
+  margin-top:12px;
+}
 
-.progress-bg{
-  height:10px;
+.commission{
+  display:inline-block;
+  margin-top:7px;
+  background:#dcfce7;
+  color:#166534;
+  padding:5px 9px;
+  border-radius:7px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.progress-box{
+  margin-top:15px;
+}
+
+.progress-info{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  margin-bottom:6px;
+}
+
+.progress{
+  height:9px;
   background:#e5e7eb;
   border-radius:20px;
   overflow:hidden;
-  margin:12px 0;
 }
 
 .progress-bar{
   height:100%;
-  background:#6d28d9;
-  width:0%;
-  transition:.4s;
+  background:#7c3aed;
+  border-radius:20px;
 }
 
-.progress-text{
-  font-size:13px;
-  color:#6b7280;
-}
-
-.open-course{
-  width:100%;
-  border:0;
-  background:#6d28d9;
-  color:white;
-  padding:12px;
-  border-radius:9px;
-  margin-top:12px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-/* LESSONS */
-
-.lesson-box{
-  display:none;
-  margin-top:15px;
-  padding-top:15px;
-  border-top:1px solid #eee;
+.lessons{
+  margin-top:16px;
 }
 
 .lesson{
-  background:#f8f9ff;
-  padding:12px;
-  border-radius:10px;
-  margin:8px 0;
-}
-
-.lesson button{
-  float:right;
-  border:0;
-  background:#4f46e5;
-  color:white;
-  padding:7px 10px;
-  border-radius:7px;
-  cursor:pointer;
-}
-
-/* VIDEO */
-
-.video-area{
-  background:#111827;
-  color:white;
-  min-height:180px;
-  border-radius:12px;
+  padding:11px;
+  border:1px solid #e5e7eb;
+  border-radius:9px;
+  margin-top:7px;
   display:flex;
-  justify-content:center;
-  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  font-size:14px;
+}
+
+.lesson a{
+  color:#5b21b6;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.video-box{
+  margin-top:15px;
+  background:#111827;
+  border-radius:12px;
+  padding:18px;
+  color:white;
   text-align:center;
+}
+
+.video-placeholder{
+  padding:30px 10px;
+}
+
+.earnings{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.earning{
+  background:white;
   padding:20px;
-  margin-top:10px;
+  border-radius:15px;
+  box-shadow:0 5px 18px #0001;
 }
 
-.video-area video{
-  width:100%;
-  max-height:350px;
-  border-radius:10px;
+.earning strong{
+  display:block;
+  font-size:22px;
+  margin-top:8px;
 }
-
-/* LEADERBOARD */
 
 .leaderboard{
   background:white;
-  border-radius:18px;
+  border-radius:16px;
   padding:20px;
-  box-shadow:0 5px 20px #0001;
+  box-shadow:0 5px 18px #0001;
 }
 
 .rank{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  padding:13px;
+  padding:14px 5px;
   border-bottom:1px solid #eee;
 }
 
@@ -246,713 +268,265 @@ header{
   border-bottom:0;
 }
 
-.badge{
-  font-weight:bold;
-}
-
-/* EARNINGS */
-
-.earnings{
-  display:grid;
-  grid-template-columns:
-  repeat(auto-fit,minmax(180px,1fr));
-  gap:15px;
-}
-
-.earning-card{
-  background:white;
-  padding:20px;
-  border-radius:16px;
-  box-shadow:0 5px 20px #0001;
-}
-
-.money{
-  font-size:25px;
-  font-weight:bold;
-  margin-top:8px;
-}
-
-/* FOOTER */
-
 footer{
   text-align:center;
-  padding:30px 15px;
-  margin-top:30px;
-  background:#111827;
-  color:white;
+  color:#6b7280;
+  padding:30px 10px;
 }
 
-.hidden{
-  display:none;
+@media(max-width:800px){
+
+  .stats,
+  .earnings{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .courses{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .header-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .user{
+    text-align:left;
+  }
+
+  .stats,
+  .earnings{
+    grid-template-columns:1fr;
+  }
+
 }
 
 </style>
 
 </head>
 
-
 <body>
-
-
-<!-- HEADER -->
 
 <header>
 
-  <div class="header-inner">
+<div class="header-inner">
 
-    <div class="logo">
-      📚 Padho Aur Kamao
-    </div>
+<div class="logo">
+📚 Padho Aur Kamao
+</div>
 
-    <button
-      class="logout"
-      id="logoutBtn">
+<div class="user">
 
-      Logout
+<div id="userName" class="user-name">
+Loading...
+</div>
 
-    </button>
+<div id="userEmail" class="user-email">
+</div>
 
-  </div>
+<button id="logoutBtn" class="logout">
+🚪 Logout
+</button>
+
+</div>
+
+</div>
 
 </header>
 
 
-<main class="container">
+<div class="container">
 
 
-<!-- WELCOME -->
+<div class="welcome">
 
-<section class="welcome">
+<h1>
+Hello, <span id="welcomeName">Student</span> 👋
+</h1>
 
-  <h1>
-    Hello, <span id="userName">Student</span> 👋
-  </h1>
+<p>
+Welcome to your learning dashboard.
+</p>
 
-  <p id="userEmail">
-    Loading account...
-  </p>
-
-  <p>
-    Welcome to your learning dashboard.
-  </p>
-
-</section>
+</div>
 
 
 <!-- STATS -->
 
-<section class="stats">
+<div class="stats">
+
+<div class="stat">
+
+<div class="stat-icon">🎓</div>
+
+<div id="courseCount" class="stat-number">
+4
+</div>
+
+<div class="stat-title">
+Courses
+</div>
+
+</div>
 
 
-  <div class="stat">
+<div class="stat">
 
-    <div class="stat-icon">
-      🎓
-    </div>
+<div class="stat-icon">📚</div>
 
-    <h3 id="courseCount">
-      0
-    </h3>
+<div id="lessonCount" class="stat-number">
+20
+</div>
 
-    <p>
-      Courses
-    </p>
+<div class="stat-title">
+Lessons
+</div>
 
-  </div>
+</div>
 
 
-  <div class="stat">
+<div class="stat">
 
-    <div class="stat-icon">
-      📚
-    </div>
+<div class="stat-icon">📈</div>
 
-    <h3 id="lessonCount">
-      0
-    </h3>
+<div id="overallProgress" class="stat-number">
+0%
+</div>
 
-    <p>
-      Lessons
-    </p>
+<div class="stat-title">
+Overall Progress
+</div>
 
-  </div>
+</div>
 
 
-  <div class="stat">
+<div class="stat">
 
-    <div class="stat-icon">
-      📈
-    </div>
+<div class="stat-icon">🏆</div>
 
-    <h3 id="overallProgress">
-      0%
-    </h3>
+<div class="stat-number">
+#10
+</div>
 
-    <p>
-      Overall Progress
-    </p>
+<div class="stat-title">
+Leaderboard Rank
+</div>
 
-  </div>
+</div>
 
-
-  <div class="stat">
-
-    <div class="stat-icon">
-      🏆
-    </div>
-
-    <h3>
-      #10
-    </h3>
-
-    <p>
-      Leaderboard Rank
-    </p>
-
-  </div>
-
-
-</section>
+</div>
 
 
 <!-- COURSES -->
 
 <h2 class="section-title">
-  🎓 My Courses
+🎓 My Courses
 </h2>
 
-
-<section class="courses">
-
-
-<!-- COURSE 1 -->
-
-<div class="course">
-
-  <div class="course-icon">
-    📈
-  </div>
-
-  <h3>
-    Affiliate Marketing
-  </h3>
-
-  <p>
-    Affiliate marketing की basics,
-    strategies और practical learning।
-  </p>
-
-  <div class="progress-bg">
-
-    <div
-      class="progress-bar"
-      id="progress1">
-    </div>
-
-  </div>
-
-  <div
-    class="progress-text"
-    id="progressText1">
-
-    0% Complete
-
-  </div>
-
-  <button
-    class="open-course"
-    onclick="toggleLessons(1)">
-
-    View Lessons
-
-  </button>
-
-
-  <div
-    class="lesson-box"
-    id="lessons1">
-
-    <div class="lesson">
-
-      Lesson 1:
-      Affiliate Marketing Basics
-
-      <button
-        onclick="completeLesson(1,1)">
-
-        ✓
-
-      </button>
-
-      <div class="video-area">
-
-        🎥 यहाँ आपका Video होगा
-
-      </div>
-
-    </div>
-
-
-    <div class="lesson">
-
-      Lesson 2:
-      Affiliate Links
-
-      <button
-        onclick="completeLesson(1,2)">
-
-        ✓
-
-      </button>
-
-    </div>
-
-
-    <div class="lesson">
-
-      Lesson 3:
-      Content Strategy
-
-      <button
-        onclick="completeLesson(1,3)">
-
-        ✓
-
-      </button>
-
-    </div>
-
-
-    <div class="lesson">
-
-      Lesson 4:
-      Promotion
-
-      <button
-        onclick="completeLesson(1,4)">
-
-        ✓
-
-      </button>
-
-    </div>
-
-
-    <div class="lesson">
-
-      Lesson 5:
-      Practical Project
-
-      <button
-        onclick="completeLesson(1,5)">
-
-        ✓
-
-      </button>
-
-    </div>
-
-  </div>
-
+<div id="courses" class="courses">
 </div>
-
-
-<!-- COURSE 2 -->
-
-<div class="course">
-
-  <div class="course-icon">
-    📱
-  </div>
-
-  <h3>
-    Instagram Mastery
-  </h3>
-
-  <p>
-    Instagram content और audience
-    growth के fundamentals।
-  </p>
-
-  <div class="progress-bg">
-
-    <div
-      class="progress-bar"
-      id="progress2">
-    </div>
-
-  </div>
-
-  <div
-    class="progress-text"
-    id="progressText2">
-
-    0% Complete
-
-  </div>
-
-  <button
-    class="open-course"
-    onclick="toggleLessons(2)">
-
-    View Lessons
-
-  </button>
-
-
-  <div
-    class="lesson-box"
-    id="lessons2">
-
-    <div class="lesson">
-      Lesson 1: Instagram Basics
-      <button onclick="completeLesson(2,1)">✓</button>
-    </div>
-
-    <div class="lesson">
-      Lesson 2: Content Planning
-      <button onclick="completeLesson(2,2)">✓</button>
-    </div>
-
-    <div class="lesson">
-      Lesson 3: Reels Basics
-      <button onclick="completeLesson(2,3)">✓</button>
-    </div>
-
-    <div class="lesson">
-      Lesson 4: Audience
-      <button onclick="completeLesson(2,4)">✓</button>
-    </div>
-
-    <div class="lesson">
-      Lesson 5: Analytics
-      <button onclick="completeLesson(2,5)">✓</button>
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- COURSE 3 -->
-
-<div class="course">
-
-  <div class="course-icon">
-    🎯
-  </div>
-
-  <h3>
-    Lead Generation
-  </h3>
-
-  <p>
-    Leads को समझना और ethical
-    lead-generation methods सीखना।
-  </p>
-
-  <div class="progress-bg">
-
-    <div
-      class="progress-bar"
-      id="progress3">
-    </div>
-
-  </div>
-
-  <div
-    class="progress-text"
-    id="progressText3">
-
-    0% Complete
-
-  </div>
-
-  <button
-    class="open-course"
-    onclick="toggleLessons(3)">
-
-    View Lessons
-
-  </button>
-
-
-  <div
-    class="lesson-box"
-    id="lessons3">
-
-    <div class="lesson">
-      Lesson 1: Lead Basics
-      <button onclick="completeLesson(3,1)">✓</button>
-    </div>
-
-    <div class="lesson">
-      Lesson 2: Lead Management
-      <button onclick="completeLesson(3,2)">✓</button>
-    </div>
-
-    <div class="lesson">
-      Lesson 3: Organic Leads
-      <button onclick="completeLesson(3,3)">✓</button>
-    </div>
-
-    <div class="lesson">
-      Lesson 4: Collaboration
-      <button onclick="completeLesson(3,4)">✓</button>
-    </div>
-
-    <div class="lesson">
-      Lesson 5: Tracking
-      <button onclick="completeLesson(3,5)">✓</button>
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- COURSE 4 -->
-
-<div class="course">
-
-  <div class="course-icon">
-    🚀
-  </div>
-
-  <h3>
-    Step To Success
-  </h3>
-
-  <p>
-    Planning, productivity और
-    useful digital skills।
-  </p>
-
-  <div class="progress-bg">
-
-    <div
-      class="progress-bar"
-      id="progress4">
-    </div>
-
-  </div>
-
-  <div
-    class="progress-text"
-    id="progressText4">
-
-    0% Complete
-
-  </div>
-
-  <button
-    class="open-course"
-    onclick="toggleLessons(4)">
-
-    View Lessons
-
-  </button>
-
-
-  <div
-    class="lesson-box"
-    id="lessons4">
-
-    <div class="lesson">
-      Lesson 1: Goal Setting
-      <button onclick="completeLesson(4,1)">✓</button>
-    </div>
-
-    <div class="lesson">
-      Lesson 2: Time Management
-      <button onclick="completeLesson(4,2)">✓</button>
-    </div>
-
-    <div class="lesson">
-      Lesson 3: Productivity
-      <button onclick="completeLesson(4,3)">✓</button>
-    </div>
-
-    <div class="lesson">
-      Lesson 4: Digital Skills
-      <button onclick="completeLesson(4,4)">✓</button>
-    </div>
-
-    <div class="lesson">
-      Lesson 5: Final Project
-      <button onclick="completeLesson(4,5)">✓</button>
-    </div>
-
-  </div>
-
-</div>
-
-
-</section>
 
 
 <!-- EARNINGS -->
 
 <h2 class="section-title">
-  💰 Earnings Dashboard
+💰 Earnings Dashboard
 </h2>
 
+<div class="earnings">
 
-<section class="earnings">
+<div class="earning">
 
+💵 Today
 
-  <div class="earning-card">
+<strong>
+₹0
+</strong>
 
-    <div>
-      💵 Today
-    </div>
-
-    <div
-      class="money"
-      id="todayEarning">
-
-      ₹0
-
-    </div>
-
-  </div>
+</div>
 
 
-  <div class="earning-card">
+<div class="earning">
 
-    <div>
-      📅 This Week
-    </div>
+📅 This Week
 
-    <div
-      class="money"
-      id="weekEarning">
+<strong>
+₹0
+</strong>
 
-      ₹0
-
-    </div>
-
-  </div>
+</div>
 
 
-  <div class="earning-card">
+<div class="earning">
 
-    <div>
-      📆 This Month
-    </div>
+📆 This Month
 
-    <div
-      class="money"
-      id="monthEarning">
+<strong>
+₹0
+</strong>
 
-      ₹0
-
-    </div>
-
-  </div>
+</div>
 
 
-  <div class="earning-card">
+<div class="earning">
 
-    <div>
-      📈 Total
-    </div>
+📈 Total
 
-    <div
-      class="money"
-      id="totalEarning">
+<strong id="totalEarning">
+₹0
+</strong>
 
-      ₹0
+</div>
 
-    </div>
-
-  </div>
-
-
-</section>
+</div>
 
 
 <!-- LEADERBOARD -->
 
 <h2 class="section-title">
-  🏆 Leaderboard
+🏆 Leaderboard
 </h2>
 
+<div class="leaderboard">
 
-<section class="leaderboard">
+<div class="rank">
+<span>🥇 Rahul</span>
+<strong>95%</strong>
+</div>
 
+<div class="rank">
+<span>🥈 Aman</span>
+<strong>90%</strong>
+</div>
 
-  <div class="rank">
+<div class="rank">
+<span>🥉 Priya</span>
+<strong>85%</strong>
+</div>
 
-    <span>
-      🥇 Rahul
-    </span>
+<div class="rank">
+<span>4️⃣ Student</span>
+<strong>10%</strong>
+</div>
 
-    <span class="badge">
-      95%
-    </span>
+</div>
 
-  </div>
-
-
-  <div class="rank">
-
-    <span>
-      🥈 Aman
-    </span>
-
-    <span class="badge">
-      90%
-    </span>
-
-  </div>
-
-
-  <div class="rank">
-
-    <span>
-      🥉 Priya
-    </span>
-
-    <span class="badge">
-      85%
-    </span>
-
-  </div>
-
-
-  <div class="rank">
-
-    <span>
-      4️⃣ Student
-    </span>
-
-    <span class="badge"
-          id="myRank">
-
-      0%
-
-    </span>
-
-  </div>
-
-
-</section>
-
-
-</main>
+</div>
 
 
 <footer>
 
-  📚 Padho Aur Kamao
+📚 Padho Aur Kamao
 
-  <br><br>
+<br>
 
-  Learn • Practice • Grow
+Learn • Practice • Grow
 
 </footer>
-
 
 
 <script type="module">
@@ -979,14 +553,13 @@ from
 import {
   getFirestore,
   doc,
-  getDoc,
-  setDoc
+  getDoc
 }
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-/* CONFIG */
+/* FIREBASE CONFIG */
 
 const firebaseConfig = {
 
@@ -1014,8 +587,6 @@ const firebaseConfig = {
 };
 
 
-/* INIT */
-
 const app =
 initializeApp(firebaseConfig);
 
@@ -1026,353 +597,429 @@ const db =
 getFirestore(app);
 
 
-/* COURSE DATA */
+/* =========================
+   COURSE SETTINGS
 
-const TOTAL_LESSONS = 5;
+   यहाँ NAME, PRICE और
+   COMMISSION बदलें
+========================= */
 
-let currentUser = null;
+const courses = [
 
-let progressData = {
-  course1:[],
-  course2:[],
-  course3:[],
-  course4:[]
-};
+{
+
+name:"Affiliate Marketing",
+
+price:999,
+
+commissionRate:30,
+
+description:
+"Affiliate marketing की basics, strategies और practical learning।",
+
+icon:"📈",
+
+progress:0,
+
+lessons:[
+
+"Affiliate Marketing Basics",
+
+"Affiliate Links",
+
+"Content Strategy",
+
+"Promotion",
+
+"Practical Project"
+
+]
+
+},
 
 
-/* AUTH CHECK */
+{
+
+name:"Instagram Mastery",
+
+price:1499,
+
+commissionRate:40,
+
+description:
+"Instagram content और audience growth के fundamentals।",
+
+icon:"📱",
+
+progress:0,
+
+lessons:[
+
+"Instagram Basics",
+
+"Profile Setup",
+
+"Content Creation",
+
+"Audience Growth",
+
+"Practical Project"
+
+]
+
+},
+
+
+{
+
+name:"Lead Generation",
+
+price:1999,
+
+commissionRate:35,
+
+description:
+"Leads को समझना और ethical lead-generation methods सीखना।",
+
+icon:"🎯",
+
+progress:0,
+
+lessons:[
+
+"Lead Generation Basics",
+
+"Lead Management",
+
+"Organic Leads",
+
+"Collaboration",
+
+"Practical Project"
+
+]
+
+},
+
+
+{
+
+name:"Step To Success",
+
+price:799,
+
+commissionRate:25,
+
+description:
+"Planning, productivity और useful digital skills।",
+
+icon:"🚀",
+
+progress:0,
+
+lessons:[
+
+"Goal Setting",
+
+"Time Management",
+
+"Productivity",
+
+"Digital Skills",
+
+"Final Project"
+
+]
+
+}
+
+];
+
+
+/* RENDER COURSES */
+
+const coursesBox =
+document.getElementById("courses");
+
+
+function renderCourses(){
+
+  coursesBox.innerHTML = "";
+
+  let totalLessons = 0;
+
+  let totalProgress = 0;
+
+
+  courses.forEach(
+  function(course,index){
+
+    totalLessons +=
+    course.lessons.length;
+
+    totalProgress +=
+    course.progress;
+
+
+    const card =
+    document.createElement("div");
+
+    card.className =
+    "course";
+
+
+    let lessonsHTML = "";
+
+
+    course.lessons.forEach(
+    function(lesson,lessonIndex){
+
+      lessonsHTML += `
+
+      <div class="lesson">
+
+        <span>
+        ${lessonIndex + 1}. ${lesson}
+        </span>
+
+        <a
+        href="lesson.html?course=${index}&lesson=${lessonIndex}">
+
+        🎥 Open
+
+        </a>
+
+      </div>
+
+      `;
+
+    });
+
+
+    card.innerHTML = `
+
+      <div class="course-icon">
+      ${course.icon}
+      </div>
+
+      <h3>
+      ${course.name}
+      </h3>
+
+      <div class="description">
+      ${course.description}
+      </div>
+
+      <div class="price">
+      ₹${course.price}
+      </div>
+
+      <div class="commission">
+      Commission: ${course.commissionRate}%
+      </div>
+
+      <div class="progress-box">
+
+        <div class="progress-info">
+
+          <span>
+          Progress
+          </span>
+
+          <strong>
+          ${course.progress}%
+          </strong>
+
+        </div>
+
+        <div class="progress">
+
+          <div
+          class="progress-bar"
+          style="width:${course.progress}%">
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="lessons">
+
+        <strong>
+        📚 Lessons
+        </strong>
+
+        ${lessonsHTML}
+
+      </div>
+
+
+      <div class="video-box">
+
+        <div class="video-placeholder">
+
+          🎥
+
+          <br><br>
+
+          Video Hosting
+
+          <br>
+
+          Lesson पर click करके video खोलें।
+
+        </div>
+
+      </div>
+
+    `;
+
+
+    coursesBox.appendChild(card);
+
+  });
+
+
+  document.getElementById(
+  "courseCount"
+  ).innerText =
+  courses.length;
+
+
+  document.getElementById(
+  "lessonCount"
+  ).innerText =
+  totalLessons;
+
+
+  const average =
+  Math.round(
+  totalProgress / courses.length
+  );
+
+
+  document.getElementById(
+  "overallProgress"
+  ).innerText =
+  average + "%";
+
+}
+
+
+renderCourses();
+
+
+/* LOGIN CHECK */
 
 onAuthStateChanged(
-  auth,
-  async function(user){
+auth,
+async function(user){
 
-    if(!user){
+  if(!user){
 
-      window.location.href =
-      "login.html";
+    window.location.href =
+    "login.html";
 
-      return;
-
-    }
-
-
-    currentUser = user;
-
-
-    document.getElementById(
-      "userName"
-    ).innerText =
-      user.displayName ||
-      "Student";
-
-
-    document.getElementById(
-      "userEmail"
-    ).innerText =
-      user.email || "";
-
-
-    await loadUserData();
+    return;
 
   }
-);
 
 
-/* LOAD USER DATA */
+  const name =
+  user.displayName ||
+  "Student";
 
-async function loadUserData(){
+
+  document.getElementById(
+  "userName"
+  ).innerText =
+  name;
+
+
+  document.getElementById(
+  "welcomeName"
+  ).innerText =
+  name;
+
+
+  document.getElementById(
+  "userEmail"
+  ).innerText =
+  user.email || "";
+
 
   try{
 
     const userRef =
     doc(
-      db,
-      "progress",
-      currentUser.uid
+    db,
+    "users",
+    user.uid
     );
 
 
-    const snapshot =
+    const userSnap =
     await getDoc(userRef);
 
 
-    if(snapshot.exists()){
+    if(userSnap.exists()){
 
       const data =
-      snapshot.data();
+      userSnap.data();
 
 
-      if(data.course1)
-        progressData.course1 =
-        data.course1;
+      if(data.totalEarning){
 
+        document.getElementById(
+        "totalEarning"
+        ).innerText =
+        "₹" + data.totalEarning;
 
-      if(data.course2)
-        progressData.course2 =
-        data.course2;
-
-
-      if(data.course3)
-        progressData.course3 =
-        data.course3;
-
-
-      if(data.course4)
-        progressData.course4 =
-        data.course4;
+      }
 
     }
-
-
-    updateDashboard();
 
   }
 
   catch(error){
 
-    console.error(
-      "Firestore error:",
-      error
+    console.log(
+    "Firestore data unavailable",
+    error
     );
 
-    updateDashboard();
-
   }
 
-}
-
-
-/* UPDATE DASHBOARD */
-
-function updateDashboard(){
-
-  let completedTotal = 0;
-
-  const totalLessons =
-  TOTAL_LESSONS * 4;
-
-
-  for(let c=1;c<=4;c++){
-
-    const key =
-    "course" + c;
-
-
-    const completed =
-    progressData[key].length;
-
-
-    completedTotal +=
-    completed;
-
-
-    const percentage =
-    Math.round(
-      completed /
-      TOTAL_LESSONS *
-      100
-    );
-
-
-    document.getElementById(
-      "progress" + c
-    ).style.width =
-      percentage + "%";
-
-
-    document.getElementById(
-      "progressText" + c
-    ).innerText =
-      percentage +
-      "% Complete";
-
-  }
-
-
-  const overall =
-  Math.round(
-    completedTotal /
-    totalLessons *
-    100
-  );
-
-
-  document.getElementById(
-    "overallProgress"
-  ).innerText =
-    overall + "%";
-
-
-  document.getElementById(
-    "courseCount"
-  ).innerText =
-    "4";
-
-
-  document.getElementById(
-    "lessonCount"
-  ).innerText =
-    completedTotal;
-
-
-  document.getElementById(
-    "myRank"
-  ).innerText =
-    overall + "%";
-
-}
-
-
-/* TOGGLE LESSONS */
-
-window.toggleLessons =
-function(course){
-
-  const box =
-  document.getElementById(
-    "lessons" + course
-  );
-
-
-  if(
-    box.style.display ===
-    "block"
-  ){
-
-    box.style.display =
-    "none";
-
-  }else{
-
-    box.style.display =
-    "block";
-
-  }
-
-};
-
-
-/* COMPLETE LESSON */
-
-window.completeLesson =
-async function(course,lesson){
-
-  if(!currentUser)
-    return;
-
-
-  const key =
-  "course" + course;
-
-
-  if(
-    !progressData[key].includes(
-      lesson
-    )
-  ){
-
-    progressData[key].push(
-      lesson
-    );
-
-
-    try{
-
-      await setDoc(
-
-        doc(
-          db,
-          "progress",
-          currentUser.uid
-        ),
-
-        progressData,
-
-        {
-          merge:true
-        }
-
-      );
-
-
-      updateDashboard();
-
-      alert(
-        "✅ Lesson completed!"
-      );
-
-    }
-
-    catch(error){
-
-      console.error(error);
-
-      alert(
-        "Progress save नहीं हो पाया।"
-      );
-
-    }
-
-  }
-
-};
+});
 
 
 /* LOGOUT */
 
 document.getElementById(
-  "logoutBtn"
+"logoutBtn"
 ).addEventListener(
-  "click",
-  async function(){
+"click",
+async function(){
 
-    try{
+  try{
 
-      await signOut(auth);
+    await signOut(auth);
 
-      window.location.href =
-      "login.html";
-
-    }
-
-    catch(error){
-
-      console.error(error);
-
-    }
+    window.location.href =
+    "login.html";
 
   }
-);
 
+  catch(error){
 
-/* DEMO EARNINGS */
+    console.error(error);
 
-document.getElementById(
-  "todayEarning"
-).innerText =
-  "₹0";
+  }
 
-
-document.getElementById(
-  "weekEarning"
-).innerText =
-  "₹0";
-
-
-document.getElementById(
-  "monthEarning"
-).innerText =
-  "₹0";
-
-
-document.getElementById(
-  "totalEarning"
-).innerText =
-  "₹0";
-
+});
 
 </script>
-
 
 </body>
 
