@@ -1,698 +1,610 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Dashboard - Padho Aur Kamao</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f4f7fb;
-  color:#172033;
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f4f7fb;
+ color:#172033;
 }
 
-/* HEADER */
-
 header{
-  background:linear-gradient(135deg,#5b21b6,#7c3aed);
-  color:white;
-  padding:18px 20px;
-  position:sticky;
-  top:0;
-  z-index:100;
+ background:linear-gradient(135deg,#5b21b6,#7c3aed);
+ color:#fff;
+ padding:18px 20px;
+ position:sticky;
+ top:0;
+ z-index:100;
 }
 
 .header{
-  max-width:1150px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+ max-width:1150px;
+ margin:auto;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
 }
 
 .logo{
-  font-size:21px;
-  font-weight:bold;
+ font-size:21px;
+ font-weight:bold;
 }
 
 .logout{
-  border:0;
-  background:white;
-  color:#5b21b6;
-  padding:9px 15px;
-  border-radius:20px;
-  font-weight:bold;
-  cursor:pointer;
+ border:0;
+ background:#fff;
+ color:#5b21b6;
+ padding:9px 15px;
+ border-radius:20px;
+ font-weight:bold;
+ cursor:pointer;
 }
-
-/* MAIN */
 
 .container{
-  max-width:1150px;
-  margin:auto;
-  padding:25px 18px 100px;
+ max-width:1150px;
+ margin:auto;
+ padding:25px 18px 100px;
 }
 
-/* WELCOME */
-
 .welcome{
-  background:linear-gradient(135deg,#5b21b6,#8b5cf6);
-  color:white;
-  padding:28px;
-  border-radius:22px;
-  margin-bottom:25px;
-  box-shadow:0 8px 25px #4f46e544;
+ background:linear-gradient(135deg,#5b21b6,#8b5cf6);
+ color:#fff;
+ padding:28px;
+ border-radius:22px;
+ margin-bottom:25px;
+ box-shadow:0 8px 25px #4f46e544;
 }
 
 .welcome h1{
-  margin:0 0 8px;
-  font-size:30px;
+ margin:0 0 8px;
+ font-size:30px;
 }
 
 .welcome p{
-  margin:0;
-  opacity:.9;
+ margin:0;
+ opacity:.9;
 }
 
-/* STATS */
-
 .stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-  margin-bottom:25px;
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:15px;
+ margin-bottom:25px;
 }
 
 .stat{
-  background:white;
-  padding:20px;
-  border-radius:18px;
-  box-shadow:0 5px 20px #0001;
+ background:#fff;
+ padding:20px;
+ border-radius:18px;
+ box-shadow:0 5px 20px #0001;
 }
 
 .stat-icon{
-  font-size:28px;
+ font-size:28px;
 }
 
 .stat-title{
-  color:#6b7280;
-  margin-top:8px;
-  font-size:14px;
+ color:#6b7280;
+ margin-top:8px;
+ font-size:14px;
 }
 
 .stat-value{
-  font-size:24px;
-  font-weight:bold;
-  margin-top:5px;
+ font-size:24px;
+ font-weight:bold;
+ margin-top:5px;
 }
-
-/* SECTION */
 
 .section-title{
-  font-size:21px;
-  margin:28px 0 15px;
+ font-size:21px;
+ margin:28px 0 15px;
 }
 
-/* QUICK ACCESS */
-
 .actions{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:15px;
 }
 
 .action{
-  background:white;
-  padding:22px;
-  border-radius:18px;
-  text-decoration:none;
-  color:#172033;
-  box-shadow:0 5px 20px #0001;
-  transition:.2s;
+ background:#fff;
+ padding:22px;
+ border-radius:18px;
+ text-decoration:none;
+ color:#172033;
+ box-shadow:0 5px 20px #0001;
+ transition:.2s;
 }
 
 .action:hover{
-  transform:translateY(-3px);
+ transform:translateY(-3px);
 }
 
 .action-icon{
-  font-size:34px;
+ font-size:34px;
 }
 
 .action h3{
-  margin:10px 0 5px;
+ margin:10px 0 5px;
 }
 
 .action p{
-  margin:0;
-  color:#6b7280;
-  font-size:14px;
+ margin:0;
+ color:#6b7280;
+ font-size:14px;
 }
 
-/* REFERRAL */
-
 .referral{
-  background:white;
-  padding:22px;
-  border-radius:18px;
-  box-shadow:0 5px 20px #0001;
+ background:#fff;
+ padding:22px;
+ border-radius:18px;
+ box-shadow:0 5px 20px #0001;
 }
 
 .referral-box{
-  display:flex;
-  gap:10px;
-  margin-top:15px;
+ display:flex;
+ gap:10px;
+ margin-top:15px;
 }
 
 .referral-box input{
-  flex:1;
-  padding:13px;
-  border:1px solid #d1d5db;
-  border-radius:10px;
-  font-size:14px;
+ flex:1;
+ padding:13px;
+ border:1px solid #d1d5db;
+ border-radius:10px;
+ font-size:14px;
 }
 
 .copy-btn{
-  border:0;
-  background:#6d28d9;
-  color:white;
-  padding:0 18px;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
+ border:0;
+ background:#6d28d9;
+ color:#fff;
+ padding:0 18px;
+ border-radius:10px;
+ font-weight:bold;
+ cursor:pointer;
 }
 
 .referral-stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-top:18px;
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:12px;
+ margin-top:18px;
 }
 
 .ref-card{
-  background:#f5f3ff;
-  padding:15px;
-  border-radius:12px;
-  text-align:center;
+ background:#f5f3ff;
+ padding:15px;
+ border-radius:12px;
+ text-align:center;
 }
 
 .ref-card strong{
-  display:block;
-  font-size:22px;
-  color:#6d28d9;
-  margin-top:5px;
+ display:block;
+ font-size:22px;
+ color:#6d28d9;
+ margin-top:5px;
 }
 
-/* COURSES */
-
 .courses{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:20px;
 }
 
 .course{
-  background:white;
-  padding:0;
-  border-radius:22px;
-  box-shadow:0 5px 20px #0001;
-  overflow:hidden;
-  transition:.3s;
+ background:#fff;
+ border-radius:22px;
+ box-shadow:0 5px 20px #0001;
+ overflow:hidden;
+ transition:.3s;
 }
 
 .course:hover{
-  transform:translateY(-5px);
-  box-shadow:0 12px 30px #0002;
+ transform:translateY(-5px);
+ box-shadow:0 12px 30px #0002;
 }
-
-/* BOOK LOGO */
 
 .course-icon{
-  height:185px;
-  background:
-    radial-gradient(
-      circle at 50% 15%,
-      #60a5fa66,
-      transparent 45%
-    ),
-    linear-gradient(
-      135deg,
-      #1d4ed8,
-      #7c3aed
-    );
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  overflow:hidden;
-}
-
-.course-icon::before{
-  content:"";
-  position:absolute;
-  width:210px;
-  height:210px;
-  border-radius:50%;
-  background:#ffffff16;
-  filter:blur(4px);
+ height:185px;
+ background:
+ radial-gradient(circle at 50% 15%,#60a5fa66,transparent 45%),
+ linear-gradient(135deg,#1d4ed8,#7c3aed);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ position:relative;
 }
 
 .book{
-  position:relative;
-  width:200px;
-  height:130px;
-  z-index:2;
-  filter:drop-shadow(0 12px 12px #0006);
+ position:relative;
+ width:200px;
+ height:130px;
+ filter:drop-shadow(0 12px 12px #0006);
 }
 
 .book-page{
-  position:absolute;
-  top:10px;
-  width:97px;
-  height:110px;
-  background:linear-gradient(135deg,#ffffff,#dbeafe);
-  box-shadow:inset 0 0 8px #0001,0 5px 10px #0003;
+ position:absolute;
+ top:10px;
+ width:97px;
+ height:110px;
+ background:linear-gradient(135deg,#fff,#dbeafe);
+ box-shadow:inset 0 0 8px #0001,0 5px 10px #0003;
 }
 
 .book-left{
-  left:3px;
-  border-radius:11px 3px 3px 11px;
-  transform:
-    perspective(400px)
-    rotateY(10deg)
-    skewY(4deg);
+ left:3px;
+ border-radius:11px 3px 3px 11px;
+ transform:perspective(400px) rotateY(10deg) skewY(4deg);
 }
 
 .book-right{
-  right:3px;
-  border-radius:3px 11px 11px 3px;
-  transform:
-    perspective(400px)
-    rotateY(-10deg)
-    skewY(-4deg);
+ right:3px;
+ border-radius:3px 11px 11px 3px;
+ transform:perspective(400px) rotateY(-10deg) skewY(-4deg);
 }
 
 .book-center{
-  position:absolute;
-  left:50%;
-  top:8px;
-  transform:translateX(-50%);
-  width:10px;
-  height:112px;
-  background:linear-gradient(
-    90deg,
-    #b45309,
-    #fbbf24,
-    #b45309
-  );
-  border-radius:7px;
-  z-index:5;
-  box-shadow:0 0 13px #fbbf2499;
+ position:absolute;
+ left:50%;
+ top:8px;
+ transform:translateX(-50%);
+ width:10px;
+ height:112px;
+ background:linear-gradient(90deg,#b45309,#fbbf24,#b45309);
+ border-radius:7px;
+ z-index:5;
 }
 
 .book-brand{
-  position:absolute;
-  left:50%;
-  top:40px;
-  transform:translateX(-50%);
-  z-index:10;
-  width:180px;
-  text-align:center;
-  color:#1e3a8a;
-  font-weight:900;
-  line-height:19px;
-  pointer-events:none;
+ position:absolute;
+ left:50%;
+ top:40px;
+ transform:translateX(-50%);
+ z-index:10;
+ width:180px;
+ text-align:center;
+ color:#1e3a8a;
+ font-weight:900;
+ line-height:19px;
 }
 
-.book-brand .top-text{
-  display:block;
-  font-size:14px;
+.book-brand .top-text,
+.book-brand .bottom-text{
+ display:block;
+ font-size:14px;
 }
 
 .book-brand .and{
-  color:#f59e0b;
-  font-size:20px;
+ color:#f59e0b;
+ font-size:20px;
 }
-
-.book-brand .bottom-text{
-  display:block;
-  font-size:14px;
-}
-
-/* COURSE BODY */
 
 .course-content{
-  padding:22px;
+ padding:22px;
 }
 
 .course h3{
-  margin:0 0 7px;
-  font-size:21px;
+ margin:0 0 7px;
+ font-size:21px;
 }
 
 .course p{
-  color:#6b7280;
-  font-size:14px;
-  line-height:1.6;
+ color:#6b7280;
+ font-size:14px;
+ line-height:1.6;
 }
 
 .course-details{
-  margin-top:14px;
-  line-height:1.9;
+ margin-top:14px;
+ line-height:1.9;
 }
 
 .price{
-  font-weight:bold;
-  font-size:18px;
+ font-weight:bold;
+ font-size:18px;
 }
 
 .commission{
-  color:#16a34a;
-  font-weight:bold;
+ color:#16a34a;
+ font-weight:bold;
 }
 
 .passive{
-  color:#7c3aed;
-  font-weight:bold;
+ color:#7c3aed;
+ font-weight:bold;
 }
 
 .course-btn{
-  display:block;
-  width:100%;
-  text-align:center;
-  background:#6d28d9;
-  color:white;
-  padding:12px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-  margin-top:18px;
-  border:0;
-  cursor:pointer;
-  font-size:15px;
+ display:block;
+ text-align:center;
+ background:#6d28d9;
+ color:#fff;
+ padding:12px;
+ border-radius:10px;
+ text-decoration:none;
+ font-weight:bold;
+ margin-top:18px;
+ border:0;
+ width:100%;
+ cursor:pointer;
+ font-size:15px;
 }
 
 .course-btn:hover{
-  background:#5b21b6;
+ background:#5b21b6;
 }
-
-.open-btn{
-  background:#16a34a;
-}
-
-.open-btn:hover{
-  background:#15803d;
-}
-
-/* PROFILE */
 
 .profile{
-  background:white;
-  padding:22px;
-  border-radius:18px;
-  box-shadow:0 5px 20px #0001;
+ background:#fff;
+ padding:22px;
+ border-radius:18px;
+ box-shadow:0 5px 20px #0001;
 }
 
 .profile-row{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  padding:12px 0;
-  border-bottom:1px solid #eee;
+ display:flex;
+ justify-content:space-between;
+ gap:15px;
+ padding:12px 0;
+ border-bottom:1px solid #eee;
 }
 
 .profile-row:last-child{
-  border-bottom:0;
+ border-bottom:0;
 }
 
 .label{
-  color:#6b7280;
+ color:#6b7280;
 }
 
-/* BOTTOM NAV */
-
 .bottom-nav{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  background:white;
-  box-shadow:0 -3px 15px #0002;
-  display:flex;
-  justify-content:space-around;
-  padding:9px 5px;
-  z-index:200;
+ position:fixed;
+ bottom:0;
+ left:0;
+ right:0;
+ background:#fff;
+ box-shadow:0 -3px 15px #0002;
+ display:flex;
+ justify-content:space-around;
+ padding:9px 5px;
+ z-index:200;
 }
 
 .bottom-nav a{
-  text-decoration:none;
-  color:#6b7280;
-  text-align:center;
-  font-size:12px;
+ text-decoration:none;
+ color:#6b7280;
+ text-align:center;
+ font-size:12px;
 }
 
 .bottom-nav span{
-  display:block;
-  font-size:22px;
-  margin-bottom:2px;
+ display:block;
+ font-size:22px;
+ margin-bottom:2px;
 }
 
-/* =================================
+/* =========================
    PURCHASE POPUP
-================================= */
+========================= */
 
-.purchase-modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:#0009;
-  z-index:9999;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
+.modal{
+ display:none;
+ position:fixed;
+ inset:0;
+ background:#0008;
+ z-index:999;
+ align-items:center;
+ justify-content:center;
+ padding:15px;
 }
 
-.purchase-box{
-  width:100%;
-  max-width:430px;
-  background:white;
-  border-radius:24px;
-  padding:28px;
-  position:relative;
-  box-shadow:0 20px 60px #0005;
-  animation:popup .25s ease;
+.modal.show{
+ display:flex;
+}
+
+.modal-box{
+ background:#fff;
+ width:100%;
+ max-width:430px;
+ border-radius:22px;
+ padding:25px;
+ box-shadow:0 20px 60px #0005;
+ animation:popup .2s ease;
 }
 
 @keyframes popup{
-  from{
-    transform:scale(.85);
-    opacity:0;
-  }
-
-  to{
-    transform:scale(1);
-    opacity:1;
-  }
+ from{
+  transform:scale(.9);
+  opacity:0;
+ }
+ to{
+  transform:scale(1);
+  opacity:1;
+ }
 }
 
-.close-purchase{
-  position:absolute;
-  right:14px;
-  top:12px;
-  border:0;
-  background:#f3f4f6;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  font-size:25px;
-  cursor:pointer;
+.modal-title{
+ font-size:23px;
+ font-weight:bold;
+ margin-bottom:8px;
 }
 
-.purchase-logo{
-  width:70px;
-  height:70px;
-  margin:auto;
-  border-radius:20px;
-  background:linear-gradient(
-    135deg,
-    #2563eb,
-    #7c3aed
-  );
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:38px;
+.modal-subtitle{
+ color:#6b7280;
+ font-size:14px;
+ margin-bottom:18px;
 }
 
-.purchase-box h2{
-  text-align:center;
-  margin:15px 0 8px;
+.original-price{
+ font-size:28px;
+ font-weight:bold;
+ margin-bottom:15px;
 }
 
-.purchase-box p{
-  text-align:center;
-  color:#6b7280;
+.coupon-row{
+ display:flex;
+ gap:8px;
 }
 
-.purchase-price{
-  text-align:center;
-  font-size:30px;
-  font-weight:bold;
-  color:#16a34a;
-  margin:15px;
+.coupon-row input{
+ flex:1;
+ padding:13px;
+ border:1px solid #d1d5db;
+ border-radius:10px;
+ outline:none;
 }
 
-.purchase-box label{
-  display:block;
-  font-weight:bold;
-  margin-bottom:7px;
-}
-
-.purchase-box input{
-  width:100%;
-  padding:13px;
-  border:1px solid #d1d5db;
-  border-radius:10px;
-  font-size:16px;
-  outline:none;
-}
-
-.purchase-box input:focus{
-  border-color:#7c3aed;
-}
-
-.apply-coupon{
-  width:100%;
-  margin-top:10px;
-  padding:12px;
-  border:0;
-  border-radius:10px;
-  background:#ede9fe;
-  color:#6d28d9;
-  font-weight:bold;
-  cursor:pointer;
+.apply-btn{
+ border:0;
+ background:#111827;
+ color:#fff;
+ border-radius:10px;
+ padding:0 15px;
+ font-weight:bold;
+ cursor:pointer;
 }
 
 .coupon-message{
-  margin-top:10px;
-  text-align:center;
-  font-weight:bold;
-  min-height:20px;
+ margin-top:12px;
+ padding:12px;
+ border-radius:10px;
+ display:none;
+ font-size:14px;
 }
 
-.final-price{
-  text-align:center;
-  font-size:20px;
-  font-weight:bold;
-  margin:18px 0;
+.coupon-success{
+ background:#dcfce7;
+ color:#166534;
+ display:block;
 }
 
-.confirm-purchase{
-  width:100%;
-  padding:14px;
-  border:0;
-  border-radius:12px;
-  background:#16a34a;
-  color:white;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
+.coupon-error{
+ background:#fee2e2;
+ color:#991b1b;
+ display:block;
 }
 
-.confirm-purchase:disabled{
-  opacity:.6;
-  cursor:not-allowed;
+.payable{
+ margin-top:18px;
+ padding:15px;
+ background:#f5f3ff;
+ border-radius:12px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+}
+
+.payable strong{
+ font-size:24px;
+ color:#6d28d9;
+}
+
+.modal-buttons{
+ display:flex;
+ gap:10px;
+ margin-top:18px;
+}
+
+.confirm-btn{
+ flex:1;
+ border:0;
+ background:#16a34a;
+ color:#fff;
+ padding:13px;
+ border-radius:10px;
+ font-weight:bold;
+ cursor:pointer;
+}
+
+.cancel-btn{
+ flex:1;
+ border:0;
+ background:#e5e7eb;
+ color:#111827;
+ padding:13px;
+ border-radius:10px;
+ font-weight:bold;
+ cursor:pointer;
+}
+
+.status-box{
+ margin-top:15px;
+ font-size:14px;
+ text-align:center;
+ color:#6b7280;
 }
 
 /* MOBILE */
 
 @media(max-width:850px){
-
-  .stats{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .actions{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .courses{
-    grid-template-columns:1fr;
-  }
-
+ .stats{
+  grid-template-columns:repeat(2,1fr);
+ }
+ .actions{
+  grid-template-columns:repeat(2,1fr);
+ }
+ .courses{
+  grid-template-columns:1fr;
+ }
 }
 
 @media(max-width:550px){
-
-  .container{
-    padding:18px 13px 90px;
-  }
-
-  .welcome{
-    padding:22px;
-  }
-
-  .welcome h1{
-    font-size:25px;
-  }
-
-  .logo{
-    font-size:17px;
-  }
-
-  .stats{
-    gap:10px;
-  }
-
-  .stat{
-    padding:15px;
-  }
-
-  .stat-value{
-    font-size:20px;
-  }
-
-  .actions{
-    gap:10px;
-  }
-
-  .action{
-    padding:16px;
-  }
-
-  .referral-box{
-    flex-direction:column;
-  }
-
-  .copy-btn{
-    padding:12px;
-  }
-
-  .referral-stats{
-    grid-template-columns:1fr;
-  }
-
-  .profile-row{
-    flex-direction:column;
-    gap:5px;
-  }
-
-  .course-icon{
-    height:170px;
-  }
-
-  .purchase-box{
-    padding:22px;
-  }
-
+ .container{
+  padding:18px 13px 90px;
+ }
+ .welcome{
+  padding:22px;
+ }
+ .welcome h1{
+  font-size:25px;
+ }
+ .logo{
+  font-size:17px;
+ }
+ .stat{
+  padding:15px;
+ }
+ .stat-value{
+  font-size:20px;
+ }
+ .action{
+  padding:16px;
+ }
+ .referral-box{
+  flex-direction:column;
+ }
+ .copy-btn{
+  padding:12px;
+ }
+ .referral-stats{
+  grid-template-columns:1fr;
+ }
+ .profile-row{
+  flex-direction:column;
+  gap:5px;
+ }
+ .course-icon{
+  height:170px;
+ }
+ .modal-box{
+  padding:20px;
+ }
+ .coupon-row{
+  flex-direction:column;
+ }
+ .apply-btn{
+  padding:12px;
+ }
 }
 </style>
 </head>
@@ -700,1663 +612,1367 @@ header{
 <body>
 
 <header>
+<div class="header">
 
-  <div class="header">
+<div class="logo">
+📚 Padho Aur Kamao
+</div>
 
-    <div class="logo">
-      📚 Padho Aur Kamao
-    </div>
+<button id="logoutBtn" class="logout">
+🚪 Logout
+</button>
 
-    <button id="logoutBtn" class="logout">
-      🚪 Logout
-    </button>
-
-  </div>
-
+</div>
 </header>
 
 
 <main class="container">
 
-<!-- WELCOME -->
-
 <section class="welcome">
 
-  <h1>
-    👋 Welcome to Padho Aur Kamao
-  </h1>
+<h1>
+👋 Welcome to Padho Aur Kamao
+</h1>
 
-  <p id="welcomeText">
-    आपका Dashboard तैयार है।
-  </p>
+<p id="welcomeText">
+आपका Dashboard तैयार है।
+</p>
 
 </section>
 
-
-<!-- STATS -->
 
 <section class="stats">
 
-  <div class="stat">
-    <div class="stat-icon">💰</div>
-    <div class="stat-title">
-      Total Earnings
-    </div>
-    <div class="stat-value">
-      ₹0
-    </div>
-  </div>
+<div class="stat">
+<div class="stat-icon">💰</div>
+<div class="stat-title">Total Earnings</div>
+<div class="stat-value">₹0</div>
+</div>
 
-  <div class="stat">
-    <div class="stat-icon">📅</div>
-    <div class="stat-title">
-      This Week
-    </div>
-    <div class="stat-value">
-      ₹0
-    </div>
-  </div>
+<div class="stat">
+<div class="stat-icon">📅</div>
+<div class="stat-title">This Week</div>
+<div class="stat-value">₹0</div>
+</div>
 
-  <div class="stat">
-    <div class="stat-icon">📆</div>
-    <div class="stat-title">
-      This Month
-    </div>
-    <div class="stat-value">
-      ₹0
-    </div>
-  </div>
+<div class="stat">
+<div class="stat-icon">📆</div>
+<div class="stat-title">This Month</div>
+<div class="stat-value">₹0</div>
+</div>
 
-  <div class="stat">
-    <div class="stat-icon">📈</div>
-    <div class="stat-title">
-      This Year
-    </div>
-    <div class="stat-value">
-      ₹0
-    </div>
-  </div>
+<div class="stat">
+<div class="stat-icon">📈</div>
+<div class="stat-title">This Year</div>
+<div class="stat-value">₹0</div>
+</div>
 
 </section>
 
 
-<!-- QUICK ACCESS -->
-
 <h2 class="section-title">
-  ⚡ Quick Access
+⚡ Quick Access
 </h2>
 
 <section class="actions">
 
-  <a class="action" href="#courses">
-    <div class="action-icon">📚</div>
-    <h3>My Courses</h3>
-    <p>अपने courses और lessons देखें</p>
-  </a>
+<a class="action" href="#courses">
+<div class="action-icon">📚</div>
+<h3>My Courses</h3>
+<p>अपने courses और lessons देखें</p>
+</a>
 
-  <a class="action" href="#videos">
-    <div class="action-icon">🎥</div>
-    <h3>Learning Videos</h3>
-    <p>अपने learning videos देखें</p>
-  </a>
+<a class="action" href="#videos">
+<div class="action-icon">🎥</div>
+<h3>Learning Videos</h3>
+<p>अपने learning videos देखें</p>
+</a>
 
-  <a class="action" href="#leaderboard">
-    <div class="action-icon">🏆</div>
-    <h3>Leaderboard</h3>
-    <p>Learning performance देखें</p>
-  </a>
+<a class="action" href="#leaderboard">
+<div class="action-icon">🏆</div>
+<h3>Leaderboard</h3>
+<p>Learning performance देखें</p>
+</a>
 
-  <a class="action" href="#profile">
-    <div class="action-icon">👤</div>
-    <h3>My Profile</h3>
-    <p>Account details देखें</p>
-  </a>
+<a class="action" href="#profile">
+<div class="action-icon">👤</div>
+<h3>My Profile</h3>
+<p>Account details देखें</p>
+</a>
 
 </section>
 
 
-<!-- REFERRAL -->
-
 <h2 class="section-title">
-  🔗 My Referral
+🔗 My Referral
 </h2>
 
 <section class="referral">
 
-  <h3>
-    आपका Referral Link
-  </h3>
+<h3>
+आपका Referral Link
+</h3>
 
-  <p>
-    इस link को share करके लोगों को आपके platform तक
-    पहुँचाया जा सकता है।
-  </p>
+<p>
+इस link को share करके लोगों को आपके platform तक पहुँचाया जा सकता है।
+</p>
 
-  <div class="referral-box">
+<div class="referral-box">
 
-    <input
-      id="referralLink"
-      type="text"
-      readonly
-      placeholder="Referral link तैयार हो रहा है..."
-    >
+<input
+id="referralLink"
+type="text"
+readonly
+placeholder="Referral link तैयार हो रहा है..."
+>
 
-    <button
-      id="copyBtn"
-      class="copy-btn">
-      Copy
-    </button>
+<button id="copyBtn" class="copy-btn">
+Copy
+</button>
 
-  </div>
+</div>
 
-  <div class="referral-stats">
+<div class="referral-stats">
 
-    <div class="ref-card">
-      👥 Referrals
-      <strong id="referralCount">
-        0
-      </strong>
-    </div>
+<div class="ref-card">
+👥 Referrals
+<strong id="referralCount">0</strong>
+</div>
 
-    <div class="ref-card">
-      ⭐ Points
-      <strong id="referralPoints">
-        0
-      </strong>
-    </div>
+<div class="ref-card">
+⭐ Points
+<strong id="referralPoints">0</strong>
+</div>
 
-    <div class="ref-card">
-      🎯 Status
-      <strong>
-        Active
-      </strong>
-    </div>
+<div class="ref-card">
+🎯 Status
+<strong id="referralStatus">Active</strong>
+</div>
 
-  </div>
+</div>
 
 </section>
 
 
-<!-- COURSES -->
-
 <h2 class="section-title" id="courses">
-  📚 Courses
+📚 My Courses
 </h2>
 
 <section class="courses">
 
 
-<!-- STEP TO SUCCESS -->
+<!-- COURSE 1 -->
 
 <div class="course">
 
-  <div class="course-icon">
+<div class="course-icon">
 
-    <div class="book">
+<div class="book">
 
-      <div class="book-page book-left"></div>
+<div class="book-page book-left"></div>
+<div class="book-page book-right"></div>
+<div class="book-center"></div>
 
-      <div class="book-page book-right"></div>
+<div class="book-brand">
 
-      <div class="book-center"></div>
+<span class="top-text">
+PADHO
+</span>
 
-      <div class="book-brand">
+<span class="and">
+&
+</span>
 
-        <span class="top-text">
-          PADHO
-        </span>
-
-        <span class="and">
-          &
-        </span>
-
-        <span class="bottom-text">
-          KAMAO
-        </span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="course-content">
-
-    <h3>
-      Step To Success
-    </h3>
-
-    <p>
-      Lead Generation, Communication Skills,
-      Maths, Reasoning, Hindi और General Studies
-      (GS) की learning।
-    </p>
-
-    <div class="course-details">
-
-      <div class="price">
-        💰 Price: ₹199
-      </div>
-
-      <div class="commission">
-        🎯 Commission per Sale: ₹100
-      </div>
-
-      <div class="passive">
-        🔗 Passive Income: ₹20
-      </div>
-
-    </div>
-
-
-    <!-- BUY BUTTON -->
-
-    <button
-      class="course-btn buy-btn"
-      data-course="step"
-      data-title="Step To Success"
-      data-price="199">
-
-      🛒 Buy Course ₹199
-
-    </button>
-
-
-    <!-- OPEN BUTTON -->
-
-    <a
-      class="course-btn open-btn"
-      id="open-step"
-      href="step-to-success.html"
-      style="display:none;">
-
-      ▶️ Open Course
-
-    </a>
-
-  </div>
+<span class="bottom-text">
+KAMAO
+</span>
 
 </div>
 
+</div>
 
-<!-- ALL COMPETITIVE EXAM -->
+</div>
+
+<div class="course-content">
+
+<h3>
+Step To Success
+</h3>
+
+<p>
+Lead Generation, Communication Skills, Maths,
+Reasoning, Hindi और General Studies (GS) की learning।
+</p>
+
+<div class="course-details">
+
+<div class="price">
+💰 Price: ₹199
+</div>
+
+<div class="commission">
+🎯 Commission per Sale: ₹100
+</div>
+
+<div class="passive">
+🔗 Passive Income: ₹20
+</div>
+
+</div>
+
+<button
+class="course-btn buy-btn"
+data-course-id="step-to-success"
+data-course-name="Step To Success"
+data-course-price="199"
+data-course-url="step-to-success.html">
+
+🛒 Buy Course
+
+</button>
+
+</div>
+</div>
+
+
+<!-- COURSE 2 -->
 
 <div class="course">
 
-  <div class="course-icon">
+<div class="course-icon">
 
-    <div class="book">
+<div class="book">
 
-      <div class="book-page book-left"></div>
+<div class="book-page book-left"></div>
+<div class="book-page book-right"></div>
+<div class="book-center"></div>
 
-      <div class="book-page book-right"></div>
+<div class="book-brand">
 
-      <div class="book-center"></div>
+<span class="top-text">
+PADHO
+</span>
 
-      <div class="book-brand">
+<span class="and">
+&
+</span>
 
-        <span class="top-text">
-          PADHO
-        </span>
+<span class="bottom-text">
+KAMAO
+</span>
 
-        <span class="and">
-          &
-        </span>
+</div>
 
-        <span class="bottom-text">
-          KAMAO
-        </span>
+</div>
 
-      </div>
+</div>
 
-    </div>
+<div class="course-content">
 
-  </div>
+<h3>
+All Competitive Exam
+</h3>
 
+<p>
+10th और 12th level exams की preparation,
+practice और assessment।
+</p>
 
-  <div class="course-content">
+<div class="course-details">
 
-    <h3>
-      All Competitive Exam
-    </h3>
+<div class="price">
+💰 Price: ₹399
+</div>
 
-    <p>
-      10th और 12th level exams की preparation,
-      practice और assessment।
-    </p>
+<div class="commission">
+🎯 Commission per Sale: ₹200
+</div>
 
-    <div class="course-details">
+<div class="passive">
+🔗 Passive Income: ₹50
+</div>
 
-      <div class="price">
-        💰 Price: ₹399
-      </div>
+</div>
 
-      <div class="commission">
-        🎯 Commission per Sale: ₹200
-      </div>
+<button
+class="course-btn buy-btn"
+data-course-id="all-competitive-exam"
+data-course-name="All Competitive Exam"
+data-course-price="399"
+data-course-url="all-competitive-exam.html">
 
-      <div class="passive">
-        🔗 Passive Income: ₹50
-      </div>
+🛒 Buy Course
 
-    </div>
+</button>
 
-
-    <!-- BUY BUTTON -->
-
-    <button
-      class="course-btn buy-btn"
-      data-course="competitive"
-      data-title="All Competitive Exam"
-      data-price="399">
-
-      🛒 Buy Course ₹399
-
-    </button>
-
-
-    <!-- OPEN BUTTON -->
-
-    <a
-      class="course-btn open-btn"
-      id="open-competitive"
-      href="all-competitive-exam.html"
-      style="display:none;">
-
-      ▶️ Open Course
-
-    </a>
-
-  </div>
-
+</div>
 </div>
 
 </section>
 
-
-<!-- VIDEOS -->
 
 <h2 class="section-title" id="videos">
-  🎥 Learning Videos
+🎥 Learning Videos
 </h2>
 
 <section class="profile">
 
-  <p>
-    आपके course videos संबंधित course page पर
-    उपलब्ध होंगे।
-  </p>
+<p>
+आपके purchased course videos यहाँ से access किए जा सकते हैं।
+</p>
 
-  <a
-    href="step-to-success.html"
-    class="course-btn">
-    🚀 Step To Success Videos
-  </a>
+<a
+href="step-to-success.html"
+class="course-btn">
 
-  <a
-    href="all-competitive-exam.html"
-    class="course-btn">
-    🎓 Competitive Exam Videos
-  </a>
+🚀 Step To Success Videos
+
+</a>
+
+<a
+href="all-competitive-exam.html"
+class="course-btn">
+
+🎓 Competitive Exam Videos
+
+</a>
 
 </section>
 
-
-<!-- LEADERBOARD -->
 
 <h2 class="section-title" id="leaderboard">
-  🏆 Leaderboard
+🏆 Leaderboard
 </h2>
 
 <section class="profile">
 
-  <p>
-    Leaderboard learning activity और progress
-    के आधार पर दिखाया जा सकता है।
-  </p>
+<p>
+Leaderboard learning activity और progress के आधार पर दिखाया जा सकता है।
+</p>
 
-  <strong>
-    आपका वर्तमान score: 0
-  </strong>
+<strong>
+आपका वर्तमान score: 0
+</strong>
 
 </section>
 
 
-<!-- PROFILE -->
-
 <h2 class="section-title" id="profile">
-  👤 My Profile
+👤 My Profile
 </h2>
 
 <section class="profile">
 
-  <div class="profile-row">
+<div class="profile-row">
+<span class="label">Name</span>
+<strong id="userName">Loading...</strong>
+</div>
 
-    <span class="label">
-      Name
-    </span>
+<div class="profile-row">
+<span class="label">Email</span>
+<strong id="userEmail">Loading...</strong>
+</div>
 
-    <strong id="userName">
-      Loading...
-    </strong>
-
-  </div>
-
-  <div class="profile-row">
-
-    <span class="label">
-      Email
-    </span>
-
-    <strong id="userEmail">
-      Loading...
-    </strong>
-
-  </div>
-
-  <div class="profile-row">
-
-    <span class="label">
-      User ID
-    </span>
-
-    <strong id="userId">
-      Loading...
-    </strong>
-
-  </div>
+<div class="profile-row">
+<span class="label">User ID</span>
+<strong id="userId">Loading...</strong>
+</div>
 
 </section>
 
 </main>
 
 
-<!-- BOTTOM NAV -->
-
 <nav class="bottom-nav">
 
-  <a href="dashboard.html">
-    <span>🏠</span>
-    Home
-  </a>
+<a href="dashboard.html">
+<span>🏠</span>
+Home
+</a>
 
-  <a href="#courses">
-    <span>📚</span>
-    Courses
-  </a>
+<a href="#courses">
+<span>📚</span>
+Courses
+</a>
 
-  <a href="#leaderboard">
-    <span>🏆</span>
-    Rank
-  </a>
+<a href="#leaderboard">
+<span>🏆</span>
+Rank
+</a>
 
-  <a href="#profile">
-    <span>👤</span>
-    Profile
-  </a>
+<a href="#profile">
+<span>👤</span>
+Profile
+</a>
 
 </nav>
 
 
-<!-- =================================
-     PURCHASE POPUP
-================================= -->
+<!-- =========================
+     PURCHASE MODAL
+========================= -->
 
-<div
-  id="purchaseModal"
-  class="purchase-modal">
+<div id="purchaseModal" class="modal">
 
-  <div class="purchase-box">
+<div class="modal-box">
 
-    <button
-      id="closePurchase"
-      class="close-purchase">
-      ×
-    </button>
+<div class="modal-title" id="modalCourseName">
+Course Purchase
+</div>
 
+<div class="modal-subtitle">
+Course access पाने के लिए coupon code डालें और Confirm Enrollment करें।
+</div>
 
-    <div class="purchase-logo">
-      📚
-    </div>
+<div class="original-price">
+₹<span id="originalPrice">0</span>
+</div>
 
+<label>
+🎟️ Coupon Code
+</label>
 
-    <h2 id="purchaseTitle">
-      Course Purchase
-    </h2>
+<div class="coupon-row">
 
+<input
+id="couponInput"
+type="text"
+placeholder="Coupon code डालें"
+autocomplete="off"
+>
 
-    <p>
-      Course access पाने के लिए coupon code
-      डालें और Confirm Purchase करें।
-    </p>
+<button
+id="applyCouponBtn"
+class="apply-btn">
 
+Apply
 
-    <div class="purchase-price">
-      ₹<span id="purchasePrice">0</span>
-    </div>
-
-
-    <label>
-      🎟️ Coupon Code
-    </label>
-
-
-    <input
-      id="couponInput"
-      type="text"
-      placeholder="Coupon code डालें">
-
-
-    <button
-      id="applyCoupon"
-      class="apply-coupon">
-
-      Apply Coupon
-
-    </button>
-
-
-    <div
-      id="couponMessage"
-      class="coupon-message">
-    </div>
-
-
-    <div class="final-price">
-
-      Payable:
-      ₹<span id="finalPrice">0</span>
-
-    </div>
-
-
-    <button
-      id="confirmPurchase"
-      class="confirm-purchase">
-
-      ✅ Confirm Purchase
-
-    </button>
-
-  </div>
+</button>
 
 </div>
 
+<div
+id="couponMessage"
+class="coupon-message">
+</div>
 
-<!-- FIREBASE -->
+<div class="payable">
+
+<span>
+Payable Amount
+</span>
+
+<strong>
+₹<span id="payableAmount">0</span>
+</strong>
+
+</div>
+
+<div class="modal-buttons">
+
+<button
+id="confirmEnrollmentBtn"
+class="confirm-btn">
+
+✅ Confirm Enrollment
+
+</button>
+
+<button
+id="cancelPurchaseBtn"
+class="cancel-btn">
+
+Cancel
+
+</button>
+
+</div>
+
+<div
+id="enrollmentStatus"
+class="status-box">
+</div>
+
+</div>
+</div>
+
 
 <script type="module">
 
 import {
-  initializeApp
-} from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
+ initializeApp
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
-  getAuth,
-  onAuthStateChanged,
-  signOut
-} from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-
+ getAuth,
+ onAuthStateChanged,
+ signOut
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 import {
-  getFirestore,
-  doc,
-  getDoc,
-  setDoc,
-  collection,
-  query,
-  where,
-  getDocs,
-  serverTimestamp
-} from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+ getFirestore,
+ doc,
+ getDoc,
+ setDoc,
+ collection,
+ query,
+ where,
+ getDocs,
+ serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-/* =================================
-   FIREBASE CONFIG
-================================= */
+/* FIREBASE CONFIG */
 
 const firebaseConfig = {
 
-  apiKey:
-  "AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+apiKey:
+"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
-  authDomain:
-  "padho-aur-kamao-3eeae.firebaseapp.com",
+authDomain:
+"padho-aur-kamao-3eeae.firebaseapp.com",
 
-  projectId:
-  "padho-aur-kamao-3eeae",
+projectId:
+"padho-aur-kamao-3eeae",
 
-  storageBucket:
-  "padho-aur-kamao-3eeae.firebasestorage.app",
+storageBucket:
+"padho-aur-kamao-3eeae.firebasestorage.app",
 
-  messagingSenderId:
-  "670063905617",
+messagingSenderId:
+"670063905617",
 
-  appId:
-  "1:670063905617:web:9b3a7e62fdeea14fbfa170",
+appId:
+"1:670063905617:web:9b3a7e62fdeea14fbfa170",
 
-  measurementId:
-  "G-7J1YV8HN3F"
+measurementId:
+"G-7J1YV8HN3F"
 
 };
 
 
 /* INITIALIZE */
 
-const app =
-  initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-const auth =
-  getAuth(app);
+const auth = getAuth(app);
 
-const db =
-  getFirestore(app);
+const db = getFirestore(app);
 
 
 /* ELEMENTS */
 
 const welcomeText =
-  document.getElementById(
-    "welcomeText"
-  );
+document.getElementById("welcomeText");
 
 const userName =
-  document.getElementById(
-    "userName"
-  );
+document.getElementById("userName");
 
 const userEmail =
-  document.getElementById(
-    "userEmail"
-  );
+document.getElementById("userEmail");
 
 const userId =
-  document.getElementById(
-    "userId"
-  );
+document.getElementById("userId");
 
 const referralLink =
-  document.getElementById(
-    "referralLink"
-  );
+document.getElementById("referralLink");
 
 const copyBtn =
-  document.getElementById(
-    "copyBtn"
-  );
+document.getElementById("copyBtn");
 
 const logoutBtn =
-  document.getElementById(
-    "logoutBtn"
-  );
+document.getElementById("logoutBtn");
 
 const referralCount =
-  document.getElementById(
-    "referralCount"
-  );
+document.getElementById("referralCount");
 
 const referralPoints =
-  document.getElementById(
-    "referralPoints"
-  );
+document.getElementById("referralPoints");
 
 
 /* PURCHASE ELEMENTS */
 
-const purchaseModal =
-  document.getElementById(
-    "purchaseModal"
-  );
+const modal =
+document.getElementById("purchaseModal");
 
-const purchaseTitle =
-  document.getElementById(
-    "purchaseTitle"
-  );
+const modalCourseName =
+document.getElementById("modalCourseName");
 
-const purchasePrice =
-  document.getElementById(
-    "purchasePrice"
-  );
+const originalPrice =
+document.getElementById("originalPrice");
 
-const finalPrice =
-  document.getElementById(
-    "finalPrice"
-  );
+const payableAmount =
+document.getElementById("payableAmount");
 
 const couponInput =
-  document.getElementById(
-    "couponInput"
-  );
+document.getElementById("couponInput");
+
+const applyCouponBtn =
+document.getElementById("applyCouponBtn");
 
 const couponMessage =
-  document.getElementById(
-    "couponMessage"
-  );
+document.getElementById("couponMessage");
 
-const confirmPurchase =
-  document.getElementById(
-    "confirmPurchase"
-  );
+const confirmEnrollmentBtn =
+document.getElementById("confirmEnrollmentBtn");
+
+const cancelPurchaseBtn =
+document.getElementById("cancelPurchaseBtn");
+
+const enrollmentStatus =
+document.getElementById("enrollmentStatus");
 
 
-/* GLOBAL */
+/* CURRENT USER */
 
 let currentUser = null;
 
 let selectedCourse = null;
 
-let selectedPrice = 0;
-
 let couponApplied = false;
 
 
-/* =================================
-   COUPONS
-================================= */
+/* COUPON */
 
-const coupons = {
+const DEMO_COUPON = "PADHO100";
 
-  "WELCOME":{
-    type:"percent",
-    value:100
-  },
 
-  "PADHO100":{
-    type:"fixed",
-    value:100
-  },
+/* REFERRAL CODE */
 
-  "PADHO50":{
-    type:"fixed",
-    value:50
-  }
+function generateReferralCode(uid){
+
+return "PAK" +
+uid.substring(0,8).toUpperCase();
+
+}
+
+
+/* AUTH */
+
+onAuthStateChanged(
+auth,
+async function(user){
+
+if(!user){
+
+window.location.href =
+"login.html";
+
+return;
+
+}
+
+currentUser = user;
+
+const name =
+user.displayName ||
+"Student";
+
+
+welcomeText.innerText =
+"Welcome " +
+name +
+" 👋 सीखें, practice करें और आगे बढ़ें।";
+
+
+userName.innerText = name;
+
+userEmail.innerText =
+user.email || "Not available";
+
+userId.innerText = user.uid;
+
+
+/* USER DOCUMENT */
+
+const userRef =
+doc(db,"users",user.uid);
+
+let userData;
+
+
+try{
+
+const userSnap =
+await getDoc(userRef);
+
+
+if(userSnap.exists()){
+
+userData = userSnap.data();
+
+}else{
+
+userData = {
+
+name:name,
+
+email:user.email || "",
+
+referralCode:
+generateReferralCode(user.uid),
+
+referredBy:null,
+
+points:0,
+
+totalReferrals:0,
+
+createdAt:
+new Date().toISOString()
 
 };
 
 
-/* =================================
-   REFERRAL CODE
-================================= */
-
-function generateReferralCode(uid){
-
-  return "PAK" +
-    uid
-      .substring(0,8)
-      .toUpperCase();
+await setDoc(
+userRef,
+userData
+);
 
 }
 
 
-/* =================================
-   AUTH
-================================= */
-
-onAuthStateChanged(
-  auth,
-  async function(user){
-
-    if(!user){
-
-      window.location.href =
-        "login.html";
-
-      return;
-
-    }
+const referralCode =
+userData.referralCode ||
+generateReferralCode(user.uid);
 
 
-    currentUser =
-      user;
+const link =
+"https://yaduvanshimonu432-wq.github.io/" +
+"Padho-Aur-Kamao-/" +
+"index.html?ref=" +
+encodeURIComponent(referralCode);
 
 
-    const name =
-      user.displayName ||
-      "Student";
+referralLink.value = link;
 
 
-    welcomeText.innerText =
-      "Welcome " +
-      name +
-      " 👋 सीखें, practice करें और आगे बढ़ें।";
-
-
-    userName.innerText =
-      name;
-
-
-    userEmail.innerText =
-      user.email ||
-      "Not available";
-
-
-    userId.innerText =
-      user.uid;
-
-
-    try{
-
-      const userRef =
-        doc(
-          db,
-          "users",
-          user.uid
-        );
-
-
-      let userData;
-
-
-      const userSnap =
-        await getDoc(
-          userRef
-        );
-
-
-      if(userSnap.exists()){
-
-        userData =
-          userSnap.data();
-
-      }else{
-
-        userData = {
-
-          name:name,
-
-          email:
-            user.email || "",
-
-          referralCode:
-            generateReferralCode(
-              user.uid
-            ),
-
-          referredBy:null,
-
-          points:0,
-
-          totalReferrals:0,
-
-          createdAt:
-            new Date()
-              .toISOString()
-
-        };
-
-
-        await setDoc(
-          userRef,
-          userData
-        );
-
-      }
-
-
-      const referralCode =
-        userData.referralCode ||
-        generateReferralCode(
-          user.uid
-        );
-
-
-      const link =
-        "https://yaduvanshimonu432-wq.github.io/" +
-        "Padho-Aur-Kamao-/" +
-        "index.html?ref=" +
-        encodeURIComponent(
-          referralCode
-        );
-
-
-      referralLink.value =
-        link;
-
-
-      await loadReferralStats(
-        user.uid,
-        userData
-      );
-
-
-      /*
-        Check existing courses
-      */
-
-      await checkPurchasedCourses(
-        user.uid
-      );
-
-
-    }catch(error){
-
-      console.error(
-        "Dashboard error:",
-        error
-      );
-
-    }
-
-  }
+await loadReferralStats(
+user.uid,
+userData
 );
 
 
-/* =================================
+/* CHECK COURSES */
+
+await checkAllEnrollments();
+
+
+}catch(error){
+
+console.error(
+"Dashboard error:",
+error
+);
+
+}
+
+});
+
+
+/* =========================
+   CHECK ENROLLMENTS
+========================= */
+
+async function checkAllEnrollments(){
+
+if(!currentUser){
+return;
+}
+
+const buttons =
+document.querySelectorAll(".buy-btn");
+
+for(const button of buttons){
+
+const courseId =
+button.dataset.courseId;
+
+const enrollmentId =
+currentUser.uid +
+"_" +
+courseId;
+
+try{
+
+const enrollmentRef =
+doc(
+db,
+"enrollments",
+enrollmentId
+);
+
+const enrollmentSnap =
+await getDoc(enrollmentRef);
+
+
+if(enrollmentSnap.exists()){
+
+button.innerText =
+"📖 Open Course";
+
+button.dataset.enrolled =
+"true";
+
+}
+
+}catch(error){
+
+console.error(
+"Enrollment check:",
+error
+);
+
+}
+
+}
+
+}
+
+
+/* =========================
+   BUY BUTTONS
+========================= */
+
+document.querySelectorAll(".buy-btn")
+.forEach(function(button){
+
+button.addEventListener(
+"click",
+async function(){
+
+if(!currentUser){
+
+alert(
+"पहले login करें।"
+);
+
+return;
+
+}
+
+
+const courseId =
+button.dataset.courseId;
+
+const courseName =
+button.dataset.courseName;
+
+const coursePrice =
+Number(button.dataset.coursePrice);
+
+const courseUrl =
+button.dataset.courseUrl;
+
+
+/* ALREADY ENROLLED */
+
+if(button.dataset.enrolled === "true"){
+
+window.location.href =
+courseUrl;
+
+return;
+
+}
+
+
+selectedCourse = {
+
+id:courseId,
+
+name:courseName,
+
+price:coursePrice,
+
+url:courseUrl
+
+};
+
+
+modalCourseName.innerText =
+selectedCourse.name;
+
+
+originalPrice.innerText =
+selectedCourse.price;
+
+
+payableAmount.innerText =
+selectedCourse.price;
+
+
+couponInput.value = "";
+
+couponApplied = false;
+
+couponMessage.innerText = "";
+
+couponMessage.className =
+"coupon-message";
+
+enrollmentStatus.innerText =
+"";
+
+
+confirmEnrollmentBtn.disabled =
+false;
+
+confirmEnrollmentBtn.innerText =
+"✅ Confirm Enrollment";
+
+
+modal.classList.add("show");
+
+}
+
+);
+
+});
+
+
+/* =========================
+   APPLY COUPON
+========================= */
+
+applyCouponBtn.addEventListener(
+"click",
+function(){
+
+if(!selectedCourse){
+return;
+}
+
+
+const enteredCoupon =
+couponInput.value
+.trim()
+.toUpperCase();
+
+
+if(enteredCoupon === DEMO_COUPON){
+
+couponApplied = true;
+
+
+payableAmount.innerText =
+"0";
+
+
+couponMessage.innerText =
+"🎉 Coupon applied successfully! आपको demo में 100% discount मिला।";
+
+
+couponMessage.className =
+"coupon-message coupon-success";
+
+
+}else{
+
+couponApplied = false;
+
+
+payableAmount.innerText =
+selectedCourse.price;
+
+
+couponMessage.innerText =
+"❌ Invalid coupon code। सही coupon code डालें।";
+
+
+couponMessage.className =
+"coupon-message coupon-error";
+
+}
+
+});
+
+
+/* =========================
+   CONFIRM ENROLLMENT
+========================= */
+
+confirmEnrollmentBtn.addEventListener(
+"click",
+async function(){
+
+if(!currentUser){
+
+alert(
+"Login required."
+);
+
+return;
+
+}
+
+
+if(!selectedCourse){
+
+return;
+
+}
+
+
+/* PAYMENT NOT CONNECTED */
+
+if(!couponApplied){
+
+couponMessage.innerText =
+"पहले valid coupon code apply करें।";
+
+
+couponMessage.className =
+"coupon-message coupon-error";
+
+return;
+
+}
+
+
+confirmEnrollmentBtn.disabled =
+true;
+
+confirmEnrollmentBtn.innerText =
+"⏳ Enrolling...";
+
+enrollmentStatus.innerText =
+"Enrollment save हो रहा है...";
+
+
+try{
+
+const enrollmentId =
+currentUser.uid +
+"_" +
+selectedCourse.id;
+
+
+const enrollmentRef =
+doc(
+db,
+"enrollments",
+enrollmentId
+);
+
+
+/* CHECK EXISTING */
+
+const existing =
+await getDoc(enrollmentRef);
+
+
+if(existing.exists()){
+
+enrollmentStatus.innerText =
+"✅ आप पहले से enrolled हैं।";
+
+setTimeout(
+function(){
+
+window.location.href =
+selectedCourse.url;
+
+},
+800
+);
+
+return;
+
+}
+
+
+/* SAVE ENROLLMENT */
+
+await setDoc(
+enrollmentRef,
+{
+
+userId:
+currentUser.uid,
+
+userEmail:
+currentUser.email || "",
+
+courseId:
+selectedCourse.id,
+
+courseName:
+selectedCourse.name,
+
+originalPrice:
+selectedCourse.price,
+
+discount:
+selectedCourse.price,
+
+payableAmount:0,
+
+couponCode:
+DEMO_COUPON,
+
+paymentStatus:
+"demo_coupon",
+
+enrollmentStatus:
+"active",
+
+access:
+true,
+
+createdAt:
+serverTimestamp()
+
+}
+);
+
+
+/* SUCCESS */
+
+enrollmentStatus.innerText =
+"🎉 Enrollment Successful! Course access मिल गया।";
+
+
+confirmEnrollmentBtn.innerText =
+"✅ Enrolled";
+
+
+/* UPDATE BUTTON */
+
+const courseButton =
+document.querySelector(
+'.buy-btn[data-course-id="' +
+selectedCourse.id +
+'"]'
+);
+
+
+if(courseButton){
+
+courseButton.innerText =
+"📖 Open Course";
+
+courseButton.dataset.enrolled =
+"true";
+
+}
+
+
+/* OPEN COURSE */
+
+setTimeout(
+function(){
+
+window.location.href =
+selectedCourse.url;
+
+},
+1000
+);
+
+
+}catch(error){
+
+console.error(
+"Enrollment error:",
+error
+);
+
+enrollmentStatus.innerText =
+"❌ Enrollment failed: " +
+(error.message ||
+"Unknown error");
+
+
+confirmEnrollmentBtn.disabled =
+false;
+
+confirmEnrollmentBtn.innerText =
+"✅ Confirm Enrollment";
+
+}
+
+});
+
+
+/* =========================
+   CANCEL
+========================= */
+
+cancelPurchaseBtn.addEventListener(
+"click",
+function(){
+
+modal.classList.remove("show");
+
+selectedCourse = null;
+
+couponApplied = false;
+
+});
+
+
+/* CLICK OUTSIDE MODAL */
+
+modal.addEventListener(
+"click",
+function(event){
+
+if(event.target === modal){
+
+modal.classList.remove("show");
+
+selectedCourse = null;
+
+couponApplied = false;
+
+}
+
+});
+
+
+/* =========================
    REFERRAL STATS
-================================= */
+========================= */
 
 async function loadReferralStats(
-  uid,
-  userData
+uid,
+userData
 ){
 
-  try{
+try{
 
-    const referralsRef =
-      collection(
-        db,
-        "referrals"
-      );
-
-
-    const q =
-      query(
-        referralsRef,
-        where(
-          "referrerUid",
-          "==",
-          uid
-        )
-      );
+const referralsRef =
+collection(
+db,
+"referrals"
+);
 
 
-    const snapshot =
-      await getDocs(q);
+const q =
+query(
+referralsRef,
+where(
+"referrerUid",
+"==",
+uid
+)
+);
 
 
-    referralCount.innerText =
-      snapshot.size;
+const snapshot =
+await getDocs(q);
 
 
-    referralPoints.innerText =
-      userData.points || 0;
+referralCount.innerText =
+snapshot.size;
 
 
-  }catch(error){
-
-    console.error(
-      "Referral stats:",
-      error
-    );
+referralPoints.innerText =
+userData.points || 0;
 
 
-    referralCount.innerText =
-      userData.totalReferrals ||
-      0;
+}catch(error){
+
+console.error(
+"Referral stats:",
+error
+);
 
 
-    referralPoints.innerText =
-      userData.points ||
-      0;
+referralCount.innerText =
+userData.totalReferrals || 0;
 
-  }
+
+referralPoints.innerText =
+userData.points || 0;
+
+}
 
 }
 
 
-/* =================================
+/* =========================
    COPY REFERRAL
-================================= */
+========================= */
 
 copyBtn.addEventListener(
-  "click",
-  async function(){
+"click",
+async function(){
 
-    const text =
-      referralLink.value;
+const text =
+referralLink.value;
 
 
-    if(!text){
-      return;
-    }
-
-
-    try{
-
-      await navigator.clipboard
-        .writeText(text);
-
-
-      copyBtn.innerText =
-        "Copied ✓";
-
-
-      setTimeout(
-        function(){
-
-          copyBtn.innerText =
-            "Copy";
-
-        },
-        1500
-      );
-
-
-    }catch(error){
-
-      referralLink.select();
-
-      document.execCommand(
-        "copy"
-      );
-
-      copyBtn.innerText =
-        "Copied ✓";
-
-    }
-
-  }
-);
-
-
-/* =================================
-   BUY COURSE BUTTONS
-================================= */
-
-document
-  .querySelectorAll(".buy-btn")
-  .forEach(
-    function(button){
-
-      button.addEventListener(
-        "click",
-        function(){
-
-          if(!currentUser){
-
-            alert(
-              "कृपया पहले login करें।"
-            );
-
-            return;
-
-          }
-
-
-          selectedCourse = {
-
-            id:
-              button.dataset.course,
-
-            title:
-              button.dataset.title,
-
-            price:
-              Number(
-                button.dataset.price
-              )
-
-          };
-
-
-          selectedPrice =
-            selectedCourse.price;
-
-
-          couponApplied =
-            false;
-
-
-          purchaseTitle.textContent =
-            selectedCourse.title;
-
-
-          purchasePrice.textContent =
-            selectedPrice;
-
-
-          finalPrice.textContent =
-            selectedPrice;
-
-
-          couponInput.value =
-            "";
-
-
-          couponMessage.textContent =
-            "";
-
-
-          purchaseModal.style.display =
-            "flex";
-
-        }
-      );
-
-    }
-  );
-
-
-/* =================================
-   CLOSE POPUP
-================================= */
-
-document
-  .getElementById(
-    "closePurchase"
-  )
-  .addEventListener(
-    "click",
-    function(){
-
-      purchaseModal.style.display =
-        "none";
-
-    }
-  );
-
-
-/* CLICK OUTSIDE */
-
-purchaseModal.addEventListener(
-  "click",
-  function(event){
-
-    if(
-      event.target ===
-      purchaseModal
-    ){
-
-      purchaseModal.style.display =
-        "none";
-
-    }
-
-  }
-);
-
-
-/* =================================
-   APPLY COUPON
-================================= */
-
-document
-  .getElementById(
-    "applyCoupon"
-  )
-  .addEventListener(
-    "click",
-    function(){
-
-      const code =
-        couponInput.value
-          .trim()
-          .toUpperCase();
-
-
-      if(!code){
-
-        couponMessage.textContent =
-          "⚠️ Coupon code डालें।";
-
-        couponMessage.style.color =
-          "#dc2626";
-
-        return;
-
-      }
-
-
-      const coupon =
-        coupons[code];
-
-
-      if(!coupon){
-
-        couponMessage.textContent =
-          "❌ Invalid coupon code";
-
-        couponMessage.style.color =
-          "#dc2626";
-
-        finalPrice.textContent =
-          selectedPrice;
-
-        couponApplied =
-          false;
-
-        return;
-
-      }
-
-
-      let newPrice =
-        selectedPrice;
-
-
-      if(
-        coupon.type ===
-        "fixed"
-      ){
-
-        newPrice =
-          Math.max(
-            0,
-            selectedPrice -
-            coupon.value
-          );
-
-      }
-
-
-      if(
-        coupon.type ===
-        "percent"
-      ){
-
-        newPrice =
-          Math.round(
-            selectedPrice -
-            (
-              selectedPrice *
-              coupon.value /
-              100
-            )
-          );
-
-      }
-
-
-      finalPrice.textContent =
-        newPrice;
-
-
-      couponApplied =
-        true;
-
-
-      couponMessage.textContent =
-        "🎉 Coupon applied successfully!";
-
-      couponMessage.style.color =
-        "#16a34a";
-
-    }
-  );
-
-
-/* =================================
-   CONFIRM PURCHASE
-================================= */
-
-confirmPurchase.addEventListener(
-  "click",
-  async function(){
-
-    if(!currentUser){
-
-      alert(
-        "पहले login करें।"
-      );
-
-      return;
-
-    }
-
-
-    if(!selectedCourse){
-
-      return;
-
-    }
-
-
-    confirmPurchase.disabled =
-      true;
-
-
-    confirmPurchase.textContent =
-      "⏳ Processing...";
-
-
-    try{
-
-      const uid =
-        currentUser.uid;
-
-
-      const enrollmentId =
-        uid +
-        "_" +
-        selectedCourse.id;
-
-
-      const enrollmentRef =
-        doc(
-          db,
-          "enrollments",
-          enrollmentId
-        );
-
-
-      const existing =
-        await getDoc(
-          enrollmentRef
-        );
-
-
-      if(existing.exists()){
-
-        alert(
-          "यह course आपके account में पहले से active है।"
-        );
-
-
-        purchaseModal.style.display =
-          "none";
-
-
-        showOpenButton(
-          selectedCourse.id
-        );
-
-
-        return;
-
-      }
-
-
-      let payable =
-        selectedPrice;
-
-
-      const code =
-        couponInput.value
-          .trim()
-          .toUpperCase();
-
-
-      const coupon =
-        coupons[code];
-
-
-      if(
-        couponApplied &&
-        coupon
-      ){
-
-        if(
-          coupon.type ===
-          "fixed"
-        ){
-
-          payable =
-            Math.max(
-              0,
-              selectedPrice -
-              coupon.value
-            );
-
-        }
-
-
-        if(
-          coupon.type ===
-          "percent"
-        ){
-
-          payable =
-            Math.round(
-              selectedPrice -
-              (
-                selectedPrice *
-                coupon.value /
-                100
-              )
-            );
-
-        }
-
-      }
-
-
-      /*
-        TEST PURCHASE
-
-        अभी कोई real payment नहीं है।
-      */
-
-      await setDoc(
-        enrollmentRef,
-        {
-
-          userId:
-            uid,
-
-          courseId:
-            selectedCourse.id,
-
-          courseTitle:
-            selectedCourse.title,
-
-          originalPrice:
-            selectedPrice,
-
-          payableAmount:
-            payable,
-
-          couponCode:
-            code || null,
-
-          paymentStatus:
-            "test",
-
-          status:
-            "active",
-
-          purchasedAt:
-            serverTimestamp()
-
-        }
-      );
-
-
-      purchaseModal.style.display =
-        "none";
-
-
-      showOpenButton(
-        selectedCourse.id
-      );
-
-
-      alert(
-        "🎉 Course successfully purchased!\n\nअब आपका course active है।"
-      );
-
-
-    }catch(error){
-
-      console.error(
-        "Purchase error:",
-        error
-      );
-
-
-      alert(
-        "Purchase नहीं हो पाया:\n" +
-        error.message
-      );
-
-
-    }finally{
-
-      confirmPurchase.disabled =
-        false;
-
-
-      confirmPurchase.textContent =
-        "✅ Confirm Purchase";
-
-    }
-
-  }
-);
-
-
-/* =================================
-   CHECK PURCHASED COURSES
-================================= */
-
-async function checkPurchasedCourses(
-  uid
-){
-
-  const courseIds = [
-    "step",
-    "competitive"
-  ];
-
-
-  for(
-    const courseId
-    of courseIds
-  ){
-
-    try{
-
-      const enrollmentId =
-        uid +
-        "_" +
-        courseId;
-
-
-      const enrollmentRef =
-        doc(
-          db,
-          "enrollments",
-          enrollmentId
-        );
-
-
-      const enrollmentSnap =
-        await getDoc(
-          enrollmentRef
-        );
-
-
-      if(
-        enrollmentSnap.exists() &&
-        enrollmentSnap.data().status ===
-        "active"
-      ){
-
-        showOpenButton(
-          courseId
-        );
-
-      }
-
-    }catch(error){
-
-      console.error(
-        "Enrollment check:",
-        error
-      );
-
-    }
-
-  }
-
+if(!text){
+return;
 }
 
 
-/* =================================
-   SHOW OPEN BUTTON
-================================= */
+try{
 
-function showOpenButton(
-  courseId
-){
-
-  const buyButton =
-    document.querySelector(
-      '.buy-btn[data-course="' +
-      courseId +
-      '"]'
-    );
+await navigator.clipboard
+.writeText(text);
 
 
-  if(buyButton){
-
-    buyButton.style.display =
-      "none";
-
-  }
+copyBtn.innerText =
+"Copied ✓";
 
 
-  const openButton =
-    document.querySelector(
-      "#open-" +
-      courseId
-    );
+setTimeout(
+function(){
+
+copyBtn.innerText =
+"Copy";
+
+},
+1500
+);
 
 
-  if(openButton){
+}catch(error){
 
-    openButton.style.display =
-      "block";
+referralLink.select();
 
-  }
+document.execCommand("copy");
+
+copyBtn.innerText =
+"Copied ✓";
 
 }
 
+});
 
-/* =================================
+
+/* =========================
    LOGOUT
-================================= */
+========================= */
 
 logoutBtn.addEventListener(
-  "click",
-  async function(){
+"click",
+async function(){
 
-    logoutBtn.disabled =
-      true;
+logoutBtn.disabled = true;
 
+try{
 
-    try{
+await signOut(auth);
 
-      await signOut(auth);
+window.location.href =
+"login.html";
 
+}catch(error){
 
-      window.location.href =
-        "login.html";
+console.error(error);
 
+logoutBtn.disabled = false;
 
-    }catch(error){
-
-      console.error(
-        error
-      );
-
-
-      logoutBtn.disabled =
-        false;
-
-
-      alert(
-        "Logout नहीं हो पाया। फिर कोशिश करें।"
-      );
-
-    }
-
-  }
+alert(
+"Logout नहीं हो पाया। फिर कोशिश करें।"
 );
+
+}
+
+});
 
 </script>
 
