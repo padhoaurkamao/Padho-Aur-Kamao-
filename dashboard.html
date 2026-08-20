@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 
@@ -9,7 +8,6 @@
 <title>Dashboard - Padho Aur Kamao</title>
 
 <style>
-
 *{
   box-sizing:border-box;
 }
@@ -24,7 +22,7 @@ body{
 header{
   background:linear-gradient(135deg,#5b21b6,#7c3aed);
   color:white;
-  padding:25px 18px;
+  padding:22px 16px;
 }
 
 .header-inner{
@@ -33,11 +31,10 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:15px;
 }
 
 .logo{
-  font-size:24px;
+  font-size:23px;
   font-weight:bold;
 }
 
@@ -52,10 +49,11 @@ header{
 .user-email{
   font-size:13px;
   opacity:.85;
+  margin-top:4px;
 }
 
 .logout{
-  margin-top:7px;
+  margin-top:8px;
   padding:8px 14px;
   border:0;
   border-radius:8px;
@@ -88,11 +86,14 @@ header{
   color:#6b7280;
 }
 
+
+/* TOP STATS */
+
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:15px;
-  margin-bottom:25px;
+  margin-bottom:28px;
 }
 
 .stat{
@@ -103,7 +104,7 @@ header{
 }
 
 .stat-icon{
-  font-size:25px;
+  font-size:26px;
 }
 
 .stat-number{
@@ -117,75 +118,107 @@ header{
   font-size:14px;
 }
 
+
+/* COURSE */
+
 .section-title{
   margin:28px 0 15px;
-}
-
-.courses{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
 }
 
 .course{
   background:white;
   border-radius:18px;
-  padding:20px;
+  padding:22px;
   box-shadow:0 5px 20px #0001;
 }
 
+.course-top{
+  display:flex;
+  gap:15px;
+  align-items:center;
+}
+
 .course-icon{
-  width:55px;
-  height:55px;
-  border-radius:14px;
+  width:58px;
+  height:58px;
   display:flex;
   align-items:center;
   justify-content:center;
   background:#ede9fe;
-  font-size:28px;
+  border-radius:15px;
+  font-size:30px;
 }
 
-.course h3{
-  margin:14px 0 6px;
+.course h2{
+  margin:0 0 5px;
 }
 
 .description{
   color:#6b7280;
-  font-size:14px;
   line-height:1.5;
 }
 
-.price{
-  font-size:22px;
-  font-weight:bold;
-  color:#5b21b6;
-  margin-top:12px;
+
+/* MONEY CARDS */
+
+.money-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:22px;
 }
 
-.commission{
-  display:inline-block;
-  margin-top:7px;
-  background:#dcfce7;
-  color:#166534;
-  padding:5px 9px;
-  border-radius:7px;
-  font-size:13px;
-  font-weight:bold;
+.money-card{
+  border-radius:16px;
+  padding:20px;
+  background:#fff;
+  box-shadow:0 5px 18px #0001;
 }
+
+.money-icon{
+  font-size:28px;
+}
+
+.money-title{
+  color:#6b7280;
+  margin-top:8px;
+  font-size:14px;
+}
+
+.money-value{
+  font-size:26px;
+  font-weight:bold;
+  margin-top:6px;
+}
+
+.price-card{
+  border-left:5px solid #7c3aed;
+}
+
+.commission-card{
+  border-left:5px solid #16a34a;
+}
+
+.passive-card{
+  border-left:5px solid #f59e0b;
+}
+
+
+/* PROGRESS */
 
 .progress-box{
-  margin-top:15px;
+  margin-top:22px;
 }
 
 .progress-info{
   display:flex;
   justify-content:space-between;
-  font-size:13px;
-  margin-bottom:6px;
+  margin-bottom:7px;
+  font-size:14px;
 }
 
 .progress{
-  height:9px;
+  height:10px;
   background:#e5e7eb;
   border-radius:20px;
   overflow:hidden;
@@ -193,43 +226,38 @@ header{
 
 .progress-bar{
   height:100%;
+  width:0%;
   background:#7c3aed;
   border-radius:20px;
 }
 
+
+/* LESSONS */
+
 .lessons{
-  margin-top:16px;
+  margin-top:22px;
 }
 
 .lesson{
-  padding:11px;
-  border:1px solid #e5e7eb;
-  border-radius:9px;
-  margin-top:7px;
   display:flex;
   justify-content:space-between;
+  align-items:center;
   gap:10px;
-  font-size:14px;
+  padding:13px;
+  margin-top:8px;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
 }
 
 .lesson a{
   color:#5b21b6;
   text-decoration:none;
   font-weight:bold;
+  white-space:nowrap;
 }
 
-.video-box{
-  margin-top:15px;
-  background:#111827;
-  border-radius:12px;
-  padding:18px;
-  color:white;
-  text-align:center;
-}
 
-.video-placeholder{
-  padding:30px 10px;
-}
+/* EARNINGS */
 
 .earnings{
   display:grid;
@@ -249,6 +277,9 @@ header{
   font-size:22px;
   margin-top:8px;
 }
+
+
+/* LEADERBOARD */
 
 .leaderboard{
   background:white;
@@ -274,15 +305,21 @@ footer{
   padding:30px 10px;
 }
 
+
+/* MOBILE */
+
 @media(max-width:800px){
 
-  .stats,
-  .earnings{
+  .stats{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .courses{
+  .money-cards{
     grid-template-columns:1fr;
+  }
+
+  .earnings{
+    grid-template-columns:repeat(2,1fr);
   }
 
 }
@@ -292,6 +329,7 @@ footer{
   .header-inner{
     flex-direction:column;
     align-items:flex-start;
+    gap:12px;
   }
 
   .user{
@@ -303,13 +341,19 @@ footer{
     grid-template-columns:1fr;
   }
 
-}
+  .lesson{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 
+}
 </style>
 
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -322,13 +366,15 @@ footer{
 <div class="user">
 
 <div id="userName" class="user-name">
-Loading...
+Student
 </div>
 
 <div id="userEmail" class="user-email">
 </div>
 
-<button id="logoutBtn" class="logout">
+<button
+id="logoutBtn"
+class="logout">
 🚪 Logout
 </button>
 
@@ -341,6 +387,8 @@ Loading...
 
 <div class="container">
 
+
+<!-- WELCOME -->
 
 <div class="welcome">
 
@@ -361,14 +409,18 @@ Welcome to your learning dashboard.
 
 <div class="stat">
 
-<div class="stat-icon">🎓</div>
+<div class="stat-icon">
+🎓
+</div>
 
-<div id="courseCount" class="stat-number">
-4
+<div
+id="courseCount"
+class="stat-number">
+1
 </div>
 
 <div class="stat-title">
-Courses
+Course
 </div>
 
 </div>
@@ -376,10 +428,14 @@ Courses
 
 <div class="stat">
 
-<div class="stat-icon">📚</div>
+<div class="stat-icon">
+📚
+</div>
 
-<div id="lessonCount" class="stat-number">
-20
+<div
+id="lessonCount"
+class="stat-number">
+8
 </div>
 
 <div class="stat-title">
@@ -391,9 +447,12 @@ Lessons
 
 <div class="stat">
 
-<div class="stat-icon">📈</div>
+<div class="stat-icon">
+📈
+</div>
 
-<div id="overallProgress" class="stat-number">
+<div
+class="stat-number">
 0%
 </div>
 
@@ -406,7 +465,9 @@ Overall Progress
 
 <div class="stat">
 
-<div class="stat-icon">🏆</div>
+<div class="stat-icon">
+🏆
+</div>
 
 <div class="stat-number">
 #10
@@ -421,13 +482,238 @@ Leaderboard Rank
 </div>
 
 
-<!-- COURSES -->
+<!-- COURSE -->
 
 <h2 class="section-title">
-🎓 My Courses
+🎓 My Course
 </h2>
 
-<div id="courses" class="courses">
+
+<div class="course">
+
+
+<div class="course-top">
+
+<div class="course-icon">
+🚀
+</div>
+
+<div>
+
+<h2>
+Step To Success
+</h2>
+
+<div class="description">
+Content Creation, Lead Generation,
+Communication Skills, Math, Reasoning,
+Hindi और General Studies की practical learning।
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MONEY CARDS -->
+
+<div class="money-cards">
+
+
+<div class="money-card price-card">
+
+<div class="money-icon">
+💰
+</div>
+
+<div class="money-title">
+Course Price
+</div>
+
+<div class="money-value">
+₹199
+</div>
+
+</div>
+
+
+<div class="money-card commission-card">
+
+<div class="money-icon">
+💵
+</div>
+
+<div class="money-title">
+Commission Per Sale
+</div>
+
+<div class="money-value">
+₹100
+</div>
+
+</div>
+
+
+<div class="money-card passive-card">
+
+<div class="money-icon">
+📈
+</div>
+
+<div class="money-title">
+Passive Income
+</div>
+
+<div class="money-value">
+₹20
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- PROGRESS -->
+
+<div class="progress-box">
+
+<div class="progress-info">
+
+<span>
+Course Progress
+</span>
+
+<strong>
+0%
+</strong>
+
+</div>
+
+<div class="progress">
+
+<div class="progress-bar">
+</div>
+
+</div>
+
+</div>
+
+
+<!-- LESSONS -->
+
+<div class="lessons">
+
+<h3>
+📚 Course Lessons
+</h3>
+
+
+<div class="lesson">
+
+<span>
+📱 Content Creation & Content Strategy
+</span>
+
+<a href="lesson.html?course=0&lesson=0">
+🎥 Open
+</a>
+
+</div>
+
+
+<div class="lesson">
+
+<span>
+🎯 Lead Generation
+</span>
+
+<a href="lesson.html?course=0&lesson=1">
+🎥 Open
+</a>
+
+</div>
+
+
+<div class="lesson">
+
+<span>
+💬 Communication Skills
+</span>
+
+<a href="lesson.html?course=0&lesson=2">
+🎥 Open
+</a>
+
+</div>
+
+
+<div class="lesson">
+
+<span>
+➗ Mathematics
+</span>
+
+<a href="lesson.html?course=0&lesson=3">
+🎥 Open
+</a>
+
+</div>
+
+
+<div class="lesson">
+
+<span>
+🧠 Reasoning
+</span>
+
+<a href="lesson.html?course=0&lesson=4">
+🎥 Open
+</a>
+
+</div>
+
+
+<div class="lesson">
+
+<span>
+📝 Hindi
+</span>
+
+<a href="lesson.html?course=0&lesson=5">
+🎥 Open
+</a>
+
+</div>
+
+
+<div class="lesson">
+
+<span>
+🌍 General Studies (GS)
+</span>
+
+<a href="lesson.html?course=0&lesson=6">
+🎥 Open
+</a>
+
+</div>
+
+
+<div class="lesson">
+
+<span>
+🚀 Practical Skill Project
+</span>
+
+<a href="lesson.html?course=0&lesson=7">
+🎥 Open
+</a>
+
+</div>
+
+</div>
+
 </div>
 
 
@@ -476,7 +762,7 @@ Leaderboard Rank
 
 📈 Total
 
-<strong id="totalEarning">
+<strong>
 ₹0
 </strong>
 
@@ -515,6 +801,7 @@ Leaderboard Rank
 
 </div>
 
+
 </div>
 
 
@@ -529,10 +816,9 @@ Learn • Practice • Grow
 </footer>
 
 
+<!-- FIREBASE -->
+
 <script type="module">
-
-
-/* FIREBASE */
 
 import {
   initializeApp
@@ -550,39 +836,28 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
-import {
-  getFirestore,
-  doc,
-  getDoc
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
-
-/* FIREBASE CONFIG */
-
 const firebaseConfig = {
 
-  apiKey:
-  "AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+apiKey:
+"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
-  authDomain:
-  "padho-aur-kamao-3eeae.firebaseapp.com",
+authDomain:
+"padho-aur-kamao-3eeae.firebaseapp.com",
 
-  projectId:
-  "padho-aur-kamao-3eeae",
+projectId:
+"padho-aur-kamao-3eeae",
 
-  storageBucket:
-  "padho-aur-kamao-3eeae.firebasestorage.app",
+storageBucket:
+"padho-aur-kamao-3eeae.firebasestorage.app",
 
-  messagingSenderId:
-  "670063905617",
+messagingSenderId:
+"670063905617",
 
-  appId:
-  "1:670063905617:web:9b3a7e62fdeea14fbfa170",
+appId:
+"1:670063905617:web:9b3a7e62fdeea14fbfa170",
 
-  measurementId:
-  "G-7J1YV8HN3F"
+measurementId:
+"G-7J1YV8HN3F"
 
 };
 
@@ -593,405 +868,44 @@ initializeApp(firebaseConfig);
 const auth =
 getAuth(app);
 
-const db =
-getFirestore(app);
-
-
-/* =========================
-   COURSE SETTINGS
-
-   यहाँ NAME, PRICE और
-   COMMISSION बदलें
-========================= */
-
-const courses = [
-
-{
-
-name:" bigner course ",
-
-price:150,
-
-commissionRate:90,
-
-description:
-" lead generation aur combinations skill 
-  Math Reasoning hindi gs ।",
-
-icon:"📈",
-
-progress:0,
-
-lessons:[
-
-"Affiliate Marketing Basics",
-
-"Affiliate Links",
-
-"Content Strategy",
-
-"Promotion",
-
-"Practical Project"
-
-]
-
-},
-
-
-{
-
-name:"advance course",
-
-price:250,
-
-commissionRate:130 ,
-
-description:
-"Instagram content और audience growth top teacher Maths reasoning",
-  
-icon:"📱",
-
-progress:0,
-
-lessons:[
-
-"Instagram Basics",
-
-"Profile Setup",
-
-" English ",
-
-"math reasoning",
-
-gk gs"
-
-]
-
-},
-
-
-{
-
-name:"Super course",
-
-price:499,
-
-commissionRate:250,
-
-description:
-"Leads को समझना और ethical lead-generation methods सीखना।",
-
-icon:"🎯",
-
-progress:0,
-
-lessons:[
-
-"Lead Generation Basics",
-
-"Lead Management",
-
-"Organic Leads",
-
-"Collaboration",
-
-"all batch aur "
-" 12th exam 10th exam 
-  aur all Competitive exam coverd
-]
-
-},
-
-
-{
-
-name:" Success course ",
-
-price:699,
-
-commissionRate:400,
-
-description:
-"Planning, productivity और useful digital skills + all exam course competative neet exam covered।",
-
-icon:"🚀",
-
-progress:0,
-
-lessons:[
-
-"Goal Setting",
-
-"Time Management",
-
-"Productivity",
-
-"Digital Skills",
-
-" all exam+ neet"
-
-]
-
-}
-
-];
-
-
-/* RENDER COURSES */
-
-const coursesBox =
-document.getElementById("courses");
-
-
-function renderCourses(){
-
-  coursesBox.innerHTML = "";
-
-  let totalLessons = 0;
-
-  let totalProgress = 0;
-
-
-  courses.forEach(
-  function(course,index){
-
-    totalLessons +=
-    course.lessons.length;
-
-    totalProgress +=
-    course.progress;
-
-
-    const card =
-    document.createElement("div");
-
-    card.className =
-    "course";
-
-
-    let lessonsHTML = "";
-
-
-    course.lessons.forEach(
-    function(lesson,lessonIndex){
-
-      lessonsHTML += `
-
-      <div class="lesson">
-
-        <span>
-        ${lessonIndex + 1}. ${lesson}
-        </span>
-
-        <a
-        href="lesson.html?course=${index}&lesson=${lessonIndex}">
-
-        🎥 Open
-
-        </a>
-
-      </div>
-
-      `;
-
-    });
-
-
-    card.innerHTML = `
-
-      <div class="course-icon">
-      ${course.icon}
-      </div>
-
-      <h3>
-      ${course.name}
-      </h3>
-
-      <div class="description">
-      ${course.description}
-      </div>
-
-      <div class="price">
-      ₹${course.price}
-      </div>
-
-      <div class="commission">
-      Commission: ${course.commissionRate}%
-      </div>
-
-      <div class="progress-box">
-
-        <div class="progress-info">
-
-          <span>
-          Progress
-          </span>
-
-          <strong>
-          ${course.progress}%
-          </strong>
-
-        </div>
-
-        <div class="progress">
-
-          <div
-          class="progress-bar"
-          style="width:${course.progress}%">
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="lessons">
-
-        <strong>
-        📚 Lessons
-        </strong>
-
-        ${lessonsHTML}
-
-      </div>
-
-
-      <div class="video-box">
-
-        <div class="video-placeholder">
-
-          🎥
-
-          <br><br>
-
-          Video Hosting
-
-          <br>
-
-          Lesson पर click करके video खोलें।
-
-        </div>
-
-      </div>
-
-    `;
-
-
-    coursesBox.appendChild(card);
-
-  });
-
-
-  document.getElementById(
-  "courseCount"
-  ).innerText =
-  courses.length;
-
-
-  document.getElementById(
-  "lessonCount"
-  ).innerText =
-  totalLessons;
-
-
-  const average =
-  Math.round(
-  totalProgress / courses.length
-  );
-
-
-  document.getElementById(
-  "overallProgress"
-  ).innerText =
-  average + "%";
-
-}
-
-
-renderCourses();
-
 
 /* LOGIN CHECK */
 
 onAuthStateChanged(
 auth,
-async function(user){
+function(user){
 
-  if(!user){
+if(!user){
 
-    window.location.href =
-    "login.html";
+window.location.href =
+"login.html";
 
-    return;
+return;
 
-  }
-
-
-  const name =
-  user.displayName ||
-  "Student";
+}
 
 
-  document.getElementById(
-  "userName"
-  ).innerText =
-  name;
+const name =
+user.displayName ||
+"Student";
 
 
-  document.getElementById(
-  "welcomeName"
-  ).innerText =
-  name;
+document.getElementById(
+"userName"
+).innerText =
+name;
 
 
-  document.getElementById(
-  "userEmail"
-  ).innerText =
-  user.email || "";
+document.getElementById(
+"welcomeName"
+).innerText =
+name;
 
 
-  try{
-
-    const userRef =
-    doc(
-    db,
-    "users",
-    user.uid
-    );
-
-
-    const userSnap =
-    await getDoc(userRef);
-
-
-    if(userSnap.exists()){
-
-      const data =
-      userSnap.data();
-
-
-      if(data.totalEarning){
-
-        document.getElementById(
-        "totalEarning"
-        ).innerText =
-        "₹" + data.totalEarning;
-
-      }
-
-    }
-
-  }
-
-  catch(error){
-
-    console.log(
-    "Firestore data unavailable",
-    error
-    );
-
-  }
+document.getElementById(
+"userEmail"
+).innerText =
+user.email || "";
 
 });
 
@@ -1004,24 +918,25 @@ document.getElementById(
 "click",
 async function(){
 
-  try{
+try{
 
-    await signOut(auth);
+await signOut(auth);
 
-    window.location.href =
-    "login.html";
+window.location.href =
+"login.html";
 
-  }
+}
 
-  catch(error){
+catch(error){
 
-    console.error(error);
+console.error(error);
 
-  }
+}
 
 });
 
 </script>
+
 
 </body>
 
