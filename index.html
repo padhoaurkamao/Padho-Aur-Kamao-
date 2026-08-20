@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -13,7 +14,7 @@
 
 body{
   margin:0;
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
   background:#f5f7ff;
   color:#172033;
 }
@@ -154,95 +155,119 @@ footer{
   text-align:center;
   padding:25px 15px;
 }
+
+.referral-message{
+  display:none;
+  max-width:700px;
+  margin:20px auto 0;
+  padding:14px 18px;
+  background:#ecfdf5;
+  color:#166534;
+  border:1px solid #bbf7d0;
+  border-radius:12px;
+  font-weight:bold;
+}
+
+@media(max-width:550px){
+
+  .hero{
+    padding:40px 15px;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  .login-btn{
+    padding:8px 12px;
+    font-size:13px;
+  }
+
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">📚 Padho Aur Kamao</div>
 
-    <a class="login-btn" href="login.html">
+  <div class="nav">
+
+    <div class="logo">
+      📚 Padho Aur Kamao
+    </div>
+
+    <a
+      class="login-btn"
+      href="login.html"
+      id="loginBtn">
+
       Login / Signup
+
     </a>
+
   </div>
+
 </header>
+
 
 <section class="hero">
 
-  <h1>Padho Aur Kamao 🚀</h1>
+  <h1>
+    Padho Aur Kamao 🚀
+  </h1>
 
   <p>
     सीखें • Skill बढ़ाएँ • अपने ज्ञान का सही उपयोग करें
   </p>
 
-  <a class="start-btn" href="login.html">
+  <div
+    id="referralMessage"
+    class="referral-message">
+
+    🎉 Referral Link से आपका स्वागत है!
+
+  </div>
+
+  <a
+    class="start-btn"
+    href="login.html"
+    id="startBtn">
+
     शुरू करें →
+
   </a>
 
 </section>
 
+
 <section class="section">
 
-  <h2>🎓 हमारे Courses</h2>
-  
-<div class="courses">
+  <h2>
+    🎓 हमारे Courses
+  </h2>
 
-  <div class="course">
-
-    <div class="icon">🚀</div>
-
-    <h3>Step To Success</h3>
-
-    <p>
-      Lead Generation, Communication Skills,
-      Maths, Reasoning, Hindi और General Studies (GS)
-      की learning।
-    </p>
-
-    <strong>💰 Price: ₹199</strong><br>
-    <span style="color:#16a34a;">
-      🎯 Commission per Sale: ₹100
-    </span><br>
-    <span style="color:#7c3aed;">
-      🔗 Passive Income: ₹20
-    </span>
-
-    <a
-      class="course-btn"
-      href="step-to-success.html">
-      Course देखें
-    </a>
-
-  </div>
+  <div class="courses">
 
 
-  <div class="course">
+    <!-- COURSE 1 -->
 
-    <div class="icon">🎓</div>
+    <div class="course">
 
-    <h3>All Competitive Exam</h3>
+      <div class="icon">
+        🚀
+      </div>
 
-    <p>
-      10th और 12th level exams की
-      preparation, practice और assessment।
-    </p>
+      <h3>
+        Step To Success
+      </h3>
 
-    <strong>💰 Price: ₹399</strong><br>
-    <span style="color:#16a34a;">
-      🎯 Commission per Sale: ₹200
-    </span><br>
-    <span style="color:#7c3aed;">
-      🔗 Passive Income: ₹50
-    </span>
-
-    <a
-      class="course-btn"
-      href="all-competitive-exam.html">
-      Course देखें
-    </a>
-
-  </div>
-
-</div>
+      <p>
