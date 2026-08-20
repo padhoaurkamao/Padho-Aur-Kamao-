@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -15,527 +16,760 @@ body{
   margin:0;
   font-family:Arial,sans-serif;
   background:#f4f7fb;
-  color:#111827;
+  color:#172033;
 }
+
+/* HEADER */
 
 header{
-  background:linear-gradient(135deg,#5b21b6,#7c3aed);
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
   color:white;
-  padding:22px 16px;
+  padding:18px 20px;
+  position:sticky;
+  top:0;
+  z-index:100;
 }
 
-.header-inner{
-  max-width:1100px;
+.header{
+  max-width:1150px;
   margin:auto;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  gap:15px;
+  justify-content:space-between;
 }
 
 .logo{
-  font-size:22px;
+  font-size:21px;
   font-weight:bold;
 }
 
-.settings{
-  background:#ffffff22;
-  color:white;
-  border:1px solid #ffffff44;
-  padding:10px 14px;
-  border-radius:10px;
+.logout{
+  border:0;
+  background:white;
+  color:#5b21b6;
+  padding:9px 15px;
+  border-radius:20px;
+  font-weight:bold;
+  cursor:pointer;
 }
+
+/* MAIN */
 
 .container{
-  max-width:1100px;
+  max-width:1150px;
   margin:auto;
-  padding:20px 15px 50px;
+  padding:25px 18px 100px;
 }
 
+/* WELCOME */
+
 .welcome{
-  background:white;
-  padding:20px;
-  border-radius:18px;
-  box-shadow:0 5px 20px #00000010;
-  margin-bottom:20px;
+  background:linear-gradient(135deg,#4f46e5,#8b5cf6);
+  color:white;
+  padding:28px;
+  border-radius:22px;
+  margin-bottom:25px;
+  box-shadow:0 8px 25px #4f46e544;
 }
+
+.welcome h1{
+  margin:0 0 8px;
+  font-size:30px;
+}
+
+.welcome p{
+  margin:0;
+  opacity:.9;
+}
+
+/* STATS */
 
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:14px;
+  gap:15px;
   margin-bottom:25px;
 }
 
 .stat{
   background:white;
-  padding:18px;
-  border-radius:16px;
-  box-shadow:0 4px 15px #0000000d;
+  padding:20px;
+  border-radius:18px;
+  box-shadow:0 5px 20px #0001;
 }
 
 .stat-icon{
-  font-size:25px;
+  font-size:28px;
 }
 
-.stat h3{
-  margin:8px 0 3px;
-  font-size:24px;
-}
-
-.stat p{
-  margin:0;
+.stat-title{
   color:#6b7280;
+  margin-top:8px;
+  font-size:14px;
 }
+
+.stat-value{
+  font-size:24px;
+  font-weight:bold;
+  margin-top:5px;
+}
+
+/* SECTIONS */
 
 .section-title{
-  margin:25px 0 15px;
+  font-size:21px;
+  margin:28px 0 15px;
 }
+
+/* QUICK ACTIONS */
+
+.actions{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.action{
+  background:white;
+  padding:22px;
+  border-radius:18px;
+  text-decoration:none;
+  color:#172033;
+  box-shadow:0 5px 20px #0001;
+  transition:.2s;
+}
+
+.action:hover{
+  transform:translateY(-3px);
+}
+
+.action-icon{
+  font-size:34px;
+}
+
+.action h3{
+  margin:10px 0 5px;
+}
+
+.action p{
+  margin:0;
+  color:#6b7280;
+  font-size:14px;
+}
+
+/* REFERRAL */
+
+.referral{
+  background:white;
+  padding:22px;
+  border-radius:18px;
+  box-shadow:0 5px 20px #0001;
+}
+
+.referral-box{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+.referral-box input{
+  flex:1;
+  padding:13px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  font-size:14px;
+}
+
+.copy-btn{
+  border:0;
+  background:#6d28d9;
+  color:white;
+  padding:0 18px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* COURSES */
 
 .courses{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
 }
 
 .course{
   background:white;
-  border-radius:18px;
   padding:20px;
-  box-shadow:0 5px 20px #00000010;
+  border-radius:18px;
+  box-shadow:0 5px 20px #0001;
 }
 
 .course-icon{
-  font-size:40px;
+  font-size:38px;
 }
 
-.course h2{
-  margin:10px 0 5px;
+.course h3{
+  margin:10px 0 7px;
 }
 
-.description{
+.course p{
   color:#6b7280;
+  font-size:14px;
   line-height:1.5;
 }
 
-.price{
-  font-size:28px;
-  font-weight:bold;
-  color:#5b21b6;
-  margin:15px 0;
-}
-
-.money{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-
-.money-card{
-  background:#f5f3ff;
-  padding:13px;
-  border-radius:12px;
-}
-
-.money-card strong{
+.course-btn{
   display:block;
-  font-size:20px;
-  margin-top:5px;
-  color:#5b21b6;
-}
-
-.subjects{
-  margin:15px 0;
-}
-
-.subject{
-  display:inline-block;
+  text-align:center;
   background:#eef2ff;
-  color:#4338ca;
-  padding:7px 10px;
-  border-radius:20px;
-  margin:4px;
-  font-size:13px;
-}
-
-.teacher{
-  background:#f9fafb;
-  padding:12px;
-  border-radius:10px;
-  margin-top:10px;
-}
-
-.video-list{
+  color:#4f46e5;
+  padding:11px;
+  border-radius:9px;
+  text-decoration:none;
+  font-weight:bold;
   margin-top:15px;
 }
 
-.lesson{
-  padding:12px;
+/* PROFILE */
+
+.profile{
+  background:white;
+  padding:22px;
+  border-radius:18px;
+  box-shadow:0 5px 20px #0001;
+}
+
+.profile-row{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
   border-bottom:1px solid #eee;
 }
 
-.watch{
-  width:100%;
-  margin-top:15px;
-  padding:13px;
-  border:0;
-  border-radius:10px;
-  background:#6d28d9;
-  color:white;
-  font-weight:bold;
-  font-size:15px;
+.profile-row:last-child{
+  border-bottom:0;
 }
 
-.logout{
-  display:block;
-  margin:30px auto 0;
-  padding:12px 25px;
-  border:0;
-  border-radius:10px;
-  background:#dc2626;
-  color:white;
-  font-weight:bold;
-}
-
-footer{
-  text-align:center;
+.label{
   color:#6b7280;
-  padding:20px;
 }
 
-@media(max-width:800px){
+/* BOTTOM NAV */
+
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:white;
+  box-shadow:0 -3px 15px #0002;
+  display:flex;
+  justify-content:space-around;
+  padding:9px 5px;
+  z-index:200;
+}
+
+.bottom-nav a{
+  text-decoration:none;
+  color:#6b7280;
+  text-align:center;
+  font-size:12px;
+}
+
+.bottom-nav span{
+  display:block;
+  font-size:22px;
+  margin-bottom:2px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
   .stats{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .actions{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .courses{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:550px){
+
+  .container{
+    padding:18px 13px 90px;
+  }
+
+  .welcome{
+    padding:22px;
+  }
+
+  .welcome h1{
+    font-size:25px;
+  }
+
+  .logo{
+    font-size:17px;
+  }
+
+  .stats{
+    gap:10px;
+  }
+
+  .stat{
+    padding:15px;
+  }
+
+  .stat-value{
+    font-size:20px;
+  }
+
+  .actions{
+    gap:10px;
+  }
+
+  .action{
+    padding:16px;
   }
 
   .courses{
     grid-template-columns:1fr;
   }
-}
 
-@media(max-width:500px){
-  .header-inner{
-    align-items:flex-start;
+  .referral-box{
+    flex-direction:column;
   }
 
-  .stats{
-    grid-template-columns:1fr 1fr;
+  .copy-btn{
+    padding:12px;
   }
 
-  .money{
-    grid-template-columns:1fr;
-  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-  <div class="header-inner">
+
+  <div class="header">
 
     <div class="logo">
       📚 Padho Aur Kamao
     </div>
 
-    <button class="settings" onclick="showSettings()">
-      ⚙️ Settings
+    <button id="logoutBtn" class="logout">
+      🚪 Logout
     </button>
 
   </div>
+
 </header>
 
 
-<div class="container">
+<!-- MAIN -->
 
-  <div class="welcome">
-    <h2 id="welcomeName">Hello 👋</h2>
-    <p id="userEmail">
-      Welcome to your learning dashboard.
+<main class="container">
+
+
+  <!-- WELCOME -->
+
+  <section class="welcome">
+
+    <h1>
+      👋 Welcome to Padho Aur Kamao
+    </h1>
+
+    <p id="welcomeText">
+      आपका Dashboard तैयार है।
     </p>
-  </div>
+
+  </section>
 
 
   <!-- STATS -->
 
-  <div class="stats">
+  <section class="stats">
 
     <div class="stat">
-      <div class="stat-icon">🎓</div>
-      <h3>2</h3>
-      <p>Courses</p>
-    </div>
 
-    <div class="stat">
-      <div class="stat-icon">📚</div>
-      <h3>10+</h3>
-      <p>Lessons</p>
-    </div>
-
-    <div class="stat">
       <div class="stat-icon">💰</div>
-      <h3>₹100</h3>
-      <p>Commission</p>
+
+      <div class="stat-title">
+        Total Earnings
+      </div>
+
+      <div class="stat-value">
+        ₹0
+      </div>
+
     </div>
+
 
     <div class="stat">
-      <div class="stat-icon">📈</div>
-      <h3>₹20</h3>
-      <p>Passive Income</p>
-    </div>
 
-  </div>
-
-
-  <h2 class="section-title">
-    🎓 My Courses
-  </h2>
-
-
-  <div class="courses">
-
-
-    <!-- COURSE 1 -->
-
-    <div class="course">
-
-      <div class="course-icon">🚀</div>
-
-      <h2>Step To Success</h2>
-
-      <p class="description">
-        Lead Generation, Communication Skills,
-        Math, Reasoning, Hindi और General Studies
-        की practical learning.
-      </p>
-
-      <div class="price">
-        ₹199
-      </div>
-
-
-      <div class="money">
-
-        <div class="money-card">
-          💰 Commission
-          <strong>₹100</strong>
-          <small>Per Sale</small>
-        </div>
-
-        <div class="money-card">
-          📈 Passive Income
-          <strong>₹20</strong>
-          <small>Target Amount</small>
-        </div>
-
-      </div>
-
-
-      <div class="subjects">
-
-        <span class="subject">Lead Generation</span>
-        <span class="subject">Communication</span>
-        <span class="subject">Math</span>
-        <span class="subject">Reasoning</span>
-        <span class="subject">Hindi</span>
-        <span class="subject">GS</span>
-
-      </div>
-
-
-      <h3>👨‍🏫 Teachers</h3>
-
-      <div class="teacher">
-        👨‍🏫 Lead Generation Teacher
-      </div>
-
-      <div class="teacher">
-        👩‍🏫 Communication Skills Teacher
-      </div>
-
-      <div class="teacher">
-        👨‍🏫 Math & Reasoning Teacher
-      </div>
-
-
-      <div class="video-list">
-
-        <div class="lesson">
-          🎥 Lesson 1 — Introduction
-        </div>
-
-        <div class="lesson">
-          🎥 Lesson 2 — Lead Generation
-        </div>
-
-        <div class="lesson">
-          🎥 Lesson 3 — Communication Skills
-        </div>
-
-        <div class="lesson">
-          🎥 Lesson 4 — Math & Reasoning
-        </div>
-
-      </div>
-
-
-      <button class="watch"
-        onclick="openCourse('Step To Success')">
-        ▶️ View Course
-      </button>
-
-    </div>
-
-
-    <!-- COURSE 2 -->
-
-    <div class="course">
-
-      <div class="course-icon">📚</div>
-
-      <h2>SSC & All Competitive Exams</h2>
-
-      <p class="description">
-        SSC और अन्य competitive exams की
-        तैयारी के लिए केवल पढ़ाई से संबंधित
-        video courses और lessons.
-      </p>
-
-      <div class="price">
-        ₹399
-      </div>
-
-
-      <div class="money">
-
-        <div class="money-card">
-          💰 Commission
-          <strong>₹200</strong>
-          <small>Per Sale</small>
-        </div>
-
-        <div class="money-card">
-          📈 Passive Income
-          <strong>₹50</strong>
-          <small>Target Amount</small>
-        </div>
-
-      </div>
-
-
-      <div class="subjects">
-
-        <span class="subject">SSC</span>
-        <span class="subject">Math</span>
-        <span class="subject">Reasoning</span>
-        <span class="subject">Hindi</span>
-        <span class="subject">General Studies</span>
-        <span class="subject">Current Affairs</span>
-
-      </div>
-
-
-      <h3>👨‍🏫 Subject Teachers</h3>
-
-      <div class="teacher">
-        👨‍🏫 Math Teacher
-      </div>
-
-      <div class="teacher">
-        👨‍🏫 Reasoning Teacher
-      </div>
-
-      <div class="teacher">
-        👩‍🏫 Hindi Teacher
-      </div>
-
-      <div class="teacher">
-        👨‍🏫 General Studies Teacher
-      </div>
-
-
-      <div class="video-list">
-
-        <div class="lesson">
-          🎥 SSC Math — Video Course
-        </div>
-
-        <div class="lesson">
-          🎥 SSC Reasoning — Video Course
-        </div>
-
-        <div class="lesson">
-          🎥 Hindi — Video Course
-        </div>
-
-        <div class="lesson">
-          🎥 General Studies — Video Course
-        </div>
-
-        <div class="lesson">
-          🎥 Current Affairs — Video Course
-        </div>
-
-      </div>
-
-
-      <button class="watch"
-        onclick="openCourse('SSC & All Competitive Exams')">
-        ▶️ View Course
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <h2 class="section-title">
-    💰 Earnings Dashboard
-  </h2>
-
-
-  <div class="stats">
-
-    <div class="stat">
-      <div class="stat-icon">💵</div>
-      <h3>₹0</h3>
-      <p>Today</p>
-    </div>
-
-    <div class="stat">
       <div class="stat-icon">📅</div>
-      <h3>₹0</h3>
-      <p>This Week</p>
+
+      <div class="stat-title">
+        This Week
+      </div>
+
+      <div class="stat-value">
+        ₹0
+      </div>
+
     </div>
 
+
     <div class="stat">
+
       <div class="stat-icon">📆</div>
-      <h3>₹0</h3>
-      <p>This Month</p>
+
+      <div class="stat-title">
+        This Month
+      </div>
+
+      <div class="stat-value">
+        ₹0
+      </div>
+
     </div>
+
 
     <div class="stat">
+
       <div class="stat-icon">📈</div>
-      <h3>₹0</h3>
-      <p>Total</p>
+
+      <div class="stat-title">
+        This Year
+      </div>
+
+      <div class="stat-value">
+        ₹0
+      </div>
+
     </div>
 
-  </div>
+  </section>
 
 
-  <button class="logout" id="logoutBtn">
-    Logout
-  </button>
+  <!-- QUICK ACTIONS -->
 
-</div>
+  <h2 class="section-title">
+    ⚡ Quick Access
+  </h2>
+
+  <section class="actions">
+
+    <a class="action" href="course1.html">
+
+      <div class="action-icon">
+        📚
+      </div>
+
+      <h3>My Courses</h3>
+
+      <p>
+        अपने courses और lessons देखें
+      </p>
+
+    </a>
 
 
-<footer>
-  📚 Padho Aur Kamao
-</footer>
+    <a class="action" href="#videos">
+
+      <div class="action-icon">
+        🎥
+      </div>
+
+      <h3>Learning Videos</h3>
+
+      <p>
+        अपने learning videos देखें
+      </p>
+
+    </a>
+
+
+    <a class="action" href="#leaderboard">
+
+      <div class="action-icon">
+        🏆
+      </div>
+
+      <h3>Leaderboard</h3>
+
+      <p>
+        Learning performance देखें
+      </p>
+
+    </a>
+
+
+    <a class="action" href="#profile">
+
+      <div class="action-icon">
+        👤
+      </div>
+
+      <h3>My Profile</h3>
+
+      <p>
+        Account details देखें
+      </p>
+
+    </a>
+
+  </section>
+
+
+  <!-- REFERRAL -->
+
+  <h2 class="section-title">
+    🔗 My Referral
+  </h2>
+
+  <section class="referral">
+
+    <h3>
+      आपका Referral Link
+    </h3>
+
+    <p>
+      इस link को share करके लोगों को आपके platform तक पहुँचाया जा सकता है।
+    </p>
+
+    <div class="referral-box">
+
+      <input
+        id="referralLink"
+        type="text"
+        readonly>
+
+      <button
+        id="copyBtn"
+        class="copy-btn">
+
+        Copy
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- COURSES -->
+
+  <h2 class="section-title">
+    📚 My Courses
+  </h2>
+
+  <section class="courses">
+
+    <div class="course">
+
+      <div class="course-icon">
+        📈
+      </div>
+
+      <h3>
+        Affiliate Marketing
+      </h3>
+
+      <p>
+        Affiliate marketing की basics और practical learning।
+      </p>
+
+      <a class="course-btn" href="course1.html">
+        Open Course
+      </a>
+
+    </div>
+
+
+    <div class="course">
+
+      <div class="course-icon">
+        📱
+      </div>
+
+      <h3>
+        Instagram Mastery
+      </h3>
+
+      <p>
+        Content और audience growth की learning।
+      </p>
+
+      <a class="course-btn" href="course2.html">
+        Open Course
+      </a>
+
+    </div>
+
+
+    <div class="course">
+
+      <div class="course-icon">
+        🎯
+      </div>
+
+      <h3>
+        Lead Generation
+      </h3>
+
+      <p>
+        Leads और digital marketing fundamentals।
+      </p>
+
+      <a class="course-btn" href="course3.html">
+        Open Course
+      </a>
+
+    </div>
+
+
+    <div class="course">
+
+      <div class="course-icon">
+        🚀
+      </div>
+
+      <h3>
+        Step To Success
+      </h3>
+
+      <p>
+        Skills, planning और productivity lessons।
+      </p>
+
+      <a class="course-btn" href="course4.html">
+        Open Course
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- LEADERBOARD -->
+
+  <h2
+    class="section-title"
+    id="leaderboard">
+
+    🏆 Leaderboard
+
+  </h2>
+
+  <section class="profile">
+
+    <p>
+      Leaderboard यहाँ learning activity और progress के आधार पर दिखाया जा सकता है।
+    </p>
+
+    <strong>
+      आपका वर्तमान score: 0
+    </strong>
+
+  </section>
+
+
+  <!-- PROFILE -->
+
+  <h2
+    class="section-title"
+    id="profile">
+
+    👤 My Profile
+
+  </h2>
+
+  <section class="profile">
+
+    <div class="profile-row">
+
+      <span class="label">
+        Name
+      </span>
+
+      <strong id="userName">
+        Loading...
+      </strong>
+
+    </div>
+
+
+    <div class="profile-row">
+
+      <span class="label">
+        Email
+      </span>
+
+      <strong id="userEmail">
+        Loading...
+      </strong>
+
+    </div>
+
+
+    <div class="profile-row">
+
+      <span class="label">
+        User ID
+      </span>
+
+      <strong id="userId">
+        Loading...
+      </strong>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- MOBILE NAV -->
+
+<nav class="bottom-nav">
+
+  <a href="dashboard.html">
+    <span>🏠</span>
+    Home
+  </a>
+
+  <a href="course1.html">
+    <span>📚</span>
+    Courses
+  </a>
+
+  <a href="#leaderboard">
+    <span>🏆</span>
+    Rank
+  </a>
+
+  <a href="#profile">
+    <span>👤</span>
+    Profile
+  </a>
+
+</nav>
 
 
 <script type="module">
+
+/* FIREBASE APP */
 
 import {
   initializeApp
@@ -543,6 +777,8 @@ import {
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
+
+/* FIREBASE AUTH */
 
 import {
   getAuth,
@@ -552,6 +788,8 @@ import {
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
+
+/* FIREBASE CONFIG */
 
 const firebaseConfig = {
 
@@ -575,22 +813,53 @@ const firebaseConfig = {
 
   measurementId:
   "G-7J1YV8HN3F"
+
 };
 
 
+/* INITIALIZE */
+
 const app =
 initializeApp(firebaseConfig);
-
 
 const auth =
 getAuth(app);
 
 
-/* CHECK LOGIN */
+/* ELEMENTS */
+
+const welcomeText =
+document.getElementById("welcomeText");
+
+const userName =
+document.getElementById("userName");
+
+const userEmail =
+document.getElementById("userEmail");
+
+const userId =
+document.getElementById("userId");
+
+const referralLink =
+document.getElementById("referralLink");
+
+const copyBtn =
+document.getElementById("copyBtn");
+
+const logoutBtn =
+document.getElementById("logoutBtn");
+
+
+/* AUTH CHECK */
 
 onAuthStateChanged(
   auth,
-  (user) => {
+  function(user){
+
+    /*
+      अगर Login नहीं है,
+      तो Login page पर वापस भेजें।
+    */
 
     if(!user){
 
@@ -602,22 +871,110 @@ onAuthStateChanged(
     }
 
 
+    /* USER NAME */
+
     const name =
-      user.displayName ||
-      "Student";
+    user.displayName ||
+    "Student";
 
 
-    document.getElementById(
-      "welcomeName"
-    ).innerText =
-      "Hello, " + name + " 👋";
+    welcomeText.innerText =
+    "Welcome " +
+    name +
+    " 👋 सीखें, practice करें और आगे बढ़ें।";
 
 
-    document.getElementById(
-      "userEmail"
-    ).innerText =
-      user.email ||
-      "Welcome to your learning dashboard.";
+    userName.innerText =
+    name;
+
+
+    /* EMAIL */
+
+    userEmail.innerText =
+    user.email ||
+    "Not available";
+
+
+    /* UID */
+
+    userId.innerText =
+    user.uid;
+
+
+    /*
+      REFERRAL LINK
+
+      Example:
+      ?ref=USER_UID
+    */
+
+    const baseUrl =
+    window.location.origin +
+    window.location.pathname
+    .replace(
+      "dashboard.html",
+      "index.html"
+    );
+
+
+    const link =
+    baseUrl +
+    "?ref=" +
+    encodeURIComponent(
+      user.uid
+    );
+
+
+    referralLink.value =
+    link;
+
+  }
+);
+
+
+/* COPY REFERRAL */
+
+copyBtn.addEventListener(
+  "click",
+  async function(){
+
+    const text =
+    referralLink.value;
+
+    try{
+
+      await navigator.clipboard.writeText(
+        text
+      );
+
+      copyBtn.innerText =
+      "Copied ✓";
+
+
+      setTimeout(
+        function(){
+
+          copyBtn.innerText =
+          "Copy";
+
+        },
+        1500
+      );
+
+    }
+
+    catch(error){
+
+      referralLink.select();
+
+      document.execCommand(
+        "copy"
+      );
+
+      copyBtn.innerText =
+      "Copied ✓";
+
+    }
 
   }
 );
@@ -625,62 +982,37 @@ onAuthStateChanged(
 
 /* LOGOUT */
 
-document.getElementById(
-  "logoutBtn"
-).addEventListener(
+logoutBtn.addEventListener(
   "click",
-  async () => {
+  async function(){
+
+    logoutBtn.disabled =
+    true;
 
     try{
 
       await signOut(auth);
 
       window.location.href =
-        "login.html";
+      "login.html";
 
     }
+
     catch(error){
 
-      alert(
-        "Logout में समस्या हुई।"
-      );
-
       console.error(error);
+
+      logoutBtn.disabled =
+      false;
+
+      alert(
+        "Logout नहीं हो पाया। फिर कोशिश करें।"
+      );
 
     }
 
   }
 );
-
-
-/* COURSE BUTTON */
-
-window.openCourse =
-function(courseName){
-
-  alert(
-    "🎓 " +
-    courseName +
-    "\n\nयहाँ आपके video lessons खुलेंगे।"
-  );
-
-};
-
-
-/* SETTINGS */
-
-window.showSettings =
-function(){
-
-  alert(
-    "⚙️ Settings\n\n" +
-    "Course information\n" +
-    "Video lessons\n" +
-    "Profile\n" +
-    "Account settings"
-  );
-
-};
 
 </script>
 
