@@ -34,6 +34,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:10px;
 }
 
 .logo{
@@ -57,11 +58,11 @@ header{
 }
 
 .hero{
-  background:linear-gradient(135deg,#5b21b6,#8b5cf6);
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
   color:white;
   padding:30px;
   border-radius:22px;
-  margin-bottom:25px;
+  margin-bottom:22px;
 }
 
 .hero h1{
@@ -70,192 +71,186 @@ header{
 }
 
 .hero p{
+  margin:0;
   line-height:1.6;
-  margin:5px 0;
 }
 
 /* MAIN COURSE BUTTONS */
 
-.main-buttons{
+.main-tabs{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-bottom:25px;
 }
 
-.main-card{
+.main-tab{
+  border:0;
   background:white;
-  padding:25px 20px;
-  border-radius:18px;
-  text-align:center;
-  box-shadow:0 5px 20px #0001;
+  padding:18px 10px;
+  border-radius:15px;
+  box-shadow:0 4px 15px #0001;
+  font-size:16px;
+  font-weight:bold;
   cursor:pointer;
-  transition:.2s;
 }
 
-.main-card:hover{
-  transform:translateY(-4px);
+.main-tab:hover{
+  transform:translateY(-2px);
 }
 
-.main-icon{
-  font-size:45px;
-}
-
-.main-card h2{
-  margin:12px 0 8px;
-}
-
-.main-card p{
-  color:#6b7280;
-  line-height:1.5;
-}
-
-.open-btn{
-  display:block;
+.main-tab.active{
   background:#6d28d9;
   color:white;
-  padding:12px;
-  border-radius:10px;
-  font-weight:bold;
-  margin-top:15px;
 }
 
 /* SECTIONS */
 
-.course-section{
+.exam-section{
   display:none;
-  margin-top:30px;
 }
 
-.course-section.active{
+.exam-section.active{
   display:block;
 }
 
 .section-title{
-  background:linear-gradient(135deg,#5b21b6,#7c3aed);
-  color:white;
-  padding:18px;
-  border-radius:15px;
-  margin-bottom:18px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:15px;
+  margin:25px 0 15px;
 }
 
 .card{
   background:white;
   padding:20px;
-  border-radius:17px;
+  border-radius:18px;
+  margin-bottom:18px;
   box-shadow:0 5px 20px #0001;
-}
-
-.card h3{
-  margin-top:0;
-}
-
-.card p{
-  color:#6b7280;
-  line-height:1.5;
-}
-
-.small-btn{
-  display:inline-block;
-  background:#eef2ff;
-  color:#5b21b6;
-  padding:10px 14px;
-  border-radius:9px;
-  text-decoration:none;
-  font-weight:bold;
-  margin-top:8px;
-  cursor:pointer;
 }
 
 /* SUBJECT */
 
-.subjects{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-
-.subject{
+.subject-title{
   background:#f5f3ff;
-  padding:16px;
-  border-radius:13px;
-}
-
-.subject h3{
-  margin:0 0 8px;
-}
-
-/* CHAPTERS */
-
-.chapters{
-  display:none;
-  margin-top:12px;
-}
-
-.chapters.active{
-  display:block;
+  padding:15px;
+  border-radius:12px;
+  margin:15px 0 10px;
+  color:#5b21b6;
 }
 
 .chapter{
-  background:white;
-  border:1px solid #e5e7eb;
-  padding:13px;
-  border-radius:10px;
-  margin-top:8px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  gap:10px;
+  justify-content:space-between;
+  gap:12px;
+  padding:13px 5px;
+  border-bottom:1px solid #eee;
+}
+
+.chapter:last-child{
+  border-bottom:0;
+}
+
+.chapter-name{
+  font-weight:bold;
 }
 
 .video-btn{
   background:#6d28d9;
   color:white;
   border:0;
-  padding:8px 12px;
+  padding:8px 13px;
   border-radius:8px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:bold;
   cursor:pointer;
 }
 
-/* VIDEO */
+.video-btn:hover{
+  background:#5b21b6;
+}
+
+/* BOARD */
+
+.board-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:18px;
+}
+
+.board-btn{
+  border:1px solid #ddd;
+  background:#fff;
+  padding:10px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.board-btn.active{
+  background:#6d28d9;
+  color:white;
+}
+
+/* MESSAGE */
 
 .video-area{
-  display:none;
-  margin-top:20px;
   background:#111827;
   color:white;
-  padding:30px;
-  border-radius:15px;
+  padding:30px 20px;
   text-align:center;
+  border-radius:15px;
+  margin-top:20px;
 }
 
-.video-area.active{
-  display:block;
+.video-area a{
+  color:#c4b5fd;
 }
 
-@media(max-width:700px){
+/* MOBILE */
 
-  .main-buttons{
-    grid-template-columns:1fr;
+@media(max-width:800px){
+
+  .main-tabs{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .grid,
-  .subjects{
-    grid-template-columns:1fr;
+}
+
+@media(max-width:500px){
+
+  .logo{
+    font-size:16px;
+  }
+
+  .back{
+    font-size:12px;
+    padding:8px 10px;
+  }
+
+  .hero{
+    padding:22px;
+  }
+
+  .hero h1{
+    font-size:24px;
+  }
+
+  .main-tabs{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .main-tab{
+    font-size:14px;
+    padding:15px 5px;
   }
 
   .chapter{
-    flex-direction:column;
     align-items:flex-start;
   }
 
   .video-btn{
-    width:100%;
+    white-space:nowrap;
   }
 
 }
@@ -283,888 +278,856 @@ header{
 
 <main class="container">
 
+
+<!-- HERO -->
+
 <section class="hero">
 
-<h1>🎓 All Competitive Exam</h1>
+<h1>
+🎓 All Competitive Exam
+</h1>
 
 <p>
-10th • 12th • Competitive Exams
-</p>
-
-<p>
-अपनी परीक्षा चुनें और chapter-wise videos सीखें।
+10th • 12th • NEET • Competitive Exams
 </p>
 
 </section>
 
 
-<!-- MAIN OPTIONS -->
+<!-- MAIN TABS -->
 
-<section class="main-buttons">
+<div class="main-tabs">
 
-<div class="main-card" onclick="openSection('class10')">
+<button class="main-tab active"
+onclick="showSection('class10',this)">
+📘 10th
+</button>
 
-<div class="main-icon">📘</div>
+<button class="main-tab"
+onclick="showSection('class12',this)">
+📗 12th
+</button>
 
-<h2>10th</h2>
+<button class="main-tab"
+onclick="showSection('neet',this)">
+🩺 NEET
+</button>
 
-<p>
-10वीं के Boards और Subjects
-</p>
-
-<div class="open-btn">
-Open 10th
-</div>
-
-</div>
-
-
-<div class="main-card" onclick="openSection('class12')">
-
-<div class="main-icon">📕</div>
-
-<h2>12th</h2>
-
-<p>
-12वीं के Boards और Subjects
-</p>
-
-<div class="open-btn">
-Open 12th
-</div>
+<button class="main-tab"
+onclick="showSection('competitive',this)">
+🏆 Competitive
+</button>
 
 </div>
 
 
-<div class="main-card" onclick="openSection('competitive')">
 
-<div class="main-icon">🏆</div>
+<!-- =========================
+     10TH
+========================= -->
 
-<h2>Competitive Exam</h2>
+<section id="class10" class="exam-section active">
 
-<p>
-SSC, Railway, Banking, Police और अन्य
-</p>
-
-<div class="open-btn">
-Open Competitive
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= 10TH ================= -->
-
-<section id="class10" class="course-section">
-
-<div class="section-title">
-
-<h2>📘 10th Class</h2>
-
-<p>
-Board चुनें।
-</p>
-
-</div>
-
-
-<div class="grid">
+<h2 class="section-title">
+📘 Class 10th
+</h2>
 
 <div class="card">
 
-<h3>🇮🇳 UP Board</h3>
+<h3>🇮🇳 UP Board / Other Boards</h3>
 
 <p>
-UP Board Class 10
+10th class के subjects और chapters यहाँ व्यवस्थित किए जा सकते हैं।
 </p>
 
-<button
-class="small-btn"
-onclick="showSubjects('up10')">
 
-Subjects देखें
+<h3 class="subject-title">
+📐 Mathematics
+</h3>
 
-</button>
+<div id="math10"></div>
 
-<div id="up10" class="chapters">
 
-<div class="subjects">
+<h3 class="subject-title">
+🔬 Science
+</h3>
 
-<div class="subject">
+<div id="science10"></div>
 
-<h3>➗ Mathematics</h3>
 
-<div class="chapter">
-Number System
-<button class="video-btn"
-onclick="showVideo('10th UP Maths - Number System')">
-🎥 Video
-</button>
-</div>
+<h3 class="subject-title">
+📖 Hindi
+</h3>
 
-<div class="chapter">
-Algebra
-<button class="video-btn"
-onclick="showVideo('10th UP Maths - Algebra')">
-🎥 Video
-</button>
-</div>
+<div id="hindi10"></div>
 
-<div class="chapter">
-Geometry
-<button class="video-btn"
-onclick="showVideo('10th UP Maths - Geometry')">
-🎥 Video
-</button>
-</div>
 
-</div>
+<h3 class="subject-title">
+🌍 Social Science
+</h3>
 
+<div id="sst10"></div>
 
-<div class="subject">
 
-<h3>🔬 Science</h3>
+<h3 class="subject-title">
+🇬🇧 English
+</h3>
 
-<div class="chapter">
-Chemical Reactions
-<button class="video-btn"
-onclick="showVideo('10th Science - Chemical Reactions')">
-🎥 Video
-</button>
-</div>
-
-<div class="chapter">
-Life Processes
-<button class="video-btn"
-onclick="showVideo('10th Science - Life Processes')">
-🎥 Video
-</button>
-</div>
-
-</div>
-
-
-<div class="subject">
-
-<h3>📖 Hindi</h3>
-
-<div class="chapter">
-Hindi Chapter 1
-<button class="video-btn"
-onclick="showVideo('10th Hindi - Chapter 1')">
-🎥 Video
-</button>
-</div>
-
-<div class="chapter">
-Hindi Chapter 2
-<button class="video-btn"
-onclick="showVideo('10th Hindi - Chapter 2')">
-🎥 Video
-</button>
-</div>
-
-</div>
-
-
-<div class="subject">
-
-<h3>🌍 Social Science</h3>
-
-<div class="chapter">
-History Chapter 1
-<button class="video-btn"
-onclick="showVideo('10th Social Science - History Chapter 1')">
-🎥 Video
-</button>
-</div>
-
-<div class="chapter">
-Geography Chapter 1
-<button class="video-btn"
-onclick="showVideo('10th Social Science - Geography Chapter 1')">
-🎥 Video
-</button>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>📚 CBSE</h3>
-
-<p>
-CBSE Class 10
-</p>
-
-<button
-class="small-btn"
-onclick="showSubjects('cbse10')">
-
-Subjects देखें
-
-</button>
-
-<div id="cbse10" class="chapters">
-
-<div class="chapter">
-Mathematics Chapters
-
-<button class="video-btn"
-onclick="showVideo('CBSE 10 Mathematics')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Science Chapters
-
-<button class="video-btn"
-onclick="showVideo('CBSE 10 Science')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Social Science Chapters
-
-<button class="video-btn"
-onclick="showVideo('CBSE 10 Social Science')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Hindi Chapters
-
-<button class="video-btn"
-onclick="showVideo('CBSE 10 Hindi')">
-🎥 Video
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>📚 Bihar Board</h3>
-
-<p>
-Bihar Board Class 10
-</p>
-
-<button
-class="small-btn"
-onclick="showSubjects('bihar10')">
-
-Subjects देखें
-
-</button>
-
-<div id="bihar10" class="chapters">
-
-<div class="chapter">
-Mathematics
-
-<button class="video-btn"
-onclick="showVideo('Bihar Board 10 Maths')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Science
-
-<button class="video-btn"
-onclick="showVideo('Bihar Board 10 Science')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Hindi
-
-<button class="video-btn"
-onclick="showVideo('Bihar Board 10 Hindi')">
-🎥 Video
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>🌐 Other Boards</h3>
-
-<p>
-अन्य Boards के लिए content बाद में जोड़ा जा सकता है।
-</p>
-
-</div>
+<div id="english10"></div>
 
 </div>
 
 </section>
 
 
-<!-- ================= 12TH ================= -->
 
-<section id="class12" class="course-section">
+<!-- =========================
+     12TH
+========================= -->
 
-<div class="section-title">
+<section id="class12" class="exam-section">
 
-<h2>📕 12th Class</h2>
-
-<p>
-Board और subject चुनें।
-</p>
-
-</div>
-
-
-<div class="grid">
+<h2 class="section-title">
+📗 Class 12th
+</h2>
 
 <div class="card">
 
-<h3>🇮🇳 UP Board 12th</h3>
+<h3>
+📚 Class 12th Subjects
+</h3>
 
-<p>
-Class 12 UP Board
-</p>
+<h3 class="subject-title">
+⚛️ Physics
+</h3>
 
-<button
-class="small-btn"
-onclick="showSubjects('up12')">
-
-Subjects देखें
-
-</button>
-
-<div id="up12" class="chapters">
-
-<div class="chapter">
-Hindi
-
-<button class="video-btn"
-onclick="showVideo('UP Board 12 Hindi')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Mathematics
-
-<button class="video-btn"
-onclick="showVideo('UP Board 12 Mathematics')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Physics
-
-<button class="video-btn"
-onclick="showVideo('UP Board 12 Physics')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Chemistry
-
-<button class="video-btn"
-onclick="showVideo('UP Board 12 Chemistry')">
-🎥 Video
-</button>
-
-</div>
-
-</div>
-
-</div>
+<div id="physics12"></div>
 
 
-<div class="card">
+<h3 class="subject-title">
+⚗️ Chemistry
+</h3>
 
-<h3>📚 CBSE 12th</h3>
-
-<p>
-CBSE Class 12
-</p>
-
-<button
-class="small-btn"
-onclick="showSubjects('cbse12')">
-
-Subjects देखें
-
-</button>
-
-<div id="cbse12" class="chapters">
-
-<div class="chapter">
-Mathematics
-
-<button class="video-btn"
-onclick="showVideo('CBSE 12 Mathematics')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Physics
-
-<button class="video-btn"
-onclick="showVideo('CBSE 12 Physics')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Chemistry
-
-<button class="video-btn"
-onclick="showVideo('CBSE 12 Chemistry')">
-🎥 Video
-</button>
-
-</div>
-
-</div>
-
-</div>
+<div id="chemistry12"></div>
 
 
-<div class="card">
+<h3 class="subject-title">
+🧬 Biology
+</h3>
 
-<h3>📚 Bihar Board 12th</h3>
-
-<p>
-Bihar Board Class 12
-</p>
-
-<button
-class="small-btn"
-onclick="showSubjects('bihar12')">
-
-Subjects देखें
-
-</button>
-
-<div id="bihar12" class="chapters">
-
-<div class="chapter">
-Hindi
-
-<button class="video-btn"
-onclick="showVideo('Bihar 12 Hindi')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Mathematics
-
-<button class="video-btn"
-onclick="showVideo('Bihar 12 Mathematics')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Science
-
-<button class="video-btn"
-onclick="showVideo('Bihar 12 Science')">
-🎥 Video
-</button>
-
-</div>
-
-</div>
-
-</div>
+<div id="biology12"></div>
 
 
-<div class="card">
+<h3 class="subject-title">
+📐 Mathematics
+</h3>
 
-<h3>🌐 Other Boards</h3>
+<div id="math12"></div>
 
-<p>
-अन्य Boards का content बाद में जोड़ा जा सकता है।
-</p>
 
-</div>
+<h3 class="subject-title">
+📖 Hindi
+</h3>
+
+<div id="hindi12"></div>
+
+
+<h3 class="subject-title">
+🇬🇧 English
+</h3>
+
+<div id="english12"></div>
 
 </div>
 
 </section>
 
 
-<!-- ================= COMPETITIVE ================= -->
 
-<section id="competitive" class="course-section">
+<!-- =========================
+     NEET
+========================= -->
 
-<div class="section-title">
+<section id="neet" class="exam-section">
 
-<h2>🏆 Competitive Exams</h2>
-
-<p>
-Exam चुनें और subject-wise preparation करें।
-</p>
-
-</div>
-
-
-<div class="grid">
+<h2 class="section-title">
+🩺 NEET Preparation
+</h2>
 
 <div class="card">
 
-<h3>👮 SSC</h3>
-
 <p>
-SSC GD, CGL, CHSL आदि।
+NEET preparation के लिए Physics, Chemistry और Biology के chapter-wise lessons.
 </p>
 
-<button
-class="small-btn"
-onclick="showSubjects('ssc')">
+<h3 class="subject-title">
+⚛️ NEET Physics
+</h3>
 
-Subjects देखें
+<div id="neetPhysics"></div>
 
-</button>
 
-<div id="ssc" class="chapters">
+<h3 class="subject-title">
+⚗️ NEET Chemistry
+</h3>
 
-<div class="chapter">
-Mathematics
+<div id="neetChemistry"></div>
 
-<button class="video-btn"
-onclick="showVideo('SSC Mathematics')">
-🎥 Video
-</button>
 
-</div>
+<h3 class="subject-title">
+🧬 NEET Biology
+</h3>
 
-<div class="chapter">
-Reasoning
-
-<button class="video-btn"
-onclick="showVideo('SSC Reasoning')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-General Knowledge
-
-<button class="video-btn"
-onclick="showVideo('SSC General Knowledge')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Hindi
-
-<button class="video-btn"
-onclick="showVideo('SSC Hindi')">
-🎥 Video
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>🚂 Railway</h3>
-
-<p>
-Railway exams की preparation।
-</p>
-
-<button
-class="small-btn"
-onclick="showSubjects('railway')">
-
-Subjects देखें
-
-</button>
-
-<div id="railway" class="chapters">
-
-<div class="chapter">
-Maths
-
-<button class="video-btn"
-onclick="showVideo('Railway Maths')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Reasoning
-
-<button class="video-btn"
-onclick="showVideo('Railway Reasoning')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-General Science
-
-<button class="video-btn"
-onclick="showVideo('Railway General Science')">
-🎥 Video
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>🏦 Banking</h3>
-
-<p>
-Banking exams।
-</p>
-
-<button
-class="small-btn"
-onclick="showSubjects('banking')">
-
-Subjects देखें
-
-</button>
-
-<div id="banking" class="chapters">
-
-<div class="chapter">
-Quantitative Aptitude
-
-<button class="video-btn"
-onclick="showVideo('Banking Quantitative Aptitude')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Reasoning
-
-<button class="video-btn"
-onclick="showVideo('Banking Reasoning')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-English
-
-<button class="video-btn"
-onclick="showVideo('Banking English')">
-🎥 Video
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>👮 Police & Defence</h3>
-
-<p>
-Police और Defence exams।
-</p>
-
-<button
-class="small-btn"
-onclick="showSubjects('police')">
-
-Subjects देखें
-
-</button>
-
-<div id="police" class="chapters">
-
-<div class="chapter">
-Maths
-
-<button class="video-btn"
-onclick="showVideo('Police Defence Maths')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-Reasoning
-
-<button class="video-btn"
-onclick="showVideo('Police Defence Reasoning')">
-🎥 Video
-</button>
-
-</div>
-
-<div class="chapter">
-GK / GS
-
-<button class="video-btn"
-onclick="showVideo('Police Defence GK GS')">
-🎥 Video
-</button>
-
-</div>
-
-</div>
-
-</div>
+<div id="neetBiology"></div>
 
 </div>
 
 </section>
 
 
-<!-- VIDEO PLAYER -->
 
-<section id="videoArea" class="video-area">
+<!-- =========================
+     COMPETITIVE
+========================= -->
 
-<div style="font-size:45px;">
+<section id="competitive" class="exam-section">
+
+<h2 class="section-title">
+🏆 Competitive Exams
+</h2>
+
+<div class="card">
+
+<h3 class="subject-title">
+📐 Mathematics
+</h3>
+
+<div id="competitiveMath"></div>
+
+
+<h3 class="subject-title">
+🧠 Reasoning
+</h3>
+
+<div id="competitiveReasoning"></div>
+
+
+<h3 class="subject-title">
+🌍 General Studies
+</h3>
+
+<div id="competitiveGS"></div>
+
+
+<h3 class="subject-title">
+🇮🇳 General Knowledge
+</h3>
+
+<div id="competitiveGK"></div>
+
+
+<h3 class="subject-title">
+📰 Current Affairs
+</h3>
+
+<div id="competitiveCA"></div>
+
+</div>
+
+</section>
+
+
+<!-- VIDEO AREA -->
+
+<section class="card">
+
+<h2>
+🎬 Video Player
+</h2>
+
+<div id="videoArea" class="video-area">
+
+<div style="font-size:40px;">
 ▶️
 </div>
 
-<h2 id="videoTitle">
-Video Player
-</h2>
-
 <p>
-यहाँ आपका actual chapter video लगाया जाएगा।
+किसी chapter का Video button दबाएँ।
 </p>
 
-<p style="color:#c4b5fd;">
-अभी यह video placeholder है।
-</p>
+</div>
 
 </section>
+
 
 </main>
 
 
 <script>
 
-/* OPEN MAIN SECTION */
+/* =========================
+   SECTION SWITCH
+========================= */
 
-function openSection(id){
+function showSection(id,button){
 
-  const sections =
-  document.querySelectorAll(".course-section");
+document.querySelectorAll(".exam-section")
+.forEach(function(section){
 
-  sections.forEach(function(section){
+section.classList.remove("active");
 
-    section.classList.remove("active");
+});
 
-  });
-
-  const selected =
-  document.getElementById(id);
-
-  selected.classList.add("active");
-
-  selected.scrollIntoView({
-    behavior:"smooth"
-  });
-
-}
+document.getElementById(id)
+.classList.add("active");
 
 
-/* OPEN SUBJECTS / CHAPTERS */
+document.querySelectorAll(".main-tab")
+.forEach(function(btn){
 
-function showSubjects(id){
+btn.classList.remove("active");
 
-  const element =
-  document.getElementById(id);
+});
 
-  if(element.classList.contains("active")){
+button.classList.add("active");
 
-    element.classList.remove("active");
-
-  }else{
-
-    element.classList.add("active");
-
-  }
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
 
-/* VIDEO */
+/* =========================
+   CHAPTER CREATOR
+========================= */
 
-function showVideo(title){
+function createChapters(
+containerId,
+chapters
+){
 
-  const area =
-  document.getElementById("videoArea");
+const container =
+document.getElementById(containerId);
 
-  const videoTitle =
-  document.getElementById("videoTitle");
+chapters.forEach(function(chapter,index){
 
-  videoTitle.innerText =
-  title;
+const div =
+document.createElement("div");
 
-  area.classList.add("active");
+div.className="chapter";
 
-  area.scrollIntoView({
-    behavior:"smooth"
-  });
+div.innerHTML=`
+
+<div class="chapter-name">
+${index+1}. ${chapter}
+</div>
+
+<button
+class="video-btn"
+onclick="openVideo('${chapter.replace(/'/g,"\\'")}')">
+
+🎥 Video
+
+</button>
+
+`;
+
+container.appendChild(div);
+
+});
 
 }
+
+
+/* =========================
+   VIDEO
+========================= */
+
+function openVideo(chapter){
+
+const area =
+document.getElementById("videoArea");
+
+area.innerHTML=`
+
+<div style="font-size:45px;">
+▶️
+</div>
+
+<h3>
+${chapter}
+</h3>
+
+<p>
+इस chapter का आपका video यहाँ जोड़ा जाएगा।
+</p>
+
+<p>
+अपना YouTube या अन्य video link
+<strong>openVideo()</strong> function में जोड़ सकते हैं।
+</p>
+
+`;
+
+area.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* =========================
+   10TH MATH
+========================= */
+
+createChapters("math10",[
+
+"Real Numbers",
+"Polynomials",
+"Pair of Linear Equations in Two Variables",
+"Quadratic Equations",
+"Arithmetic Progressions",
+"Triangles",
+"Coordinate Geometry",
+"Introduction to Trigonometry",
+"Some Applications of Trigonometry",
+"Circles",
+"Areas Related to Circles",
+"Surface Areas and Volumes",
+"Statistics",
+"Probability"
+
+]);
+
+
+/* =========================
+   10TH SCIENCE
+========================= */
+
+createChapters("science10",[
+
+"Chemical Reactions and Equations",
+"Acids, Bases and Salts",
+"Metals and Non-metals",
+"Carbon and Its Compounds",
+"Life Processes",
+"Control and Coordination",
+"How Do Organisms Reproduce?",
+"Heredity",
+"Light – Reflection and Refraction",
+"Human Eye and Colourful World",
+"Electricity",
+"Magnetic Effects of Electric Current",
+"Our Environment"
+
+]);
+
+
+/* =========================
+   10TH HINDI
+========================= */
+
+createChapters("hindi10",[
+
+"गद्य खंड",
+"पद्य खंड",
+"काव्य परिचय",
+"व्याकरण",
+"अपठित गद्यांश",
+"अपठित पद्यांश",
+"लेखन कौशल"
+
+]);
+
+
+/* =========================
+   10TH SST
+========================= */
+
+createChapters("sst10",[
+
+"भारत एवं समकालीन विश्व",
+"समकालीन भारत",
+"लोकतांत्रिक राजनीति",
+"अर्थशास्त्र",
+"मानचित्र कार्य",
+"इतिहास",
+"भूगोल",
+"नागरिक शास्त्र"
+
+]);
+
+
+/* =========================
+   10TH ENGLISH
+========================= */
+
+createChapters("english10",[
+
+"Reading",
+"Writing",
+"Grammar",
+"Literature",
+"Vocabulary",
+"Comprehension"
+
+]);
+
+
+/* =========================
+   12TH PHYSICS
+========================= */
+
+createChapters("physics12",[
+
+"Electric Charges and Fields",
+"Electrostatic Potential and Capacitance",
+"Current Electricity",
+"Moving Charges and Magnetism",
+"Magnetism and Matter",
+"Electromagnetic Induction",
+"Alternating Current",
+"Electromagnetic Waves",
+"Ray Optics and Optical Instruments",
+"Wave Optics",
+"Dual Nature of Radiation and Matter",
+"Atoms",
+"Nuclei",
+"Semiconductor Electronics"
+
+]);
+
+
+/* =========================
+   12TH CHEMISTRY
+========================= */
+
+createChapters("chemistry12",[
+
+"Solutions",
+"Electrochemistry",
+"Chemical Kinetics",
+"d and f Block Elements",
+"Coordination Compounds",
+"Biomolecules",
+"Alcohols, Phenols and Ethers",
+"Aldehydes, Ketones and Carboxylic Acids",
+"Amines",
+"Organic Chemistry Basics"
+
+]);
+
+
+/* =========================
+   12TH BIOLOGY
+========================= */
+
+createChapters("biology12",[
+
+"Sexual Reproduction in Flowering Plants",
+"Human Reproduction",
+"Reproductive Health",
+"Principles of Inheritance and Variation",
+"Molecular Basis of Inheritance",
+"Evolution",
+"Human Health and Disease",
+"Microbes in Human Welfare",
+"Biotechnology Principles and Processes",
+"Biotechnology and its Applications",
+"Organisms and Populations",
+"Ecosystem",
+"Biodiversity and Conservation",
+"Environmental Issues"
+
+]);
+
+
+/* =========================
+   12TH MATH
+========================= */
+
+createChapters("math12",[
+
+"Relations and Functions",
+"Inverse Trigonometric Functions",
+"Matrices",
+"Determinants",
+"Continuity and Differentiability",
+"Applications of Derivatives",
+"Integrals",
+"Applications of Integrals",
+"Differential Equations",
+"Vector Algebra",
+"Three Dimensional Geometry",
+"Linear Programming",
+"Probability"
+
+]);
+
+
+/* =========================
+   12TH HINDI
+========================= */
+
+createChapters("hindi12",[
+
+"गद्य खंड",
+"पद्य खंड",
+"काव्य",
+"व्याकरण",
+"निबंध लेखन",
+"पत्र लेखन",
+"अपठित गद्यांश"
+
+]);
+
+
+/* =========================
+   12TH ENGLISH
+========================= */
+
+createChapters("english12",[
+
+"Reading Comprehension",
+"Writing Skills",
+"Grammar",
+"Literature",
+"Vocabulary"
+
+]);
+
+
+/* ==================================================
+   NEET PHYSICS
+================================================== */
+
+createChapters("neetPhysics",[
+
+"Physics and Measurement",
+"Units and Measurements",
+"Motion in a Straight Line",
+"Motion in a Plane",
+"Laws of Motion",
+"Work, Energy and Power",
+"System of Particles and Rotational Motion",
+"Gravitation",
+"Properties of Bulk Matter",
+"Thermodynamics",
+"Kinetic Theory",
+"Oscillations",
+"Waves",
+"Electrostatics",
+"Current Electricity",
+"Magnetic Effects of Current and Magnetism",
+"Electromagnetic Induction",
+"Alternating Current",
+"Electromagnetic Waves",
+"Optics",
+"Dual Nature of Matter and Radiation",
+"Atoms and Nuclei",
+"Electronic Devices"
+
+]);
+
+
+/* ==================================================
+   NEET CHEMISTRY
+================================================== */
+
+createChapters("neetChemistry",[
+
+"Some Basic Concepts of Chemistry",
+"Structure of Atom",
+"Classification of Elements",
+"Chemical Bonding and Molecular Structure",
+"Thermodynamics",
+"Equilibrium",
+"Redox Reactions",
+"Organic Chemistry – Basic Principles",
+"Hydrocarbons",
+"Solutions",
+"Electrochemistry",
+"Chemical Kinetics",
+"Surface Chemistry",
+"p-Block Elements",
+"d and f Block Elements",
+"Coordination Compounds",
+"Biomolecules",
+"Polymers",
+"Chemistry in Everyday Life",
+"Alcohols, Phenols and Ethers",
+"Aldehydes, Ketones and Carboxylic Acids",
+"Amines",
+"Environmental Chemistry"
+
+]);
+
+
+/* ==================================================
+   NEET BIOLOGY
+================================================== */
+
+createChapters("neetBiology",[
+
+"The Living World",
+"Biological Classification",
+"Plant Kingdom",
+"Animal Kingdom",
+"Morphology of Flowering Plants",
+"Anatomy of Flowering Plants",
+"Structural Organisation in Animals",
+"Cell – The Unit of Life",
+"Biomolecules",
+"Cell Cycle and Cell Division",
+"Transport in Plants",
+"Mineral Nutrition",
+"Photosynthesis in Plants",
+"Respiration in Plants",
+"Plant Growth and Development",
+"Digestion and Absorption",
+"Breathing and Exchange of Gases",
+"Body Fluids and Circulation",
+"Excretory Products and their Elimination",
+"Locomotion and Movement",
+"Neural Control and Coordination",
+"Chemical Coordination and Integration",
+"Sexual Reproduction in Flowering Plants",
+"Human Reproduction",
+"Reproductive Health",
+"Principles of Inheritance and Variation",
+"Molecular Basis of Inheritance",
+"Evolution",
+"Human Health and Disease",
+"Strategies for Enhancement in Food Production",
+"Microbes in Human Welfare",
+"Biotechnology – Principles and Processes",
+"Biotechnology and its Applications",
+"Organisms and Populations",
+"Ecosystem",
+"Biodiversity and Conservation",
+"Environmental Issues"
+
+]);
+
+
+/* ==================================================
+   COMPETITIVE MATH
+================================================== */
+
+createChapters("competitiveMath",[
+
+"Number System",
+"Simplification",
+"Percentage",
+"Profit and Loss",
+"Ratio and Proportion",
+"Average",
+"Time and Work",
+"Time Speed and Distance",
+"Simple Interest",
+"Compound Interest",
+"Mensuration",
+"Algebra",
+"Geometry",
+"Trigonometry",
+"Data Interpretation",
+"Probability",
+"Statistics"
+
+]);
+
+
+/* ==================================================
+   COMPETITIVE REASONING
+================================================== */
+
+createChapters("competitiveReasoning",[
+
+"Analogy",
+"Classification",
+"Series",
+"Coding-Decoding",
+"Blood Relations",
+"Direction Test",
+"Ranking",
+"Alphabet Test",
+"Calendar",
+"Clock",
+"Venn Diagram",
+"Statement and Conclusion",
+"Syllogism",
+"Puzzle",
+"Seating Arrangement",
+"Non Verbal Reasoning"
+
+]);
+
+
+/* ==================================================
+   COMPETITIVE GS
+================================================== */
+
+createChapters("competitiveGS",[
+
+"Indian History",
+"Ancient History",
+"Medieval History",
+"Modern History",
+"Indian Geography",
+"World Geography",
+"Indian Polity",
+"Indian Economy",
+"General Science",
+"Physics",
+"Chemistry",
+"Biology",
+"Environment",
+"Art and Culture"
+
+]);
+
+
+/* ==================================================
+   COMPETITIVE GK
+================================================== */
+
+createChapters("competitiveGK",[
+
+"Static GK",
+"Indian States",
+"National Parks",
+"Rivers",
+"Dams",
+"Mountains",
+"Important Days",
+"Books and Authors",
+"Awards",
+"Sports",
+"Countries and Capitals",
+"Important Organizations"
+
+]);
+
+
+/* ==================================================
+   CURRENT AFFAIRS
+================================================== */
+
+createChapters("competitiveCA",[
+
+"National Current Affairs",
+"International Current Affairs",
+"Government Schemes",
+"Sports Current Affairs",
+"Science and Technology",
+"Awards and Honours",
+"Appointments",
+"Important Events",
+"Defence Current Affairs"
+
+]);
 
 </script>
 
