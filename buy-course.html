@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>Buy Course - Padho Aur Kamao</title>
+
+<script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f4f7fb;
+}
+
+header{
+background:#2563eb;
+color:white;
+padding:18px;
+font-size:20px;
+}
+
+main{
+max-width:600px;
+margin:auto;
+padding:20px;
+}
+
+.box{
+background:white;
+padding:25px;
+border-radius:16px;
+box-shadow:0 3px 12px #0002;
+}
+
+button{
+width:100%;
+padding:15px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:#16a34a;
+color:white;
+cursor:pointer;
+}
+
+button:disabled{
+background:#999;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+📚 Padho Aur Kamao
+</header>
+
+<main>
+
+<div class="box">
+
+<h2 id="title">
+⏳ Course Loading...
+</h2>
+
+<p id="description"></p>
+
+<h2 id="price"></h2>
+
+<br>
+
+<button id="buyBtn">
+💳 Buy Now
+</button>
+
+<p id="message"></p>
+
+</div>
+
+</main>
+
+
+<script type="module">
+
+import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+getAuth,
+onAuthStateChanged
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+import {
+getFirestore,
+doc,
+getDoc
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+/* FIREBASE CONFIG */
+
+const firebaseConfig={
+
+apiKey:"YOUR_API_KEY",
+
+authDomain:
+"YOUR_PROJECT.firebaseapp.com",
+
+projectId:
+"YOUR_PROJECT_ID",
+
+storageBucket:
+"YOUR_PROJECT.firebasestorage.app",
+
+messagingSenderId:
+"YOUR_SENDER_ID",
+
+appId:
+"YOUR_APP_ID"
+
+};
+
+
+const app=
+initializeApp(firebaseConfig);
+
+
+const auth=
+getAuth(app);
+
+
+const db=
+getFirestore(app);
+
+
+/* COURSE ID */
+
+const params=
+new URLSearchParams(
+location.search
+);
+
+
+const courseId=
+params.get("id");
+
+
+let currentUser=null;
+
+let courseData=null;
+
+
+/* CASHFREE MODE */
+
+const cashfree=
+Cashfree({
+
+mode:"sandbox"
+
+});
+
+
+onAuthStateChanged(
+auth,
+
+async user=>{
+
+
+if(!user){
+
+location.href="login.html";
+
+return;
+
+}
+
+
+currentUser=user;
+
+
+if(!courseId){
+
+document.getElementById("title")
+.innerText=
+"❌ Course ID नहीं मिला";
+
+return;
+
+}
+
+
+const courseRef=
+doc(
+db,
+"courses",
+courseId
+);
+
+
+const courseSnap=
+await getDoc(
+courseRef
+);
+
+
+if(!courseSnap.exists()){
+
+document.getElementById("title")
+.innerText=
+"❌ Course नहीं मिला";
+
+return;
+
+}
+
+
+courseData=
+courseSnap.data();
+
+
+document.getElementById("title")
+.innerText=
+"🎓 "+courseData.title;
+
+
+document.getElementById("description")
+.innerText=
+courseData.description || "";
+
+
+/*
+Firestore में price field होना चाहिए
+
+Example:
+
+price: 99
+
+*/
+
+document.getElementById("price")
+.innerText=
+"₹ "+courseData.price;
+
+
+});
+
+
+/* BUY BUTTON */
+
+
+document
+.getElementById("buyBtn")
+.addEventListener(
+
+"click",
+
+async()=>{
+
+
+if(
+!currentUser ||
+!courseData
+){
+
+alert(
+"पहले Login करें"
+);
+
+return;
+
+}
+
+
+const btn=
+document.getElementById(
+"buyBtn"
+);
+
+
+btn.disabled=true;
+
+
+btn.innerText=
+"Payment शुरू हो रहा है...";
+
+
+try{
+
+
+/*
+
+IMPORTANT
+
+यह URL बाद में आपकी
+Firebase Function का होगा
+
+*/
+
+const response=
+await fetch(
+
+"https://YOUR_REGION-YOUR_PROJECT.cloudfunctions.net/createCashfreeOrder",
+
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":
+"application/json"
+},
+
+body:
+JSON.stringify({
+
+uid:
+currentUser.uid,
+
+courseId:
+courseId
+
+})
+
+}
+
+);
+
+
+const data=
+await response.json();
+
+
+if(
+!response.ok
+){
+
+throw new Error(
+
+data.error ||
+"Payment order create नहीं हुआ"
+
+);
+
+}
+
+
+/* CASHFREE CHECKOUT */
+
+
+cashfree.checkout({
+
+paymentSessionId:
+data.paymentSessionId,
+
+redirectTarget:
+"_self"
+
+});
+
+
+}
+
+
+catch(error){
+
+
+console.error(error);
+
+
+alert(
+
+"Error: "+
+error.message
+
+);
+
+
+btn.disabled=false;
+
+
+btn.innerText=
+"💳 Buy Now";
+
+}
+
+
+}
+
+);
+
+</script>
+
+</body>
+
+</html>
