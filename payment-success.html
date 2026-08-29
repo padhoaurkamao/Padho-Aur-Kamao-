@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>Payment Status - Padho Aur Kamao</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f4f7fb;
+    text-align:center;
+}
+
+header{
+    background:#2563eb;
+    color:white;
+    padding:18px;
+    font-size:20px;
+}
+
+.box{
+    background:white;
+    max-width:500px;
+    margin:50px auto;
+    padding:30px 20px;
+    border-radius:16px;
+    box-shadow:0 3px 12px #0002;
+}
+
+button{
+    padding:14px 25px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<header>
+📚 Padho Aur Kamao
+</header>
+
+
+<div class="box">
+
+<h2 id="status">
+⏳ Payment verify हो रहा है...
+</h2>
+
+<p id="message">
+कृपया इंतजार करें।
+</p>
+
+<button
+id="courseBtn"
+style="display:none">
+
+📚 Course खोलें
+
+</button>
+
+</div>
+
+
+<script>
+
+const params =
+new URLSearchParams(
+location.search
+);
+
+
+const orderId =
+params.get("order_id");
+
+
+async function checkPayment(){
+
+    if(!orderId){
+
+        document
+        .getElementById("status")
+        .innerText =
+        "❌ Order ID नहीं मिला";
+
+        return;
+
+    }
+
+
+    try{
+
+
+        /*
+        IMPORTANT:
+
+        बाद में यहां आपकी
+        Firebase Cloud Function URL आएगी
+        */
+
+
+        const response =
+        await fetch(
+
+        "https://YOUR_REGION-YOUR_PROJECT.cloudfunctions.net/verifyCashfreePayment?order_id="
+        + orderId
+
+        );
+
+
+        const data =
+        await response.json();
+
+
+        if(data.paid){
+
+
+            document
+            .getElementById("status")
+            .innerText =
+            "🎉 Payment Successful";
+
+
+            document
+            .getElementById("message")
+            .innerText =
+            "आपका Course सफलतापूर्वक Unlock हो गया है।";
+
+
+            const btn =
+            document
+            .getElementById(
+            "courseBtn"
+            );
+
+
+            btn.style.display =
+            "inline-block";
+
+
+            btn.onclick =
+            function(){
+
+                location.href =
+                "course.html?id="
+                + data.courseId;
+
+            };
+
+
+        }
+
+        else{
+
+
+            document
+            .getElementById("status")
+            .innerText =
+            "⏳ Payment अभी confirm नहीं हुआ";
+
+
+            document
+            .getElementById("message")
+            .innerText =
+            "अगर आपने payment किया है तो कुछ देर बाद फिर check करें।";
+
+        }
+
+
+    }
+
+
+    catch(error){
+
+
+        console.error(error);
+
+
+        document
+        .getElementById("status")
+        .innerText =
+        "❌ Payment Check Error";
+
+
+        document
+        .getElementById("message")
+        .innerText =
+        "Payment status check नहीं हो सका।";
+
+
+    }
+
+}
+
+
+checkPayment();
+
+
+</script>
+
+
+</body>
+</html>
