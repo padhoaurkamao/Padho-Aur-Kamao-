@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -7,644 +8,714 @@
 <title>Padho Aur Kamao - Dashboard</title>
 
 <style>
-
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f5f7fb;
-  color:#172033;
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f7fb;
+color:#172033;
 }
 
 button,input{
-  font-family:inherit;
+font-family:inherit;
 }
 
 a{
-  text-decoration:none;
-  color:inherit;
+text-decoration:none;
+color:inherit;
+cursor:pointer;
 }
 
-/* ================= SIDEBAR ================= */
+/* SIDEBAR */
 
 .sidebar{
-  position:fixed;
-  left:0;
-  top:0;
-  bottom:0;
-  width:250px;
-  background:#fff;
-  border-right:1px solid #e8eaf0;
-  z-index:1000;
-  overflow-y:auto;
-  transition:.3s;
+position:fixed;
+left:-280px;
+top:0;
+bottom:0;
+width:260px;
+background:#fff;
+border-right:1px solid #e8eaf0;
+z-index:1000;
+overflow-y:auto;
+transition:.3s;
+}
+
+.sidebar.open{
+left:0;
 }
 
 .brand{
-  height:72px;
-  display:flex;
-  align-items:center;
-  padding:0 22px;
-  border-bottom:1px solid #eee;
-  font-size:18px;
-  font-weight:700;
-  color:#6025d7;
+height:72px;
+display:flex;
+align-items:center;
+padding:0 20px;
+border-bottom:1px solid #eee;
+font-size:18px;
+font-weight:bold;
+color:#6025d7;
 }
 
 .brand-icon{
-  width:38px;
-  height:38px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,#6025d7,#8b5cf6);
-  border-radius:11px;
-  color:#fff;
-  margin-right:10px;
-  font-size:20px;
+width:40px;
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#6025d7,#8b5cf6);
+border-radius:11px;
+margin-right:10px;
 }
 
 .sidebar-section{
-  font-size:11px;
-  font-weight:bold;
-  color:#9aa1b1;
-  padding:22px 20px 8px;
-  text-transform:uppercase;
+font-size:11px;
+font-weight:bold;
+color:#9aa1b1;
+padding:22px 20px 8px;
+text-transform:uppercase;
 }
 
 .side-link{
-  display:flex;
-  align-items:center;
-  gap:13px;
-  margin:3px 10px;
-  padding:12px 13px;
-  border-radius:10px;
-  font-size:14px;
-  color:#596174;
-  cursor:pointer;
+display:flex;
+align-items:center;
+gap:13px;
+margin:3px 10px;
+padding:12px 13px;
+border-radius:10px;
+font-size:14px;
+color:#596174;
 }
 
 .side-link:hover,
 .side-link.active{
-  background:#f1ebff;
-  color:#6526d7;
+background:#f1ebff;
+color:#6526d7;
 }
 
 .side-icon{
-  width:22px;
-  text-align:center;
-  font-size:18px;
+width:22px;
+text-align:center;
+font-size:18px;
 }
 
 .side-badge{
-  margin-left:auto;
-  background:#eee8ff;
-  color:#6728d9;
-  padding:3px 7px;
-  border-radius:20px;
-  font-size:10px;
-}
-
-/* ================= MAIN ================= */
-
-.main{
-  margin-left:250px;
-  min-height:100vh;
-}
-
-/* TOPBAR */
-
-.topbar{
-  height:72px;
-  background:#fff;
-  border-bottom:1px solid #e8eaf0;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 28px;
-  position:sticky;
-  top:0;
-  z-index:900;
-}
-
-.top-left{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-.menu-mobile{
-  display:none;
-  border:0;
-  background:#f2edff;
-  color:#6526d7;
-  width:40px;
-  height:40px;
-  border-radius:10px;
-  font-size:20px;
-  cursor:pointer;
-}
-
-.page-title{
-  font-size:19px;
-  font-weight:700;
-}
-
-.top-right{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-.notification{
-  width:40px;
-  height:40px;
-  border:1px solid #eee;
-  background:#fff;
-  border-radius:10px;
-  font-size:18px;
-}
-
-.user-box{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.avatar{
-  width:39px;
-  height:39px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#6025d7,#8b5cf6);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-weight:bold;
-}
-
-.user-info strong{
-  font-size:13px;
-}
-
-.user-info small{
-  display:block;
-  font-size:11px;
-  color:#9299a8;
-}
-
-/* ================= CONTENT ================= */
-
-.content{
-  padding:28px;
-  max-width:1400px;
-  margin:auto;
-}
-
-/* WELCOME */
-
-.welcome{
-  background:linear-gradient(135deg,#5420bd,#7c3aed);
-  border-radius:18px;
-  padding:28px;
-  color:#fff;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:22px;
-}
-
-.welcome h1{
-  font-size:25px;
-  margin-bottom:8px;
-}
-
-.welcome p{
-  font-size:13px;
-  opacity:.9;
-}
-
-.welcome-button{
-  background:#fff;
-  color:#5b21b6;
-  border:0;
-  padding:12px 18px;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* ================= STATS ================= */
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-  margin-bottom:25px;
-}
-
-.stat{
-  background:#fff;
-  border:1px solid #edf0f5;
-  border-radius:15px;
-  padding:19px;
-}
-
-.stat-top{
-  display:flex;
-  justify-content:space-between;
-}
-
-.stat-icon{
-  width:43px;
-  height:43px;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#f1ebff;
-  font-size:21px;
-}
-
-.stat-value{
-  font-size:23px;
-  font-weight:700;
-  margin-top:15px;
-}
-
-/* ================= SECTION ================= */
-
-.section{
-  margin-top:28px;
-}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:16px;
-}
-
-.section-title{
-  font-size:19px;
-}
-
-/* ================= 3D BOOK COURSES ================= */
-
-.book-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:40px;
-  padding:25px 20px;
-}
-
-.book-card{
-  position:relative;
-  height:390px;
-  perspective:1200px;
-  cursor:pointer;
-}
-
-.book{
-  position:absolute;
-  width:100%;
-  height:100%;
-  transform-style:preserve-3d;
-  transition:.5s;
-}
-
-.book-card:hover .book{
-  transform:rotateY(-8deg) rotateX(2deg);
-}
-
-/* BOOK COVER */
-
-.book-cover{
-  position:absolute;
-  width:100%;
-  height:100%;
-  border-radius:8px 18px 18px 8px;
-  padding:35px 28px;
-  color:white;
-  overflow:hidden;
-  box-shadow:
-    10px 10px 0 rgba(0,0,0,.08),
-    20px 20px 35px rgba(0,0,0,.20);
-}
-
-.book-one{
-  background:
-  linear-gradient(135deg,#f97316,#dc2626);
-}
-
-.book-two{
-  background:
-  linear-gradient(135deg,#2563eb,#7c3aed);
-}
-
-/* SPINE */
-
-.book-spine{
-  position:absolute;
-  left:-18px;
-  top:8px;
-  bottom:8px;
-  width:22px;
-  border-radius:7px 0 0 7px;
-  transform:skewY(-2deg);
-  opacity:.75;
-  background:rgba(0,0,0,.25);
-}
-
-/* PAGES */
-
-.book-pages{
-  position:absolute;
-  right:-10px;
-  top:12px;
-  bottom:12px;
-  width:14px;
-  background:repeating-linear-gradient(
-    to bottom,
-    #f7f2e8 0px,
-    #f7f2e8 3px,
-    #ddd7cd 4px
-  );
-  border-radius:0 5px 5px 0;
-}
-
-/* COVER CONTENT */
-
-.book-logo{
-  font-size:15px;
-  font-weight:bold;
-  letter-spacing:1px;
-  opacity:.95;
-}
-
-.book-icon{
-  font-size:65px;
-  margin-top:35px;
-}
-
-.book-title{
-  font-size:30px;
-  font-weight:800;
-  line-height:1.15;
-  margin-top:22px;
-}
-
-.book-subtitle{
-  font-size:13px;
-  line-height:1.6;
-  margin-top:14px;
-  opacity:.9;
-}
-
-.book-price{
-  position:absolute;
-  bottom:25px;
-  left:28px;
-  font-size:28px;
-  font-weight:bold;
-}
-
-.book-label{
-  position:absolute;
-  right:18px;
-  top:18px;
-  background:#ffffff25;
-  border:1px solid #ffffff50;
-  padding:7px 10px;
-  border-radius:20px;
-  font-size:10px;
-}
-
-/* BUY BUTTON BELOW BOOK */
-
-.book-buy{
-  position:absolute;
-  left:20px;
-  right:20px;
-  bottom:-50px;
-  width:calc(100% - 40px);
-  padding:13px;
-  border:0;
-  border-radius:10px;
-  background:#6526d7;
-  color:#fff;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* ================= CARD ================= */
-
-.card{
-  background:#fff;
-  border:1px solid #edf0f5;
-  border-radius:16px;
-  padding:20px;
-}
-
-/* AFFILIATE */
-
-.referral-link{
-  display:flex;
-  gap:8px;
-  margin-top:14px;
-}
-
-.referral-link input{
-  width:100%;
-  padding:12px;
-  border:1px solid #ddd;
-  border-radius:9px;
-}
-
-.copy{
-  border:0;
-  padding:0 15px;
-  border-radius:9px;
-  background:#6526d7;
-  color:#fff;
-  cursor:pointer;
-}
-
-/* PROFILE */
-
-.profile-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-
-.profile-item{
-  padding:13px;
-  background:#f8f9fc;
-  border-radius:10px;
-}
-
-.profile-item label{
-  font-size:10px;
-  color:#9299a8;
-  display:block;
-  margin-bottom:5px;
-}
-
-/* WALLET */
-
-.wallet-box{
-  background:linear-gradient(135deg,#111827,#374151);
-  color:#fff;
-  border-radius:15px;
-  padding:20px;
-}
-
-.wallet-value{
-  font-size:30px;
-  font-weight:bold;
-  margin:8px 0 15px;
-}
-
-.wallet-button{
-  border:0;
-  padding:10px 15px;
-  border-radius:8px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* STATUS */
-
-.status{
-  display:inline-block;
-  padding:5px 9px;
-  border-radius:20px;
-  font-size:10px;
-  font-weight:bold;
-  background:#dcfce7;
-  color:#15803d;
-}
-
-/* MOBILE NAV */
-
-.mobile-nav{
-  display:none;
+margin-left:auto;
+background:#eee8ff;
+color:#6728d9;
+padding:3px 7px;
+border-radius:20px;
+font-size:10px;
 }
 
 /* OVERLAY */
 
 .overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:#0008;
-  z-index:999;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:1000px){
-
-.stats{
-  grid-template-columns:repeat(2,1fr);
-}
-
-.book-grid{
-  grid-template-columns:1fr;
-  max-width:500px;
-  margin:auto;
-}
-
-}
-
-@media(max-width:800px){
-
-.sidebar{
-  left:-260px;
-}
-
-.sidebar.open{
-  left:0;
-}
-
-.main{
-  margin-left:0;
-}
-
-.menu-mobile{
-  display:block;
+display:none;
+position:fixed;
+inset:0;
+background:#0008;
+z-index:999;
 }
 
 .overlay.show{
-  display:block;
+display:block;
 }
+
+/* MAIN */
+
+.main{
+min-height:100vh;
+}
+
+/* TOPBAR */
+
+.topbar{
+height:72px;
+background:#fff;
+border-bottom:1px solid #e8eaf0;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 28px;
+position:sticky;
+top:0;
+z-index:900;
+}
+
+.top-left{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.menu-mobile{
+display:block;
+border:0;
+background:#f2edff;
+color:#6526d7;
+width:42px;
+height:42px;
+border-radius:10px;
+font-size:22px;
+cursor:pointer;
+}
+
+.page-title{
+font-size:19px;
+font-weight:bold;
+}
+
+.top-right{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.notification{
+width:40px;
+height:40px;
+border:1px solid #eee;
+background:#fff;
+border-radius:10px;
+font-size:18px;
+}
+
+.user-box{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.avatar{
+width:40px;
+height:40px;
+border-radius:50%;
+background:linear-gradient(135deg,#6025d7,#8b5cf6);
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-weight:bold;
+}
+
+.user-info strong{
+font-size:13px;
+}
+
+.user-info small{
+display:block;
+font-size:11px;
+color:#9299a8;
+}
+
+/* CONTENT */
 
 .content{
-  padding:18px 13px 85px;
+padding:28px;
+max-width:1400px;
+margin:auto;
 }
 
-.user-info{
-  display:none;
+/* WELCOME */
+
+.welcome{
+background:linear-gradient(135deg,#5420bd,#7c3aed);
+border-radius:18px;
+padding:28px;
+color:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:22px;
 }
 
-.mobile-nav{
-  position:fixed;
-  display:flex;
-  bottom:0;
-  left:0;
-  right:0;
-  height:64px;
-  background:#fff;
-  border-top:1px solid #eee;
-  z-index:950;
-  justify-content:space-around;
-  align-items:center;
+.welcome h1{
+font-size:25px;
+margin-bottom:8px;
 }
 
-.mobile-nav a{
-  text-align:center;
-  font-size:10px;
-}
-
-.mobile-nav span{
-  display:block;
-  font-size:20px;
-}
-
-}
-
-@media(max-width:550px){
-
-.stats{
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-
-.book-grid{
-  padding:20px 5px 70px;
-}
-
-.book-card{
-  height:370px;
-}
-
-.profile-grid{
-  grid-template-columns:1fr;
+.welcome p{
+font-size:13px;
+opacity:.9;
 }
 
 .welcome-button{
-  display:none;
+background:#fff;
+color:#5b21b6;
+border:0;
+padding:12px 18px;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+margin-bottom:25px;
+}
+
+.stat{
+background:#fff;
+border:1px solid #edf0f5;
+border-radius:15px;
+padding:19px;
+box-shadow:0 4px 16px #18204d08;
+}
+
+.stat-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:13px;
+}
+
+.stat-icon{
+width:43px;
+height:43px;
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#f1ebff;
+font-size:21px;
+}
+
+.stat-value{
+font-size:23px;
+font-weight:bold;
+margin-top:13px;
+}
+
+/* SECTION */
+
+.section{
+margin-top:30px;
+display:none;
+}
+
+.section.active-section{
+display:block;
+}
+
+.section-head{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:16px;
+}
+
+.section-title{
+font-size:20px;
+font-weight:bold;
+}
+
+/* HOME DEFAULT */
+
+#homeSection{
+display:block;
+}
+
+/* 3D BOOK */
+
+.book-grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(280px,1fr));
+gap:45px;
+padding:25px 20px 75px;
+max-width:900px;
+}
+
+.book-card{
+position:relative;
+height:400px;
+perspective:1200px;
+}
+
+.book{
+width:100%;
+height:100%;
+position:relative;
+transition:.5s;
+transform-style:preserve-3d;
+}
+
+.book-card:hover .book{
+transform:rotateY(-8deg) rotateX(2deg);
+}
+
+.book-cover{
+position:absolute;
+inset:0;
+border-radius:7px 18px 18px 7px;
+padding:32px 28px;
+color:white;
+overflow:hidden;
+box-shadow:
+10px 10px 0 rgba(0,0,0,.06),
+20px 20px 35px rgba(0,0,0,.2);
+}
+
+.book-one{
+background:linear-gradient(135deg,#f97316,#dc2626);
+}
+
+.book-two{
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+}
+
+.book-spine{
+position:absolute;
+left:-15px;
+top:8px;
+bottom:8px;
+width:20px;
+background:rgba(0,0,0,.25);
+border-radius:7px 0 0 7px;
+}
+
+.book-pages{
+position:absolute;
+right:-10px;
+top:12px;
+bottom:12px;
+width:15px;
+background:repeating-linear-gradient(
+to bottom,
+#f7f2e8 0px,
+#f7f2e8 3px,
+#d7d0c6 4px
+);
+border-radius:0 5px 5px 0;
+}
+
+.book-label{
+position:absolute;
+right:18px;
+top:18px;
+font-size:10px;
+padding:7px 10px;
+border-radius:20px;
+border:1px solid #ffffff55;
+background:#ffffff20;
+}
+
+.book-logo{
+font-size:14px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+.book-icon{
+font-size:65px;
+margin-top:35px;
+}
+
+.book-title{
+font-size:30px;
+font-weight:800;
+line-height:1.15;
+margin-top:22px;
+}
+
+.book-subtitle{
+font-size:13px;
+line-height:1.6;
+margin-top:14px;
+max-width:260px;
+}
+
+.book-price{
+position:absolute;
+bottom:25px;
+left:28px;
+font-size:30px;
+font-weight:bold;
+}
+
+.book-buy{
+position:absolute;
+left:20px;
+right:20px;
+bottom:-52px;
+width:calc(100% - 40px);
+border:0;
+padding:14px;
+border-radius:10px;
+background:#6526d7;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* GENERAL CARD */
+
+.card{
+background:#fff;
+border:1px solid #edf0f5;
+border-radius:16px;
+padding:20px;
+box-shadow:0 4px 16px #18204d08;
+}
+
+/* REFERRAL */
+
+.referral-link{
+display:flex;
+gap:8px;
+margin-top:15px;
+}
+
+.referral-link input{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:9px;
+min-width:0;
+}
+
+.copy{
+border:0;
+padding:0 15px;
+background:#6526d7;
+color:#fff;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.mini-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:16px;
+}
+
+.mini{
+background:#f7f5ff;
+padding:14px 8px;
+border-radius:10px;
+text-align:center;
+}
+
+.mini span{
+font-size:11px;
+color:#777;
+}
+
+.mini strong{
+display:block;
+margin-top:5px;
+font-size:18px;
+color:#6526d7;
+}
+
+/* EARNINGS */
+
+.earning-row,
+.rank-row{
+display:flex;
+align-items:center;
+gap:12px;
+padding:14px 0;
+border-bottom:1px solid #eee;
+}
+
+.earning-row:last-child,
+.rank-row:last-child{
+border-bottom:0;
+}
+
+.earning-left{
+display:flex;
+align-items:center;
+gap:10px;
+flex:1;
+}
+
+.earning-icon,
+.rank-number{
+width:38px;
+height:38px;
+border-radius:10px;
+background:#f1ebff;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.earning-left small,
+.rank-user small{
+display:block;
+font-size:11px;
+color:#9299a8;
+margin-top:3px;
+}
+
+.earning-amount{
+font-weight:bold;
+color:#16a34a;
+}
+
+.rank-user{
+flex:1;
+}
+
+.rank-points{
+font-weight:bold;
+}
+
+.status{
+display:inline-block;
+padding:5px 9px;
+border-radius:20px;
+font-size:10px;
+font-weight:bold;
+background:#dcfce7;
+color:#15803d;
+}
+
+/* WALLET */
+
+.wallet-box{
+background:linear-gradient(135deg,#111827,#374151);
+color:#fff;
+border-radius:15px;
+padding:22px;
+}
+
+.wallet-label{
+font-size:12px;
+opacity:.7;
+}
+
+.wallet-value{
+font-size:32px;
+font-weight:bold;
+margin:8px 0 16px;
+}
+
+.wallet-button{
+border:0;
+padding:11px 16px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* PROFILE */
+
+.profile-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.profile-item{
+padding:14px;
+background:#f8f9fc;
+border-radius:10px;
+}
+
+.profile-item label{
+display:block;
+font-size:10px;
+color:#9299a8;
+margin-bottom:5px;
+}
+
+.profile-item strong{
+font-size:14px;
+}
+
+/* INPUT */
+
+.form-input{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:9px;
+margin-top:10px;
+}
+
+.action-btn{
+width:100%;
+border:0;
+padding:13px;
+margin-top:12px;
+background:#6526d7;
+color:#fff;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:650px){
+
+.content{
+padding:18px 13px 40px;
+}
+
+.book-grid{
+grid-template-columns:1fr;
+padding-left:10px;
+padding-right:10px;
+}
+
+.user-info{
+display:none;
+}
+
+.profile-grid{
+grid-template-columns:1fr;
+}
+
+.welcome-button{
+display:none;
+}
+
+.book-card{
+height:370px;
 }
 
 }
 
+@media(max-width:420px){
+
+.stats{
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.stat{
+padding:14px;
+}
+
+.stat-value{
+font-size:18px;
+}
+
+.book-title{
+font-size:27px;
+}
+
+}
 </style>
-
 </head>
 
 <body>
@@ -660,38 +731,64 @@ Padho Aur Kamao
 
 <div class="sidebar-section">Main Menu</div>
 
-<a class="side-link active" href="#home">
+<a class="side-link active" data-section="homeSection">
 <span class="side-icon">🏠</span>
 Dashboard
 </a>
 
-<a class="side-link" href="#courses">
+<a class="side-link" data-section="coursesSection">
 <span class="side-icon">📚</span>
-My Courses
+Courses
 </a>
 
-<a class="side-link" href="#affiliate">
+<a class="side-link" data-section="affiliateSection">
 <span class="side-icon">🔗</span>
 Affiliate
 </a>
 
+<a class="side-link" data-section="teamSection">
+<span class="side-icon">👥</span>
+My Team
+</a>
+
+<a class="side-link" data-section="leaderboardSection">
+<span class="side-icon">🏆</span>
+Leaderboard
+</a>
+
 <div class="sidebar-section">Finance</div>
 
-<a class="side-link" href="#wallet">
+<a class="side-link" data-section="walletSection">
 <span class="side-icon">💳</span>
 Wallet
 </a>
 
-<a class="side-link" href="#withdrawal">
+<a class="side-link" data-section="withdrawalSection">
 <span class="side-icon">💸</span>
 Withdrawal
 </a>
 
+<a class="side-link" data-section="earningsSection">
+<span class="side-icon">💰</span>
+My Earnings
+</a>
+
 <div class="sidebar-section">Account</div>
 
-<a class="side-link" href="#profile">
+<a class="side-link" data-section="profileSection">
 <span class="side-icon">👤</span>
 My Profile
+</a>
+
+<a class="side-link" data-section="kycSection">
+<span class="side-icon">🪪</span>
+KYC
+<span class="side-badge">Pending</span>
+</a>
+
+<a class="side-link" data-section="securitySection">
+<span class="side-icon">🔐</span>
+Security
 </a>
 
 <a class="side-link" id="sideLogout">
@@ -711,11 +808,9 @@ Logout
 
 <div class="top-left">
 
-<button class="menu-mobile" id="mobileMenu">
-☰
-</button>
+<button class="menu-mobile" id="mobileMenu">☰</button>
 
-<div class="page-title">
+<div class="page-title" id="pageTitle">
 Dashboard
 </div>
 
@@ -723,25 +818,16 @@ Dashboard
 
 <div class="top-right">
 
-<button class="notification">
-🔔
-</button>
+<button class="notification">🔔</button>
 
 <div class="user-box">
 
-<div class="avatar" id="avatar">
-S
-</div>
+<div class="avatar" id="avatar">S</div>
 
 <div class="user-info">
 
-<strong id="topName">
-Student
-</strong>
-
-<small>
-Member
-</small>
+<strong id="topName">Student</strong>
+<small>Member</small>
 
 </div>
 
@@ -751,82 +837,69 @@ Member
 
 </header>
 
-<main class="content" id="home">
+<main class="content">
 
-<!-- WELCOME -->
+<!-- HOME / DASHBOARD -->
+
+<section class="section active-section" id="homeSection">
 
 <section class="welcome">
 
 <div>
-
-<h1 id="welcomeName">
-Welcome 👋
-</h1>
-
-<p>
-Learn • Skill • Earn • Grow
-</p>
-
+<h1 id="welcomeName">Welcome 👋</h1>
+<p>Learn • Skill • Earn • Grow with Padho Aur Kamao</p>
 </div>
 
-<button
-class="welcome-button"
-onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
-
+<button class="welcome-button" id="goCourses">
 Explore Courses →
-
 </button>
 
 </section>
-
-<!-- STATS -->
 
 <section class="stats">
 
 <div class="stat">
 <div class="stat-top">
-<span>Total Earnings</span>
+<span>Today's Revenue</span>
 <div class="stat-icon">💰</div>
+</div>
+<div class="stat-value" id="todayRevenue">₹0</div>
+</div>
+
+<div class="stat">
+<div class="stat-top">
+<span>7 Days Revenue</span>
+<div class="stat-icon">📅</div>
+</div>
+<div class="stat-value" id="weekRevenue">₹0</div>
+</div>
+
+<div class="stat">
+<div class="stat-top">
+<span>30 Days Revenue</span>
+<div class="stat-icon">📈</div>
+</div>
+<div class="stat-value" id="monthRevenue">₹0</div>
+</div>
+
+<div class="stat">
+<div class="stat-top">
+<span>Total Revenue</span>
+<div class="stat-icon">🏦</div>
 </div>
 <div class="stat-value" id="allRevenue">₹0</div>
 </div>
 
-<div class="stat">
-<div class="stat-top">
-<span>My Courses</span>
-<div class="stat-icon">📚</div>
-</div>
-<div class="stat-value">2</div>
-</div>
-
-<div class="stat">
-<div class="stat-top">
-<span>Referrals</span>
-<div class="stat-icon">👥</div>
-</div>
-<div class="stat-value" id="referralCount">0</div>
-</div>
-
-<div class="stat">
-<div class="stat-top">
-<span>Wallet</span>
-<div class="stat-icon">💳</div>
-</div>
-<div class="stat-value" id="walletBalance">₹0</div>
-</div>
+</section>
 
 </section>
 
 <!-- COURSES -->
 
-<section class="section" id="courses">
+<section class="section" id="coursesSection">
 
 <div class="section-head">
-
-<h2 class="section-title">
-📚 My Courses
-</h2>
-
+<h2 class="section-title">📚 Courses</h2>
 </div>
 
 <div class="book-grid">
@@ -840,45 +913,29 @@ Explore Courses →
 <div class="book-cover book-one">
 
 <div class="book-spine"></div>
-
 <div class="book-pages"></div>
 
-<div class="book-label">
-STARTER PACKAGE
-</div>
+<div class="book-label">STARTER PACKAGE</div>
 
-<div class="book-logo">
-📚 PADHO AUR KAMAO
-</div>
+<div class="book-logo">📚 PADHO AUR KAMAO</div>
 
-<div class="book-icon">
-📖
-</div>
+<div class="book-icon">📖</div>
 
 <div class="book-title">
-Study & Skill<br>
-Starter
+Study & Skill<br>Starter
 </div>
 
 <div class="book-subtitle">
-
-Learn essential subjects and
-build useful skills for your
-future success.
-
+Learn important subjects and useful skills for your future growth and success.
 </div>
 
-<div class="book-price">
-₹199
-</div>
+<div class="book-price">₹199</div>
 
 </div>
 
 </div>
 
-<button
-class="book-buy buy-btn"
-data-course-id="study-skill-starter"
+<button class="book-buy buy-btn"
 data-course-name="Study & Skill Starter"
 data-course-price="199">
 
@@ -897,45 +954,29 @@ data-course-price="199">
 <div class="book-cover book-two">
 
 <div class="book-spine"></div>
-
 <div class="book-pages"></div>
 
-<div class="book-label">
-PREMIUM PACKAGE
-</div>
+<div class="book-label">PREMIUM PACKAGE</div>
 
-<div class="book-logo">
-📚 PADHO AUR KAMAO
-</div>
+<div class="book-logo">📚 PADHO AUR KAMAO</div>
 
-<div class="book-icon">
-🎓
-</div>
+<div class="book-icon">🎓</div>
 
 <div class="book-title">
-Skill & Success<br>
-Premium
+Skill & Success<br>Premium
 </div>
 
 <div class="book-subtitle">
-
-Advanced learning, competitive
-exam preparation and powerful
-skills for success.
-
+Advanced learning, competitive preparation and powerful skills for success.
 </div>
 
-<div class="book-price">
-₹399
-</div>
+<div class="book-price">₹399</div>
 
 </div>
 
 </div>
 
-<button
-class="book-buy buy-btn"
-data-course-id="skill-success-premium"
+<button class="book-buy buy-btn"
 data-course-name="Skill & Success Premium"
 data-course-price="399">
 
@@ -951,7 +992,7 @@ data-course-price="399">
 
 <!-- AFFILIATE -->
 
-<section class="section" id="affiliate">
+<section class="section" id="affiliateSection">
 
 <div class="section-head">
 <h2 class="section-title">🔗 Affiliate Center</h2>
@@ -959,17 +1000,34 @@ data-course-price="399">
 
 <div class="card">
 
-<p>
-Apna referral link share karein aur course commission earn karein.
+<p style="font-size:13px;color:#777">
+Share your referral link and earn commission on eligible course sales.
 </p>
 
 <div class="referral-link">
 
-<input id="referralLink" readonly>
+<input id="referralLink" readonly placeholder="Loading...">
 
-<button class="copy" id="copyBtn">
-Copy
-</button>
+<button class="copy" id="copyBtn">Copy</button>
+
+</div>
+
+<div class="mini-grid">
+
+<div class="mini">
+<span>Referrals</span>
+<strong id="referralCount">0</strong>
+</div>
+
+<div class="mini">
+<span>Points</span>
+<strong id="referralPoints">0</strong>
+</div>
+
+<div class="mini">
+<span>Status</span>
+<strong style="font-size:13px">Active</strong>
+</div>
 
 </div>
 
@@ -977,9 +1035,37 @@ Copy
 
 </section>
 
+<!-- TEAM -->
+
+<section class="section" id="teamSection">
+
+<div class="section-head">
+<h2 class="section-title">👥 My Team</h2>
+</div>
+
+<div class="card" id="teamList">
+Loading team...
+</div>
+
+</section>
+
+<!-- LEADERBOARD -->
+
+<section class="section" id="leaderboardSection">
+
+<div class="section-head">
+<h2 class="section-title">🏆 Leaderboard</h2>
+</div>
+
+<div class="card" id="leaderboardList">
+Loading leaderboard...
+</div>
+
+</section>
+
 <!-- WALLET -->
 
-<section class="section" id="wallet">
+<section class="section" id="walletSection">
 
 <div class="section-head">
 <h2 class="section-title">💳 My Wallet</h2>
@@ -987,20 +1073,12 @@ Copy
 
 <div class="wallet-box">
 
-<div>
-Available Balance
-</div>
+<div class="wallet-label">Available Balance</div>
 
-<div class="wallet-value" id="walletBalance2">
-₹0
-</div>
+<div class="wallet-value" id="walletBalance">₹0</div>
 
-<button
-class="wallet-button"
-onclick="document.getElementById('withdrawal').scrollIntoView({behavior:'smooth'})">
-
+<button class="wallet-button" data-section="withdrawalSection">
 Withdraw Money
-
 </button>
 
 </div>
@@ -1009,7 +1087,7 @@ Withdraw Money
 
 <!-- WITHDRAWAL -->
 
-<section class="section" id="withdrawal">
+<section class="section" id="withdrawalSection">
 
 <div class="section-head">
 <h2 class="section-title">💸 Withdrawal Request</h2>
@@ -1017,22 +1095,97 @@ Withdraw Money
 
 <div class="card">
 
-<p style="margin-bottom:15px">
+<p style="font-size:13px;color:#777">
 Available balance se withdrawal request bhejein.
 </p>
 
-<input
+<input id="withdrawAmount"
+class="form-input"
 type="number"
-placeholder="Withdrawal Amount ₹"
-style="width:100%;padding:12px;border:1px solid #ddd;border-radius:9px;margin-bottom:10px">
+placeholder="Withdrawal Amount ₹">
 
-<button
-class="book-buy"
-style="position:relative;left:0;right:0;bottom:0;width:100%;margin-top:10px">
+<input id="withdrawMethod"
+class="form-input"
+placeholder="UPI ID / Bank details">
 
+<button class="action-btn" id="withdrawBtn">
 💸 Request Withdrawal
-
 </button>
+
+<p id="withdrawMsg"
+style="font-size:12px;margin-top:10px">
+</p>
+
+</div>
+
+</section>
+
+<!-- EARNINGS -->
+
+<section class="section" id="earningsSection">
+
+<div class="section-head">
+<h2 class="section-title">💰 Recent Earnings</h2>
+</div>
+
+<div class="card">
+
+<div class="earning-row">
+
+<div class="earning-left">
+
+<div class="earning-icon">🎯</div>
+
+<div>
+<strong>Course Commission</strong>
+<small>Recent commission</small>
+</div>
+
+</div>
+
+<div class="earning-amount" id="commissionAmount">
+₹0
+</div>
+
+</div>
+
+<div class="earning-row">
+
+<div class="earning-left">
+
+<div class="earning-icon">🔗</div>
+
+<div>
+<strong>Passive Income</strong>
+<small>Team based income</small>
+</div>
+
+</div>
+
+<div class="earning-amount" id="passiveAmount">
+₹0
+</div>
+
+</div>
+
+<div class="earning-row">
+
+<div class="earning-left">
+
+<div class="earning-icon">👥</div>
+
+<div>
+<strong>Team Referrals</strong>
+<small>Your network</small>
+</div>
+
+</div>
+
+<div class="earning-amount" id="teamEarning">
+₹0
+</div>
+
+</div>
 
 </div>
 
@@ -1040,7 +1193,7 @@ style="position:relative;left:0;right:0;bottom:0;width:100%;margin-top:10px">
 
 <!-- PROFILE -->
 
-<section class="section" id="profile">
+<section class="section" id="profileSection">
 
 <div class="section-head">
 <h2 class="section-title">👤 My Profile</h2>
@@ -1076,65 +1229,78 @@ style="position:relative;left:0;right:0;bottom:0;width:100%;margin-top:10px">
 
 </section>
 
+<!-- KYC -->
+
+<section class="section" id="kycSection">
+
+<div class="section-head">
+<h2 class="section-title">🪪 KYC Verification</h2>
+</div>
+
+<div class="card">
+
+<p style="font-size:13px;color:#777">
+KYC Status
+</p>
+
+<h3 id="kycStatus" style="margin-top:8px">
+Pending
+</h3>
+
+</div>
+
+</section>
+
+<!-- SECURITY -->
+
+<section class="section" id="securitySection">
+
+<div class="section-head">
+<h2 class="section-title">🔐 Security</h2>
+</div>
+
+<div class="card">
+
+<p style="font-size:13px;color:#777;line-height:1.7">
+
+Aapka account Firebase Authentication se secure hai.
+Apna Password, OTP ya Login Details kisi ke saath share na karein.
+
+</p>
+
+</div>
+
+</section>
+
 </main>
 
 </div>
 
-<!-- MOBILE NAV -->
-
-<nav class="mobile-nav">
-
-<a href="#home">
-<span>🏠</span>
-Home
-</a>
-
-<a href="#courses">
-<span>📚</span>
-Courses
-</a>
-
-<a href="#affiliate">
-<span>🔗</span>
-Affiliate
-</a>
-
-<a href="#wallet">
-<span>💳</span>
-Wallet
-</a>
-
-<a href="#profile">
-<span>👤</span>
-Profile
-</a>
-
-</nav>
-
 <script type="module">
 
-import {
-initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
 getAuth,
 onAuthStateChanged,
 signOut
 }
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 import {
 getFirestore,
 doc,
 getDoc,
-setDoc
+setDoc,
+collection,
+query,
+where,
+getDocs,
+limit
 }
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
 
 const firebaseConfig={
 
@@ -1152,31 +1318,93 @@ appId:"1:670063905617:web:9b3a7e62fdeea14fbfa170"
 
 };
 
+
 const app=initializeApp(firebaseConfig);
-
 const auth=getAuth(app);
-
 const db=getFirestore(app);
 
 const $=id=>document.getElementById(id);
 
-/* MOBILE MENU */
+let currentUser=null;
+
+
+/* MOBILE / SIDE MENU */
 
 $("mobileMenu").onclick=()=>{
 
 $("sidebar").classList.add("open");
-
 $("overlay").classList.add("show");
 
 };
 
-$("overlay").onclick=()=>{
+$("overlay").onclick=closeMenu;
+
+function closeMenu(){
 
 $("sidebar").classList.remove("open");
-
 $("overlay").classList.remove("show");
 
+}
+
+
+/* SHOW SECTION */
+
+function showSection(sectionId){
+
+document.querySelectorAll(".section")
+.forEach(section=>{
+section.classList.remove("active-section");
+});
+
+const target=$(sectionId);
+
+if(target){
+target.classList.add("active-section");
+}
+
+document.querySelectorAll(".side-link")
+.forEach(link=>{
+link.classList.remove("active");
+});
+
+document.querySelectorAll(`[data-section="${sectionId}"]`)
+.forEach(link=>{
+link.classList.add("active");
+});
+
+$("pageTitle").innerText=
+sectionId==="homeSection" ? "Dashboard" :
+sectionId==="coursesSection" ? "Courses" :
+sectionId.replace("Section","");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+closeMenu();
+
+}
+
+
+/* MENU LINKS */
+
+document.querySelectorAll("[data-section]")
+.forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+showSection(link.dataset.section);
+
+});
+
+});
+
+
+$("goCourses").onclick=()=>{
+showSection("coursesSection");
 };
+
 
 /* AUTH */
 
@@ -1185,14 +1413,24 @@ onAuthStateChanged(auth,async user=>{
 if(!user){
 
 location.href="login.html";
-
 return;
 
 }
 
-const ref=doc(db,"users",user.uid);
+currentUser=user;
 
-const snap=await getDoc(ref);
+await loadUser();
+
+});
+
+
+async function loadUser(){
+
+const userRef=
+doc(db,"users",currentUser.uid);
+
+const snap=
+await getDoc(userRef);
 
 let data;
 
@@ -1203,26 +1441,24 @@ data=snap.data();
 }else{
 
 data={
-
-name:user.displayName||"Student",
-
-email:user.email||"",
-
+name:currentUser.displayName||"Student",
+email:currentUser.email||"",
 referralCode:
-"PAK"+user.uid.substring(0,8).toUpperCase(),
-
-points:0
-
+"PAK"+
+currentUser.uid.substring(0,8).toUpperCase(),
+points:0,
+totalReferrals:0
 };
 
-await setDoc(ref,data);
+await setDoc(userRef,data);
 
 }
 
 const name=
 data.name||
-user.displayName||
+currentUser.displayName||
 "Student";
+
 
 $("welcomeName").innerText=
 "Welcome, "+name+" 👋";
@@ -1232,27 +1468,381 @@ $("topName").innerText=name;
 $("profileName").innerText=name;
 
 $("profileEmail").innerText=
-user.email||data.email||"-";
+currentUser.email||
+data.email||
+"-";
 
 $("memberId").innerText=
-user.uid.substring(0,12);
+currentUser.uid.substring(0,12);
 
 $("avatar").innerText=
 name.charAt(0).toUpperCase();
 
+
 const code=
-data.referralCode;
+data.referralCode||
+("PAK"+
+currentUser.uid.substring(0,8).toUpperCase());
+
 
 $("referralLink").value=
 location.origin+
 location.pathname+
-"?ref="+code;
+"?ref="+
+encodeURIComponent(code);
+
+
+$("referralPoints").innerText=
+data.points||0;
+
+
+/* LOAD DATA */
+
+await loadReferrals(code);
+await loadTeam();
+await loadLeaderboard();
+await loadEarnings();
+await loadWallet();
+await loadKyc();
+
+}
+
+
+/* REFERRALS */
+
+async function loadReferrals(code){
+
+try{
+
+const snap=
+await getDocs(
+query(
+collection(db,"referrals"),
+where("referralCode","==",code)
+)
+);
+
+$("referralCount").innerText=snap.size;
+
+}catch(error){
+
+console.log(error);
+$("referralCount").innerText="0";
+
+}
+
+}
+
+
+/* TEAM */
+
+async function loadTeam(){
+
+try{
+
+const snap=
+await getDocs(
+query(
+collection(db,"users"),
+where("referredBy","==",currentUser.uid),
+limit(20)
+)
+);
+
+if(snap.empty){
+
+$("teamList").innerHTML=
+"<p style='font-size:13px;color:#888'>No team members yet.</p>";
+
+return;
+
+}
+
+
+$("teamList").innerHTML=
+snap.docs.map((item,index)=>{
+
+const d=item.data();
+
+return `
+<div class="rank-row">
+
+<div class="rank-number">
+${index+1}
+</div>
+
+<div class="rank-user">
+<strong>${d.name||"Student"}</strong>
+<small>${d.email||""}</small>
+</div>
+
+<span class="status">Member</span>
+
+</div>
+`;
+
+}).join("");
+
+}catch(error){
+
+console.log(error);
+
+$("teamList").innerHTML=
+"<p style='font-size:13px;color:#888'>Team data unavailable.</p>";
+
+}
+
+}
+
+
+/* LEADERBOARD */
+
+async function loadLeaderboard(){
+
+try{
+
+const snap=
+await getDocs(
+query(
+collection(db,"users"),
+limit(50)
+)
+);
+
+let users=
+snap.docs.map(item=>item.data());
+
+users.sort(
+(a,b)=>
+Number(b.points||0)-Number(a.points||0)
+);
+
+users=users.slice(0,10);
+
+if(!users.length){
+
+$("leaderboardList").innerHTML=
+"<p style='font-size:13px;color:#888'>No leaderboard data yet.</p>";
+
+return;
+
+}
+
+
+$("leaderboardList").innerHTML=
+users.map((d,index)=>`
+
+<div class="rank-row">
+
+<div class="rank-number">
+${index+1}
+</div>
+
+<div class="rank-user">
+<strong>${d.name||"Student"}</strong>
+<small>Affiliate Points</small>
+</div>
+
+<div class="rank-points">
+${d.points||0}
+</div>
+
+</div>
+
+`).join("");
+
+}catch(error){
+
+console.log(error);
+
+$("leaderboardList").innerHTML=
+"<p style='font-size:13px;color:#888'>Leaderboard unavailable.</p>";
+
+}
+
+}
+
+
+/* EARNINGS */
+
+function money(value){
+
+return "₹"+
+Number(value||0)
+.toLocaleString("en-IN");
+
+}
+
+
+async function loadEarnings(){
+
+try{
+
+const snap=
+await getDocs(
+query(
+collection(db,"earnings"),
+where("userId","==",currentUser.uid)
+)
+);
+
+let total=0;
+let passive=0;
+let commission=0;
+
+let today=0;
+let week=0;
+let month=0;
+
+const now=Date.now();
+
+snap.forEach(item=>{
+
+const d=item.data();
+
+const amount=
+Number(d.amount||0);
+
+total+=amount;
+
+if(d.type==="passive"){
+passive+=amount;
+}
+
+if(d.type==="commission"){
+commission+=amount;
+}
+
+const timestamp=
+d.createdAt?.toMillis?.()||0;
+
+if(now-timestamp<=86400000){
+today+=amount;
+}
+
+if(now-timestamp<=604800000){
+week+=amount;
+}
+
+if(now-timestamp<=2592000000){
+month+=amount;
+}
 
 });
 
-/* COPY */
 
-$("copyBtn").onclick=async()=>{
+$("todayRevenue").innerText=money(today);
+$("weekRevenue").innerText=money(week);
+$("monthRevenue").innerText=money(month);
+$("allRevenue").innerText=money(total);
+
+$("commissionAmount").innerText=
+money(commission);
+
+$("passiveAmount").innerText=
+money(passive);
+
+$("teamEarning").innerText=
+money(0);
+
+}catch(error){
+
+console.log(error);
+
+}
+
+}
+
+
+/* WALLET */
+
+async function loadWallet(){
+
+try{
+
+const snap=
+await getDocs(
+query(
+collection(db,"walletTransactions"),
+where("userId","==",currentUser.uid)
+)
+);
+
+let balance=0;
+
+snap.forEach(item=>{
+
+const d=item.data();
+
+const amount=
+Number(d.amount||0);
+
+if(
+d.type==="credit" ||
+d.type==="commission" ||
+d.type==="passive"
+){
+
+balance+=amount;
+
+}else{
+
+balance-=amount;
+
+}
+
+});
+
+$("walletBalance").innerText=
+money(balance);
+
+}catch(error){
+
+console.log(error);
+
+}
+
+}
+
+
+/* KYC */
+
+async function loadKyc(){
+
+try{
+
+const snap=
+await getDoc(
+doc(db,"kyc",currentUser.uid)
+);
+
+if(snap.exists()){
+
+$("kycStatus").innerText=
+snap.data().status||
+"Pending";
+
+}else{
+
+$("kycStatus").innerText=
+"Pending";
+
+}
+
+}catch(error){
+
+$("kycStatus").innerText=
+"Pending";
+
+}
+
+}
+
+
+/* COPY REFERRAL */
+
+$("copyBtn").onclick=
+async()=>{
 
 try{
 
@@ -1260,7 +1850,8 @@ await navigator.clipboard.writeText(
 $("referralLink").value
 );
 
-$("copyBtn").innerText="Copied ✓";
+$("copyBtn").innerText=
+"Copied ✓";
 
 setTimeout(()=>{
 $("copyBtn").innerText="Copy";
@@ -1268,11 +1859,14 @@ $("copyBtn").innerText="Copy";
 
 }catch(error){
 
-alert("Copy nahi ho paya.");
+$("referralLink").select();
+
+document.execCommand("copy");
 
 }
 
 };
+
 
 /* BUY COURSE */
 
@@ -1280,7 +1874,7 @@ document
 .querySelectorAll(".buy-btn")
 .forEach(button=>{
 
-button.onclick=()=>{
+button.addEventListener("click",()=>{
 
 const name=
 button.dataset.courseName;
@@ -1292,51 +1886,72 @@ alert(
 name+
 "\n\nCourse Price: ₹"+
 price+
-"\n\nPayment gateway setup hone ke baad payment page khulega."
+"\n\nPayment gateway setup ke baad payment checkout yahan open hoga."
 );
+
+});
+
+});
+
+
+/* WITHDRAWAL */
+
+$("withdrawBtn").onclick=()=>{
+
+const amount=
+Number($("withdrawAmount").value||0);
+
+const method=
+$("withdrawMethod").value.trim();
+
+if(amount<=0){
+
+$("withdrawMsg").innerText=
+"Please valid withdrawal amount enter karein.";
+
+$("withdrawMsg").style.color="red";
+
+return;
+
+}
+
+if(!method){
+
+$("withdrawMsg").innerText=
+"UPI ID ya Bank Details enter karein.";
+
+$("withdrawMsg").style.color="red";
+
+return;
+
+}
+
+$("withdrawMsg").innerText=
+"Withdrawal request feature backend setup ke baad process hoga.";
+
+$("withdrawMsg").style.color="green";
 
 };
 
-});
 
 /* LOGOUT */
 
 $("sideLogout").onclick=
 async()=>{
 
+try{
+
 await signOut(auth);
 
 location.href="login.html";
 
-};
+}catch(error){
 
-/* ACTIVE MENU */
-
-document
-.querySelectorAll(".side-link")
-.forEach(link=>{
-
-link.addEventListener(
-"click",
-()=>{
-
-document
-.querySelectorAll(".side-link")
-.forEach(x=>
-x.classList.remove("active")
-);
-
-link.classList.add("active");
-
-$("sidebar").classList.remove("open");
-
-$("overlay").classList.remove("show");
+alert("Logout nahi ho paya.");
 
 }
 
-);
-
-});
+};
 
 </script>
 
