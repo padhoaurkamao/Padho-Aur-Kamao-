@@ -1,9 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -12,683 +9,555 @@
 <style>
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f5f7fb;
-color:#172033;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
 }
 
 button,input{
-font-family:inherit;
+  font-family:inherit;
 }
 
 a{
-text-decoration:none;
-color:inherit;
+  text-decoration:none;
+  color:inherit;
 }
 
 /* ================= SIDEBAR ================= */
 
 .sidebar{
-position:fixed;
-left:0;
-top:0;
-bottom:0;
-width:250px;
-background:#fff;
-border-right:1px solid #e8eaf0;
-z-index:1000;
-overflow-y:auto;
-transition:.3s;
+  position:fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  width:250px;
+  background:#fff;
+  border-right:1px solid #e8eaf0;
+  z-index:1000;
+  overflow-y:auto;
+  transition:.3s;
 }
 
 .brand{
-height:72px;
-display:flex;
-align-items:center;
-padding:0 22px;
-border-bottom:1px solid #eee;
-font-size:18px;
-font-weight:700;
-color:#6025d7;
+  height:72px;
+  display:flex;
+  align-items:center;
+  padding:0 22px;
+  border-bottom:1px solid #eee;
+  font-size:18px;
+  font-weight:700;
+  color:#6025d7;
 }
 
 .brand-icon{
-width:38px;
-height:38px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#6025d7,#8b5cf6);
-border-radius:11px;
-color:#fff;
-margin-right:10px;
-font-size:20px;
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#6025d7,#8b5cf6);
+  border-radius:11px;
+  color:#fff;
+  margin-right:10px;
+  font-size:20px;
 }
 
 .sidebar-section{
-font-size:11px;
-font-weight:bold;
-color:#9aa1b1;
-padding:22px 20px 8px;
-text-transform:uppercase;
+  font-size:11px;
+  font-weight:bold;
+  color:#9aa1b1;
+  padding:22px 20px 8px;
+  text-transform:uppercase;
 }
 
 .side-link{
-display:flex;
-align-items:center;
-gap:13px;
-margin:3px 10px;
-padding:12px 13px;
-border-radius:10px;
-font-size:14px;
-color:#596174;
-cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:13px;
+  margin:3px 10px;
+  padding:12px 13px;
+  border-radius:10px;
+  font-size:14px;
+  color:#596174;
+  cursor:pointer;
 }
 
 .side-link:hover,
 .side-link.active{
-background:#f1ebff;
-color:#6526d7;
+  background:#f1ebff;
+  color:#6526d7;
 }
 
 .side-icon{
-width:22px;
-text-align:center;
-font-size:18px;
+  width:22px;
+  text-align:center;
+  font-size:18px;
 }
 
 .side-badge{
-margin-left:auto;
-background:#eee8ff;
-color:#6728d9;
-padding:3px 7px;
-border-radius:20px;
-font-size:10px;
+  margin-left:auto;
+  background:#eee8ff;
+  color:#6728d9;
+  padding:3px 7px;
+  border-radius:20px;
+  font-size:10px;
 }
 
 /* ================= MAIN ================= */
 
 .main{
-margin-left:250px;
-min-height:100vh;
+  margin-left:250px;
+  min-height:100vh;
 }
 
+/* TOPBAR */
+
 .topbar{
-height:72px;
-background:#fff;
-border-bottom:1px solid #e8eaf0;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 28px;
-position:sticky;
-top:0;
-z-index:900;
+  height:72px;
+  background:#fff;
+  border-bottom:1px solid #e8eaf0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 28px;
+  position:sticky;
+  top:0;
+  z-index:900;
 }
 
 .top-left{
-display:flex;
-align-items:center;
-gap:15px;
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
 .menu-mobile{
-display:none;
-border:0;
-background:#f2edff;
-color:#6526d7;
-width:40px;
-height:40px;
-border-radius:10px;
-font-size:20px;
-cursor:pointer;
+  display:none;
+  border:0;
+  background:#f2edff;
+  color:#6526d7;
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  font-size:20px;
+  cursor:pointer;
 }
 
 .page-title{
-font-size:19px;
-font-weight:700;
+  font-size:19px;
+  font-weight:700;
 }
 
 .top-right{
-display:flex;
-align-items:center;
-gap:15px;
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
 .notification{
-width:40px;
-height:40px;
-border:1px solid #eee;
-background:#fff;
-border-radius:10px;
-font-size:18px;
+  width:40px;
+  height:40px;
+  border:1px solid #eee;
+  background:#fff;
+  border-radius:10px;
+  font-size:18px;
 }
 
 .user-box{
-display:flex;
-align-items:center;
-gap:10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
 .avatar{
-width:39px;
-height:39px;
-border-radius:50%;
-background:linear-gradient(135deg,#6025d7,#8b5cf6);
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-font-weight:bold;
-}
-
-.user-info{
-line-height:1.3;
+  width:39px;
+  height:39px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#6025d7,#8b5cf6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:bold;
 }
 
 .user-info strong{
-font-size:13px;
+  font-size:13px;
 }
 
 .user-info small{
-display:block;
-font-size:11px;
-color:#9299a8;
+  display:block;
+  font-size:11px;
+  color:#9299a8;
 }
+
+/* ================= CONTENT ================= */
 
 .content{
-padding:28px;
-max-width:1400px;
-margin:auto;
+  padding:28px;
+  max-width:1400px;
+  margin:auto;
 }
 
-/* ================= PAGE SYSTEM ================= */
-
-.page{
-display:none;
-animation:fade .25s ease;
-}
-
-.page.active{
-display:block;
-}
-
-@keyframes fade{
-
-from{
-opacity:0;
-transform:translateY(8px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-/* ================= WELCOME ================= */
+/* WELCOME */
 
 .welcome{
-background:linear-gradient(135deg,#5420bd,#7c3aed);
-border-radius:18px;
-padding:28px;
-color:#fff;
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:22px;
+  background:linear-gradient(135deg,#5420bd,#7c3aed);
+  border-radius:18px;
+  padding:28px;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:22px;
 }
 
 .welcome h1{
-font-size:25px;
-margin-bottom:8px;
+  font-size:25px;
+  margin-bottom:8px;
 }
 
 .welcome p{
-font-size:13px;
-opacity:.9;
+  font-size:13px;
+  opacity:.9;
 }
 
 .welcome-button{
-background:#fff;
-color:#5b21b6;
-border:0;
-padding:12px 18px;
-border-radius:10px;
-font-weight:bold;
-cursor:pointer;
+  background:#fff;
+  color:#5b21b6;
+  border:0;
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 /* ================= STATS ================= */
 
 .stats{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:16px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:25px;
 }
 
 .stat{
-background:#fff;
-border:1px solid #edf0f5;
-border-radius:15px;
-padding:19px;
-box-shadow:0 4px 16px #18204d08;
+  background:#fff;
+  border:1px solid #edf0f5;
+  border-radius:15px;
+  padding:19px;
 }
 
 .stat-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
+  display:flex;
+  justify-content:space-between;
 }
 
 .stat-icon{
-width:43px;
-height:43px;
-border-radius:12px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#f1ebff;
-font-size:21px;
-}
-
-.stat-label{
-font-size:12px;
-color:#858c9d;
-margin-top:13px;
+  width:43px;
+  height:43px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f1ebff;
+  font-size:21px;
 }
 
 .stat-value{
-font-size:23px;
-font-weight:700;
-margin-top:5px;
-}
-
-.stat-change{
-font-size:11px;
-color:#16a34a;
-margin-top:7px;
+  font-size:23px;
+  font-weight:700;
+  margin-top:15px;
 }
 
 /* ================= SECTION ================= */
 
+.section{
+  margin-top:28px;
+}
+
 .section-head{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:16px;
 }
 
 .section-title{
-font-size:22px;
-font-weight:700;
+  font-size:19px;
 }
+
+/* ================= 3D BOOK COURSES ================= */
+
+.book-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px;
+  padding:25px 20px;
+}
+
+.book-card{
+  position:relative;
+  height:390px;
+  perspective:1200px;
+  cursor:pointer;
+}
+
+.book{
+  position:absolute;
+  width:100%;
+  height:100%;
+  transform-style:preserve-3d;
+  transition:.5s;
+}
+
+.book-card:hover .book{
+  transform:rotateY(-8deg) rotateX(2deg);
+}
+
+/* BOOK COVER */
+
+.book-cover{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:8px 18px 18px 8px;
+  padding:35px 28px;
+  color:white;
+  overflow:hidden;
+  box-shadow:
+    10px 10px 0 rgba(0,0,0,.08),
+    20px 20px 35px rgba(0,0,0,.20);
+}
+
+.book-one{
+  background:
+  linear-gradient(135deg,#f97316,#dc2626);
+}
+
+.book-two{
+  background:
+  linear-gradient(135deg,#2563eb,#7c3aed);
+}
+
+/* SPINE */
+
+.book-spine{
+  position:absolute;
+  left:-18px;
+  top:8px;
+  bottom:8px;
+  width:22px;
+  border-radius:7px 0 0 7px;
+  transform:skewY(-2deg);
+  opacity:.75;
+  background:rgba(0,0,0,.25);
+}
+
+/* PAGES */
+
+.book-pages{
+  position:absolute;
+  right:-10px;
+  top:12px;
+  bottom:12px;
+  width:14px;
+  background:repeating-linear-gradient(
+    to bottom,
+    #f7f2e8 0px,
+    #f7f2e8 3px,
+    #ddd7cd 4px
+  );
+  border-radius:0 5px 5px 0;
+}
+
+/* COVER CONTENT */
+
+.book-logo{
+  font-size:15px;
+  font-weight:bold;
+  letter-spacing:1px;
+  opacity:.95;
+}
+
+.book-icon{
+  font-size:65px;
+  margin-top:35px;
+}
+
+.book-title{
+  font-size:30px;
+  font-weight:800;
+  line-height:1.15;
+  margin-top:22px;
+}
+
+.book-subtitle{
+  font-size:13px;
+  line-height:1.6;
+  margin-top:14px;
+  opacity:.9;
+}
+
+.book-price{
+  position:absolute;
+  bottom:25px;
+  left:28px;
+  font-size:28px;
+  font-weight:bold;
+}
+
+.book-label{
+  position:absolute;
+  right:18px;
+  top:18px;
+  background:#ffffff25;
+  border:1px solid #ffffff50;
+  padding:7px 10px;
+  border-radius:20px;
+  font-size:10px;
+}
+
+/* BUY BUTTON BELOW BOOK */
+
+.book-buy{
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:-50px;
+  width:calc(100% - 40px);
+  padding:13px;
+  border:0;
+  border-radius:10px;
+  background:#6526d7;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* ================= CARD ================= */
 
 .card{
-background:#fff;
-border:1px solid #edf0f5;
-border-radius:16px;
-padding:20px;
-box-shadow:0 4px 16px #18204d08;
+  background:#fff;
+  border:1px solid #edf0f5;
+  border-radius:16px;
+  padding:20px;
 }
 
-/* ================= COURSES ================= */
-
-.course-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
-}
-
-.course-card{
-background:#fff;
-border-radius:18px;
-overflow:hidden;
-border:1px solid #eee;
-box-shadow:0 6px 20px rgba(0,0,0,.06);
-}
-
-.course-cover{
-height:190px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:75px;
-background:linear-gradient(135deg,#1d4ed8,#7c3aed);
-}
-
-.course-cover.second{
-background:linear-gradient(135deg,#0f766e,#2563eb);
-}
-
-.course-body{
-padding:20px;
-}
-
-.course-body h3{
-font-size:18px;
-margin-bottom:10px;
-}
-
-.course-body p{
-font-size:13px;
-color:#777;
-line-height:1.6;
-}
-
-.course-info{
-display:flex;
-justify-content:space-between;
-margin-top:14px;
-font-size:13px;
-}
-
-.course-price{
-font-weight:bold;
-font-size:16px;
-}
-
-.course-commission{
-color:#16a34a;
-font-weight:bold;
-}
-
-.course-button{
-width:100%;
-margin-top:18px;
-border:0;
-background:#6526d7;
-color:#fff;
-padding:12px;
-border-radius:9px;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* ================= AFFILIATE ================= */
+/* AFFILIATE */
 
 .referral-link{
-display:flex;
-gap:8px;
-margin-top:15px;
+  display:flex;
+  gap:8px;
+  margin-top:14px;
 }
 
 .referral-link input{
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:9px;
-font-size:12px;
+  width:100%;
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:9px;
 }
 
 .copy{
-border:0;
-background:#6526d7;
-color:#fff;
-padding:0 18px;
-border-radius:9px;
-font-weight:bold;
-cursor:pointer;
+  border:0;
+  padding:0 15px;
+  border-radius:9px;
+  background:#6526d7;
+  color:#fff;
+  cursor:pointer;
 }
 
-.mini-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-margin-top:18px;
-}
-
-.mini{
-background:#f7f5ff;
-padding:16px;
-text-align:center;
-border-radius:10px;
-}
-
-.mini span{
-font-size:11px;
-color:#888;
-}
-
-.mini strong{
-display:block;
-font-size:19px;
-color:#6526d7;
-margin-top:6px;
-}
-
-/* ================= EARNINGS ================= */
-
-.earning-row{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:16px 0;
-border-bottom:1px solid #eee;
-}
-
-.earning-row:last-child{
-border-bottom:0;
-}
-
-.earning-left{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.earning-icon{
-width:40px;
-height:40px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#f1ebff;
-border-radius:10px;
-}
-
-.earning-left small{
-display:block;
-font-size:11px;
-color:#9299a8;
-margin-top:4px;
-}
-
-.earning-amount{
-font-weight:bold;
-color:#16a34a;
-}
-
-/* ================= RANK ================= */
-
-.rank-row{
-display:flex;
-align-items:center;
-gap:12px;
-padding:14px 0;
-border-bottom:1px solid #eee;
-}
-
-.rank-row:last-child{
-border-bottom:0;
-}
-
-.rank-number{
-width:34px;
-height:34px;
-border-radius:50%;
-background:#f1ebff;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:bold;
-color:#6526d7;
-}
-
-.rank-user{
-flex:1;
-}
-
-.rank-user small{
-display:block;
-font-size:11px;
-color:#999;
-margin-top:3px;
-}
-
-/* ================= WALLET ================= */
-
-.wallet-box{
-background:linear-gradient(135deg,#111827,#374151);
-color:#fff;
-border-radius:18px;
-padding:25px;
-}
-
-.wallet-label{
-font-size:12px;
-opacity:.7;
-}
-
-.wallet-value{
-font-size:32px;
-font-weight:bold;
-margin:10px 0 20px;
-}
-
-.wallet-button{
-border:0;
-background:#fff;
-color:#111827;
-padding:11px 18px;
-border-radius:9px;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* ================= PROFILE ================= */
+/* PROFILE */
 
 .profile-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
 }
 
 .profile-item{
-padding:15px;
-background:#f8f9fc;
-border-radius:10px;
+  padding:13px;
+  background:#f8f9fc;
+  border-radius:10px;
 }
 
 .profile-item label{
-display:block;
-font-size:10px;
-color:#9299a8;
-margin-bottom:6px;
+  font-size:10px;
+  color:#9299a8;
+  display:block;
+  margin-bottom:5px;
 }
+
+/* WALLET */
+
+.wallet-box{
+  background:linear-gradient(135deg,#111827,#374151);
+  color:#fff;
+  border-radius:15px;
+  padding:20px;
+}
+
+.wallet-value{
+  font-size:30px;
+  font-weight:bold;
+  margin:8px 0 15px;
+}
+
+.wallet-button{
+  border:0;
+  padding:10px 15px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* STATUS */
 
 .status{
-display:inline-block;
-padding:5px 10px;
-border-radius:20px;
-font-size:11px;
-font-weight:bold;
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:bold;
+  background:#dcfce7;
+  color:#15803d;
 }
 
-.status.active{
-background:#dcfce7;
-color:#15803d;
-}
-
-/* ================= MODAL ================= */
-
-.modal{
-display:none;
-position:fixed;
-inset:0;
-background:#0008;
-z-index:2000;
-align-items:center;
-justify-content:center;
-padding:15px;
-}
-
-.modal.show{
-display:flex;
-}
-
-.modal-box{
-width:100%;
-max-width:430px;
-background:#fff;
-border-radius:18px;
-padding:22px;
-}
-
-.modal-box h2{
-margin-bottom:10px;
-}
-
-.pay-amount{
-margin-top:17px;
-padding:15px;
-background:#f3efff;
-border-radius:10px;
-display:flex;
-justify-content:space-between;
-}
-
-.modal-actions{
-display:flex;
-gap:10px;
-margin-top:15px;
-}
-
-.modal-actions button{
-flex:1;
-padding:12px;
-border:0;
-border-radius:9px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.pay-btn{
-background:#16a34a;
-color:#fff;
-}
-
-.cancel-btn{
-background:#e5e7eb;
-}
-
-/* ================= OVERLAY ================= */
-
-.overlay{
-display:none;
-position:fixed;
-inset:0;
-background:#0008;
-z-index:999;
-}
-
-/* ================= MOBILE ================= */
+/* MOBILE NAV */
 
 .mobile-nav{
-display:none;
+  display:none;
 }
 
-@media(max-width:1100px){
+/* OVERLAY */
+
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#0008;
+  z-index:999;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
 
 .stats{
-grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(2,1fr);
+}
+
+.book-grid{
+  grid-template-columns:1fr;
+  max-width:500px;
+  margin:auto;
 }
 
 }
@@ -696,65 +565,55 @@ grid-template-columns:repeat(2,1fr);
 @media(max-width:800px){
 
 .sidebar{
-left:-260px;
+  left:-260px;
 }
 
 .sidebar.open{
-left:0;
+  left:0;
 }
 
 .main{
-margin-left:0;
+  margin-left:0;
 }
 
 .menu-mobile{
-display:block;
+  display:block;
 }
 
 .overlay.show{
-display:block;
-}
-
-.topbar{
-padding:0 15px;
-}
-
-.user-info{
-display:none;
+  display:block;
 }
 
 .content{
-padding:18px 13px 85px;
+  padding:18px 13px 85px;
 }
 
-.welcome-button{
-display:none;
+.user-info{
+  display:none;
 }
 
 .mobile-nav{
-position:fixed;
-display:flex;
-bottom:0;
-left:0;
-right:0;
-height:64px;
-background:#fff;
-border-top:1px solid #eee;
-z-index:950;
-justify-content:space-around;
-align-items:center;
+  position:fixed;
+  display:flex;
+  bottom:0;
+  left:0;
+  right:0;
+  height:64px;
+  background:#fff;
+  border-top:1px solid #eee;
+  z-index:950;
+  justify-content:space-around;
+  align-items:center;
 }
 
 .mobile-nav a{
-text-align:center;
-font-size:10px;
-cursor:pointer;
+  text-align:center;
+  font-size:10px;
 }
 
 .mobile-nav span{
-display:block;
-font-size:19px;
-margin-bottom:3px;
+  display:block;
+  font-size:20px;
 }
 
 }
@@ -762,24 +621,24 @@ margin-bottom:3px;
 @media(max-width:550px){
 
 .stats{
-grid-template-columns:1fr 1fr;
-gap:10px;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
 }
 
-.stat{
-padding:14px;
+.book-grid{
+  padding:20px 5px 70px;
 }
 
-.course-grid{
-grid-template-columns:1fr;
+.book-card{
+  height:370px;
 }
 
 .profile-grid{
-grid-template-columns:1fr;
+  grid-template-columns:1fr;
 }
 
-.mini-grid{
-grid-template-columns:1fr;
+.welcome-button{
+  display:none;
 }
 
 }
@@ -788,159 +647,65 @@ grid-template-columns:1fr;
 
 </head>
 
-
 <body>
-
 
 <!-- SIDEBAR -->
 
 <aside class="sidebar" id="sidebar">
 
 <div class="brand">
-
 <div class="brand-icon">📚</div>
-
 Padho Aur Kamao
-
 </div>
 
+<div class="sidebar-section">Main Menu</div>
 
-<div class="sidebar-section">
-Main Menu
-</div>
-
-
-<div class="side-link active" data-page="dashboard">
-
+<a class="side-link active" href="#home">
 <span class="side-icon">🏠</span>
-
 Dashboard
+</a>
 
-</div>
-
-
-<div class="side-link" data-page="courses">
-
+<a class="side-link" href="#courses">
 <span class="side-icon">📚</span>
-
 My Courses
+</a>
 
-</div>
-
-
-<div class="side-link" data-page="affiliate">
-
+<a class="side-link" href="#affiliate">
 <span class="side-icon">🔗</span>
-
 Affiliate
+</a>
 
-</div>
+<div class="sidebar-section">Finance</div>
 
-
-<div class="side-link" data-page="team">
-
-<span class="side-icon">👥</span>
-
-My Team
-
-</div>
-
-
-<div class="side-link" data-page="leaderboard">
-
-<span class="side-icon">🏆</span>
-
-Leaderboard
-
-</div>
-
-
-<div class="sidebar-section">
-Finance
-</div>
-
-
-<div class="side-link" data-page="wallet">
-
+<a class="side-link" href="#wallet">
 <span class="side-icon">💳</span>
-
 Wallet
+</a>
 
-</div>
-
-
-<div class="side-link" data-page="withdrawal">
-
+<a class="side-link" href="#withdrawal">
 <span class="side-icon">💸</span>
-
 Withdrawal
+</a>
 
-</div>
+<div class="sidebar-section">Account</div>
 
-
-<div class="side-link" data-page="earnings">
-
-<span class="side-icon">💰</span>
-
-My Earnings
-
-</div>
-
-
-<div class="sidebar-section">
-Account
-</div>
-
-
-<div class="side-link" data-page="profile">
-
+<a class="side-link" href="#profile">
 <span class="side-icon">👤</span>
-
 My Profile
+</a>
 
-</div>
-
-
-<div class="side-link" data-page="kyc">
-
-<span class="side-icon">🪪</span>
-
-KYC
-
-<span class="side-badge">
-Pending
-</span>
-
-</div>
-
-
-<div class="side-link" data-page="security">
-
-<span class="side-icon">🔐</span>
-
-Security
-
-</div>
-
-
-<div class="side-link" id="sideLogout">
-
+<a class="side-link" id="sideLogout">
 <span class="side-icon">🚪</span>
-
 Logout
-
-</div>
+</a>
 
 </aside>
 
-
 <div class="overlay" id="overlay"></div>
-
 
 <!-- MAIN -->
 
 <div class="main">
-
 
 <header class="topbar">
 
@@ -950,19 +715,17 @@ Logout
 ☰
 </button>
 
-<div class="page-title" id="pageTitle">
+<div class="page-title">
 Dashboard
 </div>
 
 </div>
-
 
 <div class="top-right">
 
 <button class="notification">
 🔔
 </button>
-
 
 <div class="user-box">
 
@@ -988,13 +751,9 @@ Member
 
 </header>
 
+<main class="content" id="home">
 
-<main class="content">
-
-
-<!-- ================= DASHBOARD ================= -->
-
-<div class="page active" id="dashboard">
+<!-- WELCOME -->
 
 <section class="welcome">
 
@@ -1005,15 +764,14 @@ Welcome 👋
 </h1>
 
 <p>
-Learn • Earn • Grow with Padho Aur Kamao
+Learn • Skill • Earn • Grow
 </p>
 
 </div>
 
-
 <button
 class="welcome-button"
-onclick="openPage('courses','My Courses')">
+onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
 
 Explore Courses →
 
@@ -1021,100 +779,47 @@ Explore Courses →
 
 </section>
 
+<!-- STATS -->
 
 <section class="stats">
 
 <div class="stat">
-
 <div class="stat-top">
-
-<span>Today's Revenue</span>
-
+<span>Total Earnings</span>
 <div class="stat-icon">💰</div>
-
 </div>
-
-<div class="stat-value" id="todayRevenue">
-₹0
+<div class="stat-value" id="allRevenue">₹0</div>
 </div>
-
-<div class="stat-change">
-Your earnings today
-</div>
-
-</div>
-
 
 <div class="stat">
-
 <div class="stat-top">
-
-<span>7 Days Revenue</span>
-
-<div class="stat-icon">📅</div>
-
+<span>My Courses</span>
+<div class="stat-icon">📚</div>
 </div>
-
-<div class="stat-value" id="weekRevenue">
-₹0
+<div class="stat-value">2</div>
 </div>
-
-<div class="stat-change">
-Weekly performance
-</div>
-
-</div>
-
 
 <div class="stat">
-
 <div class="stat-top">
-
-<span>30 Days Revenue</span>
-
-<div class="stat-icon">📈</div>
-
+<span>Referrals</span>
+<div class="stat-icon">👥</div>
 </div>
-
-<div class="stat-value" id="monthRevenue">
-₹0
+<div class="stat-value" id="referralCount">0</div>
 </div>
-
-<div class="stat-change">
-Monthly earnings
-</div>
-
-</div>
-
 
 <div class="stat">
-
 <div class="stat-top">
-
-<span>Total Revenue</span>
-
-<div class="stat-icon">🏦</div>
-
+<span>Wallet</span>
+<div class="stat-icon">💳</div>
 </div>
-
-<div class="stat-value" id="allRevenue">
-₹0
-</div>
-
-<div class="stat-change">
-All time earnings
-</div>
-
+<div class="stat-value" id="walletBalance">₹0</div>
 </div>
 
 </section>
 
-</div>
+<!-- COURSES -->
 
-
-<!-- ================= COURSES ================= -->
-
-<div class="page" id="courses">
+<section class="section" id="courses">
 
 <div class="section-head">
 
@@ -1124,112 +829,117 @@ All time earnings
 
 </div>
 
+<div class="book-grid">
 
-<div class="course-grid">
+<!-- BOOK 1 -->
 
+<div class="book-card">
 
-<div class="course-card">
+<div class="book">
 
-<div class="course-cover">
+<div class="book-cover book-one">
+
+<div class="book-spine"></div>
+
+<div class="book-pages"></div>
+
+<div class="book-label">
+STARTER PACKAGE
+</div>
+
+<div class="book-logo">
+📚 PADHO AUR KAMAO
+</div>
+
+<div class="book-icon">
 📖
 </div>
 
-<div class="course-body">
+<div class="book-title">
+Study & Skill<br>
+Starter
+</div>
 
-<h3>
-Step To Success
-</h3>
+<div class="book-subtitle">
 
-<p>
-Lead Generation, Communication Skills,
-Maths, Reasoning, Hindi और GS.
-</p>
+Learn essential subjects and
+build useful skills for your
+future success.
 
+</div>
 
-<div class="course-info">
-
-<span>Price</span>
-
-<span class="course-price">
+<div class="book-price">
 ₹199
-</span>
+</div>
 
 </div>
 
-
-<div class="course-info">
-
-<span>Commission</span>
-
-<span class="course-commission">
-₹100
-</span>
-
 </div>
-
 
 <button
-class="course-button buy-btn"
-data-course-id="step-to-success"
-data-course-name="Step To Success"
+class="book-buy buy-btn"
+data-course-id="study-skill-starter"
+data-course-name="Study & Skill Starter"
 data-course-price="199">
 
-🛒 Buy Course
+🛒 Buy Course ₹199
 
 </button>
 
 </div>
 
+<!-- BOOK 2 -->
+
+<div class="book-card">
+
+<div class="book">
+
+<div class="book-cover book-two">
+
+<div class="book-spine"></div>
+
+<div class="book-pages"></div>
+
+<div class="book-label">
+PREMIUM PACKAGE
 </div>
 
+<div class="book-logo">
+📚 PADHO AUR KAMAO
+</div>
 
-<div class="course-card">
-
-<div class="course-cover second">
+<div class="book-icon">
 🎓
 </div>
 
-<div class="course-body">
+<div class="book-title">
+Skill & Success<br>
+Premium
+</div>
 
-<h3>
-All Competitive Exam
-</h3>
+<div class="book-subtitle">
 
-<p>
-10th, 12th और सभी Competitive Exam
-की तैयारी।
-</p>
+Advanced learning, competitive
+exam preparation and powerful
+skills for success.
 
+</div>
 
-<div class="course-info">
-
-<span>Price</span>
-
-<span class="course-price">
+<div class="book-price">
 ₹399
-</span>
+</div>
 
 </div>
 
-
-<div class="course-info">
-
-<span>Commission</span>
-
-<span class="course-commission">
-₹200
-</span>
-
 </div>
-
 
 <button
-class="course-button buy-btn"
-data-course-id="all-competitive-exam"
-data-course-name="All Competitive Exam"
+class="book-buy buy-btn"
+data-course-id="skill-success-premium"
+data-course-name="Skill & Success Premium"
 data-course-price="399">
 
-🛒 Buy Course
+🛒 Buy Course ₹399
 
 </button>
 
@@ -1237,40 +947,25 @@ data-course-price="399">
 
 </div>
 
-</div>
+</section>
 
-</div>
+<!-- AFFILIATE -->
 
-
-<!-- ================= AFFILIATE ================= -->
-
-<div class="page" id="affiliate">
+<section class="section" id="affiliate">
 
 <div class="section-head">
-
-<h2 class="section-title">
-🔗 Affiliate Center
-</h2>
-
+<h2 class="section-title">🔗 Affiliate Center</h2>
 </div>
-
 
 <div class="card">
 
-<p style="font-size:13px;color:#777">
-
-Share your referral link and earn commission
-on eligible course sales.
-
+<p>
+Apna referral link share karein aur course commission earn karein.
 </p>
-
 
 <div class="referral-link">
 
-<input
-id="referralLink"
-readonly
-placeholder="Loading...">
+<input id="referralLink" readonly>
 
 <button class="copy" id="copyBtn">
 Copy
@@ -1278,222 +973,31 @@ Copy
 
 </div>
 
-
-<div class="mini-grid">
-
-<div class="mini">
-
-<span>Referrals</span>
-
-<strong id="referralCount">
-0
-</strong>
-
 </div>
 
+</section>
 
-<div class="mini">
+<!-- WALLET -->
 
-<span>Points</span>
-
-<strong id="referralPoints">
-0
-</strong>
-
-</div>
-
-
-<div class="mini">
-
-<span>Status</span>
-
-<strong>
-Active
-</strong>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- ================= EARNINGS ================= -->
-
-<div class="page" id="earnings">
+<section class="section" id="wallet">
 
 <div class="section-head">
-
-<h2 class="section-title">
-💰 Recent Earnings
-</h2>
-
+<h2 class="section-title">💳 My Wallet</h2>
 </div>
-
-
-<div class="card">
-
-
-<div class="earning-row">
-
-<div class="earning-left">
-
-<div class="earning-icon">
-🎯
-</div>
-
-<div>
-
-<strong>
-Course Commission
-</strong>
-
-<small>
-Recent commission
-</small>
-
-</div>
-
-</div>
-
-<div class="earning-amount" id="commissionAmount">
-₹0
-</div>
-
-</div>
-
-
-<div class="earning-row">
-
-<div class="earning-left">
-
-<div class="earning-icon">
-🔗
-</div>
-
-<div>
-
-<strong>
-Passive Income
-</strong>
-
-<small>
-Team based income
-</small>
-
-</div>
-
-</div>
-
-<div class="earning-amount" id="passiveAmount">
-₹0
-</div>
-
-</div>
-
-
-<div class="earning-row">
-
-<div class="earning-left">
-
-<div class="earning-icon">
-👥
-</div>
-
-<div>
-
-<strong>
-Team Referrals
-</strong>
-
-<small>
-Your network
-</small>
-
-</div>
-
-</div>
-
-<div class="earning-amount" id="teamEarning">
-₹0
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- ================= TEAM ================= -->
-
-<div class="page" id="team">
-
-<div class="section-head">
-
-<h2 class="section-title">
-👥 My Team
-</h2>
-
-</div>
-
-
-<div class="card" id="teamList">
-Loading team...
-</div>
-
-</div>
-
-
-<!-- ================= LEADERBOARD ================= -->
-
-<div class="page" id="leaderboard">
-
-<div class="section-head">
-
-<h2 class="section-title">
-🏆 Leaderboard
-</h2>
-
-</div>
-
-
-<div class="card" id="leaderboardList">
-Loading leaderboard...
-</div>
-
-</div>
-
-
-<!-- ================= WALLET ================= -->
-
-<div class="page" id="wallet">
-
-<div class="section-head">
-
-<h2 class="section-title">
-💳 My Wallet
-</h2>
-
-</div>
-
 
 <div class="wallet-box">
 
-<div class="wallet-label">
+<div>
 Available Balance
 </div>
 
-<div class="wallet-value" id="walletBalance">
+<div class="wallet-value" id="walletBalance2">
 ₹0
 </div>
 
-
 <button
 class="wallet-button"
-onclick="openPage('withdrawal','Withdrawal')">
+onclick="document.getElementById('withdrawal').scrollIntoView({behavior:'smooth'})">
 
 Withdraw Money
 
@@ -1501,314 +1005,136 @@ Withdraw Money
 
 </div>
 
-</div>
+</section>
 
+<!-- WITHDRAWAL -->
 
-<!-- ================= WITHDRAWAL ================= -->
-
-<div class="page" id="withdrawal">
+<section class="section" id="withdrawal">
 
 <div class="section-head">
-
-<h2 class="section-title">
-💸 Withdrawal Request
-</h2>
-
+<h2 class="section-title">💸 Withdrawal Request</h2>
 </div>
-
 
 <div class="card">
 
-<p style="font-size:13px;color:#777;margin-bottom:15px">
-
-Available balance से withdrawal request भेजें।
-
+<p style="margin-bottom:15px">
+Available balance se withdrawal request bhejein.
 </p>
 
-
 <input
-id="withdrawAmount"
 type="number"
 placeholder="Withdrawal Amount ₹"
 style="width:100%;padding:12px;border:1px solid #ddd;border-radius:9px;margin-bottom:10px">
 
+<button
+class="book-buy"
+style="position:relative;left:0;right:0;bottom:0;width:100%;margin-top:10px">
 
-<input
-id="withdrawMethod"
-placeholder="UPI ID / Bank details"
-style="width:100%;padding:12px;border:1px solid #ddd;border-radius:9px">
-
-
-<button class="course-button">
 💸 Request Withdrawal
+
 </button>
 
 </div>
 
-</div>
+</section>
 
+<!-- PROFILE -->
 
-<!-- ================= PROFILE ================= -->
-
-<div class="page" id="profile">
+<section class="section" id="profile">
 
 <div class="section-head">
-
-<h2 class="section-title">
-👤 My Profile
-</h2>
-
+<h2 class="section-title">👤 My Profile</h2>
 </div>
-
 
 <div class="card">
 
 <div class="profile-grid">
 
+<div class="profile-item">
+<label>NAME</label>
+<strong id="profileName">Loading...</strong>
+</div>
 
 <div class="profile-item">
-
-<label>
-NAME
-</label>
-
-<strong id="profileName">
-Loading...
-</strong>
-
+<label>EMAIL</label>
+<strong id="profileEmail">Loading...</strong>
 </div>
-
 
 <div class="profile-item">
-
-<label>
-EMAIL
-</label>
-
-<strong id="profileEmail">
-Loading...
-</strong>
-
+<label>MEMBER ID</label>
+<strong id="memberId">Loading...</strong>
 </div>
-
 
 <div class="profile-item">
-
-<label>
-MEMBER ID
-</label>
-
-<strong id="memberId">
-Loading...
-</strong>
-
-</div>
-
-
-<div class="profile-item">
-
-<label>
-ACCOUNT STATUS
-</label>
-
-<span class="status active">
-Active
-</span>
-
+<label>ACCOUNT STATUS</label>
+<span class="status">Active</span>
 </div>
 
 </div>
 
 </div>
 
-</div>
-
-
-<!-- ================= KYC ================= -->
-
-<div class="page" id="kyc">
-
-<div class="section-head">
-
-<h2 class="section-title">
-🪪 KYC Verification
-</h2>
-
-</div>
-
-
-<div class="card">
-
-<p style="font-size:13px;color:#777">
-KYC Status
-</p>
-
-<h3 id="kycStatus" style="margin-top:10px">
-Pending
-</h3>
-
-</div>
-
-</div>
-
-
-<!-- ================= SECURITY ================= -->
-
-<div class="page" id="security">
-
-<div class="section-head">
-
-<h2 class="section-title">
-🔐 Security
-</h2>
-
-</div>
-
-
-<div class="card">
-
-<p style="font-size:14px;color:#777;line-height:1.8">
-
-आपका Account Firebase Authentication से secure है।
-अपना Password, OTP या Login Details किसी के
-साथ share न करें।
-
-</p>
-
-</div>
-
-</div>
-
+</section>
 
 </main>
 
 </div>
 
-
 <!-- MOBILE NAV -->
 
 <nav class="mobile-nav">
 
-<a onclick="openPage('dashboard','Dashboard')">
-
+<a href="#home">
 <span>🏠</span>
 Home
-
 </a>
 
-
-<a onclick="openPage('courses','My Courses')">
-
+<a href="#courses">
 <span>📚</span>
 Courses
-
 </a>
 
-
-<a onclick="openPage('affiliate','Affiliate')">
-
+<a href="#affiliate">
 <span>🔗</span>
 Affiliate
-
 </a>
 
-
-<a onclick="openPage('wallet','My Wallet')">
-
+<a href="#wallet">
 <span>💳</span>
 Wallet
-
 </a>
 
-
-<a onclick="openPage('profile','My Profile')">
-
+<a href="#profile">
 <span>👤</span>
 Profile
-
 </a>
 
 </nav>
 
-
-<!-- PAYMENT MODAL -->
-
-<div class="modal" id="paymentModal">
-
-<div class="modal-box">
-
-<h2 id="modalCourseName">
-Course Purchase
-</h2>
-
-<p>
-आपके selected course की payment होगी।
-</p>
-
-
-<div class="pay-amount">
-
-<span>
-Payable Amount
-</span>
-
-<strong>
-₹<span id="payableAmount">0</span>
-</strong>
-
-</div>
-
-
-<div class="modal-actions">
-
-<button class="pay-btn" id="payBtn">
-💳 Pay Now
-</button>
-
-<button class="cancel-btn" id="cancelBtn">
-Cancel
-</button>
-
-</div>
-
-<p id="paymentStatus"
-style="margin-top:12px;font-size:13px">
-</p>
-
-</div>
-
-</div>
-
-
-<!-- ================= FIREBASE ================= -->
-
 <script type="module">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
+import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
 getAuth,
 onAuthStateChanged,
 signOut
 }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 import {
 getFirestore,
 doc,
 getDoc,
-setDoc,
-collection,
-query,
-where,
-getDocs,
-limit
+setDoc
 }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const firebaseConfig={
 
@@ -1826,69 +1152,15 @@ appId:"1:670063905617:web:9b3a7e62fdeea14fbfa170"
 
 };
 
-
 const app=initializeApp(firebaseConfig);
 
 const auth=getAuth(app);
 
 const db=getFirestore(app);
 
+const $=id=>document.getElementById(id);
 
-let currentUser=null;
-
-let selectedCourse=null;
-
-
-const $=(id)=>document.getElementById(id);
-
-
-/* ================= PAGE NAVIGATION ================= */
-
-window.openPage=function(pageId,title){
-
-document
-.querySelectorAll(".page")
-.forEach(page=>{
-page.classList.remove("active");
-});
-
-
-const selected=document.getElementById(pageId);
-
-if(selected){
-selected.classList.add("active");
-}
-
-
-$("pageTitle").innerText=title;
-
-
-document
-.querySelectorAll(".side-link")
-.forEach(link=>{
-
-link.classList.remove("active");
-
-if(link.dataset.page===pageId){
-link.classList.add("active");
-}
-
-});
-
-
-$("sidebar").classList.remove("open");
-
-$("overlay").classList.remove("show");
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-};
-
-
-/* ================= SIDEBAR ================= */
+/* MOBILE MENU */
 
 $("mobileMenu").onclick=()=>{
 
@@ -1898,7 +1170,6 @@ $("overlay").classList.add("show");
 
 };
 
-
 $("overlay").onclick=()=>{
 
 $("sidebar").classList.remove("open");
@@ -1907,39 +1178,9 @@ $("overlay").classList.remove("show");
 
 };
 
+/* AUTH */
 
-document
-.querySelectorAll(".side-link[data-page]")
-.forEach(link=>{
-
-link.onclick=()=>{
-
-openPage(
-link.dataset.page,
-link.innerText.trim()
-);
-
-};
-
-});
-
-
-/* ================= MONEY ================= */
-
-function money(value){
-
-return "₹"+
-Number(value||0)
-.toLocaleString("en-IN");
-
-}
-
-
-/* ================= AUTH ================= */
-
-onAuthStateChanged(
-auth,
-async(user)=>{
+onAuthStateChanged(auth,async user=>{
 
 if(!user){
 
@@ -1949,32 +1190,11 @@ return;
 
 }
 
-currentUser=user;
+const ref=doc(db,"users",user.uid);
 
-await loadUser();
-
-}
-);
-
-
-/* ================= USER ================= */
-
-async function loadUser(){
-
-const userRef=
-doc(
-db,
-"users",
-currentUser.uid
-);
-
-
-const snap=
-await getDoc(userRef);
-
+const snap=await getDoc(ref);
 
 let data;
-
 
 if(snap.exists()){
 
@@ -1984,555 +1204,77 @@ data=snap.data();
 
 data={
 
-name:
-currentUser.displayName||
-"Student",
+name:user.displayName||"Student",
 
-email:
-currentUser.email||
-"",
+email:user.email||"",
 
 referralCode:
-"PAK"+
-currentUser.uid
-.substring(0,8)
-.toUpperCase(),
+"PAK"+user.uid.substring(0,8).toUpperCase(),
 
-points:0,
-
-totalReferrals:0,
-
-createdAt:new Date()
+points:0
 
 };
 
-
-await setDoc(
-userRef,
-data
-);
+await setDoc(ref,data);
 
 }
 
-
 const name=
 data.name||
-currentUser.displayName||
+user.displayName||
 "Student";
-
 
 $("welcomeName").innerText=
 "Welcome, "+name+" 👋";
 
-
 $("topName").innerText=name;
-
 
 $("profileName").innerText=name;
 
-
 $("profileEmail").innerText=
-currentUser.email||
-data.email||
-"-";
-
+user.email||data.email||"-";
 
 $("memberId").innerText=
-currentUser.uid.substring(0,12);
-
+user.uid.substring(0,12);
 
 $("avatar").innerText=
 name.charAt(0).toUpperCase();
 
-
-const referralCode=
+const code=
 data.referralCode;
-
 
 $("referralLink").value=
 location.origin+
-location.pathname.replace("dashboard.html","login.html")+
-"?ref="+
-encodeURIComponent(referralCode);
-
-
-$("referralPoints").innerText=
-data.points||0;
-
-
-await loadReferrals();
-
-await loadEarnings();
-
-await loadTeam();
-
-await loadLeaderboard();
-
-await loadWallet();
-
-await loadKyc();
-
-}
-
-
-/* ================= REFERRALS ================= */
-
-async function loadReferrals(){
-
-try{
-
-const snap=
-await getDocs(
-
-query(
-
-collection(db,"referrals"),
-
-where(
-"referrerUid",
-"==",
-currentUser.uid
-)
-
-)
-
-);
-
-
-$("referralCount").innerText=
-snap.size;
-
-
-}catch(error){
-
-console.log(error);
-
-$("referralCount").innerText="0";
-
-}
-
-}
-
-
-/* ================= EARNINGS ================= */
-
-async function loadEarnings(){
-
-try{
-
-const snap=
-await getDocs(
-
-query(
-
-collection(db,"earnings"),
-
-where(
-"userId",
-"==",
-currentUser.uid
-)
-
-)
-
-);
-
-
-let total=0;
-
-let commission=0;
-
-let passive=0;
-
-let today=0;
-
-let week=0;
-
-let month=0;
-
-
-const now=Date.now();
-
-
-snap.forEach(item=>{
-
-const data=item.data();
-
-const amount=
-Number(data.amount||0);
-
-
-total+=amount;
-
-
-if(data.type==="commission"){
-commission+=amount;
-}
-
-
-if(data.type==="passive"){
-passive+=amount;
-}
-
-
-const timestamp=
-data.createdAt?.toMillis?.()||0;
-
-
-if(now-timestamp<=86400000){
-today+=amount;
-}
-
-
-if(now-timestamp<=604800000){
-week+=amount;
-}
-
-
-if(now-timestamp<=2592000000){
-month+=amount;
-}
+location.pathname+
+"?ref="+code;
 
 });
 
+/* COPY */
 
-$("todayRevenue").innerText=money(today);
-
-$("weekRevenue").innerText=money(week);
-
-$("monthRevenue").innerText=money(month);
-
-$("allRevenue").innerText=money(total);
-
-$("commissionAmount").innerText=money(commission);
-
-$("passiveAmount").innerText=money(passive);
-
-
-}catch(error){
-
-console.log(error);
-
-}
-
-}
-
-
-/* ================= TEAM ================= */
-
-async function loadTeam(){
+$("copyBtn").onclick=async()=>{
 
 try{
 
-const snap=
-await getDocs(
-
-query(
-
-collection(db,"users"),
-
-where(
-"referredBy",
-"==",
-currentUser.uid
-),
-
-limit(20)
-
-)
-
+await navigator.clipboard.writeText(
+$("referralLink").value
 );
 
-
-if(snap.empty){
-
-$("teamList").innerHTML=
-"<p style='font-size:13px;color:#888'>अभी कोई Team Member नहीं है।</p>";
-
-return;
-
-}
-
-
-$("teamList").innerHTML=
-snap.docs
-.map((item,index)=>{
-
-const data=item.data();
-
-
-return `
-
-<div class="rank-row">
-
-<div class="rank-number">
-${index+1}
-</div>
-
-<div class="rank-user">
-
-<strong>
-${data.name||"Student"}
-</strong>
-
-<small>
-${data.email||""}
-</small>
-
-</div>
-
-<span class="status active">
-Member
-</span>
-
-</div>
-
-`;
-
-})
-.join("");
-
-
-}catch(error){
-
-console.log(error);
-
-$("teamList").innerHTML=
-"<p>Team data unavailable.</p>";
-
-}
-
-}
-
-
-/* ================= LEADERBOARD ================= */
-
-async function loadLeaderboard(){
-
-try{
-
-const snap=
-await getDocs(
-
-query(
-collection(db,"users"),
-limit(20)
-)
-
-);
-
-
-const users=
-snap.docs.map(item=>item.data());
-
-
-users.sort(
-(a,b)=>
-Number(b.points||0)-
-Number(a.points||0)
-);
-
-
-if(users.length===0){
-
-$("leaderboardList").innerHTML=
-"<p>अभी Leaderboard data नहीं है।</p>";
-
-return;
-
-}
-
-
-$("leaderboardList").innerHTML=
-users.map((data,index)=>`
-
-<div class="rank-row">
-
-<div class="rank-number">
-${index+1}
-</div>
-
-<div class="rank-user">
-
-<strong>
-${data.name||"Student"}
-</strong>
-
-<small>
-Affiliate Points
-</small>
-
-</div>
-
-<strong>
-${data.points||0}
-</strong>
-
-</div>
-
-`).join("");
-
-
-}catch(error){
-
-console.log(error);
-
-$("leaderboardList").innerHTML=
-"<p>Leaderboard unavailable.</p>";
-
-}
-
-}
-
-
-/* ================= WALLET ================= */
-
-async function loadWallet(){
-
-try{
-
-const snap=
-await getDocs(
-
-query(
-
-collection(db,"walletTransactions"),
-
-where(
-"userId",
-"==",
-currentUser.uid
-)
-
-)
-
-);
-
-
-let balance=0;
-
-
-snap.forEach(item=>{
-
-const data=item.data();
-
-const amount=
-Number(data.amount||0);
-
-
-if(
-data.type==="credit"||
-data.type==="commission"||
-data.type==="passive"
-){
-
-balance+=amount;
-
-}else{
-
-balance-=amount;
-
-}
-
-});
-
-
-$("walletBalance").innerText=
-money(balance);
-
-
-}catch(error){
-
-console.log(error);
-
-$("walletBalance").innerText="₹0";
-
-}
-
-}
-
-
-/* ================= KYC ================= */
-
-async function loadKyc(){
-
-try{
-
-const snap=
-await getDoc(
-
-doc(
-db,
-"kyc",
-currentUser.uid
-)
-
-);
-
-
-if(snap.exists()){
-
-$("kycStatus").innerText=
-snap.data().status||
-"Pending";
-
-}else{
-
-$("kycStatus").innerText=
-"Pending";
-
-}
-
-
-}catch(error){
-
-console.log(error);
-
-$("kycStatus").innerText=
-"Pending";
-
-}
-
-}
-
-
-/* ================= COPY ================= */
-
-$("copyBtn").onclick=
-async()=>{
-
-const link=
-$("referralLink").value;
-
-
-try{
-
-await navigator.clipboard.writeText(link);
-
-$("copyBtn").innerText=
-"Copied ✓";
-
+$("copyBtn").innerText="Copied ✓";
 
 setTimeout(()=>{
-
-$("copyBtn").innerText=
-"Copy";
-
+$("copyBtn").innerText="Copy";
 },1500);
 
+}catch(error){
 
-}catch{
-
-$("referralLink").select();
-
-document.execCommand("copy");
+alert("Copy nahi ho paya.");
 
 }
 
 };
 
-
-/* ================= BUY COURSE ================= */
+/* BUY COURSE */
 
 document
 .querySelectorAll(".buy-btn")
@@ -2540,88 +1282,63 @@ document
 
 button.onclick=()=>{
 
-selectedCourse={
+const name=
+button.dataset.courseName;
 
-id:button.dataset.courseId,
+const price=
+button.dataset.coursePrice;
 
-name:button.dataset.courseName,
-
-price:Number(
-button.dataset.coursePrice
-)
-
-};
-
-
-$("modalCourseName").innerText=
-selectedCourse.name;
-
-
-$("payableAmount").innerText=
-selectedCourse.price;
-
-
-$("paymentStatus").innerText="";
-
-
-$("paymentModal")
-.classList.add("show");
+alert(
+name+
+"\n\nCourse Price: ₹"+
+price+
+"\n\nPayment gateway setup hone ke baad payment page khulega."
+);
 
 };
 
 });
 
-
-/* ================= CANCEL PAYMENT ================= */
-
-$("cancelBtn").onclick=()=>{
-
-$("paymentModal")
-.classList.remove("show");
-
-selectedCourse=null;
-
-};
-
-
-/* ================= PAYMENT ================= */
-
-$("payBtn").onclick=()=>{
-
-if(!selectedCourse){
-return;
-}
-
-
-$("paymentStatus").innerText=
-"Payment gateway setup होने के बाद यहाँ Cashfree payment खुलेगा।";
-
-};
-
-
-/* ================= LOGOUT ================= */
+/* LOGOUT */
 
 $("sideLogout").onclick=
 async()=>{
-
-try{
 
 await signOut(auth);
 
 location.href="login.html";
 
-}catch(error){
+};
 
-console.log(error);
+/* ACTIVE MENU */
 
-alert("Logout नहीं हो पाया।");
+document
+.querySelectorAll(".side-link")
+.forEach(link=>{
+
+link.addEventListener(
+"click",
+()=>{
+
+document
+.querySelectorAll(".side-link")
+.forEach(x=>
+x.classList.remove("active")
+);
+
+link.classList.add("active");
+
+$("sidebar").classList.remove("open");
+
+$("overlay").classList.remove("show");
 
 }
 
-};
+);
+
+});
 
 </script>
 
 </body>
-
 </html>
