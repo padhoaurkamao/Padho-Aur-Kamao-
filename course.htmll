@@ -1,804 +1,1321 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
+
 <meta charset="UTF-8">
 
-<meta name="viewport"
+<meta
+name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>Padho Aur Kamao - My Course</title>
+<title>Courses Packages - Padho Aur Kamao</title>
+
 
 <style>
 
-/* ===============================
+/* =========================
    GLOBAL
-================================ */
+========================= */
 
 *{
-  box-sizing:border-box;
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f4f7fb;
-  color:#111827;
+
+font-family:
+Arial,
+Helvetica,
+sans-serif;
+
+background:
+linear-gradient(
+180deg,
+#f7f7ff 0%,
+#eef2ff 100%
+);
+
+color:#172033;
+
+min-height:100vh;
+
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+button{
+font-family:inherit;
 }
 
 
-/* ===============================
+/* =========================
    HEADER
-================================ */
+========================= */
 
 header{
-  background:
-  linear-gradient(
-    135deg,
-    #2563eb,
-    #7c3aed
-  );
 
-  color:white;
+width:100%;
 
-  padding:16px;
-}
+height:75px;
 
+display:flex;
 
-.header-container{
-  max-width:1200px;
+align-items:center;
 
-  margin:auto;
+justify-content:space-between;
 
-  display:flex;
+padding:0 6%;
 
-  justify-content:space-between;
+background:#ffffffd9;
 
-  align-items:center;
+backdrop-filter:blur(12px);
 
-  gap:15px;
-}
+border-bottom:
+1px solid #e8e8f0;
 
+position:sticky;
 
-.logo h2{
-  margin:0;
+top:0;
 
-  font-size:24px;
-}
-
-
-.logo p{
-  margin:5px 0 0;
-
-  font-size:13px;
-
-  opacity:.9;
-}
-
-
-.back-btn{
-  background:white;
-
-  color:#2563eb;
-
-  border:none;
-
-  padding:11px 16px;
-
-  border-radius:10px;
-
-  font-weight:bold;
-
-  cursor:pointer;
-
-  font-size:14px;
-}
-
-
-/* ===============================
-   MAIN
-================================ */
-
-main{
-
-  max-width:1200px;
-
-  margin:auto;
-
-  padding:25px 18px 50px;
+z-index:1000;
 
 }
 
 
-/* ===============================
-   COURSE HERO
-================================ */
+.logo{
 
-.course-hero{
+display:flex;
 
-  background:white;
+align-items:center;
 
-  border-radius:20px;
+gap:10px;
 
-  padding:25px;
+font-size:20px;
 
-  box-shadow:
-  0 5px 20px #0001;
+font-weight:800;
 
-  margin-bottom:30px;
+color:#4f1fa8;
 
 }
 
 
-.course-hero h1{
+.logo-icon{
 
-  margin:0;
+width:42px;
 
-  font-size:28px;
+height:42px;
 
-}
+border-radius:12px;
 
+display:flex;
 
-.course-hero p{
+align-items:center;
 
-  color:#6b7280;
+justify-content:center;
 
-  margin-bottom:0;
+font-size:22px;
 
-  line-height:1.6;
+color:white;
 
-}
+background:
+linear-gradient(
+135deg,
+#5b21b6,
+#8b5cf6
+);
 
-
-.package-badge{
-
-  display:inline-block;
-
-  margin-top:15px;
-
-  padding:8px 14px;
-
-  border-radius:30px;
-
-  background:#eef2ff;
-
-  color:#4338ca;
-
-  font-weight:bold;
+box-shadow:
+0 8px 20px
+rgba(91,33,182,.25);
 
 }
 
 
-/* ===============================
-   SECTION TITLE
-================================ */
+.nav-buttons{
 
-.section-title{
+display:flex;
 
-  margin-top:30px;
+align-items:center;
 
-  margin-bottom:18px;
+gap:10px;
 
 }
 
 
-.section-title h2{
+.login-btn{
 
-  margin:0;
+padding:
+11px 20px;
 
-  font-size:23px;
+border-radius:10px;
 
-}
+border:
+1px solid #6526d7;
 
+background:white;
 
-.section-title p{
+color:#6526d7;
 
-  color:#6b7280;
+font-size:14px;
 
-  margin-top:7px;
+font-weight:bold;
 
-}
+cursor:pointer;
 
-
-/* ===============================
-   BOOK GRID
-================================ */
-
-.book-grid{
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(
-    auto-fit,
-    minmax(220px,1fr)
-  );
-
-  gap:24px;
+transition:.25s;
 
 }
 
 
-/* ===============================
-   BOOK CARD
-================================ */
+.login-btn:hover{
 
-.book-card{
-
-  position:relative;
-
-  height:320px;
-
-  cursor:pointer;
-
-  perspective:1000px;
+background:#f4efff;
 
 }
 
 
-.book-card:hover
-.book-cover{
+.signup-btn{
 
-  transform:
-  rotateY(-8deg)
-  translateY(-8px);
+padding:
+11px 20px;
+
+border:0;
+
+border-radius:10px;
+
+background:
+linear-gradient(
+135deg,
+#6526d7,
+#8b5cf6
+);
+
+color:white;
+
+font-size:14px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+box-shadow:
+0 7px 18px
+rgba(101,38,215,.25);
+
+transition:.25s;
 
 }
 
 
-.book-cover{
+.signup-btn:hover{
 
-  width:100%;
+transform:
+translateY(-2px);
 
-  height:100%;
+}
 
-  position:relative;
 
-  border-radius:
-  8px
-  18px
-  18px
-  8px;
+/* =========================
+   HERO
+========================= */
 
-  overflow:hidden;
+.hero{
 
-  color:white;
+text-align:center;
 
-  padding:25px 20px;
+padding:
+55px 20px
+35px;
 
-  display:flex;
+}
 
-  flex-direction:column;
 
-  justify-content:space-between;
+.hero-small{
 
-  box-shadow:
+font-size:18px;
 
-  inset 10px 0 15px #0002,
+font-style:italic;
 
-  0 15px 30px #0004;
+color:#4b5563;
 
-  transition:.35s;
+margin-bottom:14px;
+
+}
+
+
+.hero h1{
+
+font-size:42px;
+
+line-height:1.25;
+
+font-weight:800;
+
+color:#172033;
+
+}
+
+
+.gradient-text{
+
+background:
+linear-gradient(
+90deg,
+#ec4899,
+#f97316,
+#7c3aed,
+#2563eb
+);
+
+-webkit-background-clip:text;
+
+background-clip:text;
+
+color:transparent;
+
+}
+
+
+.hero p{
+
+margin-top:16px;
+
+color:#667085;
+
+font-size:16px;
+
+}
+
+
+/* =========================
+   COURSE CONTAINER
+========================= */
+
+.courses{
+
+max-width:1100px;
+
+margin:auto;
+
+padding:
+20px 20px
+70px;
+
+}
+
+
+/* =========================
+   COURSE CARD
+========================= */
+
+.course-card{
+
+background:white;
+
+border-radius:30px;
+
+overflow:hidden;
+
+margin-bottom:45px;
+
+box-shadow:
+0 20px 50px
+rgba(37,40,80,.15);
+
+border:
+1px solid
+rgba(255,255,255,.8);
+
+transition:.3s;
+
+}
+
+
+.course-card:hover{
+
+transform:
+translateY(-6px);
+
+box-shadow:
+0 30px 65px
+rgba(37,40,80,.22);
+
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+.course-cover{
+
+height:430px;
+
+position:relative;
+
+overflow:hidden;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:45px 70px;
+
+}
+
+
+/* STARTER */
+
+.starter-cover{
+
+background:
+linear-gradient(
+135deg,
+#9c5d22,
+#51301e 45%,
+#201a25
+);
+
+}
+
+
+/* PREMIUM */
+
+.premium-cover{
+
+background:
+linear-gradient(
+135deg,
+#0d6d72,
+#22a6a4 45%,
+#1b4d9b
+);
+
+}
+
+
+/* GRID */
+
+.course-cover:before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+opacity:.15;
+
+background-image:
+
+linear-gradient(
+rgba(255,255,255,.5) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(255,255,255,.5) 1px,
+transparent 1px
+);
+
+background-size:
+25px 25px;
+
+}
+
+
+/* CIRCLE */
+
+.course-cover:after{
+
+content:"";
+
+position:absolute;
+
+width:420px;
+
+height:420px;
+
+border:
+
+3px solid
+rgba(255,255,255,.35);
+
+border-radius:50%;
+
+right:-160px;
+
+bottom:-210px;
+
+}
+
+
+/* =========================
+   COVER TEXT
+========================= */
+
+.cover-left{
+
+position:relative;
+
+z-index:5;
+
+max-width:50%;
+
+}
+
+
+.cover-tag{
+
+font-size:58px;
+
+font-weight:bold;
+
+color:
+rgba(255,255,255,.7);
+
+margin-bottom:15px;
+
+}
+
+
+.cover-title{
+
+font-size:68px;
+
+font-weight:800;
+
+line-height:1;
+
+color:white;
+
+text-shadow:
+0 8px 20px
+rgba(0,0,0,.35);
+
+}
+
+
+.cover-subtitle{
+
+font-size:18px;
+
+color:#ffffffcc;
+
+margin-top:18px;
+
+line-height:1.6;
+
+}
+
+
+/* =========================
+   BOOK
+========================= */
+
+.book-area{
+
+position:relative;
+
+z-index:10;
+
+width:320px;
+
+height:340px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+
+.book{
+
+width:220px;
+
+height:290px;
+
+position:relative;
+
+transform:
+perspective(1000px)
+rotateY(-18deg)
+rotateZ(2deg);
+
+transform-style:
+preserve-3d;
+
+border-radius:
+4px 8px 8px 4px;
+
+box-shadow:
+
+20px 25px 25px
+rgba(0,0,0,.35),
+
+inset 8px 0 10px
+rgba(255,255,255,.08);
+
+overflow:visible;
+
+}
+
+
+.book-starter{
+
+background:
+linear-gradient(
+135deg,
+#071a34,
+#102b50
+);
+
+}
+
+
+.book-premium{
+
+background:
+linear-gradient(
+135deg,
+#063b20,
+#136436
+);
 
 }
 
 
 /* BOOK SPINE */
 
-.book-cover::before{
+.book:before{
 
-  content:"";
+content:"";
 
-  position:absolute;
+position:absolute;
 
-  left:0;
+left:-23px;
 
-  top:0;
+top:7px;
 
-  width:18px;
+width:25px;
 
-  height:100%;
+height:276px;
 
-  background:
+transform:
+rotateY(65deg);
 
-  linear-gradient(
-    90deg,
-    #0005,
-    transparent
-  );
+transform-origin:right;
 
-}
+background:
+linear-gradient(
+90deg,
+#111827,
+#334155
+);
 
-
-/* PAGE EFFECT */
-
-.book-cover::after{
-
-  content:"";
-
-  position:absolute;
-
-  right:0;
-
-  top:10px;
-
-  width:8px;
-
-  height:calc(100% - 20px);
-
-  background:
-
-  repeating-linear-gradient(
-
-    to bottom,
-
-    #ffffff99,
-
-    #ffffff99 2px,
-
-    #d1d5db 3px,
-
-    #d1d5db 4px
-
-  );
-
-  border-radius:
-  0
-  6px
-  6px
-  0;
+border-radius:
+3px 0 0 3px;
 
 }
 
 
-/* ===============================
-   BOOK COLORS
-================================ */
+/* PAGES */
 
-.blue{
+.book:after{
 
-  background:
-  linear-gradient(
-    135deg,
-    #1d4ed8,
-    #2563eb,
-    #60a5fa
-  );
+content:"";
 
-}
+position:absolute;
 
+right:-12px;
 
-.purple{
+top:12px;
 
-  background:
-  linear-gradient(
-    135deg,
-    #581c87,
-    #7e22ce,
-    #c084fc
-  );
+width:13px;
 
-}
+height:266px;
 
+background:
+repeating-linear-gradient(
 
-.green{
+0deg,
 
-  background:
-  linear-gradient(
-    135deg,
-    #065f46,
-    #16a34a,
-    #4ade80
-  );
+#e5e7eb 0px,
+#ffffff 2px,
+#d1d5db 3px
+
+);
+
+transform:
+rotateY(55deg);
+
+transform-origin:left;
+
+border-radius:
+0 3px 3px 0;
 
 }
 
 
-.orange{
+.book-content{
 
-  background:
-  linear-gradient(
-    135deg,
-    #9a3412,
-    #ea580c,
-    #fb923c
-  );
+position:absolute;
 
-}
+inset:0;
 
+padding:
+28px 20px;
 
-.red{
+border:
+1px solid
+rgba(255,255,255,.15);
 
-  background:
-  linear-gradient(
-    135deg,
-    #991b1b,
-    #dc2626,
-    #f87171
-  );
+border-radius:
+4px 8px 8px 4px;
+
+color:white;
+
+text-align:center;
 
 }
 
 
-.dark{
+.book-brand{
 
-  background:
-  linear-gradient(
-    135deg,
-    #111827,
-    #374151,
-    #6b7280
-  );
+font-size:12px;
+
+opacity:.7;
+
+margin-bottom:30px;
 
 }
 
 
-/* ===============================
-   BOOK CONTENT
-================================ */
+.book-package{
 
-.book-top{
+font-size:12px;
 
-  display:flex;
+letter-spacing:2px;
 
-  justify-content:space-between;
+writing-mode:
+vertical-rl;
 
-  align-items:center;
+position:absolute;
 
-}
+left:15px;
 
+top:75px;
 
-.book-icon{
-
-  width:55px;
-
-  height:55px;
-
-  border-radius:14px;
-
-  background:#ffffff22;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  font-size:28px;
-
-  backdrop-filter:
-  blur(5px);
+opacity:.75;
 
 }
 
 
-.book-tag{
+.book-name{
 
-  font-size:11px;
+font-family:
+Georgia,
+serif;
 
-  padding:6px 10px;
+font-size:29px;
 
-  background:#ffffff22;
+font-weight:bold;
 
-  border-radius:20px;
+margin-top:55px;
 
-}
+line-height:1.2;
 
-
-.book-middle{
-
-  text-align:center;
-
-}
-
-
-.book-middle h3{
-
-  font-size:25px;
-
-  margin:0 0 12px;
+text-transform:uppercase;
 
 }
 
 
-.book-middle p{
+.book-line{
 
-  margin:0;
+height:2px;
 
-  font-size:13px;
+background:
+rgba(255,255,255,.4);
 
-  opacity:.9;
-
-  line-height:1.5;
+margin:
+35px 20px
+12px;
 
 }
 
 
 .book-bottom{
 
-  text-align:center;
+font-size:11px;
+
+opacity:.75;
 
 }
 
 
-.open-book{
+/* =========================
+   CARD BODY
+========================= */
 
-  background:white;
+.course-body{
 
-  color:#1e3a8a;
-
-  border:none;
-
-  padding:11px 18px;
-
-  border-radius:9px;
-
-  font-weight:bold;
-
-  cursor:pointer;
+padding:
+32px 40px
+35px;
 
 }
 
 
-/* ===============================
-   PREMIUM MOCK TEST
-================================ */
+.course-title-row{
 
-.mock-card{
+display:flex;
 
-  background:
+align-items:center;
 
-  linear-gradient(
-    135deg,
-    #111827,
-    #312e81
-  );
+justify-content:space-between;
 
-}
+gap:20px;
 
+padding-bottom:22px;
 
-.mock-card
-.open-book{
-
-  color:#312e81;
+border-bottom:
+1px dashed #d1d5db;
 
 }
 
 
-/* ===============================
-   SKILL COURSE
-================================ */
+.course-name{
 
-.skill-card{
+font-size:38px;
 
-  background:
+font-weight:700;
 
-  linear-gradient(
-    135deg,
-    #0f766e,
-    #0891b2
-  );
+background:
+linear-gradient(
+90deg,
+#6526d7,
+#312e81
+);
 
-}
+-webkit-background-clip:text;
 
+background-clip:text;
 
-/* ===============================
-   LOADING
-================================ */
-
-.loading{
-
-  background:white;
-
-  padding:30px;
-
-  text-align:center;
-
-  border-radius:15px;
-
-  box-shadow:
-  0 5px 15px #0001;
+color:transparent;
 
 }
 
 
-.no-access{
+.course-count{
 
-  background:white;
+font-size:22px;
 
-  padding:35px;
+display:flex;
 
-  border-radius:18px;
+align-items:center;
 
-  text-align:center;
+gap:10px;
 
-  box-shadow:
-  0 5px 20px #0001;
+white-space:nowrap;
 
-}
-
-
-.no-access h2{
-
-  margin-top:0;
+color:#1f2937;
 
 }
 
 
-/* ===============================
-   MODAL
-================================ */
+.course-rating{
 
-.modal{
+margin:
+25px 0;
 
-  display:none;
+font-size:28px;
 
-  position:fixed;
+letter-spacing:5px;
 
-  inset:0;
-
-  background:#0009;
-
-  z-index:9999;
-
-  align-items:center;
-
-  justify-content:center;
-
-  padding:18px;
+color:#fbbf24;
 
 }
 
 
-.modal-box{
+/* =========================
+   INFO
+========================= */
 
-  width:100%;
+.course-info{
 
-  max-width:650px;
+display:flex;
 
-  max-height:85vh;
+justify-content:space-between;
 
-  overflow:auto;
+align-items:center;
 
-  background:white;
+gap:25px;
 
-  border-radius:20px;
-
-  padding:25px;
-
-}
-
-
-.modal-box h2{
-
-  margin-top:0;
+flex-wrap:wrap;
 
 }
 
 
-.modal-content{
+.buy-btn{
 
-  line-height:1.8;
+border:0;
 
-  color:#374151;
+padding:
+17px 40px;
+
+border-radius:40px;
+
+font-size:25px;
+
+font-weight:500;
+
+color:white;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+135deg,
+#ec00a7,
+#8b5cf6
+);
+
+box-shadow:
+0 12px 25px
+rgba(139,92,246,.35);
+
+transition:.25s;
 
 }
 
 
-.close-btn{
+.buy-btn:hover{
 
-  width:100%;
-
-  margin-top:20px;
-
-  padding:14px;
-
-  border:none;
-
-  border-radius:10px;
-
-  background:#2563eb;
-
-  color:white;
-
-  font-weight:bold;
-
-  cursor:pointer;
+transform:
+translateY(-3px)
+scale(1.02);
 
 }
 
 
-/* ===============================
+.price-box{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+
+.current-price{
+
+font-size:38px;
+
+font-weight:800;
+
+color:#4f1fa8;
+
+}
+
+
+.old-price{
+
+font-size:23px;
+
+color:#6b7280;
+
+text-decoration:
+line-through;
+
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.course-features{
+
+margin-top:25px;
+
+padding-top:22px;
+
+border-top:
+1px solid #eef0f4;
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:12px;
+
+}
+
+
+.feature{
+
+background:#f8f7ff;
+
+border-radius:12px;
+
+padding:13px;
+
+font-size:13px;
+
+color:#4b5563;
+
+text-align:center;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+text-align:center;
+
+padding:
+25px 15px;
+
+background:white;
+
+border-top:
+1px solid #e5e7eb;
+
+color:#6b7280;
+
+font-size:14px;
+
+}
+
+
+/* =========================
    MOBILE
-================================ */
+========================= */
 
-@media(max-width:600px){
+@media(max-width:800px){
 
-  .header-container{
+header{
 
-    align-items:flex-start;
+padding:
+0 15px;
 
-  }
+height:65px;
+
+}
+
+.logo{
+
+font-size:15px;
+
+}
+
+.logo-icon{
+
+width:36px;
+
+height:36px;
+
+font-size:18px;
+
+}
+
+.login-btn,
+.signup-btn{
+
+padding:
+9px 12px;
+
+font-size:12px;
+
+}
+
+.hero{
+
+padding:
+40px 15px
+25px;
+
+}
+
+.hero-small{
+
+font-size:16px;
+
+}
+
+.hero h1{
+
+font-size:31px;
+
+}
+
+.hero p{
+
+font-size:14px;
+
+}
+
+.courses{
+
+padding:
+10px 15px
+50px;
+
+}
+
+.course-card{
+
+border-radius:25px;
+
+margin-bottom:30px;
+
+}
+
+.course-cover{
+
+height:430px;
+
+padding:
+35px 25px;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+.cover-left{
+
+max-width:100%;
+
+text-align:center;
+
+}
+
+.cover-tag{
+
+font-size:32px;
+
+margin-bottom:5px;
+
+}
+
+.cover-title{
+
+font-size:48px;
+
+}
+
+.cover-subtitle{
+
+font-size:14px;
+
+margin-top:10px;
+
+}
+
+.book-area{
+
+width:220px;
+
+height:260px;
+
+margin-top:5px;
+
+}
+
+.book{
+
+width:170px;
+
+height:225px;
+
+}
+
+.book:before{
+
+height:215px;
+
+}
+
+.book:after{
+
+height:205px;
+
+}
+
+.book-content{
+
+padding:18px 12px;
+
+}
+
+.book-brand{
+
+margin-bottom:12px;
+
+font-size:10px;
+
+}
+
+.book-package{
+
+font-size:9px;
+
+left:10px;
+
+top:55px;
+
+}
+
+.book-name{
+
+font-size:21px;
+
+margin-top:35px;
+
+}
+
+.book-line{
+
+margin:
+22px 15px
+8px;
+
+}
+
+.course-body{
+
+padding:
+25px 20px;
+
+}
+
+.course-title-row{
+
+align-items:flex-start;
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.course-name{
+
+font-size:34px;
+
+}
+
+.course-count{
+
+font-size:19px;
+
+}
+
+.course-rating{
+
+font-size:23px;
+
+}
+
+.course-info{
+
+flex-direction:column-reverse;
+
+align-items:stretch;
+
+}
+
+.buy-btn{
+
+width:100%;
+
+font-size:22px;
+
+}
+
+.price-box{
+
+justify-content:center;
+
+}
+
+.course-features{
+
+grid-template-columns:1fr;
+
+}
+
+}
 
 
-  .logo h2{
+@media(max-width:390px){
 
-    font-size:20px;
+.nav-buttons{
 
-  }
+gap:6px;
 
+}
 
-  .course-hero h1{
+.login-btn,
+.signup-btn{
 
-    font-size:23px;
+padding:
+8px 9px;
 
-  }
+font-size:11px;
 
+}
 
-  .book-grid{
+.logo{
 
-    grid-template-columns:
-    repeat(2,1fr);
+font-size:13px;
 
-    gap:14px;
+gap:5px;
 
-  }
+}
 
+.cover-title{
 
-  .book-card{
+font-size:40px;
 
-    height:270px;
+}
 
-  }
+.course-name{
 
+font-size:29px;
 
-  .book-cover{
+}
 
-    padding:16px 13px;
+.current-price{
 
-  }
+font-size:32px;
 
-
-  .book-middle h3{
-
-    font-size:18px;
-
-  }
-
-
-  .book-middle p{
-
-    font-size:11px;
-
-  }
-
-
-  .book-icon{
-
-    width:42px;
-
-    height:42px;
-
-    font-size:22px;
-
-  }
-
-
-  .book-tag{
-
-    font-size:9px;
-
-    padding:5px 7px;
-
-  }
-
-
-  .open-book{
-
-    font-size:11px;
-
-    padding:9px 10px;
-
-  }
+}
 
 }
 
@@ -810,1708 +1327,719 @@ main{
 <body>
 
 
-<!-- ===============================
+<!-- =========================
      HEADER
-================================ -->
+========================= -->
 
 <header>
 
-<div class="header-container">
 
-<div class="logo">
+<a href="course.html"
+class="logo">
 
-<h2>
-📚 Padho Aur Kamao
-</h2>
+<div class="logo-icon">
 
-<p>
-सीखें • Practice करें • आगे बढ़ें
-</p>
+📚
 
 </div>
 
+<span>
+Padho Aur Kamao
+</span>
 
-<button
-class="back-btn"
-onclick="goDashboard()">
+</a>
 
-← Dashboard
 
-</button>
+<div class="nav-buttons">
+
+<a
+href="login.html"
+class="login-btn">
+
+Login
+
+</a>
+
+
+<a
+href="login.html#signup"
+class="signup-btn">
+
+Sign Up
+
+</a>
 
 </div>
+
 
 </header>
 
 
 
-<!-- ===============================
-     MAIN
-================================ -->
+<!-- =========================
+     HERO
+========================= -->
 
-<main>
+<section class="hero">
 
 
-<div
-id="loading"
-class="loading">
+<div class="hero-small">
 
-📚 Course loading...
+Courses Packages
 
 </div>
 
 
-<div
-id="courseContent"
-style="display:none">
+<h1>
 
+Choose The Perfect
 
-<!-- HERO -->
+<br>
 
-<div
-class="course-hero">
+<span class="gradient-text">
 
-<h1
-id="packageTitle">
+Course Package
 
-My Course
+</span>
+
+For You
 
 </h1>
 
 
-<p
-id="packageDescription">
+<p>
+
+अपनी Skills बढ़ाएं • सीखें • आगे बढ़ें
 
 </p>
 
 
-<div
-class="package-badge"
-id="packageBadge">
-
-ACTIVE PACKAGE
-
-</div>
-
-</div>
+</section>
 
 
 
-<!-- BOOK SECTION -->
+<!-- =========================
+     COURSES
+========================= -->
 
-<div
-id="bookSections">
-
-</div>
-
-
-</div>
+<main class="courses">
 
 
 
-<!-- NO ACCESS -->
+<!-- =========================
+     COURSE 1
+========================= -->
+
+<section class="course-card">
+
 
 <div
-id="noAccess"
-class="no-access"
-style="display:none">
+class="
+course-cover
+starter-cover
+">
 
-<h2>
-🔒 Course Access Required
+
+<div class="cover-left">
+
+
+<div class="cover-tag">
+
+&lt;/&gt;
+
+</div>
+
+
+<div class="cover-title">
+
+Study
+
+<br>
+
+& Skill
+
+</div>
+
+
+<div class="cover-subtitle">
+
+Learning • Communication
+
+<br>
+
+Maths • Reasoning • Hindi
+
+</div>
+
+
+</div>
+
+
+
+<div class="book-area">
+
+
+<div
+class="
+book
+book-starter
+">
+
+
+<div class="book-content">
+
+
+<div class="book-brand">
+
+Padho Aur Kamao
+
+</div>
+
+
+<div class="book-package">
+
+STARTER PACKAGE
+
+</div>
+
+
+<div class="book-name">
+
+STUDY
+
+<br>
+
+& SKILL
+
+<br>
+
+STARTER
+
+</div>
+
+
+<div class="book-line">
+
+</div>
+
+
+<div class="book-bottom">
+
+Learn • Practice • Grow
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="course-body">
+
+
+<div class="course-title-row">
+
+
+<h2 class="course-name">
+
+Study & Skill Starter
+
 </h2>
 
-<p>
-आपके पास इस course का access नहीं है।
-कृपया पहले Dashboard से package purchase करें।
-</p>
+
+<div class="course-count">
+
+📚
+
+2 Courses
+
+</div>
+
+
+</div>
+
+
+<div class="course-rating">
+
+★ ★ ★ ★ ☆
+
+</div>
+
+
+<div class="course-info">
 
 
 <button
-class="back-btn"
-onclick="goDashboard()">
+class="buy-btn"
+data-course="study-skill-starter"
+onclick="joinCourse(this.dataset.course)">
 
-← Go to Dashboard
+❯ Buy Now
 
 </button>
 
+
+<div class="price-box">
+
+
+<span class="current-price">
+
+₹199
+
+</span>
+
+
+<span class="old-price">
+
+₹299
+
+</span>
+
+
 </div>
+
+
+</div>
+
+
+<div class="course-features">
+
+
+<div class="feature">
+
+📖 Study Material
+
+</div>
+
+
+<div class="feature">
+
+🎯 Skill Learning
+
+</div>
+
+
+<div class="feature">
+
+📚 2 Courses Access
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- =========================
+     COURSE 2
+========================= -->
+
+<section class="course-card">
+
+
+<div
+class="
+course-cover
+premium-cover
+">
+
+
+<div class="cover-left">
+
+
+<div class="cover-tag">
+
+▶
+
+</div>
+
+
+<div class="cover-title">
+
+Skill
+
+<br>
+
+& Success
+
+</div>
+
+
+<div class="cover-subtitle">
+
+Competitive Preparation
+
+<br>
+
+Skills • Growth • Success
+
+</div>
+
+
+</div>
+
+
+
+<div class="book-area">
+
+
+<div
+class="
+book
+book-premium
+">
+
+
+<div class="book-content">
+
+
+<div class="book-brand">
+
+Padho Aur Kamao
+
+</div>
+
+
+<div class="book-package">
+
+PREMIUM PACKAGE
+
+</div>
+
+
+<div class="book-name">
+
+SKILL
+
+<br>
+
+& SUCCESS
+
+<br>
+
+PREMIUM
+
+</div>
+
+
+<div class="book-line">
+
+</div>
+
+
+<div class="book-bottom">
+
+Learn • Grow • Succeed
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="course-body">
+
+
+<div class="course-title-row">
+
+
+<h2 class="course-name">
+
+Skill & Success Premium
+
+</h2>
+
+
+<div class="course-count">
+
+📚
+
+All Courses
+
+</div>
+
+
+</div>
+
+
+<div class="course-rating">
+
+★ ★ ★ ★ ★
+
+</div>
+
+
+<div class="course-info">
+
+
+<button
+class="buy-btn"
+data-course="skill-success-premium"
+onclick="joinCourse(this.dataset.course)">
+
+❯ Buy Now
+
+</button>
+
+
+<div class="price-box">
+
+
+<span class="current-price">
+
+₹399
+
+</span>
+
+
+<span class="old-price">
+
+₹499
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+<div class="course-features">
+
+
+<div class="feature">
+
+🎓 Competitive Preparation
+
+</div>
+
+
+<div class="feature">
+
+🚀 Premium Skills
+
+</div>
+
+
+<div class="feature">
+
+♾️ Full Course Access
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
 
 
 </main>
 
 
 
-<!-- ===============================
-     BOOK MODAL
-================================ -->
+<!-- =========================
+     FOOTER
+========================= -->
 
-<div
-id="bookModal"
-class="modal">
+<footer>
 
+© 2026 Padho Aur Kamao • Learn • Earn • Grow
 
-<div
-class="modal-box">
+</footer>
 
 
-<h2
-id="modalBookTitle">
 
-Study Material
-
-</h2>
-
-
-<div
-id="modalBookContent"
-class="modal-content">
-
-</div>
-
-
-<button
-class="close-btn"
-onclick="closeBook()">
-
-Close Book
-
-</button>
-
-
-</div>
-
-</div>
-
-
+<!-- =========================
+     FIREBASE
+========================= -->
 
 <script type="module">
 
 
-/* ===============================
-   FIREBASE IMPORTS
-================================ */
-
 import {
+
 initializeApp
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
 import {
+
 getAuth,
 onAuthStateChanged
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
-import {
-getFirestore,
-doc,
-getDoc
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-
-
-/* ===============================
+/* =========================
    FIREBASE CONFIG
-================================ */
+========================= */
 
-const firebaseConfig = {
+const firebaseConfig={
+
 
 apiKey:
-"YOUR_API_KEY",
+
+"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+
 
 authDomain:
-"YOUR_PROJECT.firebaseapp.com",
+
+"padho-aur-kamao-3eeae.firebaseapp.com",
+
 
 projectId:
-"YOUR_PROJECT_ID",
+
+"padho-aur-kamao-3eeae",
+
 
 storageBucket:
-"YOUR_PROJECT.firebasestorage.app",
+
+"padho-aur-kamao-3eeae.firebasestorage.app",
+
 
 messagingSenderId:
-"YOUR_SENDER_ID",
+
+"670063905617",
+
 
 appId:
-"YOUR_APP_ID"
+
+"1:670063905617:web:9b3a7e62fdeea14fbfa170"
+
 
 };
 
 
 
-/* ===============================
-   INITIALIZE FIREBASE
-================================ */
+const app=
 
-const app =
-initializeApp(firebaseConfig);
-
-
-const auth =
-getAuth(app);
-
-
-const db =
-getFirestore(app);
-
-
-
-/* ===============================
-   GET COURSE ID
-================================ */
-
-const params =
-new URLSearchParams(
-window.location.search
+initializeApp(
+firebaseConfig
 );
 
 
-const packageId =
-params.get("id");
+const auth=
 
+getAuth(
+app
+);
 
 
-/* ===============================
-   PACKAGE DATA
-================================ */
 
-const packageData = {
+/* =========================
+   CURRENT USER
+========================= */
 
+let loggedInUser=null;
 
-/* =================================
-   ₹199 PACKAGE
-================================= */
-
-starter_199:{
-
-title:
-"📘 Study & Skill Starter",
-
-description:
-"Lead Generation, Combination Skills और Competitive Exam Study Materials का Starter Package.",
-
-sections:[
-
-
-{
-
-title:
-"🚀 Lead Generation",
-
-books:[
-
-{
-title:
-"Lead Generation Basics",
-
-icon:"🚀",
-
-color:"blue",
-
-tag:"SKILL",
-
-content:`
-<h3>Lead Generation Basics</h3>
-
-<p>
-इस section में आप सीखेंगे कि Lead क्या होती है और किसी Business या Service के लिए संभावित Customers को कैसे समझा जाता है।
-</p>
-
-<ul>
-
-<li>Lead क्या होती है</li>
-
-<li>Target Audience की Understanding</li>
-
-<li>Customer Requirement Basics</li>
-
-<li>Online Business Opportunities</li>
-
-<li>Practical Learning Concepts</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:
-"Online Lead Finding",
-
-icon:"🔍",
-
-color:"purple",
-
-tag:"SKILL",
-
-content:`
-<h3>Online Lead Finding</h3>
-
-<p>
-इस Book में Online Platforms पर संभावित Customers और Businesses को खोजने की basic understanding दी जाएगी।
-</p>
-
-<ul>
-
-<li>Online Research Basics</li>
-
-<li>Business Search</li>
-
-<li>Customer Interest Understanding</li>
-
-<li>Lead Information Organization</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:
-"Customer & Business Leads",
-
-icon:"👥",
-
-color:"green",
-
-tag:"SKILL",
-
-content:`
-<h3>Customer & Business Leads</h3>
-
-<p>
-Customer और Business Leads की Understanding तथा उनकी जरूरतों को समझने के basic concepts।
-</p>
-
-<ul>
-
-<li>Customer Lead</li>
-
-<li>Business Lead</li>
-
-<li>Target Customer</li>
-
-<li>Lead Quality Basics</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:
-"Practical Learning",
-
-icon:"💻",
-
-color:"orange",
-
-tag:"PRACTICE",
-
-content:`
-<h3>Practical Learning</h3>
-
-<p>
-Lead Generation Skills को समझने के लिए practical exercises और learning activities।
-</p>
-
-<ul>
-
-<li>Practice Tasks</li>
-
-<li>Research Exercises</li>
-
-<li>Basic Project Activities</li>
-
-<li>Skill Improvement</li>
-
-</ul>
-`
-
-}
-
-]
-
-},
-
-
-{
-
-title:
-"🔥 Combination Skills",
-
-books:[
-
-{
-title:
-"Communication Skills",
-
-icon:"💬",
-
-color:"purple",
-
-tag:"SKILL",
-
-content:`
-<h3>Communication Skills</h3>
-
-<ul>
-
-<li>Effective Communication</li>
-
-<li>Speaking Skills</li>
-
-<li>Listening Skills</li>
-
-<li>Professional Communication</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:
-"Basic Digital Skills",
-
-icon:"⌨️",
-
-color:"blue",
-
-tag:"DIGITAL",
-
-content:`
-<h3>Basic Digital Skills</h3>
-
-<ul>
-
-<li>Internet Basics</li>
-
-<li>Digital Tools</li>
-
-<li>Online Productivity</li>
-
-<li>Basic Technology Skills</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:
-"AI Tools Basics",
-
-icon:"🤖",
-
-color:"green",
-
-tag:"AI",
-
-content:`
-<h3>AI Tools Basics</h3>
-
-<ul>
-
-<li>AI का परिचय</li>
-
-<li>Basic AI Tools</li>
-
-<li>Productivity Use</li>
-
-<li>Learning Assistance</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:
-"Productivity Skills",
-
-icon:"📈",
-
-color:"orange",
-
-tag:"SKILL",
-
-content:`
-<h3>Productivity Skills</h3>
-
-<ul>
-
-<li>Time Management</li>
-
-<li>Task Planning</li>
-
-<li>Goal Setting</li>
-
-<li>Daily Productivity</li>
-
-</ul>
-`
-
-}
-
-]
-
-},
-
-
-{
-
-title:
-"📚 Competitive Exam Study Section",
-
-books:[
-
-{
-title:"Maths",
-
-icon:"➗",
-
-color:"blue",
-
-tag:"STUDY",
-
-content:`
-<h3>Maths Study Book</h3>
-
-<ul>
-
-<li>Arithmetic</li>
-
-<li>Percentage</li>
-
-<li>Profit & Loss</li>
-
-<li>Ratio & Proportion</li>
-
-<li>Time & Work</li>
-
-<li>Geometry Basics</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:"Reasoning",
-
-icon:"🧠",
-
-color:"purple",
-
-tag:"STUDY",
-
-content:`
-<h3>Reasoning Study Book</h3>
-
-<ul>
-
-<li>Analogy</li>
-
-<li>Series</li>
-
-<li>Coding-Decoding</li>
-
-<li>Ranking</li>
-
-<li>Venn Diagram</li>
-
-<li>Logical Reasoning</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:"General Knowledge / GS",
-
-icon:"🌍",
-
-color:"green",
-
-tag:"GK",
-
-content:`
-<h3>General Knowledge / GS</h3>
-
-<ul>
-
-<li>History</li>
-
-<li>Geography</li>
-
-<li>Polity</li>
-
-<li>Science</li>
-
-<li>Current Awareness</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:"Hindi",
-
-icon:"🇮🇳",
-
-color:"orange",
-
-tag:"SUBJECT",
-
-content:`
-<h3>Hindi Study Book</h3>
-
-<ul>
-
-<li>व्याकरण</li>
-
-<li>संधि</li>
-
-<li>समास</li>
-
-<li>पर्यायवाची</li>
-
-<li>विलोम शब्द</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:"English",
-
-icon:"🇬🇧",
-
-color:"red",
-
-tag:"SUBJECT",
-
-content:`
-<h3>English Study Book</h3>
-
-<ul>
-
-<li>Grammar</li>
-
-<li>Vocabulary</li>
-
-<li>Tenses</li>
-
-<li>Reading</li>
-
-<li>Practice Questions</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:"UP GK",
-
-icon:"🗺️",
-
-color:"dark",
-
-tag:"GK",
-
-content:`
-<h3>UP GK Study Book</h3>
-
-<ul>
-
-<li>उत्तर प्रदेश History</li>
-
-<li>Geography</li>
-
-<li>Culture</li>
-
-<li>Government</li>
-
-<li>Important Places</li>
-
-</ul>
-`
-
-}
-
-]
-
-}
-
-]
-
-},
-
-
-
-/* =================================
-   ₹399 PACKAGE
-================================= */
-
-premium_399:{
-
-title:
-"⭐ Skill & Success Premium",
-
-description:
-"All Competitive Exam Materials, Premium Mock Tests और अतिरिक्त Premium Features.",
-
-sections:[
-
-
-{
-
-title:
-"2️⃣ ALL Competitive Exam Materials",
-
-books:[
-
-{
-title:"NEET",
-
-icon:"🩺",
-
-color:"red",
-
-tag:"PREMIUM",
-
-content:`
-<h3>NEET Study Material</h3>
-
-<ul>
-
-<li>Physics</li>
-
-<li>Chemistry</li>
-
-<li>Biology</li>
-
-<li>Practice Questions</li>
-
-<li>Mock Preparation</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:"SSC / Police",
-
-icon:"👮",
-
-color:"blue",
-
-tag:"EXAM",
-
-content:`
-<h3>SSC / Police Preparation</h3>
-
-<ul>
-
-<li>Maths</li>
-
-<li>Reasoning</li>
-
-<li>GK / GS</li>
-
-<li>Hindi</li>
-
-<li>Practice Sets</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:"Railway",
-
-icon:"🚂",
-
-color:"green",
-
-tag:"EXAM",
-
-content:`
-<h3>Railway Preparation</h3>
-
-<ul>
-
-<li>Maths</li>
-
-<li>Reasoning</li>
-
-<li>General Awareness</li>
-
-<li>Practice Sets</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:"Banking",
-
-icon:"🏦",
-
-color:"purple",
-
-tag:"EXAM",
-
-content:`
-<h3>Banking Preparation</h3>
-
-<ul>
-
-<li>Quantitative Aptitude</li>
-
-<li>Reasoning</li>
-
-<li>English</li>
-
-<li>Banking Awareness</li>
-
-</ul>
-`
-
-},
-
-
-{
-
-title:"Defence",
-
-icon:"🪖",
-
-color:"dark",
-
-tag:"EXAM",
-
-content:`
-<h3>Defence Preparation</h3>
-
-<ul>
-
-<li>General Knowledge</li>
-
-<li>Maths</li>
-
-<li>Reasoning</li>
-
-<li>English</li>
-
-<li>Practice Sets</li>
-
-</ul>
-`
-
-}
-
-]
-
-},
-
-
-{
-
-title:
-"3️⃣ Premium Mock Test System",
-
-books:[
-
-{
-title:"Timed Mock Tests",
-
-icon:"⏱️",
-
-color:"dark",
-
-tag:"MOCK TEST",
-
-mock:true,
-
-content:`
-<h3>Timed Mock Tests</h3>
-
-<p>
-निर्धारित समय में परीक्षा देने की practice।
-</p>
-`
-
-},
-
-
-{
-
-title:"Subject-wise Tests",
-
-icon:"🎯",
-
-color:"purple",
-
-tag:"MOCK TEST",
-
-mock:true,
-
-content:`
-<h3>Subject-wise Tests</h3>
-
-<p>
-हर Subject के लिए अलग-अलग Practice Tests।
-</p>
-`
-
-},
-
-
-{
-
-title:"Chapter-wise Tests",
-
-icon:"📖",
-
-color:"blue",
-
-tag:"MOCK TEST",
-
-mock:true,
-
-content:`
-<h3>Chapter-wise Tests</h3>
-
-<p>
-Chapter Complete करने के बाद Practice Tests।
-</p>
-`
-
-},
-
-
-{
-
-title:"Full-Length Tests",
-
-icon:"🏆",
-
-color:"orange",
-
-tag:"MOCK TEST",
-
-mock:true,
-
-content:`
-<h3>Full-Length Tests</h3>
-
-<p>
-पूरे Exam Pattern के अनुसार Full Practice Test।
-</p>
-`
-
-},
-
-
-{
-
-title:"Performance Analysis",
-
-icon:"📊",
-
-color:"green",
-
-tag:"ANALYSIS",
-
-mock:true,
-
-content:`
-<h3>Performance Analysis</h3>
-
-<p>
-Test Performance, Score और Improvement Areas देखने की सुविधा।
-</p>
-`
-
-}
-
-]
-
-},
-
-
-{
-
-title:
-"4️⃣ Premium Features",
-
-books:[
-
-{
-title:"More Study Material Access",
-
-icon:"📚",
-
-color:"blue",
-
-tag:"PREMIUM",
-
-content:`
-<h3>More Study Material Access</h3>
-
-<p>
-अधिक Study Materials और Premium Learning Content।
-</p>
-`
-
-},
-
-
-{
-
-title:"Regular Content Updates",
-
-icon:"🔄",
-
-color:"green",
-
-tag:"PREMIUM",
-
-content:`
-<h3>Regular Content Updates</h3>
-
-<p>
-नए और Updated Study Content का Access।
-</p>
-`
-
-},
-
-
-{
-
-title:"Priority Access",
-
-icon:"⭐",
-
-color:"orange",
-
-tag:"PREMIUM",
-
-content:`
-<h3>Priority Access</h3>
-
-<p>
-Premium Content और नए Features का Priority Access।
-</p>
-`
-
-},
-
-
-{
-
-title:"Learning Progress Tracking",
-
-icon:"📈",
-
-color:"purple",
-
-tag:"TRACKING",
-
-content:`
-<h3>Learning Progress Tracking</h3>
-
-<p>
-अपनी Learning Progress और Completion Track करें।
-</p>
-`
-
-},
-
-
-{
-
-title:"Selected Course Certificates",
-
-icon:"🏅",
-
-color:"red",
-
-tag:"CERTIFICATE",
-
-content:`
-<h3>Selected Course Certificates</h3>
-
-<p>
-Selected Courses की Completion के अनुसार Certificate Feature।
-</p>
-`
-
-}
-
-]
-
-}
-
-]
-
-}
-
-};
-
-
-
-/* ===============================
-   AUTH CHECK
-================================ */
 
 onAuthStateChanged(
+
 auth,
-async user => {
+
+user=>{
 
 
-if(!user){
+if(user){
 
-window.location.href =
-"login.html";
-
-return;
+loggedInUser=user;
 
 }
 
-
-if(!packageId){
-
-showNoAccess();
-
-return;
-
 }
-
-
-const enrollmentId =
-
-user.uid +
-"_" +
-packageId;
-
-
-try{
-
-
-const enrollmentSnap =
-
-await getDoc(
-
-doc(
-db,
-"enrollments",
-enrollmentId
-)
 
 );
 
 
-if(
 
-!enrollmentSnap.exists()
+/* =========================
+   JOIN COURSE
+========================= */
 
-||
+window.joinCourse=
 
-enrollmentSnap
-.data()
-.status !== "active"
+function(courseId){
 
-){
 
-showNoAccess();
+/* अगर Login नहीं है */
 
-return;
+if(!loggedInUser){
 
-}
 
+window.location.href=
 
-const packageInfo =
+"login.html?course="+
 
-packageData[
-packageId
-];
-
-
-if(!packageInfo){
-
-showNoAccess();
-
-return;
-
-}
-
-
-loadCourse(
-packageInfo
-);
-
-
-}catch(error){
-
-console.error(error);
-
-showNoAccess();
-
-}
-
-}
-);
-
-
-
-/* ===============================
-   LOAD COURSE
-================================ */
-
-function loadCourse(
-packageInfo
-){
-
-
-document
-.getElementById("loading")
-.style.display =
-"none";
-
-
-document
-.getElementById("courseContent")
-.style.display =
-"block";
-
-
-document
-.getElementById("packageTitle")
-.textContent =
-packageInfo.title;
-
-
-document
-.getElementById("packageDescription")
-.textContent =
-packageInfo.description;
-
-
-const container =
-
-document
-.getElementById(
-"bookSections"
-);
-
-
-container.innerHTML =
-"";
-
-
-packageInfo
-.sections
-.forEach(
-section => {
-
-
-const sectionElement =
-
-document.createElement(
-"section"
-);
-
-
-sectionElement.innerHTML =
-
-`
-
-<div class="section-title">
-
-<h2>
-
-${safe(
-section.title
-)}
-
-</h2>
-
-<p>
-
-अपनी पसंद की Digital Book खोलें और Study शुरू करें।
-
-</p>
-
-</div>
-
-
-<div class="book-grid">
-
-${
-
-section.books
-.map(
-book =>
-createBook(
-book
-)
-)
-.join("")
-
-}
-
-</div>
-
-`;
-
-
-container.appendChild(
-sectionElement
-);
-
-}
-);
-
-}
-
-
-
-/* ===============================
-   CREATE BOOK
-================================ */
-
-function createBook(
-book
-){
-
-
-const bookData =
 encodeURIComponent(
-JSON.stringify(
-book
-)
+courseId
 );
 
 
-return `
-
-<div
-class="book-card"
-data-book="${bookData}">
-
-
-<div
-class="
-book-cover
-${safe(book.color)}
-${book.mock ? " mock-card" : ""}
-">
-
-
-<div
-class="book-top">
-
-
-<div
-class="book-icon">
-
-${safe(
-book.icon
-)}
-
-</div>
-
-
-<div
-class="book-tag">
-
-${safe(
-book.tag
-)}
-
-</div>
-
-
-</div>
-
-
-
-<div
-class="book-middle">
-
-
-<h3>
-
-${safe(
-book.title
-)}
-
-</h3>
-
-
-<p>
-
-Padho Aur Kamao
-
-<br>
-
-Digital Study Book
-
-</p>
-
-
-</div>
-
-
-
-<div
-class="book-bottom">
-
-
-<button
-class="open-book">
-
-📖 Open Book
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-`;
-
-}
-
-
-
-/* ===============================
-   BOOK CLICK
-================================ */
-
-document.addEventListener(
-"click",
-event => {
-
-
-const bookCard =
-
-event.target.closest(
-".book-card"
-);
-
-
-if(!bookCard)
 return;
 
-
-const encodedBook =
-
-bookCard.dataset.book;
-
-
-const book =
-
-JSON.parse(
-
-decodeURIComponent(
-encodedBook
-)
-
-);
-
-
-openBook(
-book
-);
-
-}
-);
-
-
-
-/* ===============================
-   OPEN BOOK
-================================ */
-
-window.openBook =
-function(book){
-
-
-document
-.getElementById(
-"modalBookTitle"
-)
-.textContent =
-book.icon +
-" " +
-book.title;
-
-
-document
-.getElementById(
-"modalBookContent"
-)
-.innerHTML =
-book.content;
-
-
-document
-.getElementById(
-"bookModal"
-)
-.style.display =
-"flex";
-
-};
-
-
-
-/* ===============================
-   CLOSE BOOK
-================================ */
-
-window.closeBook =
-function(){
-
-
-document
-.getElementById(
-"bookModal"
-)
-.style.display =
-"none";
-
-};
-
-
-
-/* ===============================
-   DASHBOARD
-================================ */
-
-window.goDashboard =
-function(){
-
-window.location.href =
-"dashboard.html";
-
-};
-
-
-
-/* ===============================
-   NO ACCESS
-================================ */
-
-function showNoAccess(){
-
-
-document
-.getElementById(
-"loading"
-)
-.style.display =
-"none";
-
-
-document
-.getElementById(
-"noAccess"
-)
-.style.display =
-"block";
-
 }
 
 
 
-/* ===============================
-   SAFE HTML
-================================ */
+/* Login है */
 
-function safe(value){
+window.location.href=
 
-return String(value)
+"dashboard.html?course="+
 
-.replaceAll(
-"&",
-"&amp;"
-)
-
-.replaceAll(
-"<",
-"&lt;"
-)
-
-.replaceAll(
-">",
-"&gt;"
-)
-
-.replaceAll(
-'"',
-"&quot;"
-)
-
-.replaceAll(
-"'",
-"&#039;"
+encodeURIComponent(
+courseId
 );
 
-}
+
+};
 
 
 </script>
 
+
 </body>
+
 </html>
