@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
@@ -113,6 +113,11 @@
       background:#1d4ed8;
     }
 
+    .btn:disabled{
+      opacity:.7;
+      cursor:not-allowed;
+    }
+
     .google-btn{
       margin-top:12px;
       background:#111827;
@@ -132,6 +137,11 @@
       text-decoration:none;
       font-size:14px;
       cursor:pointer;
+      font-weight:bold;
+    }
+
+    .forgot a:hover{
+      text-decoration:underline;
     }
 
     .message{
@@ -141,6 +151,7 @@
       text-align:center;
       display:none;
       font-size:14px;
+      line-height:1.5;
     }
 
     .success{
@@ -184,7 +195,9 @@
 
 <div class="container">
 
-  <div class="logo">📚 Padho Aur Kamao</div>
+  <div class="logo">
+    📚 Padho Aur Kamao
+  </div>
 
   <div class="subtitle">
     पढ़ाई करें • ज्ञान बढ़ाएँ • आगे बढ़ें
@@ -209,7 +222,9 @@
   </div>
 
 
-  <!-- LOGIN -->
+  <!-- =========================
+       LOGIN FORM
+  ========================== -->
 
   <form id="loginForm" class="form active">
 
@@ -219,6 +234,7 @@
       type="email"
       id="loginEmail"
       placeholder="अपना Email डालें"
+      autocomplete="email"
       required
     >
 
@@ -228,13 +244,19 @@
       type="password"
       id="loginPassword"
       placeholder="अपना Password डालें"
+      autocomplete="current-password"
       required
     >
 
     <div class="forgot">
-      <a id="forgotPassword">
+
+      <a
+        href="#"
+        id="forgotPassword"
+      >
         Password भूल गए?
       </a>
+
     </div>
 
     <button
@@ -256,7 +278,9 @@
   </form>
 
 
-  <!-- SIGNUP -->
+  <!-- =========================
+       SIGNUP FORM
+  ========================== -->
 
   <form id="signupForm" class="form">
 
@@ -266,6 +290,7 @@
       type="text"
       id="signupName"
       placeholder="अपना नाम डालें"
+      autocomplete="name"
       required
     >
 
@@ -275,6 +300,7 @@
       type="email"
       id="signupEmail"
       placeholder="अपना Email डालें"
+      autocomplete="email"
       required
     >
 
@@ -285,6 +311,7 @@
       id="signupPassword"
       placeholder="कम से कम 6 characters"
       minlength="6"
+      autocomplete="new-password"
       required
     >
 
@@ -295,6 +322,7 @@
       id="confirmPassword"
       placeholder="Password दोबारा डालें"
       minlength="6"
+      autocomplete="new-password"
       required
     >
 
@@ -309,7 +337,13 @@
   </form>
 
 
-  <div id="message" class="message"></div>
+  <!-- MESSAGE -->
+
+  <div
+    id="message"
+    class="message"
+  ></div>
+
 
   <div class="footer">
     © 2026 Padho Aur Kamao
@@ -320,35 +354,67 @@
 
 <script type="module">
 
+
 /* =========================================
    FIREBASE IMPORTS
 ========================================= */
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import {
+  initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
 
 import {
+
   getAuth,
+
   createUserWithEmailAndPassword,
+
   signInWithEmailAndPassword,
+
   GoogleAuthProvider,
+
   signInWithPopup,
+
   sendPasswordResetEmail,
+
   updateProfile
+
 }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
 
 import {
+
   getFirestore,
+
   doc,
+
   setDoc,
+
   getDoc,
+
   addDoc,
+
   collection,
+
   serverTimestamp,
-  increment
+
+  increment,
+
+  getDocs,
+
+  query,
+
+  where
+
 }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
 
 
 /* =========================================
@@ -378,21 +444,32 @@ const firebaseConfig = {
 };
 
 
+
 /* =========================================
-   INITIALIZE
+   INITIALIZE FIREBASE
 ========================================= */
 
 const app =
-  initializeApp(firebaseConfig);
+initializeApp(
+  firebaseConfig
+);
+
 
 const auth =
-  getAuth(app);
+getAuth(
+  app
+);
+
 
 const db =
-  getFirestore(app);
+getFirestore(
+  app
+);
+
 
 const googleProvider =
-  new GoogleAuthProvider();
+new GoogleAuthProvider();
+
 
 
 /* =========================================
@@ -400,25 +477,46 @@ const googleProvider =
 ========================================= */
 
 const loginTab =
-  document.getElementById("loginTab");
+document.getElementById(
+  "loginTab"
+);
+
 
 const signupTab =
-  document.getElementById("signupTab");
+document.getElementById(
+  "signupTab"
+);
+
 
 const loginForm =
-  document.getElementById("loginForm");
+document.getElementById(
+  "loginForm"
+);
+
 
 const signupForm =
-  document.getElementById("signupForm");
+document.getElementById(
+  "signupForm"
+);
+
 
 const message =
-  document.getElementById("message");
+document.getElementById(
+  "message"
+);
+
 
 const referralBox =
-  document.getElementById("referralBox");
+document.getElementById(
+  "referralBox"
+);
+
 
 const referralCodeText =
-  document.getElementById("referralCodeText");
+document.getElementById(
+  "referralCodeText"
+);
+
 
 
 /* =========================================
@@ -426,18 +524,24 @@ const referralCodeText =
 ========================================= */
 
 const urlParams =
-  new URLSearchParams(
-    window.location.search
-  );
+new URLSearchParams(
+  window.location.search
+);
+
 
 const referralCode =
-  urlParams.get("ref");
+urlParams.get(
+  "ref"
+);
 
 
 if(referralCode){
 
   const cleanCode =
-    referralCode.trim().toUpperCase();
+  referralCode
+  .trim()
+  .toUpperCase();
+
 
   if(cleanCode){
 
@@ -446,19 +550,21 @@ if(referralCode){
       cleanCode
     );
 
+
     referralCodeText.textContent =
-      cleanCode;
+    cleanCode;
+
 
     referralBox.style.display =
-      "block";
+    "block";
 
-    /* Automatically open Signup */
 
     signupTab.click();
 
   }
 
 }
+
 
 
 /* =========================================
@@ -468,12 +574,19 @@ if(referralCode){
 function getReferralCode(){
 
   return (
+
     localStorage.getItem(
       "padhoAurKamaoReferral"
-    ) || null
+    )
+
+    ||
+
+    null
+
   );
 
 }
+
 
 
 /* =========================================
@@ -486,10 +599,12 @@ function showMessage(
 ){
 
   message.textContent =
-    text;
+  text;
+
 
   message.className =
-    "message " + type;
+  "message " +
+  type;
 
 }
 
@@ -497,12 +612,14 @@ function showMessage(
 function clearMessage(){
 
   message.textContent =
-    "";
+  "";
+
 
   message.className =
-    "message";
+  "message";
 
 }
+
 
 
 /* =========================================
@@ -510,103 +627,113 @@ function clearMessage(){
 ========================================= */
 
 loginTab.addEventListener(
-  "click",
-  ()=>{
+"click",
+()=>{
 
-    loginTab.classList.add("active");
 
-    signupTab.classList.remove("active");
+  loginTab.classList.add(
+    "active"
+  );
 
-    loginForm.classList.add("active");
 
-    signupForm.classList.remove("active");
+  signupTab.classList.remove(
+    "active"
+  );
 
-    clearMessage();
 
-  }
+  loginForm.classList.add(
+    "active"
+  );
+
+
+  signupForm.classList.remove(
+    "active"
+  );
+
+
+  clearMessage();
+
+}
 );
+
 
 
 signupTab.addEventListener(
-  "click",
-  ()=>{
+"click",
+()=>{
 
-    signupTab.classList.add("active");
 
-    loginTab.classList.remove("active");
+  signupTab.classList.add(
+    "active"
+  );
 
-    signupForm.classList.add("active");
 
-    loginForm.classList.remove("active");
+  loginTab.classList.remove(
+    "active"
+  );
 
-    clearMessage();
 
-  }
+  signupForm.classList.add(
+    "active"
+  );
+
+
+  loginForm.classList.remove(
+    "active"
+  );
+
+
+  clearMessage();
+
+}
 );
 
 
+
 /* =========================================
-   FIND REFERRER
+   GENERATE REFERRAL CODE
 ========================================= */
 
-async function findReferrer(
-  referralCode
+function generateReferralCode(
+  uid
 ){
 
-  if(!referralCode){
-
-    return null;
-
-  }
-
-
-  try{
-
-    /*
-      Referral code को users collection
-      में खोज रहे हैं।
-    */
-
-    const usersRef =
-      collection(db,"users");
+  const shortUid =
+  uid
+  .substring(
+    0,
+    6
+  )
+  .toUpperCase();
 
 
-    /*
-      Firestore query के लिए
-      पहले सभी matching documents
-      खोजने का सरल तरीका नहीं है
-      बिना query import के।
+  const random =
+  Math.floor(
 
-      इसलिए known referral code के लिए
-      हम local lookup helper इस्तेमाल
-      करने की कोशिश करते हैं।
-    */
+    100 +
 
-    /*
-      यह function नीचे query-based
-      version से replace किया गया है।
-    */
+    Math.random() *
+    900
 
-    return null;
+  );
 
-  }
 
-  catch(error){
+  return (
 
-    console.error(
-      "Referrer search error:",
-      error
-    );
+    "PAK" +
 
-    return null;
+    shortUid +
 
-  }
+    random
+
+  );
 
 }
 
 
+
 /* =========================================
-   CREATE USER PROFILE + REFERRAL
+   CREATE USER PROFILE
 ========================================= */
 
 async function createUserProfile(
@@ -614,83 +741,105 @@ async function createUserProfile(
   name
 ){
 
+
   const userRef =
-    doc(
-      db,
-      "users",
-      user.uid
-    );
+  doc(
+    db,
+    "users",
+    user.uid
+  );
 
 
-  const referralCode =
-    generateReferralCode(
-      user.uid
-    );
-
-
-  const savedReferral =
-    getReferralCode();
-
-
-  let referrerUid =
-    null;
-
-
-  let referrerCode =
-    null;
+  const userSnap =
+  await getDoc(
+    userRef
+  );
 
 
   /*
-    Referral code मिलने पर
-    users collection में search करेंगे।
+    अगर profile पहले से है
+    तो दोबारा create नहीं करेंगे।
   */
 
-  if(savedReferral){
+  if(
+    userSnap.exists()
+  ){
+
+    return;
+
+  }
+
+
+  const newReferralCode =
+  generateReferralCode(
+    user.uid
+  );
+
+
+  const savedReferral =
+  getReferralCode();
+
+
+  let referrerUid =
+  null;
+
+
+  let referrerCode =
+  null;
+
+
+
+  /* =====================================
+     FIND REFERRER
+  ===================================== */
+
+  if(
+    savedReferral
+  ){
 
     try{
 
-      const {
-        collection: firestoreCollection,
-        getDocs,
-        query,
-        where
-      } = await import(
-        "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js"
+
+      const usersQuery =
+      query(
+
+        collection(
+          db,
+          "users"
+        ),
+
+        where(
+          "referralCode",
+          "==",
+          savedReferral
+        )
+
       );
 
 
-      const usersQuery =
-        query(
-          firestoreCollection(
-            db,
-            "users"
-          ),
-          where(
-            "referralCode",
-            "==",
-            savedReferral
-          )
-        );
-
-
       const result =
-        await getDocs(
-          usersQuery
-        );
+      await getDocs(
+        usersQuery
+      );
 
 
-      if(!result.empty){
+      if(
+        !result.empty
+      ){
 
         const referrer =
-          result.docs[0];
+        result.docs[0];
+
 
         referrerUid =
-          referrer.id;
+        referrer.id;
+
 
         referrerCode =
-          savedReferral;
+        savedReferral;
 
       }
+
 
     }
 
@@ -706,8 +855,9 @@ async function createUserProfile(
   }
 
 
+
   /* =====================================
-     SAVE NEW USER
+     SAVE USER PROFILE
   ===================================== */
 
   await setDoc(
@@ -715,30 +865,42 @@ async function createUserProfile(
     {
 
       name:
-        name ||
-        user.displayName ||
-        user.email.split("@")[0],
+
+      name ||
+
+      user.displayName ||
+
+      user.email.split(
+        "@"
+      )[0],
+
 
       email:
-        user.email,
+      user.email,
+
 
       referralCode:
-        referralCode,
+      newReferralCode,
+
 
       referredBy:
-        referrerUid,
+      referrerUid,
+
 
       points:
-        0,
+      0,
+
 
       totalReferrals:
-        0,
+      0,
+
 
       createdAt:
-        serverTimestamp()
+      serverTimestamp()
 
     }
   );
+
 
 
   /* =====================================
@@ -746,66 +908,80 @@ async function createUserProfile(
   ===================================== */
 
   if(
-    referrerUid &&
-    referrerUid !== user.uid
+
+    referrerUid
+
+    &&
+
+    referrerUid !==
+    user.uid
+
   ){
+
 
     try{
 
+
       await addDoc(
+
         collection(
           db,
           "referrals"
         ),
+
         {
 
           referrerUid:
-            referrerUid,
+          referrerUid,
+
 
           referredUid:
-            user.uid,
+          user.uid,
+
 
           referralCode:
-            referrerCode,
+          referrerCode,
+
 
           createdAt:
-            serverTimestamp(),
+          serverTimestamp(),
+
 
           status:
-            "registered"
+          "registered"
 
         }
+
       );
 
 
-      /*
-        Referrer के points और
-        referral count बढ़ाएँ।
-      */
-
       await setDoc(
+
         doc(
           db,
           "users",
           referrerUid
         ),
+
         {
 
           points:
-            increment(1),
+          increment(
+            1
+          ),
+
 
           totalReferrals:
-            increment(1)
+          increment(
+            1
+          )
 
         },
+
         {
           merge:true
         }
-      );
 
-
-      console.log(
-        "Referral successfully recorded."
       );
 
 
@@ -823,10 +999,10 @@ async function createUserProfile(
   }
 
 
-  /*
-    Referral को एक बार process
-    होने के बाद हटाएँ।
-  */
+
+  /* =====================================
+     REMOVE SAVED REFERRAL
+  ===================================== */
 
   localStorage.removeItem(
     "padhoAurKamaoReferral"
@@ -835,175 +1011,172 @@ async function createUserProfile(
 }
 
 
-/* =========================================
-   GENERATE REFERRAL CODE
-========================================= */
-
-function generateReferralCode(
-  uid
-){
-
-  const shortUid =
-    uid
-      .substring(0,6)
-      .toUpperCase();
-
-  const random =
-    Math.floor(
-      100 +
-      Math.random()*900
-    );
-
-  return (
-    "PAK" +
-    shortUid +
-    random
-  );
-
-}
-
 
 /* =========================================
    LOGIN
 ========================================= */
 
 loginForm.addEventListener(
-  "submit",
-  async(e)=>{
-
-    e.preventDefault();
-
-    clearMessage();
+"submit",
+async(e)=>{
 
 
-    const email =
-      document
-        .getElementById(
-          "loginEmail"
-        )
-        .value
-        .trim();
+  e.preventDefault();
 
 
-    const password =
-      document
-        .getElementById(
-          "loginPassword"
-        )
-        .value;
+  clearMessage();
 
 
-    const button =
-      document.getElementById(
-        "loginBtn"
-      );
+  const email =
+  document
+  .getElementById(
+    "loginEmail"
+  )
+  .value
+  .trim();
 
 
-    try{
-
-      button.textContent =
-        "Login हो रहा है...";
-
-      button.classList.add(
-        "loading"
-      );
+  const password =
+  document
+  .getElementById(
+    "loginPassword"
+  )
+  .value;
 
 
-      await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+  const button =
+  document.getElementById(
+    "loginBtn"
+  );
 
 
-      showMessage(
-        "Login सफल! Dashboard खुल रहा है...",
-        "success"
-      );
+  try{
 
 
-      setTimeout(
-        ()=>{
-
-          window.location.href =
-            "dashboard.html";
-
-        },
-        1000
-      );
-
-    }
-
-    catch(error){
-
-      console.error(error);
+    button.disabled =
+    true;
 
 
-      let text =
-        "Login नहीं हो पाया।";
+    button.textContent =
+    "Login हो रहा है...";
 
 
-      if(
-        error.code ===
-        "auth/invalid-credential"
-      ){
+    await signInWithEmailAndPassword(
 
-        text =
-          "Email या Password गलत है।";
+      auth,
 
-      }
+      email,
 
-      else if(
-        error.code ===
-        "auth/user-not-found"
-      ){
+      password
 
-        text =
-          "यह Email registered नहीं है।";
-
-      }
-
-      else if(
-        error.code ===
-        "auth/wrong-password"
-      ){
-
-        text =
-          "Password गलत है।";
-
-      }
-
-      else if(
-        error.code ===
-        "auth/invalid-email"
-      ){
-
-        text =
-          "Email सही format में डालें।";
-
-      }
+    );
 
 
-      showMessage(
-        text,
-        "error"
-      );
+    showMessage(
 
-    }
+      "Login सफल! Dashboard खुल रहा है...",
 
-    finally{
+      "success"
 
-      button.textContent =
-        "Login";
+    );
 
-      button.classList.remove(
-        "loading"
-      );
 
-    }
+    setTimeout(
+
+      ()=>{
+
+        window.location.href =
+        "dashboard.html";
+
+      },
+
+      1000
+
+    );
+
 
   }
+
+  catch(error){
+
+
+    console.error(
+      error
+    );
+
+
+    let text =
+    "Login नहीं हो पाया।";
+
+
+    if(
+      error.code ===
+      "auth/invalid-credential"
+    ){
+
+      text =
+      "Email या Password गलत है।";
+
+    }
+
+
+    else if(
+      error.code ===
+      "auth/user-not-found"
+    ){
+
+      text =
+      "यह Email registered नहीं है।";
+
+    }
+
+
+    else if(
+      error.code ===
+      "auth/wrong-password"
+    ){
+
+      text =
+      "Password गलत है।";
+
+    }
+
+
+    else if(
+      error.code ===
+      "auth/invalid-email"
+    ){
+
+      text =
+      "Email सही format में डालें।";
+
+    }
+
+
+    showMessage(
+      text,
+      "error"
+    );
+
+
+  }
+
+  finally{
+
+
+    button.disabled =
+    false;
+
+
+    button.textContent =
+    "Login";
+
+  }
+
+
+}
 );
+
 
 
 /* =========================================
@@ -1011,205 +1184,218 @@ loginForm.addEventListener(
 ========================================= */
 
 signupForm.addEventListener(
-  "submit",
-  async(e)=>{
+"submit",
+async(e)=>{
 
-    e.preventDefault();
 
-    clearMessage();
+  e.preventDefault();
 
 
-    const name =
-      document
-        .getElementById(
-          "signupName"
-        )
-        .value
-        .trim();
+  clearMessage();
 
 
-    const email =
-      document
-        .getElementById(
-          "signupEmail"
-        )
-        .value
-        .trim();
+  const name =
+  document
+  .getElementById(
+    "signupName"
+  )
+  .value
+  .trim();
 
 
-    const password =
-      document
-        .getElementById(
-          "signupPassword"
-        )
-        .value;
+  const email =
+  document
+  .getElementById(
+    "signupEmail"
+  )
+  .value
+  .trim();
 
 
-    const confirmPassword =
-      document
-        .getElementById(
-          "confirmPassword"
-        )
-        .value;
+  const password =
+  document
+  .getElementById(
+    "signupPassword"
+  )
+  .value;
 
 
-    const button =
-      document.getElementById(
-        "signupBtn"
-      );
+  const confirmPassword =
+  document
+  .getElementById(
+    "confirmPassword"
+  )
+  .value;
 
 
-    if(
-      password !==
-      confirmPassword
-    ){
+  const button =
+  document.getElementById(
+    "signupBtn"
+  );
 
-      showMessage(
-        "दोनों Password समान होने चाहिए।",
-        "error"
-      );
 
-      return;
 
-    }
+  if(
+    password !==
+    confirmPassword
+  ){
 
+    showMessage(
+      "दोनों Password समान होने चाहिए।",
+      "error"
+    );
 
-    if(
-      password.length < 6
-    ){
-
-      showMessage(
-        "Password कम से कम 6 characters का होना चाहिए।",
-        "error"
-      );
-
-      return;
-
-    }
-
-
-    try{
-
-      button.textContent =
-        "Account बनाया जा रहा है...";
-
-      button.classList.add(
-        "loading"
-      );
-
-
-      /* Create Firebase account */
-
-      const userCredential =
-        await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-
-
-      const user =
-        userCredential.user;
-
-
-      /* Save display name */
-
-      await updateProfile(
-        user,
-        {
-          displayName:
-            name
-        }
-      );
-
-
-      /* Create Firestore profile
-         and process referral */
-
-      await createUserProfile(
-        user,
-        name
-      );
-
-
-      showMessage(
-        "Account सफलतापूर्वक बन गया!",
-        "success"
-      );
-
-
-      setTimeout(
-        ()=>{
-
-          window.location.href =
-            "dashboard.html";
-
-        },
-        1200
-      );
-
-    }
-
-    catch(error){
-
-      console.error(error);
-
-
-      let text =
-        "Account नहीं बन पाया।";
-
-
-      if(
-        error.code ===
-        "auth/email-already-in-use"
-      ){
-
-        text =
-          "यह Email पहले से registered है।";
-
-      }
-
-      else if(
-        error.code ===
-        "auth/invalid-email"
-      ){
-
-        text =
-          "Email सही format में डालें।";
-
-      }
-
-      else if(
-        error.code ===
-        "auth/weak-password"
-      ){
-
-        text =
-          "Password बहुत कमजोर है।";
-
-      }
-
-
-      showMessage(
-        text,
-        "error"
-      );
-
-    }
-
-    finally{
-
-      button.textContent =
-        "Create Account";
-
-      button.classList.remove(
-        "loading"
-      );
-
-    }
+    return;
 
   }
+
+
+
+  try{
+
+
+    button.disabled =
+    true;
+
+
+    button.textContent =
+    "Account बनाया जा रहा है...";
+
+
+    const userCredential =
+
+    await createUserWithEmailAndPassword(
+
+      auth,
+
+      email,
+
+      password
+
+    );
+
+
+    const user =
+    userCredential.user;
+
+
+    await updateProfile(
+
+      user,
+
+      {
+
+        displayName:
+        name
+
+      }
+
+    );
+
+
+    await createUserProfile(
+
+      user,
+
+      name
+
+    );
+
+
+    showMessage(
+
+      "Account सफलतापूर्वक बन गया!",
+
+      "success"
+
+    );
+
+
+    setTimeout(
+
+      ()=>{
+
+        window.location.href =
+        "dashboard.html";
+
+      },
+
+      1200
+
+    );
+
+
+  }
+
+  catch(error){
+
+
+    console.error(
+      error
+    );
+
+
+    let text =
+    "Account नहीं बन पाया।";
+
+
+    if(
+      error.code ===
+      "auth/email-already-in-use"
+    ){
+
+      text =
+      "यह Email पहले से registered है।";
+
+    }
+
+
+    else if(
+      error.code ===
+      "auth/invalid-email"
+    ){
+
+      text =
+      "Email सही format में डालें।";
+
+    }
+
+
+    else if(
+      error.code ===
+      "auth/weak-password"
+    ){
+
+      text =
+      "Password कम से कम 6 characters का होना चाहिए।";
+
+    }
+
+
+    showMessage(
+      text,
+      "error"
+    );
+
+
+  }
+
+  finally{
+
+
+    button.disabled =
+    false;
+
+
+    button.textContent =
+    "Create Account";
+
+  }
+
+
+}
 );
+
 
 
 /* =========================================
@@ -1217,91 +1403,145 @@ signupForm.addEventListener(
 ========================================= */
 
 document
-  .getElementById(
+.getElementById(
+  "googleBtn"
+)
+.addEventListener(
+"click",
+async()=>{
+
+
+  const button =
+  document.getElementById(
     "googleBtn"
-  )
-  .addEventListener(
-    "click",
-    async()=>{
-
-      try{
-
-        clearMessage();
+  );
 
 
-        const result =
-          await signInWithPopup(
-            auth,
-            googleProvider
-          );
+  try{
 
 
-        const user =
-          result.user;
+    clearMessage();
 
 
-        /*
-          Google user पहली बार आया है
-          तो Firestore profile बनाएं।
-        */
-
-        const userRef =
-          doc(
-            db,
-            "users",
-            user.uid
-          );
+    button.disabled =
+    true;
 
 
-        const existing =
-          await getDoc(
-            userRef
-          );
+    button.textContent =
+    "Google Login हो रहा है...";
 
 
-        if(!existing.exists()){
+    const result =
 
-          await createUserProfile(
-            user,
-            user.displayName ||
-            user.email.split("@")[0]
-          );
+    await signInWithPopup(
 
-        }
+      auth,
 
+      googleProvider
 
-        showMessage(
-          "Google Login सफल!",
-          "success"
-        );
+    );
 
 
-        setTimeout(
-          ()=>{
-
-            window.location.href =
-              "dashboard.html";
-
-          },
-          1000
-        );
-
-      }
-
-      catch(error){
-
-        console.error(error);
+    const user =
+    result.user;
 
 
-        showMessage(
-          "Google Login नहीं हो पाया।",
-          "error"
-        );
+    await createUserProfile(
 
-      }
+      user,
+
+      user.displayName ||
+
+      user.email.split(
+        "@"
+      )[0]
+
+    );
+
+
+    showMessage(
+
+      "Google Login सफल!",
+
+      "success"
+
+    );
+
+
+    setTimeout(
+
+      ()=>{
+
+        window.location.href =
+        "dashboard.html";
+
+      },
+
+      1000
+
+    );
+
+
+  }
+
+  catch(error){
+
+
+    console.error(
+      error
+    );
+
+
+    let text =
+    "Google Login नहीं हो पाया।";
+
+
+    if(
+      error.code ===
+      "auth/popup-closed-by-user"
+    ){
+
+      text =
+      "Google Login popup बंद कर दिया गया।";
 
     }
-  );
+
+
+    else if(
+      error.code ===
+      "auth/unauthorized-domain"
+    ){
+
+      text =
+      "Website domain Firebase में Authorized नहीं है।";
+
+    }
+
+
+    showMessage(
+      text,
+      "error"
+    );
+
+
+  }
+
+  finally{
+
+
+    button.disabled =
+    false;
+
+
+    button.textContent =
+    "🔵 Continue with Google";
+
+  }
+
+
+}
+);
+
 
 
 /* =========================================
@@ -1309,66 +1549,257 @@ document
 ========================================= */
 
 document
+.getElementById(
+  "forgotPassword"
+)
+.addEventListener(
+"click",
+async(e)=>{
+
+
+  e.preventDefault();
+
+
+  clearMessage();
+
+
+  const email =
+  document
   .getElementById(
-    "forgotPassword"
+    "loginEmail"
   )
-  .addEventListener(
-    "click",
-    async()=>{
+  .value
+  .trim();
 
 
-      const email =
-        document
-          .getElementById(
-            "loginEmail"
-          )
-          .value
-          .trim();
+  const forgotBtn =
+  document.getElementById(
+    "forgotPassword"
+  );
 
 
-      if(!email){
 
-        showMessage(
-          "पहले अपना Email डालें।",
-          "error"
-        );
+  /* EMAIL EMPTY */
 
-        return;
+  if(
+    !email
+  ){
 
-      }
+    showMessage(
 
+      "पहले Login वाले box में अपना registered Email डालें।",
 
-      try{
+      "error"
 
-        await sendPasswordResetEmail(
-          auth,
-          email
-        );
+    );
 
 
-        showMessage(
-          "Password reset link आपके Email पर भेज दिया गया है।",
-          "success"
-        );
-
-      }
-
-      catch(error){
-
-        console.error(error);
+    document
+    .getElementById(
+      "loginEmail"
+    )
+    .focus();
 
 
-        showMessage(
-          "Password reset नहीं हो पाया। Email check करें।",
-          "error"
-        );
+    return;
 
-      }
+  }
+
+
+
+  /* EMAIL FORMAT CHECK */
+
+  const emailPattern =
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+  if(
+    !emailPattern.test(
+      email
+    )
+  ){
+
+    showMessage(
+
+      "कृपया सही Email address डालें।",
+
+      "error"
+
+    );
+
+    return;
+
+  }
+
+
+
+  try{
+
+
+    forgotBtn.style.pointerEvents =
+    "none";
+
+
+    forgotBtn.style.opacity =
+    "0.6";
+
+
+    forgotBtn.textContent =
+    "Reset link भेजा जा रहा है...";
+
+
+    await sendPasswordResetEmail(
+
+      auth,
+
+      email
+
+    );
+
+
+    showMessage(
+
+      "✅ Password reset link आपके Email पर भेज दिया गया है। Inbox और Spam folder भी check करें।",
+
+      "success"
+
+    );
+
+
+    forgotBtn.textContent =
+    "Reset link भेज दिया गया ✓";
+
+
+  }
+
+  catch(error){
+
+
+    console.error(
+
+      "Password Reset Error:",
+
+      error.code,
+
+      error.message
+
+    );
+
+
+    let text =
+    "Password reset नहीं हो पाया।";
+
+
+    if(
+      error.code ===
+      "auth/invalid-email"
+    ){
+
+      text =
+      "❌ Email address सही नहीं है।";
 
     }
-  );
+
+
+    else if(
+      error.code ===
+      "auth/user-not-found"
+    ){
+
+      text =
+      "❌ इस Email से कोई account नहीं मिला।";
+
+    }
+
+
+    else if(
+      error.code ===
+      "auth/too-many-requests"
+    ){
+
+      text =
+      "❌ बहुत ज्यादा requests हुई हैं। कुछ देर बाद फिर कोशिश करें।";
+
+    }
+
+
+    else if(
+      error.code ===
+      "auth/network-request-failed"
+    ){
+
+      text =
+      "❌ Internet connection check करें।";
+
+    }
+
+
+    else if(
+      error.code ===
+      "auth/unauthorized-continue-uri"
+    ){
+
+      text =
+      "❌ Website domain Firebase में Authorized नहीं है।";
+
+    }
+
+
+    else{
+
+      text =
+      "❌ Error: " +
+      error.code;
+
+    }
+
+
+    showMessage(
+      text,
+      "error"
+    );
+
+
+    forgotBtn.textContent =
+    "Password भूल गए?";
+
+  }
+
+
+  finally{
+
+
+    setTimeout(
+
+      ()=>{
+
+
+        forgotBtn.style.pointerEvents =
+        "auto";
+
+
+        forgotBtn.style.opacity =
+        "1";
+
+
+        forgotBtn.textContent =
+        "Password भूल गए?";
+
+
+      },
+
+      2000
+
+    );
+
+  }
+
+
+}
+);
+
 
 </script>
 
 </body>
-</html>
+</html> 
