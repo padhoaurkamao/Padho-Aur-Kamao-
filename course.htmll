@@ -1,49 +1,805 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width,initial-scale=1">
+content="width=device-width, initial-scale=1.0">
 
-<title>My Course</title>
+<title>Padho Aur Kamao - My Course</title>
 
 <style>
 
-body{
-margin:0;
-font-family:Arial;
-background:#f4f7fb;
+/* ===============================
+   GLOBAL
+================================ */
+
+*{
+  box-sizing:border-box;
 }
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f7fb;
+  color:#111827;
+}
+
+
+/* ===============================
+   HEADER
+================================ */
 
 header{
-background:#2563eb;
-color:white;
-padding:18px;
-font-size:20px;
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  color:white;
+
+  padding:16px;
 }
+
+
+.header-container{
+  max-width:1200px;
+
+  margin:auto;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:15px;
+}
+
+
+.logo h2{
+  margin:0;
+
+  font-size:24px;
+}
+
+
+.logo p{
+  margin:5px 0 0;
+
+  font-size:13px;
+
+  opacity:.9;
+}
+
+
+.back-btn{
+  background:white;
+
+  color:#2563eb;
+
+  border:none;
+
+  padding:11px 16px;
+
+  border-radius:10px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  font-size:14px;
+}
+
+
+/* ===============================
+   MAIN
+================================ */
 
 main{
-max-width:900px;
-margin:auto;
-padding:20px;
+
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:25px 18px 50px;
+
 }
 
-.box{
-background:white;
-padding:22px;
-border-radius:16px;
-box-shadow:0 3px 12px #0001;
+
+/* ===============================
+   COURSE HERO
+================================ */
+
+.course-hero{
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:25px;
+
+  box-shadow:
+  0 5px 20px #0001;
+
+  margin-bottom:30px;
+
 }
 
-.lesson{
-background:#f8fafc;
-border:1px solid #ddd;
-padding:16px;
-border-radius:10px;
-margin:12px 0;
+
+.course-hero h1{
+
+  margin:0;
+
+  font-size:28px;
+
+}
+
+
+.course-hero p{
+
+  color:#6b7280;
+
+  margin-bottom:0;
+
+  line-height:1.6;
+
+}
+
+
+.package-badge{
+
+  display:inline-block;
+
+  margin-top:15px;
+
+  padding:8px 14px;
+
+  border-radius:30px;
+
+  background:#eef2ff;
+
+  color:#4338ca;
+
+  font-weight:bold;
+
+}
+
+
+/* ===============================
+   SECTION TITLE
+================================ */
+
+.section-title{
+
+  margin-top:30px;
+
+  margin-bottom:18px;
+
+}
+
+
+.section-title h2{
+
+  margin:0;
+
+  font-size:23px;
+
+}
+
+
+.section-title p{
+
+  color:#6b7280;
+
+  margin-top:7px;
+
+}
+
+
+/* ===============================
+   BOOK GRID
+================================ */
+
+.book-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(
+    auto-fit,
+    minmax(220px,1fr)
+  );
+
+  gap:24px;
+
+}
+
+
+/* ===============================
+   BOOK CARD
+================================ */
+
+.book-card{
+
+  position:relative;
+
+  height:320px;
+
+  cursor:pointer;
+
+  perspective:1000px;
+
+}
+
+
+.book-card:hover
+.book-cover{
+
+  transform:
+  rotateY(-8deg)
+  translateY(-8px);
+
+}
+
+
+.book-cover{
+
+  width:100%;
+
+  height:100%;
+
+  position:relative;
+
+  border-radius:
+  8px
+  18px
+  18px
+  8px;
+
+  overflow:hidden;
+
+  color:white;
+
+  padding:25px 20px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+
+  box-shadow:
+
+  inset 10px 0 15px #0002,
+
+  0 15px 30px #0004;
+
+  transition:.35s;
+
+}
+
+
+/* BOOK SPINE */
+
+.book-cover::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  top:0;
+
+  width:18px;
+
+  height:100%;
+
+  background:
+
+  linear-gradient(
+    90deg,
+    #0005,
+    transparent
+  );
+
+}
+
+
+/* PAGE EFFECT */
+
+.book-cover::after{
+
+  content:"";
+
+  position:absolute;
+
+  right:0;
+
+  top:10px;
+
+  width:8px;
+
+  height:calc(100% - 20px);
+
+  background:
+
+  repeating-linear-gradient(
+
+    to bottom,
+
+    #ffffff99,
+
+    #ffffff99 2px,
+
+    #d1d5db 3px,
+
+    #d1d5db 4px
+
+  );
+
+  border-radius:
+  0
+  6px
+  6px
+  0;
+
+}
+
+
+/* ===============================
+   BOOK COLORS
+================================ */
+
+.blue{
+
+  background:
+  linear-gradient(
+    135deg,
+    #1d4ed8,
+    #2563eb,
+    #60a5fa
+  );
+
+}
+
+
+.purple{
+
+  background:
+  linear-gradient(
+    135deg,
+    #581c87,
+    #7e22ce,
+    #c084fc
+  );
+
+}
+
+
+.green{
+
+  background:
+  linear-gradient(
+    135deg,
+    #065f46,
+    #16a34a,
+    #4ade80
+  );
+
+}
+
+
+.orange{
+
+  background:
+  linear-gradient(
+    135deg,
+    #9a3412,
+    #ea580c,
+    #fb923c
+  );
+
+}
+
+
+.red{
+
+  background:
+  linear-gradient(
+    135deg,
+    #991b1b,
+    #dc2626,
+    #f87171
+  );
+
+}
+
+
+.dark{
+
+  background:
+  linear-gradient(
+    135deg,
+    #111827,
+    #374151,
+    #6b7280
+  );
+
+}
+
+
+/* ===============================
+   BOOK CONTENT
+================================ */
+
+.book-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+}
+
+
+.book-icon{
+
+  width:55px;
+
+  height:55px;
+
+  border-radius:14px;
+
+  background:#ffffff22;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:28px;
+
+  backdrop-filter:
+  blur(5px);
+
+}
+
+
+.book-tag{
+
+  font-size:11px;
+
+  padding:6px 10px;
+
+  background:#ffffff22;
+
+  border-radius:20px;
+
+}
+
+
+.book-middle{
+
+  text-align:center;
+
+}
+
+
+.book-middle h3{
+
+  font-size:25px;
+
+  margin:0 0 12px;
+
+}
+
+
+.book-middle p{
+
+  margin:0;
+
+  font-size:13px;
+
+  opacity:.9;
+
+  line-height:1.5;
+
+}
+
+
+.book-bottom{
+
+  text-align:center;
+
+}
+
+
+.open-book{
+
+  background:white;
+
+  color:#1e3a8a;
+
+  border:none;
+
+  padding:11px 18px;
+
+  border-radius:9px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+}
+
+
+/* ===============================
+   PREMIUM MOCK TEST
+================================ */
+
+.mock-card{
+
+  background:
+
+  linear-gradient(
+    135deg,
+    #111827,
+    #312e81
+  );
+
+}
+
+
+.mock-card
+.open-book{
+
+  color:#312e81;
+
+}
+
+
+/* ===============================
+   SKILL COURSE
+================================ */
+
+.skill-card{
+
+  background:
+
+  linear-gradient(
+    135deg,
+    #0f766e,
+    #0891b2
+  );
+
+}
+
+
+/* ===============================
+   LOADING
+================================ */
+
+.loading{
+
+  background:white;
+
+  padding:30px;
+
+  text-align:center;
+
+  border-radius:15px;
+
+  box-shadow:
+  0 5px 15px #0001;
+
+}
+
+
+.no-access{
+
+  background:white;
+
+  padding:35px;
+
+  border-radius:18px;
+
+  text-align:center;
+
+  box-shadow:
+  0 5px 20px #0001;
+
+}
+
+
+.no-access h2{
+
+  margin-top:0;
+
+}
+
+
+/* ===============================
+   MODAL
+================================ */
+
+.modal{
+
+  display:none;
+
+  position:fixed;
+
+  inset:0;
+
+  background:#0009;
+
+  z-index:9999;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:18px;
+
+}
+
+
+.modal-box{
+
+  width:100%;
+
+  max-width:650px;
+
+  max-height:85vh;
+
+  overflow:auto;
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:25px;
+
+}
+
+
+.modal-box h2{
+
+  margin-top:0;
+
+}
+
+
+.modal-content{
+
+  line-height:1.8;
+
+  color:#374151;
+
+}
+
+
+.close-btn{
+
+  width:100%;
+
+  margin-top:20px;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:#2563eb;
+
+  color:white;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+}
+
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media(max-width:600px){
+
+  .header-container{
+
+    align-items:flex-start;
+
+  }
+
+
+  .logo h2{
+
+    font-size:20px;
+
+  }
+
+
+  .course-hero h1{
+
+    font-size:23px;
+
+  }
+
+
+  .book-grid{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:14px;
+
+  }
+
+
+  .book-card{
+
+    height:270px;
+
+  }
+
+
+  .book-cover{
+
+    padding:16px 13px;
+
+  }
+
+
+  .book-middle h3{
+
+    font-size:18px;
+
+  }
+
+
+  .book-middle p{
+
+    font-size:11px;
+
+  }
+
+
+  .book-icon{
+
+    width:42px;
+
+    height:42px;
+
+    font-size:22px;
+
+  }
+
+
+  .book-tag{
+
+    font-size:9px;
+
+    padding:5px 7px;
+
+  }
+
+
+  .open-book{
+
+    font-size:11px;
+
+    padding:9px 10px;
+
+  }
+
 }
 
 </style>
@@ -53,27 +809,187 @@ margin:12px 0;
 
 <body>
 
+
+<!-- ===============================
+     HEADER
+================================ -->
+
 <header>
 
+<div class="header-container">
+
+<div class="logo">
+
+<h2>
 📚 Padho Aur Kamao
+</h2>
+
+<p>
+सीखें • Practice करें • आगे बढ़ें
+</p>
+
+</div>
+
+
+<button
+class="back-btn"
+onclick="goDashboard()">
+
+← Dashboard
+
+</button>
+
+</div>
 
 </header>
 
 
+
+<!-- ===============================
+     MAIN
+================================ -->
+
 <main>
 
-<div class="box"
-id="content">
 
-⏳ Course loading...
+<div
+id="loading"
+class="loading">
+
+📚 Course loading...
 
 </div>
+
+
+<div
+id="courseContent"
+style="display:none">
+
+
+<!-- HERO -->
+
+<div
+class="course-hero">
+
+<h1
+id="packageTitle">
+
+My Course
+
+</h1>
+
+
+<p
+id="packageDescription">
+
+</p>
+
+
+<div
+class="package-badge"
+id="packageBadge">
+
+ACTIVE PACKAGE
+
+</div>
+
+</div>
+
+
+
+<!-- BOOK SECTION -->
+
+<div
+id="bookSections">
+
+</div>
+
+
+</div>
+
+
+
+<!-- NO ACCESS -->
+
+<div
+id="noAccess"
+class="no-access"
+style="display:none">
+
+<h2>
+🔒 Course Access Required
+</h2>
+
+<p>
+आपके पास इस course का access नहीं है।
+कृपया पहले Dashboard से package purchase करें।
+</p>
+
+
+<button
+class="back-btn"
+onclick="goDashboard()">
+
+← Go to Dashboard
+
+</button>
+
+</div>
+
 
 </main>
 
 
+
+<!-- ===============================
+     BOOK MODAL
+================================ -->
+
+<div
+id="bookModal"
+class="modal">
+
+
+<div
+class="modal-box">
+
+
+<h2
+id="modalBookTitle">
+
+Study Material
+
+</h2>
+
+
+<div
+id="modalBookContent"
+class="modal-content">
+
+</div>
+
+
+<button
+class="close-btn"
+onclick="closeBook()">
+
+Close Book
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
 <script type="module">
 
+
+/* ===============================
+   FIREBASE IMPORTS
+================================ */
 
 import {
 initializeApp
@@ -99,11 +1015,15 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-/* 🔥 SAME FIREBASE CONFIG */
 
-const firebaseConfig={
+/* ===============================
+   FIREBASE CONFIG
+================================ */
 
-apiKey:"YOUR_API_KEY",
+const firebaseConfig = {
+
+apiKey:
+"YOUR_API_KEY",
 
 authDomain:
 "YOUR_PROJECT.firebaseapp.com",
@@ -123,60 +1043,1007 @@ appId:
 };
 
 
-const app=
+
+/* ===============================
+   INITIALIZE FIREBASE
+================================ */
+
+const app =
 initializeApp(firebaseConfig);
 
-const auth=
+
+const auth =
 getAuth(app);
 
-const db=
+
+const db =
 getFirestore(app);
 
 
-/* COURSE ID */
 
-const params=
+/* ===============================
+   GET COURSE ID
+================================ */
+
+const params =
 new URLSearchParams(
-location.search
+window.location.search
 );
 
-const courseId=
+
+const packageId =
 params.get("id");
 
 
-/* USER CHECK */
+
+/* ===============================
+   PACKAGE DATA
+================================ */
+
+const packageData = {
+
+
+/* =================================
+   ₹199 PACKAGE
+================================= */
+
+starter_199:{
+
+title:
+"📘 Study & Skill Starter",
+
+description:
+"Lead Generation, Combination Skills और Competitive Exam Study Materials का Starter Package.",
+
+sections:[
+
+
+{
+
+title:
+"🚀 Lead Generation",
+
+books:[
+
+{
+title:
+"Lead Generation Basics",
+
+icon:"🚀",
+
+color:"blue",
+
+tag:"SKILL",
+
+content:`
+<h3>Lead Generation Basics</h3>
+
+<p>
+इस section में आप सीखेंगे कि Lead क्या होती है और किसी Business या Service के लिए संभावित Customers को कैसे समझा जाता है।
+</p>
+
+<ul>
+
+<li>Lead क्या होती है</li>
+
+<li>Target Audience की Understanding</li>
+
+<li>Customer Requirement Basics</li>
+
+<li>Online Business Opportunities</li>
+
+<li>Practical Learning Concepts</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:
+"Online Lead Finding",
+
+icon:"🔍",
+
+color:"purple",
+
+tag:"SKILL",
+
+content:`
+<h3>Online Lead Finding</h3>
+
+<p>
+इस Book में Online Platforms पर संभावित Customers और Businesses को खोजने की basic understanding दी जाएगी।
+</p>
+
+<ul>
+
+<li>Online Research Basics</li>
+
+<li>Business Search</li>
+
+<li>Customer Interest Understanding</li>
+
+<li>Lead Information Organization</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:
+"Customer & Business Leads",
+
+icon:"👥",
+
+color:"green",
+
+tag:"SKILL",
+
+content:`
+<h3>Customer & Business Leads</h3>
+
+<p>
+Customer और Business Leads की Understanding तथा उनकी जरूरतों को समझने के basic concepts।
+</p>
+
+<ul>
+
+<li>Customer Lead</li>
+
+<li>Business Lead</li>
+
+<li>Target Customer</li>
+
+<li>Lead Quality Basics</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:
+"Practical Learning",
+
+icon:"💻",
+
+color:"orange",
+
+tag:"PRACTICE",
+
+content:`
+<h3>Practical Learning</h3>
+
+<p>
+Lead Generation Skills को समझने के लिए practical exercises और learning activities।
+</p>
+
+<ul>
+
+<li>Practice Tasks</li>
+
+<li>Research Exercises</li>
+
+<li>Basic Project Activities</li>
+
+<li>Skill Improvement</li>
+
+</ul>
+`
+
+}
+
+]
+
+},
+
+
+{
+
+title:
+"🔥 Combination Skills",
+
+books:[
+
+{
+title:
+"Communication Skills",
+
+icon:"💬",
+
+color:"purple",
+
+tag:"SKILL",
+
+content:`
+<h3>Communication Skills</h3>
+
+<ul>
+
+<li>Effective Communication</li>
+
+<li>Speaking Skills</li>
+
+<li>Listening Skills</li>
+
+<li>Professional Communication</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:
+"Basic Digital Skills",
+
+icon:"⌨️",
+
+color:"blue",
+
+tag:"DIGITAL",
+
+content:`
+<h3>Basic Digital Skills</h3>
+
+<ul>
+
+<li>Internet Basics</li>
+
+<li>Digital Tools</li>
+
+<li>Online Productivity</li>
+
+<li>Basic Technology Skills</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:
+"AI Tools Basics",
+
+icon:"🤖",
+
+color:"green",
+
+tag:"AI",
+
+content:`
+<h3>AI Tools Basics</h3>
+
+<ul>
+
+<li>AI का परिचय</li>
+
+<li>Basic AI Tools</li>
+
+<li>Productivity Use</li>
+
+<li>Learning Assistance</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:
+"Productivity Skills",
+
+icon:"📈",
+
+color:"orange",
+
+tag:"SKILL",
+
+content:`
+<h3>Productivity Skills</h3>
+
+<ul>
+
+<li>Time Management</li>
+
+<li>Task Planning</li>
+
+<li>Goal Setting</li>
+
+<li>Daily Productivity</li>
+
+</ul>
+`
+
+}
+
+]
+
+},
+
+
+{
+
+title:
+"📚 Competitive Exam Study Section",
+
+books:[
+
+{
+title:"Maths",
+
+icon:"➗",
+
+color:"blue",
+
+tag:"STUDY",
+
+content:`
+<h3>Maths Study Book</h3>
+
+<ul>
+
+<li>Arithmetic</li>
+
+<li>Percentage</li>
+
+<li>Profit & Loss</li>
+
+<li>Ratio & Proportion</li>
+
+<li>Time & Work</li>
+
+<li>Geometry Basics</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:"Reasoning",
+
+icon:"🧠",
+
+color:"purple",
+
+tag:"STUDY",
+
+content:`
+<h3>Reasoning Study Book</h3>
+
+<ul>
+
+<li>Analogy</li>
+
+<li>Series</li>
+
+<li>Coding-Decoding</li>
+
+<li>Ranking</li>
+
+<li>Venn Diagram</li>
+
+<li>Logical Reasoning</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:"General Knowledge / GS",
+
+icon:"🌍",
+
+color:"green",
+
+tag:"GK",
+
+content:`
+<h3>General Knowledge / GS</h3>
+
+<ul>
+
+<li>History</li>
+
+<li>Geography</li>
+
+<li>Polity</li>
+
+<li>Science</li>
+
+<li>Current Awareness</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:"Hindi",
+
+icon:"🇮🇳",
+
+color:"orange",
+
+tag:"SUBJECT",
+
+content:`
+<h3>Hindi Study Book</h3>
+
+<ul>
+
+<li>व्याकरण</li>
+
+<li>संधि</li>
+
+<li>समास</li>
+
+<li>पर्यायवाची</li>
+
+<li>विलोम शब्द</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:"English",
+
+icon:"🇬🇧",
+
+color:"red",
+
+tag:"SUBJECT",
+
+content:`
+<h3>English Study Book</h3>
+
+<ul>
+
+<li>Grammar</li>
+
+<li>Vocabulary</li>
+
+<li>Tenses</li>
+
+<li>Reading</li>
+
+<li>Practice Questions</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:"UP GK",
+
+icon:"🗺️",
+
+color:"dark",
+
+tag:"GK",
+
+content:`
+<h3>UP GK Study Book</h3>
+
+<ul>
+
+<li>उत्तर प्रदेश History</li>
+
+<li>Geography</li>
+
+<li>Culture</li>
+
+<li>Government</li>
+
+<li>Important Places</li>
+
+</ul>
+`
+
+}
+
+]
+
+}
+
+]
+
+},
+
+
+
+/* =================================
+   ₹399 PACKAGE
+================================= */
+
+premium_399:{
+
+title:
+"⭐ Skill & Success Premium",
+
+description:
+"All Competitive Exam Materials, Premium Mock Tests और अतिरिक्त Premium Features.",
+
+sections:[
+
+
+{
+
+title:
+"2️⃣ ALL Competitive Exam Materials",
+
+books:[
+
+{
+title:"NEET",
+
+icon:"🩺",
+
+color:"red",
+
+tag:"PREMIUM",
+
+content:`
+<h3>NEET Study Material</h3>
+
+<ul>
+
+<li>Physics</li>
+
+<li>Chemistry</li>
+
+<li>Biology</li>
+
+<li>Practice Questions</li>
+
+<li>Mock Preparation</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:"SSC / Police",
+
+icon:"👮",
+
+color:"blue",
+
+tag:"EXAM",
+
+content:`
+<h3>SSC / Police Preparation</h3>
+
+<ul>
+
+<li>Maths</li>
+
+<li>Reasoning</li>
+
+<li>GK / GS</li>
+
+<li>Hindi</li>
+
+<li>Practice Sets</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:"Railway",
+
+icon:"🚂",
+
+color:"green",
+
+tag:"EXAM",
+
+content:`
+<h3>Railway Preparation</h3>
+
+<ul>
+
+<li>Maths</li>
+
+<li>Reasoning</li>
+
+<li>General Awareness</li>
+
+<li>Practice Sets</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:"Banking",
+
+icon:"🏦",
+
+color:"purple",
+
+tag:"EXAM",
+
+content:`
+<h3>Banking Preparation</h3>
+
+<ul>
+
+<li>Quantitative Aptitude</li>
+
+<li>Reasoning</li>
+
+<li>English</li>
+
+<li>Banking Awareness</li>
+
+</ul>
+`
+
+},
+
+
+{
+
+title:"Defence",
+
+icon:"🪖",
+
+color:"dark",
+
+tag:"EXAM",
+
+content:`
+<h3>Defence Preparation</h3>
+
+<ul>
+
+<li>General Knowledge</li>
+
+<li>Maths</li>
+
+<li>Reasoning</li>
+
+<li>English</li>
+
+<li>Practice Sets</li>
+
+</ul>
+`
+
+}
+
+]
+
+},
+
+
+{
+
+title:
+"3️⃣ Premium Mock Test System",
+
+books:[
+
+{
+title:"Timed Mock Tests",
+
+icon:"⏱️",
+
+color:"dark",
+
+tag:"MOCK TEST",
+
+mock:true,
+
+content:`
+<h3>Timed Mock Tests</h3>
+
+<p>
+निर्धारित समय में परीक्षा देने की practice।
+</p>
+`
+
+},
+
+
+{
+
+title:"Subject-wise Tests",
+
+icon:"🎯",
+
+color:"purple",
+
+tag:"MOCK TEST",
+
+mock:true,
+
+content:`
+<h3>Subject-wise Tests</h3>
+
+<p>
+हर Subject के लिए अलग-अलग Practice Tests।
+</p>
+`
+
+},
+
+
+{
+
+title:"Chapter-wise Tests",
+
+icon:"📖",
+
+color:"blue",
+
+tag:"MOCK TEST",
+
+mock:true,
+
+content:`
+<h3>Chapter-wise Tests</h3>
+
+<p>
+Chapter Complete करने के बाद Practice Tests।
+</p>
+`
+
+},
+
+
+{
+
+title:"Full-Length Tests",
+
+icon:"🏆",
+
+color:"orange",
+
+tag:"MOCK TEST",
+
+mock:true,
+
+content:`
+<h3>Full-Length Tests</h3>
+
+<p>
+पूरे Exam Pattern के अनुसार Full Practice Test।
+</p>
+`
+
+},
+
+
+{
+
+title:"Performance Analysis",
+
+icon:"📊",
+
+color:"green",
+
+tag:"ANALYSIS",
+
+mock:true,
+
+content:`
+<h3>Performance Analysis</h3>
+
+<p>
+Test Performance, Score और Improvement Areas देखने की सुविधा।
+</p>
+`
+
+}
+
+]
+
+},
+
+
+{
+
+title:
+"4️⃣ Premium Features",
+
+books:[
+
+{
+title:"More Study Material Access",
+
+icon:"📚",
+
+color:"blue",
+
+tag:"PREMIUM",
+
+content:`
+<h3>More Study Material Access</h3>
+
+<p>
+अधिक Study Materials और Premium Learning Content।
+</p>
+`
+
+},
+
+
+{
+
+title:"Regular Content Updates",
+
+icon:"🔄",
+
+color:"green",
+
+tag:"PREMIUM",
+
+content:`
+<h3>Regular Content Updates</h3>
+
+<p>
+नए और Updated Study Content का Access।
+</p>
+`
+
+},
+
+
+{
+
+title:"Priority Access",
+
+icon:"⭐",
+
+color:"orange",
+
+tag:"PREMIUM",
+
+content:`
+<h3>Priority Access</h3>
+
+<p>
+Premium Content और नए Features का Priority Access।
+</p>
+`
+
+},
+
+
+{
+
+title:"Learning Progress Tracking",
+
+icon:"📈",
+
+color:"purple",
+
+tag:"TRACKING",
+
+content:`
+<h3>Learning Progress Tracking</h3>
+
+<p>
+अपनी Learning Progress और Completion Track करें।
+</p>
+`
+
+},
+
+
+{
+
+title:"Selected Course Certificates",
+
+icon:"🏅",
+
+color:"red",
+
+tag:"CERTIFICATE",
+
+content:`
+<h3>Selected Course Certificates</h3>
+
+<p>
+Selected Courses की Completion के अनुसार Certificate Feature।
+</p>
+`
+
+}
+
+]
+
+}
+
+]
+
+}
+
+};
+
+
+
+/* ===============================
+   AUTH CHECK
+================================ */
 
 onAuthStateChanged(
 auth,
-async user=>{
+async user => {
+
 
 if(!user){
 
-location.href="login.html";
+window.location.href =
+"login.html";
 
 return;
 
 }
 
 
-if(!courseId){
+if(!packageId){
 
-document.getElementById("content")
-.innerHTML=
-"<h2>Course ID नहीं मिला।</h2>";
+showNoAccess();
 
 return;
 
 }
 
 
-/* ACCESS CHECK */
+const enrollmentId =
 
-const enrollmentId=
-user.uid+"_"+courseId;
+user.uid +
+"_" +
+packageId;
 
 
-const enrollment=
+try{
+
+
+const enrollmentSnap =
+
 await getDoc(
 
 doc(
@@ -190,133 +2057,456 @@ enrollmentId
 
 if(
 
-!enrollment.exists() ||
+!enrollmentSnap.exists()
 
-enrollment.data().status!=="active"
+||
+
+enrollmentSnap
+.data()
+.status !== "active"
 
 ){
 
-document.getElementById("content")
-.innerHTML=`
-
-<h2>🔒 Access Denied</h2>
-
-<p>
-आपने यह course purchase नहीं किया है।
-</p>
-
-`;
+showNoAccess();
 
 return;
 
 }
 
 
-/* COURSE */
+const packageInfo =
 
-const course=
-await getDoc(
+packageData[
+packageId
+];
 
-doc(
-db,
-"courses",
-courseId
+
+if(!packageInfo){
+
+showNoAccess();
+
+return;
+
+}
+
+
+loadCourse(
+packageInfo
+);
+
+
+}catch(error){
+
+console.error(error);
+
+showNoAccess();
+
+}
+
+}
+);
+
+
+
+/* ===============================
+   LOAD COURSE
+================================ */
+
+function loadCourse(
+packageInfo
+){
+
+
+document
+.getElementById("loading")
+.style.display =
+"none";
+
+
+document
+.getElementById("courseContent")
+.style.display =
+"block";
+
+
+document
+.getElementById("packageTitle")
+.textContent =
+packageInfo.title;
+
+
+document
+.getElementById("packageDescription")
+.textContent =
+packageInfo.description;
+
+
+const container =
+
+document
+.getElementById(
+"bookSections"
+);
+
+
+container.innerHTML =
+"";
+
+
+packageInfo
+.sections
+.forEach(
+section => {
+
+
+const sectionElement =
+
+document.createElement(
+"section"
+);
+
+
+sectionElement.innerHTML =
+
+`
+
+<div class="section-title">
+
+<h2>
+
+${safe(
+section.title
+)}
+
+</h2>
+
+<p>
+
+अपनी पसंद की Digital Book खोलें और Study शुरू करें।
+
+</p>
+
+</div>
+
+
+<div class="book-grid">
+
+${
+
+section.books
+.map(
+book =>
+createBook(
+book
+)
+)
+.join("")
+
+}
+
+</div>
+
+`;
+
+
+container.appendChild(
+sectionElement
+);
+
+}
+);
+
+}
+
+
+
+/* ===============================
+   CREATE BOOK
+================================ */
+
+function createBook(
+book
+){
+
+
+const bookData =
+encodeURIComponent(
+JSON.stringify(
+book
+)
+);
+
+
+return `
+
+<div
+class="book-card"
+data-book="${bookData}">
+
+
+<div
+class="
+book-cover
+${safe(book.color)}
+${book.mock ? " mock-card" : ""}
+">
+
+
+<div
+class="book-top">
+
+
+<div
+class="book-icon">
+
+${safe(
+book.icon
+)}
+
+</div>
+
+
+<div
+class="book-tag">
+
+${safe(
+book.tag
+)}
+
+</div>
+
+
+</div>
+
+
+
+<div
+class="book-middle">
+
+
+<h3>
+
+${safe(
+book.title
+)}
+
+</h3>
+
+
+<p>
+
+Padho Aur Kamao
+
+<br>
+
+Digital Study Book
+
+</p>
+
+
+</div>
+
+
+
+<div
+class="book-bottom">
+
+
+<button
+class="open-book">
+
+📖 Open Book
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+`;
+
+}
+
+
+
+/* ===============================
+   BOOK CLICK
+================================ */
+
+document.addEventListener(
+"click",
+event => {
+
+
+const bookCard =
+
+event.target.closest(
+".book-card"
+);
+
+
+if(!bookCard)
+return;
+
+
+const encodedBook =
+
+bookCard.dataset.book;
+
+
+const book =
+
+JSON.parse(
+
+decodeURIComponent(
+encodedBook
 )
 
 );
 
 
-if(!course.exists()){
+openBook(
+book
+);
 
-document.getElementById("content")
-.innerHTML=
-"<h2>Course नहीं मिला।</h2>";
+}
+);
 
-return;
+
+
+/* ===============================
+   OPEN BOOK
+================================ */
+
+window.openBook =
+function(book){
+
+
+document
+.getElementById(
+"modalBookTitle"
+)
+.textContent =
+book.icon +
+" " +
+book.title;
+
+
+document
+.getElementById(
+"modalBookContent"
+)
+.innerHTML =
+book.content;
+
+
+document
+.getElementById(
+"bookModal"
+)
+.style.display =
+"flex";
+
+};
+
+
+
+/* ===============================
+   CLOSE BOOK
+================================ */
+
+window.closeBook =
+function(){
+
+
+document
+.getElementById(
+"bookModal"
+)
+.style.display =
+"none";
+
+};
+
+
+
+/* ===============================
+   DASHBOARD
+================================ */
+
+window.goDashboard =
+function(){
+
+window.location.href =
+"dashboard.html";
+
+};
+
+
+
+/* ===============================
+   NO ACCESS
+================================ */
+
+function showNoAccess(){
+
+
+document
+.getElementById(
+"loading"
+)
+.style.display =
+"none";
+
+
+document
+.getElementById(
+"noAccess"
+)
+.style.display =
+"block";
 
 }
 
 
-const c=course.data();
 
+/* ===============================
+   SAFE HTML
+================================ */
 
-document.getElementById("content")
-.innerHTML=`
+function safe(value){
 
-<h1>
-🎓 ${safe(c.title)}
-</h1>
+return String(value)
 
-<p>
-${safe(c.description||"")}
-</p>
+.replaceAll(
+"&",
+"&amp;"
+)
 
-<hr>
+.replaceAll(
+"<",
+"&lt;"
+)
 
-<h2>📖 Course Lessons</h2>
+.replaceAll(
+">",
+"&gt;"
+)
 
+.replaceAll(
+'"',
+"&quot;"
+)
 
-<div class="lesson">
-
-<h3>Lesson 1</h3>
-
-<p>
-Introduction
-</p>
-
-</div>
-
-
-<div class="lesson">
-
-<h3>Lesson 2</h3>
-
-<p>
-Basic Concepts
-</p>
-
-</div>
-
-
-<div class="lesson">
-
-<h3>Lesson 3</h3>
-
-<p>
-Practice
-</p>
-
-</div>
-
-
-<div class="lesson">
-
-<h3>Lesson 4</h3>
-
-<p>
-Final Test
-</p>
-
-</div>
-
-`;
-
-});
-
-
-function safe(v){
-
-return String(v)
-
-.replaceAll("&","&amp;")
-
-.replaceAll("<","&lt;")
-
-.replaceAll(">","&gt;")
-
-.replaceAll('"',"&quot;")
-
-.replaceAll("'","&#039;");
+.replaceAll(
+"'",
+"&#039;"
+);
 
 }
 
@@ -324,5 +2514,4 @@ return String(v)
 </script>
 
 </body>
-
 </html>
