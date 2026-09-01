@@ -1,1294 +1,3116 @@
-
 <!DOCTYPE html>
 <html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Padho Aur Kamao - Dashboard</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard - Padho Aur Kamao</title>
+
 
 <style>
+
+/* =========================
+   GLOBAL
+========================= */
+
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f5f7fb;
-color:#172033;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+    color:#172033;
 }
 
-button,input{
-font-family:inherit;
+button,
+input{
+    font-family:inherit;
 }
 
 a{
-text-decoration:none;
-color:inherit;
-cursor:pointer;
+    text-decoration:none;
+    color:inherit;
 }
 
-/* SIDEBAR */
+
+/* =========================
+   SIDEBAR
+========================= */
 
 .sidebar{
-position:fixed;
-left:-280px;
-top:0;
-bottom:0;
-width:260px;
-background:#fff;
-border-right:1px solid #e8eaf0;
-z-index:1000;
-overflow-y:auto;
-transition:.3s;
+
+    position:fixed;
+
+    left:0;
+    top:0;
+    bottom:0;
+
+    width:260px;
+
+    background:#ffffff;
+
+    border-right:
+    1px solid #e8eaf0;
+
+    z-index:1000;
+
+    overflow-y:auto;
+
+    transition:.3s;
+
 }
 
-.sidebar.open{
-left:0;
-}
 
 .brand{
-height:72px;
-display:flex;
-align-items:center;
-padding:0 20px;
-border-bottom:1px solid #eee;
-font-size:18px;
-font-weight:bold;
-color:#6025d7;
+
+    height:72px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 20px;
+
+    border-bottom:
+    1px solid #eee;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    color:#6025d7;
+
 }
+
 
 .brand-icon{
-width:40px;
-height:40px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#6025d7,#8b5cf6);
-border-radius:11px;
-margin-right:10px;
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #6025d7,
+    #8b5cf6
+    );
+
+    color:white;
+
+    margin-right:10px;
+
+    font-size:22px;
+
 }
+
 
 .sidebar-section{
-font-size:11px;
-font-weight:bold;
-color:#9aa1b1;
-padding:22px 20px 8px;
-text-transform:uppercase;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    color:#9aa1b1;
+
+    padding:
+    22px 20px
+    8px;
+
+    text-transform:uppercase;
+
 }
 
+
 .side-link{
-display:flex;
-align-items:center;
-gap:13px;
-margin:3px 10px;
-padding:12px 13px;
-border-radius:10px;
-font-size:14px;
-color:#596174;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    margin:3px 10px;
+
+    padding:12px 13px;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    color:#596174;
+
+    cursor:pointer;
+
+    transition:.2s;
+
 }
+
 
 .side-link:hover,
 .side-link.active{
-background:#f1ebff;
-color:#6526d7;
+
+    background:#f1ebff;
+
+    color:#6526d7;
+
 }
+
 
 .side-icon{
-width:22px;
-text-align:center;
-font-size:18px;
+
+    width:22px;
+
+    text-align:center;
+
+    font-size:18px;
+
 }
+
 
 .side-badge{
-margin-left:auto;
-background:#eee8ff;
-color:#6728d9;
-padding:3px 7px;
-border-radius:20px;
-font-size:10px;
+
+    margin-left:auto;
+
+    background:#fff3cd;
+
+    color:#b45309;
+
+    padding:
+    4px 8px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
 }
 
-/* OVERLAY */
 
-.overlay{
-display:none;
-position:fixed;
-inset:0;
-background:#0008;
-z-index:999;
-}
-
-.overlay.show{
-display:block;
-}
-
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 
 .main{
-min-height:100vh;
+
+    margin-left:260px;
+
+    min-height:100vh;
+
 }
 
-/* TOPBAR */
+
+/* =========================
+   TOPBAR
+========================= */
 
 .topbar{
-height:72px;
-background:#fff;
-border-bottom:1px solid #e8eaf0;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 28px;
-position:sticky;
-top:0;
-z-index:900;
+
+    height:72px;
+
+    background:#ffffff;
+
+    border-bottom:
+    1px solid #e8eaf0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:
+    0 28px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:900;
+
 }
+
 
 .top-left{
-display:flex;
-align-items:center;
-gap:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
 }
+
 
 .menu-mobile{
-display:block;
-border:0;
-background:#f2edff;
-color:#6526d7;
-width:42px;
-height:42px;
-border-radius:10px;
-font-size:22px;
-cursor:pointer;
+
+    display:none;
+
+    width:42px;
+
+    height:42px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:#f1ebff;
+
+    color:#6526d7;
+
+    font-size:21px;
+
+    cursor:pointer;
+
 }
+
 
 .page-title{
-font-size:19px;
-font-weight:bold;
+
+    font-size:21px;
+
+    font-weight:700;
+
 }
+
+
+.top-courses{
+
+    padding:
+    10px 17px;
+
+    border-radius:10px;
+
+    background:#f1ebff;
+
+    color:#6526d7;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
 
 .top-right{
-display:flex;
-align-items:center;
-gap:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
 }
+
 
 .notification{
-width:40px;
-height:40px;
-border:1px solid #eee;
-background:#fff;
-border-radius:10px;
-font-size:18px;
+
+    width:42px;
+
+    height:42px;
+
+    border:1px solid #eee;
+
+    background:white;
+
+    border-radius:10px;
+
+    font-size:18px;
+
 }
+
 
 .user-box{
-display:flex;
-align-items:center;
-gap:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
 }
+
 
 .avatar{
-width:40px;
-height:40px;
-border-radius:50%;
-background:linear-gradient(135deg,#6025d7,#8b5cf6);
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-font-weight:bold;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+    135deg,
+    #6025d7,
+    #8b5cf6
+    );
+
 }
+
 
 .user-info strong{
-font-size:13px;
+
+    display:block;
+
+    font-size:13px;
+
 }
+
 
 .user-info small{
-display:block;
-font-size:11px;
-color:#9299a8;
+
+    font-size:11px;
+
+    color:#9299a8;
+
 }
 
-/* CONTENT */
+
+/* =========================
+   CONTENT
+========================= */
 
 .content{
-padding:28px;
-max-width:1400px;
-margin:auto;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:
+    28px;
+
 }
 
-/* WELCOME */
+
+/* =========================
+   WELCOME
+========================= */
 
 .welcome{
-background:linear-gradient(135deg,#5420bd,#7c3aed);
-border-radius:18px;
-padding:28px;
-color:#fff;
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:22px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #5420bd,
+    #7c3aed
+    );
+
+    border-radius:20px;
+
+    padding:32px;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+    margin-bottom:24px;
+
 }
+
+
+.welcome:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    background:#ffffff12;
+
+    right:-70px;
+
+    top:-100px;
+
+}
+
 
 .welcome h1{
-font-size:25px;
-margin-bottom:8px;
+
+    font-size:27px;
+
+    position:relative;
+
+    z-index:2;
+
 }
+
 
 .welcome p{
-font-size:13px;
-opacity:.9;
+
+    margin-top:10px;
+
+    font-size:14px;
+
+    opacity:.9;
+
+    position:relative;
+
+    z-index:2;
+
 }
 
-.welcome-button{
-background:#fff;
-color:#5b21b6;
-border:0;
-padding:12px 18px;
-border-radius:10px;
-font-weight:bold;
-cursor:pointer;
+
+.welcome-btn{
+
+    display:inline-block;
+
+    margin-top:18px;
+
+    padding:
+    12px 18px;
+
+    background:white;
+
+    color:#5b21b6;
+
+    border-radius:10px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    position:relative;
+
+    z-index:2;
+
 }
 
-/* STATS */
+
+/* =========================
+   STATS
+========================= */
 
 .stats{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:16px;
-margin-bottom:25px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:16px;
+
 }
 
+
 .stat{
-background:#fff;
-border:1px solid #edf0f5;
-border-radius:15px;
-padding:19px;
-box-shadow:0 4px 16px #18204d08;
+
+    background:white;
+
+    border:
+    1px solid #edf0f5;
+
+    border-radius:16px;
+
+    padding:19px;
+
+    box-shadow:
+    0 4px 16px
+    rgba(24,32,77,.04);
+
 }
+
 
 .stat-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-font-size:13px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
 }
+
+
+.stat-label{
+
+    font-size:12px;
+
+    color:#858c9d;
+
+}
+
 
 .stat-icon{
-width:43px;
-height:43px;
-border-radius:12px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#f1ebff;
-font-size:21px;
+
+    width:44px;
+
+    height:44px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:#f1ebff;
+
+    font-size:20px;
+
 }
+
 
 .stat-value{
-font-size:23px;
-font-weight:bold;
-margin-top:13px;
+
+    margin-top:16px;
+
+    font-size:24px;
+
+    font-weight:800;
+
 }
 
-/* SECTION */
+
+.stat-change{
+
+    margin-top:7px;
+
+    font-size:11px;
+
+    color:#16a34a;
+
+}
+
+
+/* =========================
+   SECTION
+========================= */
 
 .section{
-margin-top:30px;
-display:none;
+
+    margin-top:30px;
+
 }
 
-.section.active-section{
-display:block;
-}
 
 .section-head{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:15px;
+
 }
+
 
 .section-title{
-font-size:20px;
-font-weight:bold;
+
+    font-size:20px;
+
+    font-weight:700;
+
 }
 
-/* HOME DEFAULT */
-
-#homeSection{
-display:block;
-}
-
-/* 3D BOOK */
-
-.book-grid{
-display:grid;
-grid-template-columns:repeat(2,minmax(280px,1fr));
-gap:45px;
-padding:25px 20px 75px;
-max-width:900px;
-}
-
-.book-card{
-position:relative;
-height:400px;
-perspective:1200px;
-}
-
-.book{
-width:100%;
-height:100%;
-position:relative;
-transition:.5s;
-transform-style:preserve-3d;
-}
-
-.book-card:hover .book{
-transform:rotateY(-8deg) rotateX(2deg);
-}
-
-.book-cover{
-position:absolute;
-inset:0;
-border-radius:7px 18px 18px 7px;
-padding:32px 28px;
-color:white;
-overflow:hidden;
-box-shadow:
-10px 10px 0 rgba(0,0,0,.06),
-20px 20px 35px rgba(0,0,0,.2);
-}
-
-.book-one{
-background:linear-gradient(135deg,#f97316,#dc2626);
-}
-
-.book-two{
-background:linear-gradient(135deg,#2563eb,#7c3aed);
-}
-
-.book-spine{
-position:absolute;
-left:-15px;
-top:8px;
-bottom:8px;
-width:20px;
-background:rgba(0,0,0,.25);
-border-radius:7px 0 0 7px;
-}
-
-.book-pages{
-position:absolute;
-right:-10px;
-top:12px;
-bottom:12px;
-width:15px;
-background:repeating-linear-gradient(
-to bottom,
-#f7f2e8 0px,
-#f7f2e8 3px,
-#d7d0c6 4px
-);
-border-radius:0 5px 5px 0;
-}
-
-.book-label{
-position:absolute;
-right:18px;
-top:18px;
-font-size:10px;
-padding:7px 10px;
-border-radius:20px;
-border:1px solid #ffffff55;
-background:#ffffff20;
-}
-
-.book-logo{
-font-size:14px;
-font-weight:bold;
-letter-spacing:1px;
-}
-
-.book-icon{
-font-size:65px;
-margin-top:35px;
-}
-
-.book-title{
-font-size:30px;
-font-weight:800;
-line-height:1.15;
-margin-top:22px;
-}
-
-.book-subtitle{
-font-size:13px;
-line-height:1.6;
-margin-top:14px;
-max-width:260px;
-}
-
-.book-price{
-position:absolute;
-bottom:25px;
-left:28px;
-font-size:30px;
-font-weight:bold;
-}
-
-.book-buy{
-position:absolute;
-left:20px;
-right:20px;
-bottom:-52px;
-width:calc(100% - 40px);
-border:0;
-padding:14px;
-border-radius:10px;
-background:#6526d7;
-color:white;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* GENERAL CARD */
 
 .card{
-background:#fff;
-border:1px solid #edf0f5;
-border-radius:16px;
-padding:20px;
-box-shadow:0 4px 16px #18204d08;
+
+    background:white;
+
+    border:
+    1px solid #edf0f5;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    box-shadow:
+    0 4px 16px
+    rgba(24,32,77,.04);
+
 }
 
-/* REFERRAL */
+
+/* =========================
+   COURSES
+========================= */
+
+.course-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+
+.course-card{
+
+    background:white;
+
+    border:
+    1px solid #e9e9ef;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.25s;
+
+}
+
+
+.course-card:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 15px 30px
+    rgba(0,0,0,.08);
+
+}
+
+
+.course-cover{
+
+    height:150px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+    135deg,
+    #9c5d22,
+    #51301e,
+    #201a25
+    );
+
+}
+
+
+.course-cover.premium{
+
+    background:
+    linear-gradient(
+    135deg,
+    #0d6d72,
+    #22a6a4,
+    #1b4d9b
+    );
+
+}
+
+
+/* BOOK */
+
+.book{
+
+    width:100px;
+
+    height:120px;
+
+    position:relative;
+
+    border-radius:
+    4px 8px 8px 4px;
+
+    transform:
+    perspective(600px)
+    rotateY(-18deg)
+    rotateZ(2deg);
+
+    box-shadow:
+    12px 14px 18px
+    rgba(0,0,0,.35);
+
+}
+
+
+.book.starter{
+
+    background:
+    linear-gradient(
+    135deg,
+    #071a34,
+    #102b50
+    );
+
+}
+
+
+.book.premium-book{
+
+    background:
+    linear-gradient(
+    135deg,
+    #063b20,
+    #136436
+    );
+
+}
+
+
+.book:before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-12px;
+
+    top:4px;
+
+    width:13px;
+
+    height:112px;
+
+    background:#111827;
+
+    transform:
+    rotateY(60deg);
+
+}
+
+
+.book:after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-7px;
+
+    top:6px;
+
+    width:8px;
+
+    height:108px;
+
+    background:
+    repeating-linear-gradient(
+    0deg,
+    #ffffff,
+    #ffffff 2px,
+    #d1d5db 3px
+    );
+
+}
+
+
+.book-text{
+
+    color:white;
+
+    text-align:center;
+
+    padding:18px 8px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    line-height:1.4;
+
+}
+
+
+.course-body{
+
+    padding:18px;
+
+}
+
+
+.course-body h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+
+.course-body p{
+
+    font-size:12px;
+
+    color:#7a8292;
+
+    line-height:1.6;
+
+}
+
+
+.course-price-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-top:16px;
+
+}
+
+
+.course-price{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:#6526d7;
+
+}
+
+
+.course-btn{
+
+    margin-top:15px;
+
+    width:100%;
+
+    padding:12px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #6526d7,
+    #8b5cf6
+    );
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================
+   AFFILIATE
+========================= */
 
 .referral-link{
-display:flex;
-gap:8px;
-margin-top:15px;
+
+    display:flex;
+
+    gap:8px;
+
+    margin-top:15px;
+
 }
+
 
 .referral-link input{
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:9px;
-min-width:0;
+
+    width:100%;
+
+    padding:12px;
+
+    border:
+    1px solid #ddd;
+
+    border-radius:10px;
+
 }
 
-.copy{
-border:0;
-padding:0 15px;
-background:#6526d7;
-color:#fff;
-border-radius:9px;
-font-weight:bold;
-cursor:pointer;
+
+.copy-btn{
+
+    border:0;
+
+    padding:
+    0 16px;
+
+    border-radius:10px;
+
+    background:#6526d7;
+
+    color:white;
+
+    font-weight:bold;
+
 }
+
 
 .mini-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-margin-top:16px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:10px;
+
+    margin-top:16px;
+
 }
+
 
 .mini{
-background:#f7f5ff;
-padding:14px 8px;
-border-radius:10px;
-text-align:center;
+
+    background:#f7f5ff;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    padding:14px;
+
 }
+
 
 .mini span{
-font-size:11px;
-color:#777;
+
+    font-size:11px;
+
+    color:#888;
+
 }
+
 
 .mini strong{
-display:block;
-margin-top:5px;
-font-size:18px;
-color:#6526d7;
+
+    display:block;
+
+    margin-top:6px;
+
+    color:#6526d7;
+
+    font-size:18px;
+
 }
 
-/* EARNINGS */
 
-.earning-row,
-.rank-row{
-display:flex;
-align-items:center;
-gap:12px;
-padding:14px 0;
-border-bottom:1px solid #eee;
+/* =========================
+   COMMISSION
+========================= */
+
+.commission-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:14px;
+
 }
 
-.earning-row:last-child,
-.rank-row:last-child{
-border-bottom:0;
+
+.commission-box{
+
+    padding:18px;
+
+    border-radius:14px;
+
+    background:#f7f5ff;
+
 }
+
+
+.commission-box h3{
+
+    font-size:16px;
+
+    margin-bottom:10px;
+
+}
+
+
+.commission-box p{
+
+    font-size:13px;
+
+    color:#777;
+
+}
+
+
+.commission-amount{
+
+    margin-top:12px;
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    color:#16a34a;
+
+}
+
+
+/* =========================
+   EARNINGS
+========================= */
+
+.earning-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:14px 0;
+
+    border-bottom:
+    1px solid #eef0f4;
+
+}
+
+
+.earning-row:last-child{
+
+    border-bottom:0;
+
+}
+
 
 .earning-left{
-display:flex;
-align-items:center;
-gap:10px;
-flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
 }
 
-.earning-icon,
-.rank-number{
-width:38px;
-height:38px;
-border-radius:10px;
-background:#f1ebff;
-display:flex;
-align-items:center;
-justify-content:center;
+
+.earning-icon{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#f1ebff;
+
+    border-radius:11px;
+
 }
 
-.earning-left small,
-.rank-user small{
-display:block;
-font-size:11px;
-color:#9299a8;
-margin-top:3px;
+
+.earning-left small{
+
+    display:block;
+
+    font-size:11px;
+
+    color:#9299a8;
+
+    margin-top:3px;
+
 }
+
 
 .earning-amount{
-font-weight:bold;
-color:#16a34a;
+
+    color:#16a34a;
+
+    font-weight:bold;
+
 }
+
+
+/* =========================
+   RANK
+========================= */
+
+.rank-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:13px 0;
+
+    border-bottom:
+    1px solid #f0f1f4;
+
+}
+
+
+.rank-row:last-child{
+
+    border-bottom:0;
+
+}
+
+
+.rank-number{
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#f1ebff;
+
+    color:#6526d7;
+
+    font-weight:bold;
+
+}
+
 
 .rank-user{
-flex:1;
+
+    flex:1;
+
 }
+
+
+.rank-user small{
+
+    display:block;
+
+    color:#9299a8;
+
+    font-size:10px;
+
+    margin-top:4px;
+
+}
+
 
 .rank-points{
-font-weight:bold;
+
+    font-weight:bold;
+
 }
 
-.status{
-display:inline-block;
-padding:5px 9px;
-border-radius:20px;
-font-size:10px;
-font-weight:bold;
-background:#dcfce7;
-color:#15803d;
-}
 
-/* WALLET */
+/* =========================
+   WALLET
+========================= */
 
 .wallet-box{
-background:linear-gradient(135deg,#111827,#374151);
-color:#fff;
-border-radius:15px;
-padding:22px;
+
+    padding:24px;
+
+    border-radius:18px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    #111827,
+    #374151
+    );
+
 }
+
 
 .wallet-label{
-font-size:12px;
-opacity:.7;
+
+    font-size:12px;
+
+    opacity:.7;
+
 }
+
 
 .wallet-value{
-font-size:32px;
-font-weight:bold;
-margin:8px 0 16px;
+
+    margin:8px 0 18px;
+
+    font-size:32px;
+
+    font-weight:bold;
+
 }
+
 
 .wallet-button{
-border:0;
-padding:11px 16px;
-border-radius:8px;
-font-weight:bold;
-cursor:pointer;
+
+    border:0;
+
+    padding:
+    11px 18px;
+
+    border-radius:9px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
 }
 
-/* PROFILE */
+
+/* =========================
+   PROFILE
+========================= */
 
 .profile-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:15px;
+
 }
+
 
 .profile-item{
-padding:14px;
-background:#f8f9fc;
-border-radius:10px;
+
+    padding:14px;
+
+    background:#f8f9fc;
+
+    border-radius:11px;
+
 }
+
 
 .profile-item label{
-display:block;
-font-size:10px;
-color:#9299a8;
-margin-bottom:5px;
+
+    display:block;
+
+    font-size:10px;
+
+    color:#9299a8;
+
+    margin-bottom:7px;
+
 }
+
 
 .profile-item strong{
-font-size:14px;
-}
 
-/* INPUT */
-
-.form-input{
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:9px;
-margin-top:10px;
-}
-
-.action-btn{
-width:100%;
-border:0;
-padding:13px;
-margin-top:12px;
-background:#6526d7;
-color:#fff;
-border-radius:9px;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-.stats{
-grid-template-columns:repeat(2,1fr);
-}
-}
-
-@media(max-width:650px){
-
-.content{
-padding:18px 13px 40px;
-}
-
-.book-grid{
-grid-template-columns:1fr;
-padding-left:10px;
-padding-right:10px;
-}
-
-.user-info{
-display:none;
-}
-
-.profile-grid{
-grid-template-columns:1fr;
-}
-
-.welcome-button{
-display:none;
-}
-
-.book-card{
-height:370px;
-}
+    font-size:13px;
 
 }
 
-@media(max-width:420px){
 
-.stats{
-grid-template-columns:1fr 1fr;
-gap:10px;
+/* =========================
+   STATUS
+========================= */
+
+.status{
+
+    display:inline-block;
+
+    padding:
+    5px 10px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:bold;
+
 }
 
-.stat{
-padding:14px;
-}
 
-.stat-value{
-font-size:18px;
-}
+.active{
 
-.book-title{
-font-size:27px;
-}
+    background:#dcfce7;
+
+    color:#15803d;
 
 }
+
+
+.pending{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.5);
+
+    z-index:999;
+
+}
+
+
+/* =========================
+   MOBILE NAV
+========================= */
+
+.mobile-nav{
+
+    display:none;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+    .stats{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:800px){
+
+    .sidebar{
+
+        left:-270px;
+
+    }
+
+    .sidebar.open{
+
+        left:0;
+
+    }
+
+    .overlay.show{
+
+        display:block;
+
+    }
+
+    .main{
+
+        margin-left:0;
+
+    }
+
+    .menu-mobile{
+
+        display:block;
+
+    }
+
+    .content{
+
+        padding:
+        18px 13px
+        85px;
+
+    }
+
+    .topbar{
+
+        padding:
+        0 15px;
+
+    }
+
+    .user-info{
+
+        display:none;
+
+    }
+
+    .mobile-nav{
+
+        position:fixed;
+
+        bottom:0;
+
+        left:0;
+
+        right:0;
+
+        height:65px;
+
+        background:white;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:space-around;
+
+        border-top:
+        1px solid #eee;
+
+        z-index:950;
+
+    }
+
+    .mobile-nav a{
+
+        text-align:center;
+
+        font-size:10px;
+
+        color:#777;
+
+    }
+
+    .mobile-nav span{
+
+        display:block;
+
+        font-size:20px;
+
+        margin-bottom:3px;
+
+    }
+
+}
+
+
+@media(max-width:550px){
+
+    .stats{
+
+        grid-template-columns:
+        1fr 1fr;
+
+        gap:10px;
+
+    }
+
+    .stat{
+
+        padding:14px;
+
+    }
+
+    .stat-value{
+
+        font-size:19px;
+
+    }
+
+    .course-grid{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+    .profile-grid{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+    .commission-grid{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+    .mini-grid{
+
+        grid-template-columns:
+        1fr 1fr 1fr;
+
+    }
+
+    .page-title{
+
+        font-size:17px;
+
+    }
+
+    .top-courses{
+
+        display:none;
+
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- SIDEBAR -->
 
-<aside class="sidebar" id="sidebar">
+<!-- =========================
+     SIDEBAR
+========================= -->
+
+<aside
+class="sidebar"
+id="sidebar">
+
 
 <div class="brand">
-<div class="brand-icon">📚</div>
-Padho Aur Kamao
+
+<div class="brand-icon">
+📚
 </div>
 
-<div class="sidebar-section">Main Menu</div>
+Padho Aur Kamao
 
-<a class="side-link active" data-section="homeSection">
-<span class="side-icon">🏠</span>
+</div>
+
+
+<div class="sidebar-section">
+
+Main Menu
+
+</div>
+
+
+<a
+class="side-link active"
+href="#home">
+
+<span class="side-icon">
+🏠
+</span>
+
 Dashboard
+
 </a>
 
-<a class="side-link" data-section="coursesSection">
-<span class="side-icon">📚</span>
+
+<a
+class="side-link"
+href="#courses">
+
+<span class="side-icon">
+📚
+</span>
+
 Courses
+
 </a>
 
-<a class="side-link" data-section="affiliateSection">
-<span class="side-icon">🔗</span>
+
+<a
+class="side-link"
+href="#affiliate">
+
+<span class="side-icon">
+🔗
+</span>
+
 Affiliate
+
 </a>
 
-<a class="side-link" data-section="teamSection">
-<span class="side-icon">👥</span>
+
+<a
+class="side-link"
+href="#commission">
+
+<span class="side-icon">
+📊
+</span>
+
+Commission Structure
+
+</a>
+
+
+<a
+class="side-link"
+href="#team">
+
+<span class="side-icon">
+👥
+</span>
+
 My Team
+
 </a>
 
-<a class="side-link" data-section="leaderboardSection">
-<span class="side-icon">🏆</span>
+
+<a
+class="side-link"
+href="#leaderboard">
+
+<span class="side-icon">
+🏆
+</span>
+
 Leaderboard
+
 </a>
 
-<div class="sidebar-section">Finance</div>
 
-<a class="side-link" data-section="walletSection">
-<span class="side-icon">💳</span>
+<div class="sidebar-section">
+
+Finance
+
+</div>
+
+
+<a
+class="side-link"
+href="#wallet">
+
+<span class="side-icon">
+💳
+</span>
+
 Wallet
+
 </a>
 
-<a class="side-link" data-section="withdrawalSection">
-<span class="side-icon">💸</span>
+
+<a
+class="side-link"
+href="#withdrawal">
+
+<span class="side-icon">
+💸
+</span>
+
 Withdrawal
+
 </a>
 
-<a class="side-link" data-section="earningsSection">
-<span class="side-icon">💰</span>
+
+<a
+class="side-link"
+href="#earnings">
+
+<span class="side-icon">
+💰
+</span>
+
 My Earnings
+
 </a>
 
-<div class="sidebar-section">Account</div>
 
-<a class="side-link" data-section="profileSection">
-<span class="side-icon">👤</span>
+<div class="sidebar-section">
+
+Account
+
+</div>
+
+
+<a
+class="side-link"
+href="#profile">
+
+<span class="side-icon">
+👤
+</span>
+
 My Profile
+
 </a>
 
-<a class="side-link" data-section="kycSection">
-<span class="side-icon">🪪</span>
+
+<a
+class="side-link"
+href="#kyc">
+
+<span class="side-icon">
+🪪
+</span>
+
 KYC
-<span class="side-badge">Pending</span>
+
+<span class="side-badge">
+Pending
+</span>
+
 </a>
 
-<a class="side-link" data-section="securitySection">
-<span class="side-icon">🔐</span>
+
+<a
+class="side-link"
+href="#security">
+
+<span class="side-icon">
+🔐
+</span>
+
 Security
+
 </a>
 
-<a class="side-link" id="sideLogout">
-<span class="side-icon">🚪</span>
+
+<a
+class="side-link"
+id="sideLogout"
+href="#">
+
+<span class="side-icon">
+🚪
+</span>
+
 Logout
+
 </a>
+
 
 </aside>
 
-<div class="overlay" id="overlay"></div>
 
-<!-- MAIN -->
+<div
+class="overlay"
+id="overlay">
+</div>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
 
 <div class="main">
 
+
 <header class="topbar">
+
 
 <div class="top-left">
 
-<button class="menu-mobile" id="mobileMenu">☰</button>
 
-<div class="page-title" id="pageTitle">
+<button
+class="menu-mobile"
+id="mobileMenu">
+
+☰
+
+</button>
+
+
+<div class="page-title">
+
 Dashboard
-</div>
 
 </div>
+
+
+<a
+href="#courses"
+class="top-courses">
+
+📚 Courses
+
+</a>
+
+
+</div>
+
+
 
 <div class="top-right">
 
-<button class="notification">🔔</button>
+
+<button class="notification">
+
+🔔
+
+</button>
+
 
 <div class="user-box">
 
-<div class="avatar" id="avatar">S</div>
+
+<div
+class="avatar"
+id="avatar">
+
+S
+
+</div>
+
 
 <div class="user-info">
 
-<strong id="topName">Student</strong>
-<small>Member</small>
+<strong id="topName">
+Student
+</strong>
+
+<small>
+Member
+</small>
 
 </div>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 </header>
 
-<main class="content">
 
-<!-- HOME / DASHBOARD -->
 
-<section class="section active-section" id="homeSection">
+<!-- =========================
+     CONTENT
+========================= -->
+
+<main
+class="content"
+id="home">
+
+
+
+<!-- WELCOME -->
 
 <section class="welcome">
 
-<div>
-<h1 id="welcomeName">Welcome 👋</h1>
-<p>Learn • Skill • Earn • Grow with Padho Aur Kamao</p>
-</div>
 
-<button class="welcome-button" id="goCourses">
+<h1
+id="welcomeName">
+
+Welcome 👋
+
+</h1>
+
+
+<p>
+
+Learn • Earn • Grow with Padho Aur Kamao
+
+</p>
+
+
+<a
+href="#courses"
+class="welcome-btn">
+
 Explore Courses →
-</button>
+
+</a>
+
 
 </section>
+
+
+
+<!-- STATS -->
 
 <section class="stats">
 
-<div class="stat">
-<div class="stat-top">
-<span>Today's Revenue</span>
-<div class="stat-icon">💰</div>
-</div>
-<div class="stat-value" id="todayRevenue">₹0</div>
-</div>
 
 <div class="stat">
+
 <div class="stat-top">
-<span>7 Days Revenue</span>
-<div class="stat-icon">📅</div>
-</div>
-<div class="stat-value" id="weekRevenue">₹0</div>
+
+<div class="stat-label">
+Today's Revenue
 </div>
 
-<div class="stat">
-<div class="stat-top">
-<span>30 Days Revenue</span>
-<div class="stat-icon">📈</div>
-</div>
-<div class="stat-value" id="monthRevenue">₹0</div>
+<div class="stat-icon">
+💰
 </div>
 
+</div>
+
+<div
+class="stat-value"
+id="todayRevenue">
+
+₹0
+
+</div>
+
+<div class="stat-change">
+
+Today's earnings
+
+</div>
+
+</div>
+
+
+
 <div class="stat">
+
 <div class="stat-top">
-<span>Total Revenue</span>
-<div class="stat-icon">🏦</div>
+
+<div class="stat-label">
+7 Days Revenue
 </div>
-<div class="stat-value" id="allRevenue">₹0</div>
+
+<div class="stat-icon">
+📅
 </div>
+
+</div>
+
+<div
+class="stat-value"
+id="weekRevenue">
+
+₹0
+
+</div>
+
+<div class="stat-change">
+
+Weekly performance
+
+</div>
+
+</div>
+
+
+
+<div class="stat">
+
+<div class="stat-top">
+
+<div class="stat-label">
+30 Days Revenue
+</div>
+
+<div class="stat-icon">
+📈
+</div>
+
+</div>
+
+<div
+class="stat-value"
+id="monthRevenue">
+
+₹0
+
+</div>
+
+<div class="stat-change">
+
+Monthly earnings
+
+</div>
+
+</div>
+
+
+
+<div class="stat">
+
+<div class="stat-top">
+
+<div class="stat-label">
+Total Revenue
+</div>
+
+<div class="stat-icon">
+🏦
+</div>
+
+</div>
+
+<div
+class="stat-value"
+id="allRevenue">
+
+₹0
+
+</div>
+
+<div class="stat-change">
+
+All time earnings
+
+</div>
+
+</div>
+
 
 </section>
 
-</section>
 
-<!-- COURSES -->
 
-<section class="section" id="coursesSection">
+<!-- =========================
+     COURSES
+========================= -->
+
+<section
+class="section"
+id="courses">
+
 
 <div class="section-head">
-<h2 class="section-title">📚 Courses</h2>
-</div>
 
-<div class="book-grid">
+<h2 class="section-title">
 
-<!-- BOOK 1 -->
+📚 Courses
 
-<div class="book-card">
-
-<div class="book">
-
-<div class="book-cover book-one">
-
-<div class="book-spine"></div>
-<div class="book-pages"></div>
-
-<div class="book-label">STARTER PACKAGE</div>
-
-<div class="book-logo">📚 PADHO AUR KAMAO</div>
-
-<div class="book-icon">📖</div>
-
-<div class="book-title">
-Study & Skill<br>Starter
-</div>
-
-<div class="book-subtitle">
-Learn important subjects and useful skills for your future growth and success.
-</div>
-
-<div class="book-price">₹199</div>
+</h2>
 
 </div>
 
+
+
+<div class="course-grid">
+
+
+<!-- COURSE 1 -->
+
+<div class="course-card">
+
+
+<div class="course-cover">
+
+
+<div class="book starter">
+
+<div class="book-text">
+
+STUDY<br>
+& SKILL<br>
+STARTER
+
 </div>
 
-<button class="book-buy buy-btn"
-data-course-name="Study & Skill Starter"
-data-course-price="199">
+</div>
 
-🛒 Buy Course ₹199
+
+</div>
+
+
+<div class="course-body">
+
+
+<h3>
+
+Study & Skill Starter
+
+</h3>
+
+
+<p>
+
+Study Material, Communication Skills,
+Maths, Reasoning, Hindi और Learning.
+
+</p>
+
+
+<div class="course-price-row">
+
+<span class="course-price">
+
+₹199
+
+</span>
+
+<span>
+
+2 Courses
+
+</span>
+
+</div>
+
+
+<button
+class="course-btn"
+onclick="location.href='course.html'">
+
+View Course
 
 </button>
 
+
 </div>
 
-<!-- BOOK 2 -->
 
-<div class="book-card">
-
-<div class="book">
-
-<div class="book-cover book-two">
-
-<div class="book-spine"></div>
-<div class="book-pages"></div>
-
-<div class="book-label">PREMIUM PACKAGE</div>
-
-<div class="book-logo">📚 PADHO AUR KAMAO</div>
-
-<div class="book-icon">🎓</div>
-
-<div class="book-title">
-Skill & Success<br>Premium
 </div>
 
-<div class="book-subtitle">
-Advanced learning, competitive preparation and powerful skills for success.
-</div>
 
-<div class="book-price">₹399</div>
+
+<!-- COURSE 2 -->
+
+<div class="course-card">
+
+
+<div
+class="course-cover premium">
+
+
+<div class="book premium-book">
+
+<div class="book-text">
+
+SKILL<br>
+& SUCCESS<br>
+PREMIUM
 
 </div>
 
 </div>
 
-<button class="book-buy buy-btn"
-data-course-name="Skill & Success Premium"
-data-course-price="399">
 
-🛒 Buy Course ₹399
+</div>
+
+
+<div class="course-body">
+
+
+<h3>
+
+Skill & Success Premium
+
+</h3>
+
+
+<p>
+
+Competitive Preparation,
+Premium Skills,
+Growth और Full Course Access.
+
+</p>
+
+
+<div class="course-price-row">
+
+<span class="course-price">
+
+₹399
+
+</span>
+
+<span>
+
+All Courses
+
+</span>
+
+</div>
+
+
+<button
+class="course-btn"
+onclick="location.href='course.html'">
+
+View Course
 
 </button>
 
-</div>
 
 </div>
+
+
+</div>
+
+
+</div>
+
 
 </section>
 
-<!-- AFFILIATE -->
 
-<section class="section" id="affiliateSection">
+
+<!-- =========================
+     AFFILIATE
+========================= -->
+
+<section
+class="section"
+id="affiliate">
+
 
 <div class="section-head">
-<h2 class="section-title">🔗 Affiliate Center</h2>
+
+<h2 class="section-title">
+
+🔗 Affiliate Center
+
+</h2>
+
 </div>
+
 
 <div class="card">
 
+
 <p style="font-size:13px;color:#777">
-Share your referral link and earn commission on eligible course sales.
+
+अपना Referral Link share करें और
+eligible course sales पर commission earn करें।
+
 </p>
+
 
 <div class="referral-link">
 
-<input id="referralLink" readonly placeholder="Loading...">
 
-<button class="copy" id="copyBtn">Copy</button>
+<input
+id="referralLink"
+readonly
+placeholder="Loading...">
+
+
+<button
+class="copy-btn"
+id="copyBtn">
+
+Copy
+
+</button>
+
 
 </div>
+
+
 
 <div class="mini-grid">
 
-<div class="mini">
-<span>Referrals</span>
-<strong id="referralCount">0</strong>
-</div>
 
 <div class="mini">
-<span>Points</span>
-<strong id="referralPoints">0</strong>
+
+<span>
+Referrals
+</span>
+
+<strong
+id="referralCount">
+
+0
+
+</strong>
+
 </div>
+
+
 
 <div class="mini">
-<span>Status</span>
-<strong style="font-size:13px">Active</strong>
-</div>
+
+<span>
+Points
+</span>
+
+<strong
+id="referralPoints">
+
+0
+
+</strong>
 
 </div>
 
+
+
+<div class="mini">
+
+<span>
+Status
+</span>
+
+<strong
+id="affiliateStatus">
+
+Active
+
+</strong>
+
 </div>
+
+
+</div>
+
+
+</div>
+
 
 </section>
 
-<!-- TEAM -->
 
-<section class="section" id="teamSection">
+
+<!-- =========================
+     COMMISSION
+========================= -->
+
+<section
+class="section"
+id="commission">
+
 
 <div class="section-head">
-<h2 class="section-title">👥 My Team</h2>
+
+<h2 class="section-title">
+
+📊 Commission Structure
+
+</h2>
+
 </div>
 
-<div class="card" id="teamList">
-Loading team...
+
+<div class="commission-grid">
+
+
+<div class="commission-box">
+
+<h3>
+
+Study & Skill Starter
+
+</h3>
+
+<p>
+
+Course Price: ₹199
+
+</p>
+
+<div class="commission-amount">
+
+Commission ₹100
+
 </div>
+
+</div>
+
+
+
+<div class="commission-box">
+
+<h3>
+
+Skill & Success Premium
+
+</h3>
+
+<p>
+
+Course Price: ₹399
+
+</p>
+
+<div class="commission-amount">
+
+Commission ₹200
+
+</div>
+
+</div>
+
+
+</div>
+
 
 </section>
 
-<!-- LEADERBOARD -->
 
-<section class="section" id="leaderboardSection">
+
+<!-- =========================
+     EARNINGS
+========================= -->
+
+<section
+class="section"
+id="earnings">
+
 
 <div class="section-head">
-<h2 class="section-title">🏆 Leaderboard</h2>
+
+<h2 class="section-title">
+
+💰 Recent Earnings
+
+</h2>
+
 </div>
 
-<div class="card" id="leaderboardList">
+
+<div class="card">
+
+
+<div class="earning-row">
+
+
+<div class="earning-left">
+
+<div class="earning-icon">
+🎯
+</div>
+
+<div>
+
+<strong>
+Course Commission
+</strong>
+
+<small>
+Recent commission
+</small>
+
+</div>
+
+</div>
+
+
+<div
+class="earning-amount"
+id="commissionAmount">
+
+₹0
+
+</div>
+
+
+</div>
+
+
+
+<div class="earning-row">
+
+
+<div class="earning-left">
+
+<div class="earning-icon">
+🔗
+</div>
+
+<div>
+
+<strong>
+Passive Income
+</strong>
+
+<small>
+Team based income
+</small>
+
+</div>
+
+</div>
+
+
+<div
+class="earning-amount"
+id="passiveAmount">
+
+₹0
+
+</div>
+
+
+</div>
+
+
+
+<div class="earning-row">
+
+
+<div class="earning-left">
+
+<div class="earning-icon">
+👥
+</div>
+
+<div>
+
+<strong>
+Team Referrals
+</strong>
+
+<small>
+Your network
+</small>
+
+</div>
+
+</div>
+
+
+<div
+class="earning-amount"
+id="teamEarning">
+
+₹0
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+     TEAM
+========================= -->
+
+<section
+class="section"
+id="team">
+
+
+<div class="section-head">
+
+<h2 class="section-title">
+
+👥 My Team
+
+</h2>
+
+</div>
+
+
+<div
+class="card"
+id="teamList">
+
+No team members yet.
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+     LEADERBOARD
+========================= -->
+
+<section
+class="section"
+id="leaderboard">
+
+
+<div class="section-head">
+
+<h2 class="section-title">
+
+🏆 Leaderboard
+
+</h2>
+
+</div>
+
+
+<div
+class="card"
+id="leaderboardList">
+
 Loading leaderboard...
+
 </div>
+
 
 </section>
 
-<!-- WALLET -->
 
-<section class="section" id="walletSection">
+
+<!-- =========================
+     WALLET
+========================= -->
+
+<section
+class="section"
+id="wallet">
+
 
 <div class="section-head">
-<h2 class="section-title">💳 My Wallet</h2>
+
+<h2 class="section-title">
+
+💳 My Wallet
+
+</h2>
+
 </div>
+
 
 <div class="wallet-box">
 
-<div class="wallet-label">Available Balance</div>
 
-<div class="wallet-value" id="walletBalance">₹0</div>
+<div class="wallet-label">
 
-<button class="wallet-button" data-section="withdrawalSection">
+Available Balance
+
+</div>
+
+
+<div
+class="wallet-value"
+id="walletBalance">
+
+₹0
+
+</div>
+
+
+<button
+class="wallet-button"
+onclick="document.getElementById('withdrawal').scrollIntoView()">
+
 Withdraw Money
+
 </button>
 
+
 </div>
+
 
 </section>
 
-<!-- WITHDRAWAL -->
 
-<section class="section" id="withdrawalSection">
+
+<!-- =========================
+     WITHDRAWAL
+========================= -->
+
+<section
+class="section"
+id="withdrawal">
+
 
 <div class="section-head">
-<h2 class="section-title">💸 Withdrawal Request</h2>
+
+<h2 class="section-title">
+
+💸 Withdrawal Request
+
+</h2>
+
 </div>
+
 
 <div class="card">
 
-<p style="font-size:13px;color:#777">
-Available balance se withdrawal request bhejein.
+
+<p
+style="
+font-size:13px;
+color:#777;
+margin-bottom:15px;
+">
+
+Available balance से withdrawal request भेजें।
+
 </p>
 
-<input id="withdrawAmount"
-class="form-input"
+
+<input
+id="withdrawAmount"
 type="number"
-placeholder="Withdrawal Amount ₹">
+placeholder="Withdrawal Amount ₹"
+style="
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:9px;
+margin-bottom:10px;
+">
 
-<input id="withdrawMethod"
-class="form-input"
-placeholder="UPI ID / Bank details">
 
-<button class="action-btn" id="withdrawBtn">
+<input
+id="withdrawMethod"
+placeholder="UPI ID / Bank Details"
+style="
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:9px;
+">
+
+
+<button
+id="withdrawBtn"
+class="course-btn">
+
 💸 Request Withdrawal
+
 </button>
 
-<p id="withdrawMsg"
-style="font-size:12px;margin-top:10px">
+
+<p
+id="withdrawMsg"
+style="
+font-size:12px;
+margin-top:10px;
+">
+
 </p>
 
+
 </div>
+
 
 </section>
 
-<!-- EARNINGS -->
 
-<section class="section" id="earningsSection">
+
+<!-- =========================
+     PROFILE
+========================= -->
+
+<section
+class="section"
+id="profile">
+
 
 <div class="section-head">
-<h2 class="section-title">💰 Recent Earnings</h2>
+
+<h2 class="section-title">
+
+👤 My Profile
+
+</h2>
+
 </div>
+
 
 <div class="card">
 
-<div class="earning-row">
-
-<div class="earning-left">
-
-<div class="earning-icon">🎯</div>
-
-<div>
-<strong>Course Commission</strong>
-<small>Recent commission</small>
-</div>
-
-</div>
-
-<div class="earning-amount" id="commissionAmount">
-₹0
-</div>
-
-</div>
-
-<div class="earning-row">
-
-<div class="earning-left">
-
-<div class="earning-icon">🔗</div>
-
-<div>
-<strong>Passive Income</strong>
-<small>Team based income</small>
-</div>
-
-</div>
-
-<div class="earning-amount" id="passiveAmount">
-₹0
-</div>
-
-</div>
-
-<div class="earning-row">
-
-<div class="earning-left">
-
-<div class="earning-icon">👥</div>
-
-<div>
-<strong>Team Referrals</strong>
-<small>Your network</small>
-</div>
-
-</div>
-
-<div class="earning-amount" id="teamEarning">
-₹0
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- PROFILE -->
-
-<section class="section" id="profileSection">
-
-<div class="section-head">
-<h2 class="section-title">👤 My Profile</h2>
-</div>
-
-<div class="card">
 
 <div class="profile-grid">
 
-<div class="profile-item">
-<label>NAME</label>
-<strong id="profileName">Loading...</strong>
-</div>
 
 <div class="profile-item">
-<label>EMAIL</label>
-<strong id="profileEmail">Loading...</strong>
+
+<label>
+NAME
+</label>
+
+<strong id="profileName">
+Loading...
+</strong>
+
 </div>
+
+
 
 <div class="profile-item">
-<label>MEMBER ID</label>
-<strong id="memberId">Loading...</strong>
+
+<label>
+EMAIL
+</label>
+
+<strong id="profileEmail">
+Loading...
+</strong>
+
 </div>
+
+
 
 <div class="profile-item">
-<label>ACCOUNT STATUS</label>
-<span class="status">Active</span>
-</div>
+
+<label>
+MEMBER ID
+</label>
+
+<strong id="memberId">
+Loading...
+</strong>
 
 </div>
 
+
+
+<div class="profile-item">
+
+<label>
+ACCOUNT STATUS
+</label>
+
+<span class="status active">
+
+Active
+
+</span>
+
 </div>
+
+
+</div>
+
+
+</div>
+
 
 </section>
 
-<!-- KYC -->
 
-<section class="section" id="kycSection">
+
+<!-- =========================
+     KYC
+========================= -->
+
+<section
+class="section"
+id="kyc">
+
 
 <div class="section-head">
-<h2 class="section-title">🪪 KYC Verification</h2>
+
+<h2 class="section-title">
+
+🪪 KYC Verification
+
+</h2>
+
 </div>
+
 
 <div class="card">
 
-<p style="font-size:13px;color:#777">
+
+<p
+style="
+font-size:13px;
+color:#777;
+">
+
 KYC Status
+
 </p>
 
-<h3 id="kycStatus" style="margin-top:8px">
+
+<h3
+id="kycStatus"
+style="margin-top:8px">
+
 Pending
+
 </h3>
 
+
 </div>
+
 
 </section>
 
-<!-- SECURITY -->
 
-<section class="section" id="securitySection">
+
+<!-- =========================
+     SECURITY
+========================= -->
+
+<section
+class="section"
+id="security">
+
 
 <div class="section-head">
-<h2 class="section-title">🔐 Security</h2>
+
+<h2 class="section-title">
+
+🔐 Security
+
+</h2>
+
 </div>
+
 
 <div class="card">
 
-<p style="font-size:13px;color:#777;line-height:1.7">
 
-Aapka account Firebase Authentication se secure hai.
-Apna Password, OTP ya Login Details kisi ke saath share na karein.
+<p
+style="
+font-size:13px;
+color:#777;
+line-height:1.8;
+">
+
+आपका account Firebase Authentication से secure है।
+अपना Password, OTP या Login Details किसी के साथ share न करें।
 
 </p>
 
+
 </div>
 
+
 </section>
+
 
 </main>
 
+
 </div>
+
+
+
+<!-- =========================
+     MOBILE NAV
+========================= -->
+
+<nav class="mobile-nav">
+
+
+<a href="#home">
+
+<span>
+🏠
+</span>
+
+Home
+
+</a>
+
+
+<a href="#courses">
+
+<span>
+📚
+</span>
+
+Courses
+
+</a>
+
+
+<a href="#affiliate">
+
+<span>
+🔗
+</span>
+
+Affiliate
+
+</a>
+
+
+<a href="#wallet">
+
+<span>
+💳
+</span>
+
+Wallet
+
+</a>
+
+
+<a href="#profile">
+
+<span>
+👤
+</span>
+
+Profile
+
+</a>
+
+
+</nav>
+
+
+
+<!-- =========================
+     FIREBASE
+========================= -->
 
 <script type="module">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
+
+initializeApp
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+
 getAuth,
 onAuthStateChanged,
 signOut
+
 }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
 
 import {
+
 getFirestore,
 doc,
 getDoc,
@@ -1298,161 +3120,215 @@ query,
 where,
 getDocs,
 limit
-}
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+
+/* =========================
+   FIREBASE CONFIG
+========================= */
 
 const firebaseConfig={
 
-apiKey:"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+apiKey:
+"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
-authDomain:"padho-aur-kamao-3eeae.firebaseapp.com",
+authDomain:
+"padho-aur-kamao-3eeae.firebaseapp.com",
 
-projectId:"padho-aur-kamao-3eeae",
+projectId:
+"padho-aur-kamao-3eeae",
 
-storageBucket:"padho-aur-kamao-3eeae.firebasestorage.app",
+storageBucket:
+"padho-aur-kamao-3eeae.firebasestorage.app",
 
-messagingSenderId:"670063905617",
+messagingSenderId:
+"670063905617",
 
-appId:"1:670063905617:web:9b3a7e62fdeea14fbfa170"
+appId:
+"1:670063905617:web:9b3a7e62fdeea14fbfa170",
+
+measurementId:
+"G-7J1YV8HN3F"
 
 };
 
 
-const app=initializeApp(firebaseConfig);
-const auth=getAuth(app);
-const db=getFirestore(app);
 
-const $=id=>document.getElementById(id);
+const app=
+initializeApp(firebaseConfig);
+
+
+const auth=
+getAuth(app);
+
+
+const db=
+getFirestore(app);
+
+
 
 let currentUser=null;
 
 
-/* MOBILE / SIDE MENU */
+
+/* =========================
+   SHORTCUT
+========================= */
+
+const $=
+id=>
+document.getElementById(id);
+
+
+
+/* =========================
+   MOBILE MENU
+========================= */
 
 $("mobileMenu").onclick=()=>{
 
-$("sidebar").classList.add("open");
-$("overlay").classList.add("show");
+    $("sidebar").classList.add("open");
+
+    $("overlay").classList.add("show");
 
 };
 
-$("overlay").onclick=closeMenu;
 
-function closeMenu(){
+$("overlay").onclick=()=>{
 
-$("sidebar").classList.remove("open");
-$("overlay").classList.remove("show");
+    $("sidebar").classList.remove("open");
 
-}
+    $("overlay").classList.remove("show");
 
-
-/* SHOW SECTION */
-
-function showSection(sectionId){
-
-document.querySelectorAll(".section")
-.forEach(section=>{
-section.classList.remove("active-section");
-});
-
-const target=$(sectionId);
-
-if(target){
-target.classList.add("active-section");
-}
-
-document.querySelectorAll(".side-link")
-.forEach(link=>{
-link.classList.remove("active");
-});
-
-document.querySelectorAll(`[data-section="${sectionId}"]`)
-.forEach(link=>{
-link.classList.add("active");
-});
-
-$("pageTitle").innerText=
-sectionId==="homeSection" ? "Dashboard" :
-sectionId==="coursesSection" ? "Courses" :
-sectionId.replace("Section","");
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-closeMenu();
-
-}
-
-
-/* MENU LINKS */
-
-document.querySelectorAll("[data-section]")
-.forEach(link=>{
-
-link.addEventListener("click",()=>{
-
-showSection(link.dataset.section);
-
-});
-
-});
-
-
-$("goCourses").onclick=()=>{
-showSection("coursesSection");
 };
 
 
-/* AUTH */
 
-onAuthStateChanged(auth,async user=>{
+/* =========================
+   REFERRAL CODE
+========================= */
 
-if(!user){
+function makeReferral(uid){
 
-location.href="login.html";
-return;
+    return "PAK"+
+    uid.substring(0,8).toUpperCase();
 
 }
 
-currentUser=user;
 
-await loadUser();
 
-});
+/* =========================
+   MONEY FORMAT
+========================= */
 
+function money(value){
+
+    return "₹"+
+    Number(value||0)
+    .toLocaleString("en-IN");
+
+}
+
+
+
+/* =========================
+   AUTH
+========================= */
+
+onAuthStateChanged(
+
+auth,
+
+async user=>{
+
+    if(!user){
+
+        location.href="login.html";
+
+        return;
+
+    }
+
+    currentUser=user;
+
+    await loadUser();
+
+}
+
+);
+
+
+
+/* =========================
+   LOAD USER
+========================= */
 
 async function loadUser(){
 
-const userRef=
-doc(db,"users",currentUser.uid);
+try{
+
+
+const ref=
+doc(
+db,
+"users",
+currentUser.uid
+);
+
 
 const snap=
-await getDoc(userRef);
+await getDoc(ref);
+
 
 let data;
 
+
 if(snap.exists()){
 
-data=snap.data();
+    data=snap.data();
 
 }else{
 
-data={
-name:currentUser.displayName||"Student",
-email:currentUser.email||"",
-referralCode:
-"PAK"+
-currentUser.uid.substring(0,8).toUpperCase(),
-points:0,
-totalReferrals:0
-};
+    data={
 
-await setDoc(userRef,data);
+        name:
+        currentUser.displayName||
+        "Student",
+
+        email:
+        currentUser.email||
+        "",
+
+        referralCode:
+        makeReferral(
+        currentUser.uid
+        ),
+
+        points:0,
+
+        totalReferrals:0,
+
+        coursePurchased:false
+
+    };
+
+
+    await setDoc(
+    ref,
+    data
+    );
 
 }
+
+
+
+/* USER NAME */
 
 const name=
 data.name||
@@ -1463,29 +3339,44 @@ currentUser.displayName||
 $("welcomeName").innerText=
 "Welcome, "+name+" 👋";
 
-$("topName").innerText=name;
 
-$("profileName").innerText=name;
+$("topName").innerText=
+name;
+
+
+$("profileName").innerText=
+name;
+
 
 $("profileEmail").innerText=
 currentUser.email||
 data.email||
 "-";
 
+
 $("memberId").innerText=
-currentUser.uid.substring(0,12);
+currentUser.uid
+.substring(0,12);
+
 
 $("avatar").innerText=
-name.charAt(0).toUpperCase();
+name
+.charAt(0)
+.toUpperCase();
 
+
+
+/* REFERRAL */
 
 const code=
 data.referralCode||
-("PAK"+
-currentUser.uid.substring(0,8).toUpperCase());
+makeReferral(
+currentUser.uid
+);
 
 
 $("referralLink").value=
+
 location.origin+
 location.pathname+
 "?ref="+
@@ -1496,62 +3387,294 @@ $("referralPoints").innerText=
 data.points||0;
 
 
-/* LOAD DATA */
+
+/* LOAD ALL DATA */
 
 await loadReferrals(code);
-await loadTeam();
-await loadLeaderboard();
+
 await loadEarnings();
+
+await loadTeam(code);
+
+await loadLeaderboard();
+
 await loadWallet();
+
 await loadKyc();
+
+
+}catch(error){
+
+console.log(
+"User Load Error:",
+error
+);
+
+}
 
 }
 
 
-/* REFERRALS */
+
+/* =========================
+   REFERRALS
+========================= */
 
 async function loadReferrals(code){
 
 try{
 
+
 const snap=
 await getDocs(
+
 query(
-collection(db,"referrals"),
-where("referralCode","==",code)
+
+collection(
+db,
+"referrals"
+),
+
+where(
+"referrerCode",
+"==",
+code
 )
+
+)
+
 );
 
-$("referralCount").innerText=snap.size;
+
+$("referralCount").innerText=
+snap.size;
+
 
 }catch(error){
 
-console.log(error);
-$("referralCount").innerText="0";
+    $("referralCount").innerText=
+    "0";
 
 }
 
 }
 
 
-/* TEAM */
 
-async function loadTeam(){
+/* =========================
+   EARNINGS
+========================= */
+
+async function loadEarnings(){
 
 try{
 
+
 const snap=
 await getDocs(
+
 query(
-collection(db,"users"),
-where("referredBy","==",currentUser.uid),
-limit(20)
+
+collection(
+db,
+"earnings"
+),
+
+where(
+"userId",
+"==",
+currentUser.uid
 )
+
+)
+
 );
+
+
+let total=0;
+
+let passive=0;
+
+let commission=0;
+
+let team=0;
+
+
+let today=0;
+
+let week=0;
+
+let month=0;
+
+
+const now=
+Date.now();
+
+
+
+snap.forEach(item=>{
+
+
+const d=
+item.data();
+
+
+const amount=
+Number(
+d.amount||0
+);
+
+
+total+=amount;
+
+
+if(
+d.type==="commission"
+){
+
+commission+=amount;
+
+}
+
+
+if(
+d.type==="passive"
+){
+
+passive+=amount;
+
+}
+
+
+if(
+d.type==="team"
+){
+
+team+=amount;
+
+}
+
+
+const timestamp=
+d.createdAt
+?.toMillis?.()||0;
+
+
+
+if(
+timestamp>0
+){
+
+if(
+now-timestamp<=86400000
+){
+
+today+=amount;
+
+}
+
+
+if(
+now-timestamp<=604800000
+){
+
+week+=amount;
+
+}
+
+
+if(
+now-timestamp<=2592000000
+){
+
+month+=amount;
+
+}
+
+}
+
+
+});
+
+
+
+$("todayRevenue").innerText=
+money(today);
+
+
+$("weekRevenue").innerText=
+money(week);
+
+
+$("monthRevenue").innerText=
+money(month);
+
+
+$("allRevenue").innerText=
+money(total);
+
+
+$("commissionAmount").innerText=
+money(commission);
+
+
+$("passiveAmount").innerText=
+money(passive);
+
+
+$("teamEarning").innerText=
+money(team);
+
+
+}catch(error){
+
+console.log(
+"Earning Error:",
+error
+);
+
+}
+
+}
+
+
+
+/* =========================
+   TEAM
+========================= */
+
+async function loadTeam(code){
+
+try{
+
+
+const snap=
+await getDocs(
+
+query(
+
+collection(
+db,
+"users"
+),
+
+where(
+"referredBy",
+"==",
+code
+),
+
+limit(20)
+
+)
+
+);
+
 
 if(snap.empty){
 
 $("teamList").innerHTML=
+
 "<p style='font-size:13px;color:#888'>No team members yet.</p>";
 
 return;
@@ -1559,69 +3682,136 @@ return;
 }
 
 
-$("teamList").innerHTML=
-snap.docs.map((item,index)=>{
 
-const d=item.data();
+$("teamList").innerHTML=
+
+snap.docs
+
+.map((item,index)=>{
+
+
+const d=
+item.data();
+
 
 return `
+
 <div class="rank-row">
 
 <div class="rank-number">
+
 ${index+1}
+
 </div>
+
 
 <div class="rank-user">
-<strong>${d.name||"Student"}</strong>
-<small>${d.email||""}</small>
+
+<strong>
+
+${d.name||"Student"}
+
+</strong>
+
+<small>
+
+${d.email||""}
+
+</small>
+
 </div>
 
-<span class="status">Member</span>
+
+<span class="status active">
+
+Member
+
+</span>
+
 
 </div>
+
 `;
 
-}).join("");
+
+})
+
+.join("");
+
 
 }catch(error){
 
-console.log(error);
 
 $("teamList").innerHTML=
+
 "<p style='font-size:13px;color:#888'>Team data unavailable.</p>";
 
-}
 
 }
 
+}
 
-/* LEADERBOARD */
+
+
+/* =========================
+   LEADERBOARD
+========================= */
 
 async function loadLeaderboard(){
 
 try{
 
+
 const snap=
 await getDocs(
+
 query(
-collection(db,"users"),
-limit(50)
+
+collection(
+db,
+"users"
+),
+
+limit(20)
+
 )
+
 );
+
 
 let users=
-snap.docs.map(item=>item.data());
 
-users.sort(
-(a,b)=>
-Number(b.points||0)-Number(a.points||0)
+snap.docs.map(
+
+item=>
+item.data()
+
 );
 
-users=users.slice(0,10);
 
-if(!users.length){
+
+users.sort(
+
+(a,b)=>
+
+Number(
+b.points||0
+)
+
+-
+
+Number(
+a.points||0
+)
+
+);
+
+
+
+if(users.length===0){
 
 $("leaderboardList").innerHTML=
+
 "<p style='font-size:13px;color:#888'>No leaderboard data yet.</p>";
 
 return;
@@ -1629,158 +3819,134 @@ return;
 }
 
 
+
 $("leaderboardList").innerHTML=
-users.map((d,index)=>`
+
+users
+
+.map((d,index)=>{
+
+
+return `
 
 <div class="rank-row">
 
+
 <div class="rank-number">
+
 ${index+1}
+
 </div>
+
 
 <div class="rank-user">
-<strong>${d.name||"Student"}</strong>
-<small>Affiliate Points</small>
+
+<strong>
+
+${d.name||"Student"}
+
+</strong>
+
+<small>
+
+Affiliate Points
+
+</small>
+
 </div>
+
 
 <div class="rank-points">
+
 ${d.points||0}
-</div>
 
 </div>
 
-`).join("");
+
+</div>
+
+`;
+
+
+})
+
+.join("");
+
 
 }catch(error){
 
-console.log(error);
 
 $("leaderboardList").innerHTML=
+
 "<p style='font-size:13px;color:#888'>Leaderboard unavailable.</p>";
 
-}
-
-}
-
-
-/* EARNINGS */
-
-function money(value){
-
-return "₹"+
-Number(value||0)
-.toLocaleString("en-IN");
-
-}
-
-
-async function loadEarnings(){
-
-try{
-
-const snap=
-await getDocs(
-query(
-collection(db,"earnings"),
-where("userId","==",currentUser.uid)
-)
-);
-
-let total=0;
-let passive=0;
-let commission=0;
-
-let today=1000;
-let week=2000;
-let month=24000;
-
-const now=Date.now();
-
-snap.forEach(item=>{
-
-const d=item.data();
-
-const amount=
-Number(d.amount||0);
-
-total+=amount;
-
-if(d.type==="passive"){
-passive+=amount;
-}
-
-if(d.type==="commission"){
-commission+=amount;
-}
-
-const timestamp=
-d.createdAt?.toMillis?.()||0;
-
-if(now-timestamp<=86400000){
-today+=amount;
-}
-
-if(now-timestamp<=604800000){
-week+=amount;
-}
-
-if(now-timestamp<=2592000000){
-month+=amount;
-}
-
-});
-
-
-$("todayRevenue").innerText=money(today);
-$("weekRevenue").innerText=money(week);
-$("monthRevenue").innerText=money(month);
-$("allRevenue").innerText=money(total);
-
-$("commissionAmount").innerText=
-money(commission);
-
-$("passiveAmount").innerText=
-money(passive);
-
-$("teamEarning").innerText=
-money(0);
-
-}catch(error){
-
-console.log(error);
 
 }
 
 }
 
 
-/* WALLET */
+
+/* =========================
+   WALLET
+========================= */
 
 async function loadWallet(){
 
 try{
 
+
 const snap=
 await getDocs(
+
 query(
-collection(db,"walletTransactions"),
-where("userId","==",currentUser.uid)
+
+collection(
+db,
+"walletTransactions"
+),
+
+where(
+"userId",
+"==",
+currentUser.uid
 )
+
+)
+
 );
+
 
 let balance=0;
 
+
+
 snap.forEach(item=>{
 
-const d=item.data();
+
+const d=
+item.data();
+
 
 const amount=
-Number(d.amount||0);
+Number(
+d.amount||0
+);
+
+
 
 if(
-d.type==="credit" ||
-d.type==="commission" ||
+
+d.type==="credit"
+
+||
+
+d.type==="commission"
+
+||
+
 d.type==="passive"
+
 ){
 
 balance+=amount;
@@ -1791,34 +3957,53 @@ balance-=amount;
 
 }
 
+
 });
+
+
 
 $("walletBalance").innerText=
 money(balance);
 
+
 }catch(error){
 
-console.log(error);
+$("walletBalance").innerText=
+"₹0";
 
 }
 
 }
 
 
-/* KYC */
+
+/* =========================
+   KYC
+========================= */
 
 async function loadKyc(){
 
 try{
 
+
 const snap=
 await getDoc(
-doc(db,"kyc",currentUser.uid)
+
+doc(
+
+db,
+"kyc",
+currentUser.uid
+
+)
+
 );
+
 
 if(snap.exists()){
 
 $("kycStatus").innerText=
+
 snap.data().status||
 "Pending";
 
@@ -1829,6 +4014,7 @@ $("kycStatus").innerText=
 
 }
 
+
 }catch(error){
 
 $("kycStatus").innerText=
@@ -1839,121 +4025,201 @@ $("kycStatus").innerText=
 }
 
 
-/* COPY REFERRAL */
+
+/* =========================
+   COPY REFERRAL LINK
+========================= */
 
 $("copyBtn").onclick=
+
 async()=>{
+
+
+const link=
+$("referralLink").value;
+
 
 try{
 
+
 await navigator.clipboard.writeText(
-$("referralLink").value
+link
 );
+
 
 $("copyBtn").innerText=
 "Copied ✓";
 
-setTimeout(()=>{
-$("copyBtn").innerText="Copy";
-},1500);
+
+setTimeout(
+
+()=>{
+
+$("copyBtn").innerText=
+"Copy";
+
+},
+
+1500
+
+);
+
 
 }catch(error){
 
+
 $("referralLink").select();
 
-document.execCommand("copy");
+
+document.execCommand(
+"copy"
+);
+
 
 }
 
 };
 
 
-/* BUY COURSE */
 
-document
-.querySelectorAll(".buy-btn")
-.forEach(button=>{
-
-button.addEventListener("click",()=>{
-
-const name=
-button.dataset.courseName;
-
-const price=
-button.dataset.coursePrice;
-
-alert(
-name+
-"\n\nCourse Price: ₹"+
-price+
-"\n\nPayment gateway setup ke baad payment checkout yahan open hoga."
-);
-
-});
-
-});
-
-
-/* WITHDRAWAL */
+/* =========================
+   WITHDRAWAL
+========================= */
 
 $("withdrawBtn").onclick=()=>{
 
+
 const amount=
-Number($("withdrawAmount").value||0);
+Number(
+$("withdrawAmount").value
+);
+
 
 const method=
-$("withdrawMethod").value.trim();
+$("withdrawMethod").value
+.trim();
 
-if(amount<=0){
+
+
+if(!amount || amount<=0){
 
 $("withdrawMsg").innerText=
-"Please valid withdrawal amount enter karein.";
 
-$("withdrawMsg").style.color="red";
+"कृपया सही withdrawal amount डालें।";
 
 return;
 
 }
+
 
 if(!method){
 
 $("withdrawMsg").innerText=
-"UPI ID ya Bank Details enter karein.";
 
-$("withdrawMsg").style.color="red";
+"कृपया UPI ID या Bank Details डालें।";
 
 return;
 
 }
 
-$("withdrawMsg").innerText=
-"Withdrawal request feature backend setup ke baad process hoga.";
 
-$("withdrawMsg").style.color="green";
+$("withdrawMsg").innerText=
+
+"Withdrawal request feature जल्द उपलब्ध होगा।";
+
 
 };
 
 
-/* LOGOUT */
+
+/* =========================
+   LOGOUT
+========================= */
 
 $("sideLogout").onclick=
-async()=>{
+
+async(event)=>{
+
+
+event.preventDefault();
+
 
 try{
 
+
 await signOut(auth);
 
-location.href="login.html";
+
+location.href=
+"login.html";
+
 
 }catch(error){
 
-alert("Logout nahi ho paya.");
+
+alert(
+"Logout failed"
+);
+
 
 }
 
 };
 
+
+
+/* =========================
+   ACTIVE MENU
+========================= */
+
+document
+.querySelectorAll(".side-link")
+.forEach(link=>{
+
+
+link.addEventListener(
+
+"click",
+
+()=>{
+
+
+document
+.querySelectorAll(".side-link")
+.forEach(
+
+item=>
+item.classList
+.remove("active")
+
+);
+
+
+link.classList
+.add("active");
+
+
+$("sidebar")
+.classList
+.remove("open");
+
+
+$("overlay")
+.classList
+.remove("show");
+
+
+}
+
+);
+
+
+});
+
+
 </script>
 
+
 </body>
+
 </html>
