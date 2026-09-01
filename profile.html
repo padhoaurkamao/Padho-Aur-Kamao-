@@ -1,7 +1,5 @@
-<!DOCTYPE html><html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Profile - Padho Aur Kamao</title><style>
+<!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Profile - Padho Aur Kamao</title><style>
+
 *{
     margin:0;
     padding:0;
@@ -21,7 +19,7 @@ a{
 
 .topbar{
     height:70px;
-    background:#fff;
+    background:white;
     border-bottom:1px solid #e8eaf0;
     display:flex;
     align-items:center;
@@ -29,76 +27,78 @@ a{
     padding:0 25px;
 }
 
-.brand{
-    font-size:20px;
+.back-btn{
+    padding:10px 16px;
+    border-radius:10px;
+    background:#f1ebff;
+    color:#6526d7;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.logo{
+    font-size:18px;
     font-weight:800;
     color:#6526d7;
 }
 
-.back-btn{
-    background:#f1ebff;
-    color:#6526d7;
-    padding:10px 16px;
-    border-radius:10px;
-    font-size:13px;
-    font-weight:bold;
-}
-
 .container{
-    max-width:650px;
+    max-width:800px;
     margin:35px auto;
-    padding:0 15px;
+    padding:0 18px;
 }
 
 .profile-card{
-    background:#fff;
-    border:1px solid #e9e9ef;
+    background:white;
+    border:1px solid #edf0f5;
     border-radius:20px;
-    padding:30px;
-    box-shadow:0 8px 25px rgba(0,0,0,.05);
+    overflow:hidden;
+    box-shadow:0 5px 25px rgba(24,32,77,.06);
 }
 
 .profile-header{
+    padding:35px 20px;
     text-align:center;
-    margin-bottom:30px;
+    background:linear-gradient(135deg,#5420bd,#8b5cf6);
+    color:white;
 }
 
-.photo-box{
+.profile-photo-box{
     position:relative;
     width:110px;
     height:110px;
-    margin:auto;
+    margin:0 auto 15px;
 }
 
 .profile-photo{
     width:110px;
     height:110px;
     border-radius:50%;
+    border:4px solid white;
+    background:#eee;
     object-fit:cover;
-    background:linear-gradient(135deg,#6526d7,#8b5cf6);
-    border:4px solid #f1ebff;
 }
 
 .default-avatar{
     width:110px;
     height:110px;
     border-radius:50%;
+    border:4px solid white;
+    background:#ffffff;
+    color:#6526d7;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:linear-gradient(135deg,#6526d7,#8b5cf6);
-    color:white;
-    font-size:42px;
+    font-size:40px;
     font-weight:bold;
-    border:4px solid #f1ebff;
 }
 
-.photo-upload{
+.photo-label{
     position:absolute;
-    right:-3px;
-    bottom:2px;
-    width:36px;
-    height:36px;
+    right:0;
+    bottom:0;
+    width:34px;
+    height:34px;
     border-radius:50%;
     background:#6526d7;
     color:white;
@@ -106,75 +106,96 @@ a{
     align-items:center;
     justify-content:center;
     cursor:pointer;
-    border:3px solid white;
+    border:2px solid white;
 }
 
-.photo-upload input{
+#photoInput{
     display:none;
 }
 
-.profile-header h1{
-    margin-top:16px;
-    font-size:23px;
+.profile-header h2{
+    font-size:24px;
 }
 
 .profile-header p{
-    margin-top:6px;
+    margin-top:7px;
     font-size:13px;
-    color:#8a91a0;
+    opacity:.9;
+}
+
+.profile-body{
+    padding:25px;
+}
+
+.section-title{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
 }
 
 .form-group{
-    margin-bottom:18px;
+    margin-bottom:5px;
 }
 
-.form-group label{
+.form-group.full{
+    grid-column:1/-1;
+}
+
+label{
     display:block;
-    margin-bottom:8px;
     font-size:12px;
     font-weight:bold;
-    color:#707789;
+    color:#687086;
+    margin-bottom:7px;
 }
 
-.form-group input{
+input{
     width:100%;
-    padding:13px 14px;
+    padding:13px;
     border:1px solid #dfe3eb;
     border-radius:10px;
     outline:none;
     font-size:14px;
 }
 
-.form-group input:focus{
+input:focus{
     border-color:#6526d7;
+    box-shadow:0 0 0 3px #f1ebff;
 }
 
-.form-group input[readonly]{
-    background:#f7f8fb;
-    color:#7d8492;
+input:disabled{
+    background:#f5f6f8;
+    color:#777;
 }
 
 .member-box{
+    margin-top:20px;
+    padding:16px;
     background:#f7f5ff;
     border-radius:12px;
-    padding:14px;
-    margin-bottom:20px;
 }
 
 .member-box span{
     display:block;
     font-size:11px;
-    color:#858c9d;
+    color:#777;
 }
 
 .member-box strong{
     display:block;
-    margin-top:5px;
-    font-size:15px;
+    margin-top:6px;
+    font-size:16px;
     color:#6526d7;
 }
 
 .save-btn{
+    margin-top:25px;
     width:100%;
     padding:14px;
     border:0;
@@ -184,146 +205,171 @@ a{
     font-size:15px;
     font-weight:bold;
     cursor:pointer;
-    margin-top:5px;
 }
 
 .save-btn:disabled{
-    opacity:.6;
+    opacity:.7;
     cursor:not-allowed;
 }
 
 .message{
     text-align:center;
-    margin-top:15px;
     font-size:13px;
-    min-height:20px;
+    margin-top:14px;
+    min-height:18px;
 }
 
 .logout-btn{
+    margin-top:12px;
     width:100%;
-    margin-top:15px;
     padding:13px;
-    border:1px solid #ef4444;
+    border:1px solid #fecaca;
+    border-radius:11px;
     background:#fff;
     color:#dc2626;
-    border-radius:11px;
     font-weight:bold;
     cursor:pointer;
 }
 
 @media(max-width:600px){
 
-    .container{
-        margin:20px auto;
-    }
-
-    .profile-card{
-        padding:22px 18px;
-    }
-
     .topbar{
         padding:0 15px;
     }
 
+    .container{
+        margin:20px auto;
+    }
+
+    .profile-body{
+        padding:20px 15px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
 }
-</style></head><body><header class="topbar"><div class="brand">
-📚 Padho Aur Kamao
-</div><a href="dashboard.html" class="back-btn">
+
+</style></head><body><header class="topbar"><a href="dashboard.html" class="back-btn">
 ← Dashboard
-</a></header><main class="container"><div class="profile-card"><div class="profile-header"><div class="photo-box"><img
+</a><div class="logo">
+📚 Padho Aur Kamao
+</div></header><main class="container"><div class="profile-card"><div class="profile-header"><div class="profile-photo-box"><img
 id="profilePhoto"
 class="profile-photo"
-style="display:none;"
-alt="Profile Photo">
+style="display:none">
 
 <div
 id="defaultAvatar"
-class="default-avatar">
-S
-</div><label class="photo-upload">📷
+class="default-avatar">S
 
-<input
+</div><label
+for="photoInput"
+class="photo-label">
+
+📷
+
+</label><input
 type="file"
 id="photoInput"
 accept="image/*">
 
-</label></div><h1 id="headerName">
-Student
-</h1><p id="headerEmail">
-Loading...
-</p></div><div class="form-group"><label>
-Full Name
+</div><h2 id="headerName">Student
+
+</h2><p id="headerEmail">student@email.com
+
+</p></div><div class="profile-body"><h3 class="section-title">👤 Personal Information
+
+</h3><div class="form-grid"><div class="form-group"><label>Full Name
+
 </label><input
 type="text"
-id="name"
+id="nameInput"
 placeholder="Enter your name">
 
-</div><div class="form-group"><label>
-Email Address
-</label><input
-type="email"
-id="email"
-readonly>
+</div><div class="form-group"><label>Mobile Number
 
-</div><div class="form-group"><label>
-Mobile Number
 </label><input
 type="tel"
-id="mobile"
-placeholder="Enter mobile number"
-maxlength="10">
+id="phoneInput"
+placeholder="Enter mobile number">
 
-</div><div class="member-box"><span>
-MEMBER ID
-</span><strong id="memberId">
+</div><div class="form-group full"><label>Email Address
+
+</label><input
+type="email"
+id="emailInput"
+disabled>
+
+</div></div><div class="member-box"><span>MEMBER ID
+
+</span><strong
+id="memberId">
+
 Loading...
+
 </strong></div><button
-class="save-btn"
-id="saveBtn">
+id="saveBtn"
+class="save-btn">
 
-💾 Save Changes
+💾 Save Profile
 
-</button><div
-class="message"
-id="message">
-</div><button
-class="logout-btn"
-id="logoutBtn">
+</button><p
+id="message"
+class="message"></p><button
+id="logoutBtn"
+class="logout-btn">
 
 🚪 Logout
 
-</button></div></main><script type="module">
+</button></div></div></main><script type="module">
+
 
 import {
+
 initializeApp
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
 import {
+
 getAuth,
 onAuthStateChanged,
-signOut
+signOut,
+updateProfile
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
 import {
+
 getFirestore,
 doc,
 getDoc,
 setDoc,
 updateDoc
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-/* =========================
-   FIREBASE CONFIG
-========================= */
 
 const firebaseConfig={
 
@@ -351,79 +397,80 @@ measurementId:
 };
 
 
+
 const app=
 initializeApp(firebaseConfig);
 
+
 const auth=
 getAuth(app);
+
 
 const db=
 getFirestore(app);
 
 
-/* =========================
-   VARIABLES
-========================= */
-
-let currentUser=null;
-
-let selectedPhoto=null;
-
-
-/* =========================
-   SHORTCUT
-========================= */
 
 const $=
 id=>
 document.getElementById(id);
 
 
-/* =========================
-   AUTH CHECK
-========================= */
+
+let currentUser=null;
+
+let selectedPhoto=null;
+
+
 
 onAuthStateChanged(
+
 auth,
 
 async user=>{
 
+
 if(!user){
 
-location.href="login.html";
+location.href=
+"login.html";
 
 return;
 
 }
 
+
 currentUser=user;
 
+
 await loadProfile();
+
 
 }
 
 );
 
 
-/* =========================
-   LOAD PROFILE
-========================= */
 
 async function loadProfile(){
 
 try{
 
-const userRef=
+
+const ref=
 doc(
 db,
 "users",
 currentUser.uid
 );
 
+
 const snap=
-await getDoc(userRef);
+await getDoc(ref);
+
 
 let data={};
+
 
 if(snap.exists()){
 
@@ -431,6 +478,7 @@ data=
 snap.data();
 
 }else{
+
 
 data={
 
@@ -442,48 +490,53 @@ email:
 currentUser.email||
 "",
 
-mobile:"",
-profilePhoto:""
+phone:
+""
 
 };
 
+
 await setDoc(
-userRef,
-data,
-{merge:true}
+ref,
+data
 );
+
 
 }
 
 
-const userName=
+
+const name=
 data.name||
 currentUser.displayName||
 "Student";
 
 
-const userEmail=
+const email=
 currentUser.email||
 data.email||
 "";
 
 
-$("name").value=
-userName;
+$("nameInput").value=
+name;
 
-$("email").value=
-userEmail;
 
-$("mobile").value=
-data.mobile||
+$("phoneInput").value=
+data.phone||
 "";
 
 
+$("emailInput").value=
+email;
+
+
 $("headerName").innerText=
-userName;
+name;
+
 
 $("headerEmail").innerText=
-userEmail;
+email;
 
 
 $("memberId").innerText=
@@ -492,48 +545,48 @@ currentUser.uid
 
 
 $("defaultAvatar").innerText=
-userName
+name
 .charAt(0)
 .toUpperCase();
 
 
-if(data.profilePhoto){
+if(data.photoURL){
+
 
 $("profilePhoto").src=
-data.profilePhoto;
+data.photoURL;
+
 
 $("profilePhoto").style.display=
 "block";
 
+
 $("defaultAvatar").style.display=
 "none";
+
 
 }
 
 
 }catch(error){
 
+
 console.log(
 "Profile Load Error:",
 error
 );
 
-$("message").innerText=
-"Profile load नहीं हो पाया।";
 
 }
 
 }
 
 
-/* =========================
-   PHOTO PREVIEW
-========================= */
 
-$("photoInput").addEventListener(
-"change",
+$("photoInput").onchange=
 
 event=>{
+
 
 const file=
 event.target.files[0];
@@ -547,14 +600,15 @@ return;
 
 
 if(
-!file.type.startsWith(
-"image/"
-)
+
+file.size>
+2*1024*1024
+
 ){
 
-alert(
-"कृपया केवल image file select करें।"
-);
+$("message").innerText=
+
+"Photo size 2MB से कम रखें।";
 
 return;
 
@@ -566,7 +620,9 @@ new FileReader();
 
 
 reader.onload=
+
 e=>{
+
 
 selectedPhoto=
 e.target.result;
@@ -575,11 +631,14 @@ e.target.result;
 $("profilePhoto").src=
 selectedPhoto;
 
+
 $("profilePhoto").style.display=
 "block";
 
+
 $("defaultAvatar").style.display=
 "none";
+
 
 };
 
@@ -589,86 +648,90 @@ file
 );
 
 
-}
-
-);
+};
 
 
-/* =========================
-   SAVE PROFILE
-========================= */
 
 $("saveBtn").onclick=
+
 async()=>{
 
 
 const name=
-$("name").value
+$("nameInput").value
 .trim();
 
 
-const mobile=
-$("mobile").value
+const phone=
+$("phoneInput").value
 .trim();
 
 
 
 if(!name){
 
+
 $("message").innerText=
-"कृपया अपना नाम दर्ज करें।";
+
+"कृपया अपना नाम डालें।";
 
 return;
+
 
 }
 
 
 
 if(
-mobile &&
-mobile.length!==10
+
+phone &&
+
+! /^[0-9]{10}$/
+.test(phone)
+
 ){
 
+
 $("message").innerText=
-"कृपया सही 10 digit mobile number दर्ज करें।";
+
+"कृपया सही 10 digit mobile number डालें।";
 
 return;
 
+
 }
 
-
-$("saveBtn").disabled=
-true;
-
-$("saveBtn").innerText=
-"Saving...";
 
 
 try{
 
 
-const data={
+$("saveBtn").disabled=
+true;
+
+
+$("saveBtn").innerText=
+
+"Saving...";
+
+
+const updateData={
 
 name:name,
 
-email:
-currentUser.email||
-"",
-
-mobile:mobile,
-
-updatedAt:
-Date.now()
+phone:phone
 
 };
 
 
+
 if(selectedPhoto){
 
-data.profilePhoto=
+updateData.photoURL=
 selectedPhoto;
 
 }
+
 
 
 await setDoc(
@@ -679,9 +742,27 @@ db,
 currentUser.uid
 ),
 
-data,
+updateData,
 
-{merge:true}
+{
+
+merge:true
+
+}
+
+);
+
+
+
+await updateProfile(
+
+currentUser,
+
+{
+
+displayName:name
+
+}
 
 );
 
@@ -697,12 +778,9 @@ name
 .toUpperCase();
 
 
-$("message").style.color=
-"#16a34a";
-
-
 $("message").innerText=
-"✓ Profile successfully updated!";
+
+"✓ Profile successfully saved!";
 
 
 }catch(error){
@@ -714,42 +792,39 @@ error
 );
 
 
-$("message").style.color=
-"#dc2626";
-
-
 $("message").innerText=
+
 "Profile save नहीं हो पाया।";
 
 
-}
+}finally{
 
 
 $("saveBtn").disabled=
 false;
 
+
 $("saveBtn").innerText=
-"💾 Save Changes";
+
+"💾 Save Profile";
+
+
+}
 
 
 };
 
 
 
-/* =========================
-   LOGOUT
-========================= */
-
 $("logoutBtn").onclick=
+
 async()=>{
 
 
 try{
 
 
-await signOut(
-auth
-);
+await signOut(auth);
 
 
 location.href=
@@ -759,9 +834,9 @@ location.href=
 }catch(error){
 
 
-alert(
-"Logout failed"
-);
+$("message").innerText=
+
+"Logout नहीं हो पाया।";
 
 
 }
@@ -770,5 +845,4 @@ alert(
 };
 
 
-</script></body>
-</html>
+</script></body></html>
