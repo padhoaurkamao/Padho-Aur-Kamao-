@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Wallet - Padho Aur Kamao</title>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+}
+
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    width:260px;
+    background:#fff;
+    border-right:1px solid #e8eaf0;
+    z-index:1000;
+    overflow-y:auto;
+    transition:.3s;
+}
+
+.brand{
+    height:72px;
+    display:flex;
+    align-items:center;
+    padding:0 20px;
+    border-bottom:1px solid #eee;
+    font-size:18px;
+    font-weight:800;
+    color:#6025d7;
+}
+
+.brand-icon{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:linear-gradient(135deg,#6025d7,#8b5cf6);
+    color:white;
+    margin-right:10px;
+    font-size:22px;
+}
+
+.sidebar-section{
+    font-size:11px;
+    font-weight:bold;
+    color:#9aa1b1;
+    padding:22px 20px 8px;
+    text-transform:uppercase;
+}
+
+.side-link{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin:3px 10px;
+    padding:12px 13px;
+    border-radius:10px;
+    font-size:14px;
+    color:#596174;
+    transition:.2s;
+}
+
+.side-link:hover,
+.side-link.active{
+    background:#f1ebff;
+    color:#6526d7;
+}
+
+.side-icon{
+    width:22px;
+    text-align:center;
+    font-size:18px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main{
+    margin-left:260px;
+    min-height:100vh;
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+    height:72px;
+    background:#fff;
+    border-bottom:1px solid #e8eaf0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 28px;
+    position:sticky;
+    top:0;
+    z-index:900;
+}
+
+.top-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.page-title{
+    font-size:21px;
+    font-weight:700;
+}
+
+.menu-mobile{
+    display:none;
+    width:42px;
+    height:42px;
+    border:0;
+    border-radius:10px;
+    background:#f1ebff;
+    color:#6526d7;
+    font-size:21px;
+}
+
+.user-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.avatar{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-weight:bold;
+    background:linear-gradient(135deg,#6025d7,#8b5cf6);
+}
+
+.user-info strong{
+    display:block;
+    font-size:13px;
+}
+
+.user-info small{
+    font-size:11px;
+    color:#9299a8;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+    max-width:1250px;
+    margin:auto;
+    padding:28px;
+}
+
+
+/* =========================
+   WALLET HERO
+========================= */
+
+.wallet-hero{
+    background:linear-gradient(135deg,#5420bd,#7c3aed);
+    border-radius:20px;
+    padding:30px;
+    color:white;
+    margin-bottom:24px;
+}
+
+.wallet-hero small{
+    opacity:.85;
+}
+
+.balance{
+    font-size:38px;
+    font-weight:800;
+    margin-top:10px;
+}
+
+.balance-note{
+    margin-top:8px;
+    font-size:13px;
+    opacity:.85;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-bottom:24px;
+}
+
+.stat{
+    background:#fff;
+    border:1px solid #edf0f5;
+    border-radius:16px;
+    padding:20px;
+    box-shadow:0 4px 16px rgba(24,32,77,.04);
+}
+
+.stat-icon{
+    font-size:25px;
+}
+
+.stat-label{
+    margin-top:12px;
+    font-size:13px;
+    color:#7d8494;
+}
+
+.stat-value{
+    margin-top:7px;
+    font-size:24px;
+    font-weight:800;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.wallet-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #edf0f5;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 4px 16px rgba(24,32,77,.04);
+}
+
+.card-title{
+    font-size:19px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.card-subtitle{
+    font-size:12px;
+    color:#858c9d;
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:13px;
+    border:1px solid #dfe3eb;
+    border-radius:10px;
+    outline:none;
+    font-size:14px;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:#6526d7;
+}
+
+.withdraw-btn{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:11px;
+    background:linear-gradient(135deg,#6526d7,#8b5cf6);
+    color:white;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.withdraw-btn:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+
+/* =========================
+   BANK
+========================= */
+
+.bank-info{
+    background:#f7f5ff;
+    padding:15px;
+    border-radius:12px;
+    margin-top:10px;
+}
+
+.bank-row{
+    padding:10px 0;
+    border-bottom:1px solid #e9e5f7;
+}
+
+.bank-row:last-child{
+    border-bottom:0;
+}
+
+.bank-label{
+    font-size:11px;
+    color:#777;
+}
+
+.bank-value{
+    font-size:14px;
+    font-weight:bold;
+    margin-top:4px;
+}
+
+.warning{
+    margin-top:18px;
+    background:#fff7ed;
+    border:1px solid #fed7aa;
+    padding:12px;
+    border-radius:10px;
+    font-size:12px;
+    color:#9a3412;
+}
+
+
+/* =========================
+   HISTORY
+========================= */
+
+.history-card{
+    margin-top:22px;
+}
+
+.history-item{
+    padding:15px 0;
+    border-bottom:1px solid #edf0f5;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.history-item:last-child{
+    border-bottom:0;
+}
+
+.history-left strong{
+    display:block;
+    font-size:14px;
+}
+
+.history-left small{
+    display:block;
+    margin-top:5px;
+    color:#8a91a0;
+    font-size:11px;
+}
+
+.history-right{
+    text-align:right;
+}
+
+.history-amount{
+    font-weight:800;
+    font-size:15px;
+}
+
+.status{
+    display:inline-block;
+    margin-top:6px;
+    padding:4px 9px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.pending{
+    background:#fff3cd;
+    color:#a16207;
+}
+
+.approved{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.rejected{
+    background:#fee2e2;
+    color:#b91c1c;
+}
+
+.empty{
+    text-align:center;
+    padding:25px;
+    color:#8a91a0;
+    font-size:13px;
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    z-index:999;
+}
+
+@media(max-width:800px){
+
+    .sidebar{
+        left:-270px;
+    }
+
+    .sidebar.open{
+        left:0;
+    }
+
+    .overlay.show{
+        display:block;
+    }
+
+    .main{
+        margin-left:0;
+    }
+
+    .menu-mobile{
+        display:block;
+    }
+
+    .content{
+        padding:18px 13px;
+    }
+
+    .topbar{
+        padding:0 15px;
+    }
+
+    .user-info{
+        display:none;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .wallet-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+<div class="brand">
+
+<div class="brand-icon">
+📚
+</div>
+
+Padho Aur Kamao
+
+</div>
+
+
+<div class="sidebar-section">
+Dashboard Menu
+</div>
+
+
+<a class="side-link" href="dashboard.html">
+
+<span class="side-icon">🏠</span>
+
+Dashboard
+
+</a>
+
+
+<a class="side-link" href="dashboard.html#courses">
+
+<span class="side-icon">📚</span>
+
+Courses
+
+</a>
+
+
+<a class="side-link" href="dashboard.html#affiliate">
+
+<span class="side-icon">🔗</span>
+
+Affiliate Center
+
+</a>
+
+
+<a class="side-link" href="dashboard.html#commission">
+
+<span class="side-icon">📊</span>
+
+Commission
+
+</a>
+
+
+<a class="side-link active" href="wallet.html">
+
+<span class="side-icon">💳</span>
+
+My Wallet
+
+</a>
+
+
+<div class="sidebar-section">
+Account
+</div>
+
+
+<a class="side-link" href="profile.html">
+
+<span class="side-icon">👤</span>
+
+My Profile
+
+</a>
+
+
+<a class="side-link" href="kyc.html">
+
+<span class="side-icon">🪪</span>
+
+KYC Verification
+
+</a>
+
+
+</aside>
+
+
+<div class="overlay" id="overlay"></div>
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+
+<header class="topbar">
+
+
+<div class="top-left">
+
+<button class="menu-mobile" id="mobileMenu">
+☰
+</button>
+
+
+<div class="page-title">
+💳 My Wallet
+</div>
+
+</div>
+
+
+<div class="user-box">
+
+<div class="avatar" id="avatar">
+S
+</div>
+
+
+<div class="user-info">
+
+<strong id="topName">
+Student
+</strong>
+
+<small>
+Member
+</small>
+
+</div>
+
+</div>
+
+
+</header>
+
+
+<main class="content">
+
+
+<!-- WALLET HERO -->
+
+<section class="wallet-hero">
+
+<small>
+Available Balance
+</small>
+
+<div class="balance" id="availableBalance">
+₹0
+</div>
+
+<div class="balance-note">
+
+Approved earnings available for withdrawal.
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+
+<div class="stat">
+
+<div class="stat-icon">
+💰
+</div>
+
+<div class="stat-label">
+Total Earnings
+</div>
+
+<div class="stat-value" id="totalEarnings">
+₹0
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">
+💸
+</div>
+
+<div class="stat-label">
+Total Withdrawn
+</div>
+
+<div class="stat-value" id="totalWithdrawn">
+₹0
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">
+📋
+</div>
+
+<div class="stat-label">
+Pending Withdrawal
+</div>
+
+<div class="stat-value" id="pendingAmount">
+₹0
+</div>
+
+</div>
+
+
+</section>
+
+
+<div class="wallet-grid">
+
+
+<!-- WITHDRAWAL FORM -->
+
+<section class="card">
+
+<h2 class="card-title">
+💸 Request Withdrawal
+</h2>
+
+<p class="card-subtitle">
+
+Minimum withdrawal amount ₹100.
+
+</p>
+
+
+<form id="withdrawForm">
+
+
+<div class="form-group">
+
+<label>
+Withdrawal Amount
+</label>
+
+<input
+type="number"
+id="withdrawAmount"
+placeholder="Enter amount"
+min="100"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Payment Method
+</label>
+
+<select id="paymentMethod" required>
+
+<option value="Bank Account">
+Bank Account
+</option>
+
+<option value="UPI">
+UPI
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label id="accountLabel">
+Account Number / UPI ID
+</label>
+
+<input
+type="text"
+id="paymentDetails"
+placeholder="Enter account number or UPI ID"
+required>
+
+</div>
+
+
+<button
+type="submit"
+class="withdraw-btn"
+id="withdrawBtn">
+
+💸 Request Withdrawal
+
+</button>
+
+
+</form>
+
+
+<div class="warning">
+
+⚠️ Withdrawal request submit होने के बाद
+admin verification करेगा।
+
+</div>
+
+
+</section>
+
+
+<!-- BANK DETAILS -->
+
+<section class="card">
+
+<h2 class="card-title">
+🏦 Saved Payment Details
+</h2>
+
+<p class="card-subtitle">
+
+Your KYC payment information.
+
+</p>
+
+
+<div class="bank-info">
+
+
+<div class="bank-row">
+
+<div class="bank-label">
+Account Holder
+</div>
+
+<div
+class="bank-value"
+id="accountHolder">
+
+Not Available
+
+</div>
+
+</div>
+
+
+<div class="bank-row">
+
+<div class="bank-label">
+Bank Name
+</div>
+
+<div
+class="bank-value"
+id="bankName">
+
+Not Available
+
+</div>
+
+</div>
+
+
+<div class="bank-row">
+
+<div class="bank-label">
+Account Number
+</div>
+
+<div
+class="bank-value"
+id="accountNumber">
+
+Not Available
+
+</div>
+
+</div>
+
+
+<div class="bank-row">
+
+<div class="bank-label">
+IFSC Code
+</div>
+
+<div
+class="bank-value"
+id="ifscCode">
+
+Not Available
+
+</div>
+
+</div>
+
+
+<div class="bank-row">
+
+<div class="bank-label">
+UPI ID
+</div>
+
+<div
+class="bank-value"
+id="upiId">
+
+Not Available
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+</div>
+
+
+<!-- HISTORY -->
+
+<section class="card history-card">
+
+<h2 class="card-title">
+📋 Withdrawal History
+</h2>
+
+<p class="card-subtitle">
+
+Your recent withdrawal requests.
+
+</p>
+
+
+<div id="withdrawalHistory">
+
+<div class="empty">
+
+Loading withdrawal history...
+
+</div>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+</div>
+
+
+
+<script type="module">
+
+
+/* =========================
+   FIREBASE IMPORTS
+========================= */
+
+import {
+initializeApp
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+
+getAuth,
+onAuthStateChanged
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+import {
+
+getFirestore,
+
+doc,
+getDoc,
+
+collection,
+
+query,
+where,
+
+getDocs,
+
+addDoc,
+
+serverTimestamp
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+/* =========================
+   FIREBASE CONFIG
+========================= */
+
+const firebaseConfig={
+
+apiKey:
+"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+
+authDomain:
+"padho-aur-kamao-3eeae.firebaseapp.com",
+
+projectId:
+"padho-aur-kamao-3eeae",
+
+storageBucket:
+"padho-aur-kamao-3eeae.firebasestorage.app",
+
+messagingSenderId:
+"670063905617",
+
+appId:
+"1:670063905617:web:9b3a7e62fdeea14fbfa170",
+
+measurementId:
+"G-7J1YV8HN3F"
+
+};
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+const app=
+initializeApp(firebaseConfig);
+
+
+const auth=
+getAuth(app);
+
+
+const db=
+getFirestore(app);
+
+
+let currentUser=null;
+
+let availableBalance=0;
+
+
+/* =========================
+   ELEMENT HELPER
+========================= */
+
+const $=
+id=>
+document.getElementById(id);
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+$("mobileMenu").onclick=()=>{
+
+$("sidebar")
+.classList
+.add("open");
+
+$("overlay")
+.classList
+.add("show");
+
+};
+
+
+$("overlay").onclick=()=>{
+
+$("sidebar")
+.classList
+.remove("open");
+
+$("overlay")
+.classList
+.remove("show");
+
+};
+
+
+/* =========================
+   MONEY FORMAT
+========================= */
+
+function money(value){
+
+return "₹"+
+Number(value||0)
+.toLocaleString("en-IN");
+
+}
+
+
+/* =========================
+   AUTH CHECK
+========================= */
+
+onAuthStateChanged(
+
+auth,
+
+async user=>{
+
+if(!user){
+
+location.href="login.html";
+
+return;
+
+}
+
+
+currentUser=user;
+
+
+await loadWallet();
+
+
+}
+
+);
+
+
+/* =========================
+   LOAD WALLET
+========================= */
+
+async function loadWallet(){
+
+try{
+
+
+/* USER DATA */
+
+const userRef=
+doc(
+db,
+"users",
+currentUser.uid
+);
+
+
+const userSnap=
+await getDoc(
+userRef
+);
+
+
+if(userSnap.exists()){
+
+const data=
+userSnap.data();
+
+
+const name=
+data.name||
+currentUser.displayName||
+"Student";
+
+
+$("topName").innerText=
+name;
+
+
+$("avatar").innerText=
+name.charAt(0)
+.toUpperCase();
+
+
+/* BANK DETAILS */
+
+$("accountHolder").innerText=
+
+data.accountHolder||
+data.name||
+"Not Available";
+
+
+$("bankName").innerText=
+
+data.bankName||
+"Not Available";
+
+
+$("accountNumber").innerText=
+
+maskAccount(
+data.accountNumber||
+""
+);
+
+
+$("ifscCode").innerText=
+
+data.ifscCode||
+"Not Available";
+
+
+$("upiId").innerText=
+
+data.upiId||
+"Not Available";
+
+
+}
+
+
+/* LOAD EARNINGS */
+
+await loadEarnings();
+
+
+/* LOAD WITHDRAWALS */
+
+await loadWithdrawals();
+
+
+}catch(error){
+
+console.log(
+"Wallet Error:",
+error
+);
+
+}
+
+}
+
+
+/* =========================
+   MASK ACCOUNT
+========================= */
+
+function maskAccount(number){
+
+if(!number){
+
+return "Not Available";
+
+}
+
+
+const text=
+String(number);
+
+
+if(text.length<=4){
+
+return text;
+
+}
+
+
+return
+
+"XXXX XXXX "+
+text.slice(-4);
+
+}
+
+
+/* =========================
+   LOAD EARNINGS
+========================= */
+
+async function loadEarnings(){
+
+try{
+
+
+const earningSnap=
+
+await getDocs(
+
+query(
+
+collection(
+db,
+"earnings"
+),
+
+where(
+"userId",
+"==",
+currentUser.uid
+)
+
+)
+
+);
+
+
+let total=0;
+
+
+earningSnap.forEach(item=>{
+
+const data=
+item.data();
+
+
+total+=
+Number(
+data.amount||0
+);
+
+
+});
+
+
+$("totalEarnings").innerText=
+money(total);
+
+
+/* TEMPORARY BALANCE */
+
+availableBalance=
+total;
+
+
+}catch(error){
+
+console.log(
+"Earning Load Error:",
+error
+);
+
+}
+
+}
+
+
+/* =========================
+   LOAD WITHDRAWALS
+========================= */
+
+async function loadWithdrawals(){
+
+try{
+
+
+const withdrawalSnap=
+
+await getDocs(
+
+query(
+
+collection(
+db,
+"withdrawals"
+),
+
+where(
+"userId",
+"==",
+currentUser.uid
+)
+
+)
+
+);
+
+
+let withdrawn=0;
+
+let pending=0;
+
+let history=[];
+
+
+withdrawalSnap.forEach(item=>{
+
+
+const data=
+item.data();
+
+
+const amount=
+Number(
+data.amount||0
+);
+
+
+const status=
+data.status||
+"pending";
+
+
+if(status==="approved"){
+
+withdrawn+=amount;
+
+}
+
+
+if(status==="pending"){
+
+pending+=amount;
+
+}
+
+
+history.push({
+
+id:item.id,
+
+amount:amount,
+
+status:status,
+
+createdAt:
+data.createdAt
+
+});
+
+
+});
+
+
+/* AVAILABLE BALANCE */
+
+availableBalance=
+Math.max(
+
+0,
+
+availableBalance-
+withdrawn-
+pending
+
+);
+
+
+$("availableBalance").innerText=
+money(
+availableBalance
+);
+
+
+$("totalWithdrawn").innerText=
+money(
+withdrawn
+);
+
+
+$("pendingAmount").innerText=
+money(
+pending
+);
+
+
+/* HISTORY */
+
+renderHistory(
+history
+);
+
+
+}catch(error){
+
+console.log(
+"Withdrawal Load Error:",
+error
+);
+
+}
+
+}
+
+
+/* =========================
+   RENDER HISTORY
+========================= */
+
+function renderHistory(history){
+
+const container=
+$("withdrawalHistory");
+
+
+if(history.length===0){
+
+container.innerHTML=
+
+`
+
+<div class="empty">
+
+No withdrawal requests yet.
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+/* SORT NEWEST */
+
+history.sort(
+
+(a,b)=>{
+
+const timeA=
+a.createdAt
+?.toMillis?.()||0;
+
+
+const timeB=
+b.createdAt
+?.toMillis?.()||0;
+
+
+return timeB-timeA;
+
+}
+
+);
+
+
+container.innerHTML=
+"";
+
+
+history.forEach(item=>{
+
+
+let date=
+"Just now";
+
+
+if(
+item.createdAt
+?.toDate
+){
+
+date=
+item.createdAt
+.toDate()
+.toLocaleDateString(
+"en-IN"
+);
+
+}
+
+
+const status=
+String(
+item.status
+).toLowerCase();
+
+
+container.innerHTML+=
+
+`
+
+<div class="history-item">
+
+
+<div class="history-left">
+
+<strong>
+
+Withdrawal Request
+
+</strong>
+
+
+<small>
+
+${date}
+
+</small>
+
+
+</div>
+
+
+<div class="history-right">
+
+
+<div class="history-amount">
+
+${money(item.amount)}
+
+</div>
+
+
+<span class="status ${status}">
+
+${status.toUpperCase()}
+
+</span>
+
+
+</div>
+
+
+</div>
+
+`;
+
+
+});
+
+
+}
+
+
+/* =========================
+   PAYMENT METHOD CHANGE
+========================= */
+
+$("paymentMethod")
+.addEventListener(
+
+"change",
+
+()=>{
+
+
+const method=
+$("paymentMethod").value;
+
+
+if(method==="UPI"){
+
+$("accountLabel")
+.innerText=
+"UPI ID";
+
+
+$("paymentDetails")
+.placeholder=
+"example@upi";
+
+
+}else{
+
+
+$("accountLabel")
+.innerText=
+"Account Number";
+
+
+$("paymentDetails")
+.placeholder=
+"Enter bank account number";
+
+
+}
+
+
+}
+
+);
+
+
+/* =========================
+   WITHDRAWAL REQUEST
+========================= */
+
+$("withdrawForm")
+.addEventListener(
+
+"submit",
+
+async event=>{
+
+
+event.preventDefault();
+
+
+const amount=
+
+Number(
+$("withdrawAmount")
+.value
+);
+
+
+const method=
+$("paymentMethod")
+.value;
+
+
+const details=
+$("paymentDetails")
+.value
+.trim();
+
+
+/* VALIDATION */
+
+if(amount<100){
+
+alert(
+"Minimum withdrawal amount ₹100 है।"
+);
+
+return;
+
+}
+
+
+if(amount>availableBalance){
+
+alert(
+"Insufficient wallet balance."
+);
+
+return;
+
+}
+
+
+if(!details){
+
+alert(
+"Payment details enter करें।"
+);
+
+return;
+
+}
+
+
+const button=
+$("withdrawBtn");
+
+
+button.disabled=true;
+
+button.innerText=
+"Submitting...";
+
+
+try{
+
+
+/* CHECK PENDING REQUEST */
+
+const pendingCheck=
+
+await getDocs(
+
+query(
+
+collection(
+db,
+"withdrawals"
+),
+
+where(
+"userId",
+"==",
+currentUser.uid
+),
+
+where(
+"status",
+"==",
+"pending"
+)
+
+)
+
+);
+
+
+if(
+pendingCheck.size>0
+){
+
+alert(
+
+"आपकी एक withdrawal request पहले से pending है।"
+
+);
+
+
+button.disabled=false;
+
+button.innerText=
+"💸 Request Withdrawal";
+
+return;
+
+}
+
+
+/* CREATE REQUEST */
+
+await addDoc(
+
+collection(
+db,
+"withdrawals"
+),
+
+{
+
+userId:
+currentUser.uid,
+
+userName:
+$("topName")
+.innerText,
+
+email:
+currentUser.email||
+"",
+
+amount:
+amount,
+
+paymentMethod:
+method,
+
+paymentDetails:
+details,
+
+status:
+"pending",
+
+createdAt:
+serverTimestamp()
+
+}
+
+);
+
+
+/* SUCCESS */
+
+alert(
+
+"Withdrawal request successfully submitted!"
+
+);
+
+
+/* RESET */
+
+$("withdrawForm")
+.reset();
+
+
+/* RELOAD */
+
+await loadWallet();
+
+
+}catch(error){
+
+
+console.log(
+"Withdrawal Error:",
+error
+);
+
+
+alert(
+
+"Withdrawal request submit नहीं हुई। Firebase Rules check करें।"
+
+);
+
+
+}
+
+
+button.disabled=false;
+
+button.innerText=
+"💸 Request Withdrawal";
+
+
+}
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>
