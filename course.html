@@ -1,8 +1,17 @@
-<!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><meta
-name="viewport"
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>Courses Packages - Padho Aur Kamao</title><style>
+<title>Courses Packages - Padho Aur Kamao</title>
+
+
+<style>
 
 /* =========================
    GLOBAL
@@ -432,7 +441,6 @@ width:420px;
 height:420px;
 
 border:
-
 3px solid
 rgba(255,255,255,.35);
 
@@ -892,6 +900,17 @@ scale(1.02);
 }
 
 
+.buy-btn:disabled{
+
+opacity:.7;
+
+cursor:not-allowed;
+
+transform:none;
+
+}
+
+
 .price-box{
 
 display:flex;
@@ -1285,10 +1304,11 @@ rgba(139,92,246,.3);
 }
 
 
-.checkout-btn:hover{
+.checkout-btn:disabled{
 
-transform:
-translateY(-2px);
+opacity:.7;
+
+cursor:not-allowed;
 
 }
 
@@ -1595,129 +1615,224 @@ padding:14px;
 
 }
 
+</style>
 
-@media(max-width:390px){
+</head>
 
-.nav-buttons{
 
-gap:6px;
+<body>
 
-}
 
-.login-btn,
-.signup-btn{
-
-padding:
-8px 9px;
-
-font-size:11px;
-
-}
-
-.logo{
-
-font-size:13px;
-
-gap:5px;
-
-}
-
-.cover-title{
-
-font-size:40px;
-
-}
-
-.course-name{
-
-font-size:29px;
-
-}
-
-.current-price{
-
-font-size:32px;
-
-}
-
-}
-
-</style></head><body><!-- =========================
+<!-- =========================
      HEADER
-========================= --><header><a href="course.html"
+========================= -->
+
+<header>
+
+<a
+href="course.html"
 class="logo">
 
-<div class="logo-icon">📚
+<div class="logo-icon">
+📚
+</div>
 
-</div><span>
+<span>
 Padho Aur Kamao
-</span></a><div class="nav-buttons"><a
+</span>
+
+</a>
+
+
+<div class="nav-buttons">
+
+<a
 href="login.html"
 class="login-btn">
 
 Login
 
-</a><a
+</a>
+
+
+<a
 href="login.html#signup"
 class="signup-btn">
 
 Sign Up
 
-</a></div></header><!-- =========================
+</a>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
      HERO
-========================= --><section class="hero"><div class="hero-small">Courses Packages
+========================= -->
 
-</div><h1>Choose The Perfect
+<section class="hero">
 
-<br><span class="gradient-text">Course Package
+<div class="hero-small">
 
-</span>For You
+Courses Packages
 
-</h1><p>अपनी Skills बढ़ाएं • सीखें • आगे बढ़ें
+</div>
 
-</p></section><!-- =========================
+
+<h1>
+
+Choose The Perfect
+
+<br>
+
+<span class="gradient-text">
+
+Course Package
+
+</span>
+
+For You
+
+</h1>
+
+
+<p>
+
+अपनी Skills बढ़ाएं • सीखें • आगे बढ़ें
+
+</p>
+
+</section>
+
+
+
+<!-- =========================
      COURSES
-========================= --><main class="courses"><!-- =========================
-     COURSE 1
-========================= --><section class="course-card"><div
-class="
-course-cover
-starter-cover
-"><div class="cover-left"><div class="cover-tag"></>
+========================= -->
 
-</div><div class="cover-title">Study
+<main class="courses">
 
-<br>& Skill
 
-</div><div class="cover-subtitle">Learning • Communication
+<!-- COURSE 1 -->
 
-<br>Maths • Reasoning • Hindi
+<section class="course-card">
 
-</div></div><div class="book-area"><div
-class="
-book
-book-starter
-"><div class="book-content"><div class="book-brand">Padho Aur Kamao
+<div class="course-cover starter-cover">
 
-</div><div class="book-package">STARTER PACKAGE
 
-</div><div class="book-name">STUDY
+<div class="cover-left">
 
-<br>& SKILL
+<div class="cover-title">
 
-<br>STARTER
+Study
 
-</div><div class="book-line"></div><div class="book-bottom">Learn • Practice • Grow
+<br>
 
-</div></div></div></div></div><div class="course-body"><div class="course-title-row"><h2 class="course-name">Study & Skill Starter
+& Skill
 
-</h2><div class="course-count">📚
+</div>
 
-2 Courses
 
-</div></div><div class="course-rating">★ ★ ★ ★ ☆
+<div class="cover-subtitle">
 
-</div><div class="course-info"><button
+Learning • Communication
+
+<br>
+
+Maths • Reasoning • Hindi
+
+</div>
+
+</div>
+
+
+<div class="book-area">
+
+<div class="book book-starter">
+
+<div class="book-content">
+
+<div class="book-brand">
+
+Padho Aur Kamao
+
+</div>
+
+
+<div class="book-package">
+
+STARTER PACKAGE
+
+</div>
+
+
+<div class="book-name">
+
+STUDY
+
+<br>
+
+& SKILL
+
+<br>
+
+STARTER
+
+</div>
+
+
+<div class="book-line"></div>
+
+
+<div class="book-bottom">
+
+Learn • Practice • Grow
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="course-body">
+
+
+<div class="course-title-row">
+
+<h2 class="course-name">
+
+Study & Skill Starter
+
+</h2>
+
+
+<div class="course-count">
+
+📚 2 Courses
+
+</div>
+
+</div>
+
+
+<div class="course-rating">
+
+★ ★ ★ ★ ☆
+
+</div>
+
+
+<div class="course-info">
+
+<button
 class="buy-btn"
 onclick="joinCourse(
 'study-skill-starter',
@@ -1727,57 +1842,175 @@ onclick="joinCourse(
 
 ❯ Buy Now
 
-</button><div class="price-box"><span class="current-price">₹199
+</button>
 
-</span><span class="old-price">₹299
 
-</span></div></div><div class="course-features"><div class="feature">📖 Study Material
+<div class="price-box">
 
-</div><div class="feature">🎯 Skill Learning
+<span class="current-price">
 
-</div><div class="feature">📚 2 Courses Access
+₹199
 
-</div></div></div></section><!-- =========================
-     COURSE 2
-========================= --><section class="course-card"><div
-class="
-course-cover
-premium-cover
-"><div class="cover-left"><div class="cover-tag">▶
+</span>
 
-</div><div class="cover-title">Skill
 
-<br>& Success
+<span class="old-price">
 
-</div><div class="cover-subtitle">Competitive Preparation
+₹299
 
-<br>Skills • Growth • Success
+</span>
 
-</div></div><div class="book-area"><div
-class="
-book
-book-premium
-"><div class="book-content"><div class="book-brand">Padho Aur Kamao
+</div>
 
-</div><div class="book-package">PREMIUM PACKAGE
+</div>
 
-</div><div class="book-name">SKILL
 
-<br>& SUCCESS
+<div class="course-features">
 
-<br>PREMIUM
+<div class="feature">
+📖 Study Material
+</div>
 
-</div><div class="book-line"></div><div class="book-bottom">Learn • Grow • Succeed
+<div class="feature">
+🎯 Skill Learning
+</div>
 
-</div></div></div></div></div><div class="course-body"><div class="course-title-row"><h2 class="course-name">Skill & Success Premium
+<div class="feature">
+📚 2 Courses Access
+</div>
 
-</h2><div class="course-count">📚
+</div>
 
-All Courses
+</div>
 
-</div></div><div class="course-rating">★ ★ ★ ★ ★
+</section>
 
-</div><div class="course-info"><button
+
+
+<!-- COURSE 2 -->
+
+<section class="course-card">
+
+<div class="course-cover premium-cover">
+
+
+<div class="cover-left">
+
+<div class="cover-tag">
+
+▶
+
+</div>
+
+
+<div class="cover-title">
+
+Skill
+
+<br>
+
+& Success
+
+</div>
+
+
+<div class="cover-subtitle">
+
+Competitive Preparation
+
+<br>
+
+Skills • Growth • Success
+
+</div>
+
+</div>
+
+
+<div class="book-area">
+
+<div class="book book-premium">
+
+<div class="book-content">
+
+<div class="book-brand">
+
+Padho Aur Kamao
+
+</div>
+
+
+<div class="book-package">
+
+PREMIUM PACKAGE
+
+</div>
+
+
+<div class="book-name">
+
+SKILL
+
+<br>
+
+& SUCCESS
+
+<br>
+
+PREMIUM
+
+</div>
+
+
+<div class="book-line"></div>
+
+
+<div class="book-bottom">
+
+Learn • Grow • Succeed
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="course-body">
+
+
+<div class="course-title-row">
+
+<h2 class="course-name">
+
+Skill & Success Premium
+
+</h2>
+
+
+<div class="course-count">
+
+📚 All Courses
+
+</div>
+
+</div>
+
+
+<div class="course-rating">
+
+★ ★ ★ ★ ★
+
+</div>
+
+
+<div class="course-info">
+
+<button
 class="buy-btn"
 onclick="joinCourse(
 'skill-success-premium',
@@ -1787,45 +2020,126 @@ onclick="joinCourse(
 
 ❯ Buy Now
 
-</button><div class="price-box"><span class="current-price">₹399
+</button>
 
-</span><span class="old-price">₹499
 
-</span></div></div><div class="course-features"><div class="feature">🎓 Competitive Preparation
+<div class="price-box">
 
-</div><div class="feature">🚀 Premium Skills
+<span class="current-price">
 
-</div><div class="feature">♾️ Full Course Access
+₹399
 
-</div></div></div></section></main><!-- =========================
+</span>
+
+
+<span class="old-price">
+
+₹499
+
+</span>
+
+</div>
+
+</div>
+
+
+<div class="course-features">
+
+<div class="feature">
+🎓 Competitive Preparation
+</div>
+
+<div class="feature">
+🚀 Premium Skills
+</div>
+
+<div class="feature">
+♾️ Full Course Access
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================
      COUPON POPUP
-========================= --><div
+========================= -->
+
+<div
 class="coupon-modal"
-id="couponModal"><div class="coupon-popup"><button
+id="couponModal">
+
+
+<div class="coupon-popup">
+
+
+<button
 class="close-popup"
 onclick="closeCouponPopup()">
 
 ×
 
-</button><h2 class="popup-title">🎁 Apply Coupon
+</button>
 
-</h2><p class="popup-subtitle">Coupon code apply करके अपना discount प्राप्त करें।
 
-</p><div class="selected-course-box"><div
+<h2 class="popup-title">
+
+🎁 Apply Coupon
+
+</h2>
+
+
+<p class="popup-subtitle">
+
+Coupon code apply करके अपना discount प्राप्त करें।
+
+</p>
+
+
+<div class="selected-course-box">
+
+
+<div
 class="selected-course-name"
-id="selectedCourseName">Course Name
+id="selectedCourseName">
 
-</div><div
+Course Name
+
+</div>
+
+
+<div
 class="selected-course-price"
-id="selectedCoursePrice">₹0
+id="selectedCoursePrice">
 
-</div></div><label class="coupon-label">Coupon Code
+₹0
 
-</label><div class="coupon-row"><input
+</div>
+
+</div>
+
+
+<label class="coupon-label">
+
+Coupon Code
+
+</label>
+
+
+<div class="coupon-row">
+
+<input
 type="text"
 id="couponCode"
 placeholder="Enter Coupon Code"
 autocomplete="off">
+
 
 <button
 class="apply-coupon-btn"
@@ -1833,44 +2147,122 @@ onclick="applyCoupon()">
 
 Apply
 
-</button></div><div
+</button>
+
+</div>
+
+
+<div
 class="coupon-message"
-id="couponMessage"></div><div class="price-details"><div class="price-row"><span>
+id="couponMessage">
+
+</div>
+
+
+<div class="price-details">
+
+
+<div class="price-row">
+
+<span>
+
 Original Price
-</span><span id="originalPrice">₹0
 
-</span></div><div class="price-row"><span>
+</span>
+
+
+<span
+id="originalPrice">
+
+₹0
+
+</span>
+
+</div>
+
+
+
+<div class="price-row">
+
+<span>
+
 Discount
-</span><span id="discountPrice">₹0
 
-</span></div><div
-class="
-price-row
-final-row
-"><span>
+</span>
+
+
+<span
+id="discountPrice">
+
+₹0
+
+</span>
+
+</div>
+
+
+
+<div class="price-row final-row">
+
+<span>
+
 Payable Amount
-</span><span id="finalPrice">₹0
 
-</span></div></div><button
+</span>
+
+
+<span
+id="finalPrice">
+
+₹0
+
+</span>
+
+</div>
+
+</div>
+
+
+<button
 class="checkout-btn"
 id="checkoutBtn"
 onclick="proceedCheckout()">
 
 Proceed to Payment
 
-</button></div></div><!-- =========================
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
      FOOTER
-========================= --><footer>© 2026 Padho Aur Kamao • Learn • Earn • Grow
+========================= -->
 
-</footer><!-- =========================
+<footer>
+
+© 2026 Padho Aur Kamao • Learn • Earn • Grow
+
+</footer>
+
+
+
+<!-- =========================
      FIREBASE
-========================= --><script type="module">
+========================= -->
 
+<script type="module">
+
+
+/* =========================
+   FIREBASE IMPORTS
+========================= */
 
 import {
-
 initializeApp
-
 }
 
 from
@@ -1881,6 +2273,7 @@ from
 import {
 
 getAuth,
+
 onAuthStateChanged
 
 }
@@ -1890,6 +2283,27 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
+import {
+
+getFirestore,
+
+doc,
+
+getDoc,
+
+setDoc,
+
+updateDoc,
+
+serverTimestamp
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
 
 /* =========================
    FIREBASE CONFIG
@@ -1897,87 +2311,68 @@ from
 
 const firebaseConfig={
 
-
 apiKey:
-
 "AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
-
 authDomain:
-
 "padho-aur-kamao-3eeae.firebaseapp.com",
 
-
 projectId:
-
 "padho-aur-kamao-3eeae",
 
-
 storageBucket:
-
 "padho-aur-kamao-3eeae.firebasestorage.app",
 
-
 messagingSenderId:
-
 "670063905617",
 
-
 appId:
-
 "1:670063905617:web:9b3a7e62fdeea14fbfa170"
-
 
 };
 
 
 
-const app=
+/* =========================
+   INITIALIZE FIREBASE
+========================= */
 
+const app=
 initializeApp(
 firebaseConfig
 );
 
 
 const auth=
-
 getAuth(
+app
+);
+
+
+const db=
+getFirestore(
 app
 );
 
 
 
 /* =========================
-   CURRENT USER
+   GLOBAL VARIABLES
 ========================= */
 
 let loggedInUser=null;
 
-
-/* =========================
-   SELECTED COURSE
-========================= */
-
 let selectedCourse=null;
-
 
 let couponApplied=false;
 
-
 let finalCoursePrice=0;
+
 
 
 /* =========================
    COUPON SETTINGS
 ========================= */
-
-/*
-
-यहाँ अपना Coupon Code बदल सकते हैं।
-
-FREE100 = 100% Discount
-
-*/
 
 const validCoupons={
 
@@ -1986,6 +2381,10 @@ const validCoupons={
 };
 
 
+
+/* =========================
+   AUTH CHECK
+========================= */
 
 onAuthStateChanged(
 
@@ -1997,6 +2396,12 @@ user=>{
 if(user){
 
 loggedInUser=user;
+
+}
+
+else{
+
+loggedInUser=null;
 
 }
 
@@ -2012,10 +2417,14 @@ loggedInUser=user;
 
 window.joinCourse=
 
-function(courseId,courseName,coursePrice){
+async function(
+courseId,
+courseName,
+coursePrice
+){
 
 
-/* अगर Login नहीं है */
+/* LOGIN CHECK */
 
 if(!loggedInUser){
 
@@ -2034,10 +2443,71 @@ return;
 }
 
 
+/* CHECK ALREADY ENROLLED */
 
-/* =========================
-   SAVE SELECTED COURSE
-========================= */
+try{
+
+
+const enrollmentRef=
+
+doc(
+
+db,
+
+"users",
+
+loggedInUser.uid,
+
+"courses",
+
+courseId
+
+);
+
+
+const enrollmentSnap=
+
+await getDoc(
+enrollmentRef
+);
+
+
+if(
+
+enrollmentSnap.exists()
+
+&&
+
+enrollmentSnap.data().status==="active"
+
+){
+
+
+alert(
+
+"✅ आप इस Course में पहले से Enrolled हैं।"
+
+);
+
+
+return;
+
+}
+
+
+}
+
+catch(error){
+
+console.error(
+"Enrollment Check Error:",
+error
+);
+
+}
+
+
+/* SAVE SELECTED COURSE */
 
 selectedCourse={
 
@@ -2056,30 +2526,39 @@ couponApplied=false;
 finalCoursePrice=coursePrice;
 
 
-
 /* RESET COUPON */
 
 document
-.getElementById("couponCode")
-.value="";
+.getElementById(
+"couponCode"
+)
+.value=
+"";
 
 
 document
-.getElementById("couponMessage")
-.innerText="";
+.getElementById(
+"couponMessage"
+)
+.innerText=
+"";
 
 
 /* SHOW COURSE */
 
 document
-.getElementById("selectedCourseName")
+.getElementById(
+"selectedCourseName"
+)
 .innerText=
 
 courseName;
 
 
 document
-.getElementById("selectedCoursePrice")
+.getElementById(
+"selectedCoursePrice"
+)
 .innerText=
 
 "₹"+coursePrice;
@@ -2088,28 +2567,38 @@ document
 /* SHOW PRICE */
 
 document
-.getElementById("originalPrice")
+.getElementById(
+"originalPrice"
+)
 .innerText=
 
 "₹"+coursePrice;
 
 
 document
-.getElementById("discountPrice")
+.getElementById(
+"discountPrice"
+)
 .innerText=
 
 "₹0";
 
 
 document
-.getElementById("finalPrice")
+.getElementById(
+"finalPrice"
+)
 .innerText=
 
 "₹"+coursePrice;
 
 
+/* BUTTON */
+
 document
-.getElementById("checkoutBtn")
+.getElementById(
+"checkoutBtn"
+)
 .innerText=
 
 "Proceed to Payment";
@@ -2118,9 +2607,13 @@ document
 /* OPEN POPUP */
 
 document
-.getElementById("couponModal")
+.getElementById(
+"couponModal"
+)
 .classList
-.add("active");
+.add(
+"active"
+);
 
 
 };
@@ -2137,9 +2630,13 @@ function(){
 
 
 document
-.getElementById("couponModal")
+.getElementById(
+"couponModal"
+)
 .classList
-.remove("active");
+.remove(
+"active"
+);
 
 
 };
@@ -2162,22 +2659,27 @@ return;
 }
 
 
-let coupon=
+const coupon=
 
 document
-.getElementById("couponCode")
+.getElementById(
+"couponCode"
+)
 .value
 .trim()
 .toUpperCase();
 
 
-let message=
+const message=
 
 document
-.getElementById("couponMessage");
+.getElementById(
+"couponMessage"
+);
 
 
-/* VALID COUPON */
+
+/* VALID FREE100 */
 
 if(
 
@@ -2196,23 +2698,28 @@ couponApplied=true;
 finalCoursePrice=0;
 
 
-/* PRICE UPDATE */
+/* UPDATE PRICE */
 
 document
-.getElementById("discountPrice")
+.getElementById(
+"discountPrice"
+)
 .innerText=
 
-"-₹"+selectedCourse.price;
+"-₹"+
+selectedCourse.price;
 
 
 document
-.getElementById("finalPrice")
+.getElementById(
+"finalPrice"
+)
 .innerText=
 
 "₹0";
 
 
-/* MESSAGE */
+/* SUCCESS MESSAGE */
 
 message.innerText=
 
@@ -2227,7 +2734,9 @@ message.style.color=
 /* BUTTON */
 
 document
-.getElementById("checkoutBtn")
+.getElementById(
+"checkoutBtn"
+)
 .innerText=
 
 "🎉 Get Course Free";
@@ -2236,7 +2745,7 @@ document
 }
 
 
-/* INVALID COUPON */
+/* INVALID */
 
 else{
 
@@ -2249,18 +2758,25 @@ finalCoursePrice=
 selectedCourse.price;
 
 
+/* RESET */
+
 document
-.getElementById("discountPrice")
+.getElementById(
+"discountPrice"
+)
 .innerText=
 
 "₹0";
 
 
 document
-.getElementById("finalPrice")
+.getElementById(
+"finalPrice"
+)
 .innerText=
 
-"₹"+selectedCourse.price;
+"₹"+
+selectedCourse.price;
 
 
 message.innerText=
@@ -2274,7 +2790,9 @@ message.style.color=
 
 
 document
-.getElementById("checkoutBtn")
+.getElementById(
+"checkoutBtn"
+)
 .innerText=
 
 "Proceed to Payment";
@@ -2284,6 +2802,445 @@ document
 
 
 };
+
+
+
+/* =========================
+   GENERATE REFERRAL CODE
+========================= */
+
+function generateReferralCode(
+uid
+){
+
+
+const shortUid=
+
+uid
+.substring(
+0,
+6
+)
+.toUpperCase();
+
+
+const random=
+
+Math.floor(
+
+100000+
+
+Math.random()
+
+*
+
+900000
+
+);
+
+
+return
+
+"PAK"+
+
+shortUid+
+
+random;
+
+
+}
+
+
+
+/* =========================
+   ENSURE USER DOCUMENT
+========================= */
+
+async function ensureUserDocument(){
+
+
+const userRef=
+
+doc(
+
+db,
+
+"users",
+
+loggedInUser.uid
+
+);
+
+
+const userSnap=
+
+await getDoc(
+userRef
+);
+
+
+/* CREATE IF NOT EXISTS */
+
+if(
+
+!userSnap.exists()
+
+){
+
+
+const name=
+
+loggedInUser.displayName
+
+||
+
+loggedInUser.email
+.split("@")[0];
+
+
+await setDoc(
+
+userRef,
+
+{
+
+name:name,
+
+email:
+loggedInUser.email,
+
+referralCode:
+generateReferralCode(
+loggedInUser.uid
+),
+
+referralActive:
+false,
+
+totalReferrals:
+0,
+
+totalCommission:
+0,
+
+availableBalance:
+0,
+
+kycStatus:
+"not_started",
+
+createdAt:
+serverTimestamp()
+
+},
+
+{
+
+merge:true
+
+}
+
+);
+
+
+}
+
+
+return userRef;
+
+
+}
+
+
+
+/* =========================
+   SAVE FREE COURSE
+========================= */
+
+async function activateFreeCourse(){
+
+
+if(
+
+!loggedInUser
+
+||
+
+!selectedCourse
+
+){
+
+return;
+
+}
+
+
+const button=
+
+document
+.getElementById(
+"checkoutBtn"
+);
+
+
+/* DISABLE BUTTON */
+
+button.disabled=true;
+
+
+button.innerText=
+
+"Activating Course...";
+
+
+try{
+
+
+/* USER DOCUMENT */
+
+const userRef=
+
+await ensureUserDocument();
+
+
+/* COURSE DOCUMENT */
+
+const courseRef=
+
+doc(
+
+db,
+
+"users",
+
+loggedInUser.uid,
+
+"courses",
+
+selectedCourse.id
+
+);
+
+
+/* SAVE COURSE */
+
+await setDoc(
+
+courseRef,
+
+{
+
+courseId:
+selectedCourse.id,
+
+courseName:
+selectedCourse.name,
+
+originalPrice:
+selectedCourse.price,
+
+paidAmount:
+0,
+
+paymentStatus:
+"free",
+
+couponCode:
+
+document
+.getElementById(
+"couponCode"
+)
+.value
+.trim()
+.toUpperCase(),
+
+status:
+"active",
+
+enrolledAt:
+serverTimestamp(),
+
+userUid:
+loggedInUser.uid
+
+},
+
+{
+
+merge:true
+
+}
+
+);
+
+
+/* ACTIVATE REFERRAL */
+
+const userSnap=
+
+await getDoc(
+userRef
+);
+
+
+const userData=
+
+userSnap.data()
+
+
+||
+
+{};
+
+
+let referralCode=
+
+userData.referralCode;
+
+
+/* CREATE CODE IF MISSING */
+
+if(
+
+!referralCode
+
+){
+
+
+referralCode=
+
+generateReferralCode(
+loggedInUser.uid
+);
+
+
+}
+
+
+/* UPDATE USER */
+
+await updateDoc(
+
+userRef,
+
+{
+
+referralCode:
+referralCode,
+
+referralActive:
+true,
+
+referralActivatedAt:
+serverTimestamp()
+
+}
+
+);
+
+
+/* =========================
+   LOCAL STORAGE
+========================= */
+
+localStorage.setItem(
+
+"coursePurchased",
+
+"true"
+
+);
+
+
+localStorage.setItem(
+
+"purchasedCourseId",
+
+selectedCourse.id
+
+);
+
+
+localStorage.setItem(
+
+"purchasedCourseName",
+
+selectedCourse.name
+
+);
+
+
+localStorage.setItem(
+
+"paymentStatus",
+
+"free"
+
+);
+
+
+localStorage.setItem(
+
+"usedCoupon",
+
+document
+.getElementById(
+"couponCode"
+)
+.value
+.trim()
+.toUpperCase()
+
+);
+
+
+/* SUCCESS */
+
+alert(
+
+"🎉 Congratulations! आपका Course Successfully Activated हो गया है!\n\n🔗 आपका Lifetime Referral Link भी Active हो गया है।"
+
+);
+
+
+/* GO DASHBOARD */
+
+window.location.href=
+
+"dashboard.html";
+
+
+}
+
+catch(error){
+
+
+console.error(
+"Course Activation Error:",
+error
+);
+
+
+alert(
+
+"❌ Course Activate नहीं हो पाया। कृपया दोबारा कोशिश करें।"
+
+);
+
+
+button.disabled=false;
+
+
+button.innerText=
+
+"🎉 Get Course Free";
+
+
+}
+
+
+}
 
 
 
@@ -2319,75 +3276,7 @@ finalCoursePrice===0
 ){
 
 
-/* COURSE PURCHASED */
-
-localStorage.setItem(
-
-"coursePurchased",
-
-"true"
-
-);
-
-
-/* SELECTED COURSE */
-
-localStorage.setItem(
-
-"purchasedCourseId",
-
-selectedCourse.id
-
-);
-
-
-localStorage.setItem(
-
-"purchasedCourseName",
-
-selectedCourse.name
-
-);
-
-
-/* PAYMENT STATUS */
-
-localStorage.setItem(
-
-"paymentStatus",
-
-"free"
-
-);
-
-
-/* COUPON USED */
-
-localStorage.setItem(
-
-"usedCoupon",
-
-document
-.getElementById("couponCode")
-.value
-.trim()
-.toUpperCase()
-
-);
-
-
-alert(
-
-"🎉 Congratulations! आपका Course ₹0 में Successfully Activated हो गया है। अब आप KYC Verification कर सकते हैं।"
-
-);
-
-
-/* DASHBOARD */
-
-window.location.href=
-
-"dashboard.html";
+activateFreeCourse();
 
 
 }
@@ -2401,7 +3290,7 @@ window.location.href=
 else{
 
 
-/* SAVE PENDING COURSE */
+/* SAVE PENDING DATA */
 
 localStorage.setItem(
 
@@ -2430,7 +3319,7 @@ selectedCourse.price
 );
 
 
-/* GO PAYMENT */
+/* PAYMENT PAGE */
 
 window.location.href=
 
@@ -2457,11 +3346,13 @@ selectedCourse.price
 
 
 /* =========================
-   CLOSE POPUP ON OUTSIDE CLICK
+   CLOSE POPUP OUTSIDE
 ========================= */
 
 document
-.getElementById("couponModal")
+.getElementById(
+"couponModal"
+)
 .addEventListener(
 
 "click",
@@ -2471,9 +3362,7 @@ function(event){
 
 if(
 
-event.target===
-
-this
+event.target===this
 
 ){
 
@@ -2489,4 +3378,8 @@ closeCouponPopup();
 );
 
 
-</script></body></html>
+</script>
+
+</body>
+
+</html>
