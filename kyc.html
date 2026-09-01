@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>KYC Verification - Padho Aur Kamao</title>
+
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+
+    height:70px;
+
+    background:#ffffff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 25px;
+
+    border-bottom:
+    1px solid #e8eaf0;
+
+}
+
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#6526d7;
+
+}
+
+
+.brand-icon{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #6025d7,
+    #8b5cf6
+    );
+
+    color:white;
+
+}
+
+
+.back-btn{
+
+    padding:
+    10px 16px;
+
+    border-radius:9px;
+
+    background:#f1ebff;
+
+    color:#6526d7;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+
+    max-width:750px;
+
+    margin:auto;
+
+    padding:
+    35px 15px;
+
+}
+
+
+.page-title{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+
+.page-title h1{
+
+    font-size:27px;
+
+}
+
+
+.page-title p{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#777;
+
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    margin-bottom:20px;
+
+    border:
+    1px solid #e9edf3;
+
+    box-shadow:
+    0 5px 20px
+    rgba(0,0,0,.04);
+
+}
+
+
+.status-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.status-label{
+
+    font-size:13px;
+
+    color:#777;
+
+}
+
+
+.status{
+
+    padding:
+    7px 14px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
+
+
+.pending{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+}
+
+
+.approved{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+
+.rejected{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    border:
+    1px solid #e9edf3;
+
+    box-shadow:
+    0 5px 25px
+    rgba(0,0,0,.05);
+
+}
+
+
+.section-title{
+
+    font-size:19px;
+
+    margin-bottom:18px;
+
+}
+
+
+.section-line{
+
+    height:1px;
+
+    background:#edf0f5;
+
+    margin:
+    22px 0;
+
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:16px;
+
+}
+
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+.full{
+
+    grid-column:
+    1 / -1;
+
+}
+
+
+label{
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    margin-bottom:7px;
+
+    color:#4b5563;
+
+}
+
+
+input,
+select{
+
+    width:100%;
+
+    padding:13px;
+
+    border:
+    1px solid #dfe3ea;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:14px;
+
+    background:white;
+
+}
+
+
+input:focus,
+select:focus{
+
+    border-color:#6526d7;
+
+}
+
+
+.upload-box{
+
+    border:
+    2px dashed #d8dce5;
+
+    border-radius:14px;
+
+    padding:25px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+
+.upload-box:hover{
+
+    border-color:#6526d7;
+
+    background:#faf8ff;
+
+}
+
+
+.upload-icon{
+
+    font-size:32px;
+
+}
+
+
+.upload-text{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#777;
+
+}
+
+
+.file-name{
+
+    margin-top:10px;
+
+    font-size:12px;
+
+    color:#6526d7;
+
+    font-weight:bold;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.submit-btn{
+
+    width:100%;
+
+    margin-top:24px;
+
+    padding:14px;
+
+    border:0;
+
+    border-radius:11px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #6025d7,
+    #8b5cf6
+    );
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+.submit-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message{
+
+    margin-top:15px;
+
+    text-align:center;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+
+.success{
+
+    color:#15803d;
+
+}
+
+
+.error{
+
+    color:#dc2626;
+
+}
+
+
+/* =========================
+   INFO BOX
+========================= */
+
+.info-box{
+
+    margin-top:18px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    background:#f7f5ff;
+
+    font-size:12px;
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .form-grid{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+    .topbar{
+
+        padding:
+        0 15px;
+
+    }
+
+    .container{
+
+        padding:
+        25px 12px;
+
+    }
+
+    .card{
+
+        padding:20px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<header class="topbar">
+
+
+<div class="brand">
+
+<div class="brand-icon">
+🪪
+</div>
+
+Padho Aur Kamao
+
+</div>
+
+
+<a
+href="dashboard.html"
+class="back-btn">
+
+← Dashboard
+
+</a>
+
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<div class="container">
+
+
+<div class="page-title">
+
+<h1>
+🪪 KYC Verification
+</h1>
+
+<p>
+अपनी जानकारी भरकर KYC Verification Request Submit करें।
+</p>
+
+</div>
+
+
+
+<!-- =========================
+     STATUS
+========================= -->
+
+<div class="status-card">
+
+
+<div class="status-top">
+
+
+<div>
+
+<div class="status-label">
+
+Current KYC Status
+
+</div>
+
+
+<h3
+id="statusText"
+style="margin-top:6px">
+
+Not Submitted
+
+</h3>
+
+
+</div>
+
+
+<span
+class="status pending"
+id="statusBadge">
+
+Not Submitted
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================
+     KYC FORM
+========================= -->
+
+<div class="card">
+
+
+<h2 class="section-title">
+
+👤 Personal Details
+
+</h2>
+
+
+<div class="form-grid">
+
+
+<div class="form-group full">
+
+<label>
+Full Name
+</label>
+
+<input
+type="text"
+id="fullName"
+placeholder="अपना पूरा नाम लिखें">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Mobile Number
+</label>
+
+<input
+type="tel"
+id="mobile"
+placeholder="10 Digit Mobile Number"
+maxlength="10">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Date of Birth
+</label>
+
+<input
+type="date"
+id="dob">
+
+</div>
+
+
+</div>
+
+
+
+<div class="section-line"></div>
+
+
+
+<h2 class="section-title">
+
+🪪 Identity Details
+
+</h2>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+Document Type
+</label>
+
+<select id="documentType">
+
+<option value="">
+Select Document
+</option>
+
+<option value="Aadhaar Card">
+Aadhaar Card
+</option>
+
+<option value="PAN Card">
+PAN Card
+</option>
+
+<option value="Voter ID">
+Voter ID
+</option>
+
+<option value="Driving Licence">
+Driving Licence
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Document Last 4 Digits
+</label>
+
+<input
+type="text"
+id="documentLast4"
+placeholder="Last 4 Digits"
+maxlength="4">
+
+</div>
+
+
+</div>
+
+
+
+<div class="section-line"></div>
+
+
+
+<h2 class="section-title">
+
+📸 Document Upload
+
+</h2>
+
+
+<div
+class="upload-box"
+onclick="document.getElementById('documentFile').click()">
+
+
+<div class="upload-icon">
+
+📄
+
+</div>
+
+
+<div class="upload-text">
+
+Document Photo Upload करें
+
+</div>
+
+
+<div
+class="file-name"
+id="fileName">
+
+No file selected
+
+</div>
+
+
+</div>
+
+
+<input
+type="file"
+id="documentFile"
+accept="image/*,.pdf"
+style="display:none">
+
+
+
+<div class="section-line"></div>
+
+
+
+<h2 class="section-title">
+
+💳 Payment Details
+
+</h2>
+
+
+<div class="form-grid">
+
+
+<div class="form-group full">
+
+<label>
+UPI ID (Optional)
+</label>
+
+<input
+type="text"
+id="upiId"
+placeholder="example@upi">
+
+</div>
+
+
+</div>
+
+
+
+<button
+class="submit-btn"
+id="submitBtn">
+
+🪪 Submit KYC Verification
+
+</button>
+
+
+<div
+class="message"
+id="message">
+
+</div>
+
+
+
+<div class="info-box">
+
+🔒 आपकी KYC जानकारी केवल verification purpose के लिए रखी जानी चाहिए।
+पूरा Aadhaar/PAN number इस form में नहीं लिया जा रहा है।
+Production website में sensitive document data के लिए proper security rules और
+professional KYC provider का उपयोग करें।
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================
+     FIREBASE
+========================= -->
+
+<script type="module">
+
+
+import {
+
+initializeApp
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+
+getAuth,
+onAuthStateChanged
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+import {
+
+getFirestore,
+doc,
+getDoc,
+setDoc,
+serverTimestamp
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+import {
+
+getStorage,
+ref,
+uploadBytes,
+getDownloadURL
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-storage.js";
+
+
+
+/* =========================
+   FIREBASE CONFIG
+========================= */
+
+const firebaseConfig={
+
+apiKey:
+"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+
+authDomain:
+"padho-aur-kamao-3eeae.firebaseapp.com",
+
+projectId:
+"padho-aur-kamao-3eeae",
+
+storageBucket:
+"padho-aur-kamao-3eeae.firebasestorage.app",
+
+messagingSenderId:
+"670063905617",
+
+appId:
+"1:670063905617:web:9b3a7e62fdeea14fbfa170",
+
+measurementId:
+"G-7J1YV8HN3F"
+
+};
+
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+const app=
+initializeApp(firebaseConfig);
+
+
+const auth=
+getAuth(app);
+
+
+const db=
+getFirestore(app);
+
+
+const storage=
+getStorage(app);
+
+
+
+let currentUser=null;
+
+
+
+/* =========================
+   SHORTCUT
+========================= */
+
+const $=
+id=>
+document.getElementById(id);
+
+
+
+/* =========================
+   FILE SELECT
+========================= */
+
+$("documentFile").addEventListener(
+
+"change",
+
+()=>{
+
+
+const file=
+$("documentFile").files[0];
+
+
+if(file){
+
+$("fileName").innerText=
+file.name;
+
+}else{
+
+$("fileName").innerText=
+"No file selected";
+
+}
+
+
+}
+
+);
+
+
+
+/* =========================
+   AUTH
+========================= */
+
+onAuthStateChanged(
+
+auth,
+
+async user=>{
+
+
+if(!user){
+
+location.href=
+"login.html";
+
+return;
+
+}
+
+
+currentUser=user;
+
+
+/* LOAD USER NAME */
+
+try{
+
+
+const userSnap=
+await getDoc(
+
+doc(
+db,
+"users",
+user.uid
+)
+
+);
+
+
+if(userSnap.exists()){
+
+
+const data=
+userSnap.data();
+
+
+$("fullName").value=
+
+data.name||
+
+user.displayName||
+
+"";
+
+
+}
+
+
+}catch(error){
+
+console.log(error);
+
+}
+
+
+/* LOAD KYC */
+
+await loadKyc();
+
+
+}
+
+);
+
+
+
+/* =========================
+   LOAD KYC
+========================= */
+
+async function loadKyc(){
+
+
+try{
+
+
+const kycRef=
+doc(
+db,
+"kyc",
+currentUser.uid
+);
+
+
+const snap=
+await getDoc(
+kycRef
+);
+
+
+if(!snap.exists()){
+
+return;
+
+}
+
+
+const data=
+snap.data();
+
+
+
+/* PERSONAL DETAILS */
+
+$("fullName").value=
+data.fullName||"";
+
+
+$("mobile").value=
+data.mobile||"";
+
+
+$("dob").value=
+data.dob||"";
+
+
+$("documentType").value=
+data.documentType||"";
+
+
+$("documentLast4").value=
+data.documentLast4||"";
+
+
+$("upiId").value=
+data.upiId||"";
+
+
+
+/* STATUS */
+
+updateStatus(
+data.status||
+"Pending"
+);
+
+
+}catch(error){
+
+console.log(
+"KYC Load Error:",
+error
+);
+
+}
+
+
+}
+
+
+
+/* =========================
+   STATUS FUNCTION
+========================= */
+
+function updateStatus(status){
+
+
+$("statusText").innerText=
+status;
+
+
+$("statusBadge").innerText=
+status;
+
+
+$("statusBadge").className=
+"status";
+
+
+const lower=
+status.toLowerCase();
+
+
+
+if(lower==="approved"){
+
+$("statusBadge")
+.classList
+.add("approved");
+
+}
+
+
+else if(lower==="rejected"){
+
+$("statusBadge")
+.classList
+.add("rejected");
+
+}
+
+
+else{
+
+$("statusBadge")
+.classList
+.add("pending");
+
+}
+
+
+}
+
+
+
+/* =========================
+   SUBMIT KYC
+========================= */
+
+$("submitBtn").onclick=
+
+async()=>{
+
+
+const fullName=
+$("fullName").value
+.trim();
+
+
+const mobile=
+$("mobile").value
+.trim();
+
+
+const dob=
+$("dob").value;
+
+
+const documentType=
+$("documentType").value;
+
+
+const documentLast4=
+$("documentLast4").value
+.trim();
+
+
+const upiId=
+$("upiId").value
+.trim();
+
+
+const file=
+$("documentFile")
+.files[0];
+
+
+
+/* VALIDATION */
+
+if(!fullName){
+
+showMessage(
+"कृपया Full Name भरें।",
+"error"
+);
+
+return;
+
+}
+
+
+if(
+
+mobile.length!==10
+
+||
+
+!/^[0-9]+$/.test(
+mobile
+)
+
+){
+
+showMessage(
+"कृपया सही 10 Digit Mobile Number भरें।",
+"error"
+);
+
+return;
+
+}
+
+
+if(!dob){
+
+showMessage(
+"कृपया Date of Birth चुनें।",
+"error"
+);
+
+return;
+
+}
+
+
+if(!documentType){
+
+showMessage(
+"कृपया Document Type चुनें।",
+"error"
+);
+
+return;
+
+}
+
+
+if(
+
+documentLast4.length!==4
+
+||
+
+!/^[0-9A-Za-z]+$/.test(
+documentLast4
+)
+
+){
+
+showMessage(
+"Document के Last 4 characters भरें।",
+"error"
+);
+
+return;
+
+}
+
+
+if(!file){
+
+showMessage(
+"कृपया Document File Upload करें।",
+"error"
+);
+
+return;
+
+}
+
+
+
+/* FILE SIZE LIMIT */
+
+if(
+
+file.size>
+
+5*1024*1024
+
+){
+
+showMessage(
+"File size 5MB से कम रखें।",
+"error"
+);
+
+return;
+
+}
+
+
+
+/* BUTTON LOADING */
+
+$("submitBtn").disabled=
+true;
+
+
+$("submitBtn").innerText=
+"Uploading...";
+
+
+showMessage(
+"KYC Document Upload हो रहा है...",
+""
+);
+
+
+
+try{
+
+
+/* =========================
+   UPLOAD FILE
+========================= */
+
+const safeName=
+
+file.name.replace(
+/[^a-zA-Z0-9._-]/g,
+"_"
+);
+
+
+const storageRef=
+
+ref(
+
+storage,
+
+"kycDocuments/"+
+
+currentUser.uid+
+
+"/"+
+
+Date.now()+
+
+"-"+
+
+safeName
+
+);
+
+
+
+await uploadBytes(
+
+storageRef,
+
+file
+
+);
+
+
+
+const documentUrl=
+
+await getDownloadURL(
+
+storageRef
+
+);
+
+
+
+/* =========================
+   SAVE FIRESTORE
+========================= */
+
+await setDoc(
+
+doc(
+db,
+"kyc",
+currentUser.uid
+),
+
+{
+
+userId:
+currentUser.uid,
+
+fullName:
+fullName,
+
+mobile:
+mobile,
+
+dob:
+dob,
+
+documentType:
+documentType,
+
+documentLast4:
+documentLast4,
+
+documentUrl:
+documentUrl,
+
+documentPath:
+storageRef.fullPath,
+
+upiId:
+upiId,
+
+status:
+"Pending",
+
+submittedAt:
+serverTimestamp(),
+
+updatedAt:
+serverTimestamp()
+
+},
+
+{
+
+merge:true
+
+}
+
+);
+
+
+
+/* STATUS UPDATE */
+
+updateStatus(
+"Pending"
+);
+
+
+showMessage(
+
+"✓ KYC Successfully Submitted. आपका KYC Status अब Pending है।",
+
+"success"
+
+);
+
+
+
+/* RESET FILE */
+
+$("documentFile").value=
+"";
+
+
+$("fileName").innerText=
+"KYC Document Submitted";
+
+
+$("submitBtn").innerText=
+"✓ KYC Submitted";
+
+
+
+}catch(error){
+
+
+console.log(
+"KYC Submit Error:",
+error
+);
+
+
+showMessage(
+
+"KYC Submit नहीं हुआ। कृपया फिर से कोशिश करें।",
+
+"error"
+
+);
+
+
+$("submitBtn").disabled=
+false;
+
+
+$("submitBtn").innerText=
+"🪪 Submit KYC Verification";
+
+
+}
+
+
+};
+
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+function showMessage(
+
+text,
+
+type
+
+){
+
+
+$("message").innerText=
+text;
+
+
+$("message").className=
+"message "+type;
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
