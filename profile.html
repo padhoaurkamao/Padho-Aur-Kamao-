@@ -1,0 +1,774 @@
+<!DOCTYPE html><html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Profile - Padho Aur Kamao</title><style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.topbar{
+    height:70px;
+    background:#fff;
+    border-bottom:1px solid #e8eaf0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 25px;
+}
+
+.brand{
+    font-size:20px;
+    font-weight:800;
+    color:#6526d7;
+}
+
+.back-btn{
+    background:#f1ebff;
+    color:#6526d7;
+    padding:10px 16px;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.container{
+    max-width:650px;
+    margin:35px auto;
+    padding:0 15px;
+}
+
+.profile-card{
+    background:#fff;
+    border:1px solid #e9e9ef;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
+
+.profile-header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.photo-box{
+    position:relative;
+    width:110px;
+    height:110px;
+    margin:auto;
+}
+
+.profile-photo{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    background:linear-gradient(135deg,#6526d7,#8b5cf6);
+    border:4px solid #f1ebff;
+}
+
+.default-avatar{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#6526d7,#8b5cf6);
+    color:white;
+    font-size:42px;
+    font-weight:bold;
+    border:4px solid #f1ebff;
+}
+
+.photo-upload{
+    position:absolute;
+    right:-3px;
+    bottom:2px;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:#6526d7;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    border:3px solid white;
+}
+
+.photo-upload input{
+    display:none;
+}
+
+.profile-header h1{
+    margin-top:16px;
+    font-size:23px;
+}
+
+.profile-header p{
+    margin-top:6px;
+    font-size:13px;
+    color:#8a91a0;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-size:12px;
+    font-weight:bold;
+    color:#707789;
+}
+
+.form-group input{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #dfe3eb;
+    border-radius:10px;
+    outline:none;
+    font-size:14px;
+}
+
+.form-group input:focus{
+    border-color:#6526d7;
+}
+
+.form-group input[readonly]{
+    background:#f7f8fb;
+    color:#7d8492;
+}
+
+.member-box{
+    background:#f7f5ff;
+    border-radius:12px;
+    padding:14px;
+    margin-bottom:20px;
+}
+
+.member-box span{
+    display:block;
+    font-size:11px;
+    color:#858c9d;
+}
+
+.member-box strong{
+    display:block;
+    margin-top:5px;
+    font-size:15px;
+    color:#6526d7;
+}
+
+.save-btn{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:11px;
+    background:linear-gradient(135deg,#6526d7,#8b5cf6);
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:5px;
+}
+
+.save-btn:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+.message{
+    text-align:center;
+    margin-top:15px;
+    font-size:13px;
+    min-height:20px;
+}
+
+.logout-btn{
+    width:100%;
+    margin-top:15px;
+    padding:13px;
+    border:1px solid #ef4444;
+    background:#fff;
+    color:#dc2626;
+    border-radius:11px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+@media(max-width:600px){
+
+    .container{
+        margin:20px auto;
+    }
+
+    .profile-card{
+        padding:22px 18px;
+    }
+
+    .topbar{
+        padding:0 15px;
+    }
+
+}
+</style></head><body><header class="topbar"><div class="brand">
+📚 Padho Aur Kamao
+</div><a href="dashboard.html" class="back-btn">
+← Dashboard
+</a></header><main class="container"><div class="profile-card"><div class="profile-header"><div class="photo-box"><img
+id="profilePhoto"
+class="profile-photo"
+style="display:none;"
+alt="Profile Photo">
+
+<div
+id="defaultAvatar"
+class="default-avatar">
+S
+</div><label class="photo-upload">📷
+
+<input
+type="file"
+id="photoInput"
+accept="image/*">
+
+</label></div><h1 id="headerName">
+Student
+</h1><p id="headerEmail">
+Loading...
+</p></div><div class="form-group"><label>
+Full Name
+</label><input
+type="text"
+id="name"
+placeholder="Enter your name">
+
+</div><div class="form-group"><label>
+Email Address
+</label><input
+type="email"
+id="email"
+readonly>
+
+</div><div class="form-group"><label>
+Mobile Number
+</label><input
+type="tel"
+id="mobile"
+placeholder="Enter mobile number"
+maxlength="10">
+
+</div><div class="member-box"><span>
+MEMBER ID
+</span><strong id="memberId">
+Loading...
+</strong></div><button
+class="save-btn"
+id="saveBtn">
+
+💾 Save Changes
+
+</button><div
+class="message"
+id="message">
+</div><button
+class="logout-btn"
+id="logoutBtn">
+
+🚪 Logout
+
+</button></div></main><script type="module">
+
+import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+getAuth,
+onAuthStateChanged,
+signOut
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+import {
+getFirestore,
+doc,
+getDoc,
+setDoc,
+updateDoc
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+/* =========================
+   FIREBASE CONFIG
+========================= */
+
+const firebaseConfig={
+
+apiKey:
+"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+
+authDomain:
+"padho-aur-kamao-3eeae.firebaseapp.com",
+
+projectId:
+"padho-aur-kamao-3eeae",
+
+storageBucket:
+"padho-aur-kamao-3eeae.firebasestorage.app",
+
+messagingSenderId:
+"670063905617",
+
+appId:
+"1:670063905617:web:9b3a7e62fdeea14fbfa170",
+
+measurementId:
+"G-7J1YV8HN3F"
+
+};
+
+
+const app=
+initializeApp(firebaseConfig);
+
+const auth=
+getAuth(app);
+
+const db=
+getFirestore(app);
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+let currentUser=null;
+
+let selectedPhoto=null;
+
+
+/* =========================
+   SHORTCUT
+========================= */
+
+const $=
+id=>
+document.getElementById(id);
+
+
+/* =========================
+   AUTH CHECK
+========================= */
+
+onAuthStateChanged(
+auth,
+
+async user=>{
+
+if(!user){
+
+location.href="login.html";
+
+return;
+
+}
+
+currentUser=user;
+
+await loadProfile();
+
+}
+
+);
+
+
+/* =========================
+   LOAD PROFILE
+========================= */
+
+async function loadProfile(){
+
+try{
+
+const userRef=
+doc(
+db,
+"users",
+currentUser.uid
+);
+
+const snap=
+await getDoc(userRef);
+
+let data={};
+
+if(snap.exists()){
+
+data=
+snap.data();
+
+}else{
+
+data={
+
+name:
+currentUser.displayName||
+"Student",
+
+email:
+currentUser.email||
+"",
+
+mobile:"",
+profilePhoto:""
+
+};
+
+await setDoc(
+userRef,
+data,
+{merge:true}
+);
+
+}
+
+
+const userName=
+data.name||
+currentUser.displayName||
+"Student";
+
+
+const userEmail=
+currentUser.email||
+data.email||
+"";
+
+
+$("name").value=
+userName;
+
+$("email").value=
+userEmail;
+
+$("mobile").value=
+data.mobile||
+"";
+
+
+$("headerName").innerText=
+userName;
+
+$("headerEmail").innerText=
+userEmail;
+
+
+$("memberId").innerText=
+currentUser.uid
+.substring(0,12);
+
+
+$("defaultAvatar").innerText=
+userName
+.charAt(0)
+.toUpperCase();
+
+
+if(data.profilePhoto){
+
+$("profilePhoto").src=
+data.profilePhoto;
+
+$("profilePhoto").style.display=
+"block";
+
+$("defaultAvatar").style.display=
+"none";
+
+}
+
+
+}catch(error){
+
+console.log(
+"Profile Load Error:",
+error
+);
+
+$("message").innerText=
+"Profile load नहीं हो पाया।";
+
+}
+
+}
+
+
+/* =========================
+   PHOTO PREVIEW
+========================= */
+
+$("photoInput").addEventListener(
+"change",
+
+event=>{
+
+const file=
+event.target.files[0];
+
+
+if(!file){
+
+return;
+
+}
+
+
+if(
+!file.type.startsWith(
+"image/"
+)
+){
+
+alert(
+"कृपया केवल image file select करें।"
+);
+
+return;
+
+}
+
+
+const reader=
+new FileReader();
+
+
+reader.onload=
+e=>{
+
+selectedPhoto=
+e.target.result;
+
+
+$("profilePhoto").src=
+selectedPhoto;
+
+$("profilePhoto").style.display=
+"block";
+
+$("defaultAvatar").style.display=
+"none";
+
+};
+
+
+reader.readAsDataURL(
+file
+);
+
+
+}
+
+);
+
+
+/* =========================
+   SAVE PROFILE
+========================= */
+
+$("saveBtn").onclick=
+async()=>{
+
+
+const name=
+$("name").value
+.trim();
+
+
+const mobile=
+$("mobile").value
+.trim();
+
+
+
+if(!name){
+
+$("message").innerText=
+"कृपया अपना नाम दर्ज करें।";
+
+return;
+
+}
+
+
+
+if(
+mobile &&
+mobile.length!==10
+){
+
+$("message").innerText=
+"कृपया सही 10 digit mobile number दर्ज करें।";
+
+return;
+
+}
+
+
+$("saveBtn").disabled=
+true;
+
+$("saveBtn").innerText=
+"Saving...";
+
+
+try{
+
+
+const data={
+
+name:name,
+
+email:
+currentUser.email||
+"",
+
+mobile:mobile,
+
+updatedAt:
+Date.now()
+
+};
+
+
+if(selectedPhoto){
+
+data.profilePhoto=
+selectedPhoto;
+
+}
+
+
+await setDoc(
+
+doc(
+db,
+"users",
+currentUser.uid
+),
+
+data,
+
+{merge:true}
+
+);
+
+
+
+$("headerName").innerText=
+name;
+
+
+$("defaultAvatar").innerText=
+name
+.charAt(0)
+.toUpperCase();
+
+
+$("message").style.color=
+"#16a34a";
+
+
+$("message").innerText=
+"✓ Profile successfully updated!";
+
+
+}catch(error){
+
+
+console.log(
+"Save Error:",
+error
+);
+
+
+$("message").style.color=
+"#dc2626";
+
+
+$("message").innerText=
+"Profile save नहीं हो पाया।";
+
+
+}
+
+
+$("saveBtn").disabled=
+false;
+
+$("saveBtn").innerText=
+"💾 Save Changes";
+
+
+};
+
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+$("logoutBtn").onclick=
+async()=>{
+
+
+try{
+
+
+await signOut(
+auth
+);
+
+
+location.href=
+"login.html";
+
+
+}catch(error){
+
+
+alert(
+"Logout failed"
+);
+
+
+}
+
+
+};
+
+
+</script></body>
+</html>
