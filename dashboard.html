@@ -1,10 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dashboard - Padho Aur Kamao</title>
@@ -26,13 +25,12 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f5f7fb;
     color:#172033;
 }
 
-button,
-input{
+button,input{
     font-family:inherit;
 }
 
@@ -52,7 +50,7 @@ a{
     top:0;
     bottom:0;
     width:260px;
-    background:#ffffff;
+    background:#fff;
     border-right:1px solid #e8eaf0;
     z-index:1000;
     overflow-y:auto;
@@ -78,7 +76,7 @@ a{
     justify-content:center;
     border-radius:12px;
     background:linear-gradient(135deg,#6025d7,#8b5cf6);
-    color:white;
+    color:#fff;
     margin-right:10px;
     font-size:22px;
 }
@@ -142,7 +140,7 @@ a{
 
 .topbar{
     height:72px;
-    background:#ffffff;
+    background:#fff;
     border-bottom:1px solid #e8eaf0;
     display:flex;
     align-items:center;
@@ -186,7 +184,7 @@ a{
     width:42px;
     height:42px;
     border:1px solid #eee;
-    background:white;
+    background:#fff;
     border-radius:10px;
     font-size:18px;
 }
@@ -204,7 +202,7 @@ a{
     display:flex;
     align-items:center;
     justify-content:center;
-    color:white;
+    color:#fff;
     font-weight:bold;
     background:linear-gradient(135deg,#6025d7,#8b5cf6);
 }
@@ -239,7 +237,7 @@ a{
     background:linear-gradient(135deg,#5420bd,#7c3aed);
     border-radius:20px;
     padding:32px;
-    color:white;
+    color:#fff;
     position:relative;
     overflow:hidden;
     margin-bottom:24px;
@@ -256,31 +254,32 @@ a{
     top:-100px;
 }
 
-.welcome h1{
-    font-size:27px;
+.welcome h1,
+.welcome p,
+.welcome-btn{
     position:relative;
     z-index:2;
+}
+
+.welcome h1{
+    font-size:27px;
 }
 
 .welcome p{
     margin-top:10px;
     font-size:14px;
     opacity:.9;
-    position:relative;
-    z-index:2;
 }
 
 .welcome-btn{
     display:inline-block;
     margin-top:18px;
     padding:12px 18px;
-    background:white;
+    background:#fff;
     color:#5b21b6;
     border-radius:10px;
     font-size:13px;
     font-weight:bold;
-    position:relative;
-    z-index:2;
 }
 
 
@@ -295,7 +294,7 @@ a{
 }
 
 .stat{
-    background:white;
+    background:#fff;
     border:1px solid #edf0f5;
     border-radius:16px;
     padding:19px;
@@ -358,7 +357,7 @@ a{
 }
 
 .card{
-    background:white;
+    background:#fff;
     border:1px solid #edf0f5;
     border-radius:16px;
     padding:20px;
@@ -377,7 +376,7 @@ a{
 }
 
 .course-card{
-    background:white;
+    background:#fff;
     border:1px solid #e9e9ef;
     border-radius:18px;
     overflow:hidden;
@@ -429,23 +428,8 @@ a{
     transform:rotateY(60deg);
 }
 
-.book:after{
-    content:"";
-    position:absolute;
-    right:-7px;
-    top:6px;
-    width:8px;
-    height:108px;
-    background:repeating-linear-gradient(
-        0deg,
-        #ffffff,
-        #ffffff 2px,
-        #d1d5db 3px
-    );
-}
-
 .book-text{
-    color:white;
+    color:#fff;
     text-align:center;
     padding:18px 8px;
     font-size:13px;
@@ -481,6 +465,20 @@ a{
     color:#6526d7;
 }
 
+.course-status{
+    font-size:12px;
+    font-weight:bold;
+    padding:6px 10px;
+    border-radius:20px;
+    background:#f1ebff;
+    color:#6526d7;
+}
+
+.course-status.active{
+    background:#dcfce7;
+    color:#15803d;
+}
+
 .course-btn{
     margin-top:15px;
     width:100%;
@@ -488,63 +486,9 @@ a{
     border:0;
     border-radius:10px;
     background:linear-gradient(135deg,#6526d7,#8b5cf6);
-    color:white;
+    color:#fff;
     font-weight:bold;
     cursor:pointer;
-}
-
-
-/* =========================
-   AFFILIATE
-========================= */
-
-.referral-link{
-    display:flex;
-    gap:8px;
-    margin-top:15px;
-}
-
-.referral-link input{
-    width:100%;
-    padding:12px;
-    border:1px solid #ddd;
-    border-radius:10px;
-}
-
-.copy-btn{
-    border:0;
-    padding:0 16px;
-    border-radius:10px;
-    background:#6526d7;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.mini-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-    margin-top:16px;
-}
-
-.mini{
-    background:#f7f5ff;
-    border-radius:12px;
-    text-align:center;
-    padding:14px;
-}
-
-.mini span{
-    font-size:11px;
-    color:#888;
-}
-
-.mini strong{
-    display:block;
-    margin-top:6px;
-    color:#6526d7;
-    font-size:18px;
 }
 
 
@@ -583,6 +527,81 @@ a{
 
 
 /* =========================
+   AFFILIATE
+========================= */
+
+.referral-link{
+    display:flex;
+    gap:8px;
+    margin-top:15px;
+}
+
+.referral-link input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+.copy-btn{
+    border:0;
+    padding:0 16px;
+    border-radius:10px;
+    background:#6526d7;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.mini-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:16px;
+}
+
+.mini{
+    background:#f7f5ff;
+    border-radius:12px;
+    text-align:center;
+    padding:14px;
+}
+
+.mini span{
+    font-size:11px;
+    color:#888;
+}
+
+.mini strong{
+    display:block;
+    margin-top:6px;
+    color:#6526d7;
+    font-size:18px;
+}
+
+
+/* =========================
+   KYC NOTICE
+========================= */
+
+.kyc-notice{
+    margin-top:30px;
+    padding:18px;
+    border-radius:14px;
+    background:#fff7ed;
+    border:1px solid #fed7aa;
+    font-size:14px;
+    color:#9a3412;
+}
+
+.kyc-notice.active{
+    background:#ecfdf5;
+    border-color:#a7f3d0;
+    color:#166534;
+}
+
+
+/* =========================
    RESPONSIVE
 ========================= */
 
@@ -595,11 +614,9 @@ a{
 }
 
 @media(max-width:1100px){
-
     .stats{
         grid-template-columns:repeat(2,1fr);
     }
-
 }
 
 @media(max-width:800px){
@@ -658,6 +675,10 @@ a{
         grid-template-columns:1fr;
     }
 
+    .mini-grid{
+        grid-template-columns:1fr;
+    }
+
     .page-title{
         font-size:17px;
     }
@@ -665,7 +686,6 @@ a{
 }
 
 </style>
-
 </head>
 
 <body>
@@ -678,103 +698,94 @@ a{
 <aside class="sidebar" id="sidebar">
 
 <div class="brand">
-
-<div class="brand-icon">
-📚
-</div>
-
-Padho Aur Kamao
-
+    <div class="brand-icon">📚</div>
+    Padho Aur Kamao
 </div>
 
 
 <div class="sidebar-section">
-Dashboard Menu
+    Dashboard Menu
 </div>
 
 
-<a class="side-link active" href="#team">
+<a class="side-link active" href="#home">
+    <span class="side-icon">🏠</span>
+    Dashboard
+</a>
 
-<span class="side-icon">👥</span>
 
-My Team
+<a class="side-link" href="#courses">
+    <span class="side-icon">📚</span>
+    My Courses
+</a>
 
+
+<a class="side-link" href="#commission">
+    <span class="side-icon">📊</span>
+    Commission
+</a>
+
+
+<a class="side-link" href="#affiliate">
+    <span class="side-icon">🔗</span>
+    Affiliate Center
+</a>
+
+
+<a class="side-link" href="#team">
+    <span class="side-icon">👥</span>
+    My Team
 </a>
 
 
 <a class="side-link" href="#leaderboard">
-
-<span class="side-icon">🏆</span>
-
-Leaderboard
-
+    <span class="side-icon">🏆</span>
+    Leaderboard
 </a>
 
 
 <a class="side-link" href="wallet.html">
-
-<span class="side-icon">💳</span>
-
-My Wallet
-
+    <span class="side-icon">💳</span>
+    My Wallet
 </a>
 
 
 <a class="side-link" href="withdrawal.html">
-
-<span class="side-icon">💸</span>
-
-Withdrawal Request
-
+    <span class="side-icon">💸</span>
+    Withdrawal Request
 </a>
 
 
 <div class="sidebar-section">
-Account
+    Account
 </div>
 
 
 <a class="side-link" href="profile.html">
-
-<span class="side-icon">👤</span>
-
-My Profile
-
+    <span class="side-icon">👤</span>
+    My Profile
 </a>
 
 
-<a class="side-link" href="kyc.html">
-
-<span class="side-icon">🪪</span>
-
-KYC Verification
-
-<span class="side-badge" id="kycBadge">
-Pending
-</span>
-
+<a class="side-link" href="#" id="kycLink">
+    <span class="side-icon">🪪</span>
+    KYC Verification
+    <span class="side-badge" id="kycBadge">Locked</span>
 </a>
 
 
 <a class="side-link" href="#security">
-
-<span class="side-icon">🔐</span>
-
-Security
-
+    <span class="side-icon">🔐</span>
+    Security
 </a>
 
 
-<a
-class="side-link"
+<a class="side-link"
 id="adminMenu"
 href="admin.html"
 style="display:none;">
-
-<span class="side-icon">⚙️</span>
-
-Admin Panel
-
+    <span class="side-icon">⚙️</span>
+    Admin Panel
 </a>
 
 </aside>
@@ -789,19 +800,13 @@ Admin Panel
 
 <div class="main">
 
-
 <header class="topbar">
 
 <div class="top-left">
 
-<button
-class="menu-mobile"
-id="mobileMenu">
-
+<button class="menu-mobile" id="mobileMenu">
 ☰
-
 </button>
-
 
 <div class="page-title">
 Dashboard
@@ -819,14 +824,9 @@ Dashboard
 
 <div class="user-box">
 
-<div
-class="avatar"
-id="avatar">
-
+<div class="avatar" id="avatar">
 S
-
 </div>
-
 
 <div class="user-info">
 
@@ -847,6 +847,9 @@ Member
 </header>
 
 
+<!-- =========================
+     CONTENT
+========================= -->
 
 <main class="content" id="home">
 
@@ -863,16 +866,11 @@ Welcome 👋
 Learn • Earn • Grow with Padho Aur Kamao
 </p>
 
-<a
-href="#courses"
-class="welcome-btn">
-
+<a href="#courses" class="welcome-btn">
 Explore Courses →
-
 </a>
 
 </section>
-
 
 
 <!-- STATS -->
@@ -882,23 +880,12 @@ Explore Courses →
 <div class="stat">
 
 <div class="stat-top">
-
-<div class="stat-label">
-Today's Revenue
+<div class="stat-label">Today's Revenue</div>
+<div class="stat-icon">💰</div>
 </div>
 
-<div class="stat-icon">
-💰
-</div>
-
-</div>
-
-<div
-class="stat-value"
-id="todayRevenue">
-
+<div class="stat-value" id="todayRevenue">
 ₹0
-
 </div>
 
 <div class="stat-change">
@@ -908,27 +895,15 @@ Today's earnings
 </div>
 
 
-
 <div class="stat">
 
 <div class="stat-top">
-
-<div class="stat-label">
-7 Days Revenue
+<div class="stat-label">7 Days Revenue</div>
+<div class="stat-icon">📅</div>
 </div>
 
-<div class="stat-icon">
-📅
-</div>
-
-</div>
-
-<div
-class="stat-value"
-id="weekRevenue">
-
+<div class="stat-value" id="weekRevenue">
 ₹0
-
 </div>
 
 <div class="stat-change">
@@ -938,27 +913,15 @@ Weekly performance
 </div>
 
 
-
 <div class="stat">
 
 <div class="stat-top">
-
-<div class="stat-label">
-30 Days Revenue
+<div class="stat-label">30 Days Revenue</div>
+<div class="stat-icon">📈</div>
 </div>
 
-<div class="stat-icon">
-📈
-</div>
-
-</div>
-
-<div
-class="stat-value"
-id="monthRevenue">
-
+<div class="stat-value" id="monthRevenue">
 ₹0
-
 </div>
 
 <div class="stat-change">
@@ -968,27 +931,15 @@ Monthly earnings
 </div>
 
 
-
 <div class="stat">
 
 <div class="stat-top">
-
-<div class="stat-label">
-Total Revenue
+<div class="stat-label">Total Revenue</div>
+<div class="stat-icon">🏦</div>
 </div>
 
-<div class="stat-icon">
-🏦
-</div>
-
-</div>
-
-<div
-class="stat-value"
-id="allRevenue">
-
+<div class="stat-value" id="allRevenue">
 ₹0
-
 </div>
 
 <div class="stat-change">
@@ -1001,18 +952,16 @@ All time earnings
 
 
 
-<!-- COURSES -->
+<!-- =========================
+     COURSES
+========================= -->
 
-<section
-class="section"
-id="courses">
+<section class="section" id="courses">
 
 <div class="section-head">
-
 <h2 class="section-title">
-📚 Courses
+📚 My Courses
 </h2>
-
 </div>
 
 
@@ -1028,11 +977,9 @@ id="courses">
 <div class="book starter">
 
 <div class="book-text">
-
 STUDY<br>
 & SKILL<br>
 STARTER
-
 </div>
 
 </div>
@@ -1058,8 +1005,9 @@ Maths, Reasoning, Hindi और Learning.
 ₹199
 </span>
 
-<span>
-2 Courses
+<span class="course-status"
+id="starterStatus">
+Available
 </span>
 
 </div>
@@ -1067,10 +1015,9 @@ Maths, Reasoning, Hindi और Learning.
 
 <button
 class="course-btn"
-onclick="location.href='course.html'">
-
+id="starterBtn"
+onclick="openCourse('study-skill-starter')">
 View Course
-
 </button>
 
 </div>
@@ -1088,11 +1035,9 @@ View Course
 <div class="book premium-book">
 
 <div class="book-text">
-
 SKILL<br>
 & SUCCESS<br>
 PREMIUM
-
 </div>
 
 </div>
@@ -1119,8 +1064,9 @@ Growth और Full Course Access.
 ₹399
 </span>
 
-<span>
-All Courses
+<span class="course-status"
+id="premiumStatus">
+Available
 </span>
 
 </div>
@@ -1128,15 +1074,15 @@ All Courses
 
 <button
 class="course-btn"
-onclick="location.href='course.html'">
-
+id="premiumBtn"
+onclick="openCourse('skill-success-premium')">
 View Course
-
 </button>
 
 </div>
 
 </div>
+
 
 </div>
 
@@ -1144,103 +1090,11 @@ View Course
 
 
 
-<!-- AFFILIATE -->
+<!-- =========================
+     COMMISSION
+========================= -->
 
-<section
-class="section"
-id="affiliate">
-
-<div class="section-head">
-
-<h2 class="section-title">
-🔗 Affiliate Center
-</h2>
-
-</div>
-
-
-<div class="card">
-
-<p style="font-size:13px;color:#777">
-
-अपना Referral Link share करें और
-eligible course sales पर commission earn करें।
-
-</p>
-
-
-<div class="referral-link">
-
-<input
-id="referralLink"
-readonly
-placeholder="Loading...">
-
-
-<button
-class="copy-btn"
-id="copyBtn">
-
-Copy
-
-</button>
-
-</div>
-
-
-<div class="mini-grid">
-
-<div class="mini">
-
-<span>
-Referrals
-</span>
-
-<strong id="referralCount">
-0
-</strong>
-
-</div>
-
-
-<div class="mini">
-
-<span>
-Points
-</span>
-
-<strong id="referralPoints">
-0
-</strong>
-
-</div>
-
-
-<div class="mini">
-
-<span>
-Status
-</span>
-
-<strong id="affiliateStatus">
-Active
-</strong>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- COMMISSION -->
-
-<section
-class="section"
-id="commission">
+<section class="section" id="commission">
 
 <div class="section-head">
 
@@ -1294,6 +1148,185 @@ Commission ₹200
 </section>
 
 
+
+<!-- =========================
+     AFFILIATE
+========================= -->
+
+<section class="section" id="affiliate">
+
+<div class="section-head">
+
+<h2 class="section-title">
+🔗 Affiliate Center
+</h2>
+
+</div>
+
+
+<div class="card">
+
+<p style="font-size:13px;color:#777">
+अपना Referral Link share करें और
+eligible course sales पर commission earn करें।
+</p>
+
+
+<div class="referral-link">
+
+<input
+id="referralLink"
+readonly
+placeholder="Loading...">
+
+<button class="copy-btn" id="copyBtn">
+Copy
+</button>
+
+</div>
+
+
+<div class="mini-grid">
+
+<div class="mini">
+
+<span>
+Referrals
+</span>
+
+<strong id="referralCount">
+0
+</strong>
+
+</div>
+
+
+<div class="mini">
+
+<span>
+Points
+</span>
+
+<strong id="referralPoints">
+0
+</strong>
+
+</div>
+
+
+<div class="mini">
+
+<span>
+Status
+</span>
+
+<strong id="affiliateStatus">
+Active
+</strong>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     TEAM
+========================= -->
+
+<section class="section" id="team">
+
+<div class="section-head">
+<h2 class="section-title">
+👥 My Team
+</h2>
+</div>
+
+<div class="card">
+
+<p style="font-size:14px;color:#777">
+आपके referral से जुड़ने वाले members यहां दिखाई देंगे।
+</p>
+
+<br>
+
+<strong>
+Total Team Members:
+<span id="teamCount">0</span>
+</strong>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     LEADERBOARD
+========================= -->
+
+<section class="section" id="leaderboard">
+
+<div class="section-head">
+<h2 class="section-title">
+🏆 Leaderboard
+</h2>
+</div>
+
+<div class="card">
+
+<p style="font-size:14px;color:#777">
+Leaderboard और top performers की जानकारी यहां दिखाई जाएगी।
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     KYC STATUS
+========================= -->
+
+<div
+class="kyc-notice"
+id="kycNotice">
+
+🪪 KYC करने के लिए पहले कोई Course Purchase करना जरूरी है।
+
+</div>
+
+
+
+<!-- =========================
+     SECURITY
+========================= -->
+
+<section class="section" id="security">
+
+<div class="section-head">
+<h2 class="section-title">
+🔐 Security
+</h2>
+</div>
+
+<div class="card">
+
+<p style="font-size:14px;color:#777">
+अपने account और password को सुरक्षित रखें।
+</p>
+
+</div>
+
+</section>
+
+
 </main>
 
 </div>
@@ -1305,7 +1338,6 @@ Commission ₹200
 ========================= -->
 
 <script type="module">
-
 
 import {
 initializeApp
@@ -1327,15 +1359,14 @@ getFirestore,
 doc,
 getDoc,
 setDoc,
-updateDoc,
 collection,
 query,
 where,
-getDocs
+getDocs,
+updateDoc
 }
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
 
 
 /* =========================
@@ -1368,7 +1399,6 @@ measurementId:
 };
 
 
-
 const app=
 initializeApp(firebaseConfig);
 
@@ -1381,61 +1411,26 @@ const db=
 getFirestore(app);
 
 
-
-/* =========================
-   CURRENT USER
-========================= */
-
 let currentUser=null;
 
-let userData=null;
+let userData={};
 
+
+/* =========================
+   SHORT SELECTOR
+========================= */
 
 const $=
-id=>
-document.getElementById(id);
+id=>document.getElementById(id);
 
 
 
 /* =========================
-   ADMIN SETTINGS
+   ADMIN EMAIL
 ========================= */
 
 const ADMIN_EMAIL=
 "yadavmukesh00888@gmail.com";
-
-
-
-/* =========================
-   ADMIN MENU
-========================= */
-
-function checkAdmin(){
-
-const adminMenu=
-$("adminMenu");
-
-
-if(
-
-currentUser &&
-currentUser.email &&
-currentUser.email.toLowerCase()===
-ADMIN_EMAIL.toLowerCase()
-
-){
-
-adminMenu.style.display=
-"flex";
-
-}else{
-
-adminMenu.style.display=
-"none";
-
-}
-
-}
 
 
 
@@ -1445,29 +1440,18 @@ adminMenu.style.display=
 
 $("mobileMenu").onclick=()=>{
 
-$("sidebar")
-.classList
-.add("open");
+$("sidebar").classList.add("open");
 
-
-$("overlay")
-.classList
-.add("show");
+$("overlay").classList.add("show");
 
 };
 
 
-
 $("overlay").onclick=()=>{
 
-$("sidebar")
-.classList
-.remove("open");
+$("sidebar").classList.remove("open");
 
-
-$("overlay")
-.classList
-.remove("show");
+$("overlay").classList.remove("show");
 
 };
 
@@ -1480,8 +1464,7 @@ $("overlay")
 function makeReferral(uid){
 
 return "PAK"+
-uid.substring(0,8)
-.toUpperCase();
+uid.substring(0,8).toUpperCase();
 
 }
 
@@ -1502,43 +1485,50 @@ Number(value||0)
 
 
 /* =========================
+   ADMIN CHECK
+========================= */
+
+function checkAdmin(){
+
+if(
+
+currentUser &&
+currentUser.email &&
+currentUser.email.toLowerCase()===ADMIN_EMAIL.toLowerCase()
+
+){
+
+$("adminMenu").style.display="flex";
+
+}else{
+
+$("adminMenu").style.display="none";
+
+}
+
+}
+
+
+
+/* =========================
    AUTH CHECK
 ========================= */
 
 onAuthStateChanged(
-
 auth,
-
 async user=>{
 
 if(!user){
 
-location.href=
-"login.html";
+location.href="login.html";
 
 return;
 
 }
 
-
-currentUser=
-user;
-
-
-/* LOAD USER */
+currentUser=user;
 
 await loadUser();
-
-
-/* ADMIN */
-
-checkAdmin();
-
-
-/* PURCHASE CHECK */
-
-await checkCoursePurchase();
-
 
 }
 
@@ -1554,9 +1544,7 @@ async function loadUser(){
 
 try{
 
-
-const ref=
-
+const userRef=
 doc(
 db,
 "users",
@@ -1565,94 +1553,124 @@ currentUser.uid
 
 
 const snap=
-
-await getDoc(ref);
-
-
-let data;
+await getDoc(userRef);
 
 
-/* USER EXISTS */
+if(snap.exists()){
 
-if(
+userData=snap.data();
 
-snap.exists()
+}else{
 
-){
-
-data=
-snap.data();
-
-}
-
-
-/* NEW USER */
-
-else{
-
-
-data={
+userData={
 
 name:
-
 currentUser.displayName||
 "Student",
 
-
 email:
-
 currentUser.email||
 "",
 
-
 referralCode:
-
 makeReferral(
 currentUser.uid
 ),
 
-
 points:0,
-
 
 totalReferrals:0,
 
-
 coursePurchased:false,
 
+purchasedCourseId:"",
 
-kycStatus:
-"not_submitted"
+purchasedCourseName:"",
+
+kycStatus:"not_started"
 
 };
 
 
 await setDoc(
-
-ref,
-data
-
+userRef,
+userData
 );
 
 }
 
 
-userData=
-data;
+
+/* =========================
+   LOCAL PURCHASE SYNC
+========================= */
+
+const localPurchased=
+localStorage.getItem(
+"coursePurchased"
+)==="true";
+
+
+const localCourseId=
+localStorage.getItem(
+"purchasedCourseId"
+);
+
+
+const localCourseName=
+localStorage.getItem(
+"purchasedCourseName"
+);
+
+
+/* Free coupon purchase sync */
+
+if(
+
+localPurchased &&
+!userData.coursePurchased
+
+){
+
+userData.coursePurchased=true;
+
+userData.purchasedCourseId=
+localCourseId||"";
+
+userData.purchasedCourseName=
+localCourseName||"";
+
+await updateDoc(
+userRef,
+{
+
+coursePurchased:true,
+
+purchasedCourseId:
+userData.purchasedCourseId,
+
+purchasedCourseName:
+userData.purchasedCourseName
+
+}
+);
+
+}
 
 
 
-/* USER NAME */
+/* =========================
+   USER NAME
+========================= */
 
 const name=
 
-data.name||
+userData.name||
 currentUser.displayName||
 "Student";
 
 
 $("welcomeName").innerText=
-
 "Welcome, "+name+" 👋";
 
 
@@ -1661,17 +1679,17 @@ name;
 
 
 $("avatar").innerText=
-
-name.charAt(0)
-.toUpperCase();
+name.charAt(0).toUpperCase();
 
 
 
-/* REFERRAL */
+/* =========================
+   REFERRAL LINK
+========================= */
 
 const code=
 
-data.referralCode||
+userData.referralCode||
 makeReferral(
 currentUser.uid
 );
@@ -1680,45 +1698,62 @@ currentUser.uid
 $("referralLink").value=
 
 location.origin+
-location.pathname+
-"?ref="+
-encodeURIComponent(
-code
-);
+"/course.html?ref="+
+encodeURIComponent(code);
 
 
 
-/* POINTS */
+/* =========================
+   POINTS
+========================= */
 
 $("referralPoints").innerText=
-
-data.points||0;
-
-
-
-/* KYC BADGE */
-
-updateKYCBadge(
-data.kycStatus
-);
+userData.points||0;
 
 
 
-/* LOAD DATA */
+/* =========================
+   PURCHASED COURSE UI
+========================= */
 
-await loadReferrals(
-code
-);
+updateCourseUI();
 
+
+
+/* =========================
+   KYC ACCESS
+========================= */
+
+updateKYCUI();
+
+
+
+/* =========================
+   LOAD REFERRALS
+========================= */
+
+await loadReferrals(code);
+
+
+/* =========================
+   LOAD EARNINGS
+========================= */
 
 await loadEarnings();
 
 
 
+/* =========================
+   ADMIN
+========================= */
+
+checkAdmin();
+
+
 }catch(error){
 
 console.log(
-"User Load Error:",
+"Dashboard Error:",
 error
 );
 
@@ -1729,321 +1764,175 @@ error
 
 
 /* =========================
-   COURSE PURCHASE CHECK
+   COURSE UI
 ========================= */
 
-async function checkCoursePurchase(){
+function updateCourseUI(){
+
+const purchased=
+userData.coursePurchased===true;
 
 
-/* ADMIN BYPASS */
+const courseId=
+userData.purchasedCourseId||"";
+
 
 if(
 
-currentUser &&
-currentUser.email &&
-currentUser.email.toLowerCase()===
-ADMIN_EMAIL.toLowerCase()
+purchased &&
+courseId==="study-skill-starter"
 
 ){
 
-return;
+$("starterStatus").innerText=
+"Purchased ✓";
+
+$("starterStatus")
+.classList
+.add("active");
+
+$("starterBtn").innerText=
+"Open Course";
+
+
+}
+
+
+if(
+
+purchased &&
+courseId==="skill-success-premium"
+
+){
+
+$("premiumStatus").innerText=
+"Purchased ✓";
+
+$("premiumStatus")
+.classList
+.add("active");
+
+$("premiumBtn").innerText=
+"Open Course";
+
+
+}
 
 }
 
 
 
-/* LOCAL STORAGE */
+/* =========================
+   OPEN COURSE
+========================= */
 
-const localPurchased=
+window.openCourse=
+function(courseId){
 
-localStorage.getItem(
-"coursePurchased"
-)==="true";
-
-
-
-/* FIRESTORE */
-
-const firestorePurchased=
-
-userData &&
+const purchased=
 userData.coursePurchased===true;
 
+const purchasedId=
+userData.purchasedCourseId||"";
 
-
-/* COURSE NOT PURCHASED */
 
 if(
 
-!localPurchased &&
-!firestorePurchased
+purchased &&
+purchasedId===courseId
 
 ){
 
 alert(
-
-"⚠️ पहले Course Purchase करना जरूरी है।"
-
+"🎉 आपका Course Successfully Activated है। Course content जल्द यहां जोड़ा जा सकता है।"
 );
+
+return;
+
+}
 
 
 location.href=
 "course.html";
 
-
-return;
-
-}
+};
 
 
 
-/* LOCAL PURCHASE TO FIRESTORE */
+/* =========================
+   KYC UI
+========================= */
 
-if(
+function updateKYCUI(){
 
-localPurchased &&
-!firestorePurchased
-
-){
-
-try{
+const purchased=
+userData.coursePurchased===true;
 
 
-await updateDoc(
+if(purchased){
 
-doc(
-db,
-"users",
-currentUser.uid
-),
+$("kycBadge").innerText=
+"KYC";
 
-{
+$("kycBadge").style.background=
+"#dcfce7";
 
-coursePurchased:true,
+$("kycBadge").style.color=
+"#15803d";
 
-purchasedCourseId:
 
-localStorage.getItem(
-"purchasedCourseId"
-)||"",
+$("kycNotice").classList.add("active");
 
-purchasedCourseName:
+$("kycNotice").innerText=
 
-localStorage.getItem(
-"purchasedCourseName"
-)||"",
+"✅ आपका Course Purchased है। अब आप KYC Verification कर सकते हैं।";
 
-paymentStatus:
 
-localStorage.getItem(
-"paymentStatus"
-)||"success"
+}else{
+
+$("kycBadge").innerText=
+"Locked";
 
 }
-
-);
-
-
-/* UPDATE LOCAL DATA */
-
-userData.coursePurchased=
-true;
-
-
-}catch(error){
-
-console.log(
-"Course Purchase Save Error:",
-error
-);
-
-}
-
-}
-
-
-/* KYC STATUS */
-
-checkKYCAfterPurchase();
 
 }
 
 
 
 /* =========================
-   KYC AFTER COURSE PURCHASE
+   KYC CLICK
 ========================= */
 
-function checkKYCAfterPurchase(){
+$("kycLink")
+.addEventListener(
+"click",
+function(event){
 
+event.preventDefault();
 
-/* ADMIN BYPASS */
 
 if(
 
-currentUser &&
-currentUser.email &&
-currentUser.email.toLowerCase()===
-ADMIN_EMAIL.toLowerCase()
+userData.coursePurchased===true
 
 ){
-
-return;
-
-}
-
-
-const kycStatus=
-
-String(
-
-userData.kycStatus||
-"not_submitted"
-
-).toLowerCase();
-
-
-
-/* KYC APPROVED */
-
-if(
-
-kycStatus==="approved"
-
-){
-
-return;
-
-}
-
-
-/* NOT APPROVED */
-
-setTimeout(
-
-()=>{
-
-alert(
-
-"🪪 Course Purchase हो गया है। आगे earning और withdrawal features के लिए पहले KYC Verification पूरा करें।"
-
-);
-
 
 location.href=
 "kyc.html";
 
+}else{
 
-},
-
-500
-
+alert(
+"⚠️ पहले Course Purchase करें। Course Purchase होने के बाद ही KYC Verification शुरू कर सकते हैं।"
 );
 
-}
-
-
-
-/* =========================
-   KYC BADGE
-========================= */
-
-function updateKYCBadge(status){
-
-
-const badge=
-$("kycBadge");
-
-
-const kyc=
-
-String(
-status||
-"not_submitted"
-).toLowerCase();
-
-
-
-if(
-
-kyc==="approved"
-
-){
-
-badge.innerText=
-"Approved";
-
-
-badge.style.background=
-"#dcfce7";
-
-
-badge.style.color=
-"#15803d";
-
-
-}
-
-
-else if(
-
-kyc==="pending"
-
-){
-
-badge.innerText=
-"Pending";
-
-
-badge.style.background=
-"#fff3cd";
-
-
-badge.style.color=
-"#b45309";
-
-
-}
-
-
-else if(
-
-kyc==="rejected"
-
-){
-
-badge.innerText=
-"Rejected";
-
-
-badge.style.background=
-"#fee2e2";
-
-
-badge.style.color=
-"#dc2626";
-
-
-}
-
-
-else{
-
-
-badge.innerText=
-"Verify";
-
-
-badge.style.background=
-"#e0e7ff";
-
-
-badge.style.color=
-"#4338ca";
+location.href=
+"course.html";
 
 }
 
 }
+);
 
 
 
@@ -2055,9 +1944,7 @@ async function loadReferrals(code){
 
 try{
 
-
 const snap=
-
 await getDocs(
 
 query(
@@ -2068,11 +1955,9 @@ db,
 ),
 
 where(
-
 "referrerCode",
 "==",
 code
-
 )
 
 )
@@ -2081,7 +1966,10 @@ code
 
 
 $("referralCount").innerText=
+snap.size;
 
+
+$("teamCount").innerText=
 snap.size;
 
 
@@ -2092,9 +1980,9 @@ console.log(
 error
 );
 
+$("referralCount").innerText="0";
 
-$("referralCount").innerText=
-"0";
+$("teamCount").innerText="0";
 
 }
 
@@ -2110,9 +1998,7 @@ async function loadEarnings(){
 
 try{
 
-
 const snap=
-
 await getDocs(
 
 query(
@@ -2123,11 +2009,9 @@ db,
 ),
 
 where(
-
 "userId",
 "==",
 currentUser.uid
-
 )
 
 )
@@ -2136,11 +2020,8 @@ currentUser.uid
 
 
 let total=0;
-
 let today=0;
-
 let week=0;
-
 let month=0;
 
 
@@ -2148,83 +2029,56 @@ const now=
 Date.now();
 
 
+snap.forEach(item=>{
 
-snap.forEach(
-
-item=>{
-
-
-const d=
+const data=
 item.data();
 
 
 const amount=
-
-Number(
-d.amount||0
-);
+Number(data.amount||0);
 
 
-total+=
-amount;
+total+=amount;
 
 
 const timestamp=
 
-d.createdAt
-?.toMillis?.()
-||0;
-
+data.createdAt
+?.toMillis?.()||0;
 
 
 if(timestamp>0){
 
-
 if(
-
-now-timestamp<=
-86400000
-
+now-timestamp<=86400000
 ){
 
-today+=
-amount;
+today+=amount;
 
 }
 
 
 if(
-
-now-timestamp<=
-604800000
-
+now-timestamp<=604800000
 ){
 
-week+=
-amount;
+week+=amount;
 
 }
 
 
 if(
-
-now-timestamp<=
-2592000000
-
+now-timestamp<=2592000000
 ){
 
-month+=
-amount;
+month+=amount;
 
 }
 
 }
 
-
-}
-
-);
-
+});
 
 
 $("todayRevenue").innerText=
@@ -2261,22 +2115,15 @@ error
 ========================= */
 
 $("copyBtn").onclick=
-
 async()=>{
 
-
 const link=
-
-$("referralLink")
-.value;
+$("referralLink").value;
 
 
 try{
 
-
-await navigator
-.clipboard
-.writeText(
+await navigator.clipboard.writeText(
 link
 );
 
@@ -2286,25 +2133,19 @@ $("copyBtn").innerText=
 
 
 setTimeout(
-
 ()=>{
 
 $("copyBtn").innerText=
 "Copy";
 
 },
-
 1500
-
 );
 
 
 }catch(error){
 
-
-$("referralLink")
-.select();
-
+$("referralLink").select();
 
 document.execCommand(
 "copy"
@@ -2316,16 +2157,13 @@ $("copyBtn").innerText=
 
 
 setTimeout(
-
 ()=>{
 
 $("copyBtn").innerText=
 "Copy";
 
 },
-
 1500
-
 );
 
 }
@@ -2335,46 +2173,31 @@ $("copyBtn").innerText=
 
 
 /* =========================
-   SIDEBAR MOBILE CLOSE
+   ACTIVE SIDEBAR
 ========================= */
 
 document
-.querySelectorAll(
-".side-link"
-)
-
-.forEach(
-
-link=>{
-
+.querySelectorAll(".side-link")
+.forEach(link=>{
 
 link.addEventListener(
-
 "click",
-
 ()=>{
-
 
 $("sidebar")
 .classList
 .remove("open");
-
 
 $("overlay")
 .classList
 .remove("show");
 
 }
-
 );
 
-}
-
-);
-
+});
 
 </script>
 
 </body>
-
 </html>
