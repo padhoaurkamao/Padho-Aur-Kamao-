@@ -11,6 +11,10 @@
 
 <style>
 
+/* =====================
+   GLOBAL
+===================== */
+
 *{
     margin:0;
     padding:0;
@@ -155,6 +159,7 @@ a{
     background:#f1ebff;
     color:#6526d7;
     font-size:20px;
+    cursor:pointer;
 }
 
 .user-box{
@@ -191,7 +196,7 @@ a{
 ===================== */
 
 .content{
-    max-width:900px;
+    max-width:950px;
     margin:auto;
     padding:30px;
 }
@@ -272,6 +277,11 @@ a{
     color:#dc2626;
 }
 
+.not-submitted{
+    background:#e5e7eb;
+    color:#4b5563;
+}
+
 
 /* =====================
    FORM
@@ -282,6 +292,7 @@ a{
     border:1px solid #edf0f5;
     border-radius:18px;
     padding:25px;
+    margin-bottom:20px;
 }
 
 .form-title{
@@ -293,6 +304,25 @@ a{
     font-size:13px;
     color:#777;
     margin-bottom:22px;
+}
+
+.section-box{
+    border:1px solid #edf0f5;
+    border-radius:14px;
+    padding:18px;
+    margin-top:20px;
+    background:#fafbff;
+}
+
+.section-box h3{
+    font-size:17px;
+    margin-bottom:6px;
+}
+
+.section-box p{
+    font-size:12px;
+    color:#777;
+    margin-bottom:16px;
 }
 
 .form-grid{
@@ -325,6 +355,7 @@ textarea{
     border-radius:10px;
     outline:none;
     font-size:14px;
+    background:white;
 }
 
 textarea{
@@ -342,7 +373,7 @@ textarea:focus{
 .submit-btn{
     margin-top:22px;
     width:100%;
-    padding:14px;
+    padding:15px;
     border:0;
     border-radius:10px;
     background:linear-gradient(135deg,#6526d7,#8b5cf6);
@@ -357,11 +388,6 @@ textarea:focus{
     cursor:not-allowed;
 }
 
-
-/* =====================
-   NOTICE
-===================== */
-
 .notice{
     margin-top:18px;
     background:#f7f5ff;
@@ -369,7 +395,7 @@ textarea:focus{
     padding:15px;
     font-size:12px;
     color:#666;
-    line-height:1.6;
+    line-height:1.7;
 }
 
 
@@ -542,7 +568,6 @@ Security
 
 </a>
 
-
 </aside>
 
 
@@ -555,7 +580,6 @@ Security
 
 
 <header class="topbar">
-
 
 <div class="top-left">
 
@@ -591,7 +615,6 @@ Member
 
 </div>
 
-
 </header>
 
 
@@ -599,7 +622,7 @@ Member
 <main class="content">
 
 
-<!-- HEADER -->
+<!-- KYC HEADER -->
 
 <section class="kyc-header">
 
@@ -608,7 +631,7 @@ Member
 </h1>
 
 <p>
-अपनी जानकारी submit करें। Verification के बाद आपका account status update किया जाएगा।
+अपनी सही जानकारी submit करें। Verification के बाद account status update किया जाएगा।
 </p>
 
 </section>
@@ -620,7 +643,6 @@ Member
 <section class="status-card">
 
 <div class="status-row">
-
 
 <div>
 
@@ -635,10 +657,9 @@ Verification Status
 </div>
 
 
-<div class="status-badge pending" id="kycStatus">
+<div class="status-badge not-submitted" id="kycStatus">
 Not Submitted
 </div>
-
 
 </div>
 
@@ -655,11 +676,24 @@ KYC Details
 </h2>
 
 <p class="form-description">
-सही जानकारी भरें ताकि verification आसानी से की जा सके।
+कृपया सभी जानकारी ध्यानपूर्वक भरें।
 </p>
 
 
 <form id="kycForm">
+
+
+<!-- PERSONAL DETAILS -->
+
+<div class="section-box">
+
+<h3>
+👤 Personal Details
+</h3>
+
+<p>
+अपनी व्यक्तिगत जानकारी भरें।
+</p>
 
 
 <div class="form-grid">
@@ -680,7 +714,6 @@ required>
 </div>
 
 
-
 <div class="form-group">
 
 <label>
@@ -697,7 +730,6 @@ required>
 </div>
 
 
-
 <div class="form-group">
 
 <label>
@@ -710,7 +742,6 @@ id="dob"
 required>
 
 </div>
-
 
 
 <div class="form-group">
@@ -741,6 +772,222 @@ Other
 
 </div>
 
+</div>
+
+</div>
+
+
+
+<!-- IDENTITY DETAILS -->
+
+<div class="section-box">
+
+<h3>
+🪪 Identity Details
+</h3>
+
+<p>
+PAN और पहचान document की जानकारी भरें।
+</p>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+PAN Number
+</label>
+
+<input
+type="text"
+id="panNumber"
+placeholder="ABCDE1234F"
+maxlength="10"
+style="text-transform:uppercase">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Aadhaar Last 4 Digits
+</label>
+
+<input
+type="text"
+id="aadhaarLast4"
+placeholder="केवल अंतिम 4 अंक"
+maxlength="4"
+inputmode="numeric">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Document Type
+</label>
+
+<select id="documentType">
+
+<option value="">
+Select Document
+</option>
+
+<option value="PAN">
+PAN Card
+</option>
+
+<option value="Aadhaar">
+Aadhaar
+</option>
+
+<option value="Voter ID">
+Voter ID
+</option>
+
+<option value="Driving License">
+Driving License
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Document Reference
+</label>
+
+<input
+type="text"
+id="documentReference"
+placeholder="Document reference">
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- BANK DETAILS -->
+
+<div class="section-box">
+
+<h3>
+🏦 Bank Account Details
+</h3>
+
+<p>
+Bank details withdrawal और payment verification के लिए उपयोग हो सकती हैं।
+</p>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+Account Holder Name
+</label>
+
+<input
+type="text"
+id="accountHolder"
+placeholder="Bank account holder name">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Bank Name
+</label>
+
+<input
+type="text"
+id="bankName"
+placeholder="Bank name">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Account Number
+</label>
+
+<input
+type="password"
+id="accountNumber"
+placeholder="Account number"
+inputmode="numeric">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Confirm Account Number
+</label>
+
+<input
+type="password"
+id="confirmAccountNumber"
+placeholder="Account number दोबारा डालें"
+inputmode="numeric">
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+IFSC Code
+</label>
+
+<input
+type="text"
+id="ifscCode"
+placeholder="SBIN0001234"
+style="text-transform:uppercase">
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- ADDRESS -->
+
+<div class="section-box">
+
+<h3>
+📍 Address Details
+</h3>
+
+<p>
+अपना वर्तमान address भरें।
+</p>
+
+
+<div class="form-grid">
 
 
 <div class="form-group full">
@@ -755,7 +1002,6 @@ placeholder="अपना पूरा address लिखें"
 required></textarea>
 
 </div>
-
 
 
 <div class="form-group">
@@ -773,7 +1019,6 @@ required>
 </div>
 
 
-
 <div class="form-group">
 
 <label>
@@ -788,6 +1033,24 @@ required>
 
 </div>
 
+
+<div class="form-group">
+
+<label>
+PIN Code
+</label>
+
+<input
+type="text"
+id="pinCode"
+placeholder="PIN Code"
+maxlength="6"
+inputmode="numeric">
+
+</div>
+
+
+</div>
 
 </div>
 
@@ -806,10 +1069,13 @@ Submit KYC Request
 </form>
 
 
+
 <div class="notice">
 
-🔐 आपकी जानकारी केवल account verification के लिए उपयोग की जानी चाहिए।
-Password, OTP या बैंक का पूरा PIN कभी भी form में न डालें।
+🔐 <b>Security Notice:</b><br>
+
+Password, OTP, ATM PIN या UPI PIN कभी भी इस form में न डालें।
+केवल वही जानकारी submit करें जो वास्तव में verification के लिए आवश्यक हो।
 
 </div>
 
@@ -824,6 +1090,11 @@ Password, OTP या बैंक का पूरा PIN कभी भी form 
 
 
 <script type="module">
+
+
+/* =====================
+   FIREBASE IMPORTS
+===================== */
 
 
 import {
@@ -859,7 +1130,9 @@ from
 
 
 
-/* FIREBASE CONFIG */
+/* =====================
+   FIREBASE CONFIG
+===================== */
 
 
 const firebaseConfig={
@@ -901,18 +1174,17 @@ const db=
 getFirestore(app);
 
 
-
 let currentUser=null;
 
 
-
 const $=
-id=>
-document.getElementById(id);
+id=>document.getElementById(id);
 
 
 
-/* MOBILE MENU */
+/* =====================
+   MOBILE MENU
+===================== */
 
 
 $("mobileMenu").onclick=()=>{
@@ -934,8 +1206,9 @@ $("overlay").classList.remove("show");
 
 
 
-
-/* AUTH CHECK */
+/* =====================
+   AUTH
+===================== */
 
 
 onAuthStateChanged(
@@ -947,8 +1220,7 @@ async user=>{
 
 if(!user){
 
-location.href=
-"login.html";
+location.href="login.html";
 
 return;
 
@@ -960,7 +1232,6 @@ currentUser=user;
 
 await loadUser();
 
-
 await loadKYC();
 
 
@@ -971,11 +1242,12 @@ await loadKYC();
 
 
 
-/* LOAD USER */
+/* =====================
+   LOAD USER
+===================== */
 
 
 async function loadUser(){
-
 
 try{
 
@@ -989,9 +1261,7 @@ currentUser.uid
 
 
 const snap=
-await getDoc(
-userRef
-);
+await getDoc(userRef);
 
 
 let name=
@@ -1003,7 +1273,6 @@ if(snap.exists()){
 
 const data=
 snap.data();
-
 
 name=
 data.name||
@@ -1017,9 +1286,7 @@ name;
 
 
 $("avatar").innerText=
-name
-.charAt(0)
-.toUpperCase();
+name.charAt(0).toUpperCase();
 
 
 $("fullName").value=
@@ -1029,22 +1296,23 @@ name;
 }catch(error){
 
 console.log(
+"User Load Error:",
 error
 );
 
 }
 
-
 }
 
 
 
 
-/* LOAD KYC */
+/* =====================
+   LOAD KYC
+===================== */
 
 
 async function loadKYC(){
-
 
 try{
 
@@ -1071,12 +1339,19 @@ $("kycStatus").innerText=
 "Not Submitted";
 
 
+$("kycStatus").className=
+"status-badge not-submitted";
+
+
+$("sidebarStatus").innerText=
+"Pending";
+
+
 $("statusMessage").innerText=
 "आपका KYC अभी submit नहीं किया गया है।";
 
 
 return;
-
 
 }
 
@@ -1089,6 +1364,7 @@ snap.data();
 const status=
 data.status||
 "Pending";
+
 
 
 $("fullName").value=
@@ -1111,6 +1387,45 @@ data.gender||
 "";
 
 
+$("panNumber").value=
+data.panNumber||
+"";
+
+
+$("aadhaarLast4").value=
+data.aadhaarLast4||
+"";
+
+
+$("documentType").value=
+data.documentType||
+"";
+
+
+$("documentReference").value=
+data.documentReference||
+"";
+
+
+$("accountHolder").value=
+data.accountHolder||
+"";
+
+
+$("bankName").value=
+data.bankName||
+"";
+
+
+/* Account number सुरक्षा के लिए
+   दोबारा auto-fill नहीं होगा */
+
+
+$("ifscCode").value=
+data.ifscCode||
+"";
+
+
 $("address").value=
 data.address||
 "";
@@ -1125,6 +1440,10 @@ $("state").value=
 data.state||
 "";
 
+
+$("pinCode").value=
+data.pinCode||
+"";
 
 
 $("kycStatus").innerText=
@@ -1144,7 +1463,7 @@ $("kycStatus").className=
 
 
 $("statusMessage").innerText=
-"आपका KYC सफलतापूर्वक verify हो चुका है।";
+"आपका KYC सफलतापूर्वक Approved हो चुका है।";
 
 
 $("submitBtn").innerText=
@@ -1156,7 +1475,6 @@ true;
 
 
 }
-
 
 
 else if(status==="Rejected"){
@@ -1175,7 +1493,6 @@ $("submitBtn").innerText=
 
 
 }
-
 
 
 else{
@@ -1206,22 +1523,21 @@ $("submitBtn").innerText=
 
 }catch(error){
 
-
 console.log(
 "KYC Load Error:",
 error
 );
 
+}
 
 }
 
 
-}
 
 
-
-
-/* SUBMIT KYC */
+/* =====================
+   SUBMIT KYC
+===================== */
 
 
 $("kycForm").addEventListener(
@@ -1239,9 +1555,128 @@ const button=
 $("submitBtn");
 
 
-button.disabled=
-true;
+const mobile=
+$("mobile").value.trim();
 
+
+const accountNumber=
+$("accountNumber").value.trim();
+
+
+const confirmAccountNumber=
+$("confirmAccountNumber").value.trim();
+
+
+const aadhaarLast4=
+$("aadhaarLast4").value.trim();
+
+
+const panNumber=
+$("panNumber").value
+.trim()
+.toUpperCase();
+
+
+const ifscCode=
+$("ifscCode").value
+.trim()
+.toUpperCase();
+
+
+/* MOBILE VALIDATION */
+
+
+if(!/^[0-9]{10}$/.test(mobile)){
+
+alert(
+"कृपया सही 10 digit mobile number डालें।"
+);
+
+return;
+
+}
+
+
+/* AADHAAR LAST 4 VALIDATION */
+
+
+if(
+aadhaarLast4 &&
+!/^[0-9]{4}$/.test(aadhaarLast4)
+){
+
+alert(
+"Aadhaar के केवल सही अंतिम 4 अंक डालें।"
+);
+
+return;
+
+}
+
+
+/* PAN VALIDATION */
+
+
+if(
+panNumber &&
+!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(panNumber)
+){
+
+alert(
+"कृपया सही PAN format डालें। उदाहरण: ABCDE1234F"
+);
+
+return;
+
+}
+
+
+/* ACCOUNT VALIDATION */
+
+
+if(
+accountNumber ||
+confirmAccountNumber
+){
+
+if(
+accountNumber!==confirmAccountNumber
+){
+
+alert(
+"Account Number और Confirm Account Number match नहीं कर रहे हैं।"
+);
+
+return;
+
+}
+
+}
+
+
+/* PIN CODE VALIDATION */
+
+
+const pinCode=
+$("pinCode").value.trim();
+
+
+if(
+pinCode &&
+!/^[0-9]{6}$/.test(pinCode)
+){
+
+alert(
+"कृपया सही 6 digit PIN Code डालें।"
+);
+
+return;
+
+}
+
+
+
+button.disabled=true;
 
 button.innerText=
 "Submitting...";
@@ -1249,35 +1684,6 @@ button.innerText=
 
 
 try{
-
-
-const mobile=
-$("mobile").value
-.trim();
-
-
-
-if(!/^[0-9]{10}$/.test(mobile)){
-
-
-alert(
-"कृपया सही 10 digit mobile number डालें।"
-);
-
-
-button.disabled=
-false;
-
-
-button.innerText=
-"Submit KYC Request";
-
-
-return;
-
-
-}
-
 
 
 const kycData={
@@ -1293,8 +1699,7 @@ currentUser.email||
 
 
 fullName:
-$("fullName").value
-.trim(),
+$("fullName").value.trim(),
 
 
 mobile:
@@ -1309,19 +1714,52 @@ gender:
 $("gender").value,
 
 
+panNumber:
+panNumber,
+
+
+aadhaarLast4:
+aadhaarLast4,
+
+
+documentType:
+$("documentType").value,
+
+
+documentReference:
+$("documentReference").value.trim(),
+
+
+accountHolder:
+$("accountHolder").value.trim(),
+
+
+bankName:
+$("bankName").value.trim(),
+
+
+accountNumber:
+accountNumber,
+
+
+ifscCode:
+ifscCode,
+
+
 address:
-$("address").value
-.trim(),
+$("address").value.trim(),
 
 
 city:
-$("city").value
-.trim(),
+$("city").value.trim(),
 
 
 state:
-$("state").value
-.trim(),
+$("state").value.trim(),
+
+
+pinCode:
+pinCode,
 
 
 status:
@@ -1417,8 +1855,7 @@ alert(
 );
 
 
-button.disabled=
-false;
+button.disabled=false;
 
 
 button.innerText=
