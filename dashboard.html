@@ -1,7 +1,15 @@
+<!DOCTYPE html>
+<html lang="hi">
 
-<!DOCTYPE html><html lang="hi"><head>
+<head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Dashboard - Padho Aur Kamao</title><style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard - Padho Aur Kamao</title>
+
+<style>
 
 /* =========================
    GLOBAL
@@ -510,6 +518,7 @@ a{
     background:#6526d7;
     color:white;
     font-weight:bold;
+    cursor:pointer;
 }
 
 .mini-grid{
@@ -655,7 +664,20 @@ a{
 
 }
 
-</style></head><body><!-- SIDEBAR --><aside class="sidebar" id="sidebar"><div class="brand">
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+
+<aside class="sidebar" id="sidebar">
+
+<div class="brand">
 
     <div class="brand-icon">
         📚
@@ -672,407 +694,837 @@ a{
 
 
 <a class="side-link active" href="#team">
+
     <span class="side-icon">👥</span>
+
     My Team
+
 </a>
 
 
 <a class="side-link" href="#leaderboard">
+
     <span class="side-icon">🏆</span>
+
     Leaderboard
+
 </a>
 
 
 <a class="side-link" href="wallet.html">
+
     <span class="side-icon">💳</span>
+
     My Wallet
+
 </a>
 
+
 <a class="side-link" href="withdrawal.html">
+
     <span class="side-icon">💸</span>
+
     Withdrawal Request
+
 </a>
 
 
 <div class="sidebar-section">
     Account
 </div>
-   
+
+
 <a class="side-link" href="profile.html">
+
     <span class="side-icon">👤</span>
+
     My Profile
+
 </a>
-    <a class="side-link" href="kyc.html">
+
+
+<a class="side-link" href="kyc.html">
+
     <span class="side-icon">🪪</span>
+
     KYC Verification
 
     <span class="side-badge">
         Pending
     </span>
+
 </a>
 
 
 <a class="side-link" href="#security">
+
     <span class="side-icon">🔐</span>
+
     Security
+
 </a>
 
-</aside><div class="overlay" id="overlay"></div><!-- MAIN --><div class="main"><header class="topbar"><div class="top-left">
 
-    <button class="menu-mobile" id="mobileMenu">
-        ☰
-    </button>
+<!-- ADMIN PANEL -->
 
-    <div class="page-title">
-        Dashboard
-    </div>
+<a
+class="side-link"
+id="adminMenu"
+href="admin.html"
+style="display:none;">
+
+    <span class="side-icon">⚙️</span>
+
+    Admin Panel
+
+</a>
+
+
+</aside>
+
+
+<div
+class="overlay"
+id="overlay">
+</div>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<div class="main">
+
+
+<header class="topbar">
+
+
+<div class="top-left">
+
+
+<button
+class="menu-mobile"
+id="mobileMenu">
+
+☰
+
+</button>
+
+
+<div class="page-title">
+
+Dashboard
 
 </div>
+
+
+</div>
+
 
 
 <div class="top-right">
 
-    <button class="notification">
-        🔔
-    </button>
+
+<button class="notification">
+
+🔔
+
+</button>
 
 
-    <div class="user-box">
 
-        <div class="avatar" id="avatar">
-            S
-        </div>
+<div class="user-box">
 
 
-        <div class="user-info">
+<div
+class="avatar"
+id="avatar">
 
-            <strong id="topName">
-                Student
-            </strong>
-
-            <small>
-                Member
-            </small>
-
-        </div>
-
-    </div>
+S
 
 </div>
 
-</header><!-- MAIN CONTENT --><main class="content" id="home"><!-- WELCOME --><section class="welcome"><h1 id="welcomeName">
-    Welcome 👋
+
+
+<div class="user-info">
+
+
+<strong id="topName">
+
+Student
+
+</strong>
+
+
+<small>
+
+Member
+
+</small>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+
+<!-- =========================
+     CONTENT
+========================= -->
+
+<main
+class="content"
+id="home">
+
+
+<!-- WELCOME -->
+
+<section class="welcome">
+
+
+<h1 id="welcomeName">
+
+Welcome 👋
+
 </h1>
 
+
 <p>
-    Learn • Earn • Grow with Padho Aur Kamao
+
+Learn • Earn • Grow with Padho Aur Kamao
+
 </p>
 
-<a href="#courses" class="welcome-btn">
-    Explore Courses →
+
+<a
+href="#courses"
+class="welcome-btn">
+
+Explore Courses →
+
 </a>
 
-</section><!-- STATS --><section class="stats"><div class="stat">
 
-    <div class="stat-top">
+</section>
 
-        <div class="stat-label">
-            Today's Revenue
-        </div>
 
-        <div class="stat-icon">
-            💰
-        </div>
 
-    </div>
+<!-- STATS -->
 
-    <div class="stat-value" id="todayRevenue">
-        ₹0
-    </div>
-
-    <div class="stat-change">
-        Today's earnings
-    </div>
-
-</div>
+<section class="stats">
 
 
 <div class="stat">
 
-    <div class="stat-top">
 
-        <div class="stat-label">
-            7 Days Revenue
-        </div>
+<div class="stat-top">
 
-        <div class="stat-icon">
-            📅
-        </div>
 
-    </div>
+<div class="stat-label">
 
-    <div class="stat-value" id="weekRevenue">
-        ₹0
-    </div>
-
-    <div class="stat-change">
-        Weekly performance
-    </div>
+Today's Revenue
 
 </div>
+
+
+<div class="stat-icon">
+
+💰
+
+</div>
+
+
+</div>
+
+
+<div
+class="stat-value"
+id="todayRevenue">
+
+₹0
+
+</div>
+
+
+<div class="stat-change">
+
+Today's earnings
+
+</div>
+
+
+</div>
+
 
 
 <div class="stat">
 
-    <div class="stat-top">
 
-        <div class="stat-label">
-            30 Days Revenue
-        </div>
+<div class="stat-top">
 
-        <div class="stat-icon">
-            📈
-        </div>
 
-    </div>
+<div class="stat-label">
 
-    <div class="stat-value" id="monthRevenue">
-        ₹0
-    </div>
-
-    <div class="stat-change">
-        Monthly earnings
-    </div>
+7 Days Revenue
 
 </div>
+
+
+<div class="stat-icon">
+
+📅
+
+</div>
+
+
+</div>
+
+
+<div
+class="stat-value"
+id="weekRevenue">
+
+₹0
+
+</div>
+
+
+<div class="stat-change">
+
+Weekly performance
+
+</div>
+
+
+</div>
+
 
 
 <div class="stat">
 
-    <div class="stat-top">
 
-        <div class="stat-label">
-            Total Revenue
-        </div>
+<div class="stat-top">
 
-        <div class="stat-icon">
-            🏦
-        </div>
 
-    </div>
+<div class="stat-label">
 
-    <div class="stat-value" id="allRevenue">
-        ₹0
-    </div>
-
-    <div class="stat-change">
-        All time earnings
-    </div>
+30 Days Revenue
 
 </div>
 
-</section><!-- COURSES --><section class="section" id="courses"><div class="section-head"><h2 class="section-title">
-    📚 Courses
+
+<div class="stat-icon">
+
+📈
+
+</div>
+
+
+</div>
+
+
+<div
+class="stat-value"
+id="monthRevenue">
+
+₹0
+
+</div>
+
+
+<div class="stat-change">
+
+Monthly earnings
+
+</div>
+
+
+</div>
+
+
+
+<div class="stat">
+
+
+<div class="stat-top">
+
+
+<div class="stat-label">
+
+Total Revenue
+
+</div>
+
+
+<div class="stat-icon">
+
+🏦
+
+</div>
+
+
+</div>
+
+
+<div
+class="stat-value"
+id="allRevenue">
+
+₹0
+
+</div>
+
+
+<div class="stat-change">
+
+All time earnings
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- COURSES -->
+
+<section
+class="section"
+id="courses">
+
+
+<div class="section-head">
+
+<h2 class="section-title">
+
+📚 Courses
+
 </h2>
 
-</div><div class="course-grid"><div class="course-card"><div class="course-cover">
+</div>
 
-    <div class="book starter">
 
-        <div class="book-text">
-            STUDY<br>
-            & SKILL<br>
-            STARTER
-        </div>
 
-    </div>
+<div class="course-grid">
+
+
+<!-- COURSE 1 -->
+
+<div class="course-card">
+
+
+<div class="course-cover">
+
+
+<div class="book starter">
+
+
+<div class="book-text">
+
+STUDY<br>
+
+& SKILL<br>
+
+STARTER
 
 </div>
+
+
+</div>
+
+
+</div>
+
 
 
 <div class="course-body">
 
-    <h3>
-        Study & Skill Starter
-    </h3>
 
-    <p>
-        Study Material, Communication Skills,
-        Maths, Reasoning, Hindi और Learning.
-    </p>
+<h3>
 
-    <div class="course-price-row">
+Study & Skill Starter
 
-        <span class="course-price">
-            ₹199
-        </span>
-
-        <span>
-            2 Courses
-        </span>
-
-    </div>
-
-    <button
-    class="course-btn"
-    onclick="location.href='course.html'">
-
-        View Course
-
-    </button>
-
-</div>
-
-</div><div class="course-card"><div class="course-cover premium">
-
-    <div class="book premium-book">
-
-        <div class="book-text">
-            SKILL<br>
-            & SUCCESS<br>
-            PREMIUM
-        </div>
-
-    </div>
-
-</div>
+</h3>
 
 
-<div class="course-body">
+<p>
 
-    <h3>
-        Skill & Success Premium
-    </h3>
-
-    <p>
-        Competitive Preparation,
-        Premium Skills,
-        Growth और Full Course Access.
-    </p>
-
-    <div class="course-price-row">
-
-        <span class="course-price">
-            ₹399
-        </span>
-
-        <span>
-            All Courses
-        </span>
-
-    </div>
-
-    <button
-    class="course-btn"
-    onclick="location.href='course.html'">
-
-        View Course
-
-    </button>
-
-</div>
-
-</div></div></section><!-- AFFILIATE --><section class="section" id="affiliate"><div class="section-head"><h2 class="section-title">
-    🔗 Affiliate Center
-</h2>
-
-</div><div class="card"><p style="font-size:13px;color:#777">
-
-    अपना Referral Link share करें और
-    eligible course sales पर commission earn करें।
+Study Material, Communication Skills,
+Maths, Reasoning, Hindi और Learning.
 
 </p>
+
+
+
+<div class="course-price-row">
+
+
+<span class="course-price">
+
+₹199
+
+</span>
+
+
+<span>
+
+2 Courses
+
+</span>
+
+
+</div>
+
+
+
+<button
+class="course-btn"
+onclick="location.href='course.html'">
+
+View Course
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- COURSE 2 -->
+
+<div class="course-card">
+
+
+<div class="course-cover premium">
+
+
+<div class="book premium-book">
+
+
+<div class="book-text">
+
+SKILL<br>
+
+& SUCCESS<br>
+
+PREMIUM
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="course-body">
+
+
+<h3>
+
+Skill & Success Premium
+
+</h3>
+
+
+<p>
+
+Competitive Preparation,
+Premium Skills,
+Growth और Full Course Access.
+
+</p>
+
+
+
+<div class="course-price-row">
+
+
+<span class="course-price">
+
+₹399
+
+</span>
+
+
+<span>
+
+All Courses
+
+</span>
+
+
+</div>
+
+
+
+<button
+class="course-btn"
+onclick="location.href='course.html'">
+
+View Course
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- AFFILIATE -->
+
+<section
+class="section"
+id="affiliate">
+
+
+<div class="section-head">
+
+
+<h2 class="section-title">
+
+🔗 Affiliate Center
+
+</h2>
+
+
+</div>
+
+
+
+<div class="card">
+
+
+<p style="font-size:13px;color:#777">
+
+अपना Referral Link share करें और
+eligible course sales पर commission earn करें।
+
+</p>
+
 
 
 <div class="referral-link">
 
-    <input
-    id="referralLink"
-    readonly
-    placeholder="Loading...">
 
-    <button
-    class="copy-btn"
-    id="copyBtn">
+<input
+id="referralLink"
+readonly
+placeholder="Loading...">
 
-        Copy
 
-    </button>
+<button
+class="copy-btn"
+id="copyBtn">
+
+Copy
+
+</button>
+
 
 </div>
+
 
 
 <div class="mini-grid">
 
-    <div class="mini">
 
-        <span>
-            Referrals
-        </span>
-
-        <strong id="referralCount">
-            0
-        </strong>
-
-    </div>
+<div class="mini">
 
 
-    <div class="mini">
+<span>
 
-        <span>
-            Points
-        </span>
+Referrals
 
-        <strong id="referralPoints">
-            0
-        </strong>
-
-    </div>
+</span>
 
 
-    <div class="mini">
+<strong id="referralCount">
 
-        <span>
-            Status
-        </span>
+0
 
-        <strong id="affiliateStatus">
-            Active
-        </strong>
+</strong>
 
-    </div>
 
 </div>
 
-</div></section><!-- COMMISSION --><section class="section" id="commission"><div class="section-head"><h2 class="section-title">
-    📊 Commission Structure
+
+
+<div class="mini">
+
+
+<span>
+
+Points
+
+</span>
+
+
+<strong id="referralPoints">
+
+0
+
+</strong>
+
+
+</div>
+
+
+
+<div class="mini">
+
+
+<span>
+
+Status
+
+</span>
+
+
+<strong id="affiliateStatus">
+
+Active
+
+</strong>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- COMMISSION -->
+
+<section
+class="section"
+id="commission">
+
+
+<div class="section-head">
+
+
+<h2 class="section-title">
+
+📊 Commission Structure
+
 </h2>
 
-</div><div class="commission-grid"><div class="commission-box"><h3>
-    Study & Skill Starter
-</h3>
 
-<p>
-    Course Price: ₹199
-</p>
-
-<div class="commission-amount">
-    Commission ₹100
 </div>
 
-</div><div class="commission-box"><h3>
-    Skill & Success Premium
+
+
+<div class="commission-grid">
+
+
+<div class="commission-box">
+
+
+<h3>
+
+Study & Skill Starter
+
 </h3>
 
+
 <p>
-    Course Price: ₹399
+
+Course Price: ₹199
+
 </p>
 
+
 <div class="commission-amount">
-    Commission ₹200
+
+Commission ₹100
+
 </div>
 
-</div></div></section></main></div><script type="module">
+
+</div>
+
+
+
+<div class="commission-box">
+
+
+<h3>
+
+Skill & Success Premium
+
+</h3>
+
+
+<p>
+
+Course Price: ₹399
+
+</p>
+
+
+<div class="commission-amount">
+
+Commission ₹200
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+</div>
+
+
+
+<!-- =========================
+     FIREBASE JAVASCRIPT
+========================= -->
+
+<script type="module">
+
 
 import {
 initializeApp
@@ -1103,43 +1555,65 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
+
+/* =========================
+   FIREBASE CONFIG
+========================= */
+
 const firebaseConfig={
+
 
 apiKey:
 "AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
+
 authDomain:
 "padho-aur-kamao-3eeae.firebaseapp.com",
+
 
 projectId:
 "padho-aur-kamao-3eeae",
 
+
 storageBucket:
 "padho-aur-kamao-3eeae.firebasestorage.app",
+
 
 messagingSenderId:
 "670063905617",
 
+
 appId:
 "1:670063905617:web:9b3a7e62fdeea14fbfa170",
+
 
 measurementId:
 "G-7J1YV8HN3F"
 
+
 };
+
 
 
 const app=
 initializeApp(firebaseConfig);
 
+
 const auth=
 getAuth(app);
+
 
 const db=
 getFirestore(app);
 
 
+
+/* =========================
+   CURRENT USER
+========================= */
+
 let currentUser=null;
+
 
 
 const $=
@@ -1147,48 +1621,134 @@ id=>
 document.getElementById(id);
 
 
-/* MOBILE MENU */
+
+/* =========================
+   ADMIN SETTINGS
+========================= */
+
+/*
+   अपना Firebase admin email यहां रखें
+*/
+
+const ADMIN_EMAIL =
+"yadavmukesh00888@gmail.com";
+
+
+
+/* =========================
+   ADMIN MENU CHECK
+========================= */
+
+function checkAdmin(){
+
+
+const adminMenu =
+$("adminMenu");
+
+
+if(
+
+currentUser &&
+
+currentUser.email &&
+
+currentUser.email.toLowerCase() ===
+ADMIN_EMAIL.toLowerCase()
+
+){
+
+
+adminMenu.style.display=
+"flex";
+
+
+}else{
+
+
+adminMenu.style.display=
+"none";
+
+
+}
+
+
+}
+
+
+
+/* =========================
+   MOBILE MENU
+========================= */
 
 $("mobileMenu").onclick=()=>{
 
-    $("sidebar").classList.add("open");
 
-    $("overlay").classList.add("show");
+$("sidebar")
+.classList
+.add("open");
+
+
+$("overlay")
+.classList
+.add("show");
+
 
 };
+
 
 
 $("overlay").onclick=()=>{
 
-    $("sidebar").classList.remove("open");
 
-    $("overlay").classList.remove("show");
+$("sidebar")
+.classList
+.remove("open");
+
+
+$("overlay")
+.classList
+.remove("show");
+
 
 };
 
 
-/* REFERRAL CODE */
+
+
+/* =========================
+   REFERRAL CODE
+========================= */
 
 function makeReferral(uid){
 
-    return "PAK"+
-    uid.substring(0,8).toUpperCase();
+
+return "PAK"+
+uid.substring(0,8).toUpperCase();
+
 
 }
 
 
-/* MONEY FORMAT */
+
+/* =========================
+   MONEY FORMAT
+========================= */
 
 function money(value){
 
-    return "₹"+
-    Number(value||0)
-    .toLocaleString("en-IN");
+
+return "₹"+
+Number(value||0)
+.toLocaleString("en-IN");
+
 
 }
 
 
-/* AUTH */
+
+/* =========================
+   AUTH CHECK
+========================= */
 
 onAuthStateChanged(
 
@@ -1196,28 +1756,42 @@ auth,
 
 async user=>{
 
-    if(!user){
 
-        location.href="login.html";
+if(!user){
 
-        return;
 
-    }
+location.href=
+"login.html";
 
-    currentUser=user;
 
-    await loadUser();
+return;
+
+
+}
+
+
+currentUser=user;
+
+
+await loadUser();
+
 
 }
 
 );
 
 
-/* LOAD USER */
+
+
+/* =========================
+   LOAD USER
+========================= */
 
 async function loadUser(){
 
+
 try{
+
 
 const ref=
 doc(
@@ -1227,50 +1801,69 @@ currentUser.uid
 );
 
 
+
 const snap=
 await getDoc(ref);
+
 
 
 let data;
 
 
+
 if(snap.exists()){
 
-    data=snap.data();
+
+data=
+snap.data();
+
 
 }else{
 
-    data={
 
-        name:
-        currentUser.displayName||
-        "Student",
-
-        email:
-        currentUser.email||
-        "",
-
-        referralCode:
-        makeReferral(
-        currentUser.uid
-        ),
-
-        points:0,
-
-        totalReferrals:0,
-
-        coursePurchased:false
-
-    };
+data={
 
 
-    await setDoc(
-    ref,
-    data
-    );
+name:
+currentUser.displayName||
+"Student",
+
+
+email:
+currentUser.email||
+"",
+
+
+referralCode:
+makeReferral(
+currentUser.uid
+),
+
+
+points:0,
+
+
+totalReferrals:0,
+
+
+coursePurchased:false
+
+
+};
+
+
+
+await setDoc(
+ref,
+data
+);
+
 
 }
 
+
+
+/* USER NAME */
 
 const name=
 data.name||
@@ -1278,17 +1871,23 @@ currentUser.displayName||
 "Student";
 
 
+
 $("welcomeName").innerText=
 "Welcome, "+name+" 👋";
+
 
 
 $("topName").innerText=
 name;
 
 
+
 $("avatar").innerText=
 name.charAt(0).toUpperCase();
 
+
+
+/* REFERRAL CODE */
 
 const code=
 data.referralCode||
@@ -1297,7 +1896,9 @@ currentUser.uid
 );
 
 
+
 $("referralLink").value=
+
 
 location.origin+
 location.pathname+
@@ -1305,42 +1906,70 @@ location.pathname+
 encodeURIComponent(code);
 
 
+
+/* POINTS */
+
 $("referralPoints").innerText=
 data.points||0;
 
 
+
+/* LOAD DATA */
+
 await loadReferrals(code);
+
 
 await loadEarnings();
 
 
+
+/* =========================
+   SHOW ADMIN PANEL
+========================= */
+
+checkAdmin();
+
+
+
 }catch(error){
+
 
 console.log(
 "User Load Error:",
 error
 );
 
-}
 
 }
 
 
-/* REFERRALS */
+}
+
+
+
+
+/* =========================
+   LOAD REFERRALS
+========================= */
 
 async function loadReferrals(code){
 
+
 try{
+
 
 const snap=
 await getDocs(
 
+
 query(
+
 
 collection(
 db,
 "referrals"
 ),
+
 
 where(
 "referrerCode",
@@ -1348,9 +1977,12 @@ where(
 code
 )
 
+
 )
 
+
 );
+
 
 
 $("referralCount").innerText=
@@ -1359,29 +1991,47 @@ snap.size;
 
 }catch(error){
 
+
+console.log(
+"Referral Error:",
+error
+);
+
+
 $("referralCount").innerText=
 "0";
 
-}
 
 }
 
 
-/* EARNINGS */
+}
+
+
+
+
+/* =========================
+   LOAD EARNINGS
+========================= */
 
 async function loadEarnings(){
 
+
 try{
+
 
 const snap=
 await getDocs(
 
+
 query(
+
 
 collection(
 db,
 "earnings"
 ),
+
 
 where(
 "userId",
@@ -1389,32 +2039,45 @@ where(
 currentUser.uid
 )
 
+
 )
+
 
 );
 
 
+
 let total=0;
+
 let today=0;
+
 let week=0;
+
 let month=0;
+
 
 
 const now=
 Date.now();
 
 
+
 snap.forEach(item=>{
+
 
 const d=
 item.data();
+
 
 
 const amount=
 Number(d.amount||0);
 
 
-total+=amount;
+
+total+=
+amount;
+
 
 
 const timestamp=
@@ -1422,129 +2085,216 @@ d.createdAt
 ?.toMillis?.()||0;
 
 
+
 if(timestamp>0){
 
-    if(now-timestamp<=86400000){
-        today+=amount;
-    }
 
-    if(now-timestamp<=604800000){
-        week+=amount;
-    }
+if(
+now-timestamp<=86400000
+){
 
-    if(now-timestamp<=2592000000){
-        month+=amount;
-    }
+today+=
+amount;
 
 }
 
+
+
+if(
+now-timestamp<=604800000
+){
+
+week+=
+amount;
+
+}
+
+
+
+if(
+now-timestamp<=2592000000
+){
+
+month+=
+amount;
+
+}
+
+
+}
+
+
 });
+
 
 
 $("todayRevenue").innerText=
 money(today);
 
+
 $("weekRevenue").innerText=
 money(week);
 
+
 $("monthRevenue").innerText=
 money(month);
+
 
 $("allRevenue").innerText=
 money(total);
 
 
+
 }catch(error){
+
 
 console.log(
 "Earning Error:",
 error
 );
 
-}
 
 }
 
 
-/* COPY REFERRAL */
+}
+
+
+
+
+/* =========================
+   COPY REFERRAL LINK
+========================= */
 
 $("copyBtn").onclick=
 
 async()=>{
 
+
 const link=
 $("referralLink").value;
 
 
+
 try{
+
 
 await navigator.clipboard.writeText(
 link
 );
 
 
+
 $("copyBtn").innerText=
 "Copied ✓";
 
 
+
 setTimeout(
 
+
 ()=>{
+
 
 $("copyBtn").innerText=
 "Copy";
 
+
 },
 
+
 1500
+
 
 );
 
 
 }catch(error){
 
+
+
 $("referralLink").select();
+
+
 
 document.execCommand(
 "copy"
 );
 
+
+
+$("copyBtn").innerText=
+"Copied ✓";
+
+
+
+setTimeout(
+
+
+()=>{
+
+
+$("copyBtn").innerText=
+"Copy";
+
+
+},
+
+
+1500
+
+
+);
+
+
 }
+
 
 };
 
 
-/* ACTIVE MENU */
+
+
+/* =========================
+   SIDEBAR MOBILE CLOSE
+========================= */
 
 document
 .querySelectorAll(".side-link")
 .forEach(link=>{
 
+
 link.addEventListener(
+
 
 "click",
 
-event=>{
 
-    /*
-    Future pages can be linked here.
-    Currently menu items stay in sidebar only.
-    */
-
-    $("sidebar")
-    .classList
-    .remove("open");
+()=>{
 
 
-    $("overlay")
-    .classList
-    .remove("show");
+$("sidebar")
+.classList
+.remove("open");
+
+
+$("overlay")
+.classList
+.remove("show");
+
 
 }
 
+
 );
+
 
 });
 
 
-</script></body></html>
+</script>
+
+
+</body>
+
+</html>
