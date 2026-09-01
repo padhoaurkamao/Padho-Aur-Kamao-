@@ -2,6 +2,7 @@
 <html lang="hi">
 
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +29,7 @@ body{
 
 button{
     font-family:inherit;
+    cursor:pointer;
 }
 
 .hidden{
@@ -63,7 +65,7 @@ button{
 }
 
 .denied-box{
-    background:white;
+    background:#fff;
     max-width:450px;
     width:100%;
     padding:35px;
@@ -87,7 +89,6 @@ button{
     color:white;
     padding:12px 20px;
     border-radius:10px;
-    cursor:pointer;
     font-weight:bold;
 }
 
@@ -126,19 +127,12 @@ button{
     font-size:12px;
 }
 
-.header-right{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
 .logout-top{
     border:0;
     background:#172033;
     color:white;
     padding:10px 16px;
     border-radius:10px;
-    cursor:pointer;
 }
 
 
@@ -210,7 +204,7 @@ button{
 
 
 /* =========================
-   REQUEST CARD
+   REQUEST GRID
 ========================= */
 
 .grid{
@@ -230,6 +224,7 @@ button{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    gap:10px;
     margin-bottom:15px;
 }
 
@@ -237,6 +232,11 @@ button{
     font-size:18px;
     font-weight:bold;
 }
+
+
+/* =========================
+   STATUS
+========================= */
 
 .status{
     padding:6px 10px;
@@ -259,6 +259,11 @@ button{
     background:#fee2e2;
     color:#dc2626;
 }
+
+
+/* =========================
+   INFO
+========================= */
 
 .info{
     margin:8px 0;
@@ -290,7 +295,6 @@ button{
     background:#16a34a;
     color:white;
     font-weight:bold;
-    cursor:pointer;
 }
 
 .reject-btn{
@@ -301,12 +305,11 @@ button{
     background:#dc2626;
     color:white;
     font-weight:bold;
-    cursor:pointer;
 }
 
 
 /* =========================
-   USERS
+   USERS TABLE
 ========================= */
 
 .table-box{
@@ -410,17 +413,19 @@ th{
 <body>
 
 
-<!-- LOADING -->
+<!-- =========================
+     LOADING
+========================= -->
 
 <div id="loading">
-
     Checking Admin Access...
-
 </div>
 
 
 
-<!-- ACCESS DENIED -->
+<!-- =========================
+     ACCESS DENIED
+========================= -->
 
 <div id="accessDenied" class="denied hidden">
 
@@ -446,7 +451,9 @@ th{
 
 
 
-<!-- ADMIN PANEL -->
+<!-- =========================
+     ADMIN PANEL
+========================= -->
 
 <div id="adminPanel" class="hidden">
 
@@ -458,25 +465,19 @@ th{
         🛡️ Padho Aur Kamao
 
         <span class="admin-badge">
-
             ADMIN PANEL
-
         </span>
 
     </div>
 
 
-    <div class="header-right">
+    <button
+    class="logout-top"
+    id="logoutBtn">
 
-        <button
-        class="logout-top"
-        id="logoutBtn">
+        Logout
 
-            Logout
-
-        </button>
-
-    </div>
+    </button>
 
 </header>
 
@@ -486,21 +487,19 @@ th{
 
 
 <h1 class="title">
-
     Admin Dashboard 👋
-
 </h1>
 
 
 <p class="subtitle">
-
     KYC और Withdrawal Requests को manage करें।
-
 </p>
 
 
 
-<!-- STATS -->
+<!-- =========================
+     STATS
+========================= -->
 
 <section class="stats">
 
@@ -508,17 +507,11 @@ th{
 <div class="stat">
 
     <div class="stat-label">
-
         Total Users
-
     </div>
 
-    <div
-    class="stat-value"
-    id="totalUsers">
-
+    <div class="stat-value" id="totalUsers">
         0
-
     </div>
 
 </div>
@@ -528,17 +521,11 @@ th{
 <div class="stat">
 
     <div class="stat-label">
-
         Pending KYC
-
     </div>
 
-    <div
-    class="stat-value"
-    id="pendingKycCount">
-
+    <div class="stat-value" id="pendingKycCount">
         0
-
     </div>
 
 </div>
@@ -548,17 +535,11 @@ th{
 <div class="stat">
 
     <div class="stat-label">
-
         Pending Withdrawals
-
     </div>
 
-    <div
-    class="stat-value"
-    id="pendingWithdrawalCount">
-
+    <div class="stat-value" id="pendingWithdrawalCount">
         0
-
     </div>
 
 </div>
@@ -568,17 +549,11 @@ th{
 <div class="stat">
 
     <div class="stat-label">
-
         Approved Withdrawals
-
     </div>
 
-    <div
-    class="stat-value"
-    id="approvedWithdrawalCount">
-
+    <div class="stat-value" id="approvedWithdrawalCount">
         0
-
     </div>
 
 </div>
@@ -588,25 +563,21 @@ th{
 
 
 
-<!-- KYC -->
+<!-- =========================
+     KYC
+========================= -->
 
 <section class="section">
 
 <h2 class="section-title">
-
     🪪 Pending KYC Requests
-
 </h2>
 
 
-<div
-class="grid"
-id="kycList">
+<div class="grid" id="kycList">
 
     <div class="empty">
-
         Loading KYC Requests...
-
     </div>
 
 </div>
@@ -616,25 +587,21 @@ id="kycList">
 
 
 
-<!-- WITHDRAWAL -->
+<!-- =========================
+     WITHDRAWALS
+========================= -->
 
 <section class="section">
 
 <h2 class="section-title">
-
     💸 Pending Withdrawal Requests
-
 </h2>
 
 
-<div
-class="grid"
-id="withdrawalList">
+<div class="grid" id="withdrawalList">
 
     <div class="empty">
-
         Loading Withdrawal Requests...
-
     </div>
 
 </div>
@@ -644,14 +611,14 @@ id="withdrawalList">
 
 
 
-<!-- USERS -->
+<!-- =========================
+     USERS
+========================= -->
 
 <section class="section">
 
 <h2 class="section-title">
-
     👥 Registered Users
-
 </h2>
 
 
@@ -683,15 +650,12 @@ id="withdrawalList">
 <tr>
 
 <td colspan="5">
-
 Loading Users...
-
 </td>
 
 </tr>
 
 </tbody>
-
 
 </table>
 
@@ -714,7 +678,6 @@ Loading Users...
    FIREBASE IMPORTS
 ========================= */
 
-
 import {
 
 initializeApp
@@ -726,13 +689,10 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
-
 import {
 
 getAuth,
-
 onAuthStateChanged,
-
 signOut
 
 }
@@ -742,28 +702,22 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
-
 import {
 
 getFirestore,
 
 collection,
-
 getDocs,
 
 doc,
+getDoc,
+
+query,
+where,
 
 updateDoc,
 
-query,
-
-where,
-
-serverTimestamp,
-
-increment,
-
-getDoc
+serverTimestamp
 
 }
 
@@ -772,98 +726,78 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-
 /* =========================
    FIREBASE CONFIG
 ========================= */
 
-
 const firebaseConfig={
-
 
 apiKey:
 "AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
-
 authDomain:
 "padho-aur-kamao-3eeae.firebaseapp.com",
-
 
 projectId:
 "padho-aur-kamao-3eeae",
 
-
 storageBucket:
 "padho-aur-kamao-3eeae.firebasestorage.app",
-
 
 messagingSenderId:
 "670063905617",
 
-
 appId:
 "1:670063905617:web:9b3a7e62fdeea14fbfa170",
-
 
 measurementId:
 "G-7J1YV8HN3F"
 
-
 };
-
 
 
 /* =========================
    INITIALIZE
 ========================= */
 
-
 const app=
 initializeApp(firebaseConfig);
 
-
 const auth=
 getAuth(app);
-
 
 const db=
 getFirestore(app);
 
 
-
 /* =========================
-   YOUR ADMIN UID
+   ADMIN UID
 ========================= */
 
-
 const ADMIN_UID=
-
 "BwEY7fReQpddMVHsDcbCMhUXkb62";
 
+
+let currentAdmin=null;
 
 
 /* =========================
    ELEMENTS
 ========================= */
 
-
 const loading=
 document.getElementById("loading");
 
-
 const adminPanel=
 document.getElementById("adminPanel");
-
 
 const accessDenied=
 document.getElementById("accessDenied");
 
 
-
 /* =========================
    AUTH CHECK
 ========================= */
-
 
 onAuthStateChanged(
 
@@ -871,78 +805,69 @@ auth,
 
 async(user)=>{
 
+    if(!user){
 
-if(!user){
+        location.href="login.html";
 
-    location.href="login.html";
+        return;
 
-    return;
-
-}
-
+    }
 
 
-/* ADMIN UID CHECK */
+    /*
+       ADMIN UID CHECK
+    */
+
+    if(user.uid!==ADMIN_UID){
+
+        loading.classList.add("hidden");
+
+        accessDenied.classList.remove("hidden");
+
+        return;
+
+    }
 
 
-if(user.uid!==ADMIN_UID){
+    currentAdmin=user;
+
 
     loading.classList.add("hidden");
 
-    accessDenied.classList.remove("hidden");
-
-    return;
-
-}
+    adminPanel.classList.remove("hidden");
 
 
-
-/* SHOW ADMIN */
-
-
-loading.classList.add("hidden");
-
-adminPanel.classList.remove("hidden");
-
-
-
-await loadDashboard();
-
+    await loadDashboard();
 
 }
 
 );
 
 
-
 /* =========================
    LOAD DASHBOARD
 ========================= */
 
-
 async function loadDashboard(){
 
+    await Promise.all([
 
-await loadUsers();
+        loadUsers(),
 
+        loadKYC(),
 
-await loadKYC();
+        loadWithdrawals()
 
-
-await loadWithdrawals();
-
+    ]);
 
 }
-
 
 
 /* =========================
    LOAD USERS
 ========================= */
 
-
 async function loadUsers(){
-
 
 try{
 
@@ -950,57 +875,69 @@ try{
 const snap=
 
 await getDocs(
-
 collection(db,"users")
-
 );
 
 
-document.getElementById(
-
-"totalUsers"
-
-).innerText=snap.size;
-
+document
+.getElementById("totalUsers")
+.innerText=snap.size;
 
 
 const table=
-
-document.getElementById(
-
-"usersTable"
-
-);
+document.getElementById("usersTable");
 
 
 table.innerHTML="";
+
+
+if(snap.empty){
+
+table.innerHTML=
+
+`<tr>
+<td colspan="5">
+No users found.
+</td>
+</tr>`;
+
+return;
+
+}
 
 
 snap.forEach(item=>{
 
 
 const data=
-
 item.data();
 
 
-
 const row=
-
 document.createElement("tr");
 
 
 row.innerHTML=`
 
-<td>${escapeHTML(data.name||"Student")}</td>
+<td>
+${escapeHTML(data.name||"Student")}
+</td>
 
-<td>${escapeHTML(data.email||"")}</td>
+<td>
+${escapeHTML(data.email||"")}
+</td>
 
-<td>${escapeHTML(data.referralCode||"-")}</td>
+<td>
+${escapeHTML(data.referralCode||"-")}
+</td>
 
-<td>${escapeHTML(data.kycStatus||"Pending")}</td>
+<td>
+${escapeHTML(data.kycStatus||"Pending")}
+</td>
 
-<td>${escapeHTML(data.accountStatus||"Active")}</td>
+<td>
+${escapeHTML(data.accountStatus||"Active")}
+</td>
 
 `;
 
@@ -1013,29 +950,21 @@ table.appendChild(row);
 
 }catch(error){
 
-
-console.log(
-
+console.error(
 "Users Error:",
-
 error
-
 );
 
-
 }
 
 }
-
 
 
 /* =========================
    LOAD KYC
 ========================= */
 
-
 async function loadKYC(){
-
 
 try{
 
@@ -1048,37 +977,30 @@ query(
 
 collection(db,"kycRequests"),
 
-where("status","==","Pending")
+where(
+"status",
+"==",
+"pending"
+)
 
 )
 
 );
 
 
-
-document.getElementById(
-
-"pendingKycCount"
-
-).innerText=snap.size;
-
+document
+.getElementById("pendingKycCount")
+.innerText=snap.size;
 
 
 const list=
-
-document.getElementById(
-
-"kycList"
-
-);
+document.getElementById("kycList");
 
 
 list.innerHTML="";
 
 
-
 if(snap.empty){
-
 
 list.innerHTML=
 
@@ -1088,35 +1010,23 @@ list.innerHTML=
 
 </div>`;
 
-
 return;
 
-
 }
-
 
 
 snap.forEach(item=>{
 
 
 const data=
-
 item.data();
 
 
-const id=
-
-item.id;
-
-
-
 const card=
-
 document.createElement("div");
 
 
 card.className=
-
 "request-card";
 
 
@@ -1160,24 +1070,6 @@ ${escapeHTML(data.mobile||"-")}
 
 <div class="info">
 
-<strong>PAN:</strong>
-
-${escapeHTML(data.panNumber||"-")}
-
-</div>
-
-
-<div class="info">
-
-<strong>Aadhaar:</strong>
-
-${escapeHTML(data.aadhaarNumber||"-")}
-
-</div>
-
-
-<div class="info">
-
 <strong>Bank:</strong>
 
 ${escapeHTML(data.bankName||"-")}
@@ -1189,7 +1081,11 @@ ${escapeHTML(data.bankName||"-")}
 
 <strong>Account:</strong>
 
-${escapeHTML(data.accountNumber||"-")}
+${escapeHTML(
+maskAccount(
+data.accountNumber||""
+)
+)}
 
 </div>
 
@@ -1207,7 +1103,7 @@ ${escapeHTML(data.ifscCode||"-")}
 
 <button
 class="approve-btn"
-data-kyc-approve="${id}"
+data-kyc-approve="${item.id}"
 data-user="${data.userId||""}">
 
 Approve
@@ -1217,7 +1113,7 @@ Approve
 
 <button
 class="reject-btn"
-data-kyc-reject="${id}"
+data-kyc-reject="${item.id}"
 data-user="${data.userId||""}">
 
 Reject
@@ -1235,133 +1131,76 @@ list.appendChild(card);
 });
 
 
+/* APPROVE BUTTON */
 
 document
-
-.querySelectorAll(
-
-"[data-kyc-approve]"
-
-)
-
+.querySelectorAll("[data-kyc-approve]")
 .forEach(btn=>{
 
-
 btn.onclick=
-
 async()=>{
-
-
-const id=
-
-btn.dataset.kycApprove;
-
-
-const userId=
-
-btn.dataset.user;
-
 
 await approveKYC(
 
-id,
+btn.dataset.kycApprove,
 
-userId
+btn.dataset.user
 
 );
 
-
 };
-
 
 });
 
 
+/* REJECT BUTTON */
 
 document
-
-.querySelectorAll(
-
-"[data-kyc-reject]"
-
-)
-
+.querySelectorAll("[data-kyc-reject]")
 .forEach(btn=>{
 
-
 btn.onclick=
-
 async()=>{
-
-
-const id=
-
-btn.dataset.kycReject;
-
-
-const userId=
-
-btn.dataset.user;
-
 
 await rejectKYC(
 
-id,
+btn.dataset.kycReject,
 
-userId
+btn.dataset.user
 
 );
 
-
 };
-
 
 });
 
 
 }catch(error){
 
-
-console.log(
-
+console.error(
 "KYC Error:",
-
 error
-
 );
 
-
 }
 
 }
-
 
 
 /* =========================
    APPROVE KYC
 ========================= */
 
-
 async function approveKYC(
-
 requestId,
-
 userId
-
 ){
 
-
-const ok=
-
-confirm(
-
+if(!confirm(
 "क्या आप इस KYC को Approve करना चाहते हैं?"
-
-);
-
-
-if(!ok)return;
-
+)){
+return;
+}
 
 
 try{
@@ -1369,111 +1208,89 @@ try{
 
 await updateDoc(
 
-doc(db,"kycRequests",requestId),
+doc(
+db,
+"kycRequests",
+requestId
+),
 
 {
 
-status:"Approved",
+status:
+"approved",
 
 approvedAt:
-
 serverTimestamp(),
 
 approvedBy:
-
-ADMIN_UID
+currentAdmin.uid
 
 }
 
 );
 
 
-
 if(userId){
-
 
 await updateDoc(
 
-doc(db,"users",userId),
+doc(
+db,
+"users",
+userId
+),
 
 {
 
-kycStatus:"Approved",
+kycStatus:
+"Approved",
 
 kycApprovedAt:
-
 serverTimestamp()
 
 }
 
 );
 
-
 }
 
 
-
 alert(
-
 "KYC Approved Successfully"
-
 );
 
 
-
-await loadKYC();
-
-
-await loadUsers();
+await loadDashboard();
 
 
 }catch(error){
 
-
-console.log(error);
-
+console.error(error);
 
 alert(
-
 "KYC Approval Error: "+
-
 error.message
-
 );
 
-
 }
 
-
 }
-
 
 
 /* =========================
    REJECT KYC
 ========================= */
 
-
 async function rejectKYC(
-
 requestId,
-
 userId
-
 ){
 
-
-const ok=
-
-confirm(
-
+if(!confirm(
 "क्या आप इस KYC को Reject करना चाहते हैं?"
-
-);
-
-
-if(!ok)return;
-
+)){
+return;
+}
 
 
 try{
@@ -1481,90 +1298,90 @@ try{
 
 await updateDoc(
 
-doc(db,"kycRequests",requestId),
+doc(
+db,
+"kycRequests",
+requestId
+),
 
 {
 
-status:"Rejected",
+status:
+"rejected",
 
 rejectedAt:
-
 serverTimestamp(),
 
 rejectedBy:
-
-ADMIN_UID
+currentAdmin.uid
 
 }
 
 );
-
 
 
 if(userId){
 
-
 await updateDoc(
 
-doc(db,"users",userId),
+doc(
+db,
+"users",
+userId
+),
 
 {
 
-kycStatus:"Rejected"
+kycStatus:
+"Rejected"
 
 }
 
 );
 
-
 }
-
 
 
 alert(
-
 "KYC Rejected"
-
-
-
 );
 
 
-
-await loadKYC();
-
-
-await loadUsers();
+await loadDashboard();
 
 
 }catch(error){
 
+console.error(error);
 
 alert(
-
 "KYC Reject Error: "+
-
 error.message
-
 );
 
-
 }
 
-
 }
-
 
 
 /* =========================
    LOAD WITHDRAWALS
 ========================= */
 
-
 async function loadWithdrawals(){
 
-
 try{
+
+
+/*
+  IMPORTANT:
+
+  wallet.html uses:
+
+  withdrawals
+
+  NOT withdrawalRequests
+*/
 
 
 const pendingSnap=
@@ -1573,14 +1390,17 @@ await getDocs(
 
 query(
 
-collection(db,"withdrawalRequests"),
+collection(db,"withdrawals"),
 
-where("status","==","Pending")
+where(
+"status",
+"==",
+"pending"
+)
 
 )
 
 );
-
 
 
 const approvedSnap=
@@ -1589,51 +1409,39 @@ await getDocs(
 
 query(
 
-collection(db,"withdrawalRequests"),
+collection(db,"withdrawals"),
 
-where("status","==","Approved")
+where(
+"status",
+"==",
+"approved"
+)
 
 )
 
 );
 
 
-
-document.getElementById(
-
-"pendingWithdrawalCount"
-
-).innerText=
-
+document
+.getElementById("pendingWithdrawalCount")
+.innerText=
 pendingSnap.size;
 
 
-
-document.getElementById(
-
-"approvedWithdrawalCount"
-
-).innerText=
-
+document
+.getElementById("approvedWithdrawalCount")
+.innerText=
 approvedSnap.size;
 
 
-
 const list=
-
-document.getElementById(
-
-"withdrawalList"
-
-);
+document.getElementById("withdrawalList");
 
 
 list.innerHTML="";
 
 
-
 if(pendingSnap.empty){
-
 
 list.innerHTML=
 
@@ -1643,35 +1451,23 @@ list.innerHTML=
 
 </div>`;
 
-
 return;
 
-
 }
-
 
 
 pendingSnap.forEach(item=>{
 
 
 const data=
-
 item.data();
 
 
-const id=
-
-item.id;
-
-
-
 const card=
-
 document.createElement("div");
 
 
 card.className=
-
 "request-card";
 
 
@@ -1681,7 +1477,10 @@ card.innerHTML=`
 
 <div class="request-name">
 
-${escapeHTML(data.name||"Student")}
+${escapeHTML(
+data.userName||
+"Student"
+)}
 
 </div>
 
@@ -1699,7 +1498,9 @@ Pending
 
 <strong>Amount:</strong>
 
-₹${Number(data.amount||0).toLocaleString("en-IN")}
+₹${Number(
+data.amount||0
+).toLocaleString("en-IN")}
 
 </div>
 
@@ -1708,43 +1509,31 @@ Pending
 
 <strong>Email:</strong>
 
-${escapeHTML(data.email||"-")}
+${escapeHTML(
+data.email||"-"
+)}
 
 </div>
 
 
 <div class="info">
 
-<strong>Bank:</strong>
+<strong>Payment Method:</strong>
 
-${escapeHTML(data.bankName||"-")}
-
-</div>
-
-
-<div class="info">
-
-<strong>Account:</strong>
-
-${escapeHTML(data.accountNumber||"-")}
+${escapeHTML(
+data.paymentMethod||"-"
+)}
 
 </div>
 
 
 <div class="info">
 
-<strong>IFSC:</strong>
+<strong>Payment Details:</strong>
 
-${escapeHTML(data.ifscCode||"-")}
-
-</div>
-
-
-<div class="info">
-
-<strong>UPI:</strong>
-
-${escapeHTML(data.upiId||"-")}
+${escapeHTML(
+data.paymentDetails||"-"
+)}
 
 </div>
 
@@ -1754,9 +1543,7 @@ ${escapeHTML(data.upiId||"-")}
 
 <button
 class="approve-btn"
-data-withdrawal-approve="${id}"
-data-user="${data.userId||""}"
-data-amount="${data.amount||0}">
+data-withdrawal-approve="${item.id}">
 
 Approve
 
@@ -1765,9 +1552,7 @@ Approve
 
 <button
 class="reject-btn"
-data-withdrawal-reject="${id}"
-data-user="${data.userId||""}"
-data-amount="${data.amount||0}">
+data-withdrawal-reject="${item.id}">
 
 Reject
 
@@ -1785,123 +1570,75 @@ list.appendChild(card);
 });
 
 
+/* APPROVE */
 
 document
-
 .querySelectorAll(
-
 "[data-withdrawal-approve]"
-
 )
-
 .forEach(btn=>{
 
-
 btn.onclick=
-
 async()=>{
-
 
 await approveWithdrawal(
 
-btn.dataset.withdrawalApprove,
-
-btn.dataset.user,
-
-Number(btn.dataset.amount)
+btn.dataset.withdrawalApprove
 
 );
 
-
 };
-
 
 });
 
 
+/* REJECT */
 
 document
-
 .querySelectorAll(
-
 "[data-withdrawal-reject]"
-
 )
-
 .forEach(btn=>{
 
-
 btn.onclick=
-
 async()=>{
-
 
 await rejectWithdrawal(
 
-btn.dataset.withdrawalReject,
-
-btn.dataset.user,
-
-Number(btn.dataset.amount)
+btn.dataset.withdrawalReject
 
 );
 
-
 };
-
 
 });
 
 
 }catch(error){
 
-
-console.log(
-
+console.error(
 "Withdrawal Error:",
-
 error
-
 );
 
-
 }
 
 }
-
 
 
 /* =========================
    APPROVE WITHDRAWAL
 ========================= */
 
-
 async function approveWithdrawal(
-
-requestId,
-
-userId,
-
-amount
-
+requestId
 ){
 
-
-const ok=
-
-confirm(
-
-"क्या ₹"+
-
-amount+
-
-" का Withdrawal Approve करना चाहते हैं?"
-
-);
-
-
-if(!ok)return;
-
+if(!confirm(
+"क्या आप इस Withdrawal को Approve करना चाहते हैं?"
+)){
+return;
+}
 
 
 try{
@@ -1909,32 +1646,31 @@ try{
 
 await updateDoc(
 
-doc(db,"withdrawalRequests",requestId),
+doc(
+db,
+"withdrawals",
+requestId
+),
 
 {
 
-status:"Approved",
+status:
+"approved",
 
 approvedAt:
-
 serverTimestamp(),
 
 approvedBy:
-
-ADMIN_UID
+currentAdmin.uid
 
 }
 
 );
 
 
-
 alert(
-
 "Withdrawal Approved Successfully"
-
 );
-
 
 
 await loadWithdrawals();
@@ -1942,53 +1678,32 @@ await loadWithdrawals();
 
 }catch(error){
 
-
-console.log(error);
+console.error(error);
 
 
 alert(
-
 "Approval Error: "+
-
 error.message
-
 );
 
-
 }
 
-
 }
-
 
 
 /* =========================
    REJECT WITHDRAWAL
 ========================= */
 
-
 async function rejectWithdrawal(
-
-requestId,
-
-userId,
-
-amount
-
+requestId
 ){
 
-
-const ok=
-
-confirm(
-
-"क्या आप Withdrawal Reject करना चाहते हैं?"
-
-);
-
-
-if(!ok)return;
-
+if(!confirm(
+"क्या आप इस Withdrawal को Reject करना चाहते हैं?"
+)){
+return;
+}
 
 
 try{
@@ -1996,32 +1711,31 @@ try{
 
 await updateDoc(
 
-doc(db,"withdrawalRequests",requestId),
+doc(
+db,
+"withdrawals",
+requestId
+),
 
 {
 
-status:"Rejected",
+status:
+"rejected",
 
 rejectedAt:
-
 serverTimestamp(),
 
 rejectedBy:
-
-ADMIN_UID
+currentAdmin.uid
 
 }
 
 );
 
 
-
 alert(
-
 "Withdrawal Rejected"
-
 );
-
 
 
 await loadWithdrawals();
@@ -2029,104 +1743,98 @@ await loadWithdrawals();
 
 }catch(error){
 
+console.error(error);
+
 
 alert(
-
 "Reject Error: "+
-
 error.message
-
 );
 
+}
 
 }
 
 
+/* =========================
+   MASK ACCOUNT
+========================= */
+
+function maskAccount(value){
+
+if(!value){
+return "-";
 }
 
+
+const text=
+String(value);
+
+
+if(text.length<=4){
+return text;
+}
+
+
+return
+"XXXX XXXX "+
+text.slice(-4);
+
+}
 
 
 /* =========================
    LOGOUT
 ========================= */
 
-
 document
-
-.getElementById(
-
-"logoutBtn"
-
-)
-
+.getElementById("logoutBtn")
 .onclick=
 
 async()=>{
 
-
 await signOut(auth);
 
-
 location.href=
-
 "login.html";
-
 
 };
 
 
-
 document
-
-.getElementById(
-
-"deniedLogout"
-
-)
-
+.getElementById("deniedLogout")
 .onclick=
 
 async()=>{
 
-
 await signOut(auth);
 
-
 location.href=
-
 "login.html";
 
-
 };
-
 
 
 /* =========================
-   SECURITY - HTML ESCAPE
+   HTML ESCAPE
 ========================= */
-
 
 function escapeHTML(text){
 
-
 const div=
-
 document.createElement("div");
 
 
 div.innerText=
-
 String(text);
 
 
 return div.innerHTML;
 
-
 }
 
 
 </script>
-
 
 </body>
 
