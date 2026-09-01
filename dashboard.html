@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -10,722 +12,700 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
-/* =========================
-   GLOBAL
-========================= */
-
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f4f6fb;
-  color:#172033;
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f6fb;
+color:#172033;
 }
 
 button{
-  font-family:inherit;
+font-family:inherit;
 }
 
 .hidden{
-  display:none !important;
+display:none !important;
 }
 
 
-/* =========================
-   SIDEBAR
-========================= */
+/* SIDEBAR */
 
 .sidebar{
-  width:270px;
-  min-height:100vh;
 
-  position:fixed;
-  left:0;
-  top:0;
+width:270px;
+min-height:100vh;
 
-  background:
-  linear-gradient(
-    180deg,
-    #4f1fa8,
-    #6d28d9,
-    #312e81
-  );
+position:fixed;
+left:0;
+top:0;
 
-  color:white;
+background:
+linear-gradient(
+180deg,
+#4f1fa8,
+#6d28d9,
+#312e81
+);
 
-  padding:22px 16px;
+color:white;
 
-  z-index:2000;
+padding:22px 16px;
 
-  transition:.3s;
+z-index:2000;
+
+transition:.3s;
+
 }
 
 .brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
 
-  padding:8px 10px 25px;
+display:flex;
+align-items:center;
+gap:10px;
 
-  border-bottom:
-  1px solid
-  rgba(255,255,255,.2);
+padding:8px 10px 25px;
 
-  margin-bottom:18px;
+border-bottom:
+1px solid
+rgba(255,255,255,.2);
+
+margin-bottom:18px;
+
 }
 
 .brand-icon{
-  width:45px;
-  height:45px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+width:45px;
+height:45px;
 
-  background:white;
+display:flex;
+align-items:center;
+justify-content:center;
 
-  color:#6526d7;
+background:white;
 
-  border-radius:12px;
+color:#6526d7;
 
-  font-size:22px;
+border-radius:12px;
+
+font-size:22px;
+
 }
 
 .brand-text{
-  font-size:18px;
-  font-weight:bold;
+font-size:18px;
+font-weight:bold;
 }
 
 .menu-title{
-  font-size:11px;
 
-  opacity:.65;
+font-size:11px;
 
-  margin:
-  20px 12px
-  8px;
+opacity:.65;
 
-  letter-spacing:1px;
+margin:
+20px 12px
+8px;
+
+letter-spacing:1px;
+
 }
 
 .menu-item{
-  width:100%;
 
-  display:flex;
-  align-items:center;
+width:100%;
 
-  gap:13px;
+display:flex;
+align-items:center;
 
-  padding:14px 13px;
+gap:13px;
 
-  border-radius:12px;
+padding:14px 13px;
 
-  border:none;
+border-radius:12px;
 
-  background:transparent;
+border:none;
 
-  color:white;
+background:transparent;
 
-  font-size:15px;
+color:white;
 
-  cursor:pointer;
+font-size:15px;
 
-  text-align:left;
+cursor:pointer;
 
-  margin-bottom:4px;
+text-align:left;
 
-  transition:.2s;
+margin-bottom:4px;
+
 }
 
 .menu-item:hover,
 .menu-item.active{
 
-  background:
-  rgba(255,255,255,.18);
+background:
+rgba(255,255,255,.18);
 
 }
 
 .menu-icon{
-  width:25px;
-  text-align:center;
-  font-size:18px;
+width:25px;
+text-align:center;
+font-size:18px;
 }
 
 .logout-btn{
-  margin-top:25px;
 
-  background:
-  rgba(255,255,255,.12);
+margin-top:25px;
 
-  border:
-  1px solid
-  rgba(255,255,255,.2);
+background:
+rgba(255,255,255,.12);
+
+border:
+1px solid
+rgba(255,255,255,.2);
+
 }
 
 
-/* =========================
-   MAIN
-========================= */
+/* MAIN */
 
 .main{
-  margin-left:270px;
-  min-height:100vh;
+margin-left:270px;
+min-height:100vh;
 }
 
 
-/* =========================
-   TOPBAR
-========================= */
+/* TOPBAR */
 
 .topbar{
-  height:75px;
 
-  background:white;
+height:75px;
 
-  display:flex;
+background:white;
 
-  align-items:center;
+display:flex;
 
-  justify-content:space-between;
+align-items:center;
 
-  padding:0 30px;
+justify-content:space-between;
 
-  border-bottom:
-  1px solid #e5e7eb;
+padding:0 30px;
 
-  position:sticky;
+border-bottom:
+1px solid #e5e7eb;
 
-  top:0;
+position:sticky;
 
-  z-index:1000;
+top:0;
+
+z-index:1000;
+
 }
 
 .menu-toggle{
-  display:none;
 
-  border:none;
+display:none;
 
-  background:#f1f5f9;
+border:none;
 
-  padding:10px;
+background:#f1f5f9;
 
-  border-radius:10px;
+padding:10px;
 
-  font-size:20px;
+border-radius:10px;
 
-  cursor:pointer;
+font-size:20px;
+
+cursor:pointer;
+
 }
 
 .welcome{
-  font-size:15px;
-  color:#64748b;
+font-size:15px;
+color:#64748b;
 }
 
 .user-area{
-  display:flex;
-  align-items:center;
-  gap:10px;
+
+display:flex;
+align-items:center;
+gap:10px;
+
 }
 
 .user-avatar{
-  width:42px;
-  height:42px;
 
-  border-radius:50%;
+width:42px;
+height:42px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+border-radius:50%;
 
-  background:
-  linear-gradient(
-    135deg,
-    #6526d7,
-    #8b5cf6
-  );
+display:flex;
+align-items:center;
+justify-content:center;
 
-  color:white;
+background:
+linear-gradient(
+135deg,
+#6526d7,
+#8b5cf6
+);
 
-  font-weight:bold;
+color:white;
 
-  font-size:18px;
+font-weight:bold;
+
+font-size:18px;
+
 }
 
 .user-name{
-  font-weight:bold;
-  font-size:14px;
+font-weight:bold;
+font-size:14px;
 }
 
 
-/* =========================
-   CONTENT
-========================= */
+/* CONTENT */
 
 .content{
-  padding:30px;
+padding:30px;
 }
 
 .page{
-  display:none;
+display:none;
 }
 
 .page.active{
-  display:block;
+display:block;
 }
 
 .page-title{
-  font-size:30px;
-  font-weight:800;
 
-  margin-bottom:8px;
+font-size:30px;
+font-weight:800;
+
+margin-bottom:8px;
+
 }
 
 .page-subtitle{
-  color:#64748b;
-  margin-bottom:28px;
+
+color:#64748b;
+margin-bottom:28px;
+
 }
 
 
-/* =========================
-   DASHBOARD CARDS
-========================= */
+/* STATS */
 
 .stats-grid{
 
-  display:grid;
+display:grid;
 
-  grid-template-columns:
-  repeat(
-    auto-fit,
-    minmax(210px,1fr)
-  );
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(210px,1fr)
+);
 
-  gap:18px;
+gap:18px;
 
-  margin-bottom:30px;
+margin-bottom:30px;
+
 }
 
 .stat-card{
 
-  background:white;
+background:white;
 
-  padding:22px;
+padding:22px;
 
-  border-radius:18px;
+border-radius:18px;
 
-  box-shadow:
-  0 8px 25px
-  rgba(15,23,42,.07);
+box-shadow:
+0 8px 25px
+rgba(15,23,42,.07);
 
-  border:
-  1px solid #edf0f5;
+border:
+1px solid #edf0f5;
+
 }
 
 .stat-icon{
-  font-size:30px;
-  margin-bottom:15px;
+font-size:30px;
+margin-bottom:15px;
 }
 
 .stat-label{
-  font-size:13px;
-  color:#64748b;
-  margin-bottom:8px;
+font-size:13px;
+color:#64748b;
+margin-bottom:8px;
 }
 
 .stat-value{
-  font-size:27px;
-  font-weight:800;
+font-size:27px;
+font-weight:800;
 }
 
 
-/* =========================
-   REFERRAL CARD
-========================= */
+/* REFERRAL */
 
 .referral-card{
 
-  background:
-  linear-gradient(
-    135deg,
-    #4f1fa8,
-    #7c3aed
-  );
+background:
+linear-gradient(
+135deg,
+#4f1fa8,
+#7c3aed
+);
 
-  color:white;
+color:white;
 
-  padding:30px;
+padding:30px;
 
-  border-radius:22px;
+border-radius:22px;
 
-  box-shadow:
-  0 15px 35px
-  rgba(91,33,182,.25);
+margin-bottom:25px;
 
-  margin-bottom:25px;
 }
 
 .referral-card h2{
-  margin-bottom:8px;
+margin-bottom:8px;
 }
 
 .referral-card p{
-  opacity:.85;
-  margin-bottom:22px;
+opacity:.85;
+margin-bottom:22px;
 }
 
 .referral-code-box{
 
-  background:
-  rgba(255,255,255,.15);
+background:
+rgba(255,255,255,.15);
 
-  border:
-  1px solid
-  rgba(255,255,255,.25);
+border:
+1px solid
+rgba(255,255,255,.25);
 
-  padding:16px;
+padding:16px;
 
-  border-radius:12px;
+border-radius:12px;
 
-  margin-bottom:15px;
+margin-bottom:15px;
 
-  word-break:break-all;
+word-break:break-all;
+
 }
 
 .referral-label{
-  font-size:12px;
-  opacity:.8;
-  margin-bottom:5px;
+font-size:12px;
+opacity:.8;
+margin-bottom:5px;
 }
 
 .referral-code{
-  font-size:20px;
-  font-weight:bold;
-  letter-spacing:1px;
+font-size:20px;
+font-weight:bold;
 }
 
 .referral-link{
-  font-size:13px;
-  word-break:break-all;
+font-size:13px;
+word-break:break-all;
 }
 
 .referral-buttons{
 
-  display:flex;
+display:flex;
 
-  gap:12px;
+gap:12px;
 
-  flex-wrap:wrap;
+flex-wrap:wrap;
 
-  margin-top:18px;
+margin-top:18px;
+
 }
 
 .ref-btn{
 
-  border:none;
+border:none;
 
-  padding:12px 18px;
+padding:12px 18px;
 
-  border-radius:10px;
+border-radius:10px;
 
-  cursor:pointer;
+cursor:pointer;
 
-  font-weight:bold;
+font-weight:bold;
+
 }
 
 .copy-btn{
-  background:white;
-  color:#5b21b6;
+background:white;
+color:#5b21b6;
 }
 
 .share-btn{
-  background:#25D366;
-  color:white;
+background:#25D366;
+color:white;
 }
 
 
-/* =========================
-   BOX
-========================= */
+/* BOX */
 
 .box{
 
-  background:white;
+background:white;
 
-  border-radius:18px;
+border-radius:18px;
 
-  padding:25px;
+padding:25px;
 
-  box-shadow:
-  0 8px 25px
-  rgba(15,23,42,.07);
+box-shadow:
+0 8px 25px
+rgba(15,23,42,.07);
 
-  border:
-  1px solid #edf0f5;
+border:
+1px solid #edf0f5;
 
-  margin-bottom:22px;
-}
+margin-bottom:22px;
 
-.box-title{
-  font-size:20px;
-  font-weight:bold;
-  margin-bottom:20px;
 }
 
 
-/* =========================
-   PROFILE
-========================= */
-
-.profile-row{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:20px;
-
-  flex-wrap:wrap;
-}
-
-.big-avatar{
-
-  width:85px;
-  height:85px;
-
-  border-radius:50%;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  background:
-  linear-gradient(
-    135deg,
-    #6526d7,
-    #8b5cf6
-  );
-
-  color:white;
-
-  font-size:32px;
-
-  font-weight:bold;
-}
-
-.profile-info h2{
-  margin-bottom:7px;
-}
-
-.profile-info p{
-  color:#64748b;
-}
-
-.profile-details{
-  margin-top:25px;
-}
-
-.detail-row{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  padding:15px 0;
-
-  border-bottom:
-  1px solid #eef0f4;
-
-  gap:20px;
-}
-
-
-/* =========================
-   COURSE
-========================= */
+/* COURSE */
 
 .course-item{
 
-  display:flex;
+display:flex;
 
-  justify-content:space-between;
+justify-content:space-between;
 
-  align-items:center;
+align-items:center;
 
-  padding:18px;
+padding:20px;
 
-  border-radius:14px;
+border-radius:14px;
 
-  background:#f8f7ff;
+background:#f8f7ff;
 
-  margin-bottom:12px;
+margin-bottom:12px;
 
-  flex-wrap:wrap;
+flex-wrap:wrap;
 
-  gap:15px;
+gap:15px;
+
 }
 
 .course-status{
 
-  padding:7px 12px;
+padding:7px 12px;
 
-  border-radius:20px;
+border-radius:20px;
 
-  background:#dcfce7;
+background:#dcfce7;
 
-  color:#166534;
+color:#166534;
 
-  font-size:12px;
+font-size:12px;
 
-  font-weight:bold;
+font-weight:bold;
+
+}
+
+.browse-btn{
+
+border:none;
+
+background:#6526d7;
+
+color:white;
+
+padding:13px 20px;
+
+border-radius:10px;
+
+font-weight:bold;
+
+cursor:pointer;
+
 }
 
 
-/* =========================
-   TABLE
-========================= */
+/* PROFILE */
+
+.profile-row{
+
+display:flex;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+.big-avatar{
+
+width:85px;
+height:85px;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:
+linear-gradient(
+135deg,
+#6526d7,
+#8b5cf6
+);
+
+color:white;
+
+font-size:32px;
+
+font-weight:bold;
+
+}
+
+.detail-row{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:15px 0;
+
+border-bottom:
+1px solid #eef0f4;
+
+gap:20px;
+
+}
+
+
+/* TABLE */
 
 .table-wrap{
-  overflow-x:auto;
+overflow-x:auto;
 }
 
 table{
-
-  width:100%;
-
-  border-collapse:collapse;
+width:100%;
+border-collapse:collapse;
 }
 
 th,
 td{
 
-  padding:14px;
+padding:14px;
 
-  text-align:left;
+text-align:left;
 
-  border-bottom:
-  1px solid #edf0f5;
+border-bottom:
+1px solid #edf0f5;
 
-  font-size:14px;
+font-size:14px;
+
 }
 
 th{
-  color:#64748b;
+color:#64748b;
 }
 
 
-/* =========================
-   KYC
-========================= */
+/* KYC */
 
 .kyc-status{
 
-  padding:12px 16px;
+padding:12px 16px;
 
-  border-radius:12px;
+border-radius:12px;
 
-  font-weight:bold;
+font-weight:bold;
 
-  display:inline-block;
+display:inline-block;
 
-  margin-bottom:18px;
+margin-bottom:18px;
+
 }
 
 .kyc-not-started{
-  background:#fef3c7;
-  color:#92400e;
+background:#fef3c7;
+color:#92400e;
 }
 
 .kyc-pending{
-  background:#dbeafe;
-  color:#1d4ed8;
+background:#dbeafe;
+color:#1d4ed8;
 }
 
 .kyc-approved{
-  background:#dcfce7;
-  color:#166534;
+background:#dcfce7;
+color:#166534;
 }
 
 .kyc-rejected{
-  background:#fee2e2;
-  color:#991b1b;
+background:#fee2e2;
+color:#991b1b;
 }
 
 .kyc-btn{
 
-  border:none;
+border:none;
 
-  padding:13px 20px;
+padding:13px 20px;
 
-  border-radius:10px;
+border-radius:10px;
 
-  background:#6526d7;
+background:#6526d7;
 
-  color:white;
+color:white;
 
-  font-weight:bold;
+font-weight:bold;
 
-  cursor:pointer;
+cursor:pointer;
+
 }
 
 
-/* =========================
-   REFERRAL INACTIVE
-========================= */
-
-.inactive-box{
-
-  padding:25px;
-
-  text-align:center;
-
-  background:#fff7ed;
-
-  border-radius:15px;
-
-  color:#9a3412;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:850px){
 
-  .sidebar{
-    transform:
-    translateX(-100%);
-  }
+.sidebar{
+transform:translateX(-100%);
+}
 
-  .sidebar.show{
-    transform:
-    translateX(0);
-  }
+.sidebar.show{
+transform:translateX(0);
+}
 
-  .main{
-    margin-left:0;
-  }
+.main{
+margin-left:0;
+}
 
-  .menu-toggle{
-    display:block;
-  }
+.menu-toggle{
+display:block;
+}
 
-  .topbar{
-    padding:0 15px;
-  }
+.topbar{
+padding:0 15px;
+}
 
-  .content{
-    padding:22px 15px;
-  }
+.content{
+padding:22px 15px;
+}
 
-  .page-title{
-    font-size:25px;
-  }
+.page-title{
+font-size:25px;
+}
 
 }
 
@@ -735,10 +715,6 @@ th{
 
 <body>
 
-
-<!-- =========================
-     SIDEBAR
-========================= -->
 
 <aside
 class="sidebar"
@@ -767,7 +743,6 @@ class="menu-item active"
 data-page="dashboard">
 
 <span class="menu-icon">🏠</span>
-
 Dashboard
 
 </button>
@@ -778,7 +753,6 @@ class="menu-item"
 data-page="profile">
 
 <span class="menu-icon">👤</span>
-
 Profile
 
 </button>
@@ -789,7 +763,6 @@ class="menu-item"
 data-page="courses">
 
 <span class="menu-icon">📚</span>
-
 My Courses
 
 </button>
@@ -805,7 +778,6 @@ class="menu-item"
 data-page="referral">
 
 <span class="menu-icon">🔗</span>
-
 My Referral Link
 
 </button>
@@ -816,7 +788,6 @@ class="menu-item"
 onclick="copyReferralLink()">
 
 <span class="menu-icon">📋</span>
-
 Copy Link
 
 </button>
@@ -827,7 +798,6 @@ class="menu-item"
 onclick="shareReferralLink()">
 
 <span class="menu-icon">📤</span>
-
 Share Link
 
 </button>
@@ -838,7 +808,6 @@ class="menu-item"
 data-page="referrals">
 
 <span class="menu-icon">👥</span>
-
 Successful Referrals
 
 </button>
@@ -849,7 +818,6 @@ class="menu-item"
 data-page="commission">
 
 <span class="menu-icon">💰</span>
-
 Total Commission
 
 </button>
@@ -860,7 +828,6 @@ class="menu-item"
 data-page="balance">
 
 <span class="menu-icon">💵</span>
-
 Available Balance
 
 </button>
@@ -871,7 +838,6 @@ class="menu-item"
 data-page="history">
 
 <span class="menu-icon">🧾</span>
-
 Referral History
 
 </button>
@@ -887,7 +853,6 @@ class="menu-item"
 data-page="kyc">
 
 <span class="menu-icon">🪪</span>
-
 KYC Status
 
 </button>
@@ -898,7 +863,6 @@ class="menu-item logout-btn"
 id="logoutBtn">
 
 <span class="menu-icon">🚪</span>
-
 Logout
 
 </button>
@@ -906,15 +870,7 @@ Logout
 </aside>
 
 
-
-<!-- =========================
-     MAIN
-========================= -->
-
 <div class="main">
-
-
-<!-- TOPBAR -->
 
 <header class="topbar">
 
@@ -947,6 +903,7 @@ U
 
 </div>
 
+
 <div
 class="user-name"
 id="topUserEmail">
@@ -960,15 +917,10 @@ Loading...
 </header>
 
 
-
-<!-- CONTENT -->
-
 <main class="content">
 
 
-<!-- =========================
-     DASHBOARD
-========================= -->
+<!-- DASHBOARD -->
 
 <section
 class="page active"
@@ -985,12 +937,9 @@ Dashboard
 
 <div class="stats-grid">
 
-
 <div class="stat-card">
 
-<div class="stat-icon">
-📚
-</div>
+<div class="stat-icon">📚</div>
 
 <div class="stat-label">
 My Courses
@@ -1007,12 +956,9 @@ id="courseCount">
 </div>
 
 
-
 <div class="stat-card">
 
-<div class="stat-icon">
-👥
-</div>
+<div class="stat-icon">👥</div>
 
 <div class="stat-label">
 Successful Referrals
@@ -1029,12 +975,9 @@ id="successfulReferrals">
 </div>
 
 
-
 <div class="stat-card">
 
-<div class="stat-icon">
-💰
-</div>
+<div class="stat-icon">💰</div>
 
 <div class="stat-label">
 Total Commission
@@ -1051,12 +994,9 @@ id="totalCommission">
 </div>
 
 
-
 <div class="stat-card">
 
-<div class="stat-icon">
-💵
-</div>
+<div class="stat-icon">💵</div>
 
 <div class="stat-label">
 Available Balance
@@ -1075,9 +1015,28 @@ id="availableBalance">
 </div>
 
 
-<div
-class="referral-card"
-id="dashboardReferralCard">
+<div class="box">
+
+<h2 style="margin-bottom:15px;">
+📚 Quick Course Access
+</h2>
+
+<p style="color:#64748b;margin-bottom:18px;">
+अपने Purchased Courses देखें या नए Course Packages Explore करें।
+</p>
+
+<button
+class="browse-btn"
+onclick="window.location.href='course.html'">
+
+Browse Courses
+
+</button>
+
+</div>
+
+
+<div class="referral-card">
 
 <h2>
 🔗 Earn With Your Referral Link
@@ -1105,8 +1064,7 @@ Loading...
 </div>
 
 
-<div
-class="referral-code-box">
+<div class="referral-code-box">
 
 <div class="referral-label">
 YOUR REFERRAL LINK
@@ -1149,10 +1107,7 @@ onclick="shareReferralLink()">
 </section>
 
 
-
-<!-- =========================
-     PROFILE
-========================= -->
+<!-- PROFILE -->
 
 <section
 class="page"
@@ -1180,17 +1135,15 @@ U
 </div>
 
 
-<div class="profile-info">
+<div>
 
-<h2
-id="profileName">
-
+<h2 id="profileName">
 User
-
 </h2>
 
 <p
-id="profileEmail">
+id="profileEmail"
+style="color:#64748b;margin-top:7px;">
 
 Loading...
 
@@ -1201,19 +1154,14 @@ Loading...
 </div>
 
 
-<div class="profile-details">
+<div style="margin-top:25px;">
 
 <div class="detail-row">
 
-<span>
-Referral Code
-</span>
+<span>Referral Code</span>
 
-<strong
-id="profileReferralCode">
-
+<strong id="profileReferralCode">
 -
-
 </strong>
 
 </div>
@@ -1221,15 +1169,10 @@ id="profileReferralCode">
 
 <div class="detail-row">
 
-<span>
-Referral Status
-</span>
+<span>Referral Status</span>
 
-<strong
-id="referralStatus">
-
+<strong id="referralStatus">
 Inactive
-
 </strong>
 
 </div>
@@ -1237,15 +1180,10 @@ Inactive
 
 <div class="detail-row">
 
-<span>
-Member Since
-</span>
+<span>Member Since</span>
 
-<strong
-id="memberSince">
-
+<strong id="memberSince">
 -
-
 </strong>
 
 </div>
@@ -1257,10 +1195,7 @@ id="memberSince">
 </section>
 
 
-
-<!-- =========================
-     COURSES
-========================= -->
+<!-- COURSES -->
 
 <section
 class="page"
@@ -1271,7 +1206,7 @@ id="courses">
 </h1>
 
 <p class="page-subtitle">
-आपके Enrolled Courses यहाँ दिखाई देंगे।
+आपके सभी Purchased और Enrolled Courses यहाँ दिखाई देंगे।
 </p>
 
 
@@ -1279,19 +1214,14 @@ id="courses">
 class="box"
 id="coursesContainer">
 
-<div>
 Loading courses...
-</div>
 
 </div>
 
 </section>
 
 
-
-<!-- =========================
-     REFERRAL LINK
-========================= -->
+<!-- REFERRAL -->
 
 <section
 class="page"
@@ -1306,17 +1236,11 @@ id="referral">
 </p>
 
 
-<div
-class="referral-card"
-id="referralPageCard">
+<div class="referral-card">
 
 <h2>
-Your Lifetime Referral Link
+Your Referral Link
 </h2>
-
-<p>
-यह Link आपके Course Enrollment के बाद Active होता है।
-</p>
 
 
 <div class="referral-code-box">
@@ -1376,30 +1300,10 @@ onclick="shareReferralLink()">
 
 </div>
 
-
-<div
-class="inactive-box hidden"
-id="referralInactiveMessage">
-
-<h3>
-🔒 Referral अभी Active नहीं है
-</h3>
-
-<br>
-
-<p>
-पहले कम से कम एक Course Successfully Enroll करें। उसके बाद आपका Lifetime Referral Link Active हो जाएगा।
-</p>
-
-</div>
-
 </section>
 
 
-
-<!-- =========================
-     SUCCESSFUL REFERRALS
-========================= -->
+<!-- REFERRALS -->
 
 <section
 class="page"
@@ -1408,11 +1312,6 @@ id="referrals">
 <h1 class="page-title">
 👥 Successful Referrals
 </h1>
-
-<p class="page-subtitle">
-जिन Users ने आपके Referral से Course Successfully Enroll किया है।
-</p>
-
 
 <div class="box">
 
@@ -1433,10 +1332,7 @@ Total Successful Referrals
 </section>
 
 
-
-<!-- =========================
-     COMMISSION
-========================= -->
+<!-- COMMISSION -->
 
 <section
 class="page"
@@ -1445,11 +1341,6 @@ id="commission">
 <h1 class="page-title">
 💰 Total Commission
 </h1>
-
-<p class="page-subtitle">
-आपकी Total Referral Earnings।
-</p>
-
 
 <div class="box">
 
@@ -1470,10 +1361,7 @@ Total Commission Earned
 </section>
 
 
-
-<!-- =========================
-     BALANCE
-========================= -->
+<!-- BALANCE -->
 
 <section
 class="page"
@@ -1482,11 +1370,6 @@ id="balance">
 <h1 class="page-title">
 💵 Available Balance
 </h1>
-
-<p class="page-subtitle">
-आपका वर्तमान Available Referral Balance।
-</p>
-
 
 <div class="box">
 
@@ -1507,10 +1390,7 @@ Available for Withdrawal
 </section>
 
 
-
-<!-- =========================
-     REFERRAL HISTORY
-========================= -->
+<!-- HISTORY -->
 
 <section
 class="page"
@@ -1519,10 +1399,6 @@ id="history">
 <h1 class="page-title">
 🧾 Referral History
 </h1>
-
-<p class="page-subtitle">
-आपके Referral Records यहाँ दिखाई देंगे।
-</p>
 
 
 <div class="box">
@@ -1568,10 +1444,7 @@ Loading...
 </section>
 
 
-
-<!-- =========================
-     KYC
-========================= -->
+<!-- KYC -->
 
 <section
 class="page"
@@ -1580,10 +1453,6 @@ id="kyc">
 <h1 class="page-title">
 🪪 KYC Status
 </h1>
-
-<p class="page-subtitle">
-अपना KYC Verification Status देखें।
-</p>
 
 
 <div class="box">
@@ -1609,7 +1478,7 @@ KYC शुरू करने के लिए नीचे दिए गए But
 <button
 class="kyc-btn"
 id="kycBtn"
-onclick="openKYC()">
+onclick="window.location.href='kyc.html'">
 
 Start KYC
 
@@ -1625,69 +1494,45 @@ Start KYC
 </div>
 
 
-
-<!-- =========================
-     FIREBASE
-========================= -->
-
 <script type="module">
 
-
-/* =========================
-   FIREBASE IMPORTS
-========================= */
-
 import {
-  initializeApp
+initializeApp
 }
+
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
 import {
 
-  getAuth,
-
-  onAuthStateChanged,
-
-  signOut
+getAuth,
+onAuthStateChanged,
+signOut
 
 }
+
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
 import {
 
-  getFirestore,
-
-  doc,
-
-  getDoc,
-
-  collection,
-
-  query,
-
-  where,
-
-  getDocs,
-
-  updateDoc,
-
-  setDoc,
-
-  serverTimestamp
+getFirestore,
+doc,
+getDoc,
+setDoc,
+collection,
+query,
+where,
+getDocs,
+serverTimestamp
 
 }
+
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-
-
-/* =========================
-   FIREBASE CONFIG
-========================= */
 
 const firebaseConfig={
 
@@ -1712,33 +1557,17 @@ appId:
 };
 
 
-
-/* =========================
-   INITIALIZE
-========================= */
-
 const app=
-initializeApp(
-firebaseConfig
-);
+initializeApp(firebaseConfig);
 
 
 const auth=
-getAuth(
-app
-);
+getAuth(app);
 
 
 const db=
-getFirestore(
-app
-);
+getFirestore(app);
 
-
-
-/* =========================
-   GLOBAL USER
-========================= */
 
 let currentUser=null;
 
@@ -1747,11 +1576,6 @@ let userData=null;
 let referralLink="";
 
 
-
-/* =========================
-   PAGE NAVIGATION
-========================= */
-
 const menuItems=
 document.querySelectorAll(
 ".menu-item[data-page]"
@@ -1759,290 +1583,77 @@ document.querySelectorAll(
 
 
 menuItems.forEach(
-
 item=>{
 
 item.addEventListener(
-
 "click",
-
 ()=>{
-
 
 const pageName=
 item.dataset.page;
 
 
-/* ACTIVE MENU */
-
 menuItems.forEach(
-
-menu=>{
-
-menu.classList.remove(
-"active"
-);
-
-}
-
+menu=>menu.classList.remove("active")
 );
 
 
-item.classList.add(
-"active"
-);
+item.classList.add("active");
 
-
-/* SHOW PAGE */
 
 document
-.querySelectorAll(
-".page"
-)
+.querySelectorAll(".page")
 .forEach(
-
-page=>{
-
-page.classList.remove(
-"active"
-);
-
-}
-
+page=>page.classList.remove("active")
 );
 
 
 document
-.getElementById(
-pageName
-)
-.classList.add(
-"active"
-);
+.getElementById(pageName)
+.classList.add("active");
 
-
-/* CLOSE MOBILE */
 
 document
-.getElementById(
-"sidebar"
-)
-.classList.remove(
-"show"
+.getElementById("sidebar")
+.classList.remove("show");
+
+}
 );
 
 }
-
 );
 
-}
-
-);
-
-
-
-/* =========================
-   MOBILE MENU
-========================= */
 
 document
-.getElementById(
-"menuToggle"
-)
+.getElementById("menuToggle")
 .addEventListener(
-
 "click",
-
 ()=>{
 
 document
-.getElementById(
-"sidebar"
-)
-.classList.toggle(
-"show"
-);
+.getElementById("sidebar")
+.classList.toggle("show");
 
 }
-
 );
 
 
-
-/* =========================
-   GENERATE REFERRAL CODE
-========================= */
-
-function generateReferralCode(
-uid
-){
-
-const shortUid=
-uid
-.substring(
-0,
-6
-)
-.toUpperCase();
-
-
-const random=
-Math.floor(
-100+
-Math.random()*900
-);
-
+function generateReferralCode(uid){
 
 return
 "PAK"+
-shortUid+
-random;
-
-}
-
-
-
-/* =========================
-   CHECK COURSE ENROLLMENT
-========================= */
-
-function getLocalCourseEnrollment(){
-
-return(
-
-localStorage.getItem(
-"coursePurchased"
-)
-
-===
-
-"true"
-
+uid.substring(0,6).toUpperCase()+
+Math.floor(
+100000+
+Math.random()*900000
 );
 
 }
 
-
-
-/* =========================
-   ACTIVATE REFERRAL
-========================= */
-
-async function activateReferralIfEligible(){
-
-if(
-
-!currentUser
-
-||
-
-!userData
-
-){
-
-return;
-
-}
-
-
-/* COURSE PURCHASED CHECK */
-
-const coursePurchased=
-getLocalCourseEnrollment();
-
-
-/* ALREADY ACTIVE */
-
-if(
-
-userData.referralActive
-
-===
-
-true
-
-){
-
-return;
-
-}
-
-
-/* NO COURSE */
-
-if(
-!coursePurchased
-){
-
-return;
-
-}
-
-
-/* CREATE CODE */
-
-let code=
-userData.referralCode;
-
-
-if(
-!code
-){
-
-code=
-generateReferralCode(
-currentUser.uid
-);
-
-}
-
-
-/* UPDATE FIRESTORE */
-
-await updateDoc(
-
-doc(
-db,
-"users",
-currentUser.uid
-),
-
-{
-
-referralCode:
-code,
-
-referralActive:
-true,
-
-referralActivatedAt:
-serverTimestamp()
-
-}
-
-);
-
-
-/* UPDATE LOCAL DATA */
-
-userData.referralCode=
-code;
-
-userData.referralActive=
-true;
-
-}
-
-
-
-/* =========================
-   LOAD PROFILE
-========================= */
 
 async function loadUserData(){
 
 const userRef=
-
 doc(
 db,
 "users",
@@ -2050,594 +1661,280 @@ currentUser.uid
 );
 
 
-const userSnap=
-
-await getDoc(
-userRef
-);
+const snap=
+await getDoc(userRef);
 
 
-/* USER DOCUMENT EXISTS */
+if(snap.exists()){
 
-if(
-userSnap.exists()
-){
-
-userData=
-userSnap.data();
+userData=snap.data();
 
 }
-
-
-/* DOCUMENT MISSING */
-
 else{
-
-const newCode=
-generateReferralCode(
-currentUser.uid
-);
-
-
-await setDoc(
-
-userRef,
-
-{
-
-name:
-
-currentUser.displayName
-
-||
-
-currentUser.email
-.split("@")[0],
-
-
-email:
-currentUser.email,
-
-
-referralCode:
-newCode,
-
-
-referralActive:
-false,
-
-
-points:
-0,
-
-
-totalReferrals:
-0,
-
-
-totalCommission:
-0,
-
-
-availableBalance:
-0,
-
-
-kycStatus:
-"not_started",
-
-
-createdAt:
-serverTimestamp()
-
-}
-
-);
-
 
 userData={
 
 name:
-
 currentUser.displayName
-
 ||
-
-currentUser.email
-.split("@")[0],
-
+currentUser.email.split("@")[0],
 
 email:
 currentUser.email,
 
-
 referralCode:
-newCode,
+generateReferralCode(
+currentUser.uid
+),
 
+referralActive:false,
 
-referralActive:
-false,
+totalReferrals:0,
 
+totalCommission:0,
 
-totalReferrals:
-0,
+availableBalance:0,
 
-
-totalCommission:
-0,
-
-
-availableBalance:
-0,
-
-
-kycStatus:
-"not_started"
+kycStatus:"not_started"
 
 };
 
+
+await setDoc(
+userRef,
+{
+...userData,
+createdAt:serverTimestamp()
 }
-
-
-/* ACTIVATE AFTER COURSE */
-
-await activateReferralIfEligible();
-
-
-/* RELOAD DATA */
-
-const updatedSnap=
-
-await getDoc(
-userRef
 );
 
-
-userData=
-updatedSnap.data();
-
 }
 
 }
 
-
-
-/* =========================
-   UPDATE UI
-========================= */
 
 function updateUI(){
 
 const name=
-
 userData.name
-
 ||
-
 currentUser.displayName
-
 ||
-
 "User";
 
 
 const email=
-
 userData.email
-
 ||
-
 currentUser.email;
 
 
-const firstLetter=
-
-name
-.charAt(0)
-.toUpperCase();
-
-
-/* TOP */
-
-document
-.getElementById(
-"topUserName"
-)
-.textContent=
-name;
+const letter=
+name.charAt(0).toUpperCase();
 
 
 document
-.getElementById(
-"topUserEmail"
-)
-.textContent=
-email;
+.getElementById("topUserName")
+.textContent=name;
 
 
 document
-.getElementById(
-"topAvatar"
-)
-.textContent=
-firstLetter;
-
-
-/* PROFILE */
-
-document
-.getElementById(
-"profileName"
-)
-.textContent=
-name;
+.getElementById("topUserEmail")
+.textContent=email;
 
 
 document
-.getElementById(
-"profileEmail"
-)
-.textContent=
-email;
+.getElementById("topAvatar")
+.textContent=letter;
 
 
 document
-.getElementById(
-"profileAvatar"
-)
-.textContent=
-firstLetter;
+.getElementById("profileName")
+.textContent=name;
 
 
-/* REFERRAL CODE */
-
-const referralCode=
-
-userData.referralCode
-
-||
-
-"-";
+document
+.getElementById("profileEmail")
+.textContent=email;
 
 
-const active=
-
-userData.referralActive
-
-===
-
-true;
+document
+.getElementById("profileAvatar")
+.textContent=letter;
 
 
-/* CREATE LINK */
+const code=
+userData.referralCode;
+
 
 referralLink=
-
-window.location.origin
-
-+
-
+window.location.origin+
 window.location.pathname
 .replace(
 "dashboard.html",
-"login.html"
+"course.html"
 )
-
 +
-
-"?ref="
-
-+
-
-encodeURIComponent(
-referralCode
-);
-
-
-/* PROFILE */
-
-document
-.getElementById(
-"profileReferralCode"
-)
-.textContent=
-
-active
-
-?
-
-referralCode
-
-:
-
-"Referral Activate करें";
+"?ref="+
+encodeURIComponent(code);
 
 
 document
-.getElementById(
-"referralStatus"
-)
+.getElementById("dashboardReferralCode")
+.textContent=code;
+
+
+document
+.getElementById("dashboardReferralLink")
+.textContent=referralLink;
+
+
+document
+.getElementById("pageReferralCode")
+.textContent=code;
+
+
+document
+.getElementById("pageReferralLink")
+.textContent=referralLink;
+
+
+document
+.getElementById("profileReferralCode")
+.textContent=code;
+
+
+document
+.getElementById("referralStatus")
 .textContent=
-
-active
-
+userData.referralActive
 ?
-
 "Active ✓"
-
 :
-
 "Inactive";
 
-
-/* REFERRAL UI */
-
-document
-.getElementById(
-"dashboardReferralCode"
-)
-.textContent=
-
-active
-
-?
-
-referralCode
-
-:
-
-"पहले Course Enroll करें";
-
-
-document
-.getElementById(
-"pageReferralCode"
-)
-.textContent=
-
-active
-
-?
-
-referralCode
-
-:
-
-"Inactive";
-
-
-document
-.getElementById(
-"dashboardReferralLink"
-)
-.textContent=
-
-active
-
-?
-
-referralLink
-
-:
-
-"पहले Course Successfully Enroll करें";
-
-
-document
-.getElementById(
-"pageReferralLink"
-)
-.textContent=
-
-active
-
-?
-
-referralLink
-
-:
-
-"Referral अभी Active नहीं है";
-
-
-/* INACTIVE MESSAGE */
-
-if(
-active
-){
-
-document
-.getElementById(
-"referralPageCard"
-)
-.classList.remove(
-"hidden"
-);
-
-
-document
-.getElementById(
-"referralInactiveMessage"
-)
-.classList.add(
-"hidden"
-);
-
-}
-
-else{
-
-document
-.getElementById(
-"referralPageCard"
-)
-.classList.add(
-"hidden"
-);
-
-
-document
-.getElementById(
-"referralInactiveMessage"
-)
-.classList.remove(
-"hidden"
-);
-
-}
-
-
-/* STATS */
 
 const referrals=
-
+Number(
 userData.totalReferrals
-
 ||
-
-0;
+0
+);
 
 
 const commission=
-
+Number(
 userData.totalCommission
-
 ||
-
-0;
+0
+);
 
 
 const balance=
-
+Number(
 userData.availableBalance
-
 ||
-
-0;
-
-
-document
-.getElementById(
-"successfulReferrals"
-)
-.textContent=
-referrals;
+0
+);
 
 
 document
-.getElementById(
-"referralsPageCount"
-)
-.textContent=
-referrals;
+.getElementById("successfulReferrals")
+.textContent=referrals;
 
 
 document
-.getElementById(
-"totalCommission"
-)
+.getElementById("referralsPageCount")
+.textContent=referrals;
+
+
+document
+.getElementById("totalCommission")
 .textContent=
 "₹"+commission;
 
 
 document
-.getElementById(
-"commissionPageAmount"
-)
+.getElementById("commissionPageAmount")
 .textContent=
 "₹"+commission;
 
 
 document
-.getElementById(
-"availableBalance"
-)
+.getElementById("availableBalance")
 .textContent=
 "₹"+balance;
 
 
 document
-.getElementById(
-"balancePageAmount"
-)
+.getElementById("balancePageAmount")
 .textContent=
 "₹"+balance;
 
-
-/* MEMBER DATE */
 
 if(
 userData.createdAt
-
 &&
-
 userData.createdAt.toDate
 ){
 
 document
-.getElementById(
-"memberSince"
-)
+.getElementById("memberSince")
 .textContent=
-
-userData
-.createdAt
+userData.createdAt
 .toDate()
-.toLocaleDateString(
-"en-IN"
-);
+.toLocaleDateString("en-IN");
 
 }
 
-
-/* KYC */
 
 updateKYCUI();
 
 }
 
 
-
-/* =========================
-   LOAD COURSE
-========================= */
-
-function loadCourses(){
-
-const purchased=
-
-localStorage.getItem(
-"coursePurchased"
-)
-
-
-const courseName=
-
-localStorage.getItem(
-"purchasedCourseName"
-);
-
+async function loadCourses(){
 
 const container=
-
 document
-.getElementById(
-"coursesContainer"
+.getElementById("coursesContainer");
+
+
+try{
+
+const coursesRef=
+collection(
+db,
+"users",
+currentUser.uid,
+"courses"
 );
+
+
+const snapshot=
+await getDocs(coursesRef);
+
+
+let count=0;
+
+container.innerHTML="";
+
+
+snapshot.forEach(
+courseDoc=>{
+
+const course=
+courseDoc.data();
 
 
 if(
-
-purchased==="true"
-
-&&
-
-courseName
-
+course.status==="active"
 ){
 
-container.innerHTML=
+count++;
 
+
+container.innerHTML+=
 `
 
 <div class="course-item">
@@ -2645,15 +1942,20 @@ container.innerHTML=
 <div>
 
 <h3>
-${courseName}
+${course.courseName || "Course"}
 </h3>
 
-<p style="color:#64748b;margin-top:5px;">
-Successfully Enrolled Course
+<p style="color:#64748b;margin-top:6px;">
+
+${course.paymentStatus==="free"
+?
+"Successfully Activated with Coupon"
+:
+"Successfully Purchased"}
+
 </p>
 
 </div>
-
 
 <div class="course-status">
 
@@ -2665,37 +1967,31 @@ Successfully Enrolled Course
 
 `;
 
-document
-.getElementById(
-"courseCount"
-)
-.textContent=
-"1";
-
 }
 
-else{
+}
+);
+
+
+if(count===0){
 
 container.innerHTML=
-
 `
 
-<div class="inactive-box">
+<div style="text-align:center;padding:20px;">
 
 <h3>
 📚 कोई Course Enrolled नहीं है
 </h3>
 
-<br>
+<p style="color:#64748b;margin:12px 0 20px;">
 
-<p>
-Course खरीदने के बाद वह यहाँ दिखाई देगा।
+दोनों Course Packages देखने के लिए Browse Courses पर Click करें।
+
 </p>
 
-<br>
-
 <button
-class="kyc-btn"
+class="browse-btn"
 onclick="window.location.href='course.html'">
 
 Browse Courses
@@ -2706,81 +2002,65 @@ Browse Courses
 
 `;
 
+}
+
+
 document
-.getElementById(
-"courseCount"
-)
-.textContent=
-"0";
+.getElementById("courseCount")
+.textContent=count;
+
+
+}
+catch(error){
+
+console.error(error);
+
+
+container.innerHTML=
+`
+<div>
+Courses load नहीं हो पाए।
+</div>
+`;
 
 }
 
 }
 
-
-
-/* =========================
-   LOAD REFERRAL HISTORY
-========================= */
 
 async function loadReferralHistory(){
 
 const body=
-
 document
-.getElementById(
-"referralHistoryBody"
-);
+.getElementById("referralHistoryBody");
 
 
 try{
 
-
 const referralQuery=
-
 query(
-
-collection(
-db,
-"referrals"
-),
-
+collection(db,"referrals"),
 where(
 "referrerUid",
 "==",
 currentUser.uid
 )
-
 );
 
 
 const snapshot=
-
-await getDocs(
-referralQuery
-);
+await getDocs(referralQuery);
 
 
-if(
-snapshot.empty
-){
+if(snapshot.empty){
 
 body.innerHTML=
-
 `
-
 <tr>
-
-<td
-colspan="3"
-style="text-align:center;color:#64748b;">
-
+<td colspan="3" style="text-align:center;color:#64748b;">
 अभी कोई Referral नहीं है।
-
 </td>
-
 </tr>
-
 `;
 
 return;
@@ -2788,54 +2068,40 @@ return;
 }
 
 
-body.innerHTML=
-"";
+body.innerHTML="";
 
 
 snapshot.forEach(
-
-documentSnap=>{
-
+refDoc=>{
 
 const data=
+refDoc.data();
 
-documentSnap.data();
 
-
-let date=
-"-";
+let date="-";
 
 
 if(
-
 data.createdAt
-
 &&
-
 data.createdAt.toDate
-
 ){
 
 date=
-
-data
-.createdAt
+data.createdAt
 .toDate()
-.toLocaleDateString(
-"en-IN"
-);
+.toLocaleDateString("en-IN");
 
 }
 
 
 body.innerHTML+=
-
 `
 
 <tr>
 
 <td>
-${data.referredUid || "User"}
+${data.referredName || "User"}
 </td>
 
 <td>
@@ -2851,33 +2117,20 @@ ${date}
 `;
 
 }
-
 );
-
 
 }
-
 catch(error){
 
-console.error(
-error
-);
-
+console.error(error);
 
 body.innerHTML=
-
 `
-
 <tr>
-
 <td colspan="3">
-
 Referral history load नहीं हो पाई।
-
 </td>
-
 </tr>
-
 `;
 
 }
@@ -2885,62 +2138,38 @@ Referral history load नहीं हो पाई।
 }
 
 
-
-/* =========================
-   KYC UI
-========================= */
-
 function updateKYCUI(){
 
 const status=
-
 userData.kycStatus
-
 ||
-
 "not_started";
 
 
-const statusBox=
-
+const box=
 document
-.getElementById(
-"kycStatus"
-);
+.getElementById("kycStatus");
 
 
 const message=
-
 document
-.getElementById(
-"kycMessage"
-);
+.getElementById("kycMessage");
 
 
 const button=
-
 document
-.getElementById(
-"kycBtn"
-);
+.getElementById("kycBtn");
 
 
-statusBox.className=
+box.className=
 "kyc-status";
 
 
-if(
-status==="approved"
-){
+if(status==="approved"){
 
-statusBox
-.classList
-.add(
-"kyc-approved"
-);
+box.classList.add("kyc-approved");
 
-
-statusBox.textContent=
+box.textContent=
 "✓ KYC Approved";
 
 
@@ -2948,8 +2177,7 @@ message.textContent=
 "आपका KYC Successfully Verified हो चुका है।";
 
 
-button.style.display=
-"none";
+button.style.display="none";
 
 }
 
@@ -2957,18 +2185,12 @@ button.style.display=
 else if(
 status==="pending"
 ||
-
 status==="submitted"
 ){
 
-statusBox
-.classList
-.add(
-"kyc-pending"
-);
+box.classList.add("kyc-pending");
 
-
-statusBox.textContent=
+box.textContent=
 "⏳ KYC Under Review";
 
 
@@ -2976,29 +2198,21 @@ message.textContent=
 "आपका KYC Verification के लिए भेज दिया गया है।";
 
 
-button.style.display=
-"none";
+button.style.display="none";
 
 }
 
 
-else if(
-status==="rejected"
-){
+else if(status==="rejected"){
 
-statusBox
-.classList
-.add(
-"kyc-rejected"
-);
+box.classList.add("kyc-rejected");
 
-
-statusBox.textContent=
+box.textContent=
 "❌ KYC Rejected";
 
 
 message.textContent=
-"आपका KYC फिर से Submit करने की आवश्यकता है।";
+"कृपया अपना KYC दोबारा Submit करें।";
 
 
 button.textContent=
@@ -3009,14 +2223,9 @@ button.textContent=
 
 else{
 
-statusBox
-.classList
-.add(
-"kyc-not-started"
-);
+box.classList.add("kyc-not-started");
 
-
-statusBox.textContent=
+box.textContent=
 "⚠ KYC Not Started";
 
 
@@ -3032,40 +2241,14 @@ button.textContent=
 }
 
 
-
-/* =========================
-   COPY REFERRAL
-========================= */
-
 window.copyReferralLink=
-
 async function(){
-
-
-if(
-
-!userData
-
-||
-
-userData.referralActive
-!==true
-
-){
-
-alert(
-"पहले Course Successfully Enroll करें। Referral Link उसके बाद Active होगा।"
-);
-
-return;
-
-}
-
 
 try{
 
-
-await navigator.clipboard.writeText(
+await
+navigator.clipboard
+.writeText(
 referralLink
 );
 
@@ -3074,38 +2257,21 @@ alert(
 "🎉 Referral Link Copy हो गया!"
 );
 
-
 }
-
 catch(error){
 
+const textarea=
+document.createElement("textarea");
 
-const textArea=
+textarea.value=referralLink;
 
-document.createElement(
-"textarea"
-);
+document.body.appendChild(textarea);
 
+textarea.select();
 
-textArea.value=
-referralLink;
+document.execCommand("copy");
 
-
-document.body.appendChild(
-textArea
-);
-
-
-textArea.select();
-
-
-document.execCommand(
-"copy"
-);
-
-
-textArea.remove();
-
+textarea.remove();
 
 alert(
 "🎉 Referral Link Copy हो गया!"
@@ -3116,94 +2282,44 @@ alert(
 };
 
 
-
-/* =========================
-   SHARE REFERRAL
-========================= */
-
 window.shareReferralLink=
-
 async function(){
 
-
-if(
-
-!userData
-
-||
-
-userData.referralActive
-!==true
-
-){
-
-alert(
-"पहले Course Successfully Enroll करें।"
-);
-
-return;
-
-}
-
-
-const shareText=
-
+const text=
 `📚 Padho Aur Kamao के साथ सीखें और आगे बढ़ें!
 
-मेरे Referral Link से Join करें:
+मेरे Referral Link से Courses देखें:
 
 ${referralLink}`;
 
 
-if(
-navigator.share
-){
+if(navigator.share){
 
 try{
 
-
 await navigator.share({
 
-title:
-"Padho Aur Kamao",
+title:"Padho Aur Kamao",
 
-text:
-shareText,
+text:text,
 
-url:
-referralLink
+url:referralLink
 
 });
 
-
 }
-
 catch(error){
 
-console.log(
-"Share cancelled"
-);
+console.log("Share cancelled");
 
 }
 
 }
-
 else{
 
-
-const whatsappUrl=
-
-"https://wa.me/?text="
-
-+
-
-encodeURIComponent(
-shareText
-);
-
-
 window.open(
-whatsappUrl,
+"https://wa.me/?text="+
+encodeURIComponent(text),
 "_blank"
 );
 
@@ -3212,51 +2328,20 @@ whatsappUrl,
 };
 
 
-
-/* =========================
-   OPEN KYC
-========================= */
-
-window.openKYC=
-
-function(){
-
-window.location.href=
-"kyc.html";
-
-};
-
-
-
-/* =========================
-   LOGOUT
-========================= */
-
 document
-.getElementById(
-"logoutBtn"
-)
+.getElementById("logoutBtn")
 .addEventListener(
-
 "click",
-
 async()=>{
-
 
 try{
 
-
-await signOut(
-auth
-);
-
+await signOut(auth);
 
 window.location.href=
 "login.html";
 
-
 }
-
 catch(error){
 
 alert(
@@ -3266,25 +2351,14 @@ alert(
 }
 
 }
-
 );
 
 
-
-/* =========================
-   AUTH CHECK
-========================= */
-
 onAuthStateChanged(
-
 auth,
-
 async user=>{
 
-
-if(
-!user
-){
+if(!user){
 
 window.location.href=
 "login.html";
@@ -3294,35 +2368,26 @@ return;
 }
 
 
-currentUser=
-user;
+currentUser=user;
 
 
 try{
 
-
 await loadUserData();
-
 
 updateUI();
 
-
-loadCourses();
-
+await loadCourses();
 
 await loadReferralHistory();
 
-
 }
-
 catch(error){
-
 
 console.error(
 "Dashboard Error:",
 error
 );
-
 
 alert(
 "Dashboard load नहीं हो पाया।"
@@ -3330,11 +2395,8 @@ alert(
 
 }
 
-
 }
-
 );
-
 
 </script>
 
