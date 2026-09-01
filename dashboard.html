@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="hi">
 
-<head>
+<!DOCTYPE html><html lang="hi"><head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dashboard - Padho Aur Kamao</title>
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Dashboard - Padho Aur Kamao</title><style>
 
 /* =========================
    GLOBAL
@@ -29,7 +23,8 @@ body{
     color:#172033;
 }
 
-button,input{
+button,
+input{
     font-family:inherit;
 }
 
@@ -171,15 +166,6 @@ a{
 .page-title{
     font-size:21px;
     font-weight:700;
-}
-
-.top-courses{
-    padding:10px 17px;
-    border-radius:10px;
-    background:#f1ebff;
-    color:#6526d7;
-    font-size:13px;
-    font-weight:bold;
 }
 
 .top-right{
@@ -400,8 +386,6 @@ a{
     display:flex;
     align-items:center;
     justify-content:center;
-    position:relative;
-    overflow:hidden;
     background:linear-gradient(135deg,#9c5d22,#51301e,#201a25);
 }
 
@@ -590,178 +574,7 @@ a{
 
 
 /* =========================
-   EARNINGS
-========================= */
-
-.earning-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:14px 0;
-    border-bottom:1px solid #eef0f4;
-}
-
-.earning-row:last-child{
-    border-bottom:0;
-}
-
-.earning-left{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.earning-icon{
-    width:42px;
-    height:42px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#f1ebff;
-    border-radius:11px;
-}
-
-.earning-left small{
-    display:block;
-    font-size:11px;
-    color:#9299a8;
-    margin-top:3px;
-}
-
-.earning-amount{
-    color:#16a34a;
-    font-weight:bold;
-}
-
-
-/* =========================
-   RANK
-========================= */
-
-.rank-row{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:13px 0;
-    border-bottom:1px solid #f0f1f4;
-}
-
-.rank-row:last-child{
-    border-bottom:0;
-}
-
-.rank-number{
-    width:34px;
-    height:34px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:#f1ebff;
-    color:#6526d7;
-    font-weight:bold;
-}
-
-.rank-user{
-    flex:1;
-}
-
-.rank-user small{
-    display:block;
-    color:#9299a8;
-    font-size:10px;
-    margin-top:4px;
-}
-
-.rank-points{
-    font-weight:bold;
-}
-
-
-/* =========================
-   WALLET
-========================= */
-
-.wallet-box{
-    padding:24px;
-    border-radius:18px;
-    color:white;
-    background:linear-gradient(135deg,#111827,#374151);
-}
-
-.wallet-label{
-    font-size:12px;
-    opacity:.7;
-}
-
-.wallet-value{
-    margin:8px 0 18px;
-    font-size:32px;
-    font-weight:bold;
-}
-
-.wallet-button{
-    border:0;
-    padding:11px 18px;
-    border-radius:9px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-
-/* =========================
-   PROFILE
-========================= */
-
-.profile-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.profile-item{
-    padding:14px;
-    background:#f8f9fc;
-    border-radius:11px;
-}
-
-.profile-item label{
-    display:block;
-    font-size:10px;
-    color:#9299a8;
-    margin-bottom:7px;
-}
-
-.profile-item strong{
-    font-size:13px;
-}
-
-
-/* =========================
-   STATUS
-========================= */
-
-.status{
-    display:inline-block;
-    padding:5px 10px;
-    border-radius:20px;
-    font-size:10px;
-    font-weight:bold;
-}
-
-.active{
-    background:#dcfce7;
-    color:#15803d;
-}
-
-.pending{
-    background:#fef3c7;
-    color:#b45309;
-}
-
-
-/* =========================
-   OVERLAY
+   RESPONSIVE
 ========================= */
 
 .overlay{
@@ -771,20 +584,6 @@ a{
     background:rgba(0,0,0,.5);
     z-index:999;
 }
-
-
-/* =========================
-   MOBILE NAV
-========================= */
-
-.mobile-nav{
-    display:none;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media(max-width:1100px){
 
@@ -817,7 +616,7 @@ a{
     }
 
     .content{
-        padding:18px 13px 85px;
+        padding:18px 13px;
     }
 
     .topbar{
@@ -826,32 +625,6 @@ a{
 
     .user-info{
         display:none;
-    }
-
-    .mobile-nav{
-        position:fixed;
-        bottom:0;
-        left:0;
-        right:0;
-        height:65px;
-        background:white;
-        display:flex;
-        align-items:center;
-        justify-content:space-around;
-        border-top:1px solid #eee;
-        z-index:950;
-    }
-
-    .mobile-nav a{
-        text-align:center;
-        font-size:10px;
-        color:#777;
-    }
-
-    .mobile-nav span{
-        display:block;
-        font-size:20px;
-        margin-bottom:3px;
     }
 
 }
@@ -872,799 +645,438 @@ a{
     }
 
     .course-grid,
-    .profile-grid,
     .commission-grid{
         grid-template-columns:1fr;
-    }
-
-    .mini-grid{
-        grid-template-columns:1fr 1fr 1fr;
     }
 
     .page-title{
         font-size:17px;
     }
 
-    .top-courses{
-        display:none;
-    }
-
 }
 
-</style>
-</head>
+</style></head><body><!-- SIDEBAR --><aside class="sidebar" id="sidebar"><div class="brand">
 
-<body>
-
-
-<!-- =========================
-     SIDEBAR
-========================= -->
-
-<aside class="sidebar" id="sidebar">
-
-    <div class="brand">
-        <div class="brand-icon">📚</div>
-        Padho Aur Kamao
+    <div class="brand-icon">
+        📚
     </div>
 
-    <div class="sidebar-section">
-        Dashboard Menu
+    Padho Aur Kamao
+
+</div>
+
+
+<div class="sidebar-section">
+    Dashboard Menu
+</div>
+
+
+<a class="side-link active" href="#team">
+    <span class="side-icon">👥</span>
+    My Team
+</a>
+
+
+<a class="side-link" href="#leaderboard">
+    <span class="side-icon">🏆</span>
+    Leaderboard
+</a>
+
+
+<a class="side-link" href="#wallet">
+    <span class="side-icon">💳</span>
+    My Wallet
+</a>
+
+
+<a class="side-link" href="#withdrawal">
+    <span class="side-icon">💸</span>
+    Withdrawal Request
+</a>
+
+
+<div class="sidebar-section">
+    Account
+</div>
+
+
+<a class="side-link" href="#profile">
+    <span class="side-icon">👤</span>
+    My Profile
+</a>
+
+
+<a class="side-link" href="#kyc">
+    <span class="side-icon">🪪</span>
+    KYC Verification
+
+    <span class="side-badge">
+        Pending
+    </span>
+</a>
+
+
+<a class="side-link" href="#security">
+    <span class="side-icon">🔐</span>
+    Security
+</a>
+
+</aside><div class="overlay" id="overlay"></div><!-- MAIN --><div class="main"><header class="topbar"><div class="top-left">
+
+    <button class="menu-mobile" id="mobileMenu">
+        ☰
+    </button>
+
+    <div class="page-title">
+        Dashboard
     </div>
 
-    <a class="side-link active" href="#team">
-        <span class="side-icon">👥</span>
-        My Team
-    </a>
-
-    <a class="side-link" href="#leaderboard">
-        <span class="side-icon">🏆</span>
-        Leaderboard
-    </a>
-
-    <a class="side-link" href="#wallet">
-        <span class="side-icon">💳</span>
-        My Wallet
-    </a>
-
-    <a class="side-link" href="#withdrawal">
-        <span class="side-icon">💸</span>
-        Withdrawal Request
-    </a>
+</div>
 
 
-    <div class="sidebar-section">
-        Account
-    </div>
+<div class="top-right">
 
-    <a class="side-link" href="#profile">
-        <span class="side-icon">👤</span>
-        My Profile
-    </a>
-
-    <a class="side-link" href="#kyc">
-        <span class="side-icon">🪪</span>
-        KYC Verification
-        <span class="side-badge">Pending</span>
-    </a>
-
-    <a class="side-link" href="#security">
-        <span class="side-icon">🔐</span>
-        Security
-    </a>
-
-</aside>
+    <button class="notification">
+        🔔
+    </button>
 
 
-<div class="overlay" id="overlay"></div>
+    <div class="user-box">
 
-
-<!-- =========================
-     MAIN
-========================= -->
-
-<div class="main">
-
-<header class="topbar">
-
-    <div class="top-left">
-
-        <button class="menu-mobile" id="mobileMenu">
-            ☰
-        </button>
-
-        <div class="page-title">
-            Dashboard
+        <div class="avatar" id="avatar">
+            S
         </div>
 
-        <a href="#courses" class="top-courses">
-            📚 Courses
-        </a>
 
-    </div>
+        <div class="user-info">
 
-    <div class="top-right">
+            <strong id="topName">
+                Student
+            </strong>
 
-        <button class="notification">
-            🔔
-        </button>
-
-        <div class="user-box">
-
-            <div class="avatar" id="avatar">
-                S
-            </div>
-
-            <div class="user-info">
-
-                <strong id="topName">
-                    Student
-                </strong>
-
-                <small>
-                    Member
-                </small>
-
-            </div>
+            <small>
+                Member
+            </small>
 
         </div>
 
     </div>
 
-</header>
+</div>
+
+</header><!-- MAIN CONTENT --><main class="content" id="home"><!-- WELCOME --><section class="welcome"><h1 id="welcomeName">
+    Welcome 👋
+</h1>
+
+<p>
+    Learn • Earn • Grow with Padho Aur Kamao
+</p>
+
+<a href="#courses" class="welcome-btn">
+    Explore Courses →
+</a>
+
+</section><!-- STATS --><section class="stats"><div class="stat">
+
+    <div class="stat-top">
+
+        <div class="stat-label">
+            Today's Revenue
+        </div>
+
+        <div class="stat-icon">
+            💰
+        </div>
+
+    </div>
+
+    <div class="stat-value" id="todayRevenue">
+        ₹0
+    </div>
+
+    <div class="stat-change">
+        Today's earnings
+    </div>
+
+</div>
 
 
-<main class="content" id="home">
+<div class="stat">
+
+    <div class="stat-top">
+
+        <div class="stat-label">
+            7 Days Revenue
+        </div>
+
+        <div class="stat-icon">
+            📅
+        </div>
+
+    </div>
+
+    <div class="stat-value" id="weekRevenue">
+        ₹0
+    </div>
+
+    <div class="stat-change">
+        Weekly performance
+    </div>
+
+</div>
 
 
-<!-- WELCOME -->
+<div class="stat">
 
-<section class="welcome">
+    <div class="stat-top">
 
-    <h1 id="welcomeName">
-        Welcome 👋
-    </h1>
+        <div class="stat-label">
+            30 Days Revenue
+        </div>
+
+        <div class="stat-icon">
+            📈
+        </div>
+
+    </div>
+
+    <div class="stat-value" id="monthRevenue">
+        ₹0
+    </div>
+
+    <div class="stat-change">
+        Monthly earnings
+    </div>
+
+</div>
+
+
+<div class="stat">
+
+    <div class="stat-top">
+
+        <div class="stat-label">
+            Total Revenue
+        </div>
+
+        <div class="stat-icon">
+            🏦
+        </div>
+
+    </div>
+
+    <div class="stat-value" id="allRevenue">
+        ₹0
+    </div>
+
+    <div class="stat-change">
+        All time earnings
+    </div>
+
+</div>
+
+</section><!-- COURSES --><section class="section" id="courses"><div class="section-head"><h2 class="section-title">
+    📚 Courses
+</h2>
+
+</div><div class="course-grid"><div class="course-card"><div class="course-cover">
+
+    <div class="book starter">
+
+        <div class="book-text">
+            STUDY<br>
+            & SKILL<br>
+            STARTER
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="course-body">
+
+    <h3>
+        Study & Skill Starter
+    </h3>
 
     <p>
-        Learn • Earn • Grow with Padho Aur Kamao
+        Study Material, Communication Skills,
+        Maths, Reasoning, Hindi और Learning.
     </p>
 
-    <a href="#courses" class="welcome-btn">
-        Explore Courses →
-    </a>
+    <div class="course-price-row">
 
-</section>
+        <span class="course-price">
+            ₹199
+        </span>
 
+        <span>
+            2 Courses
+        </span>
 
-<!-- STATS -->
+    </div>
 
-<section class="stats">
+    <button
+    class="course-btn"
+    onclick="location.href='course.html'">
 
-    <div class="stat">
+        View Course
 
-        <div class="stat-top">
-            <div class="stat-label">
-                Today's Revenue
-            </div>
+    </button>
 
-            <div class="stat-icon">
-                💰
-            </div>
-        </div>
+</div>
 
-        <div class="stat-value" id="todayRevenue">
-            ₹0
-        </div>
+</div><div class="course-card"><div class="course-cover premium">
 
-        <div class="stat-change">
-            Today's earnings
+    <div class="book premium-book">
+
+        <div class="book-text">
+            SKILL<br>
+            & SUCCESS<br>
+            PREMIUM
         </div>
 
     </div>
 
-
-    <div class="stat">
-
-        <div class="stat-top">
-
-            <div class="stat-label">
-                7 Days Revenue
-            </div>
-
-            <div class="stat-icon">
-                📅
-            </div>
-
-        </div>
-
-        <div class="stat-value" id="weekRevenue">
-            ₹0
-        </div>
-
-        <div class="stat-change">
-            Weekly performance
-        </div>
-
-    </div>
-
-
-    <div class="stat">
-
-        <div class="stat-top">
-
-            <div class="stat-label">
-                30 Days Revenue
-            </div>
-
-            <div class="stat-icon">
-                📈
-            </div>
-
-        </div>
-
-        <div class="stat-value" id="monthRevenue">
-            ₹0
-        </div>
-
-        <div class="stat-change">
-            Monthly earnings
-        </div>
-
-    </div>
-
-
-    <div class="stat">
-
-        <div class="stat-top">
-
-            <div class="stat-label">
-                Total Revenue
-            </div>
-
-            <div class="stat-icon">
-                🏦
-            </div>
-
-        </div>
-
-        <div class="stat-value" id="allRevenue">
-            ₹0
-        </div>
-
-        <div class="stat-change">
-            All time earnings
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- COURSES -->
-
-<section class="section" id="courses">
-
-<div class="section-head">
-<h2 class="section-title">📚 Courses</h2>
 </div>
 
-<div class="course-grid">
-
-<div class="course-card">
-
-<div class="course-cover">
-
-<div class="book starter">
-<div class="book-text">
-STUDY<br>
-& SKILL<br>
-STARTER
-</div>
-</div>
-
-</div>
 
 <div class="course-body">
 
-<h3>Study & Skill Starter</h3>
+    <h3>
+        Skill & Success Premium
+    </h3>
 
-<p>
-Study Material, Communication Skills,
-Maths, Reasoning, Hindi और Learning.
+    <p>
+        Competitive Preparation,
+        Premium Skills,
+        Growth और Full Course Access.
+    </p>
+
+    <div class="course-price-row">
+
+        <span class="course-price">
+            ₹399
+        </span>
+
+        <span>
+            All Courses
+        </span>
+
+    </div>
+
+    <button
+    class="course-btn"
+    onclick="location.href='course.html'">
+
+        View Course
+
+    </button>
+
+</div>
+
+</div></div></section><!-- AFFILIATE --><section class="section" id="affiliate"><div class="section-head"><h2 class="section-title">
+    🔗 Affiliate Center
+</h2>
+
+</div><div class="card"><p style="font-size:13px;color:#777">
+
+    अपना Referral Link share करें और
+    eligible course sales पर commission earn करें।
+
 </p>
 
-<div class="course-price-row">
-
-<span class="course-price">₹199</span>
-
-<span>2 Courses</span>
-
-</div>
-
-<button class="course-btn"
-onclick="location.href='course.html'">
-View Course
-</button>
-
-</div>
-
-</div>
-
-
-<div class="course-card">
-
-<div class="course-cover premium">
-
-<div class="book premium-book">
-<div class="book-text">
-SKILL<br>
-& SUCCESS<br>
-PREMIUM
-</div>
-</div>
-
-</div>
-
-<div class="course-body">
-
-<h3>Skill & Success Premium</h3>
-
-<p>
-Competitive Preparation,
-Premium Skills,
-Growth और Full Course Access.
-</p>
-
-<div class="course-price-row">
-
-<span class="course-price">₹399</span>
-
-<span>All Courses</span>
-
-</div>
-
-<button class="course-btn"
-onclick="location.href='course.html'">
-View Course
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- AFFILIATE -->
-
-<section class="section" id="affiliate">
-
-<div class="section-head">
-<h2 class="section-title">🔗 Affiliate Center</h2>
-</div>
-
-<div class="card">
-
-<p style="font-size:13px;color:#777">
-अपना Referral Link share करें और
-eligible course sales पर commission earn करें।
-</p>
 
 <div class="referral-link">
 
-<input
-id="referralLink"
-readonly
-placeholder="Loading...">
+    <input
+    id="referralLink"
+    readonly
+    placeholder="Loading...">
 
-<button class="copy-btn" id="copyBtn">
-Copy
-</button>
+    <button
+    class="copy-btn"
+    id="copyBtn">
+
+        Copy
+
+    </button>
 
 </div>
+
 
 <div class="mini-grid">
 
-<div class="mini">
-<span>Referrals</span>
-<strong id="referralCount">0</strong>
-</div>
+    <div class="mini">
 
-<div class="mini">
-<span>Points</span>
-<strong id="referralPoints">0</strong>
-</div>
+        <span>
+            Referrals
+        </span>
 
-<div class="mini">
-<span>Status</span>
-<strong id="affiliateStatus">Active</strong>
-</div>
+        <strong id="referralCount">
+            0
+        </strong>
 
-</div>
-
-</div>
-
-</section>
+    </div>
 
 
-<!-- COMMISSION -->
+    <div class="mini">
 
-<section class="section" id="commission">
+        <span>
+            Points
+        </span>
 
-<div class="section-head">
-<h2 class="section-title">📊 Commission Structure</h2>
-</div>
+        <strong id="referralPoints">
+            0
+        </strong>
 
-<div class="commission-grid">
+    </div>
 
-<div class="commission-box">
 
-<h3>Study & Skill Starter</h3>
+    <div class="mini">
 
-<p>Course Price: ₹199</p>
+        <span>
+            Status
+        </span>
 
-<div class="commission-amount">
-Commission ₹100
-</div>
+        <strong id="affiliateStatus">
+            Active
+        </strong>
+
+    </div>
 
 </div>
 
-<div class="commission-box">
-
-<h3>Skill & Success Premium</h3>
-
-<p>Course Price: ₹399</p>
-
-<div class="commission-amount">
-Commission ₹200
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- EARNINGS -->
-
-<section class="section" id="earnings">
-
-<div class="section-head">
-<h2 class="section-title">💰 Recent Earnings</h2>
-</div>
-
-<div class="card">
-
-<div class="earning-row">
-
-<div class="earning-left">
-
-<div class="earning-icon">🎯</div>
-
-<div>
-<strong>Course Commission</strong>
-<small>Recent commission</small>
-</div>
-
-</div>
-
-<div class="earning-amount" id="commissionAmount">
-₹0
-</div>
-
-</div>
-
-
-<div class="earning-row">
-
-<div class="earning-left">
-
-<div class="earning-icon">🔗</div>
-
-<div>
-<strong>Passive Income</strong>
-<small>Team based income</small>
-</div>
-
-</div>
-
-<div class="earning-amount" id="passiveAmount">
-₹0
-</div>
-
-</div>
-
-
-<div class="earning-row">
-
-<div class="earning-left">
-
-<div class="earning-icon">👥</div>
-
-<div>
-<strong>Team Referrals</strong>
-<small>Your network</small>
-</div>
-
-</div>
-
-<div class="earning-amount" id="teamEarning">
-₹0
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- TEAM -->
-
-<section class="section" id="team">
-
-<div class="section-head">
-<h2 class="section-title">👥 My Team</h2>
-</div>
-
-<div class="card" id="teamList">
-No team members yet.
-</div>
-
-</section>
-
-
-<!-- LEADERBOARD -->
-
-<section class="section" id="leaderboard">
-
-<div class="section-head">
-<h2 class="section-title">🏆 Leaderboard</h2>
-</div>
-
-<div class="card" id="leaderboardList">
-Loading leaderboard...
-</div>
-
-</section>
-
-
-<!-- WALLET -->
-
-<section class="section" id="wallet">
-
-<div class="section-head">
-<h2 class="section-title">💳 My Wallet</h2>
-</div>
-
-<div class="wallet-box">
-
-<div class="wallet-label">
-Available Balance
-</div>
-
-<div class="wallet-value" id="walletBalance">
-₹0
-</div>
-
-<button
-class="wallet-button"
-onclick="document.getElementById('withdrawal').scrollIntoView()">
-Withdraw Money
-</button>
-
-</div>
-
-</section>
-
-
-<!-- WITHDRAWAL -->
-
-<section class="section" id="withdrawal">
-
-<div class="section-head">
-<h2 class="section-title">💸 Withdrawal Request</h2>
-</div>
-
-<div class="card">
-
-<p style="
-font-size:13px;
-color:#777;
-margin-bottom:15px;">
-Available balance से withdrawal request भेजें।
-</p>
-
-<input
-id="withdrawAmount"
-type="number"
-placeholder="Withdrawal Amount ₹"
-style="
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:9px;
-margin-bottom:10px;">
-
-<input
-id="withdrawMethod"
-placeholder="UPI ID / Bank Details"
-style="
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:9px;">
-
-<button
-id="withdrawBtn"
-class="course-btn">
-💸 Request Withdrawal
-</button>
-
-<p
-id="withdrawMsg"
-style="
-font-size:12px;
-margin-top:10px;">
-</p>
-
-</div>
-
-</section>
-
-
-<!-- PROFILE -->
-
-<section class="section" id="profile">
-
-<div class="section-head">
-<h2 class="section-title">👤 My Profile</h2>
-</div>
-
-<div class="card">
-
-<div class="profile-grid">
-
-<div class="profile-item">
-
-<label>NAME</label>
-
-<strong id="profileName">
-Loading...
-</strong>
-
-</div>
-
-
-<div class="profile-item">
-
-<label>EMAIL</label>
-
-<strong id="profileEmail">
-Loading...
-</strong>
-
-</div>
-
-
-<div class="profile-item">
-
-<label>MEMBER ID</label>
-
-<strong id="memberId">
-Loading...
-</strong>
-
-</div>
-
-
-<div class="profile-item">
-
-<label>ACCOUNT STATUS</label>
-
-<span class="status active">
-Active
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- KYC -->
-
-<section class="section" id="kyc">
-
-<div class="section-head">
-<h2 class="section-title">🪪 KYC Verification</h2>
-</div>
-
-<div class="card">
-
-<p style="font-size:13px;color:#777">
-KYC Status
-</p>
-
-<h3 id="kycStatus" style="margin-top:8px">
-Pending
+</div></section><!-- COMMISSION --><section class="section" id="commission"><div class="section-head"><h2 class="section-title">
+    📊 Commission Structure
+</h2>
+
+</div><div class="commission-grid"><div class="commission-box"><h3>
+    Study & Skill Starter
 </h3>
 
-</div>
-
-</section>
-
-
-<!-- SECURITY -->
-
-<section class="section" id="security">
-
-<div class="section-head">
-<h2 class="section-title">🔐 Security</h2>
-</div>
-
-<div class="card">
-
-<p style="
-font-size:13px;
-color:#777;
-line-height:1.8;">
-
-आपका account Firebase Authentication से secure है।
-अपना Password, OTP या Login Details किसी के साथ share न करें।
-
+<p>
+    Course Price: ₹199
 </p>
 
+<div class="commission-amount">
+    Commission ₹100
 </div>
 
-</section>
+</div><div class="commission-box"><h3>
+    Skill & Success Premium
+</h3>
 
-</main>
+<p>
+    Course Price: ₹399
+</p>
 
+<div class="commission-amount">
+    Commission ₹200
 </div>
 
-
-<!-- MOBILE NAV -->
-
-<nav class="mobile-nav">
-
-<a href="#home">
-<span>🏠</span>
-Home
-</a>
-
-<a href="#courses">
-<span>📚</span>
-Courses
-</a>
-
-<a href="#affiliate">
-<span>🔗</span>
-Affiliate
-</a>
-
-<a href="#wallet">
-<span>💳</span>
-Wallet
-</a>
-
-<a href="#profile">
-<span>👤</span>
-Profile
-</a>
-
-</nav>
-
-
-<!-- FIREBASE -->
-
-<script type="module">
+</div></div></section></main></div><script type="module">
 
 import {
 initializeApp
@@ -1675,8 +1087,7 @@ from
 
 import {
 getAuth,
-onAuthStateChanged,
-signOut
+onAuthStateChanged
 }
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
@@ -1690,8 +1101,7 @@ setDoc,
 collection,
 query,
 where,
-getDocs,
-limit
+getDocs
 }
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
@@ -1723,16 +1133,22 @@ measurementId:
 };
 
 
-const app=initializeApp(firebaseConfig);
+const app=
+initializeApp(firebaseConfig);
 
-const auth=getAuth(app);
+const auth=
+getAuth(app);
 
-const db=getFirestore(app);
+const db=
+getFirestore(app);
+
 
 let currentUser=null;
 
 
-const $=id=>document.getElementById(id);
+const $=
+id=>
+document.getElementById(id);
 
 
 /* MOBILE MENU */
@@ -1765,7 +1181,7 @@ function makeReferral(uid){
 }
 
 
-/* MONEY */
+/* MONEY FORMAT */
 
 function money(value){
 
@@ -1807,7 +1223,8 @@ async function loadUser(){
 
 try{
 
-const ref=doc(
+const ref=
+doc(
 db,
 "users",
 currentUser.uid
@@ -1873,25 +1290,8 @@ $("topName").innerText=
 name;
 
 
-$("profileName").innerText=
-name;
-
-
-$("profileEmail").innerText=
-currentUser.email||
-data.email||
-"-";
-
-
-$("memberId").innerText=
-currentUser.uid
-.substring(0,12);
-
-
 $("avatar").innerText=
-name
-.charAt(0)
-.toUpperCase();
+name.charAt(0).toUpperCase();
 
 
 const code=
@@ -1916,14 +1316,6 @@ data.points||0;
 await loadReferrals(code);
 
 await loadEarnings();
-
-await loadTeam(code);
-
-await loadLeaderboard();
-
-await loadWallet();
-
-await loadKyc();
 
 
 }catch(error){
@@ -1971,7 +1363,8 @@ snap.size;
 
 }catch(error){
 
-$("referralCount").innerText="0";
+$("referralCount").innerText=
+"0";
 
 }
 
@@ -2006,42 +1399,26 @@ currentUser.uid
 
 
 let total=0;
-let passive=0;
-let commission=0;
-let team=0;
-
 let today=0;
 let week=0;
 let month=0;
 
 
-const now=Date.now();
+const now=
+Date.now();
 
 
 snap.forEach(item=>{
 
-const d=item.data();
+const d=
+item.data();
+
 
 const amount=
 Number(d.amount||0);
 
 
 total+=amount;
-
-
-if(d.type==="commission"){
-commission+=amount;
-}
-
-
-if(d.type==="passive"){
-passive+=amount;
-}
-
-
-if(d.type==="team"){
-team+=amount;
-}
 
 
 const timestamp=
@@ -2051,36 +1428,34 @@ d.createdAt
 
 if(timestamp>0){
 
-if(now-timestamp<=86400000){
-today+=amount;
-}
+    if(now-timestamp<=86400000){
+        today+=amount;
+    }
 
-if(now-timestamp<=604800000){
-week+=amount;
-}
+    if(now-timestamp<=604800000){
+        week+=amount;
+    }
 
-if(now-timestamp<=2592000000){
-month+=amount;
-}
+    if(now-timestamp<=2592000000){
+        month+=amount;
+    }
 
 }
 
 });
 
 
-$("todayRevenue").innerText=money(today);
-$("weekRevenue").innerText=money(week);
-$("monthRevenue").innerText=money(month);
-$("allRevenue").innerText=money(total);
+$("todayRevenue").innerText=
+money(today);
 
-$("commissionAmount").innerText=
-money(commission);
+$("weekRevenue").innerText=
+money(week);
 
-$("passiveAmount").innerText=
-money(passive);
+$("monthRevenue").innerText=
+money(month);
 
-$("teamEarning").innerText=
-money(team);
+$("allRevenue").innerText=
+money(total);
 
 
 }catch(error){
@@ -2089,306 +1464,6 @@ console.log(
 "Earning Error:",
 error
 );
-
-}
-
-}
-
-
-/* TEAM */
-
-async function loadTeam(code){
-
-try{
-
-const snap=
-await getDocs(
-
-query(
-
-collection(
-db,
-"users"
-),
-
-where(
-"referredBy",
-"==",
-code
-),
-
-limit(20)
-
-)
-
-);
-
-
-if(snap.empty){
-
-$("teamList").innerHTML=
-"<p style='font-size:13px;color:#888'>Team data unavailable.</p>";
-
-return;
-
-}
-
-
-$("teamList").innerHTML=
-
-snap.docs
-
-.map((item,index)=>{
-
-const d=item.data();
-
-return `
-
-<div class="rank-row">
-
-<div class="rank-number">
-${index+1}
-</div>
-
-<div class="rank-user">
-
-<strong>
-${d.name||"Student"}
-</strong>
-
-<small>
-${d.email||""}
-</small>
-
-</div>
-
-<span class="status active">
-Member
-</span>
-
-</div>
-
-`;
-
-})
-
-.join("");
-
-
-}catch(error){
-
-$("teamList").innerHTML=
-"<p style='font-size:13px;color:#888'>Team data unavailable.</p>";
-
-}
-
-}
-
-
-/* LEADERBOARD */
-
-async function loadLeaderboard(){
-
-try{
-
-const snap=
-await getDocs(
-
-query(
-
-collection(
-db,
-"users"
-),
-
-limit(20)
-
-)
-
-);
-
-
-let users=
-snap.docs.map(
-item=>item.data()
-);
-
-
-users.sort(
-
-(a,b)=>
-
-Number(b.points||0)
--
-Number(a.points||0)
-
-);
-
-
-if(users.length===0){
-
-$("leaderboardList").innerHTML=
-"<p style='font-size:13px;color:#888'>Leaderboard unavailable.</p>";
-
-return;
-
-}
-
-
-$("leaderboardList").innerHTML=
-
-users
-
-.map((d,index)=>{
-
-return `
-
-<div class="rank-row">
-
-<div class="rank-number">
-${index+1}
-</div>
-
-<div class="rank-user">
-
-<strong>
-${d.name||"Student"}
-</strong>
-
-<small>
-Affiliate Points
-</small>
-
-</div>
-
-<div class="rank-points">
-${d.points||0}
-</div>
-
-</div>
-
-`;
-
-})
-
-.join("");
-
-
-}catch(error){
-
-$("leaderboardList").innerHTML=
-"<p style='font-size:13px;color:#888'>Leaderboard unavailable.</p>";
-
-}
-
-}
-
-
-/* WALLET */
-
-async function loadWallet(){
-
-try{
-
-const snap=
-await getDocs(
-
-query(
-
-collection(
-db,
-"walletTransactions"
-),
-
-where(
-"userId",
-"==",
-currentUser.uid
-)
-
-)
-
-);
-
-
-let balance=0;
-
-
-snap.forEach(item=>{
-
-const d=item.data();
-
-const amount=
-Number(d.amount||0);
-
-
-if(
-d.type==="credit" ||
-d.type==="commission" ||
-d.type==="passive"
-){
-
-balance+=amount;
-
-}else{
-
-balance-=amount;
-
-}
-
-});
-
-
-$("walletBalance").innerText=
-money(balance);
-
-
-}catch(error){
-
-$("walletBalance").innerText=
-"₹0";
-
-}
-
-}
-
-
-/* KYC */
-
-async function loadKyc(){
-
-try{
-
-const snap=
-await getDoc(
-
-doc(
-db,
-"kyc",
-currentUser.uid
-)
-
-);
-
-
-if(snap.exists()){
-
-$("kycStatus").innerText=
-snap.data().status||
-"Pending";
-
-}else{
-
-$("kycStatus").innerText=
-"Pending";
-
-}
-
-
-}catch(error){
-
-$("kycStatus").innerText=
-"Pending";
 
 }
 
@@ -2407,68 +1482,38 @@ $("referralLink").value;
 
 try{
 
-await navigator.clipboard.writeText(link);
+await navigator.clipboard.writeText(
+link
+);
+
 
 $("copyBtn").innerText=
 "Copied ✓";
 
 
-setTimeout(()=>{
+setTimeout(
+
+()=>{
 
 $("copyBtn").innerText=
 "Copy";
 
-},1500);
+},
+
+1500
+
+);
 
 
 }catch(error){
 
 $("referralLink").select();
 
-document.execCommand("copy");
-
-}
-
-};
-
-
-/* WITHDRAWAL */
-
-$("withdrawBtn").onclick=()=>{
-
-const amount=
-Number(
-$("withdrawAmount").value
+document.execCommand(
+"copy"
 );
 
-
-const method=
-$("withdrawMethod").value
-.trim();
-
-
-if(!amount || amount<=0){
-
-$("withdrawMsg").innerText=
-"कृपया सही withdrawal amount डालें।";
-
-return;
-
 }
-
-
-if(!method){
-
-$("withdrawMsg").innerText=
-"कृपया UPI ID या Bank Details डालें।";
-
-return;
-
-}
-
-
-$("withdrawMsg").innerText=
-"Withdrawal request feature जल्द उपलब्ध होगा।";
 
 };
 
@@ -2480,29 +1525,24 @@ document
 .forEach(link=>{
 
 link.addEventListener(
+
 "click",
-()=>{
 
-document
-.querySelectorAll(".side-link")
-.forEach(
-item=>
-item.classList
-.remove("active")
-);
+event=>{
 
+    /*
+    Future pages can be linked here.
+    Currently menu items stay in sidebar only.
+    */
 
-link.classList.add("active");
-
-
-$("sidebar")
-.classList
-.remove("open");
+    $("sidebar")
+    .classList
+    .remove("open");
 
 
-$("overlay")
-.classList
-.remove("show");
+    $("overlay")
+    .classList
+    .remove("show");
 
 }
 
@@ -2511,7 +1551,4 @@ $("overlay")
 });
 
 
-</script>
-
-</body>
-</html>
+</script></body></html>
