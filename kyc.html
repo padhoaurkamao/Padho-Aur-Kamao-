@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>KYC Verification - Padho Aur Kamao</title>
 
@@ -19,7 +18,7 @@ content="width=device-width, initial-scale=1.0">
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f5f7fb;
     color:#172033;
 }
@@ -31,62 +30,84 @@ a{
 
 
 /* =====================
-   TOPBAR
+   SIDEBAR
 ===================== */
 
-.topbar{
-    height:70px;
-    background:white;
-    border-bottom:1px solid #e7eaf0;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:0 25px;
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    width:260px;
+    background:#fff;
+    border-right:1px solid #e8eaf0;
+    z-index:1000;
+    overflow-y:auto;
+    transition:.3s;
 }
 
 .brand{
+    height:72px;
     display:flex;
     align-items:center;
-    gap:10px;
-
+    padding:0 20px;
+    border-bottom:1px solid #eee;
     font-size:18px;
-    font-weight:bold;
-
-    color:#6526d7;
+    font-weight:800;
+    color:#6025d7;
 }
 
 .brand-icon{
     width:42px;
     height:42px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border-radius:12px;
-
-    background:linear-gradient(
-        135deg,
-        #6025d7,
-        #8b5cf6
-    );
-
-    color:white;
+    background:linear-gradient(135deg,#6025d7,#8b5cf6);
+    color:#fff;
+    margin-right:10px;
+    font-size:22px;
 }
 
-.back-btn{
-    padding:10px 16px;
-
-    border-radius:10px;
-
-    background:#f1ebff;
-
-    color:#6526d7;
-
-    font-size:14px;
+.sidebar-section{
+    font-size:11px;
     font-weight:bold;
+    color:#9aa1b1;
+    padding:22px 20px 8px;
+    text-transform:uppercase;
+}
+
+.side-link{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin:3px 10px;
+    padding:12px 13px;
+    border-radius:10px;
+    font-size:14px;
+    color:#596174;
+}
+
+.side-link:hover,
+.side-link.active{
+    background:#f1ebff;
+    color:#6526d7;
+}
+
+.side-icon{
+    width:22px;
+    text-align:center;
+    font-size:18px;
+}
+
+.side-badge{
+    margin-left:auto;
+    background:#fff3cd;
+    color:#b45309;
+    padding:4px 8px;
+    border-radius:20px;
+    font-size:10px;
 }
 
 
@@ -94,106 +115,161 @@ a{
    MAIN
 ===================== */
 
-.container{
-    max-width:750px;
-
-    margin:35px auto;
-
-    padding:0 18px;
+.main{
+    margin-left:260px;
+    min-height:100vh;
 }
 
 
 /* =====================
-   HEADER
+   TOPBAR
 ===================== */
 
-.page-header{
-
-    background:linear-gradient(
-        135deg,
-        #5420bd,
-        #7c3aed
-    );
-
-    color:white;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    margin-bottom:22px;
-}
-
-.page-header h1{
-    font-size:27px;
-}
-
-.page-header p{
-    margin-top:10px;
-
-    font-size:14px;
-
-    opacity:.9;
-
-    line-height:1.6;
-}
-
-
-/* =====================
-   STATUS CARD
-===================== */
-
-.status-card{
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:22px;
-
-    border:1px solid #edf0f5;
-
-    margin-bottom:22px;
-}
-
-.status-title{
-
-    font-size:17px;
-
-    font-weight:bold;
-
-    margin-bottom:15px;
-}
-
-.status-row{
-
+.topbar{
+    height:72px;
+    background:#fff;
+    border-bottom:1px solid #e8eaf0;
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
+    padding:0 28px;
+}
 
+.top-left{
+    display:flex;
+    align-items:center;
     gap:15px;
 }
 
-.status-label{
-    color:#777;
+.page-title{
+    font-size:21px;
+    font-weight:700;
+}
+
+.menu-mobile{
+    display:none;
+    width:42px;
+    height:42px;
+    border:0;
+    border-radius:10px;
+    background:#f1ebff;
+    color:#6526d7;
+    font-size:20px;
+}
+
+.user-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.avatar{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-weight:bold;
+    background:linear-gradient(135deg,#6025d7,#8b5cf6);
+}
+
+.user-info strong{
+    display:block;
+    font-size:13px;
+}
+
+.user-info small{
+    font-size:11px;
+    color:#9299a8;
+}
+
+
+/* =====================
+   CONTENT
+===================== */
+
+.content{
+    max-width:900px;
+    margin:auto;
+    padding:30px;
+}
+
+
+/* =====================
+   KYC HEADER
+===================== */
+
+.kyc-header{
+    background:linear-gradient(135deg,#5420bd,#7c3aed);
+    color:white;
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.kyc-header h1{
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+.kyc-header p{
     font-size:14px;
+    opacity:.9;
+}
+
+
+/* =====================
+   STATUS
+===================== */
+
+.status-card{
+    background:white;
+    border:1px solid #edf0f5;
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:22px;
+}
+
+.status-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.status-title{
+    font-size:18px;
+    font-weight:bold;
+}
+
+.status-text{
+    margin-top:8px;
+    font-size:13px;
+    color:#777;
 }
 
 .status-badge{
-
-    padding:8px 14px;
-
-    border-radius:30px;
-
-    font-size:13px;
-
+    padding:9px 15px;
+    border-radius:25px;
+    font-size:12px;
     font-weight:bold;
+}
 
+.pending{
     background:#fff3cd;
-
     color:#b45309;
+}
+
+.approved{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.rejected{
+    background:#fee2e2;
+    color:#dc2626;
 }
 
 
@@ -202,236 +278,162 @@ a{
 ===================== */
 
 .form-card{
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:25px;
-
+    background:#fff;
     border:1px solid #edf0f5;
+    border-radius:18px;
+    padding:25px;
 }
 
-.form-card h2{
-
+.form-title{
     font-size:20px;
-
     margin-bottom:8px;
 }
 
 .form-description{
-
-    color:#777;
-
     font-size:13px;
-
-    line-height:1.6;
-
+    color:#777;
     margin-bottom:22px;
 }
 
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
 
 .form-group{
+    display:flex;
+    flex-direction:column;
+}
 
-    margin-bottom:18px;
+.form-group.full{
+    grid-column:1/-1;
 }
 
 label{
-
-    display:block;
-
     font-size:13px;
-
     font-weight:bold;
-
-    margin-bottom:8px;
+    margin-bottom:7px;
 }
 
 input,
-select{
-
+select,
+textarea{
     width:100%;
-
     padding:13px;
-
     border:1px solid #dfe3eb;
-
     border-radius:10px;
-
-    font-size:14px;
-
     outline:none;
+    font-size:14px;
+}
+
+textarea{
+    resize:vertical;
+    min-height:100px;
 }
 
 input:focus,
-select:focus{
-
+select:focus,
+textarea:focus{
     border-color:#6526d7;
-
-    box-shadow:
-    0 0 0 3px
-    rgba(101,38,215,.08);
+    box-shadow:0 0 0 3px #f1ebff;
 }
-
-input:disabled{
-
-    background:#f7f7f9;
-
-    color:#777;
-}
-
-
-/* =====================
-   INFO BOX
-===================== */
-
-.info-box{
-
-    background:#f7f5ff;
-
-    border-left:4px solid #6526d7;
-
-    padding:15px;
-
-    border-radius:10px;
-
-    font-size:12px;
-
-    line-height:1.7;
-
-    color:#555;
-
-    margin-bottom:20px;
-}
-
-
-/* =====================
-   CHECKBOX
-===================== */
-
-.checkbox-row{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:10px;
-
-    margin-bottom:20px;
-
-    font-size:12px;
-
-    line-height:1.6;
-
-    color:#666;
-}
-
-.checkbox-row input{
-
-    width:auto;
-
-    margin-top:3px;
-}
-
-
-/* =====================
-   BUTTON
-===================== */
 
 .submit-btn{
-
+    margin-top:22px;
     width:100%;
-
-    border:0;
-
     padding:14px;
-
-    border-radius:11px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #6526d7,
-        #8b5cf6
-    );
-
-    color:white;
-
+    border:0;
+    border-radius:10px;
+    background:linear-gradient(135deg,#6526d7,#8b5cf6);
+    color:#fff;
     font-size:15px;
-
     font-weight:bold;
-
     cursor:pointer;
 }
 
 .submit-btn:disabled{
-
     opacity:.6;
-
     cursor:not-allowed;
 }
 
 
 /* =====================
-   MESSAGE
+   NOTICE
 ===================== */
 
-.message{
-
-    display:none;
-
-    margin-top:15px;
-
-    padding:13px;
-
-    border-radius:10px;
-
-    font-size:13px;
-}
-
-.success{
-
-    background:#dcfce7;
-
-    color:#166534;
-}
-
-.error{
-
-    background:#fee2e2;
-
-    color:#b91c1c;
+.notice{
+    margin-top:18px;
+    background:#f7f5ff;
+    border-radius:12px;
+    padding:15px;
+    font-size:12px;
+    color:#666;
+    line-height:1.6;
 }
 
 
 /* =====================
-   RESPONSIVE
+   OVERLAY
 ===================== */
 
-@media(max-width:600px){
+.overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    z-index:999;
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media(max-width:800px){
+
+    .sidebar{
+        left:-270px;
+    }
+
+    .sidebar.open{
+        left:0;
+    }
+
+    .overlay.show{
+        display:block;
+    }
+
+    .main{
+        margin-left:0;
+    }
+
+    .menu-mobile{
+        display:block;
+    }
+
+    .content{
+        padding:18px 13px;
+    }
 
     .topbar{
         padding:0 15px;
     }
 
-    .brand{
-        font-size:14px;
+}
+
+@media(max-width:600px){
+
+    .form-grid{
+        grid-template-columns:1fr;
     }
 
-    .container{
-        margin:20px auto;
+    .form-group.full{
+        grid-column:auto;
     }
 
-    .page-header{
-        padding:24px 20px;
-    }
-
-    .page-header h1{
-        font-size:22px;
-    }
-
-    .form-card{
-        padding:20px 16px;
+    .user-info{
+        display:none;
     }
 
     .status-row{
@@ -449,55 +451,165 @@ input:disabled{
 <body>
 
 
-<!-- =====================
-     TOPBAR
-===================== -->
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+<div class="brand">
+
+<div class="brand-icon">
+📚
+</div>
+
+Padho Aur Kamao
+
+</div>
+
+
+<div class="sidebar-section">
+Dashboard Menu
+</div>
+
+
+<a class="side-link" href="dashboard.html#team">
+
+<span class="side-icon">👥</span>
+
+My Team
+
+</a>
+
+
+<a class="side-link" href="dashboard.html#leaderboard">
+
+<span class="side-icon">🏆</span>
+
+Leaderboard
+
+</a>
+
+
+<a class="side-link" href="dashboard.html#wallet">
+
+<span class="side-icon">💳</span>
+
+My Wallet
+
+</a>
+
+
+<a class="side-link" href="dashboard.html#withdrawal">
+
+<span class="side-icon">💸</span>
+
+Withdrawal Request
+
+</a>
+
+
+<div class="sidebar-section">
+Account
+</div>
+
+
+<a class="side-link" href="profile.html">
+
+<span class="side-icon">👤</span>
+
+My Profile
+
+</a>
+
+
+<a class="side-link active" href="kyc.html">
+
+<span class="side-icon">🪪</span>
+
+KYC Verification
+
+<span class="side-badge" id="sidebarStatus">
+Pending
+</span>
+
+</a>
+
+
+<a class="side-link" href="dashboard.html#security">
+
+<span class="side-icon">🔐</span>
+
+Security
+
+</a>
+
+
+</aside>
+
+
+<div class="overlay" id="overlay"></div>
+
+
+<!-- MAIN -->
+
+<div class="main">
+
 
 <header class="topbar">
 
-    <div class="brand">
 
-        <div class="brand-icon">
-            🪪
-        </div>
+<div class="top-left">
 
-        Padho Aur Kamao
+<button class="menu-mobile" id="mobileMenu">
+☰
+</button>
 
-    </div>
+<div class="page-title">
+KYC Verification
+</div>
+
+</div>
 
 
-    <a
-    href="dashboard.html"
-    class="back-btn">
+<div class="user-box">
 
-        ← Dashboard
+<div class="avatar" id="avatar">
+S
+</div>
 
-    </a>
+
+<div class="user-info">
+
+<strong id="topName">
+Student
+</strong>
+
+<small>
+Member
+</small>
+
+</div>
+
+</div>
+
 
 </header>
 
 
 
-<!-- =====================
-     MAIN
-===================== -->
-
-<main class="container">
+<main class="content">
 
 
 <!-- HEADER -->
 
-<section class="page-header">
+<section class="kyc-header">
 
-    <h1>
-        🪪 KYC Verification
-    </h1>
+<h1>
+🪪 KYC Verification
+</h1>
 
-    <p>
-        अपना account verification request submit करें।
-        Verification होने के बाद आपका KYC status
-        यहाँ दिखाई देगा।
-    </p>
+<p>
+अपनी जानकारी submit करें। Verification के बाद आपका account status update किया जाएगा।
+</p>
 
 </section>
 
@@ -507,35 +619,28 @@ input:disabled{
 
 <section class="status-card">
 
-    <div class="status-title">
-
-        Verification Status
-
-    </div>
+<div class="status-row">
 
 
-    <div class="status-row">
+<div>
 
-        <div>
+<div class="status-title">
+Verification Status
+</div>
 
-            <div class="status-label">
+<div class="status-text" id="statusMessage">
+आपका KYC अभी submit नहीं किया गया है।
+</div>
 
-                Current KYC Status
-
-            </div>
-
-        </div>
+</div>
 
 
-        <div
-        class="status-badge"
-        id="kycStatus">
+<div class="status-badge pending" id="kycStatus">
+Not Submitted
+</div>
 
-            Loading...
 
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -543,182 +648,180 @@ input:disabled{
 
 <!-- FORM -->
 
-<section
-class="form-card"
-id="formCard">
+<section class="form-card">
 
-
-<h2>
-    Submit Verification Request
+<h2 class="form-title">
+KYC Details
 </h2>
 
-
 <p class="form-description">
-
-    नीचे अपनी सही जानकारी भरें।
-    जानकारी submit करने के बाद request review के लिए जाएगी।
-
+सही जानकारी भरें ताकि verification आसानी से की जा सके।
 </p>
-
-
-
-<div class="info-box">
-
-    🔒 सुरक्षा के लिए इस form में Aadhaar number,
-    PAN number, OTP, Password या Bank Account Number
-    जैसी अत्यधिक संवेदनशील जानकारी न भरें।
-
-</div>
-
 
 
 <form id="kycForm">
 
 
-<!-- NAME -->
+<div class="form-grid">
+
 
 <div class="form-group">
 
-    <label>
-        Full Name
-    </label>
+<label>
+पूरा नाम
+</label>
 
-    <input
-    type="text"
-    id="fullName"
-    placeholder="अपना पूरा नाम लिखें"
-    required>
+<input
+type="text"
+id="fullName"
+placeholder="अपना पूरा नाम"
+required>
 
 </div>
 
 
-
-<!-- EMAIL -->
 
 <div class="form-group">
 
-    <label>
-        Registered Email
-    </label>
+<label>
+Mobile Number
+</label>
 
-    <input
-    type="email"
-    id="email"
-    disabled>
+<input
+type="tel"
+id="mobile"
+placeholder="10 digit mobile number"
+maxlength="10"
+required>
 
 </div>
 
 
-
-<!-- MOBILE -->
 
 <div class="form-group">
 
-    <label>
-        Mobile Number
-    </label>
+<label>
+Date of Birth
+</label>
 
-    <input
-    type="tel"
-    id="mobile"
-    placeholder="10 digit mobile number"
-    maxlength="10"
-    required>
+<input
+type="date"
+id="dob"
+required>
 
 </div>
 
 
-
-<!-- PURPOSE -->
 
 <div class="form-group">
 
-    <label>
-        Verification Purpose
-    </label>
+<label>
+Gender
+</label>
 
-    <select
-    id="purpose"
-    required>
+<select id="gender" required>
 
-        <option value="">
-            Select Purpose
-        </option>
+<option value="">
+Select Gender
+</option>
 
-        <option value="Account Verification">
-            Account Verification
-        </option>
+<option value="Male">
+Male
+</option>
 
-        <option value="Affiliate Verification">
-            Affiliate Verification
-        </option>
+<option value="Female">
+Female
+</option>
 
-        <option value="Withdrawal Verification">
-            Withdrawal Verification
-        </option>
+<option value="Other">
+Other
+</option>
 
-    </select>
+</select>
 
 </div>
 
 
 
-<!-- CONSENT -->
+<div class="form-group full">
 
-<div class="checkbox-row">
+<label>
+Current Address
+</label>
 
-    <input
-    type="checkbox"
-    id="consent"
-    required>
-
-
-    <label for="consent">
-
-        मैं पुष्टि करता/करती हूँ कि मेरे द्वारा दी गई
-        जानकारी सही है और verification request के
-        लिए उपयोग की जा सकती है।
-
-    </label>
+<textarea
+id="address"
+placeholder="अपना पूरा address लिखें"
+required></textarea>
 
 </div>
 
 
 
-<!-- BUTTON -->
+<div class="form-group">
+
+<label>
+City / District
+</label>
+
+<input
+type="text"
+id="city"
+placeholder="City या District"
+required>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+State
+</label>
+
+<input
+type="text"
+id="state"
+placeholder="State"
+required>
+
+</div>
+
+
+</div>
+
+
 
 <button
 type="submit"
 class="submit-btn"
 id="submitBtn">
 
-    Submit KYC Request
+Submit KYC Request
 
 </button>
 
 
+</form>
 
-<!-- MESSAGE -->
 
-<div
-id="message"
-class="message">
+<div class="notice">
+
+🔐 आपकी जानकारी केवल account verification के लिए उपयोग की जानी चाहिए।
+Password, OTP या बैंक का पूरा PIN कभी भी form में न डालें।
 
 </div>
 
-
-</form>
 
 </section>
 
 
 </main>
 
+</div>
 
 
-<!-- =====================
-     FIREBASE
-===================== -->
 
 <script type="module">
 
@@ -726,7 +829,9 @@ class="message">
 import {
 initializeApp
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
@@ -734,7 +839,9 @@ import {
 getAuth,
 onAuthStateChanged
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
@@ -745,13 +852,15 @@ getDoc,
 setDoc,
 serverTimestamp
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-/* =====================
-   FIREBASE CONFIG
-===================== */
+
+/* FIREBASE CONFIG */
+
 
 const firebaseConfig={
 
@@ -779,9 +888,6 @@ measurementId:
 };
 
 
-/* =====================
-   INITIALIZE
-===================== */
 
 const app=
 initializeApp(firebaseConfig);
@@ -796,127 +902,41 @@ getFirestore(app);
 
 
 
-/* =====================
-   ELEMENTS
-===================== */
-
-const fullName=
-document.getElementById("fullName");
-
-
-const email=
-document.getElementById("email");
-
-
-const mobile=
-document.getElementById("mobile");
-
-
-const purpose=
-document.getElementById("purpose");
-
-
-const kycStatus=
-document.getElementById("kycStatus");
-
-
-const kycForm=
-document.getElementById("kycForm");
-
-
-const submitBtn=
-document.getElementById("submitBtn");
-
-
-const message=
-document.getElementById("message");
-
-
-const formCard=
-document.getElementById("formCard");
-
-
-
 let currentUser=null;
 
 
 
-/* =====================
-   SHOW MESSAGE
-===================== */
-
-function showMessage(
-text,
-type
-){
-
-    message.style.display=
-    "block";
-
-
-    message.innerText=
-    text;
-
-
-    message.className=
-    "message "+type;
-
-}
+const $=
+id=>
+document.getElementById(id);
 
 
 
-/* =====================
-   STATUS COLOR
-===================== */
-
-function setStatus(
-status
-){
-
-    kycStatus.innerText=
-    status;
+/* MOBILE MENU */
 
 
-    if(status==="Approved"){
+$("mobileMenu").onclick=()=>{
 
-        kycStatus.style.background=
-        "#dcfce7";
+$("sidebar").classList.add("open");
 
+$("overlay").classList.add("show");
 
-        kycStatus.style.color=
-        "#166534";
-
-    }
-
-    else if(status==="Rejected"){
-
-        kycStatus.style.background=
-        "#fee2e2";
+};
 
 
-        kycStatus.style.color=
-        "#b91c1c";
+$("overlay").onclick=()=>{
 
-    }
+$("sidebar").classList.remove("open");
 
-    else{
+$("overlay").classList.remove("show");
 
-        kycStatus.style.background=
-        "#fff3cd";
-
-
-        kycStatus.style.color=
-        "#b45309";
-
-    }
-
-}
+};
 
 
 
-/* =====================
-   AUTH CHECK
-===================== */
+
+/* AUTH CHECK */
+
 
 onAuthStateChanged(
 
@@ -927,70 +947,19 @@ async user=>{
 
 if(!user){
 
-    location.href=
-    "login.html";
+location.href=
+"login.html";
 
-    return;
-
-}
-
-
-currentUser=
-user;
-
-
-/* EMAIL */
-
-email.value=
-user.email||"";
-
-
-/* LOAD USER NAME */
-
-try{
-
-const userRef=
-doc(
-db,
-"users",
-user.uid
-);
-
-
-const userSnap=
-await getDoc(
-userRef
-);
-
-
-if(
-userSnap.exists()
-){
-
-const userData=
-userSnap.data();
-
-
-fullName.value=
-userData.name||
-user.displayName||
-"";
+return;
 
 }
 
 
-}
-catch(error){
-
-console.log(
-"User load error:",
-error
-);
-
-}
+currentUser=user;
 
 
-/* LOAD KYC */
+await loadUser();
+
 
 await loadKYC();
 
@@ -1001,9 +970,78 @@ await loadKYC();
 
 
 
-/* =====================
-   LOAD KYC
-===================== */
+
+/* LOAD USER */
+
+
+async function loadUser(){
+
+
+try{
+
+
+const userRef=
+doc(
+db,
+"users",
+currentUser.uid
+);
+
+
+const snap=
+await getDoc(
+userRef
+);
+
+
+let name=
+currentUser.displayName||
+"Student";
+
+
+if(snap.exists()){
+
+const data=
+snap.data();
+
+
+name=
+data.name||
+name;
+
+}
+
+
+$("topName").innerText=
+name;
+
+
+$("avatar").innerText=
+name
+.charAt(0)
+.toUpperCase();
+
+
+$("fullName").value=
+name;
+
+
+}catch(error){
+
+console.log(
+error
+);
+
+}
+
+
+}
+
+
+
+
+/* LOAD KYC */
+
 
 async function loadKYC(){
 
@@ -1014,7 +1052,7 @@ try{
 const kycRef=
 doc(
 db,
-"kycRequests",
+"kyc",
 currentUser.uid
 );
 
@@ -1025,9 +1063,23 @@ kycRef
 );
 
 
-if(
-snap.exists()
-){
+
+if(!snap.exists()){
+
+
+$("kycStatus").innerText=
+"Not Submitted";
+
+
+$("statusMessage").innerText=
+"आपका KYC अभी submit नहीं किया गया है।";
+
+
+return;
+
+
+}
+
 
 
 const data=
@@ -1039,93 +1091,128 @@ data.status||
 "Pending";
 
 
-setStatus(
-status
-);
-
-
-/* Fill previous data */
-
-fullName.value=
+$("fullName").value=
 data.fullName||
-fullName.value;
+$("fullName").value;
 
 
-mobile.value=
+$("mobile").value=
 data.mobile||
 "";
 
 
-purpose.value=
-data.purpose||
+$("dob").value=
+data.dob||
 "";
 
 
-/* Approved */
-
-if(
-status==="Approved"
-){
-
-formCard.style.display=
-"none";
-
-}
+$("gender").value=
+data.gender||
+"";
 
 
-/* Pending */
+$("address").value=
+data.address||
+"";
 
-if(
-status==="Pending"
-){
 
-submitBtn.innerText=
-"KYC Request Submitted";
+$("city").value=
+data.city||
+"";
 
-submitBtn.disabled=
+
+$("state").value=
+data.state||
+"";
+
+
+
+$("kycStatus").innerText=
+status;
+
+
+$("sidebarStatus").innerText=
+status;
+
+
+
+if(status==="Approved"){
+
+
+$("kycStatus").className=
+"status-badge approved";
+
+
+$("statusMessage").innerText=
+"आपका KYC सफलतापूर्वक verify हो चुका है।";
+
+
+$("submitBtn").innerText=
+"KYC Approved";
+
+
+$("submitBtn").disabled=
 true;
 
 
-showMessage(
-
-"आपकी KYC request review में है। कृपया approval का इंतजार करें।",
-
-"success"
-
-);
-
 }
 
 
+
+else if(status==="Rejected"){
+
+
+$("kycStatus").className=
+"status-badge rejected";
+
+
+$("statusMessage").innerText=
+"आपका KYC reject किया गया है। जानकारी check करके दोबारा submit करें।";
+
+
+$("submitBtn").innerText=
+"Submit Again";
+
+
 }
+
 
 
 else{
 
 
-setStatus(
-"Not Submitted"
-);
+$("kycStatus").className=
+"status-badge pending";
+
+
+$("kycStatus").innerText=
+"Pending";
+
+
+$("sidebarStatus").innerText=
+"Pending";
+
+
+$("statusMessage").innerText=
+"आपका KYC request verification के लिए भेजा गया है।";
+
+
+$("submitBtn").innerText=
+"Update KYC Request";
 
 
 }
 
 
-}
-catch(error){
+}catch(error){
 
 
 console.log(
-"KYC load error:",
+"KYC Load Error:",
 error
 );
 
 
-setStatus(
-"Not Submitted"
-);
-
-
 }
 
 
@@ -1133,11 +1220,11 @@ setStatus(
 
 
 
-/* =====================
-   SUBMIT KYC
-===================== */
 
-kycForm.addEventListener(
+/* SUBMIT KYC */
+
+
+$("kycForm").addEventListener(
 
 "submit",
 
@@ -1147,129 +1234,176 @@ async event=>{
 event.preventDefault();
 
 
-if(!currentUser){
 
-    return;
-
-}
+const button=
+$("submitBtn");
 
 
-const mobileNumber=
-mobile.value.trim();
-
-
-/* MOBILE VALIDATION */
-
-if(
-!/^[0-9]{10}$/.test(
-mobileNumber
-)
-){
-
-showMessage(
-
-"कृपया सही 10 digit mobile number डालें।",
-
-"error"
-
-);
-
-return;
-
-}
-
-
-/* BUTTON */
-
-submitBtn.disabled=
+button.disabled=
 true;
 
 
-submitBtn.innerText=
+button.innerText=
 "Submitting...";
+
 
 
 try{
 
 
-const kycRef=
-doc(
-db,
-"kycRequests",
-currentUser.uid
+const mobile=
+$("mobile").value
+.trim();
+
+
+
+if(!/^[0-9]{10}$/.test(mobile)){
+
+
+alert(
+"कृपया सही 10 digit mobile number डालें।"
 );
 
 
-await setDoc(
+button.disabled=
+false;
 
-kycRef,
 
-{
+button.innerText=
+"Submit KYC Request";
+
+
+return;
+
+
+}
+
+
+
+const kycData={
+
 
 userId:
 currentUser.uid,
 
 
-fullName:
-fullName.value.trim(),
-
-
 email:
-currentUser.email||"",
+currentUser.email||
+"",
+
+
+fullName:
+$("fullName").value
+.trim(),
 
 
 mobile:
-mobileNumber,
+mobile,
 
 
-purpose:
-purpose.value,
+dob:
+$("dob").value,
+
+
+gender:
+$("gender").value,
+
+
+address:
+$("address").value
+.trim(),
+
+
+city:
+$("city").value
+.trim(),
+
+
+state:
+$("state").value
+.trim(),
 
 
 status:
 "Pending",
 
 
-createdAt:
-serverTimestamp(),
-
-
 updatedAt:
 serverTimestamp()
 
-},
+
+};
+
+
+
+const kycRef=
+doc(
+db,
+"kyc",
+currentUser.uid
+);
+
+
+
+const oldSnap=
+await getDoc(
+kycRef
+);
+
+
+
+if(!oldSnap.exists()){
+
+
+kycData.createdAt=
+serverTimestamp();
+
+
+}
+
+
+
+await setDoc(
+
+kycRef,
+
+kycData,
 
 {
-
 merge:true
-
 }
 
 );
 
 
-/* STATUS */
 
-setStatus(
-"Pending"
+$("kycStatus").innerText=
+"Pending";
+
+
+$("kycStatus").className=
+"status-badge pending";
+
+
+$("sidebarStatus").innerText=
+"Pending";
+
+
+$("statusMessage").innerText=
+"आपका KYC request सफलतापूर्वक submit हो गया है। Verification का इंतजार करें।";
+
+
+button.innerText=
+"Submitted ✓";
+
+
+alert(
+"KYC Request Successfully Submitted!"
 );
 
 
-submitBtn.innerText=
-"KYC Request Submitted";
 
-
-showMessage(
-
-"✅ आपकी KYC request सफलतापूर्वक submit हो गई है। अब verification review का इंतजार करें।",
-
-"success"
-
-);
-
-
-}
-catch(error){
+}catch(error){
 
 
 console.log(
@@ -1278,21 +1412,17 @@ error
 );
 
 
-submitBtn.disabled=
+alert(
+"KYC submit नहीं हुआ। कृपया दोबारा कोशिश करें।"
+);
+
+
+button.disabled=
 false;
 
 
-submitBtn.innerText=
+button.innerText=
 "Submit KYC Request";
-
-
-showMessage(
-
-"❌ KYC request submit नहीं हुई। कृपया दोबारा कोशिश करें।",
-
-"error"
-
-);
 
 
 }
