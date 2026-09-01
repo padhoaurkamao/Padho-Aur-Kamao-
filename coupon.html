@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Coupon & Checkout - Padho Aur Kamao</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    min-height:100vh;
+    background:linear-gradient(135deg,#f4f1ff,#eef2ff);
+    color:#172033;
+}
+
+header{
+    height:70px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:20px;
+    font-weight:bold;
+    color:#5b21b6;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:linear-gradient(135deg,#6526d7,#8b5cf6);
+    color:white;
+}
+
+.back-btn{
+    border:none;
+    background:#f3f4f6;
+    padding:10px 16px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.wrapper{
+    min-height:calc(100vh - 70px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px 15px;
+}
+
+.checkout-card{
+    width:100%;
+    max-width:520px;
+    background:white;
+    border-radius:24px;
+    padding:30px;
+    box-shadow:0 20px 50px rgba(15,23,42,.12);
+}
+
+h1{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:#64748b;
+    margin-bottom:25px;
+}
+
+.course-box{
+    background:#f4f1ff;
+    padding:18px;
+    border-radius:15px;
+    margin-bottom:22px;
+}
+
+.course-name{
+    font-size:19px;
+    font-weight:bold;
+}
+
+.course-price{
+    color:#6526d7;
+    font-size:25px;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.coupon-row{
+    display:flex;
+    gap:10px;
+}
+
+input{
+    flex:1;
+    padding:14px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:15px;
+    text-transform:uppercase;
+}
+
+.apply-btn{
+    border:none;
+    padding:0 18px;
+    border-radius:10px;
+    background:#6526d7;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.message{
+    min-height:25px;
+    margin-top:10px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.price-details{
+    background:#f8fafc;
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+.price-row{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    color:#475569;
+}
+
+.final-row{
+    border-top:1px solid #dbe2ea;
+    margin-top:8px;
+    padding-top:18px;
+    font-size:20px;
+    font-weight:bold;
+    color:#172033;
+}
+
+.pay-btn{
+    width:100%;
+    margin-top:22px;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    background:linear-gradient(135deg,#ec00a7,#8b5cf6);
+}
+
+.pay-btn:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+@media(max-width:600px){
+
+    header{
+        padding:0 15px;
+    }
+
+    .logo{
+        font-size:15px;
+    }
+
+    .coupon-row{
+        flex-direction:column;
+    }
+
+    .apply-btn{
+        padding:14px;
+    }
+
+    .checkout-card{
+        padding:22px 18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<div class="logo-icon">
+📚
+</div>
+
+Padho Aur Kamao
+
+</div>
+
+<button
+class="back-btn"
+onclick="window.location.href='course.html'">
+
+← Back
+
+</button>
+
+</header>
+
+
+<div class="wrapper">
+
+<div class="checkout-card">
+
+<h1>
+🎁 Coupon & Checkout
+</h1>
+
+<p class="subtitle">
+Coupon code apply करके अपना discount प्राप्त करें।
+</p>
+
+
+<div class="course-box">
+
+<div
+class="course-name"
+id="courseName">
+
+Loading...
+
+</div>
+
+<div
+class="course-price"
+id="coursePrice">
+
+₹0
+
+</div>
+
+</div>
+
+
+<label>
+Coupon Code
+</label>
+
+
+<div class="coupon-row">
+
+<input
+type="text"
+id="couponCode"
+placeholder="Enter Coupon Code">
+
+
+<button
+class="apply-btn"
+onclick="applyCoupon()">
+
+Apply
+
+</button>
+
+</div>
+
+
+<div
+class="message"
+id="couponMessage">
+
+</div>
+
+
+<div class="price-details">
+
+<div class="price-row">
+
+<span>
+Original Price
+</span>
+
+<span id="originalPrice">
+₹0
+</span>
+
+</div>
+
+
+<div class="price-row">
+
+<span>
+Discount
+</span>
+
+<span id="discountPrice">
+₹0
+</span>
+
+</div>
+
+
+<div class="price-row final-row">
+
+<span>
+Payable Amount
+</span>
+
+<span id="finalPrice">
+₹0
+</span>
+
+</div>
+
+</div>
+
+
+<button
+class="pay-btn"
+id="payBtn"
+onclick="proceedPayment()">
+
+Proceed to Payment
+
+</button>
+
+</div>
+
+</div>
+
+
+<script type="module">
+
+import {
+initializeApp
+}
+
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+getAuth,
+onAuthStateChanged
+}
+
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+import {
+getFirestore,
+doc,
+getDoc,
+setDoc,
+updateDoc,
+serverTimestamp
+}
+
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+const firebaseConfig={
+
+apiKey:
+"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+
+authDomain:
+"padho-aur-kamao-3eeae.firebaseapp.com",
+
+projectId:
+"padho-aur-kamao-3eeae",
+
+storageBucket:
+"padho-aur-kamao-3eeae.firebasestorage.app",
+
+messagingSenderId:
+"670063905617",
+
+appId:
+"1:670063905617:web:9b3a7e62fdeea14fbfa170"
+
+};
+
+
+const app=initializeApp(firebaseConfig);
+
+const auth=getAuth(app);
+
+const db=getFirestore(app);
+
+
+let currentUser=null;
+
+let selectedCourse=null;
+
+let finalPrice=0;
+
+let couponApplied=false;
+
+
+const params=
+new URLSearchParams(
+window.location.search
+);
+
+
+const courseId=
+params.get("course")
+||
+localStorage.getItem("pendingCourseId");
+
+
+const courseName=
+params.get("name")
+||
+localStorage.getItem("pendingCourseName");
+
+
+const coursePrice=
+Number(
+params.get("price")
+||
+localStorage.getItem("pendingCoursePrice")
+||
+0
+);
+
+
+selectedCourse={
+id:courseId,
+name:courseName,
+price:coursePrice
+};
+
+
+document
+.getElementById("courseName")
+.textContent=
+courseName
+||
+"Course";
+
+
+document
+.getElementById("coursePrice")
+.textContent=
+"₹"+coursePrice;
+
+
+document
+.getElementById("originalPrice")
+.textContent=
+"₹"+coursePrice;
+
+
+document
+.getElementById("finalPrice")
+.textContent=
+"₹"+coursePrice;
+
+
+finalPrice=coursePrice;
+
+
+onAuthStateChanged(
+auth,
+user=>{
+
+if(!user){
+
+window.location.href=
+"login.html?redirect="+
+encodeURIComponent(
+window.location.href
+);
+
+return;
+
+}
+
+currentUser=user;
+
+}
+);
+
+
+window.applyCoupon=
+function(){
+
+const code=
+document
+.getElementById("couponCode")
+.value
+.trim()
+.toUpperCase();
+
+
+const message=
+document
+.getElementById("couponMessage");
+
+
+if(code==="FREE100"){
+
+couponApplied=true;
+
+finalPrice=0;
+
+
+document
+.getElementById("discountPrice")
+.textContent=
+"-₹"+coursePrice;
+
+
+document
+.getElementById("finalPrice")
+.textContent=
+"₹0";
+
+
+message.textContent=
+"🎉 Coupon Applied Successfully! 100% Discount मिल गया।";
+
+
+message.style.color=
+"#16a34a";
+
+
+document
+.getElementById("payBtn")
+.textContent=
+"🎉 Get Course Free";
+
+}
+
+else{
+
+couponApplied=false;
+
+finalPrice=coursePrice;
+
+
+document
+.getElementById("discountPrice")
+.textContent=
+"₹0";
+
+
+document
+.getElementById("finalPrice")
+.textContent=
+"₹"+coursePrice;
+
+
+message.textContent=
+"❌ Invalid Coupon Code";
+
+
+message.style.color=
+"#dc2626";
+
+
+document
+.getElementById("payBtn")
+.textContent=
+"Proceed to Payment";
+
+}
+
+};
+
+
+function generateReferralCode(uid){
+
+const shortUid=
+uid.substring(0,6).toUpperCase();
+
+const random=
+Math.floor(
+100000+
+Math.random()*900000
+);
+
+return
+"PAK"+
+shortUid+
+random;
+
+}
+
+
+async function activateCourseFree(){
+
+const button=
+document.getElementById("payBtn");
+
+button.disabled=true;
+
+button.textContent=
+"Activating Course...";
+
+
+try{
+
+const userRef=
+doc(
+db,
+"users",
+currentUser.uid
+);
+
+
+const userSnap=
+await getDoc(userRef);
+
+
+if(!userSnap.exists()){
+
+await setDoc(
+userRef,
+{
+
+name:
+currentUser.displayName
+||
+currentUser.email.split("@")[0],
+
+email:
+currentUser.email,
+
+referralCode:
+generateReferralCode(
+currentUser.uid
+),
+
+referralActive:true,
+
+totalReferrals:0,
+
+totalCommission:0,
+
+availableBalance:0,
+
+kycStatus:"not_started",
+
+createdAt:
+serverTimestamp()
+
+},
+{
+merge:true
+}
+);
+
+}
+
+
+const courseRef=
+doc(
+db,
+"users",
+currentUser.uid,
+"courses",
+selectedCourse.id
+);
+
+
+await setDoc(
+courseRef,
+{
+
+courseId:
+selectedCourse.id,
+
+courseName:
+selectedCourse.name,
+
+originalPrice:
+selectedCourse.price,
+
+paidAmount:0,
+
+paymentStatus:"free",
+
+couponCode:
+document
+.getElementById("couponCode")
+.value
+.trim()
+.toUpperCase(),
+
+status:"active",
+
+enrolledAt:
+serverTimestamp(),
+
+userUid:
+currentUser.uid
+
+},
+{
+merge:true
+}
+);
+
+
+await updateDoc(
+userRef,
+{
+
+referralActive:true,
+
+referralActivatedAt:
+serverTimestamp()
+
+}
+);
+
+
+window.location.href=
+"payment-success.html";
+
+}
+catch(error){
+
+console.error(error);
+
+alert(
+"Course Activate नहीं हो पाया।"
+);
+
+button.disabled=false;
+
+button.textContent=
+"🎉 Get Course Free";
+
+}
+
+}
+
+
+window.proceedPayment=
+function(){
+
+if(!currentUser){
+
+return;
+
+}
+
+
+if(couponApplied && finalPrice===0){
+
+activateCourseFree();
+
+return;
+
+}
+
+
+localStorage.setItem(
+"pendingCourseId",
+selectedCourse.id
+);
+
+
+localStorage.setItem(
+"pendingCourseName",
+selectedCourse.name
+);
+
+
+localStorage.setItem(
+"pendingCoursePrice",
+selectedCourse.price
+);
+
+
+window.location.href=
+"payment.html?course="+
+encodeURIComponent(
+selectedCourse.id
+)+
+"&name="+
+encodeURIComponent(
+selectedCourse.name
+)+
+"&price="+
+encodeURIComponent(
+selectedCourse.price
+);
+
+};
+
+</script>
+
+</body>
+</html>
