@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 
@@ -354,6 +355,48 @@ a{
 
 
 /* =========================
+   BANK DETAILS
+========================= */
+
+.bank-info{
+    background:#f7f5ff;
+    padding:15px;
+    border-radius:12px;
+    margin-top:10px;
+}
+
+.bank-row{
+    padding:10px 0;
+    border-bottom:1px solid #e9e5f7;
+}
+
+.bank-row:last-child{
+    border-bottom:0;
+}
+
+.bank-label{
+    font-size:11px;
+    color:#777;
+}
+
+.bank-value{
+    font-size:14px;
+    font-weight:bold;
+    margin-top:4px;
+}
+
+.warning{
+    margin-top:18px;
+    background:#fff7ed;
+    border:1px solid #fed7aa;
+    padding:12px;
+    border-radius:10px;
+    font-size:12px;
+    color:#9a3412;
+}
+
+
+/* =========================
    HISTORY
 ========================= */
 
@@ -428,7 +471,7 @@ a{
 
 
 /* =========================
-   OVERLAY
+   MOBILE
 ========================= */
 
 .overlay{
@@ -495,13 +538,13 @@ a{
 <body>
 
 
-<!-- SIDEBAR -->
-
 <aside class="sidebar" id="sidebar">
 
 <div class="brand">
 
-<div class="brand-icon">📚</div>
+<div class="brand-icon">
+📚
+</div>
 
 Padho Aur Kamao
 
@@ -514,38 +557,47 @@ Dashboard Menu
 
 
 <a class="side-link" href="dashboard.html">
+
 <span class="side-icon">🏠</span>
+
 Dashboard
+
 </a>
 
 
 <a class="side-link" href="dashboard.html#courses">
+
 <span class="side-icon">📚</span>
+
 Courses
+
 </a>
 
 
 <a class="side-link" href="dashboard.html#affiliate">
+
 <span class="side-icon">🔗</span>
+
 Affiliate Center
+
 </a>
 
 
 <a class="side-link" href="dashboard.html#commission">
+
 <span class="side-icon">📊</span>
+
 Commission
+
 </a>
 
 
 <a class="side-link active" href="wallet.html">
+
 <span class="side-icon">💳</span>
+
 My Wallet
-</a>
 
-
-<a class="side-link" href="withdrawal.html">
-<span class="side-icon">💸</span>
-Withdrawal Request
 </a>
 
 
@@ -555,24 +607,27 @@ Account
 
 
 <a class="side-link" href="profile.html">
+
 <span class="side-icon">👤</span>
+
 My Profile
+
 </a>
 
 
 <a class="side-link" href="kyc.html">
-<span class="side-icon">🪪</span>
-KYC Verification
-</a>
 
+<span class="side-icon">🪪</span>
+
+KYC Verification
+
+</a>
 
 </aside>
 
 
 <div class="overlay" id="overlay"></div>
 
-
-<!-- MAIN -->
 
 <div class="main">
 
@@ -597,7 +652,6 @@ KYC Verification
 <div class="avatar" id="avatar">
 S
 </div>
-
 
 <div class="user-info">
 
@@ -630,7 +684,7 @@ Available Balance
 </div>
 
 <div class="balance-note">
-Your secure wallet balance available for withdrawal.
+Available wallet balance for withdrawal.
 </div>
 
 </section>
@@ -641,7 +695,9 @@ Your secure wallet balance available for withdrawal.
 
 <div class="stat">
 
-<div class="stat-icon">💰</div>
+<div class="stat-icon">
+💰
+</div>
 
 <div class="stat-label">
 Total Earnings
@@ -656,7 +712,9 @@ Total Earnings
 
 <div class="stat">
 
-<div class="stat-icon">💸</div>
+<div class="stat-icon">
+💸
+</div>
 
 <div class="stat-label">
 Total Withdrawn
@@ -671,7 +729,9 @@ Total Withdrawn
 
 <div class="stat">
 
-<div class="stat-icon">📋</div>
+<div class="stat-icon">
+📋
+</div>
 
 <div class="stat-label">
 Pending Withdrawal
@@ -682,7 +742,6 @@ Pending Withdrawal
 </div>
 
 </div>
-
 
 </section>
 
@@ -715,6 +774,7 @@ type="number"
 id="withdrawAmount"
 placeholder="Enter amount"
 min="100"
+step="1"
 required>
 
 </div>
@@ -750,7 +810,7 @@ Account Number
 <input
 type="text"
 id="paymentDetails"
-placeholder="Enter account number"
+placeholder="Enter bank account number"
 required>
 
 </div>
@@ -765,8 +825,14 @@ id="withdrawBtn">
 
 </button>
 
-
 </form>
+
+
+<div class="warning">
+
+⚠️ Withdrawal request submit होने के बाद admin verification करेगा।
+
+</div>
 
 </section>
 
@@ -774,37 +840,79 @@ id="withdrawBtn">
 <section class="card">
 
 <h2 class="card-title">
-🔒 Secure Withdrawal
+🏦 Saved Payment Details
 </h2>
 
 <p class="card-subtitle">
-
-Your withdrawal request is securely verified before processing.
-
+Your saved KYC payment information.
 </p>
 
-<div style="
-background:#f7f5ff;
-padding:18px;
-border-radius:12px;
-font-size:13px;
-line-height:1.8;
-">
 
-<div>
-✅ Minimum withdrawal ₹100
+<div class="bank-info">
+
+
+<div class="bank-row">
+
+<div class="bank-label">
+Account Holder
 </div>
 
-<div>
-🔐 Wallet balance is server protected
+<div class="bank-value" id="accountHolder">
+Not Available
 </div>
 
-<div>
-📋 Admin approval required
 </div>
 
-<div>
-💰 Duplicate withdrawal prevented
+
+<div class="bank-row">
+
+<div class="bank-label">
+Bank Name
+</div>
+
+<div class="bank-value" id="bankName">
+Not Available
+</div>
+
+</div>
+
+
+<div class="bank-row">
+
+<div class="bank-label">
+Account Number
+</div>
+
+<div class="bank-value" id="accountNumber">
+Not Available
+</div>
+
+</div>
+
+
+<div class="bank-row">
+
+<div class="bank-label">
+IFSC Code
+</div>
+
+<div class="bank-value" id="ifscCode">
+Not Available
+</div>
+
+</div>
+
+
+<div class="bank-row">
+
+<div class="bank-label">
+UPI ID
+</div>
+
+<div class="bank-value" id="upiId">
+Not Available
+</div>
+
 </div>
 
 </div>
@@ -834,14 +942,12 @@ Loading withdrawal history...
 
 </div>
 
-
 </section>
 
 
 </main>
 
 </div>
-
 
 
 <script type="module">
@@ -873,18 +979,12 @@ getDoc,
 collection,
 query,
 where,
-getDocs
+getDocs,
+addDoc,
+serverTimestamp
 }
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
-
-import {
-getFunctions,
-httpsCallable
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-functions.js";
 
 
 /* =========================
@@ -893,26 +993,19 @@ from
 
 const firebaseConfig={
 
-apiKey:
-"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+apiKey:"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
-authDomain:
-"padho-aur-kamao-3eeae.firebaseapp.com",
+authDomain:"padho-aur-kamao-3eeae.firebaseapp.com",
 
-projectId:
-"padho-aur-kamao-3eeae",
+projectId:"padho-aur-kamao-3eeae",
 
-storageBucket:
-"padho-aur-kamao-3eeae.firebasestorage.app",
+storageBucket:"padho-aur-kamao-3eeae.firebasestorage.app",
 
-messagingSenderId:
-"670063905617",
+messagingSenderId:"670063905617",
 
-appId:
-"1:670063905617:web:9b3a7e62fdeea14fbfa170",
+appId:"1:670063905617:web:9b3a7e62fdeea14fbfa170",
 
-measurementId:
-"G-7J1YV8HN3F"
+measurementId:"G-7J1YV8HN3F"
 
 };
 
@@ -921,42 +1014,29 @@ measurementId:
    INITIALIZE
 ========================= */
 
-const app=
-initializeApp(firebaseConfig);
+const app=initializeApp(firebaseConfig);
+
+const auth=getAuth(app);
+
+const db=getFirestore(app);
 
 
-const auth=
-getAuth(app);
-
-
-const db=
-getFirestore(app);
-
-
-/* IMPORTANT
-
-   Change asia-south1 only if your
-   Firebase Function uses another region.
-
-*/
-
-const functions=
-getFunctions(
-app,
-"asia-south1"
-);
-
+/* =========================
+   VARIABLES
+========================= */
 
 let currentUser=null;
+
+let walletBalance=0;
+
+let pendingWithdrawal=0;
 
 
 /* =========================
    ELEMENT HELPER
 ========================= */
 
-const $=
-id=>
-document.getElementById(id);
+const $=id=>document.getElementById(id);
 
 
 /* =========================
@@ -987,9 +1067,28 @@ $("overlay").classList.remove("show");
 
 function money(value){
 
-return "₹"+
-Number(value||0)
-.toLocaleString("en-IN");
+return "₹"+Number(value||0).toLocaleString("en-IN");
+
+}
+
+
+/* =========================
+   MASK ACCOUNT
+========================= */
+
+function maskAccount(number){
+
+if(!number){
+return "Not Available";
+}
+
+const text=String(number);
+
+if(text.length<=4){
+return text;
+}
+
+return "XXXX XXXX "+text.slice(-4);
 
 }
 
@@ -998,98 +1097,21 @@ Number(value||0)
    AUTH
 ========================= */
 
-onAuthStateChanged(
-
-auth,
-
-async user=>{
+onAuthStateChanged(auth,async user=>{
 
 if(!user){
 
-location.href=
-"login.html";
+location.href="login.html";
 
 return;
 
 }
 
-
-currentUser=
-user;
-
-
-await loadUser();
+currentUser=user;
 
 await loadWallet();
 
-await loadWithdrawals();
-
-
-}
-
-);
-
-
-/* =========================
-   LOAD USER
-========================= */
-
-async function loadUser(){
-
-try{
-
-
-const snap=
-await getDoc(
-
-doc(
-db,
-"users",
-currentUser.uid
-)
-
-);
-
-
-if(!snap.exists()){
-
-return;
-
-}
-
-
-const data=
-snap.data();
-
-
-const name=
-
-data.name||
-
-currentUser.displayName||
-
-"Student";
-
-
-$("topName").innerText=
-name;
-
-
-$("avatar").innerText=
-name.charAt(0)
-.toUpperCase();
-
-
-}catch(error){
-
-console.log(
-"User error:",
-error
-);
-
-}
-
-}
+});
 
 
 /* =========================
@@ -1100,83 +1122,142 @@ async function loadWallet(){
 
 try{
 
+await loadUserData();
 
-const snap=
-await getDoc(
+await loadWalletData();
 
-doc(
+await loadWithdrawals();
+
+}catch(error){
+
+console.log("Wallet Load Error:",error);
+
+}
+
+}
+
+
+/* =========================
+   LOAD USER DATA
+========================= */
+
+async function loadUserData(){
+
+const userRef=doc(
 db,
-"wallets",
+"users",
 currentUser.uid
-)
+);
 
+const userSnap=await getDoc(userRef);
+
+
+if(!userSnap.exists()){
+return;
+}
+
+
+const data=userSnap.data();
+
+
+const name=
+data.name||
+currentUser.displayName||
+"Student";
+
+
+$("topName").innerText=name;
+
+$("avatar").innerText=
+name.charAt(0).toUpperCase();
+
+
+$("accountHolder").innerText=
+data.accountHolder||
+data.name||
+"Not Available";
+
+
+$("bankName").innerText=
+data.bankName||
+"Not Available";
+
+
+$("accountNumber").innerText=
+maskAccount(
+data.accountNumber||
+""
 );
 
 
-if(!snap.exists()){
+$("ifscCode").innerText=
+data.ifscCode||
+"Not Available";
 
 
-$("availableBalance").innerText=
-"₹0";
+$("upiId").innerText=
+data.upiId||
+"Not Available";
+
+}
 
 
-$("totalEarnings").innerText=
-"₹0";
+/* =========================
+   LOAD WALLET COLLECTION
+========================= */
+
+async function loadWalletData(){
+
+const walletRef=doc(
+db,
+"wallets",
+currentUser.uid
+);
+
+const walletSnap=await getDoc(walletRef);
 
 
-$("totalWithdrawn").innerText=
-"₹0";
+if(!walletSnap.exists()){
 
+walletBalance=0;
 
-$("pendingAmount").innerText=
-"₹0";
+$("availableBalance").innerText="₹0";
 
+$("totalEarnings").innerText="₹0";
 
 return;
 
 }
 
 
-const data=
-snap.data();
+const wallet=walletSnap.data();
 
 
-$("availableBalance").innerText=
+/*
+Wallet document should contain:
 
-money(
-data.availableBalance||0
+balance
+totalEarnings
+
+*/
+
+walletBalance=
+Number(
+wallet.balance||
+0
+);
+
+
+const totalEarnings=
+Number(
+wallet.totalEarnings||
+wallet.balance||
+0
 );
 
 
 $("totalEarnings").innerText=
-
-money(
-data.totalEarnings||0
-);
-
-
-$("totalWithdrawn").innerText=
-
-money(
-data.totalWithdrawn||0
-);
-
-
-$("pendingAmount").innerText=
-
-money(
-data.pendingWithdrawal||0
-);
-
-
-}catch(error){
-
-console.log(
-"Wallet load error:",
-error
-);
-
-}
+money(totalEarnings);
 
 }
 
@@ -1187,14 +1268,7 @@ error
 
 async function loadWithdrawals(){
 
-try{
-
-
-const snap=
-
-await getDocs(
-
-query(
+const withdrawalQuery=query(
 
 collection(
 db,
@@ -1207,69 +1281,96 @@ where(
 currentUser.uid
 )
 
-)
-
 );
 
 
-const history=[];
+const snapshot=
+await getDocs(
+withdrawalQuery
+);
 
 
-snap.forEach(item=>{
+let withdrawn=0;
+
+let pending=0;
+
+let history=[];
 
 
-const data=
-item.data();
+snapshot.forEach(item=>{
+
+const data=item.data();
+
+const amount=
+Number(
+data.amount||
+0
+);
+
+
+const status=
+String(
+data.status||
+"pending"
+).toLowerCase();
+
+
+if(status==="approved"){
+withdrawn+=amount;
+}
+
+
+if(status==="pending"){
+pending+=amount;
+}
 
 
 history.push({
 
 id:item.id,
 
-amount:
-Number(
-data.amount||0
-),
+amount:amount,
 
-status:
-data.status||
-"pending",
+status:status,
 
 createdAt:
 data.createdAt
 
 });
 
-
 });
 
 
-renderHistory(
-history
+pendingWithdrawal=pending;
+
+
+/*
+Available balance shown to user.
+
+Pending request amount is reserved
+from wallet balance in UI.
+*/
+
+const available=
+Math.max(
+0,
+walletBalance-pending
 );
 
 
-}catch(error){
-
-console.log(
-"Withdrawal history error:",
-error
-);
+$("availableBalance").innerText=
+money(available);
 
 
-$("withdrawalHistory").innerHTML=
+$("totalWithdrawn").innerText=
+money(withdrawn);
 
-`
 
-<div class="empty">
+$("pendingAmount").innerText=
+money(pending);
 
-Withdrawal history load नहीं हुई।
 
-</div>
-
-`;
-
-}
+renderHistory(history);
 
 }
 
@@ -1288,60 +1389,42 @@ if(history.length===0){
 
 container.innerHTML=
 
-`
-
-<div class="empty">
-
+`<div class="empty">
 No withdrawal requests yet.
-
-</div>
-
-`;
+</div>`;
 
 return;
 
 }
 
 
-history.sort(
-
-(a,b)=>{
+history.sort((a,b)=>{
 
 const timeA=
-a.createdAt
-?.toMillis?.()||0;
-
+a.createdAt?.toMillis?.()||
+0;
 
 const timeB=
-b.createdAt
-?.toMillis?.()||0;
-
+b.createdAt?.toMillis?.()||
+0;
 
 return timeB-timeA;
 
-}
-
-);
+});
 
 
-container.innerHTML=
-"";
+container.innerHTML="";
 
 
 history.forEach(item=>{
 
 
-let date=
-"Processing...";
+let date="Just now";
 
 
-if(
-item.createdAt
-?.toDate
-){
+if(item.createdAt?.toDate){
 
 date=
-
 item.createdAt
 .toDate()
 .toLocaleDateString(
@@ -1352,18 +1435,14 @@ item.createdAt
 
 
 const status=
-
 String(
-item.status||"pending"
-)
-.toLowerCase();
+item.status
+).toLowerCase();
 
 
 container.innerHTML+=
 
-`
-
-<div class="history-item">
+`<div class="history-item">
 
 <div class="history-left">
 
@@ -1381,26 +1460,18 @@ ${date}
 <div class="history-right">
 
 <div class="history-amount">
-
 ${money(item.amount)}
-
 </div>
 
-
 <span class="status ${status}">
-
 ${status.toUpperCase()}
-
 </span>
 
 </div>
 
-</div>
-
-`;
+</div>`;
 
 });
-
 
 }
 
@@ -1411,9 +1482,7 @@ ${status.toUpperCase()}
 
 $("paymentMethod")
 .addEventListener(
-
 "change",
-
 ()=>{
 
 
@@ -1430,28 +1499,23 @@ $("accountLabel").innerText=
 $("paymentDetails").placeholder=
 "example@upi";
 
-
 }else{
-
 
 $("accountLabel").innerText=
 "Account Number";
 
 
 $("paymentDetails").placeholder=
-"Enter account number";
-
-
-}
-
+"Enter bank account number";
 
 }
 
+}
 );
 
 
 /* =========================
-   SECURE WITHDRAWAL REQUEST
+   WITHDRAWAL REQUEST
 ========================= */
 
 $("withdrawForm")
@@ -1466,25 +1530,26 @@ event.preventDefault();
 
 
 const amount=
-
+Math.floor(
 Number(
 $("withdrawAmount").value
+)
 );
 
 
-const paymentMethod=
-
+const method=
 $("paymentMethod").value;
 
 
-const paymentDetails=
-
+const details=
 $("paymentDetails")
 .value
 .trim();
 
 
-if(!amount||amount<100){
+/* VALIDATION */
+
+if(!Number.isFinite(amount) || amount<100){
 
 alert(
 "Minimum withdrawal amount ₹100 है।"
@@ -1495,7 +1560,21 @@ return;
 }
 
 
-if(!paymentDetails){
+if(
+amount>
+(walletBalance-pendingWithdrawal)
+){
+
+alert(
+"Insufficient available balance."
+);
+
+return;
+
+}
+
+
+if(!details){
 
 alert(
 "Payment details enter करें।"
@@ -1510,9 +1589,7 @@ const button=
 $("withdrawBtn");
 
 
-button.disabled=
-true;
-
+button.disabled=true;
 
 button.innerText=
 "Submitting...";
@@ -1521,87 +1598,134 @@ button.innerText=
 try{
 
 
-/* CALL SECURE CLOUD FUNCTION */
+/* =========================
+   CHECK PENDING REQUEST
+========================= */
 
-const requestWithdrawal=
+const pendingQuery=query(
 
-httpsCallable(
-functions,
-"requestWithdrawal"
+collection(
+db,
+"withdrawals"
+),
+
+where(
+"userId",
+"==",
+currentUser.uid
+),
+
+where(
+"status",
+"==",
+"pending"
+)
+
 );
 
 
-const result=
+const pendingCheck=
+await getDocs(
+pendingQuery
+);
 
-await requestWithdrawal({
+
+if(
+pendingCheck.size>0
+){
+
+alert(
+"आपकी एक withdrawal request पहले से pending है।"
+);
+
+button.disabled=false;
+
+button.innerText=
+"💸 Request Withdrawal";
+
+return;
+
+}
+
+
+/* =========================
+   CREATE WITHDRAWAL REQUEST
+========================= */
+
+await addDoc(
+
+collection(
+db,
+"withdrawals"
+),
+
+{
+
+userId:
+currentUser.uid,
+
+userName:
+$("topName").innerText,
+
+email:
+currentUser.email||
+"",
 
 amount:
 amount,
 
 paymentMethod:
-paymentMethod,
+method,
 
 paymentDetails:
-paymentDetails
+details,
 
-});
+status:
+"pending",
 
+createdAt:
+serverTimestamp(),
 
-alert(
+updatedAt:
+serverTimestamp()
 
-result.data?.message||
-
-"Withdrawal request successfully submitted!"
+}
 
 );
 
 
-/* RESET FORM */
+/* SUCCESS */
+
+alert(
+"Withdrawal request successfully submitted!"
+);
+
 
 $("withdrawForm")
 .reset();
 
 
-/* RELOAD DATA */
-
 await loadWallet();
-
-await loadWithdrawals();
 
 
 }catch(error){
 
 
-console.log(
-"Withdrawal error:",
+console.error(
+"Withdrawal Error:",
 error
 );
 
 
-let message=
-
-"Withdrawal request submit नहीं हुई।";
-
-
-if(error.message){
-
-message=
-error.message;
-
-}
-
-
 alert(
-message
+"Withdrawal request submit नहीं हुई। अगला step Firestore Rules का होगा।"
 );
 
 
 }
 
 
-button.disabled=
-false;
-
+button.disabled=false;
 
 button.innerText=
 "💸 Request Withdrawal";
