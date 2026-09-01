@@ -10,12 +10,7 @@ content="width=device-width, initial-scale=1.0">
 
 <title>KYC Verification - Padho Aur Kamao</title>
 
-
 <style>
-
-/* =========================
-   GLOBAL
-========================= */
 
 *{
     margin:0;
@@ -31,140 +26,122 @@ body{
 
 a{
     text-decoration:none;
+    color:inherit;
 }
 
 
-/* =========================
-   TOP BAR
-========================= */
+/* =====================
+   TOPBAR
+===================== */
 
 .topbar{
-
     height:70px;
-
-    background:#ffffff;
+    background:white;
+    border-bottom:1px solid #e7eaf0;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     padding:0 25px;
-
-    border-bottom:
-    1px solid #e8eaf0;
-
 }
 
-
 .brand{
-
     display:flex;
-
     align-items:center;
-
     gap:10px;
 
     font-size:18px;
-
     font-weight:bold;
 
     color:#6526d7;
-
 }
 
-
 .brand-icon{
-
     width:42px;
-
     height:42px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     border-radius:12px;
 
-    background:
-    linear-gradient(
-    135deg,
-    #6025d7,
-    #8b5cf6
+    background:linear-gradient(
+        135deg,
+        #6025d7,
+        #8b5cf6
     );
 
     color:white;
-
 }
 
-
 .back-btn{
+    padding:10px 16px;
 
-    padding:
-    10px 16px;
-
-    border-radius:9px;
+    border-radius:10px;
 
     background:#f1ebff;
 
     color:#6526d7;
 
-    font-size:13px;
-
+    font-size:14px;
     font-weight:bold;
-
 }
 
 
-/* =========================
+/* =====================
    MAIN
-========================= */
+===================== */
 
 .container{
-
     max-width:750px;
 
-    margin:auto;
+    margin:35px auto;
 
-    padding:
-    35px 15px;
-
+    padding:0 18px;
 }
 
 
-.page-title{
+/* =====================
+   HEADER
+===================== */
 
-    text-align:center;
+.page-header{
 
-    margin-bottom:25px;
+    background:linear-gradient(
+        135deg,
+        #5420bd,
+        #7c3aed
+    );
 
+    color:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    margin-bottom:22px;
 }
 
-
-.page-title h1{
-
+.page-header h1{
     font-size:27px;
+}
 
+.page-header p{
+    margin-top:10px;
+
+    font-size:14px;
+
+    opacity:.9;
+
+    line-height:1.6;
 }
 
 
-.page-title p{
-
-    margin-top:8px;
-
-    font-size:13px;
-
-    color:#777;
-
-}
-
-
-/* =========================
-   STATUS
-========================= */
+/* =====================
+   STATUS CARD
+===================== */
 
 .status-card{
 
@@ -174,19 +151,21 @@ a{
 
     padding:22px;
 
-    margin-bottom:20px;
+    border:1px solid #edf0f5;
 
-    border:
-    1px solid #e9edf3;
-
-    box-shadow:
-    0 5px 20px
-    rgba(0,0,0,.04);
-
+    margin-bottom:22px;
 }
 
+.status-title{
 
-.status-top{
+    font-size:17px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+}
+
+.status-row{
 
     display:flex;
 
@@ -194,147 +173,79 @@ a{
 
     justify-content:space-between;
 
+    gap:15px;
 }
 
-
 .status-label{
+    color:#777;
+    font-size:14px;
+}
+
+.status-badge{
+
+    padding:8px 14px;
+
+    border-radius:30px;
 
     font-size:13px;
 
-    color:#777;
-
-}
-
-
-.status{
-
-    padding:
-    7px 14px;
-
-    border-radius:20px;
-
-    font-size:12px;
-
     font-weight:bold;
 
-}
-
-
-.pending{
-
-    background:#fef3c7;
+    background:#fff3cd;
 
     color:#b45309;
-
 }
 
 
-.approved{
+/* =====================
+   FORM
+===================== */
 
-    background:#dcfce7;
-
-    color:#15803d;
-
-}
-
-
-.rejected{
-
-    background:#fee2e2;
-
-    color:#dc2626;
-
-}
-
-
-/* =========================
-   CARD
-========================= */
-
-.card{
+.form-card{
 
     background:white;
 
-    border-radius:20px;
+    border-radius:18px;
 
-    padding:28px;
+    padding:25px;
 
-    border:
-    1px solid #e9edf3;
-
-    box-shadow:
-    0 5px 25px
-    rgba(0,0,0,.05);
-
+    border:1px solid #edf0f5;
 }
 
+.form-card h2{
 
-.section-title{
+    font-size:20px;
 
-    font-size:19px;
-
-    margin-bottom:18px;
-
+    margin-bottom:8px;
 }
 
+.form-description{
 
-.section-line{
+    color:#777;
 
-    height:1px;
+    font-size:13px;
 
-    background:#edf0f5;
+    line-height:1.6;
 
-    margin:
-    22px 0;
-
-}
-
-
-/* =========================
-   FORM
-========================= */
-
-.form-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:16px;
-
+    margin-bottom:22px;
 }
 
 
 .form-group{
 
-    display:flex;
-
-    flex-direction:column;
-
+    margin-bottom:18px;
 }
-
-
-.full{
-
-    grid-column:
-    1 / -1;
-
-}
-
 
 label{
 
-    font-size:12px;
+    display:block;
+
+    font-size:13px;
 
     font-weight:bold;
 
-    margin-bottom:7px;
-
-    color:#4b5563;
-
+    margin-bottom:8px;
 }
-
 
 input,
 select{
@@ -343,107 +254,105 @@ select{
 
     padding:13px;
 
-    border:
-    1px solid #dfe3ea;
+    border:1px solid #dfe3eb;
 
     border-radius:10px;
 
-    outline:none;
-
     font-size:14px;
 
-    background:white;
-
+    outline:none;
 }
-
 
 input:focus,
 select:focus{
 
     border-color:#6526d7;
 
+    box-shadow:
+    0 0 0 3px
+    rgba(101,38,215,.08);
 }
 
+input:disabled{
 
-.upload-box{
-
-    border:
-    2px dashed #d8dce5;
-
-    border-radius:14px;
-
-    padding:25px;
-
-    text-align:center;
-
-    cursor:pointer;
-
-    transition:.2s;
-
-}
-
-
-.upload-box:hover{
-
-    border-color:#6526d7;
-
-    background:#faf8ff;
-
-}
-
-
-.upload-icon{
-
-    font-size:32px;
-
-}
-
-
-.upload-text{
-
-    margin-top:8px;
-
-    font-size:13px;
+    background:#f7f7f9;
 
     color:#777;
-
 }
 
 
-.file-name{
+/* =====================
+   INFO BOX
+===================== */
 
-    margin-top:10px;
+.info-box{
+
+    background:#f7f5ff;
+
+    border-left:4px solid #6526d7;
+
+    padding:15px;
+
+    border-radius:10px;
 
     font-size:12px;
 
-    color:#6526d7;
+    line-height:1.7;
 
-    font-weight:bold;
+    color:#555;
 
+    margin-bottom:20px;
 }
 
 
-/* =========================
+/* =====================
+   CHECKBOX
+===================== */
+
+.checkbox-row{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+    color:#666;
+}
+
+.checkbox-row input{
+
+    width:auto;
+
+    margin-top:3px;
+}
+
+
+/* =====================
    BUTTON
-========================= */
+===================== */
 
 .submit-btn{
 
     width:100%;
 
-    margin-top:24px;
+    border:0;
 
     padding:14px;
-
-    border:0;
 
     border-radius:11px;
 
     background:
     linear-gradient(
-    135deg,
-    #6025d7,
-    #8b5cf6
+        135deg,
+        #6526d7,
+        #8b5cf6
     );
 
     color:white;
@@ -453,104 +362,81 @@ select:focus{
     font-weight:bold;
 
     cursor:pointer;
-
 }
-
 
 .submit-btn:disabled{
 
     opacity:.6;
 
     cursor:not-allowed;
-
 }
 
 
-/* =========================
+/* =====================
    MESSAGE
-========================= */
+===================== */
 
 .message{
 
+    display:none;
+
     margin-top:15px;
 
-    text-align:center;
+    padding:13px;
+
+    border-radius:10px;
 
     font-size:13px;
-
-    font-weight:bold;
-
 }
-
 
 .success{
 
-    color:#15803d;
+    background:#dcfce7;
 
+    color:#166534;
 }
-
 
 .error{
 
-    color:#dc2626;
+    background:#fee2e2;
 
+    color:#b91c1c;
 }
 
 
-/* =========================
-   INFO BOX
-========================= */
-
-.info-box{
-
-    margin-top:18px;
-
-    padding:14px;
-
-    border-radius:12px;
-
-    background:#f7f5ff;
-
-    font-size:12px;
-
-    color:#666;
-
-    line-height:1.7;
-
-}
-
-
-/* =========================
-   MOBILE
-========================= */
+/* =====================
+   RESPONSIVE
+===================== */
 
 @media(max-width:600px){
 
-    .form-grid{
-
-        grid-template-columns:
-        1fr;
-
+    .topbar{
+        padding:0 15px;
     }
 
-    .topbar{
-
-        padding:
-        0 15px;
-
+    .brand{
+        font-size:14px;
     }
 
     .container{
-
-        padding:
-        25px 12px;
-
+        margin:20px auto;
     }
 
-    .card{
+    .page-header{
+        padding:24px 20px;
+    }
 
-        padding:20px;
+    .page-header h1{
+        font-size:22px;
+    }
 
+    .form-card{
+        padding:20px 16px;
+    }
+
+    .status-row{
+        align-items:flex-start;
+        flex-direction:column;
     }
 
 }
@@ -563,416 +449,309 @@ select:focus{
 <body>
 
 
-<!-- =========================
-     TOP BAR
-========================= -->
+<!-- =====================
+     TOPBAR
+===================== -->
 
 <header class="topbar">
 
+    <div class="brand">
 
-<div class="brand">
+        <div class="brand-icon">
+            🪪
+        </div>
 
-<div class="brand-icon">
-🪪
-</div>
+        Padho Aur Kamao
 
-Padho Aur Kamao
-
-</div>
+    </div>
 
 
-<a
-href="dashboard.html"
-class="back-btn">
+    <a
+    href="dashboard.html"
+    class="back-btn">
 
-← Dashboard
+        ← Dashboard
 
-</a>
-
+    </a>
 
 </header>
 
 
 
-<!-- =========================
+<!-- =====================
      MAIN
-========================= -->
+===================== -->
 
-<div class="container">
+<main class="container">
 
 
-<div class="page-title">
+<!-- HEADER -->
 
-<h1>
-🪪 KYC Verification
-</h1>
+<section class="page-header">
 
-<p>
-अपनी जानकारी भरकर KYC Verification Request Submit करें।
+    <h1>
+        🪪 KYC Verification
+    </h1>
+
+    <p>
+        अपना account verification request submit करें।
+        Verification होने के बाद आपका KYC status
+        यहाँ दिखाई देगा।
+    </p>
+
+</section>
+
+
+
+<!-- STATUS -->
+
+<section class="status-card">
+
+    <div class="status-title">
+
+        Verification Status
+
+    </div>
+
+
+    <div class="status-row">
+
+        <div>
+
+            <div class="status-label">
+
+                Current KYC Status
+
+            </div>
+
+        </div>
+
+
+        <div
+        class="status-badge"
+        id="kycStatus">
+
+            Loading...
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- FORM -->
+
+<section
+class="form-card"
+id="formCard">
+
+
+<h2>
+    Submit Verification Request
+</h2>
+
+
+<p class="form-description">
+
+    नीचे अपनी सही जानकारी भरें।
+    जानकारी submit करने के बाद request review के लिए जाएगी।
+
 </p>
-
-</div>
-
-
-
-<!-- =========================
-     STATUS
-========================= -->
-
-<div class="status-card">
-
-
-<div class="status-top">
-
-
-<div>
-
-<div class="status-label">
-
-Current KYC Status
-
-</div>
-
-
-<h3
-id="statusText"
-style="margin-top:6px">
-
-Not Submitted
-
-</h3>
-
-
-</div>
-
-
-<span
-class="status pending"
-id="statusBadge">
-
-Not Submitted
-
-</span>
-
-
-</div>
-
-
-</div>
-
-
-
-<!-- =========================
-     KYC FORM
-========================= -->
-
-<div class="card">
-
-
-<h2 class="section-title">
-
-👤 Personal Details
-
-</h2>
-
-
-<div class="form-grid">
-
-
-<div class="form-group full">
-
-<label>
-Full Name
-</label>
-
-<input
-type="text"
-id="fullName"
-placeholder="अपना पूरा नाम लिखें">
-
-</div>
-
-
-
-<div class="form-group">
-
-<label>
-Mobile Number
-</label>
-
-<input
-type="tel"
-id="mobile"
-placeholder="10 Digit Mobile Number"
-maxlength="10">
-
-</div>
-
-
-
-<div class="form-group">
-
-<label>
-Date of Birth
-</label>
-
-<input
-type="date"
-id="dob">
-
-</div>
-
-
-</div>
-
-
-
-<div class="section-line"></div>
-
-
-
-<h2 class="section-title">
-
-🪪 Identity Details
-
-</h2>
-
-
-<div class="form-grid">
-
-
-<div class="form-group">
-
-<label>
-Document Type
-</label>
-
-<select id="documentType">
-
-<option value="">
-Select Document
-</option>
-
-<option value="Aadhaar Card">
-Aadhaar Card
-</option>
-
-<option value="PAN Card">
-PAN Card
-</option>
-
-<option value="Voter ID">
-Voter ID
-</option>
-
-<option value="Driving Licence">
-Driving Licence
-</option>
-
-</select>
-
-</div>
-
-
-
-<div class="form-group">
-
-<label>
-Document Last 4 Digits
-</label>
-
-<input
-type="text"
-id="documentLast4"
-placeholder="Last 4 Digits"
-maxlength="4">
-
-</div>
-
-
-</div>
-
-
-
-<div class="section-line"></div>
-
-
-
-<h2 class="section-title">
-
-📸 Document Upload
-
-</h2>
-
-
-<div
-class="upload-box"
-onclick="document.getElementById('documentFile').click()">
-
-
-<div class="upload-icon">
-
-📄
-
-</div>
-
-
-<div class="upload-text">
-
-Document Photo Upload करें
-
-</div>
-
-
-<div
-class="file-name"
-id="fileName">
-
-No file selected
-
-</div>
-
-
-</div>
-
-
-<input
-type="file"
-id="documentFile"
-accept="image/*,.pdf"
-style="display:none">
-
-
-
-<div class="section-line"></div>
-
-
-
-<h2 class="section-title">
-
-💳 Payment Details
-
-</h2>
-
-
-<div class="form-grid">
-
-
-<div class="form-group full">
-
-<label>
-UPI ID (Optional)
-</label>
-
-<input
-type="text"
-id="upiId"
-placeholder="example@upi">
-
-</div>
-
-
-</div>
-
-
-
-<button
-class="submit-btn"
-id="submitBtn">
-
-🪪 Submit KYC Verification
-
-</button>
-
-
-<div
-class="message"
-id="message">
-
-</div>
 
 
 
 <div class="info-box">
 
-🔒 आपकी KYC जानकारी केवल verification purpose के लिए रखी जानी चाहिए।
-पूरा Aadhaar/PAN number इस form में नहीं लिया जा रहा है।
-Production website में sensitive document data के लिए proper security rules और
-professional KYC provider का उपयोग करें।
-
-</div>
-
-
-</div>
-
+    🔒 सुरक्षा के लिए इस form में Aadhaar number,
+    PAN number, OTP, Password या Bank Account Number
+    जैसी अत्यधिक संवेदनशील जानकारी न भरें।
 
 </div>
 
 
 
-<!-- =========================
+<form id="kycForm">
+
+
+<!-- NAME -->
+
+<div class="form-group">
+
+    <label>
+        Full Name
+    </label>
+
+    <input
+    type="text"
+    id="fullName"
+    placeholder="अपना पूरा नाम लिखें"
+    required>
+
+</div>
+
+
+
+<!-- EMAIL -->
+
+<div class="form-group">
+
+    <label>
+        Registered Email
+    </label>
+
+    <input
+    type="email"
+    id="email"
+    disabled>
+
+</div>
+
+
+
+<!-- MOBILE -->
+
+<div class="form-group">
+
+    <label>
+        Mobile Number
+    </label>
+
+    <input
+    type="tel"
+    id="mobile"
+    placeholder="10 digit mobile number"
+    maxlength="10"
+    required>
+
+</div>
+
+
+
+<!-- PURPOSE -->
+
+<div class="form-group">
+
+    <label>
+        Verification Purpose
+    </label>
+
+    <select
+    id="purpose"
+    required>
+
+        <option value="">
+            Select Purpose
+        </option>
+
+        <option value="Account Verification">
+            Account Verification
+        </option>
+
+        <option value="Affiliate Verification">
+            Affiliate Verification
+        </option>
+
+        <option value="Withdrawal Verification">
+            Withdrawal Verification
+        </option>
+
+    </select>
+
+</div>
+
+
+
+<!-- CONSENT -->
+
+<div class="checkbox-row">
+
+    <input
+    type="checkbox"
+    id="consent"
+    required>
+
+
+    <label for="consent">
+
+        मैं पुष्टि करता/करती हूँ कि मेरे द्वारा दी गई
+        जानकारी सही है और verification request के
+        लिए उपयोग की जा सकती है।
+
+    </label>
+
+</div>
+
+
+
+<!-- BUTTON -->
+
+<button
+type="submit"
+class="submit-btn"
+id="submitBtn">
+
+    Submit KYC Request
+
+</button>
+
+
+
+<!-- MESSAGE -->
+
+<div
+id="message"
+class="message">
+
+</div>
+
+
+</form>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================
      FIREBASE
-========================= -->
+===================== -->
 
 <script type="module">
 
 
 import {
-
 initializeApp
-
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
 import {
-
 getAuth,
 onAuthStateChanged
-
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
 import {
-
 getFirestore,
 doc,
 getDoc,
 setDoc,
 serverTimestamp
-
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-import {
-
-getStorage,
-ref,
-uploadBytes,
-getDownloadURL
-
-}
-
-from
-
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-storage.js";
-
-
-
-/* =========================
+/* =====================
    FIREBASE CONFIG
-========================= */
+===================== */
 
 const firebaseConfig={
 
@@ -1000,10 +779,9 @@ measurementId:
 };
 
 
-
-/* =========================
+/* =====================
    INITIALIZE
-========================= */
+===================== */
 
 const app=
 initializeApp(firebaseConfig);
@@ -1017,8 +795,45 @@ const db=
 getFirestore(app);
 
 
-const storage=
-getStorage(app);
+
+/* =====================
+   ELEMENTS
+===================== */
+
+const fullName=
+document.getElementById("fullName");
+
+
+const email=
+document.getElementById("email");
+
+
+const mobile=
+document.getElementById("mobile");
+
+
+const purpose=
+document.getElementById("purpose");
+
+
+const kycStatus=
+document.getElementById("kycStatus");
+
+
+const kycForm=
+document.getElementById("kycForm");
+
+
+const submitBtn=
+document.getElementById("submitBtn");
+
+
+const message=
+document.getElementById("message");
+
+
+const formCard=
+document.getElementById("formCard");
 
 
 
@@ -1026,53 +841,82 @@ let currentUser=null;
 
 
 
-/* =========================
-   SHORTCUT
-========================= */
+/* =====================
+   SHOW MESSAGE
+===================== */
 
-const $=
-id=>
-document.getElementById(id);
+function showMessage(
+text,
+type
+){
 
-
-
-/* =========================
-   FILE SELECT
-========================= */
-
-$("documentFile").addEventListener(
-
-"change",
-
-()=>{
+    message.style.display=
+    "block";
 
 
-const file=
-$("documentFile").files[0];
+    message.innerText=
+    text;
 
 
-if(file){
-
-$("fileName").innerText=
-file.name;
-
-}else{
-
-$("fileName").innerText=
-"No file selected";
+    message.className=
+    "message "+type;
 
 }
 
 
+
+/* =====================
+   STATUS COLOR
+===================== */
+
+function setStatus(
+status
+){
+
+    kycStatus.innerText=
+    status;
+
+
+    if(status==="Approved"){
+
+        kycStatus.style.background=
+        "#dcfce7";
+
+
+        kycStatus.style.color=
+        "#166534";
+
+    }
+
+    else if(status==="Rejected"){
+
+        kycStatus.style.background=
+        "#fee2e2";
+
+
+        kycStatus.style.color=
+        "#b91c1c";
+
+    }
+
+    else{
+
+        kycStatus.style.background=
+        "#fff3cd";
+
+
+        kycStatus.style.color=
+        "#b45309";
+
+    }
+
 }
 
-);
 
 
-
-/* =========================
-   AUTH
-========================= */
+/* =====================
+   AUTH CHECK
+===================== */
 
 onAuthStateChanged(
 
@@ -1083,63 +927,72 @@ async user=>{
 
 if(!user){
 
-location.href=
-"login.html";
+    location.href=
+    "login.html";
 
-return;
+    return;
 
 }
 
 
-currentUser=user;
+currentUser=
+user;
+
+
+/* EMAIL */
+
+email.value=
+user.email||"";
 
 
 /* LOAD USER NAME */
 
 try{
 
-
-const userSnap=
-await getDoc(
-
+const userRef=
 doc(
 db,
 "users",
 user.uid
-)
-
 );
 
 
-if(userSnap.exists()){
+const userSnap=
+await getDoc(
+userRef
+);
 
 
-const data=
+if(
+userSnap.exists()
+){
+
+const userData=
 userSnap.data();
 
 
-$("fullName").value=
-
-data.name||
-
+fullName.value=
+userData.name||
 user.displayName||
-
 "";
-
 
 }
 
 
-}catch(error){
+}
+catch(error){
 
-console.log(error);
+console.log(
+"User load error:",
+error
+);
 
 }
 
 
 /* LOAD KYC */
 
-await loadKyc();
+await loadKYC();
 
 
 }
@@ -1148,11 +1001,11 @@ await loadKyc();
 
 
 
-/* =========================
+/* =====================
    LOAD KYC
-========================= */
+===================== */
 
-async function loadKyc(){
+async function loadKYC(){
 
 
 try{
@@ -1161,7 +1014,7 @@ try{
 const kycRef=
 doc(
 db,
-"kyc",
+"kycRequests",
 currentUser.uid
 );
 
@@ -1172,114 +1025,106 @@ kycRef
 );
 
 
-if(!snap.exists()){
-
-return;
-
-}
+if(
+snap.exists()
+){
 
 
 const data=
 snap.data();
 
 
-
-/* PERSONAL DETAILS */
-
-$("fullName").value=
-data.fullName||"";
-
-
-$("mobile").value=
-data.mobile||"";
-
-
-$("dob").value=
-data.dob||"";
-
-
-$("documentType").value=
-data.documentType||"";
-
-
-$("documentLast4").value=
-data.documentLast4||"";
-
-
-$("upiId").value=
-data.upiId||"";
-
-
-
-/* STATUS */
-
-updateStatus(
+const status=
 data.status||
-"Pending"
+"Pending";
+
+
+setStatus(
+status
 );
 
 
-}catch(error){
+/* Fill previous data */
 
-console.log(
-"KYC Load Error:",
-error
+fullName.value=
+data.fullName||
+fullName.value;
+
+
+mobile.value=
+data.mobile||
+"";
+
+
+purpose.value=
+data.purpose||
+"";
+
+
+/* Approved */
+
+if(
+status==="Approved"
+){
+
+formCard.style.display=
+"none";
+
+}
+
+
+/* Pending */
+
+if(
+status==="Pending"
+){
+
+submitBtn.innerText=
+"KYC Request Submitted";
+
+submitBtn.disabled=
+true;
+
+
+showMessage(
+
+"आपकी KYC request review में है। कृपया approval का इंतजार करें।",
+
+"success"
+
 );
 
 }
 
-
-}
-
-
-
-/* =========================
-   STATUS FUNCTION
-========================= */
-
-function updateStatus(status){
-
-
-$("statusText").innerText=
-status;
-
-
-$("statusBadge").innerText=
-status;
-
-
-$("statusBadge").className=
-"status";
-
-
-const lower=
-status.toLowerCase();
-
-
-
-if(lower==="approved"){
-
-$("statusBadge")
-.classList
-.add("approved");
-
-}
-
-
-else if(lower==="rejected"){
-
-$("statusBadge")
-.classList
-.add("rejected");
 
 }
 
 
 else{
 
-$("statusBadge")
-.classList
-.add("pending");
+
+setStatus(
+"Not Submitted"
+);
+
+
+}
+
+
+}
+catch(error){
+
+
+console.log(
+"KYC load error:",
+error
+);
+
+
+setStatus(
+"Not Submitted"
+);
+
 
 }
 
@@ -1288,78 +1133,45 @@ $("statusBadge")
 
 
 
-/* =========================
+/* =====================
    SUBMIT KYC
-========================= */
+===================== */
 
-$("submitBtn").onclick=
+kycForm.addEventListener(
 
-async()=>{
+"submit",
 
-
-const fullName=
-$("fullName").value
-.trim();
+async event=>{
 
 
-const mobile=
-$("mobile").value
-.trim();
+event.preventDefault();
 
 
-const dob=
-$("dob").value;
+if(!currentUser){
 
-
-const documentType=
-$("documentType").value;
-
-
-const documentLast4=
-$("documentLast4").value
-.trim();
-
-
-const upiId=
-$("upiId").value
-.trim();
-
-
-const file=
-$("documentFile")
-.files[0];
-
-
-
-/* VALIDATION */
-
-if(!fullName){
-
-showMessage(
-"कृपया Full Name भरें।",
-"error"
-);
-
-return;
+    return;
 
 }
 
 
+const mobileNumber=
+mobile.value.trim();
+
+
+/* MOBILE VALIDATION */
+
 if(
-
-mobile.length!==10
-
-||
-
-!/^[0-9]+$/.test(
-mobile
+!/^[0-9]{10}$/.test(
+mobileNumber
 )
-
 ){
 
 showMessage(
-"कृपया सही 10 Digit Mobile Number भरें।",
+
+"कृपया सही 10 digit mobile number डालें।",
+
 "error"
+
 );
 
 return;
@@ -1367,206 +1179,60 @@ return;
 }
 
 
-if(!dob){
+/* BUTTON */
 
-showMessage(
-"कृपया Date of Birth चुनें।",
-"error"
-);
-
-return;
-
-}
-
-
-if(!documentType){
-
-showMessage(
-"कृपया Document Type चुनें।",
-"error"
-);
-
-return;
-
-}
-
-
-if(
-
-documentLast4.length!==4
-
-||
-
-!/^[0-9A-Za-z]+$/.test(
-documentLast4
-)
-
-){
-
-showMessage(
-"Document के Last 4 characters भरें।",
-"error"
-);
-
-return;
-
-}
-
-
-if(!file){
-
-showMessage(
-"कृपया Document File Upload करें।",
-"error"
-);
-
-return;
-
-}
-
-
-
-/* FILE SIZE LIMIT */
-
-if(
-
-file.size>
-
-5*1024*1024
-
-){
-
-showMessage(
-"File size 5MB से कम रखें।",
-"error"
-);
-
-return;
-
-}
-
-
-
-/* BUTTON LOADING */
-
-$("submitBtn").disabled=
+submitBtn.disabled=
 true;
 
 
-$("submitBtn").innerText=
-"Uploading...";
-
-
-showMessage(
-"KYC Document Upload हो रहा है...",
-""
-);
-
+submitBtn.innerText=
+"Submitting...";
 
 
 try{
 
 
-/* =========================
-   UPLOAD FILE
-========================= */
-
-const safeName=
-
-file.name.replace(
-/[^a-zA-Z0-9._-]/g,
-"_"
+const kycRef=
+doc(
+db,
+"kycRequests",
+currentUser.uid
 );
 
-
-const storageRef=
-
-ref(
-
-storage,
-
-"kycDocuments/"+
-
-currentUser.uid+
-
-"/"+
-
-Date.now()+
-
-"-"+
-
-safeName
-
-);
-
-
-
-await uploadBytes(
-
-storageRef,
-
-file
-
-);
-
-
-
-const documentUrl=
-
-await getDownloadURL(
-
-storageRef
-
-);
-
-
-
-/* =========================
-   SAVE FIRESTORE
-========================= */
 
 await setDoc(
 
-doc(
-db,
-"kyc",
-currentUser.uid
-),
+kycRef,
 
 {
 
 userId:
 currentUser.uid,
 
+
 fullName:
-fullName,
+fullName.value.trim(),
+
+
+email:
+currentUser.email||"",
+
 
 mobile:
-mobile,
+mobileNumber,
 
-dob:
-dob,
 
-documentType:
-documentType,
+purpose:
+purpose.value,
 
-documentLast4:
-documentLast4,
-
-documentUrl:
-documentUrl,
-
-documentPath:
-storageRef.fullPath,
-
-upiId:
-upiId,
 
 status:
 "Pending",
 
-submittedAt:
+
+createdAt:
 serverTimestamp(),
+
 
 updatedAt:
 serverTimestamp()
@@ -1582,40 +1248,28 @@ merge:true
 );
 
 
+/* STATUS */
 
-/* STATUS UPDATE */
-
-updateStatus(
+setStatus(
 "Pending"
 );
 
 
+submitBtn.innerText=
+"KYC Request Submitted";
+
+
 showMessage(
 
-"✓ KYC Successfully Submitted. आपका KYC Status अब Pending है।",
+"✅ आपकी KYC request सफलतापूर्वक submit हो गई है। अब verification review का इंतजार करें।",
 
 "success"
 
 );
 
 
-
-/* RESET FILE */
-
-$("documentFile").value=
-"";
-
-
-$("fileName").innerText=
-"KYC Document Submitted";
-
-
-$("submitBtn").innerText=
-"✓ KYC Submitted";
-
-
-
-}catch(error){
+}
+catch(error){
 
 
 console.log(
@@ -1624,52 +1278,29 @@ error
 );
 
 
+submitBtn.disabled=
+false;
+
+
+submitBtn.innerText=
+"Submit KYC Request";
+
+
 showMessage(
 
-"KYC Submit नहीं हुआ। कृपया फिर से कोशिश करें।",
+"❌ KYC request submit नहीं हुई। कृपया दोबारा कोशिश करें।",
 
 "error"
 
 );
 
 
-$("submitBtn").disabled=
-false;
-
-
-$("submitBtn").innerText=
-"🪪 Submit KYC Verification";
+}
 
 
 }
 
-
-};
-
-
-
-/* =========================
-   MESSAGE
-========================= */
-
-function showMessage(
-
-text,
-
-type
-
-){
-
-
-$("message").innerText=
-text;
-
-
-$("message").className=
-"message "+type;
-
-
-}
+);
 
 
 </script>
