@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Panel - Padho Aur Kamao</title>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+}
+
+button{
+    font-family:inherit;
+}
+
+.hidden{
+    display:none !important;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+#loading{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    font-weight:bold;
+    color:#6526d7;
+}
+
+
+/* =========================
+   ACCESS DENIED
+========================= */
+
+.denied{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.denied-box{
+    background:white;
+    max-width:450px;
+    width:100%;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.denied-box h1{
+    margin-bottom:15px;
+}
+
+.denied-box p{
+    color:#777;
+    margin-bottom:20px;
+}
+
+.logout-btn{
+    border:0;
+    background:#dc2626;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    background:white;
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 30px;
+    border-bottom:1px solid #e8eaf0;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:20px;
+    font-weight:bold;
+    color:#6526d7;
+}
+
+.admin-badge{
+    background:#f1ebff;
+    color:#6526d7;
+    padding:8px 12px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logout-top{
+    border:0;
+    background:#172033;
+    color:white;
+    padding:10px 16px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.container{
+    max-width:1400px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+.title{
+    font-size:26px;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:#777;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin-bottom:30px;
+}
+
+.stat{
+    background:white;
+    padding:20px;
+    border-radius:16px;
+    border:1px solid #edf0f5;
+}
+
+.stat-label{
+    font-size:13px;
+    color:#777;
+}
+
+.stat-value{
+    font-size:28px;
+    font-weight:bold;
+    margin-top:10px;
+    color:#6526d7;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    margin-top:30px;
+}
+
+.section-title{
+    font-size:21px;
+    margin-bottom:15px;
+}
+
+
+/* =========================
+   REQUEST CARD
+========================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.request-card{
+    background:white;
+    border:1px solid #edf0f5;
+    border-radius:16px;
+    padding:20px;
+}
+
+.request-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.request-name{
+    font-size:18px;
+    font-weight:bold;
+}
+
+.status{
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.pending{
+    background:#fff3cd;
+    color:#b45309;
+}
+
+.approved{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.rejected{
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+.info{
+    margin:8px 0;
+    font-size:13px;
+    color:#596174;
+    word-break:break-word;
+}
+
+.info strong{
+    color:#172033;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.actions{
+    display:flex;
+    gap:10px;
+    margin-top:18px;
+}
+
+.approve-btn{
+    flex:1;
+    border:0;
+    padding:11px;
+    border-radius:10px;
+    background:#16a34a;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.reject-btn{
+    flex:1;
+    border:0;
+    padding:11px;
+    border-radius:10px;
+    background:#dc2626;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+
+/* =========================
+   USERS
+========================= */
+
+.table-box{
+    background:white;
+    border-radius:16px;
+    border:1px solid #edf0f5;
+    overflow:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:700px;
+}
+
+th,
+td{
+    padding:15px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+    font-size:13px;
+}
+
+th{
+    background:#fafafa;
+    color:#777;
+}
+
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty{
+    background:white;
+    padding:25px;
+    border-radius:14px;
+    color:#777;
+    text-align:center;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .header{
+        padding:12px 15px;
+    }
+
+    .brand{
+        font-size:16px;
+    }
+
+    .admin-badge{
+        display:none;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .stat{
+        padding:15px;
+    }
+
+    .stat-value{
+        font-size:23px;
+    }
+
+    .container{
+        padding:20px 12px;
+    }
+
+    .title{
+        font-size:22px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- LOADING -->
+
+<div id="loading">
+
+    Checking Admin Access...
+
+</div>
+
+
+
+<!-- ACCESS DENIED -->
+
+<div id="accessDenied" class="denied hidden">
+
+    <div class="denied-box">
+
+        <h1>🚫 Access Denied</h1>
+
+        <p>
+            आपको इस Admin Panel को access करने की permission नहीं है।
+        </p>
+
+        <button
+        class="logout-btn"
+        id="deniedLogout">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ADMIN PANEL -->
+
+<div id="adminPanel" class="hidden">
+
+
+<header class="header">
+
+    <div class="brand">
+
+        🛡️ Padho Aur Kamao
+
+        <span class="admin-badge">
+
+            ADMIN PANEL
+
+        </span>
+
+    </div>
+
+
+    <div class="header-right">
+
+        <button
+        class="logout-top"
+        id="logoutBtn">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<div class="container">
+
+
+<h1 class="title">
+
+    Admin Dashboard 👋
+
+</h1>
+
+
+<p class="subtitle">
+
+    KYC और Withdrawal Requests को manage करें।
+
+</p>
+
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+
+<div class="stat">
+
+    <div class="stat-label">
+
+        Total Users
+
+    </div>
+
+    <div
+    class="stat-value"
+    id="totalUsers">
+
+        0
+
+    </div>
+
+</div>
+
+
+
+<div class="stat">
+
+    <div class="stat-label">
+
+        Pending KYC
+
+    </div>
+
+    <div
+    class="stat-value"
+    id="pendingKycCount">
+
+        0
+
+    </div>
+
+</div>
+
+
+
+<div class="stat">
+
+    <div class="stat-label">
+
+        Pending Withdrawals
+
+    </div>
+
+    <div
+    class="stat-value"
+    id="pendingWithdrawalCount">
+
+        0
+
+    </div>
+
+</div>
+
+
+
+<div class="stat">
+
+    <div class="stat-label">
+
+        Approved Withdrawals
+
+    </div>
+
+    <div
+    class="stat-value"
+    id="approvedWithdrawalCount">
+
+        0
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- KYC -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+    🪪 Pending KYC Requests
+
+</h2>
+
+
+<div
+class="grid"
+id="kycList">
+
+    <div class="empty">
+
+        Loading KYC Requests...
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- WITHDRAWAL -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+    💸 Pending Withdrawal Requests
+
+</h2>
+
+
+<div
+class="grid"
+id="withdrawalList">
+
+    <div class="empty">
+
+        Loading Withdrawal Requests...
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- USERS -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+    👥 Registered Users
+
+</h2>
+
+
+<div class="table-box">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Referral Code</th>
+
+<th>KYC Status</th>
+
+<th>Account</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="usersTable">
+
+<tr>
+
+<td colspan="5">
+
+Loading Users...
+
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+
+</div>
+
+
+</section>
+
+
+</div>
+
+</div>
+
+
+
+<script type="module">
+
+
+/* =========================
+   FIREBASE IMPORTS
+========================= */
+
+
+import {
+
+initializeApp
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+
+import {
+
+getAuth,
+
+onAuthStateChanged,
+
+signOut
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+
+import {
+
+getFirestore,
+
+collection,
+
+getDocs,
+
+doc,
+
+updateDoc,
+
+query,
+
+where,
+
+serverTimestamp,
+
+increment,
+
+getDoc
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+
+/* =========================
+   FIREBASE CONFIG
+========================= */
+
+
+const firebaseConfig={
+
+
+apiKey:
+"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+
+
+authDomain:
+"padho-aur-kamao-3eeae.firebaseapp.com",
+
+
+projectId:
+"padho-aur-kamao-3eeae",
+
+
+storageBucket:
+"padho-aur-kamao-3eeae.firebasestorage.app",
+
+
+messagingSenderId:
+"670063905617",
+
+
+appId:
+"1:670063905617:web:9b3a7e62fdeea14fbfa170",
+
+
+measurementId:
+"G-7J1YV8HN3F"
+
+
+};
+
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+
+const app=
+initializeApp(firebaseConfig);
+
+
+const auth=
+getAuth(app);
+
+
+const db=
+getFirestore(app);
+
+
+
+/* =========================
+   YOUR ADMIN UID
+========================= */
+
+
+const ADMIN_UID=
+
+"BwEY7fReQpddMVHsDcbCMhUXkb62";
+
+
+
+/* =========================
+   ELEMENTS
+========================= */
+
+
+const loading=
+document.getElementById("loading");
+
+
+const adminPanel=
+document.getElementById("adminPanel");
+
+
+const accessDenied=
+document.getElementById("accessDenied");
+
+
+
+/* =========================
+   AUTH CHECK
+========================= */
+
+
+onAuthStateChanged(
+
+auth,
+
+async(user)=>{
+
+
+if(!user){
+
+    location.href="login.html";
+
+    return;
+
+}
+
+
+
+/* ADMIN UID CHECK */
+
+
+if(user.uid!==ADMIN_UID){
+
+    loading.classList.add("hidden");
+
+    accessDenied.classList.remove("hidden");
+
+    return;
+
+}
+
+
+
+/* SHOW ADMIN */
+
+
+loading.classList.add("hidden");
+
+adminPanel.classList.remove("hidden");
+
+
+
+await loadDashboard();
+
+
+}
+
+);
+
+
+
+/* =========================
+   LOAD DASHBOARD
+========================= */
+
+
+async function loadDashboard(){
+
+
+await loadUsers();
+
+
+await loadKYC();
+
+
+await loadWithdrawals();
+
+
+}
+
+
+
+/* =========================
+   LOAD USERS
+========================= */
+
+
+async function loadUsers(){
+
+
+try{
+
+
+const snap=
+
+await getDocs(
+
+collection(db,"users")
+
+);
+
+
+document.getElementById(
+
+"totalUsers"
+
+).innerText=snap.size;
+
+
+
+const table=
+
+document.getElementById(
+
+"usersTable"
+
+);
+
+
+table.innerHTML="";
+
+
+snap.forEach(item=>{
+
+
+const data=
+
+item.data();
+
+
+
+const row=
+
+document.createElement("tr");
+
+
+row.innerHTML=`
+
+<td>${escapeHTML(data.name||"Student")}</td>
+
+<td>${escapeHTML(data.email||"")}</td>
+
+<td>${escapeHTML(data.referralCode||"-")}</td>
+
+<td>${escapeHTML(data.kycStatus||"Pending")}</td>
+
+<td>${escapeHTML(data.accountStatus||"Active")}</td>
+
+`;
+
+
+table.appendChild(row);
+
+
+});
+
+
+}catch(error){
+
+
+console.log(
+
+"Users Error:",
+
+error
+
+);
+
+
+}
+
+}
+
+
+
+/* =========================
+   LOAD KYC
+========================= */
+
+
+async function loadKYC(){
+
+
+try{
+
+
+const snap=
+
+await getDocs(
+
+query(
+
+collection(db,"kycRequests"),
+
+where("status","==","Pending")
+
+)
+
+);
+
+
+
+document.getElementById(
+
+"pendingKycCount"
+
+).innerText=snap.size;
+
+
+
+const list=
+
+document.getElementById(
+
+"kycList"
+
+);
+
+
+list.innerHTML="";
+
+
+
+if(snap.empty){
+
+
+list.innerHTML=
+
+`<div class="empty">
+
+🎉 कोई Pending KYC नहीं है।
+
+</div>`;
+
+
+return;
+
+
+}
+
+
+
+snap.forEach(item=>{
+
+
+const data=
+
+item.data();
+
+
+const id=
+
+item.id;
+
+
+
+const card=
+
+document.createElement("div");
+
+
+card.className=
+
+"request-card";
+
+
+card.innerHTML=`
+
+<div class="request-header">
+
+<div class="request-name">
+
+${escapeHTML(data.name||"Student")}
+
+</div>
+
+
+<span class="status pending">
+
+Pending
+
+</span>
+
+</div>
+
+
+<div class="info">
+
+<strong>Email:</strong>
+
+${escapeHTML(data.email||"-")}
+
+</div>
+
+
+<div class="info">
+
+<strong>Mobile:</strong>
+
+${escapeHTML(data.mobile||"-")}
+
+</div>
+
+
+<div class="info">
+
+<strong>PAN:</strong>
+
+${escapeHTML(data.panNumber||"-")}
+
+</div>
+
+
+<div class="info">
+
+<strong>Aadhaar:</strong>
+
+${escapeHTML(data.aadhaarNumber||"-")}
+
+</div>
+
+
+<div class="info">
+
+<strong>Bank:</strong>
+
+${escapeHTML(data.bankName||"-")}
+
+</div>
+
+
+<div class="info">
+
+<strong>Account:</strong>
+
+${escapeHTML(data.accountNumber||"-")}
+
+</div>
+
+
+<div class="info">
+
+<strong>IFSC:</strong>
+
+${escapeHTML(data.ifscCode||"-")}
+
+</div>
+
+
+<div class="actions">
+
+<button
+class="approve-btn"
+data-kyc-approve="${id}"
+data-user="${data.userId||""}">
+
+Approve
+
+</button>
+
+
+<button
+class="reject-btn"
+data-kyc-reject="${id}"
+data-user="${data.userId||""}">
+
+Reject
+
+</button>
+
+</div>
+
+`;
+
+
+list.appendChild(card);
+
+
+});
+
+
+
+document
+
+.querySelectorAll(
+
+"[data-kyc-approve]"
+
+)
+
+.forEach(btn=>{
+
+
+btn.onclick=
+
+async()=>{
+
+
+const id=
+
+btn.dataset.kycApprove;
+
+
+const userId=
+
+btn.dataset.user;
+
+
+await approveKYC(
+
+id,
+
+userId
+
+);
+
+
+};
+
+
+});
+
+
+
+document
+
+.querySelectorAll(
+
+"[data-kyc-reject]"
+
+)
+
+.forEach(btn=>{
+
+
+btn.onclick=
+
+async()=>{
+
+
+const id=
+
+btn.dataset.kycReject;
+
+
+const userId=
+
+btn.dataset.user;
+
+
+await rejectKYC(
+
+id,
+
+userId
+
+);
+
+
+};
+
+
+});
+
+
+}catch(error){
+
+
+console.log(
+
+"KYC Error:",
+
+error
+
+);
+
+
+}
+
+}
+
+
+
+/* =========================
+   APPROVE KYC
+========================= */
+
+
+async function approveKYC(
+
+requestId,
+
+userId
+
+){
+
+
+const ok=
+
+confirm(
+
+"क्या आप इस KYC को Approve करना चाहते हैं?"
+
+);
+
+
+if(!ok)return;
+
+
+
+try{
+
+
+await updateDoc(
+
+doc(db,"kycRequests",requestId),
+
+{
+
+status:"Approved",
+
+approvedAt:
+
+serverTimestamp(),
+
+approvedBy:
+
+ADMIN_UID
+
+}
+
+);
+
+
+
+if(userId){
+
+
+await updateDoc(
+
+doc(db,"users",userId),
+
+{
+
+kycStatus:"Approved",
+
+kycApprovedAt:
+
+serverTimestamp()
+
+}
+
+);
+
+
+}
+
+
+
+alert(
+
+"KYC Approved Successfully"
+
+);
+
+
+
+await loadKYC();
+
+
+await loadUsers();
+
+
+}catch(error){
+
+
+console.log(error);
+
+
+alert(
+
+"KYC Approval Error: "+
+
+error.message
+
+);
+
+
+}
+
+
+}
+
+
+
+/* =========================
+   REJECT KYC
+========================= */
+
+
+async function rejectKYC(
+
+requestId,
+
+userId
+
+){
+
+
+const ok=
+
+confirm(
+
+"क्या आप इस KYC को Reject करना चाहते हैं?"
+
+);
+
+
+if(!ok)return;
+
+
+
+try{
+
+
+await updateDoc(
+
+doc(db,"kycRequests",requestId),
+
+{
+
+status:"Rejected",
+
+rejectedAt:
+
+serverTimestamp(),
+
+rejectedBy:
+
+ADMIN_UID
+
+}
+
+);
+
+
+
+if(userId){
+
+
+await updateDoc(
+
+doc(db,"users",userId),
+
+{
+
+kycStatus:"Rejected"
+
+}
+
+);
+
+
+}
+
+
+
+alert(
+
+"KYC Rejected"
+
+
+
+);
+
+
+
+await loadKYC();
+
+
+await loadUsers();
+
+
+}catch(error){
+
+
+alert(
+
+"KYC Reject Error: "+
+
+error.message
+
+);
+
+
+}
+
+
+}
+
+
+
+/* =========================
+   LOAD WITHDRAWALS
+========================= */
+
+
+async function loadWithdrawals(){
+
+
+try{
+
+
+const pendingSnap=
+
+await getDocs(
+
+query(
+
+collection(db,"withdrawalRequests"),
+
+where("status","==","Pending")
+
+)
+
+);
+
+
+
+const approvedSnap=
+
+await getDocs(
+
+query(
+
+collection(db,"withdrawalRequests"),
+
+where("status","==","Approved")
+
+)
+
+);
+
+
+
+document.getElementById(
+
+"pendingWithdrawalCount"
+
+).innerText=
+
+pendingSnap.size;
+
+
+
+document.getElementById(
+
+"approvedWithdrawalCount"
+
+).innerText=
+
+approvedSnap.size;
+
+
+
+const list=
+
+document.getElementById(
+
+"withdrawalList"
+
+);
+
+
+list.innerHTML="";
+
+
+
+if(pendingSnap.empty){
+
+
+list.innerHTML=
+
+`<div class="empty">
+
+🎉 कोई Pending Withdrawal Request नहीं है।
+
+</div>`;
+
+
+return;
+
+
+}
+
+
+
+pendingSnap.forEach(item=>{
+
+
+const data=
+
+item.data();
+
+
+const id=
+
+item.id;
+
+
+
+const card=
+
+document.createElement("div");
+
+
+card.className=
+
+"request-card";
+
+
+card.innerHTML=`
+
+<div class="request-header">
+
+<div class="request-name">
+
+${escapeHTML(data.name||"Student")}
+
+</div>
+
+
+<span class="status pending">
+
+Pending
+
+</span>
+
+</div>
+
+
+<div class="info">
+
+<strong>Amount:</strong>
+
+₹${Number(data.amount||0).toLocaleString("en-IN")}
+
+</div>
+
+
+<div class="info">
+
+<strong>Email:</strong>
+
+${escapeHTML(data.email||"-")}
+
+</div>
+
+
+<div class="info">
+
+<strong>Bank:</strong>
+
+${escapeHTML(data.bankName||"-")}
+
+</div>
+
+
+<div class="info">
+
+<strong>Account:</strong>
+
+${escapeHTML(data.accountNumber||"-")}
+
+</div>
+
+
+<div class="info">
+
+<strong>IFSC:</strong>
+
+${escapeHTML(data.ifscCode||"-")}
+
+</div>
+
+
+<div class="info">
+
+<strong>UPI:</strong>
+
+${escapeHTML(data.upiId||"-")}
+
+</div>
+
+
+<div class="actions">
+
+
+<button
+class="approve-btn"
+data-withdrawal-approve="${id}"
+data-user="${data.userId||""}"
+data-amount="${data.amount||0}">
+
+Approve
+
+</button>
+
+
+<button
+class="reject-btn"
+data-withdrawal-reject="${id}"
+data-user="${data.userId||""}"
+data-amount="${data.amount||0}">
+
+Reject
+
+</button>
+
+
+</div>
+
+`;
+
+
+list.appendChild(card);
+
+
+});
+
+
+
+document
+
+.querySelectorAll(
+
+"[data-withdrawal-approve]"
+
+)
+
+.forEach(btn=>{
+
+
+btn.onclick=
+
+async()=>{
+
+
+await approveWithdrawal(
+
+btn.dataset.withdrawalApprove,
+
+btn.dataset.user,
+
+Number(btn.dataset.amount)
+
+);
+
+
+};
+
+
+});
+
+
+
+document
+
+.querySelectorAll(
+
+"[data-withdrawal-reject]"
+
+)
+
+.forEach(btn=>{
+
+
+btn.onclick=
+
+async()=>{
+
+
+await rejectWithdrawal(
+
+btn.dataset.withdrawalReject,
+
+btn.dataset.user,
+
+Number(btn.dataset.amount)
+
+);
+
+
+};
+
+
+});
+
+
+}catch(error){
+
+
+console.log(
+
+"Withdrawal Error:",
+
+error
+
+);
+
+
+}
+
+}
+
+
+
+/* =========================
+   APPROVE WITHDRAWAL
+========================= */
+
+
+async function approveWithdrawal(
+
+requestId,
+
+userId,
+
+amount
+
+){
+
+
+const ok=
+
+confirm(
+
+"क्या ₹"+
+
+amount+
+
+" का Withdrawal Approve करना चाहते हैं?"
+
+);
+
+
+if(!ok)return;
+
+
+
+try{
+
+
+await updateDoc(
+
+doc(db,"withdrawalRequests",requestId),
+
+{
+
+status:"Approved",
+
+approvedAt:
+
+serverTimestamp(),
+
+approvedBy:
+
+ADMIN_UID
+
+}
+
+);
+
+
+
+alert(
+
+"Withdrawal Approved Successfully"
+
+);
+
+
+
+await loadWithdrawals();
+
+
+}catch(error){
+
+
+console.log(error);
+
+
+alert(
+
+"Approval Error: "+
+
+error.message
+
+);
+
+
+}
+
+
+}
+
+
+
+/* =========================
+   REJECT WITHDRAWAL
+========================= */
+
+
+async function rejectWithdrawal(
+
+requestId,
+
+userId,
+
+amount
+
+){
+
+
+const ok=
+
+confirm(
+
+"क्या आप Withdrawal Reject करना चाहते हैं?"
+
+);
+
+
+if(!ok)return;
+
+
+
+try{
+
+
+await updateDoc(
+
+doc(db,"withdrawalRequests",requestId),
+
+{
+
+status:"Rejected",
+
+rejectedAt:
+
+serverTimestamp(),
+
+rejectedBy:
+
+ADMIN_UID
+
+}
+
+);
+
+
+
+alert(
+
+"Withdrawal Rejected"
+
+);
+
+
+
+await loadWithdrawals();
+
+
+}catch(error){
+
+
+alert(
+
+"Reject Error: "+
+
+error.message
+
+);
+
+
+}
+
+
+}
+
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+
+document
+
+.getElementById(
+
+"logoutBtn"
+
+)
+
+.onclick=
+
+async()=>{
+
+
+await signOut(auth);
+
+
+location.href=
+
+"login.html";
+
+
+};
+
+
+
+document
+
+.getElementById(
+
+"deniedLogout"
+
+)
+
+.onclick=
+
+async()=>{
+
+
+await signOut(auth);
+
+
+location.href=
+
+"login.html";
+
+
+};
+
+
+
+/* =========================
+   SECURITY - HTML ESCAPE
+========================= */
+
+
+function escapeHTML(text){
+
+
+const div=
+
+document.createElement("div");
+
+
+div.innerText=
+
+String(text);
+
+
+return div.innerHTML;
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
