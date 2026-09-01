@@ -2,14 +2,10 @@
 <html lang="hi">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dashboard - Padho Aur Kamao</title>
-
 
 <style>
 
@@ -33,8 +29,7 @@ body{
     color:#172033;
 }
 
-button,
-input{
+button,input{
     font-family:inherit;
 }
 
@@ -49,159 +44,82 @@ a{
 ========================= */
 
 .sidebar{
-
     position:fixed;
-
     left:0;
     top:0;
     bottom:0;
-
     width:260px;
-
     background:#ffffff;
-
-    border-right:
-    1px solid #e8eaf0;
-
+    border-right:1px solid #e8eaf0;
     z-index:1000;
-
     overflow-y:auto;
-
     transition:.3s;
-
 }
-
 
 .brand{
-
     height:72px;
-
     display:flex;
-
     align-items:center;
-
     padding:0 20px;
-
-    border-bottom:
-    1px solid #eee;
-
+    border-bottom:1px solid #eee;
     font-size:18px;
-
     font-weight:800;
-
     color:#6025d7;
-
 }
-
 
 .brand-icon{
-
     width:42px;
-
     height:42px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     border-radius:12px;
-
-    background:
-    linear-gradient(
-    135deg,
-    #6025d7,
-    #8b5cf6
-    );
-
+    background:linear-gradient(135deg,#6025d7,#8b5cf6);
     color:white;
-
     margin-right:10px;
-
     font-size:22px;
-
 }
-
 
 .sidebar-section{
-
     font-size:11px;
-
     font-weight:bold;
-
     color:#9aa1b1;
-
-    padding:
-    22px 20px
-    8px;
-
+    padding:22px 20px 8px;
     text-transform:uppercase;
-
 }
-
 
 .side-link{
-
     display:flex;
-
     align-items:center;
-
     gap:13px;
-
     margin:3px 10px;
-
     padding:12px 13px;
-
     border-radius:10px;
-
     font-size:14px;
-
     color:#596174;
-
     cursor:pointer;
-
     transition:.2s;
-
 }
-
 
 .side-link:hover,
 .side-link.active{
-
     background:#f1ebff;
-
     color:#6526d7;
-
 }
-
 
 .side-icon{
-
     width:22px;
-
     text-align:center;
-
     font-size:18px;
-
 }
 
-
 .side-badge{
-
     margin-left:auto;
-
     background:#fff3cd;
-
     color:#b45309;
-
-    padding:
-    4px 8px;
-
+    padding:4px 8px;
     border-radius:20px;
-
     font-size:10px;
-
 }
 
 
@@ -210,11 +128,8 @@ a{
 ========================= */
 
 .main{
-
     margin-left:260px;
-
     min-height:100vh;
-
 }
 
 
@@ -223,175 +138,91 @@ a{
 ========================= */
 
 .topbar{
-
     height:72px;
-
     background:#ffffff;
-
-    border-bottom:
-    1px solid #e8eaf0;
-
+    border-bottom:1px solid #e8eaf0;
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
-    padding:
-    0 28px;
-
+    padding:0 28px;
     position:sticky;
-
     top:0;
-
     z-index:900;
-
 }
-
 
 .top-left{
-
     display:flex;
-
     align-items:center;
-
     gap:18px;
-
 }
-
 
 .menu-mobile{
-
     display:none;
-
     width:42px;
-
     height:42px;
-
     border:0;
-
     border-radius:10px;
-
     background:#f1ebff;
-
     color:#6526d7;
-
     font-size:21px;
-
     cursor:pointer;
-
 }
-
 
 .page-title{
-
     font-size:21px;
-
     font-weight:700;
-
 }
-
 
 .top-courses{
-
-    padding:
-    10px 17px;
-
+    padding:10px 17px;
     border-radius:10px;
-
     background:#f1ebff;
-
     color:#6526d7;
-
     font-size:13px;
-
     font-weight:bold;
-
 }
-
 
 .top-right{
-
     display:flex;
-
     align-items:center;
-
     gap:15px;
-
 }
-
 
 .notification{
-
     width:42px;
-
     height:42px;
-
     border:1px solid #eee;
-
     background:white;
-
     border-radius:10px;
-
     font-size:18px;
-
 }
-
 
 .user-box{
-
     display:flex;
-
     align-items:center;
-
     gap:10px;
-
 }
-
 
 .avatar{
-
     width:42px;
-
     height:42px;
-
     border-radius:50%;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     color:white;
-
     font-weight:bold;
-
-    background:
-    linear-gradient(
-    135deg,
-    #6025d7,
-    #8b5cf6
-    );
-
+    background:linear-gradient(135deg,#6025d7,#8b5cf6);
 }
-
 
 .user-info strong{
-
     display:block;
-
     font-size:13px;
-
 }
 
-
 .user-info small{
-
     font-size:11px;
-
     color:#9299a8;
-
 }
 
 
@@ -400,14 +231,9 @@ a{
 ========================= */
 
 .content{
-
     max-width:1400px;
-
     margin:auto;
-
-    padding:
-    28px;
-
+    padding:28px;
 }
 
 
@@ -416,99 +242,51 @@ a{
 ========================= */
 
 .welcome{
-
-    background:
-    linear-gradient(
-    135deg,
-    #5420bd,
-    #7c3aed
-    );
-
+    background:linear-gradient(135deg,#5420bd,#7c3aed);
     border-radius:20px;
-
     padding:32px;
-
     color:white;
-
     position:relative;
-
     overflow:hidden;
-
     margin-bottom:24px;
-
 }
-
 
 .welcome:after{
-
     content:"";
-
     position:absolute;
-
     width:260px;
-
     height:260px;
-
     border-radius:50%;
-
     background:#ffffff12;
-
     right:-70px;
-
     top:-100px;
-
 }
-
 
 .welcome h1{
-
     font-size:27px;
-
     position:relative;
-
     z-index:2;
-
 }
-
 
 .welcome p{
-
     margin-top:10px;
-
     font-size:14px;
-
     opacity:.9;
-
     position:relative;
-
     z-index:2;
-
 }
 
-
 .welcome-btn{
-
     display:inline-block;
-
     margin-top:18px;
-
-    padding:
-    12px 18px;
-
+    padding:12px 18px;
     background:white;
-
     color:#5b21b6;
-
     border-radius:10px;
-
     font-size:13px;
-
     font-weight:bold;
-
     position:relative;
-
     z-index:2;
-
 }
 
 
@@ -517,95 +295,51 @@ a{
 ========================= */
 
 .stats{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:16px;
-
 }
-
 
 .stat{
-
     background:white;
-
-    border:
-    1px solid #edf0f5;
-
+    border:1px solid #edf0f5;
     border-radius:16px;
-
     padding:19px;
-
-    box-shadow:
-    0 4px 16px
-    rgba(24,32,77,.04);
-
+    box-shadow:0 4px 16px rgba(24,32,77,.04);
 }
-
 
 .stat-top{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
 }
-
 
 .stat-label{
-
     font-size:12px;
-
     color:#858c9d;
-
 }
-
 
 .stat-icon{
-
     width:44px;
-
     height:44px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     border-radius:12px;
-
     background:#f1ebff;
-
     font-size:20px;
-
 }
-
 
 .stat-value{
-
     margin-top:16px;
-
     font-size:24px;
-
     font-weight:800;
-
 }
 
-
 .stat-change{
-
     margin-top:7px;
-
     font-size:11px;
-
     color:#16a34a;
-
 }
 
 
@@ -614,49 +348,27 @@ a{
 ========================= */
 
 .section{
-
     margin-top:30px;
-
 }
-
 
 .section-head{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     margin-bottom:15px;
-
 }
-
 
 .section-title{
-
     font-size:20px;
-
     font-weight:700;
-
 }
 
-
 .card{
-
     background:white;
-
-    border:
-    1px solid #edf0f5;
-
+    border:1px solid #edf0f5;
     border-radius:16px;
-
     padding:20px;
-
-    box-shadow:
-    0 4px 16px
-    rgba(24,32,77,.04);
-
+    box-shadow:0 4px 16px rgba(24,32,77,.04);
 }
 
 
@@ -665,272 +377,128 @@ a{
 ========================= */
 
 .course-grid{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:18px;
-
 }
-
 
 .course-card{
-
     background:white;
-
-    border:
-    1px solid #e9e9ef;
-
+    border:1px solid #e9e9ef;
     border-radius:18px;
-
     overflow:hidden;
-
     transition:.25s;
-
 }
-
 
 .course-card:hover{
-
-    transform:
-    translateY(-4px);
-
-    box-shadow:
-    0 15px 30px
-    rgba(0,0,0,.08);
-
+    transform:translateY(-4px);
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
 }
-
 
 .course-cover{
-
     height:150px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     position:relative;
-
     overflow:hidden;
-
-    background:
-    linear-gradient(
-    135deg,
-    #9c5d22,
-    #51301e,
-    #201a25
-    );
-
+    background:linear-gradient(135deg,#9c5d22,#51301e,#201a25);
 }
-
 
 .course-cover.premium{
-
-    background:
-    linear-gradient(
-    135deg,
-    #0d6d72,
-    #22a6a4,
-    #1b4d9b
-    );
-
+    background:linear-gradient(135deg,#0d6d72,#22a6a4,#1b4d9b);
 }
-
-
-/* BOOK */
 
 .book{
-
     width:100px;
-
     height:120px;
-
     position:relative;
-
-    border-radius:
-    4px 8px 8px 4px;
-
-    transform:
-    perspective(600px)
-    rotateY(-18deg)
-    rotateZ(2deg);
-
-    box-shadow:
-    12px 14px 18px
-    rgba(0,0,0,.35);
-
+    border-radius:4px 8px 8px 4px;
+    transform:perspective(600px) rotateY(-18deg) rotateZ(2deg);
+    box-shadow:12px 14px 18px rgba(0,0,0,.35);
 }
-
 
 .book.starter{
-
-    background:
-    linear-gradient(
-    135deg,
-    #071a34,
-    #102b50
-    );
-
+    background:linear-gradient(135deg,#071a34,#102b50);
 }
-
 
 .book.premium-book{
-
-    background:
-    linear-gradient(
-    135deg,
-    #063b20,
-    #136436
-    );
-
+    background:linear-gradient(135deg,#063b20,#136436);
 }
-
 
 .book:before{
-
     content:"";
-
     position:absolute;
-
     left:-12px;
-
     top:4px;
-
     width:13px;
-
     height:112px;
-
     background:#111827;
-
-    transform:
-    rotateY(60deg);
-
+    transform:rotateY(60deg);
 }
-
 
 .book:after{
-
     content:"";
-
     position:absolute;
-
     right:-7px;
-
     top:6px;
-
     width:8px;
-
     height:108px;
-
-    background:
-    repeating-linear-gradient(
-    0deg,
-    #ffffff,
-    #ffffff 2px,
-    #d1d5db 3px
+    background:repeating-linear-gradient(
+        0deg,
+        #ffffff,
+        #ffffff 2px,
+        #d1d5db 3px
     );
-
 }
-
 
 .book-text{
-
     color:white;
-
     text-align:center;
-
     padding:18px 8px;
-
     font-size:13px;
-
     font-weight:bold;
-
     line-height:1.4;
-
 }
-
 
 .course-body{
-
     padding:18px;
-
 }
-
 
 .course-body h3{
-
     font-size:18px;
-
     margin-bottom:8px;
-
 }
-
 
 .course-body p{
-
     font-size:12px;
-
     color:#7a8292;
-
     line-height:1.6;
-
 }
-
 
 .course-price-row{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     margin-top:16px;
-
 }
-
 
 .course-price{
-
     font-size:22px;
-
     font-weight:bold;
-
     color:#6526d7;
-
 }
 
-
 .course-btn{
-
     margin-top:15px;
-
     width:100%;
-
     padding:12px;
-
     border:0;
-
     border-radius:10px;
-
-    background:
-    linear-gradient(
-    135deg,
-    #6526d7,
-    #8b5cf6
-    );
-
+    background:linear-gradient(135deg,#6526d7,#8b5cf6);
     color:white;
-
     font-weight:bold;
-
     cursor:pointer;
-
 }
 
 
@@ -939,94 +507,51 @@ a{
 ========================= */
 
 .referral-link{
-
     display:flex;
-
     gap:8px;
-
     margin-top:15px;
-
 }
-
 
 .referral-link input{
-
     width:100%;
-
     padding:12px;
-
-    border:
-    1px solid #ddd;
-
+    border:1px solid #ddd;
     border-radius:10px;
-
 }
-
 
 .copy-btn{
-
     border:0;
-
-    padding:
-    0 16px;
-
+    padding:0 16px;
     border-radius:10px;
-
     background:#6526d7;
-
     color:white;
-
     font-weight:bold;
-
 }
-
 
 .mini-grid{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:10px;
-
     margin-top:16px;
-
 }
-
 
 .mini{
-
     background:#f7f5ff;
-
     border-radius:12px;
-
     text-align:center;
-
     padding:14px;
-
 }
-
 
 .mini span{
-
     font-size:11px;
-
     color:#888;
-
 }
 
-
 .mini strong{
-
     display:block;
-
     margin-top:6px;
-
     color:#6526d7;
-
     font-size:18px;
-
 }
 
 
@@ -1035,56 +560,32 @@ a{
 ========================= */
 
 .commission-grid{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:14px;
-
 }
-
 
 .commission-box{
-
     padding:18px;
-
     border-radius:14px;
-
     background:#f7f5ff;
-
 }
-
 
 .commission-box h3{
-
     font-size:16px;
-
     margin-bottom:10px;
-
 }
-
 
 .commission-box p{
-
     font-size:13px;
-
     color:#777;
-
 }
 
-
 .commission-amount{
-
     margin-top:12px;
-
     font-size:25px;
-
     font-weight:bold;
-
     color:#16a34a;
-
 }
 
 
@@ -1093,77 +594,43 @@ a{
 ========================= */
 
 .earning-row{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     padding:14px 0;
-
-    border-bottom:
-    1px solid #eef0f4;
-
+    border-bottom:1px solid #eef0f4;
 }
-
 
 .earning-row:last-child{
-
     border-bottom:0;
-
 }
-
 
 .earning-left{
-
     display:flex;
-
     align-items:center;
-
     gap:12px;
-
 }
-
 
 .earning-icon{
-
     width:42px;
-
     height:42px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     background:#f1ebff;
-
     border-radius:11px;
-
 }
-
 
 .earning-left small{
-
     display:block;
-
     font-size:11px;
-
     color:#9299a8;
-
     margin-top:3px;
-
 }
 
-
 .earning-amount{
-
     color:#16a34a;
-
     font-weight:bold;
-
 }
 
 
@@ -1172,75 +639,42 @@ a{
 ========================= */
 
 .rank-row{
-
     display:flex;
-
     align-items:center;
-
     gap:12px;
-
     padding:13px 0;
-
-    border-bottom:
-    1px solid #f0f1f4;
-
+    border-bottom:1px solid #f0f1f4;
 }
-
 
 .rank-row:last-child{
-
     border-bottom:0;
-
 }
-
 
 .rank-number{
-
     width:34px;
-
     height:34px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     border-radius:50%;
-
     background:#f1ebff;
-
     color:#6526d7;
-
     font-weight:bold;
-
 }
-
 
 .rank-user{
-
     flex:1;
-
 }
-
 
 .rank-user small{
-
     display:block;
-
     color:#9299a8;
-
     font-size:10px;
-
     margin-top:4px;
-
 }
 
-
 .rank-points{
-
     font-weight:bold;
-
 }
 
 
@@ -1249,56 +683,29 @@ a{
 ========================= */
 
 .wallet-box{
-
     padding:24px;
-
     border-radius:18px;
-
     color:white;
-
-    background:
-    linear-gradient(
-    135deg,
-    #111827,
-    #374151
-    );
-
+    background:linear-gradient(135deg,#111827,#374151);
 }
-
 
 .wallet-label{
-
     font-size:12px;
-
     opacity:.7;
-
 }
-
 
 .wallet-value{
-
     margin:8px 0 18px;
-
     font-size:32px;
-
     font-weight:bold;
-
 }
 
-
 .wallet-button{
-
     border:0;
-
-    padding:
-    11px 18px;
-
+    padding:11px 18px;
     border-radius:9px;
-
     font-weight:bold;
-
     cursor:pointer;
-
 }
 
 
@@ -1307,45 +714,26 @@ a{
 ========================= */
 
 .profile-grid{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:15px;
-
 }
-
 
 .profile-item{
-
     padding:14px;
-
     background:#f8f9fc;
-
     border-radius:11px;
-
 }
-
 
 .profile-item label{
-
     display:block;
-
     font-size:10px;
-
     color:#9299a8;
-
     margin-bottom:7px;
-
 }
 
-
 .profile-item strong{
-
     font-size:13px;
-
 }
 
 
@@ -1354,36 +742,21 @@ a{
 ========================= */
 
 .status{
-
     display:inline-block;
-
-    padding:
-    5px 10px;
-
+    padding:5px 10px;
     border-radius:20px;
-
     font-size:10px;
-
     font-weight:bold;
-
 }
-
 
 .active{
-
     background:#dcfce7;
-
     color:#15803d;
-
 }
 
-
 .pending{
-
     background:#fef3c7;
-
     color:#b45309;
-
 }
 
 
@@ -1392,18 +765,11 @@ a{
 ========================= */
 
 .overlay{
-
     display:none;
-
     position:fixed;
-
     inset:0;
-
-    background:
-    rgba(0,0,0,.5);
-
+    background:rgba(0,0,0,.5);
     z-index:999;
-
 }
 
 
@@ -1412,9 +778,7 @@ a{
 ========================= */
 
 .mobile-nav{
-
     display:none;
-
 }
 
 
@@ -1425,185 +789,110 @@ a{
 @media(max-width:1100px){
 
     .stats{
-        grid-template-columns:
-        repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
 }
-
 
 @media(max-width:800px){
 
     .sidebar{
-
         left:-270px;
-
     }
 
     .sidebar.open{
-
         left:0;
-
     }
 
     .overlay.show{
-
         display:block;
-
     }
 
     .main{
-
         margin-left:0;
-
     }
 
     .menu-mobile{
-
         display:block;
-
     }
 
     .content{
-
-        padding:
-        18px 13px
-        85px;
-
+        padding:18px 13px 85px;
     }
 
     .topbar{
-
-        padding:
-        0 15px;
-
+        padding:0 15px;
     }
 
     .user-info{
-
         display:none;
-
     }
 
     .mobile-nav{
-
         position:fixed;
-
         bottom:0;
-
         left:0;
-
         right:0;
-
         height:65px;
-
         background:white;
-
         display:flex;
-
         align-items:center;
-
         justify-content:space-around;
-
-        border-top:
-        1px solid #eee;
-
+        border-top:1px solid #eee;
         z-index:950;
-
     }
 
     .mobile-nav a{
-
         text-align:center;
-
         font-size:10px;
-
         color:#777;
-
     }
 
     .mobile-nav span{
-
         display:block;
-
         font-size:20px;
-
         margin-bottom:3px;
-
     }
 
 }
 
-
 @media(max-width:550px){
 
     .stats{
-
-        grid-template-columns:
-        1fr 1fr;
-
+        grid-template-columns:1fr 1fr;
         gap:10px;
-
     }
 
     .stat{
-
         padding:14px;
-
     }
 
     .stat-value{
-
         font-size:19px;
-
     }
 
-    .course-grid{
-
-        grid-template-columns:
-        1fr;
-
-    }
-
-    .profile-grid{
-
-        grid-template-columns:
-        1fr;
-
-    }
-
+    .course-grid,
+    .profile-grid,
     .commission-grid{
-
-        grid-template-columns:
-        1fr;
-
+        grid-template-columns:1fr;
     }
 
     .mini-grid{
-
-        grid-template-columns:
-        1fr 1fr 1fr;
-
+        grid-template-columns:1fr 1fr 1fr;
     }
 
     .page-title{
-
         font-size:17px;
-
     }
 
     .top-courses{
-
         display:none;
-
     }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
@@ -1612,225 +901,62 @@ a{
      SIDEBAR
 ========================= -->
 
-<aside
-class="sidebar"
-id="sidebar">
-
-
-<div class="brand">
-
-<div class="brand-icon">
-📚
-</div>
-
-Padho Aur Kamao
-
-</div>
-
-
-<div class="sidebar-section">
-
-Main Menu
-
-</div>
-
-
-<a
-class="side-link active"
-href="#home">
-
-<span class="side-icon">
-🏠
-</span>
-
-Dashboard
-
-</a>
-
-
-<a
-class="side-link"
-href="#courses">
-
-<span class="side-icon">
-📚
-</span>
-
-Courses
-
-</a>
-
-
-<a
-class="side-link"
-href="#affiliate">
-
-<span class="side-icon">
-🔗
-</span>
-
-Affiliate
-
-</a>
-
-
-<a
-class="side-link"
-href="#commission">
-
-<span class="side-icon">
-📊
-</span>
-
-Commission Structure
-
-</a>
-
-
-<a
-class="side-link"
-href="#team">
-
-<span class="side-icon">
-👥
-</span>
-
-My Team
-
-</a>
-
-
-<a
-class="side-link"
-href="#leaderboard">
-
-<span class="side-icon">
-🏆
-</span>
-
-Leaderboard
-
-</a>
-
-
-<div class="sidebar-section">
-
-Finance
-
-</div>
-
-
-<a
-class="side-link"
-href="#wallet">
-
-<span class="side-icon">
-💳
-</span>
-
-Wallet
-
-</a>
-
-
-<a
-class="side-link"
-href="#withdrawal">
-
-<span class="side-icon">
-💸
-</span>
-
-Withdrawal
-
-</a>
-
-
-<a
-class="side-link"
-href="#earnings">
-
-<span class="side-icon">
-💰
-</span>
-
-My Earnings
-
-</a>
-
-
-<div class="sidebar-section">
-
-Account
-
-</div>
-
-
-<a
-class="side-link"
-href="#profile">
-
-<span class="side-icon">
-👤
-</span>
-
-My Profile
-
-</a>
-
-
-<a
-class="side-link"
-href="#kyc">
-
-<span class="side-icon">
-🪪
-</span>
-
-KYC
-
-<span class="side-badge">
-Pending
-</span>
-
-</a>
-
-
-<a
-class="side-link"
-href="#security">
-
-<span class="side-icon">
-🔐
-</span>
-
-Security
-
-</a>
-
-
-<a
-class="side-link"
-id="sideLogout"
-href="#">
-
-<span class="side-icon">
-🚪
-</span>
-
-Logout
-
-</a>
-
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">📚</div>
+        Padho Aur Kamao
+    </div>
+
+    <div class="sidebar-section">
+        Dashboard Menu
+    </div>
+
+    <a class="side-link active" href="#team">
+        <span class="side-icon">👥</span>
+        My Team
+    </a>
+
+    <a class="side-link" href="#leaderboard">
+        <span class="side-icon">🏆</span>
+        Leaderboard
+    </a>
+
+    <a class="side-link" href="#wallet">
+        <span class="side-icon">💳</span>
+        My Wallet
+    </a>
+
+    <a class="side-link" href="#withdrawal">
+        <span class="side-icon">💸</span>
+        Withdrawal Request
+    </a>
+
+
+    <div class="sidebar-section">
+        Account
+    </div>
+
+    <a class="side-link" href="#profile">
+        <span class="side-icon">👤</span>
+        My Profile
+    </a>
+
+    <a class="side-link" href="#kyc">
+        <span class="side-icon">🪪</span>
+        KYC Verification
+        <span class="side-badge">Pending</span>
+    </a>
+
+    <a class="side-link" href="#security">
+        <span class="side-icon">🔐</span>
+        Security
+    </a>
 
 </aside>
 
 
-<div
-class="overlay"
-id="overlay">
-</div>
-
+<div class="overlay" id="overlay"></div>
 
 
 <!-- =========================
@@ -1839,936 +965,518 @@ id="overlay">
 
 <div class="main">
 
-
 <header class="topbar">
 
+    <div class="top-left">
 
-<div class="top-left">
+        <button class="menu-mobile" id="mobileMenu">
+            ☰
+        </button>
 
+        <div class="page-title">
+            Dashboard
+        </div>
 
-<button
-class="menu-mobile"
-id="mobileMenu">
+        <a href="#courses" class="top-courses">
+            📚 Courses
+        </a>
 
-☰
+    </div>
 
-</button>
+    <div class="top-right">
 
+        <button class="notification">
+            🔔
+        </button>
 
-<div class="page-title">
+        <div class="user-box">
 
-Dashboard
+            <div class="avatar" id="avatar">
+                S
+            </div>
 
-</div>
+            <div class="user-info">
 
+                <strong id="topName">
+                    Student
+                </strong>
 
-<a
-href="#courses"
-class="top-courses">
+                <small>
+                    Member
+                </small>
 
-📚 Courses
+            </div>
 
-</a>
+        </div>
 
-
-</div>
-
-
-
-<div class="top-right">
-
-
-<button class="notification">
-
-🔔
-
-</button>
-
-
-<div class="user-box">
-
-
-<div
-class="avatar"
-id="avatar">
-
-S
-
-</div>
-
-
-<div class="user-info">
-
-<strong id="topName">
-Student
-</strong>
-
-<small>
-Member
-</small>
-
-</div>
-
-
-</div>
-
-
-</div>
-
+    </div>
 
 </header>
 
 
-
-<!-- =========================
-     CONTENT
-========================= -->
-
-<main
-class="content"
-id="home">
-
+<main class="content" id="home">
 
 
 <!-- WELCOME -->
 
 <section class="welcome">
 
+    <h1 id="welcomeName">
+        Welcome 👋
+    </h1>
 
-<h1
-id="welcomeName">
+    <p>
+        Learn • Earn • Grow with Padho Aur Kamao
+    </p>
 
-Welcome 👋
-
-</h1>
-
-
-<p>
-
-Learn • Earn • Grow with Padho Aur Kamao
-
-</p>
-
-
-<a
-href="#courses"
-class="welcome-btn">
-
-Explore Courses →
-
-</a>
-
+    <a href="#courses" class="welcome-btn">
+        Explore Courses →
+    </a>
 
 </section>
-
 
 
 <!-- STATS -->
 
 <section class="stats">
 
+    <div class="stat">
 
-<div class="stat">
+        <div class="stat-top">
+            <div class="stat-label">
+                Today's Revenue
+            </div>
 
-<div class="stat-top">
+            <div class="stat-icon">
+                💰
+            </div>
+        </div>
 
-<div class="stat-label">
-Today's Revenue
-</div>
+        <div class="stat-value" id="todayRevenue">
+            ₹0
+        </div>
 
-<div class="stat-icon">
-💰
-</div>
+        <div class="stat-change">
+            Today's earnings
+        </div>
 
-</div>
-
-<div
-class="stat-value"
-id="todayRevenue">
-
-₹0
-
-</div>
-
-<div class="stat-change">
-
-Today's earnings
-
-</div>
-
-</div>
+    </div>
 
 
+    <div class="stat">
 
-<div class="stat">
+        <div class="stat-top">
 
-<div class="stat-top">
+            <div class="stat-label">
+                7 Days Revenue
+            </div>
 
-<div class="stat-label">
-7 Days Revenue
-</div>
+            <div class="stat-icon">
+                📅
+            </div>
 
-<div class="stat-icon">
-📅
-</div>
+        </div>
 
-</div>
+        <div class="stat-value" id="weekRevenue">
+            ₹0
+        </div>
 
-<div
-class="stat-value"
-id="weekRevenue">
+        <div class="stat-change">
+            Weekly performance
+        </div>
 
-₹0
-
-</div>
-
-<div class="stat-change">
-
-Weekly performance
-
-</div>
-
-</div>
+    </div>
 
 
+    <div class="stat">
 
-<div class="stat">
+        <div class="stat-top">
 
-<div class="stat-top">
+            <div class="stat-label">
+                30 Days Revenue
+            </div>
 
-<div class="stat-label">
-30 Days Revenue
-</div>
+            <div class="stat-icon">
+                📈
+            </div>
 
-<div class="stat-icon">
-📈
-</div>
+        </div>
 
-</div>
+        <div class="stat-value" id="monthRevenue">
+            ₹0
+        </div>
 
-<div
-class="stat-value"
-id="monthRevenue">
+        <div class="stat-change">
+            Monthly earnings
+        </div>
 
-₹0
-
-</div>
-
-<div class="stat-change">
-
-Monthly earnings
-
-</div>
-
-</div>
+    </div>
 
 
+    <div class="stat">
 
-<div class="stat">
+        <div class="stat-top">
 
-<div class="stat-top">
+            <div class="stat-label">
+                Total Revenue
+            </div>
 
-<div class="stat-label">
-Total Revenue
-</div>
+            <div class="stat-icon">
+                🏦
+            </div>
 
-<div class="stat-icon">
-🏦
-</div>
+        </div>
 
-</div>
+        <div class="stat-value" id="allRevenue">
+            ₹0
+        </div>
 
-<div
-class="stat-value"
-id="allRevenue">
+        <div class="stat-change">
+            All time earnings
+        </div>
 
-₹0
-
-</div>
-
-<div class="stat-change">
-
-All time earnings
-
-</div>
-
-</div>
-
+    </div>
 
 </section>
 
 
+<!-- COURSES -->
 
-<!-- =========================
-     COURSES
-========================= -->
-
-<section
-class="section"
-id="courses">
-
+<section class="section" id="courses">
 
 <div class="section-head">
-
-<h2 class="section-title">
-
-📚 Courses
-
-</h2>
-
+<h2 class="section-title">📚 Courses</h2>
 </div>
-
-
 
 <div class="course-grid">
 
-
-<!-- COURSE 1 -->
-
 <div class="course-card">
-
 
 <div class="course-cover">
 
-
 <div class="book starter">
-
 <div class="book-text">
-
 STUDY<br>
 & SKILL<br>
 STARTER
-
+</div>
 </div>
 
 </div>
-
-
-</div>
-
 
 <div class="course-body">
 
-
-<h3>
-
-Study & Skill Starter
-
-</h3>
-
+<h3>Study & Skill Starter</h3>
 
 <p>
-
 Study Material, Communication Skills,
 Maths, Reasoning, Hindi और Learning.
-
 </p>
-
 
 <div class="course-price-row">
 
-<span class="course-price">
+<span class="course-price">₹199</span>
 
-₹199
-
-</span>
-
-<span>
-
-2 Courses
-
-</span>
+<span>2 Courses</span>
 
 </div>
 
-
-<button
-class="course-btn"
+<button class="course-btn"
 onclick="location.href='course.html'">
-
 View Course
-
 </button>
 
+</div>
 
 </div>
 
-
-</div>
-
-
-
-<!-- COURSE 2 -->
 
 <div class="course-card">
 
-
-<div
-class="course-cover premium">
-
+<div class="course-cover premium">
 
 <div class="book premium-book">
-
 <div class="book-text">
-
 SKILL<br>
 & SUCCESS<br>
 PREMIUM
-
+</div>
 </div>
 
 </div>
-
-
-</div>
-
 
 <div class="course-body">
 
-
-<h3>
-
-Skill & Success Premium
-
-</h3>
-
+<h3>Skill & Success Premium</h3>
 
 <p>
-
 Competitive Preparation,
 Premium Skills,
 Growth और Full Course Access.
-
 </p>
-
 
 <div class="course-price-row">
 
-<span class="course-price">
+<span class="course-price">₹399</span>
 
-₹399
-
-</span>
-
-<span>
-
-All Courses
-
-</span>
+<span>All Courses</span>
 
 </div>
 
-
-<button
-class="course-btn"
+<button class="course-btn"
 onclick="location.href='course.html'">
-
 View Course
-
 </button>
 
+</div>
 
 </div>
 
-
 </div>
-
-
-</div>
-
 
 </section>
 
 
+<!-- AFFILIATE -->
 
-<!-- =========================
-     AFFILIATE
-========================= -->
-
-<section
-class="section"
-id="affiliate">
-
+<section class="section" id="affiliate">
 
 <div class="section-head">
-
-<h2 class="section-title">
-
-🔗 Affiliate Center
-
-</h2>
-
+<h2 class="section-title">🔗 Affiliate Center</h2>
 </div>
-
 
 <div class="card">
 
-
 <p style="font-size:13px;color:#777">
-
 अपना Referral Link share करें और
 eligible course sales पर commission earn करें।
-
 </p>
 
-
 <div class="referral-link">
-
 
 <input
 id="referralLink"
 readonly
 placeholder="Loading...">
 
-
-<button
-class="copy-btn"
-id="copyBtn">
-
+<button class="copy-btn" id="copyBtn">
 Copy
-
 </button>
 
-
 </div>
-
-
 
 <div class="mini-grid">
 
+<div class="mini">
+<span>Referrals</span>
+<strong id="referralCount">0</strong>
+</div>
 
 <div class="mini">
-
-<span>
-Referrals
-</span>
-
-<strong
-id="referralCount">
-
-0
-
-</strong>
-
+<span>Points</span>
+<strong id="referralPoints">0</strong>
 </div>
-
-
 
 <div class="mini">
-
-<span>
-Points
-</span>
-
-<strong
-id="referralPoints">
-
-0
-
-</strong>
+<span>Status</span>
+<strong id="affiliateStatus">Active</strong>
+</div>
 
 </div>
 
-
-
-<div class="mini">
-
-<span>
-Status
-</span>
-
-<strong
-id="affiliateStatus">
-
-Active
-
-</strong>
-
 </div>
-
-
-</div>
-
-
-</div>
-
 
 </section>
 
 
+<!-- COMMISSION -->
 
-<!-- =========================
-     COMMISSION
-========================= -->
-
-<section
-class="section"
-id="commission">
-
+<section class="section" id="commission">
 
 <div class="section-head">
-
-<h2 class="section-title">
-
-📊 Commission Structure
-
-</h2>
-
+<h2 class="section-title">📊 Commission Structure</h2>
 </div>
-
 
 <div class="commission-grid">
 
-
 <div class="commission-box">
 
-<h3>
+<h3>Study & Skill Starter</h3>
 
-Study & Skill Starter
-
-</h3>
-
-<p>
-
-Course Price: ₹199
-
-</p>
+<p>Course Price: ₹199</p>
 
 <div class="commission-amount">
-
 Commission ₹100
-
 </div>
 
 </div>
-
-
 
 <div class="commission-box">
 
-<h3>
+<h3>Skill & Success Premium</h3>
 
-Skill & Success Premium
-
-</h3>
-
-<p>
-
-Course Price: ₹399
-
-</p>
+<p>Course Price: ₹399</p>
 
 <div class="commission-amount">
-
 Commission ₹200
-
 </div>
 
 </div>
 
-
 </div>
-
 
 </section>
 
 
+<!-- EARNINGS -->
 
-<!-- =========================
-     EARNINGS
-========================= -->
-
-<section
-class="section"
-id="earnings">
-
+<section class="section" id="earnings">
 
 <div class="section-head">
-
-<h2 class="section-title">
-
-💰 Recent Earnings
-
-</h2>
-
+<h2 class="section-title">💰 Recent Earnings</h2>
 </div>
-
 
 <div class="card">
 
-
 <div class="earning-row">
-
 
 <div class="earning-left">
 
-<div class="earning-icon">
-🎯
-</div>
+<div class="earning-icon">🎯</div>
 
 <div>
-
-<strong>
-Course Commission
-</strong>
-
-<small>
-Recent commission
-</small>
-
+<strong>Course Commission</strong>
+<small>Recent commission</small>
 </div>
 
 </div>
 
-
-<div
-class="earning-amount"
-id="commissionAmount">
-
+<div class="earning-amount" id="commissionAmount">
 ₹0
-
 </div>
 
-
 </div>
-
 
 
 <div class="earning-row">
 
-
 <div class="earning-left">
 
-<div class="earning-icon">
-🔗
-</div>
+<div class="earning-icon">🔗</div>
 
 <div>
-
-<strong>
-Passive Income
-</strong>
-
-<small>
-Team based income
-</small>
-
+<strong>Passive Income</strong>
+<small>Team based income</small>
 </div>
 
 </div>
 
-
-<div
-class="earning-amount"
-id="passiveAmount">
-
+<div class="earning-amount" id="passiveAmount">
 ₹0
-
 </div>
 
-
 </div>
-
 
 
 <div class="earning-row">
 
-
 <div class="earning-left">
 
-<div class="earning-icon">
-👥
-</div>
+<div class="earning-icon">👥</div>
 
 <div>
-
-<strong>
-Team Referrals
-</strong>
-
-<small>
-Your network
-</small>
-
+<strong>Team Referrals</strong>
+<small>Your network</small>
 </div>
 
 </div>
 
-
-<div
-class="earning-amount"
-id="teamEarning">
-
+<div class="earning-amount" id="teamEarning">
 ₹0
+</div>
 
 </div>
 
-
 </div>
-
-
-</div>
-
 
 </section>
 
 
+<!-- TEAM -->
 
-<!-- =========================
-     TEAM
-========================= -->
-
-<section
-class="section"
-id="team">
-
+<section class="section" id="team">
 
 <div class="section-head">
-
-<h2 class="section-title">
-
-👥 My Team
-
-</h2>
-
+<h2 class="section-title">👥 My Team</h2>
 </div>
 
-
-<div
-class="card"
-id="teamList">
-
+<div class="card" id="teamList">
 No team members yet.
-
 </div>
-
 
 </section>
 
 
+<!-- LEADERBOARD -->
 
-<!-- =========================
-     LEADERBOARD
-========================= -->
-
-<section
-class="section"
-id="leaderboard">
-
+<section class="section" id="leaderboard">
 
 <div class="section-head">
-
-<h2 class="section-title">
-
-🏆 Leaderboard
-
-</h2>
-
+<h2 class="section-title">🏆 Leaderboard</h2>
 </div>
 
-
-<div
-class="card"
-id="leaderboardList">
-
+<div class="card" id="leaderboardList">
 Loading leaderboard...
-
 </div>
-
 
 </section>
 
 
+<!-- WALLET -->
 
-<!-- =========================
-     WALLET
-========================= -->
-
-<section
-class="section"
-id="wallet">
-
+<section class="section" id="wallet">
 
 <div class="section-head">
-
-<h2 class="section-title">
-
-💳 My Wallet
-
-</h2>
-
+<h2 class="section-title">💳 My Wallet</h2>
 </div>
-
 
 <div class="wallet-box">
 
-
 <div class="wallet-label">
-
 Available Balance
-
 </div>
 
-
-<div
-class="wallet-value"
-id="walletBalance">
-
+<div class="wallet-value" id="walletBalance">
 ₹0
-
 </div>
-
 
 <button
 class="wallet-button"
 onclick="document.getElementById('withdrawal').scrollIntoView()">
-
 Withdraw Money
-
 </button>
 
-
 </div>
-
 
 </section>
 
 
+<!-- WITHDRAWAL -->
 
-<!-- =========================
-     WITHDRAWAL
-========================= -->
-
-<section
-class="section"
-id="withdrawal">
-
+<section class="section" id="withdrawal">
 
 <div class="section-head">
-
-<h2 class="section-title">
-
-💸 Withdrawal Request
-
-</h2>
-
+<h2 class="section-title">💸 Withdrawal Request</h2>
 </div>
-
 
 <div class="card">
 
-
-<p
-style="
+<p style="
 font-size:13px;
 color:#777;
-margin-bottom:15px;
-">
-
+margin-bottom:15px;">
 Available balance से withdrawal request भेजें।
-
 </p>
-
 
 <input
 id="withdrawAmount"
@@ -2779,9 +1487,7 @@ width:100%;
 padding:12px;
 border:1px solid #ddd;
 border-radius:9px;
-margin-bottom:10px;
-">
-
+margin-bottom:10px;">
 
 <input
 id="withdrawMethod"
@@ -2790,67 +1496,41 @@ style="
 width:100%;
 padding:12px;
 border:1px solid #ddd;
-border-radius:9px;
-">
-
+border-radius:9px;">
 
 <button
 id="withdrawBtn"
 class="course-btn">
-
 💸 Request Withdrawal
-
 </button>
-
 
 <p
 id="withdrawMsg"
 style="
 font-size:12px;
-margin-top:10px;
-">
-
+margin-top:10px;">
 </p>
 
-
 </div>
-
 
 </section>
 
 
+<!-- PROFILE -->
 
-<!-- =========================
-     PROFILE
-========================= -->
-
-<section
-class="section"
-id="profile">
-
+<section class="section" id="profile">
 
 <div class="section-head">
-
-<h2 class="section-title">
-
-👤 My Profile
-
-</h2>
-
+<h2 class="section-title">👤 My Profile</h2>
 </div>
-
 
 <div class="card">
 
-
 <div class="profile-grid">
-
 
 <div class="profile-item">
 
-<label>
-NAME
-</label>
+<label>NAME</label>
 
 <strong id="profileName">
 Loading...
@@ -2859,12 +1539,9 @@ Loading...
 </div>
 
 
-
 <div class="profile-item">
 
-<label>
-EMAIL
-</label>
+<label>EMAIL</label>
 
 <strong id="profileEmail">
 Loading...
@@ -2873,12 +1550,9 @@ Loading...
 </div>
 
 
-
 <div class="profile-item">
 
-<label>
-MEMBER ID
-</label>
+<label>MEMBER ID</label>
 
 <strong id="memberId">
 Loading...
@@ -2887,230 +1561,128 @@ Loading...
 </div>
 
 
-
 <div class="profile-item">
 
-<label>
-ACCOUNT STATUS
-</label>
+<label>ACCOUNT STATUS</label>
 
 <span class="status active">
-
 Active
-
 </span>
 
 </div>
 
-
 </div>
 
-
 </div>
-
 
 </section>
 
 
+<!-- KYC -->
 
-<!-- =========================
-     KYC
-========================= -->
-
-<section
-class="section"
-id="kyc">
-
+<section class="section" id="kyc">
 
 <div class="section-head">
-
-<h2 class="section-title">
-
-🪪 KYC Verification
-
-</h2>
-
+<h2 class="section-title">🪪 KYC Verification</h2>
 </div>
-
 
 <div class="card">
 
-
-<p
-style="
-font-size:13px;
-color:#777;
-">
-
+<p style="font-size:13px;color:#777">
 KYC Status
-
 </p>
 
-
-<h3
-id="kycStatus"
-style="margin-top:8px">
-
+<h3 id="kycStatus" style="margin-top:8px">
 Pending
-
 </h3>
 
-
 </div>
-
 
 </section>
 
 
+<!-- SECURITY -->
 
-<!-- =========================
-     SECURITY
-========================= -->
-
-<section
-class="section"
-id="security">
-
+<section class="section" id="security">
 
 <div class="section-head">
-
-<h2 class="section-title">
-
-🔐 Security
-
-</h2>
-
+<h2 class="section-title">🔐 Security</h2>
 </div>
-
 
 <div class="card">
 
-
-<p
-style="
+<p style="
 font-size:13px;
 color:#777;
-line-height:1.8;
-">
+line-height:1.8;">
 
 आपका account Firebase Authentication से secure है।
 अपना Password, OTP या Login Details किसी के साथ share न करें।
 
 </p>
 
-
 </div>
-
 
 </section>
 
-
 </main>
-
 
 </div>
 
 
-
-<!-- =========================
-     MOBILE NAV
-========================= -->
+<!-- MOBILE NAV -->
 
 <nav class="mobile-nav">
 
-
 <a href="#home">
-
-<span>
-🏠
-</span>
-
+<span>🏠</span>
 Home
-
 </a>
-
 
 <a href="#courses">
-
-<span>
-📚
-</span>
-
+<span>📚</span>
 Courses
-
 </a>
-
 
 <a href="#affiliate">
-
-<span>
-🔗
-</span>
-
+<span>🔗</span>
 Affiliate
-
 </a>
-
 
 <a href="#wallet">
-
-<span>
-💳
-</span>
-
+<span>💳</span>
 Wallet
-
 </a>
-
 
 <a href="#profile">
-
-<span>
-👤
-</span>
-
+<span>👤</span>
 Profile
-
 </a>
-
 
 </nav>
 
 
-
-<!-- =========================
-     FIREBASE
-========================= -->
+<!-- FIREBASE -->
 
 <script type="module">
 
-
 import {
-
 initializeApp
-
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
 import {
-
 getAuth,
 onAuthStateChanged,
 signOut
-
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
 import {
-
 getFirestore,
 doc,
 getDoc,
@@ -3120,18 +1692,10 @@ query,
 where,
 getDocs,
 limit
-
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-
-
-/* =========================
-   FIREBASE CONFIG
-========================= */
 
 const firebaseConfig={
 
@@ -3159,37 +1723,19 @@ measurementId:
 };
 
 
+const app=initializeApp(firebaseConfig);
 
-const app=
-initializeApp(firebaseConfig);
+const auth=getAuth(app);
 
-
-const auth=
-getAuth(app);
-
-
-const db=
-getFirestore(app);
-
-
+const db=getFirestore(app);
 
 let currentUser=null;
 
 
-
-/* =========================
-   SHORTCUT
-========================= */
-
-const $=
-id=>
-document.getElementById(id);
+const $=id=>document.getElementById(id);
 
 
-
-/* =========================
-   MOBILE MENU
-========================= */
+/* MOBILE MENU */
 
 $("mobileMenu").onclick=()=>{
 
@@ -3209,10 +1755,7 @@ $("overlay").onclick=()=>{
 };
 
 
-
-/* =========================
-   REFERRAL CODE
-========================= */
+/* REFERRAL CODE */
 
 function makeReferral(uid){
 
@@ -3222,10 +1765,7 @@ function makeReferral(uid){
 }
 
 
-
-/* =========================
-   MONEY FORMAT
-========================= */
+/* MONEY */
 
 function money(value){
 
@@ -3236,10 +1776,7 @@ function money(value){
 }
 
 
-
-/* =========================
-   AUTH
-========================= */
+/* AUTH */
 
 onAuthStateChanged(
 
@@ -3264,18 +1801,13 @@ async user=>{
 );
 
 
-
-/* =========================
-   LOAD USER
-========================= */
+/* LOAD USER */
 
 async function loadUser(){
 
 try{
 
-
-const ref=
-doc(
+const ref=doc(
 db,
 "users",
 currentUser.uid
@@ -3327,9 +1859,6 @@ if(snap.exists()){
 }
 
 
-
-/* USER NAME */
-
 const name=
 data.name||
 currentUser.displayName||
@@ -3365,9 +1894,6 @@ name
 .toUpperCase();
 
 
-
-/* REFERRAL */
-
 const code=
 data.referralCode||
 makeReferral(
@@ -3386,9 +1912,6 @@ encodeURIComponent(code);
 $("referralPoints").innerText=
 data.points||0;
 
-
-
-/* LOAD ALL DATA */
 
 await loadReferrals(code);
 
@@ -3415,15 +1938,11 @@ error
 }
 
 
-
-/* =========================
-   REFERRALS
-========================= */
+/* REFERRALS */
 
 async function loadReferrals(code){
 
 try{
-
 
 const snap=
 await getDocs(
@@ -3452,23 +1971,18 @@ snap.size;
 
 }catch(error){
 
-    $("referralCount").innerText=
-    "0";
+$("referralCount").innerText="0";
 
 }
 
 }
 
 
-
-/* =========================
-   EARNINGS
-========================= */
+/* EARNINGS */
 
 async function loadEarnings(){
 
 try{
-
 
 const snap=
 await getDocs(
@@ -3492,66 +2006,41 @@ currentUser.uid
 
 
 let total=0;
-
 let passive=0;
-
 let commission=0;
-
 let team=0;
 
-
 let today=0;
-
 let week=0;
-
 let month=0;
 
 
-const now=
-Date.now();
-
+const now=Date.now();
 
 
 snap.forEach(item=>{
 
-
-const d=
-item.data();
-
+const d=item.data();
 
 const amount=
-Number(
-d.amount||0
-);
+Number(d.amount||0);
 
 
 total+=amount;
 
 
-if(
-d.type==="commission"
-){
-
+if(d.type==="commission"){
 commission+=amount;
-
 }
 
 
-if(
-d.type==="passive"
-){
-
+if(d.type==="passive"){
 passive+=amount;
-
 }
 
 
-if(
-d.type==="team"
-){
-
+if(d.type==="team"){
 team+=amount;
-
 }
 
 
@@ -3560,67 +2049,35 @@ d.createdAt
 ?.toMillis?.()||0;
 
 
+if(timestamp>0){
 
-if(
-timestamp>0
-){
-
-if(
-now-timestamp<=86400000
-){
-
+if(now-timestamp<=86400000){
 today+=amount;
-
 }
 
-
-if(
-now-timestamp<=604800000
-){
-
+if(now-timestamp<=604800000){
 week+=amount;
-
 }
 
-
-if(
-now-timestamp<=2592000000
-){
-
+if(now-timestamp<=2592000000){
 month+=amount;
-
 }
 
 }
-
 
 });
 
 
-
-$("todayRevenue").innerText=
-money(today);
-
-
-$("weekRevenue").innerText=
-money(week);
-
-
-$("monthRevenue").innerText=
-money(month);
-
-
-$("allRevenue").innerText=
-money(total);
-
+$("todayRevenue").innerText=money(today);
+$("weekRevenue").innerText=money(week);
+$("monthRevenue").innerText=money(month);
+$("allRevenue").innerText=money(total);
 
 $("commissionAmount").innerText=
 money(commission);
 
-
 $("passiveAmount").innerText=
 money(passive);
-
 
 $("teamEarning").innerText=
 money(team);
@@ -3638,15 +2095,11 @@ error
 }
 
 
-
-/* =========================
-   TEAM
-========================= */
+/* TEAM */
 
 async function loadTeam(code){
 
 try{
-
 
 const snap=
 await getDocs(
@@ -3674,13 +2127,11 @@ limit(20)
 if(snap.empty){
 
 $("teamList").innerHTML=
-
-"<p style='font-size:13px;color:#888'>No team members yet.</p>";
+"<p style='font-size:13px;color:#888'>Team data unavailable.</p>";
 
 return;
 
 }
-
 
 
 $("teamList").innerHTML=
@@ -3689,50 +2140,35 @@ snap.docs
 
 .map((item,index)=>{
 
-
-const d=
-item.data();
-
+const d=item.data();
 
 return `
 
 <div class="rank-row">
 
 <div class="rank-number">
-
 ${index+1}
-
 </div>
-
 
 <div class="rank-user">
 
 <strong>
-
 ${d.name||"Student"}
-
 </strong>
 
 <small>
-
 ${d.email||""}
-
 </small>
 
 </div>
 
-
 <span class="status active">
-
 Member
-
 </span>
-
 
 </div>
 
 `;
-
 
 })
 
@@ -3741,26 +2177,19 @@ Member
 
 }catch(error){
 
-
 $("teamList").innerHTML=
-
 "<p style='font-size:13px;color:#888'>Team data unavailable.</p>";
 
-
 }
 
 }
 
 
-
-/* =========================
-   LEADERBOARD
-========================= */
+/* LEADERBOARD */
 
 async function loadLeaderboard(){
 
 try{
-
 
 const snap=
 await getDocs(
@@ -3780,44 +2209,30 @@ limit(20)
 
 
 let users=
-
 snap.docs.map(
-
-item=>
-item.data()
-
+item=>item.data()
 );
-
 
 
 users.sort(
 
 (a,b)=>
 
-Number(
-b.points||0
-)
-
+Number(b.points||0)
 -
-
-Number(
-a.points||0
-)
+Number(a.points||0)
 
 );
-
 
 
 if(users.length===0){
 
 $("leaderboardList").innerHTML=
-
-"<p style='font-size:13px;color:#888'>No leaderboard data yet.</p>";
+"<p style='font-size:13px;color:#888'>Leaderboard unavailable.</p>";
 
 return;
 
 }
-
 
 
 $("leaderboardList").innerHTML=
@@ -3826,47 +2241,33 @@ users
 
 .map((d,index)=>{
 
-
 return `
 
 <div class="rank-row">
 
-
 <div class="rank-number">
-
 ${index+1}
-
 </div>
-
 
 <div class="rank-user">
 
 <strong>
-
 ${d.name||"Student"}
-
 </strong>
 
 <small>
-
 Affiliate Points
-
 </small>
 
 </div>
 
-
 <div class="rank-points">
-
 ${d.points||0}
-
 </div>
-
 
 </div>
 
 `;
-
 
 })
 
@@ -3875,26 +2276,19 @@ ${d.points||0}
 
 }catch(error){
 
-
 $("leaderboardList").innerHTML=
-
 "<p style='font-size:13px;color:#888'>Leaderboard unavailable.</p>";
 
-
 }
 
 }
 
 
-
-/* =========================
-   WALLET
-========================= */
+/* WALLET */
 
 async function loadWallet(){
 
 try{
-
 
 const snap=
 await getDocs(
@@ -3920,33 +2314,18 @@ currentUser.uid
 let balance=0;
 
 
-
 snap.forEach(item=>{
 
-
-const d=
-item.data();
-
+const d=item.data();
 
 const amount=
-Number(
-d.amount||0
-);
-
+Number(d.amount||0);
 
 
 if(
-
-d.type==="credit"
-
-||
-
-d.type==="commission"
-
-||
-
+d.type==="credit" ||
+d.type==="commission" ||
 d.type==="passive"
-
 ){
 
 balance+=amount;
@@ -3957,9 +2336,7 @@ balance-=amount;
 
 }
 
-
 });
-
 
 
 $("walletBalance").innerText=
@@ -3976,25 +2353,19 @@ $("walletBalance").innerText=
 }
 
 
-
-/* =========================
-   KYC
-========================= */
+/* KYC */
 
 async function loadKyc(){
 
 try{
 
-
 const snap=
 await getDoc(
 
 doc(
-
 db,
 "kyc",
 currentUser.uid
-
 )
 
 );
@@ -4003,7 +2374,6 @@ currentUser.uid
 if(snap.exists()){
 
 $("kycStatus").innerText=
-
 snap.data().status||
 "Pending";
 
@@ -4025,15 +2395,11 @@ $("kycStatus").innerText=
 }
 
 
-
-/* =========================
-   COPY REFERRAL LINK
-========================= */
+/* COPY REFERRAL */
 
 $("copyBtn").onclick=
 
 async()=>{
-
 
 const link=
 $("referralLink").value;
@@ -4041,53 +2407,34 @@ $("referralLink").value;
 
 try{
 
-
-await navigator.clipboard.writeText(
-link
-);
-
+await navigator.clipboard.writeText(link);
 
 $("copyBtn").innerText=
 "Copied ✓";
 
 
-setTimeout(
-
-()=>{
+setTimeout(()=>{
 
 $("copyBtn").innerText=
 "Copy";
 
-},
-
-1500
-
-);
+},1500);
 
 
 }catch(error){
 
-
 $("referralLink").select();
 
-
-document.execCommand(
-"copy"
-);
-
+document.execCommand("copy");
 
 }
 
 };
 
 
-
-/* =========================
-   WITHDRAWAL
-========================= */
+/* WITHDRAWAL */
 
 $("withdrawBtn").onclick=()=>{
-
 
 const amount=
 Number(
@@ -4100,11 +2447,9 @@ $("withdrawMethod").value
 .trim();
 
 
-
 if(!amount || amount<=0){
 
 $("withdrawMsg").innerText=
-
 "कृपया सही withdrawal amount डालें।";
 
 return;
@@ -4115,7 +2460,6 @@ return;
 if(!method){
 
 $("withdrawMsg").innerText=
-
 "कृपया UPI ID या Bank Details डालें।";
 
 return;
@@ -4124,79 +2468,31 @@ return;
 
 
 $("withdrawMsg").innerText=
-
 "Withdrawal request feature जल्द उपलब्ध होगा।";
 
-
 };
 
 
-
-/* =========================
-   LOGOUT
-========================= */
-
-$("sideLogout").onclick=
-
-async(event)=>{
-
-
-event.preventDefault();
-
-
-try{
-
-
-await signOut(auth);
-
-
-location.href=
-"login.html";
-
-
-}catch(error){
-
-
-alert(
-"Logout failed"
-);
-
-
-}
-
-};
-
-
-
-/* =========================
-   ACTIVE MENU
-========================= */
+/* ACTIVE MENU */
 
 document
 .querySelectorAll(".side-link")
 .forEach(link=>{
 
-
 link.addEventListener(
-
 "click",
-
 ()=>{
-
 
 document
 .querySelectorAll(".side-link")
 .forEach(
-
 item=>
 item.classList
 .remove("active")
-
 );
 
 
-link.classList
-.add("active");
+link.classList.add("active");
 
 
 $("sidebar")
@@ -4208,18 +2504,14 @@ $("overlay")
 .classList
 .remove("show");
 
-
 }
 
 );
-
 
 });
 
 
 </script>
 
-
 </body>
-
 </html>
