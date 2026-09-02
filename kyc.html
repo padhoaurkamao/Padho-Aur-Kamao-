@@ -101,12 +101,6 @@ body{
     color:#166534;
 }
 
-.status-box.rejected{
-    background:#fef2f2;
-    border-color:#fecaca;
-    color:#b91c1c;
-}
-
 .card{
     background:#fff;
     border:1px solid #edf0f5;
@@ -299,9 +293,7 @@ id="statusBox">
 </div>
 
 <div class="card-desc">
-
-कृपया अपनी सही और आवश्यक जानकारी भरें।
-
+कृपया अपनी सही जानकारी भरें।
 </div>
 
 
@@ -310,9 +302,7 @@ id="statusBox">
 
 <div class="form-group full">
 
-<label>
-पूरा नाम
-</label>
+<label>पूरा नाम</label>
 
 <input
 type="text"
@@ -325,9 +315,7 @@ placeholder="अपना पूरा नाम लिखें">
 
 <div class="form-group">
 
-<label>
-Mobile Number
-</label>
+<label>Mobile Number</label>
 
 <input
 type="tel"
@@ -342,9 +330,7 @@ inputmode="numeric">
 
 <div class="form-group">
 
-<label>
-Date of Birth
-</label>
+<label>Date of Birth</label>
 
 <input
 type="date"
@@ -356,9 +342,7 @@ id="dob">
 
 <div class="form-group full">
 
-<label>
-State
-</label>
+<label>State</label>
 
 <select id="state">
 
@@ -390,7 +374,6 @@ State Select करें
 
 </div>
 
-
 </div>
 
 </div>
@@ -406,9 +389,7 @@ State Select करें
 </div>
 
 <div class="card-desc">
-
 Commission withdrawal के लिए अपना सही बैंक विवरण भरें।
-
 </div>
 
 
@@ -417,9 +398,7 @@ Commission withdrawal के लिए अपना सही बैंक व�
 
 <div class="form-group full">
 
-<label>
-Account Holder Name
-</label>
+<label>Account Holder Name</label>
 
 <input
 type="text"
@@ -432,9 +411,7 @@ placeholder="Bank Account Holder Name">
 
 <div class="form-group">
 
-<label>
-Bank Name
-</label>
+<label>Bank Name</label>
 
 <input
 type="text"
@@ -447,9 +424,7 @@ placeholder="Bank Name">
 
 <div class="form-group">
 
-<label>
-IFSC Code
-</label>
+<label>IFSC Code</label>
 
 <input
 type="text"
@@ -463,9 +438,7 @@ style="text-transform:uppercase">
 
 <div class="form-group">
 
-<label>
-Account Number
-</label>
+<label>Account Number</label>
 
 <input
 type="password"
@@ -479,9 +452,7 @@ inputmode="numeric">
 
 <div class="form-group">
 
-<label>
-Confirm Account Number
-</label>
+<label>Confirm Account Number</label>
 
 <input
 type="password"
@@ -497,7 +468,7 @@ inputmode="numeric">
 
 <div class="note">
 
-⚠️ सुरक्षा के लिए कभी भी OTP, ATM PIN, UPI PIN, CVV या Net Banking Password नहीं मांगा जाता।
+⚠️ कभी भी OTP, ATM PIN, UPI PIN, CVV या Net Banking Password शेयर न करें।
 
 </div>
 
@@ -518,7 +489,7 @@ Submit KYC & Bank Details
 class="loading"
 id="loading">
 
-⏳ कृपया प्रतीक्षा करें, आपकी जानकारी Save हो रही है...
+⏳ कृपया प्रतीक्षा करें...
 
 </div>
 
@@ -557,10 +528,6 @@ from
 
 
 
-/* =========================
-   FIREBASE CONFIG
-========================= */
-
 const firebaseConfig={
 
 apiKey:
@@ -588,10 +555,6 @@ measurementId:
 
 
 
-/* =========================
-   INITIALIZE
-========================= */
-
 const app=
 initializeApp(firebaseConfig);
 
@@ -605,13 +568,8 @@ getFirestore(app);
 
 
 
-/* =========================
-   SELECTOR
-========================= */
-
 const $=
 id=>document.getElementById(id);
-
 
 
 let currentUser=null;
@@ -620,9 +578,7 @@ let userData={};
 
 
 
-/* =========================
-   AUTH CHECK
-========================= */
+/* AUTH CHECK */
 
 onAuthStateChanged(
 auth,
@@ -630,8 +586,7 @@ async user=>{
 
 if(!user){
 
-location.href=
-"login.html";
+location.href="login.html";
 
 return;
 
@@ -639,7 +594,6 @@ return;
 
 
 currentUser=user;
-
 
 await loadUserData();
 
@@ -649,9 +603,7 @@ await loadUserData();
 
 
 
-/* =========================
-   LOAD USER DATA
-========================= */
+/* LOAD USER */
 
 async function loadUserData(){
 
@@ -667,15 +619,13 @@ currentUser.uid
 
 
 const snap=
-await getDoc(
-userRef
-);
+await getDoc(userRef);
 
 
 if(!snap.exists()){
 
 $("statusBox").innerText=
-"⚠️ User account नहीं मिला।";
+"⚠️ User Account नहीं मिला।";
 
 return;
 
@@ -689,12 +639,9 @@ snap.data();
 
 /* COURSE CHECK */
 
-if(
-userData.coursePurchased!==true
-){
+if(userData.coursePurchased!==true){
 
 $("statusBox").innerText=
-
 "🔒 KYC करने के लिए पहले कोई Course Purchase करना जरूरी है।";
 
 
@@ -706,70 +653,64 @@ return;
 
 
 
-/* EXISTING DATA */
+/* FILL EXISTING DATA */
 
 $("fullName").value=
-userData.kycFullName ||
-userData.name ||
-currentUser.displayName ||
+userData.kycFullName||
+userData.name||
+currentUser.displayName||
 "";
 
 
 $("mobile").value=
-userData.kycMobile ||
+userData.kycMobile||
 "";
 
 
 $("dob").value=
-userData.kycDOB ||
+userData.kycDOB||
 "";
 
 
 $("state").value=
-userData.kycState ||
+userData.kycState||
 "";
 
 
 $("accountHolder").value=
-userData.bankAccountHolder ||
+userData.bankAccountHolder||
 "";
 
 
 $("bankName").value=
-userData.bankName ||
+userData.bankName||
 "";
 
 
 $("ifscCode").value=
-userData.bankIFSC ||
+userData.bankIFSC||
 "";
 
 
 
-/* =========================
-   KYC STATUS
-========================= */
+/* STATUS */
 
-const status=
-userData.kycStatus || "";
-
-
-if(status==="pending"){
+if(
+userData.kycStatus==="submitted" ||
+userData.kycStatus==="Pending"
+){
 
 $("statusBox").innerText=
+"⏳ आपकी KYC Admin Review के लिए Pending है।";
 
-"⏳ आपकी KYC Admin Review में है। Approval के बाद आपको जानकारी मिलेगी।";
-
-
-$("submitBtn").innerText=
-"Update KYC Details";
 
 }
 
 
-else if(
-status==="approved" ||
-status==="verified"
+if(
+userData.kycStatus==="Approved" ||
+userData.kycStatus==="approved" ||
+userData.kycStatus==="verified"
 ){
 
 $("statusBox")
@@ -778,48 +719,34 @@ $("statusBox")
 
 
 $("statusBox").innerText=
-
-"🎉 आपकी KYC Approved है। आप Commission Withdrawal के लिए eligible हैं।";
-
-
-$("submitBtn").disabled=true;
-
-
-}
-
-
-else if(status==="rejected"){
-
-$("statusBox")
-.classList
-.add("rejected");
-
-
-$("statusBox").innerText=
-
-"❌ आपकी KYC Reject हुई है। कृपया सही जानकारी भरकर दोबारा Submit करें।";
+"🎉 आपकी KYC Approved है।";
 
 
 $("submitBtn").innerText=
-"Resubmit KYC";
+"KYC Approved";
+
+
+}
+
+
+if(
+userData.kycStatus==="Rejected" ||
+userData.kycStatus==="rejected"
+){
+
+$("statusBox").innerText=
+"❌ आपकी KYC Reject हो गई है। आप जानकारी सही करके दोबारा Submit कर सकते हैं।";
 
 }
 
 
-}
-catch(error){
+}catch(error){
 
-
-console.error(
-"Load KYC Error:",
-error
-);
+console.error(error);
 
 
 $("statusBox").innerText=
-
-"⚠️ जानकारी Load नहीं हुई। कृपया Page Refresh करें।";
-
+"⚠️ जानकारी Load नहीं हुई।";
 
 }
 
@@ -827,9 +754,7 @@ $("statusBox").innerText=
 
 
 
-/* =========================
-   MOBILE VALIDATION
-========================= */
+/* MOBILE VALIDATION */
 
 $("mobile")
 .addEventListener(
@@ -847,9 +772,7 @@ this.value.replace(
 
 
 
-/* =========================
-   ACCOUNT VALIDATION
-========================= */
+/* ACCOUNT NUMBER */
 
 $("accountNumber")
 .addEventListener(
@@ -882,9 +805,7 @@ this.value.replace(
 
 
 
-/* =========================
-   IFSC UPPERCASE
-========================= */
+/* IFSC */
 
 $("ifscCode")
 .addEventListener(
@@ -899,9 +820,7 @@ this.value.toUpperCase();
 
 
 
-/* =========================
-   SUBMIT KYC
-========================= */
+/* SUBMIT KYC */
 
 $("submitBtn")
 .addEventListener(
@@ -911,17 +830,13 @@ async()=>{
 
 if(!currentUser){
 
-alert(
-"कृपया पहले Login करें।"
-);
+alert("कृपया पहले Login करें।");
 
 return;
 
 }
 
 
-
-/* GET VALUES */
 
 const fullName=
 $("fullName").value.trim();
@@ -956,9 +871,7 @@ $("confirmAccountNumber").value.trim();
 
 
 const ifscCode=
-$("ifscCode").value
-.trim()
-.toUpperCase();
+$("ifscCode").value.trim().toUpperCase();
 
 
 
@@ -966,9 +879,7 @@ $("ifscCode").value
 
 if(!fullName){
 
-alert(
-"⚠️ कृपया अपना पूरा नाम भरें।"
-);
+alert("पूरा नाम भरें।");
 
 return;
 
@@ -977,9 +888,7 @@ return;
 
 if(mobile.length!==10){
 
-alert(
-"⚠️ कृपया सही 10 Digit Mobile Number भरें।"
-);
+alert("सही 10 Digit Mobile Number भरें।");
 
 return;
 
@@ -988,9 +897,7 @@ return;
 
 if(!dob){
 
-alert(
-"⚠️ कृपया Date of Birth भरें।"
-);
+alert("Date of Birth भरें।");
 
 return;
 
@@ -999,9 +906,7 @@ return;
 
 if(!state){
 
-alert(
-"⚠️ कृपया अपना State Select करें।"
-);
+alert("State Select करें।");
 
 return;
 
@@ -1010,9 +915,7 @@ return;
 
 if(!accountHolder){
 
-alert(
-"⚠️ कृपया Account Holder Name भरें।"
-);
+alert("Account Holder Name भरें।");
 
 return;
 
@@ -1021,9 +924,7 @@ return;
 
 if(!bankName){
 
-alert(
-"⚠️ कृपया Bank Name भरें।"
-);
+alert("Bank Name भरें।");
 
 return;
 
@@ -1032,44 +933,29 @@ return;
 
 if(accountNumber.length<9){
 
-alert(
-"⚠️ कृपया सही Account Number भरें।"
-);
+alert("सही Account Number भरें।");
 
 return;
 
 }
 
 
-if(
-accountNumber!==confirmAccountNumber
-){
+if(accountNumber!==confirmAccountNumber){
 
-alert(
-"⚠️ दोनों Account Number समान नहीं हैं।"
-);
+alert("दोनों Account Number समान नहीं हैं।");
 
 return;
 
 }
 
-
-
-/* IFSC VALIDATION */
 
 const ifscPattern=
 /^[A-Z]{4}0[A-Z0-9]{6}$/;
 
 
-if(
-!ifscPattern.test(
-ifscCode
-)
-){
+if(!ifscPattern.test(ifscCode)){
 
-alert(
-"⚠️ कृपया सही IFSC Code भरें।"
-);
+alert("सही IFSC Code भरें।");
 
 return;
 
@@ -1077,9 +963,7 @@ return;
 
 
 
-/* =========================
-   SAVE KYC
-========================= */
+/* SAVE */
 
 try{
 
@@ -1088,7 +972,7 @@ $("submitBtn").disabled=true;
 
 
 $("submitBtn").innerText=
-"Saving...";
+"Submitting...";
 
 
 $("loading").style.display=
@@ -1096,70 +980,44 @@ $("loading").style.display=
 
 
 
-const userRef=
+/* USERS COLLECTION */
+
+await setDoc(
+
 doc(
 db,
 "users",
 currentUser.uid
-);
-
-
-
-/* =========================
-   SAVE USER KYC DATA
-========================= */
-
-await setDoc(
-
-userRef,
+),
 
 {
-
-name:
-fullName,
-
-
-email:
-currentUser.email || "",
-
 
 kycFullName:
 fullName,
 
-
 kycMobile:
 mobile,
-
 
 kycDOB:
 dob,
 
-
 kycState:
 state,
-
 
 bankAccountHolder:
 accountHolder,
 
-
 bankName:
 bankName,
-
 
 bankAccountNumber:
 accountNumber,
 
-
 bankIFSC:
 ifscCode,
 
-
-/* IMPORTANT */
-
 kycStatus:
-"pending",
-
+"Pending",
 
 kycSubmittedAt:
 serverTimestamp()
@@ -1175,84 +1033,55 @@ merge:true
 
 
 /* =========================
-   CREATE ADMIN KYC REQUEST
+   KYC REQUEST COLLECTION
+
+   ADMIN PANEL इसी को पढ़ेगा
 ========================= */
 
-/*
-Admin Panel exactly reads:
+await setDoc(
 
-collection(db,"kycRequests")
-
-and
-
-status == "pending"
-*/
-
-
-const kycRef=
 doc(
 db,
 "kycRequests",
 currentUser.uid
-);
-
-
-
-await setDoc(
-
-kycRef,
+),
 
 {
 
 userId:
 currentUser.uid,
 
-
 name:
 fullName,
 
-
 email:
-currentUser.email || "",
-
+currentUser.email||"",
 
 mobile:
 mobile,
 
-
 dob:
 dob,
-
 
 state:
 state,
 
-
 accountHolder:
 accountHolder,
-
 
 bankName:
 bankName,
 
-
 accountNumber:
 accountNumber,
-
 
 ifscCode:
 ifscCode,
 
-
 status:
 "pending",
 
-
 submittedAt:
-serverTimestamp(),
-
-
-updatedAt:
 serverTimestamp()
 
 },
@@ -1265,22 +1094,13 @@ merge:true
 
 
 
-/* SUCCESS */
-
-$("statusBox")
-.classList
-.remove("rejected");
-
-
 $("statusBox")
 .classList
 .add("success");
 
 
 $("statusBox").innerText=
-
-"⏳ आपकी KYC Successfully Submitted हो गई है और अब Admin Review में है।";
-
+"✅ आपकी KYC Successfully Submit हो गई है। अब Admin Panel में Review के लिए दिखाई देगी।";
 
 
 alert(
@@ -1289,15 +1109,9 @@ alert(
 
 
 
-/* CLEAR SENSITIVE INPUTS */
+$("accountNumber").value="";
 
-$("accountNumber").value=
-"";
-
-
-$("confirmAccountNumber").value=
-"";
-
+$("confirmAccountNumber").value="";
 
 
 setTimeout(
@@ -1322,7 +1136,6 @@ error
 
 
 let message=
-
 "⚠️ KYC Submit नहीं हुई। कृपया दोबारा कोशिश करें।";
 
 
@@ -1331,15 +1144,12 @@ error.code==="permission-denied"
 ){
 
 message=
-
-"⚠️ Firestore Permission Error है। Firebase Rules Check करें।";
+"⚠️ Firebase Permission Denied. Firestore Rules Check करें।";
 
 }
 
 
-alert(
-message
-);
+alert(message);
 
 
 $("statusBox").innerText=
