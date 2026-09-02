@@ -5,11 +5,9 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Dashboard - Padho Aur Kamao</title>
-
 
 <style>
 
@@ -116,19 +114,12 @@ header{
     position:fixed;
     top:0;
     right:-320px;
-
     width:300px;
     height:100vh;
-
     background:white;
-
     z-index:5000;
-
-    box-shadow:
-    -10px 0 30px rgba(0,0,0,.15);
-
+    box-shadow:-10px 0 30px rgba(0,0,0,.15);
     transition:.3s;
-
     overflow-y:auto;
 }
 
@@ -138,19 +129,18 @@ header{
 }
 
 
-/* MENU HEADER */
+/* ===============================
+   MENU HEADER
+================================ */
 
 .menu-header{
     padding:25px 20px;
     color:white;
-
-    background:
-    linear-gradient(
+    background:linear-gradient(
         135deg,
         #5b21b6,
         #8b5cf6
     );
-
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -171,31 +161,27 @@ header{
 }
 
 
-/* USER BOX */
+/* ===============================
+   USER BOX
+================================ */
 
 .menu-user{
     padding:20px;
     display:flex;
     gap:12px;
     align-items:center;
-
-    border-bottom:
-    1px solid #e5e7eb;
+    border-bottom:1px solid #e5e7eb;
 }
 
 
 .avatar{
     width:48px;
     height:48px;
-
     border-radius:50%;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     font-size:22px;
-
     background:#ede9fe;
 }
 
@@ -212,7 +198,9 @@ header{
 }
 
 
-/* MENU LINKS */
+/* ===============================
+   MENU LINKS
+================================ */
 
 .menu-links{
     padding:12px;
@@ -223,31 +211,18 @@ header{
 .menu-links button{
 
     width:100%;
-
     display:flex;
-
     align-items:center;
-
     gap:14px;
-
     padding:15px;
-
     margin-bottom:5px;
-
     border:none;
-
     border-radius:10px;
-
     background:none;
-
     color:#334155;
-
     font-size:16px;
-
     text-align:left;
-
     cursor:pointer;
-
 }
 
 
@@ -255,41 +230,42 @@ header{
 .menu-links button:hover{
 
     background:#f5f3ff;
-
     color:#5b21b6;
-
 }
 
 
 .menu-links .active-link{
 
     background:#ede9fe;
-
     color:#5b21b6;
-
     font-weight:bold;
+}
 
+
+/* ADMIN LINK */
+
+.admin-link{
+    background:#fff7ed !important;
+    color:#9a3412 !important;
+    font-weight:bold;
+}
+
+
+.admin-link:hover{
+    background:#ffedd5 !important;
 }
 
 
 .menu-divider{
-
     border:none;
-
-    border-top:
-    1px solid #e5e7eb;
-
+    border-top:1px solid #e5e7eb;
     margin:10px 0;
-
 }
 
 
 .logout-btn{
-
     color:#dc2626 !important;
-
     background:#fef2f2 !important;
-
 }
 
 
@@ -298,13 +274,9 @@ header{
 ================================ */
 
 main{
-
     max-width:1100px;
-
     margin:auto;
-
     padding:25px 20px 80px;
-
 }
 
 
@@ -315,16 +287,11 @@ main{
 .welcome{
 
     border-radius:22px;
-
     padding:28px;
-
     color:white;
-
     margin-bottom:25px;
 
-    background:
-
-    linear-gradient(
+    background:linear-gradient(
         135deg,
         #5b21b6,
         #7c3aed,
@@ -339,65 +306,51 @@ main{
 
 
 .welcome h1{
-
     font-size:30px;
-
     margin-bottom:10px;
-
 }
 
 
 .welcome p{
-
     opacity:.9;
-
     line-height:1.5;
-
 }
 
 
 /* ===============================
-   EARNINGS
+   SECTION TITLE
 ================================ */
 
 .section-title{
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     margin:25px 0 15px;
 
 }
 
 
 .section-title h2{
-
     font-size:22px;
-
 }
 
 
 .view-all{
-
     color:#5b21b6;
-
     font-weight:bold;
-
     font-size:14px;
-
 }
 
+
+/* ===============================
+   STATS
+================================ */
 
 .stats{
 
     display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:15px;
 
 }
@@ -406,9 +359,7 @@ main{
 .stat{
 
     background:white;
-
     padding:20px;
-
     border-radius:18px;
 
     box-shadow:
@@ -419,31 +370,21 @@ main{
 
 
 .stat-icon{
-
     font-size:24px;
-
     margin-bottom:10px;
-
 }
 
 
 .stat p{
-
     color:#64748b;
-
     font-size:13px;
-
 }
 
 
 .stat h3{
-
     margin-top:8px;
-
     color:#5b21b6;
-
     font-size:24px;
-
 }
 
 
@@ -454,9 +395,7 @@ main{
 .course-summary{
 
     background:white;
-
     padding:22px;
-
     border-radius:20px;
 
     box-shadow:
@@ -469,11 +408,8 @@ main{
 .course-row{
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     padding:16px 0;
 
     border-bottom:
@@ -483,18 +419,14 @@ main{
 
 
 .course-row:last-child{
-
     border-bottom:none;
-
 }
 
 
 .course-name{
 
     display:flex;
-
     align-items:center;
-
     gap:12px;
 
 }
@@ -503,37 +435,28 @@ main{
 .course-icon{
 
     width:45px;
-
     height:45px;
-
     border-radius:12px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     background:#f5f3ff;
-
     font-size:22px;
 
 }
 
 
 .course-name h3{
-
     font-size:16px;
-
 }
 
 
 .course-name p{
 
     color:#64748b;
-
     font-size:13px;
-
     margin-top:4px;
 
 }
@@ -542,15 +465,11 @@ main{
 .access-btn{
 
     border:none;
-
     padding:10px 15px;
-
     border-radius:9px;
-
     cursor:pointer;
 
     color:white;
-
     font-weight:bold;
 
     background:#5b21b6;
@@ -565,9 +484,7 @@ main{
 .empty{
 
     text-align:center;
-
     padding:30px 15px;
-
     color:#64748b;
 
 }
@@ -578,13 +495,11 @@ main{
     display:inline-block;
 
     margin-top:15px;
-
     padding:12px 22px;
 
     border-radius:10px;
 
     background:#5b21b6;
-
     color:white;
 
     font-weight:bold;
@@ -593,22 +508,17 @@ main{
 
 
 /* ===============================
-   REFERRAL CARD
+   REFERRAL
 ================================ */
 
 .referral-card{
 
     margin-top:25px;
-
     padding:22px;
-
     border-radius:20px;
-
     color:white;
 
-    background:
-
-    linear-gradient(
+    background:linear-gradient(
         135deg,
         #ec4899,
         #8b5cf6
@@ -618,16 +528,13 @@ main{
 
 
 .referral-card h2{
-
     margin-bottom:8px;
-
 }
 
 
 .referral-card p{
 
     opacity:.9;
-
     margin-bottom:15px;
 
 }
@@ -636,7 +543,6 @@ main{
 .referral-link-box{
 
     display:flex;
-
     gap:10px;
 
 }
@@ -647,17 +553,13 @@ main{
     flex:1;
 
     background:white;
-
     color:#334155;
 
     padding:13px;
-
     border-radius:10px;
 
     overflow:hidden;
-
     white-space:nowrap;
-
     text-overflow:ellipsis;
 
     font-size:13px;
@@ -668,15 +570,11 @@ main{
 .copy-btn{
 
     border:none;
-
     padding:0 16px;
-
     border-radius:10px;
-
     cursor:pointer;
 
     color:#5b21b6;
-
     font-weight:bold;
 
     background:white;
@@ -691,10 +589,7 @@ main{
 @media(max-width:800px){
 
     .stats{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
+        grid-template-columns:repeat(2,1fr);
     }
 
 }
@@ -703,85 +598,50 @@ main{
 @media(max-width:600px){
 
     header{
-
         padding:0 15px;
-
     }
-
 
     .logo{
-
         font-size:16px;
-
     }
-
 
     .logo-icon{
-
         width:38px;
-
         height:38px;
-
     }
-
 
     main{
-
         padding:18px 14px 60px;
-
     }
-
 
     .welcome{
-
         padding:22px;
-
     }
-
 
     .welcome h1{
-
         font-size:24px;
-
     }
-
 
     .stat{
-
         padding:16px;
-
     }
-
 
     .stat h3{
-
         font-size:20px;
-
     }
-
 
     .course-row{
-
         align-items:flex-start;
-
         gap:12px;
-
     }
-
 
     .access-btn{
-
         font-size:12px;
-
         padding:9px 10px;
-
     }
 
-
     .side-menu{
-
         width:285px;
-
     }
 
 }
@@ -794,9 +654,7 @@ main{
 <body>
 
 
-<!-- ===============================
-     HEADER
-================================ -->
+<!-- HEADER -->
 
 <header>
 
@@ -813,37 +671,23 @@ Padho Aur Kamao
 </div>
 
 
-<button
-class="menu-btn"
-id="menuBtn">
-
+<button class="menu-btn" id="menuBtn">
 ☰
-
 </button>
 
 </header>
 
 
 
-<!-- ===============================
-     OVERLAY
-================================ -->
+<!-- OVERLAY -->
 
-<div
-class="menu-overlay"
-id="menuOverlay">
-
-</div>
+<div class="menu-overlay" id="menuOverlay"></div>
 
 
 
-<!-- ===============================
-     SIDE MENU
-================================ -->
+<!-- SIDE MENU -->
 
-<aside
-class="side-menu"
-id="sideMenu">
+<aside class="side-menu" id="sideMenu">
 
 
 <div class="menu-header">
@@ -853,17 +697,15 @@ Padho Aur Kamao
 </h2>
 
 
-<button
-class="close-menu"
-id="closeMenu">
-
+<button class="close-menu" id="closeMenu">
 ×
-
 </button>
 
 </div>
 
 
+
+<!-- USER -->
 
 <div class="menu-user">
 
@@ -888,65 +730,60 @@ Loading...
 
 
 
+<!-- MENU LINKS -->
+
 <div class="menu-links">
 
 
-<a
-href="dashboard.html"
-class="active-link">
-
+<a href="dashboard.html" class="active-link">
 🏠 Dashboard
-
 </a>
 
 
-<a href="#"
-id="myCoursesMenu">
-
+<a href="#" id="myCoursesMenu">
 🎓 My Courses
-
 </a>
 
 
 <a href="index.html">
-
 🛒 Buy Courses
-
 </a>
 
 
 <a href="commission.html">
-
 💰 Commission
-
 </a>
 
 
-<a href="#"
-id="referralMenu">
-
+<a href="#" id="referralMenu">
 🔗 Referral Link
-
 </a>
 
 
 <a href="leaderboard.html">
-
 🏆 Leaderboard
-
 </a>
 
 
 <a href="profile.html">
-
 👤 My Profile
-
 </a>
 
 
 <a href="wallet.html">
-
 💳 Wallet / Withdrawal
+</a>
+
+
+<!-- ADMIN PANEL - ONLY ADMIN CAN SEE -->
+
+<a
+href="admin.html"
+id="adminMenu"
+class="admin-link"
+style="display:none;">
+
+🛡️ Admin Panel
 
 </a>
 
@@ -954,12 +791,8 @@ id="referralMenu">
 <hr class="menu-divider">
 
 
-<button
-class="logout-btn"
-id="logout">
-
+<button class="logout-btn" id="logout">
 🚪 Logout
-
 </button>
 
 
@@ -969,9 +802,7 @@ id="logout">
 
 
 
-<!-- ===============================
-     MAIN DASHBOARD
-================================ -->
+<!-- MAIN -->
 
 <main>
 
@@ -992,18 +823,14 @@ Student
 
 
 <p>
-
 सीखें • आगे बढ़ें • अपने Skills को बेहतर बनाएं
-
 </p>
 
 </section>
 
 
 
-<!-- ===============================
-     EARNINGS
-================================ -->
+<!-- EARNINGS -->
 
 <div class="section-title">
 
@@ -1012,12 +839,8 @@ Student
 </h2>
 
 
-<a
-href="commission.html"
-class="view-all">
-
+<a href="commission.html" class="view-all">
 View Details →
-
 </a>
 
 </div>
@@ -1101,52 +924,35 @@ All Time
 
 
 
-<!-- ===============================
-     MY COURSES
-================================ -->
+<!-- MY COURSES -->
 
-<div
-class="section-title"
-id="myCoursesSection">
+<div class="section-title" id="myCoursesSection">
 
 <h2>
 🎓 My Courses
 </h2>
 
 
-<a
-href="#"
-class="view-all"
-id="buyMore">
-
+<a href="#" class="view-all" id="buyMore">
 Buy More →
-
 </a>
 
 </div>
 
 
-<div
-class="course-summary"
-id="myCoursesList">
+<div class="course-summary" id="myCoursesList">
 
 <div class="empty">
-
 Loading your courses...
-
 </div>
 
 </div>
 
 
 
-<!-- ===============================
-     REFERRAL
-================================ -->
+<!-- REFERRAL -->
 
-<section
-class="referral-card"
-id="referralSection">
+<section class="referral-card" id="referralSection">
 
 
 <h2>
@@ -1155,29 +961,19 @@ id="referralSection">
 
 
 <p>
-
 अपने दोस्तों के साथ Referral Link share करें।
-
 </p>
 
 
 <div class="referral-link-box">
 
-<div
-class="referral-link"
-id="referralLink">
-
+<div class="referral-link" id="referralLink">
 Login करके Referral Link प्राप्त करें
-
 </div>
 
 
-<button
-class="copy-btn"
-id="copyReferral">
-
+<button class="copy-btn" id="copyReferral">
 Copy
-
 </button>
 
 </div>
@@ -1200,45 +996,30 @@ Copy
 import {
 initializeApp
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
 import {
 
 getAuth,
-
 onAuthStateChanged,
-
 signOut
 
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
 import {
 
 getFirestore,
-
 collection,
-
-getDocs,
-
-doc,
-
-getDoc
+getDocs
 
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
 
 
 /* ===============================
@@ -1250,22 +1031,17 @@ const firebaseConfig = {
 apiKey:
 "AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
-
 authDomain:
 "padho-aur-kamao-3eeae.firebaseapp.com",
-
 
 projectId:
 "padho-aur-kamao-3eeae",
 
-
 storageBucket:
 "padho-aur-kamao-3eeae.firebasestorage.app",
 
-
 messagingSenderId:
 "670063905617",
-
 
 appId:
 "1:670063905617:web:9b3a7e62fdeea14fbfa170"
@@ -1273,26 +1049,26 @@ appId:
 };
 
 
+/* ===============================
+   INITIALIZE
+================================ */
 
-const app =
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
+const auth = getAuth(app);
 
-const auth =
-getAuth(app);
-
-
-const db =
-getFirestore(app);
-
+const db = getFirestore(app);
 
 
 /* ===============================
-   GLOBAL
+   ADMIN UID
 ================================ */
 
-let currentUser = null;
+const ADMIN_UID =
+"BwEY7fReQpddMVHsDcbCMhUXkb62";
 
+
+let currentUser = null;
 
 
 /* ===============================
@@ -1300,32 +1076,26 @@ let currentUser = null;
 ================================ */
 
 onAuthStateChanged(
-
 auth,
-
 async user => {
-
 
 if(!user){
 
-window.location.href =
-"login.html";
+window.location.href = "login.html";
 
 return;
 
 }
 
 
-currentUser =
-user;
+currentUser = user;
 
+
+/* DISPLAY NAME */
 
 const displayName =
-
 user.displayName ||
-
-user.email.split("@")[0] ||
-
+user.email?.split("@")[0] ||
 "Student";
 
 
@@ -1347,6 +1117,19 @@ document
 user.email || "";
 
 
+/* ===============================
+   SHOW ADMIN MENU ONLY FOR ADMIN
+================================ */
+
+if(user.uid === ADMIN_UID){
+
+document
+.getElementById("adminMenu")
+.style.display = "flex";
+
+}
+
+
 /* LOAD DATA */
 
 await loadMyCourses();
@@ -1354,7 +1137,6 @@ await loadMyCourses();
 loadReferralLink();
 
 }
-
 );
 
 
@@ -1366,64 +1148,47 @@ loadReferralLink();
 const menuBtn =
 document.getElementById("menuBtn");
 
-
 const sideMenu =
 document.getElementById("sideMenu");
 
-
 const menuOverlay =
 document.getElementById("menuOverlay");
-
 
 const closeMenu =
 document.getElementById("closeMenu");
 
 
-
 function openMenu(){
 
-sideMenu
-.classList
-.add("active");
+sideMenu.classList.add("active");
 
-
-menuOverlay
-.classList
-.add("active");
+menuOverlay.classList.add("active");
 
 }
 
 
 function closeSideMenu(){
 
-sideMenu
-.classList
-.remove("active");
+sideMenu.classList.remove("active");
 
-
-menuOverlay
-.classList
-.remove("active");
+menuOverlay.classList.remove("active");
 
 }
 
 
-menuBtn
-.addEventListener(
+menuBtn.addEventListener(
 "click",
 openMenu
 );
 
 
-closeMenu
-.addEventListener(
+closeMenu.addEventListener(
 "click",
 closeSideMenu
 );
 
 
-menuOverlay
-.addEventListener(
+menuOverlay.addEventListener(
 "click",
 closeSideMenu
 );
@@ -1436,20 +1201,17 @@ closeSideMenu
 
 async function loadMyCourses(){
 
-
 const container =
 document.getElementById(
 "myCoursesList"
 );
 
 
-container.innerHTML =
-
-`<div class="empty">
-
+container.innerHTML = `
+<div class="empty">
 Loading your courses...
-
-</div>`;
+</div>
+`;
 
 
 try{
@@ -1458,43 +1220,28 @@ try{
 const coursesRef =
 
 collection(
-
 db,
-
 "users",
-
 currentUser.uid,
-
 "courses"
-
 );
 
 
 const snapshot =
-
-await getDocs(
-coursesRef
-);
+await getDocs(coursesRef);
 
 
-
-container.innerHTML =
-"";
+container.innerHTML = "";
 
 
 if(snapshot.empty){
 
-
-container.innerHTML =
-
-`
+container.innerHTML = `
 
 <div class="empty">
 
 <div style="font-size:40px;margin-bottom:10px">
-
 📚
-
 </div>
 
 आपने अभी कोई Course activate नहीं किया है।
@@ -1513,15 +1260,14 @@ class="buy-course-btn">
 
 `;
 
-
 return;
 
 }
 
 
+/* SHOW COURSES */
 
-snapshot.forEach(
-courseDoc => {
+snapshot.forEach(courseDoc => {
 
 
 const course =
@@ -1529,16 +1275,12 @@ courseDoc.data();
 
 
 const courseName =
-
 course.courseName ||
-
 "Course";
 
 
 const courseId =
-
 course.courseId ||
-
 courseDoc.id;
 
 
@@ -1550,16 +1292,12 @@ row.className =
 "course-row";
 
 
-row.innerHTML =
-
-`
+row.innerHTML = `
 
 <div class="course-name">
 
 <div class="course-icon">
-
 📚
-
 </div>
 
 
@@ -1570,9 +1308,7 @@ ${escapeHTML(courseName)}
 </h3>
 
 <p>
-
 Course Active
-
 </p>
 
 </div>
@@ -1580,11 +1316,8 @@ Course Active
 </div>
 
 
-<button
-class="access-btn">
-
+<button class="access-btn">
 Access →
-
 </button>
 
 `;
@@ -1597,36 +1330,25 @@ row
 () => {
 
 window.location.href =
-
 "course.html?id=" +
-
-encodeURIComponent(
-courseId
-);
+encodeURIComponent(courseId);
 
 }
 );
 
 
-container.appendChild(
-row
-);
+container.appendChild(row);
 
-
-}
-);
+});
 
 
 }
 catch(error){
 
-
 console.error(error);
 
 
-container.innerHTML =
-
-`
+container.innerHTML = `
 
 <div class="empty">
 
@@ -1635,7 +1357,6 @@ Course load नहीं हो पाया।
 </div>
 
 `;
-
 
 }
 
@@ -1648,7 +1369,6 @@ Course load नहीं हो पाया।
 ================================ */
 
 function loadReferralLink(){
-
 
 const referralLink =
 
@@ -1734,7 +1454,6 @@ button.textContent =
 
 }
 catch(error){
-
 
 alert(
 "Referral Link copy नहीं हो पाया।"
@@ -1873,7 +1592,6 @@ alert(
 "Logout नहीं हो पाया।"
 );
 
-
 }
 
 }
@@ -1882,7 +1600,7 @@ alert(
 
 
 /* ===============================
-   SAFE TEXT
+   SAFE HTML
 ================================ */
 
 function escapeHTML(value){
@@ -1890,10 +1608,8 @@ function escapeHTML(value){
 const div =
 document.createElement("div");
 
-
 div.textContent =
 value;
-
 
 return div.innerHTML;
 
