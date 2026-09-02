@@ -6,197 +6,245 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width,initial-scale=1">
+content="width=device-width, initial-scale=1.0">
 
 <title>Buy Course - Padho Aur Kamao</title>
+
 
 <style>
 
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
 body{
-    margin:0;
     font-family:Arial,Helvetica,sans-serif;
     background:#f4f7fb;
     color:#172033;
 }
 
 header{
-    background:#2563eb;
-    color:white;
-    padding:18px;
+    background:white;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 25px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.brand{
     font-size:20px;
     font-weight:bold;
+    color:#6526d7;
+}
+
+.back-btn{
+    border:0;
+    background:#f1ebff;
+    color:#6526d7;
+    padding:10px 15px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 main{
     max-width:650px;
     margin:auto;
-    padding:20px;
+    padding:25px 15px 50px;
 }
 
 .box{
     background:white;
     padding:25px;
-    border-radius:16px;
-    box-shadow:0 3px 12px #0002;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.07);
 }
 
-#title{
-    margin-top:0;
+.loading{
+    text-align:center;
+    padding:30px;
+    color:#6526d7;
 }
 
-#description{
-    color:#64748b;
+.course-title{
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.description{
+    color:#667085;
     line-height:1.6;
+    margin-bottom:20px;
 }
 
 .price-box{
-    margin:20px 0;
+    background:#f8f7ff;
+    border:1px solid #e7ddff;
     padding:18px;
-    background:#f8fafc;
-    border-radius:12px;
+    border-radius:14px;
+    margin-bottom:20px;
 }
 
-.old-price{
-    font-size:14px;
-    color:#777;
-    margin-bottom:8px;
+.price-row{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0;
+    font-size:15px;
 }
 
 .final-price{
-    font-size:28px;
+    border-top:1px solid #ddd;
+    padding-top:12px;
+    font-size:21px;
     font-weight:bold;
-    color:#16a34a;
+    color:#6526d7;
 }
 
-.discount{
-    margin-top:8px;
-    color:#16a34a;
-    font-size:14px;
-    font-weight:bold;
+.section-title{
+    font-size:18px;
+    margin:25px 0 12px;
 }
 
-.section{
-    margin-top:22px;
+.coupon-box{
+    display:flex;
+    gap:10px;
 }
 
-label{
-    display:block;
-    margin-bottom:8px;
-    font-size:14px;
-    font-weight:bold;
+.coupon-box input{
+    flex:1;
 }
 
 input{
     width:100%;
     padding:14px;
-    border:1px solid #d1d5db;
+    border:1px solid #dfe3ea;
     border-radius:10px;
-    font-size:15px;
+    font-size:14px;
     outline:none;
 }
 
 input:focus{
-    border-color:#2563eb;
-}
-
-.coupon-row{
-    display:flex;
-    gap:10px;
-}
-
-.coupon-row input{
-    flex:1;
+    border-color:#6526d7;
 }
 
 .apply-btn{
-    width:auto;
-    background:#2563eb;
+    border:0;
+    background:#6526d7;
+    color:white;
     padding:0 18px;
-    font-size:14px;
-    margin-top:0;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 .coupon-message{
-    margin-top:8px;
+    margin-top:10px;
     font-size:13px;
 }
 
-.payment-box{
-    margin-top:20px;
+.payment-card{
+    background:#f8fafc;
+    border:1px solid #e5e7eb;
     padding:20px;
-    border:1px solid #dbeafe;
-    background:#eff6ff;
     border-radius:14px;
 }
 
+.upi-id-box{
+    margin-top:12px;
+    background:white;
+    padding:14px;
+    border-radius:10px;
+    border:1px dashed #6526d7;
+    text-align:center;
+}
+
 .upi-id{
-    font-size:20px;
+    font-size:18px;
     font-weight:bold;
-    color:#2563eb;
-    margin:12px 0;
+    color:#6526d7;
     word-break:break-all;
 }
 
-.note{
-    font-size:13px;
-    color:#475569;
-    line-height:1.6;
-}
-
-#buyBtn{
-    width:100%;
-    padding:15px;
-    font-size:17px;
-    border:none;
-    border-radius:10px;
-    background:#16a34a;
+.copy-btn{
+    margin-top:12px;
+    border:0;
+    background:#172033;
     color:white;
+    padding:10px 18px;
+    border-radius:8px;
     cursor:pointer;
-    font-weight:bold;
-    margin-top:15px;
 }
 
-button:disabled{
-    background:#999 !important;
+.note{
+    margin-top:15px;
+    font-size:13px;
+    line-height:1.6;
+    color:#667085;
+}
+
+label{
+    display:block;
+    margin:20px 0 8px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.buy-btn{
+    width:100%;
+    margin-top:25px;
+    padding:16px;
+    border:0;
+    border-radius:11px;
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.buy-btn:disabled{
+    opacity:.6;
     cursor:not-allowed;
 }
 
-#message{
+.status{
+    margin-top:18px;
     text-align:center;
-    margin-top:15px;
     font-size:14px;
-    color:#475569;
 }
 
 .success{
-    color:#16a34a !important;
+    color:#15803d;
 }
 
 .error{
-    color:#dc2626 !important;
+    color:#dc2626;
 }
 
-@media(max-width:500px){
+@media(max-width:600px){
 
-    main{
-        padding:12px;
+    header{
+        padding:0 15px;
     }
 
-    .box{
-        padding:18px;
+    .brand{
+        font-size:16px;
     }
 
-    .coupon-row{
+    .coupon-box{
         flex-direction:column;
     }
 
     .apply-btn{
-        width:100%;
-        padding:14px;
+        padding:13px;
+    }
+
+    .box{
+        padding:18px;
     }
 
 }
@@ -211,9 +259,23 @@ button:disabled{
 
 <header>
 
+<div class="brand">
+
 📚 Padho Aur Kamao
 
+</div>
+
+
+<button
+class="back-btn"
+onclick="location.href='courses.html'">
+
+← Back
+
+</button>
+
 </header>
+
 
 
 <main>
@@ -222,41 +284,85 @@ button:disabled{
 <div class="box">
 
 
-<h2 id="title">
+<div
+id="loading"
+class="loading">
 
 ⏳ Course Loading...
 
-</h2>
+</div>
 
 
-<p id="description"></p>
+
+<div
+id="courseContent"
+style="display:none;">
+
+
+<h1
+class="course-title"
+id="title">
+
+Course
+
+</h1>
+
+
+<p
+class="description"
+id="description">
+
+</p>
 
 
 
 <div class="price-box">
 
 
-<div
-class="old-price"
+<div class="price-row">
+
+<span>Original Price</span>
+
+<strong
 id="originalPrice">
 
-Original Price: ₹0
+₹0
+
+</strong>
 
 </div>
+
 
 
 <div
-class="final-price"
-id="price">
+class="price-row"
+id="discountRow"
+style="display:none;">
 
-Payable Amount: ₹0
+<span>Coupon Discount</span>
+
+<strong
+id="discountAmount"
+style="color:#16a34a;">
+
+- ₹0
+
+</strong>
 
 </div>
 
 
-<div
-class="discount"
-id="discountText">
+
+<div class="price-row final-price">
+
+<span>Final Amount</span>
+
+<span
+id="finalPrice">
+
+₹0
+
+</span>
 
 </div>
 
@@ -265,30 +371,23 @@ id="discountText">
 
 
 
-<!-- COUPON CODE -->
+<h3 class="section-title">
 
-<div class="section">
+🏷️ Coupon Code
 
-
-<label>
-
-🎟️ Coupon Code
-
-</label>
+</h3>
 
 
-<div class="coupon-row">
+<div class="coupon-box">
 
 
 <input
 type="text"
 id="couponCode"
-placeholder="Coupon Code डालें"
-style="text-transform:uppercase">
+placeholder="Coupon Code डालें">
 
 
 <button
-type="button"
 class="apply-btn"
 id="applyCouponBtn">
 
@@ -307,27 +406,25 @@ id="couponMessage">
 </div>
 
 
-</div>
 
-
-
-<!-- UPI PAYMENT -->
-
-<div class="payment-box">
-
-
-<h3>
+<h3 class="section-title">
 
 📱 UPI Payment
 
 </h3>
 
 
-<p class="note">
+<div class="payment-card">
 
-नीचे दिए गए UPI ID पर पहले Payment करें।
+
+<p>
+
+नीचे दिए गए UPI ID पर Final Amount भेजें।
 
 </p>
+
+
+<div class="upi-id-box">
 
 
 <div
@@ -339,18 +436,28 @@ id="upiId">
 </div>
 
 
-<p class="note">
+<button
+class="copy-btn"
+id="copyBtn">
 
-Payment करने के बाद अपना UTR / Transaction ID नीचे भरें और Payment Submit करें।
+📋 Copy UPI ID
 
-</p>
+</button>
 
 
 </div>
 
 
+<div class="note">
 
-<div class="section">
+⚠️ Payment करने के बाद नीचे अपना UTR / Transaction ID जरूर भरें।
+Payment Verify होने के बाद Admin आपका Course Activate करेगा।
+
+</div>
+
+
+</div>
+
 
 
 <label>
@@ -363,22 +470,28 @@ UTR / Transaction ID
 <input
 type="text"
 id="utr"
-placeholder="Payment का UTR / Transaction ID">
-
-
-</div>
+placeholder="Payment का UTR या Transaction ID डालें">
 
 
 
 <button
+class="buy-btn"
 id="buyBtn">
 
-💳 Payment Submit करें
+💳 Payment Request Submit करें
 
 </button>
 
 
-<p id="message"></p>
+
+<div
+class="status"
+id="message">
+
+</div>
+
+
+</div>
 
 
 </div>
@@ -440,9 +553,9 @@ from
 
 
 
-/* =================================
+/* =========================
    FIREBASE CONFIG
-================================= */
+========================= */
 
 const firebaseConfig={
 
@@ -475,13 +588,11 @@ firebaseConfig
 );
 
 
-
 const auth=
 
 getAuth(
 app
 );
-
 
 
 const db=
@@ -492,34 +603,15 @@ app
 
 
 
-/* =================================
-   UPI ID
-================================= */
-
-const UPI_ID=
-
-"9555838771-3@ybl";
-
-
-document
-.getElementById(
-"upiId"
-)
-.innerText=
-UPI_ID;
-
-
-
-/* =================================
-   COURSE ID
-================================= */
+/* =========================
+   GET COURSE ID
+========================= */
 
 const params=
 
 new URLSearchParams(
-location.search
+window.location.search
 );
-
 
 
 const courseId=
@@ -530,38 +622,26 @@ params.get(
 
 
 
-let currentUser=
-null;
+let currentUser=null;
+
+let userData=null;
+
+let courseData=null;
 
 
-let currentUserData=
-null;
+let originalAmount=0;
 
+let discount=0;
 
-let courseData=
-null;
+let finalAmount=0;
 
-
-let originalPrice=
-0;
-
-
-let finalAmount=
-0;
-
-
-let appliedCoupon=
-null;
-
-
-let discountAmount=
-0;
+let appliedCoupon="";
 
 
 
-/* =================================
-   AUTH CHECK
-================================= */
+/* =========================
+   AUTH
+========================= */
 
 onAuthStateChanged(
 
@@ -582,32 +662,29 @@ return;
 }
 
 
-currentUser=
-user;
+currentUser=user;
 
 
+await loadUser();
 
-if(
-!courseId
-){
 
-document
-.getElementById(
-"title"
-)
-.innerText=
-"❌ Course ID नहीं मिला";
+await loadCourse();
 
-return;
 
 }
 
+);
 
+
+
+/* =========================
+   LOAD USER
+========================= */
+
+async function loadUser(){
 
 try{
 
-
-/* LOAD USER */
 
 const userSnap=
 
@@ -626,14 +703,49 @@ if(
 userSnap.exists()
 ){
 
-currentUserData=
+userData=
 userSnap.data();
 
 }
 
 
+}
+catch(error){
 
-/* LOAD COURSE */
+console.error(
+"User Load Error:",
+error
+);
+
+}
+
+}
+
+
+
+/* =========================
+   LOAD COURSE
+========================= */
+
+async function loadCourse(){
+
+try{
+
+
+if(
+!courseId
+){
+
+document.getElementById(
+"loading"
+).innerText=
+
+"❌ Course ID नहीं मिला।";
+
+return;
+
+}
+
 
 const courseSnap=
 
@@ -648,42 +760,23 @@ courseId
 );
 
 
-
 if(
 !courseSnap.exists()
 ){
 
-document
-.getElementById(
-"title"
-)
-.innerText=
-"❌ Course नहीं मिला";
+document.getElementById(
+"loading"
+).innerText=
+
+"❌ Course नहीं मिला।";
 
 return;
 
 }
 
 
-
 courseData=
-
 courseSnap.data();
-
-
-
-originalPrice=
-
-Number(
-courseData.price||0
-);
-
-
-
-finalAmount=
-
-originalPrice;
-
 
 
 document
@@ -691,8 +784,11 @@ document
 "title"
 )
 .innerText=
-"🎓 "+(
+
+"🎓 "+
+(
 courseData.title||
+courseData.name||
 "Course"
 );
 
@@ -703,46 +799,24 @@ document
 "description"
 )
 .innerText=
+
 courseData.description||
 "";
 
 
 
-updatePrice();
+originalAmount=
 
-
-}
-catch(
-error
-){
-
-
-console.error(
-error
-);
-
-
-document
-.getElementById(
-"title"
-)
-.innerText=
-"❌ Course Load Error";
-
-
-}
-
-}
-
+Number(
+courseData.price||
+0
 );
 
 
 
-/* =================================
-   UPDATE PRICE
-================================= */
+finalAmount=
+originalAmount;
 
-function updatePrice(){
 
 
 document
@@ -750,8 +824,10 @@ document
 "originalPrice"
 )
 .innerText=
-"Original Price: ₹"+
-originalPrice.toLocaleString(
+
+"₹"+
+originalAmount
+.toLocaleString(
 "en-IN"
 );
 
@@ -759,50 +835,62 @@ originalPrice.toLocaleString(
 
 document
 .getElementById(
-"price"
+"finalPrice"
 )
 .innerText=
-"Payable Amount: ₹"+
-finalAmount.toLocaleString(
+
+"₹"+
+finalAmount
+.toLocaleString(
 "en-IN"
 );
 
 
 
-if(
-discountAmount>0
-){
+document
+.getElementById(
+"loading"
+).style.display=
+
+"none";
+
+
 
 document
 .getElementById(
-"discountText"
-)
-.innerText=
-"🎉 You Save ₹"+
-discountAmount.toLocaleString(
-"en-IN"
+"courseContent"
+).style.display=
+
+"block";
+
+
+}
+catch(error){
+
+
+console.error(
+"Course Error:",
+error
 );
 
-}
-else{
 
 document
 .getElementById(
-"discountText"
-)
-.innerText=
-"";
+"loading"
+).innerText=
 
-}
+"❌ Course Load नहीं हुआ।";
 
 
 }
 
+}
 
 
-/* =================================
+
+/* =========================
    APPLY COUPON
-================================= */
+========================= */
 
 document
 .getElementById(
@@ -815,17 +903,13 @@ document
 async()=>{
 
 
-const couponInput=
+const code=
 
 document
 .getElementById(
 "couponCode"
-);
-
-
-const couponCode=
-
-couponInput.value
+)
+.value
 .trim()
 .toUpperCase();
 
@@ -833,57 +917,42 @@ couponInput.value
 
 const message=
 
-document
-.getElementById(
+document.getElementById(
 "couponMessage"
 );
 
+
+
+if(
+!code
+){
+
+message.innerText=
+
+"⚠️ पहले Coupon Code डालें।";
+
+
+message.className=
+"coupon-message error";
+
+
+return;
+
+}
+
+
+
+message.innerText=
+
+"⏳ Coupon Check हो रहा है...";
 
 
 message.className=
 "coupon-message";
 
 
-message.innerText=
-"";
-
-
-
-if(
-!couponCode
-){
-
-message
-.classList
-.add(
-"error"
-);
-
-
-message.innerText=
-"Coupon Code डालें।";
-
-return;
-
-}
-
-
-
-if(
-!courseData
-){
-
-return;
-
-}
-
 
 try{
-
-
-message.innerText=
-"Checking Coupon...";
-
 
 
 const couponSnap=
@@ -893,7 +962,7 @@ await getDoc(
 doc(
 db,
 "coupons",
-couponCode
+code
 )
 
 );
@@ -904,30 +973,9 @@ if(
 !couponSnap.exists()
 ){
 
-appliedCoupon=
-null;
-
-discountAmount=
-0;
-
-finalAmount=
-originalPrice;
-
-
-updatePrice();
-
-
-message
-.classList
-.add(
-"error"
+throw new Error(
+"Invalid Coupon Code"
 );
-
-
-message.innerText=
-"❌ Invalid Coupon Code";
-
-return;
 
 }
 
@@ -943,108 +991,23 @@ if(
 coupon.active===false
 ){
 
-message
-.classList
-.add(
-"error"
+throw new Error(
+"यह Coupon अभी Active नहीं है।"
 );
-
-
-message.innerText=
-"❌ यह Coupon अभी Active नहीं है।";
-
-return;
 
 }
 
 
 
-/* MINIMUM AMOUNT */
-
-const minAmount=
-
-Number(
-coupon.minAmount||
-0
-);
-
-
+/* OPTIONAL COURSE CHECK */
 
 if(
-originalPrice<
-minAmount
+coupon.courseId &&
+coupon.courseId!==courseId
 ){
 
-message
-.classList
-.add(
-"error"
-);
-
-
-message.innerText=
-"❌ इस Coupon के लिए Minimum ₹"+
-minAmount+
-" का Course जरूरी है।";
-
-return;
-
-}
-
-
-
-/* DISCOUNT */
-
-const discountType=
-
-coupon.discountType||
-"percentage";
-
-
-const discountValue=
-
-Number(
-coupon.discountValue||
-0
-);
-
-
-
-if(
-discountValue<=0
-){
-
-message
-.classList
-.add(
-"error"
-);
-
-
-message.innerText=
-"❌ Coupon में सही Discount नहीं है।";
-
-return;
-
-}
-
-
-
-/* PERCENTAGE DISCOUNT */
-
-if(
-discountType===
-"percentage"
-){
-
-discountAmount=
-
-Math.round(
-
-originalPrice*
-discountValue/
-100
-
+throw new Error(
+"यह Coupon इस Course के लिए Valid नहीं है।"
 );
 
 }
@@ -1054,48 +1017,44 @@ discountValue/
 /* FIXED DISCOUNT */
 
 if(
-discountType===
-"fixed"
+coupon.type==="fixed"
 ){
 
-discountAmount=
-discountValue;
+discount=
+
+Number(
+coupon.discount||
+0
+);
 
 }
 
 
+/* PERCENTAGE DISCOUNT */
 
-/* MAX DISCOUNT */
+else{
 
-if(
-coupon.maxDiscount
-){
+discount=
 
-discountAmount=
+originalAmount*
 
-Math.min(
-
-discountAmount,
-
+(
 Number(
-coupon.maxDiscount
-)
-
+coupon.discount||
+0
+)/100
 );
 
 }
 
 
 
-/* FINAL SAFETY */
-
 if(
-discountAmount>
-originalPrice
+discount>originalAmount
 ){
 
-discountAmount=
-originalPrice;
+discount=
+originalAmount;
 
 }
 
@@ -1104,39 +1063,62 @@ originalPrice;
 finalAmount=
 
 Math.max(
-
 0,
-
-originalPrice-
-discountAmount
-
+originalAmount-discount
 );
-
 
 
 appliedCoupon=
-couponCode;
-
-
-updatePrice();
+code;
 
 
 
-message
-.classList
-.add(
-"success"
+document
+.getElementById(
+"discountRow"
+).style.display=
+
+"flex";
+
+
+document
+.getElementById(
+"discountAmount"
+).innerText=
+
+"- ₹"+
+discount
+.toLocaleString(
+"en-IN"
 );
 
 
+
+document
+.getElementById(
+"finalPrice"
+).innerText=
+
+"₹"+
+finalAmount
+.toLocaleString(
+"en-IN"
+);
+
+
+
 message.innerText=
+
 "✅ Coupon Applied Successfully!";
 
 
+message.className=
+
+"coupon-message success";
+
+
 }
-catch(
-error
-){
+catch(error){
 
 
 console.error(
@@ -1144,15 +1126,50 @@ error
 );
 
 
-message
-.classList
-.add(
-"error"
+discount=0;
+
+
+finalAmount=
+originalAmount;
+
+
+appliedCoupon="";
+
+
+
+document
+.getElementById(
+"discountRow"
+).style.display=
+
+"none";
+
+
+document
+.getElementById(
+"finalPrice"
+).innerText=
+
+"₹"+
+originalAmount
+.toLocaleString(
+"en-IN"
 );
+
 
 
 message.innerText=
-"❌ Coupon Check Error";
+
+"❌ "+
+(
+error.message||
+"Invalid Coupon Code"
+);
+
+
+message.className=
+
+"coupon-message error";
 
 
 }
@@ -1164,10 +1181,68 @@ message.innerText=
 
 
 
+/* =========================
+   COPY UPI ID
+========================= */
 
-/* =================================
+document
+.getElementById(
+"copyBtn"
+)
+.addEventListener(
+
+"click",
+
+async()=>{
+
+
+const upi=
+
+document
+.getElementById(
+"upiId"
+)
+.innerText;
+
+
+try{
+
+
+await navigator
+.clipboard
+.writeText(
+upi
+);
+
+
+alert(
+"UPI ID Copied: "+
+upi
+);
+
+
+}
+catch(error){
+
+
+alert(
+"UPI ID: "+
+upi
+);
+
+
+}
+
+
+}
+
+);
+
+
+
+/* =========================
    SUBMIT PAYMENT
-================================= */
+========================= */
 
 document
 .getElementById(
@@ -1186,7 +1261,7 @@ if(
 ){
 
 alert(
-"पहले Login करें।"
+"कृपया दोबारा Login करें।"
 );
 
 return;
@@ -1211,7 +1286,7 @@ if(
 ){
 
 alert(
-"Payment करने के बाद UTR / Transaction ID भरें।"
+"कृपया UTR / Transaction ID भरें।"
 );
 
 return;
@@ -1237,19 +1312,30 @@ document
 
 
 
-try{
-
-
-btn.disabled=
-true;
+btn.disabled=true;
 
 
 btn.innerText=
-"Checking...";
+
+"Submitting...";
+
+
+message.innerText=
+
+"⏳ Payment Request Submit हो रही है...";
+
+
+message.className=
+"status";
 
 
 
-/* CHECK DUPLICATE PENDING PAYMENT */
+try{
+
+
+/* =========================
+   DUPLICATE PAYMENT CHECK
+========================= */
 
 const paymentQuery=
 
@@ -1282,7 +1368,7 @@ where(
 
 
 
-const existingPayments=
+const pendingSnap=
 
 await getDocs(
 paymentQuery
@@ -1291,33 +1377,20 @@ paymentQuery
 
 
 if(
-!existingPayments.empty
+!pendingSnap.empty
 ){
 
-alert(
-"इस Course की Payment Request पहले से Pending है। Admin Approval का इंतजार करें।"
+throw new Error(
+"इस Course की Payment Request पहले से Pending है।"
 );
-
-
-btn.disabled=
-false;
-
-
-btn.innerText=
-"💳 Payment Submit करें";
-
-return;
 
 }
 
 
 
-/* SUBMIT PAYMENT */
-
-btn.innerText=
-"Submitting...";
-
-
+/* =========================
+   SAVE PAYMENT REQUEST
+========================= */
 
 await addDoc(
 
@@ -1333,13 +1406,20 @@ currentUser.uid,
 
 
 userName:
-currentUserData?.name||
+
+userData?.name||
+
+userData?.kycFullName||
+
 currentUser.displayName||
+
 "Student",
 
 
 email:
+
 currentUser.email||
+
 "",
 
 
@@ -1348,21 +1428,24 @@ courseId,
 
 
 courseName:
+
 courseData.title||
+
+courseData.name||
+
 "Course",
 
 
 originalAmount:
-originalPrice,
+originalAmount,
 
 
 discount:
-discountAmount,
+discount,
 
 
 couponCode:
-appliedCoupon||
-"",
+appliedCoupon,
 
 
 amount:
@@ -1374,7 +1457,7 @@ paymentMethod:
 
 
 upiId:
-UPI_ID,
+"9555838771-3@ybl",
 
 
 utr:
@@ -1394,28 +1477,34 @@ serverTimestamp()
 
 
 
-message.className=
-"success";
-
-
 message.innerText=
-"🎉 Payment Request Successfully Submit हो गई! Admin Verification के बाद Course Activate होगा।";
+
+"🎉 Payment Request Successfully Submitted! Admin verification के बाद Course Activate होगा।";
+
+
+message.className=
+"status success";
+
 
 
 alert(
-"🎉 Payment Request Submitted Successfully!"
+
+"🎉 Payment Request Submit हो गई!\n\nAdmin Verify करने के बाद आपका Course Activate होगा।"
+
 );
 
 
 
-/* CLEAR UTR */
-
 document
 .getElementById(
 "utr"
-)
-.value=
+).value=
 "";
+
+
+btn.innerText=
+
+"Request Submitted";
 
 
 
@@ -1431,59 +1520,43 @@ location.href=
 },
 
 1500
-
 );
 
 
 }
-catch(
-error
-){
+catch(error){
 
 
 console.error(
-"Payment Submit Error:",
+"Payment Error:",
 error
 );
 
 
-let errorMessage=
-
-"❌ Payment Request Submit नहीं हुई।";
-
-
-if(
-error.code===
-"permission-denied"
-){
-
-errorMessage=
-"❌ Firebase Permission Denied. Firestore Rules Check करें।";
-
-}
-
-
-
-message.className=
-"error";
-
-
 message.innerText=
-errorMessage;
 
-
-alert(
-errorMessage
+"❌ "+
+(
+error.message||
+"Payment Request Submit नहीं हुई।"
 );
 
 
+message.className=
+"status error";
 
-btn.disabled=
-false;
+
+alert(
+message.innerText
+);
+
+
+btn.disabled=false;
 
 
 btn.innerText=
-"💳 Payment Submit करें";
+
+"💳 Payment Request Submit करें";
 
 
 }
