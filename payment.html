@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UPI Payment - Padho Aur Kamao</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f6fb;color:#172033}
+header{background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;padding:18px;font-size:20px;font-weight:bold}
+main{max-width:560px;margin:auto;padding:20px}.card{background:#fff;border-radius:20px;padding:24px;box-shadow:0 10px 30px rgba(15,23,42,.1);margin-bottom:18px}
+.course{background:#f5f3ff;border-radius:14px;padding:16px;margin:15px 0}.price{font-size:32px;font-weight:bold;color:#6526d7;margin-top:8px}
+.pay{width:100%;border:0;border-radius:12px;padding:16px;background:linear-gradient(135deg,#ec4899,#8b5cf6);color:#fff;font-size:17px;font-weight:bold;cursor:pointer}
+.pay:disabled{opacity:.65;cursor:not-allowed}.step{padding:10px 0;color:#596174;font-size:14px}
+input{width:100%;padding:15px;border:1px solid #dbe2ea;border-radius:12px;font-size:16px;margin-top:8px}
+.submit{width:100%;margin-top:15px;border:0;border-radius:12px;padding:16px;background:#16a34a;color:#fff;font-size:17px;font-weight:bold;cursor:pointer}
+.msg{margin-top:15px;padding:13px;border-radius:10px;display:none}.success{display:block;background:#dcfce7;color:#166534}.error{display:block;background:#fee2e2;color:#991b1b}
+.small{font-size:13px;color:#64748b;line-height:1.5}.upi{font-weight:bold;color:#6526d7;word-break:break-all}
+.status{padding:12px;border-radius:12px;background:#fff7ed;color:#9a3412;margin-top:15px}
+</style>
+</head>
+<body>
+<header>📚 Padho Aur Kamao</header>
+<main>
+<div class="card">
+<h2>📱 UPI Payment</h2>
+<p class="small">पहले UPI app में payment करें, फिर नीचे UTR / Transaction ID submit करें। Course Admin verification के बाद activate होगा।</p>
+<div class="course">
+<div id="courseName">Course Loading...</div>
+<div class="price" id="coursePrice">₹0</div>
+</div>
+<div class="step">UPI ID: <span class="upi">955838771-3@ybl</span></div>
+<button class="pay" id="upiBtn">📲 Pay Now via UPI</button>
+<div id="existingStatus"></div>
+</div>
+
+<div class="card">
+<h3>Payment Details Submit करें</h3>
+<label for="utr">UTR / Transaction ID</label>
+<input id="utr" maxlength="50" placeholder="UPI Transaction / UTR ID दर्ज करें" autocomplete="off">
+<p class="small">गलत या duplicate payment ID submit न करें। Admin payment manually verify करेगा।</p>
+<button class="submit" id="submitBtn">✅ Submit for Verification</button>
+<div class="msg" id="message"></div>
+</div>
+</main>
+
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import {getAuth,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+import {getFirestore,collection,addDoc,doc,getDoc,getDocs,query,where,serverTimestamp} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+const firebaseConfig={
+ apiKey:"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+ authDomain:"padho-aur-kamao-3eeae.firebaseapp.com",
+ projectId:"padho-aur-kamao-3eeae",
+ storageBucket:"padho-aur-kamao-3eeae.firebasestorage.app",
+ messagingSenderId:"670063905617",
+ appId:"1:670063905617:web:9b3a7e62fdeea14fbfa170"
+};
+
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app);
+const db=getFirestore(app);
+
+let currentUser=null;
+let course={id:"",name:"",price:0};
+
+function showMessage(text,type){
+ const el=document.getElementById("message");
+ el.textContent=text;
+ el.className="msg "+type;
+}
+
+function loadCourse(){
+ const p=new URLSearchParams(location.search);
+ course.id=localStorage.getItem("pendingCourseId")||p.get("course")||"";
+ course.name=localStorage.getItem("pendingCourseName")||"Course";
+ course.price=Number(localStorage.getItem("pendingCoursePrice")||p.get("price")||0);
+
+ if(!course.id || !course.price){
+   document.getElementById("courseName").textContent="❌ Course details नहीं मिले";
+   document.getElementById("upiBtn").disabled=true;
+   document.getElementById("submitBtn").disabled=true;
+   return false;
+ }
+ document.getElementById("courseName").textContent=course.name;
+ document.getElementById("coursePrice").textContent="₹"+course.price;
+ return true;
+}
+
+document.getElementById("upiBtn").onclick=()=>{
+ if(!course.id||!course.price)return;
+ const upiId="955838771-3@ybl";
+ const payeeName="Padho Aur Kamao";
+ const note="Course: "+course.name;
+ const link="upi://pay?pa="+encodeURIComponent(upiId)+"&pn="+encodeURIComponent(payeeName)+"&am="+encodeURIComponent(course.price)+"&cu=INR&tn="+encodeURIComponent(note);
+ location.href=link;
+};
+
+async function loadExistingRequest(){
+ const q=query(collection(db,"paymentRequests"),
+   where("userId","==",currentUser.uid),
+   where("courseId","==",course.id));
+ const snap=await getDocs(q);
+ if(!snap.empty){
+   let latest=null;
+   snap.forEach(d=>{latest={id:d.id,...d.data()}});
+   if(latest && latest.status==="pending"){
+     document.getElementById("existingStatus").innerHTML='<div class="status">⏳ इस course की payment verification पहले से pending है।</div>';
+     document.getElementById("submitBtn").disabled=true;
+   }
+   if(latest && latest.status==="approved"){
+     document.getElementById("existingStatus").innerHTML='<div class="msg success">🎉 आपका course already active है।</div>';
+     document.getElementById("submitBtn").disabled=true;
+   }
+ }
+}
+
+onAuthStateChanged(auth,async user=>{
+ if(!user){location.href="login.html";return;}
+ currentUser=user;
+ if(loadCourse()){
+   try{await loadExistingRequest();}catch(e){console.error(e);}
+ }
+});
+
+document.getElementById("submitBtn").onclick=async()=>{
+ const utr=document.getElementById("utr").value.trim();
+ if(!currentUser||!course.id)return;
+ if(utr.length<6){showMessage("कृपया valid UTR / Transaction ID दर्ज करें।","error");return;}
+
+ const btn=document.getElementById("submitBtn");
+ btn.disabled=true;btn.textContent="Submitting...";
+
+ try{
+   const userSnap=await getDoc(doc(db,"users",currentUser.uid));
+   const userData=userSnap.exists()?userSnap.data():{};
+
+   await addDoc(collection(db,"paymentRequests"),{
+     userId:currentUser.uid,
+     userName:userData.name||currentUser.displayName||currentUser.email.split("@")[0],
+     email:currentUser.email||"",
+     courseId:course.id,
+     courseName:course.name,
+     amount:Number(course.price),
+     utr:utr,
+     paymentMethod:"UPI",
+     status:"pending",
+     submittedAt:serverTimestamp()
+   });
+
+   showMessage("🎉 Payment submitted! Admin verification के बाद course activate होगा।","success");
+   localStorage.removeItem("pendingCourseId");
+   localStorage.removeItem("pendingCourseName");
+   localStorage.removeItem("pendingCoursePrice");
+   document.getElementById("utr").disabled=true;
+   btn.textContent="Submitted";
+ }catch(error){
+   console.error(error);
+   showMessage("Submit नहीं हुआ: "+error.message,"error");
+   btn.disabled=false;btn.textContent="✅ Submit for Verification";
+ }
+};
+</script>
+</body>
+</html>
