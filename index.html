@@ -1,29 +1,1426 @@
+
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<title>Padho Aur Kamao - Courses</title>
 
-    <title>Padho Aur Kamao</title>
+<style>
 
-    <script>
-        window.location.replace("course.html");
-    </script>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f6fb;
+    color:#172033;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    height:72px;
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:20px;
+    font-weight:bold;
+    color:#5b21b6;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:linear-gradient(135deg,#5b21b6,#8b5cf6);
+    color:white;
+}
+
+.nav-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.login-btn,
+.dashboard-btn{
+    padding:11px 18px;
+    border-radius:10px;
+    border:1px solid #6526d7;
+    font-weight:bold;
+    cursor:pointer;
+    background:white;
+    color:#6526d7;
+}
+
+.dashboard-btn{
+    background:#6526d7;
+    color:white;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    text-align:center;
+    padding:50px 20px 25px;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:12px;
+    color:#172033;
+}
+
+.hero h1 span{
+    color:#6526d7;
+}
+
+.hero p{
+    color:#64748b;
+    font-size:16px;
+}
+
+/* ================= COURSES ================= */
+
+.courses{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 20px 70px;
+}
+
+.course-card{
+    background:white;
+    border-radius:24px;
+    overflow:hidden;
+    margin-bottom:35px;
+    box-shadow:0 15px 40px rgba(15,23,42,.10);
+}
+
+.course-top{
+    min-height:280px;
+    padding:40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    color:white;
+    gap:25px;
+    position:relative;
+    overflow:hidden;
+}
+
+.course-top::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    right:-100px;
+    bottom:-150px;
+}
+
+.starter{
+    background:
+    linear-gradient(
+        135deg,
+        #ff8a00,
+        #ff6b35,
+        #ff9a76
+    );
+}
+
+.premium{
+    background:
+    linear-gradient(
+        135deg,
+        #075e63,
+        #159a9c,
+        #1e3a8a
+    );
+}
+
+.course-text{
+    position:relative;
+    z-index:2;
+}
+
+.course-top h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.course-top p{
+    font-size:17px;
+    line-height:1.6;
+    opacity:.95;
+}
+
+/* ================= BOOK ================= */
+
+.book{
+    width:175px;
+    height:225px;
+    border-radius:8px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-weight:bold;
+    font-size:25px;
+    position:relative;
+    z-index:2;
+
+    background:
+    linear-gradient(
+        135deg,
+        #101828,
+        #334155
+    );
+
+    box-shadow:
+    18px 20px 30px rgba(0,0,0,.35);
+
+    border-left:12px solid #111827;
+}
+
+.book small{
+    margin-top:18px;
+    font-size:11px;
+    color:#cbd5e1;
+}
+
+.premium-book{
+    background:
+    linear-gradient(
+        135deg,
+        #064e2c,
+        #15803d,
+        #1f2937
+    );
+
+    border-left:12px solid #064e2c;
+}
+
+/* ================= COURSE BODY ================= */
+
+.course-body{
+    padding:30px;
+}
+
+.course-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.price{
+    font-size:32px;
+    font-weight:bold;
+    color:#5b21b6;
+}
+
+.old-price{
+    color:#94a3b8;
+    text-decoration:line-through;
+    font-size:18px;
+    margin-left:8px;
+}
+
+.buy-btn{
+    border:none;
+    padding:16px 35px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ec4899,
+        #8b5cf6
+    );
+
+    box-shadow:
+    0 8px 20px rgba(139,92,246,.25);
+}
+
+.features{
+    margin-top:25px;
+    padding-top:22px;
+    border-top:1px solid #e5e7eb;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.feature{
+    background:#f5f3ff;
+    padding:14px;
+    border-radius:12px;
+    text-align:center;
+    color:#475569;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(15,23,42,.65);
+    z-index:5000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.popup{
+    width:100%;
+    max-width:450px;
+    background:white;
+    border-radius:22px;
+    padding:28px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:18px;
+    top:12px;
+    border:none;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.selected{
+    margin:20px 0;
+    padding:15px;
+    background:#f5f3ff;
+    border-radius:12px;
+}
+
+.coupon-row{
+    display:flex;
+    gap:10px;
+}
+
+.coupon-row input{
+    flex:1;
+    padding:14px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+}
+
+.apply-btn{
+    border:none;
+    padding:0 18px;
+    border-radius:10px;
+    background:#6526d7;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.price-box{
+    margin-top:20px;
+    background:#f8fafc;
+    padding:18px;
+    border-radius:12px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:14px;
+}
+
+.final{
+    border-top:1px solid #dbe2ea;
+    padding-top:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.pay-btn{
+    width:100%;
+    margin-top:20px;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    background:#6526d7;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.message{
+    margin-top:10px;
+    min-height:20px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    header{
+        padding:0 15px;
+    }
+
+    .logo{
+        font-size:15px;
+    }
+
+    .hero{
+        padding:35px 15px 15px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .course-top{
+        flex-direction:column;
+        text-align:center;
+        padding:35px 20px;
+    }
+
+    .course-top h2{
+        font-size:32px;
+    }
+
+    .course-info{
+        flex-direction:column-reverse;
+        align-items:stretch;
+    }
+
+    .buy-btn{
+        width:100%;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .coupon-row{
+        flex-direction:column;
+    }
+
+    .apply-btn{
+        padding:14px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <p style="
-        text-align:center;
-        margin-top:100px;
-        font-family:Arial;
-        font-size:18px;
-    ">
-        Loading Padho Aur Kamao...
-    </p>
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<a href="index.html" class="logo">
+
+<div class="logo-icon">
+📚
+</div>
+
+<span>
+Padho Aur Kamao
+</span>
+
+</a>
+
+
+<div class="nav-buttons">
+
+<a
+href="login.html"
+class="login-btn"
+id="loginLink">
+
+Login
+
+</a>
+
+
+<a
+href="dashboard.html"
+class="dashboard-btn"
+id="dashboardLink"
+style="display:none;">
+
+Dashboard
+
+</a>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<h1>
+
+Choose The Perfect
+
+<span>
+Course Package
+</span>
+
+For You
+
+</h1>
+
+<p>
+
+पहले Course देखें • फिर Buy करें • सीखें और आगे बढ़ें
+
+</p>
+
+</section>
+
+
+<!-- ================= COURSES ================= -->
+
+<main class="courses">
+
+
+<!-- STARTER COURSE -->
+
+<section class="course-card">
+
+<div class="course-top starter">
+
+<div class="course-text">
+
+<h2>
+Study & Skill
+</h2>
+
+<p>
+
+Learning • Communication<br>
+
+Maths • Reasoning • Hindi
+
+</p>
+
+</div>
+
+
+<div class="book">
+
+STUDY
+
+<br>
+
+&
+
+<br>
+
+SKILL
+
+<small>
+PADHO AUR KAMAO
+</small>
+
+</div>
+
+</div>
+
+
+<div class="course-body">
+
+<div class="course-info">
+
+<div>
+
+<div class="price">
+
+₹199
+
+<span class="old-price">
+₹299
+</span>
+
+</div>
+
+</div>
+
+
+<button
+class="buy-btn"
+onclick="buyCourse(
+'study-skill-starter',
+'Study & Skill Starter',
+199
+)">
+
+❯ Buy Now
+
+</button>
+
+</div>
+
+
+<div class="features">
+
+<div class="feature">
+📖 Study Material
+</div>
+
+<div class="feature">
+🎯 Skill Learning
+</div>
+
+<div class="feature">
+📚 2 Courses Access
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PREMIUM COURSE -->
+
+<section class="course-card">
+
+<div class="course-top premium">
+
+<div class="course-text">
+
+<h2>
+Skill & Success
+</h2>
+
+<p>
+
+Competitive Preparation<br>
+
+Skills • Growth • Success
+
+</p>
+
+</div>
+
+
+<div class="book premium-book">
+
+SKILL
+
+<br>
+
+&
+
+<br>
+
+SUCCESS
+
+<small>
+PADHO AUR KAMAO
+</small>
+
+</div>
+
+</div>
+
+
+<div class="course-body">
+
+<div class="course-info">
+
+<div>
+
+<div class="price">
+
+₹399
+
+<span class="old-price">
+₹499
+</span>
+
+</div>
+
+</div>
+
+
+<button
+class="buy-btn"
+onclick="buyCourse(
+'skill-success-premium',
+'Skill & Success Premium',
+399
+)">
+
+❯ Buy Now
+
+</button>
+
+</div>
+
+
+<div class="features">
+
+<div class="feature">
+🎓 Competitive Preparation
+</div>
+
+<div class="feature">
+🚀 Premium Skills
+</div>
+
+<div class="feature">
+♾️ Full Course Access
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= PAYMENT POPUP ================= -->
+
+<div class="modal" id="modal">
+
+<div class="popup">
+
+<button
+class="close"
+onclick="closePopup()">
+
+×
+</button>
+
+
+<h2>
+🎁 Apply Coupon
+</h2>
+
+
+<div class="selected">
+
+<strong id="selectedName">
+</strong>
+
+
+<div
+id="selectedPrice"
+style="
+margin-top:8px;
+font-size:22px;
+color:#6526d7;
+font-weight:bold;
+">
+
+</div>
+
+</div>
+
+
+<div class="coupon-row">
+
+<input
+type="text"
+id="coupon"
+placeholder="Enter Coupon Code">
+
+
+<button
+class="apply-btn"
+onclick="applyCoupon()">
+
+Apply
+
+</button>
+
+</div>
+
+
+<div
+class="message"
+id="message">
+
+</div>
+
+
+<div class="price-box">
+
+<div class="row">
+
+<span>
+Original Price
+</span>
+
+<span id="original">
+₹0
+</span>
+
+</div>
+
+
+<div class="row">
+
+<span>
+Discount
+</span>
+
+<span id="discount">
+₹0
+</span>
+
+</div>
+
+
+<div class="row final">
+
+<span>
+Payable Amount
+</span>
+
+<span id="finalPrice">
+₹0
+</span>
+
+</div>
+
+</div>
+
+
+<button
+class="pay-btn"
+onclick="checkout()"
+id="payButton">
+
+Proceed to Payment
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= FIREBASE ================= -->
+
+<script type="module">
+
+import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+getAuth,
+onAuthStateChanged
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+import {
+getFirestore,
+doc,
+setDoc,
+serverTimestamp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+const firebaseConfig = {
+
+apiKey:
+"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+
+authDomain:
+"padho-aur-kamao-3eeae.firebaseapp.com",
+
+projectId:
+"padho-aur-kamao-3eeae",
+
+storageBucket:
+"padho-aur-kamao-3eeae.firebasestorage.app",
+
+messagingSenderId:
+"670063905617",
+
+appId:
+"1:670063905617:web:9b3a7e62fdeea14fbfa170"
+
+};
+
+
+const app =
+initializeApp(firebaseConfig);
+
+
+const auth =
+getAuth(app);
+
+
+const db =
+getFirestore(app);
+
+
+let currentUser = null;
+
+let selectedCourse = null;
+
+let finalAmount = 0;
+
+
+/* ================= LOGIN CHECK ================= */
+
+onAuthStateChanged(
+auth,
+user => {
+
+currentUser = user;
+
+
+if(user){
+
+document.getElementById(
+"loginLink"
+).style.display =
+"none";
+
+
+document.getElementById(
+"dashboardLink"
+).style.display =
+"inline-block";
+
+
+checkPendingCourse();
+
+}
+
+}
+);
+
+
+/* ================= PENDING COURSE ================= */
+
+function checkPendingCourse(){
+
+const pending =
+localStorage.getItem(
+"pendingCourse"
+);
+
+
+if(pending){
+
+try{
+
+const data =
+JSON.parse(pending);
+
+
+localStorage.removeItem(
+"pendingCourse"
+);
+
+
+buyCourse(
+data.id,
+data.name,
+data.price
+);
+
+}
+catch(error){
+
+console.error(error);
+
+}
+
+}
+
+}
+
+
+/* ================= BUY COURSE ================= */
+
+window.buyCourse =
+function(
+id,
+name,
+price
+){
+
+if(!currentUser){
+
+localStorage.setItem(
+
+"pendingCourse",
+
+JSON.stringify({
+
+id:id,
+
+name:name,
+
+price:price
+
+})
+
+);
+
+
+window.location.href =
+"login.html";
+
+
+return;
+
+}
+
+
+selectedCourse = {
+
+id:id,
+
+name:name,
+
+price:price
+
+};
+
+
+finalAmount =
+price;
+
+
+document.getElementById(
+"selectedName"
+).textContent =
+name;
+
+
+document.getElementById(
+"selectedPrice"
+).textContent =
+"₹" + price;
+
+
+document.getElementById(
+"original"
+).textContent =
+"₹" + price;
+
+
+document.getElementById(
+"discount"
+).textContent =
+"₹0";
+
+
+document.getElementById(
+"finalPrice"
+).textContent =
+"₹" + price;
+
+
+document.getElementById(
+"coupon"
+).value =
+"";
+
+
+document.getElementById(
+"message"
+).textContent =
+"";
+
+
+document.getElementById(
+"payButton"
+).textContent =
+"Proceed to Payment";
+
+
+document
+.getElementById(
+"modal"
+)
+.classList
+.add(
+"active"
+);
+
+};
+
+
+/* ================= CLOSE ================= */
+
+window.closePopup =
+function(){
+
+document
+.getElementById(
+"modal"
+)
+.classList
+.remove(
+"active"
+);
+
+};
+
+
+/* ================= COUPON ================= */
+
+window.applyCoupon =
+function(){
+
+const code =
+
+document
+.getElementById(
+"coupon"
+)
+.value
+.trim()
+.toUpperCase();
+
+
+const message =
+
+document
+.getElementById(
+"message"
+);
+
+
+if(code === "FREE100"){
+
+finalAmount =
+0;
+
+
+document
+.getElementById(
+"discount"
+)
+.textContent =
+"-₹" +
+selectedCourse.price;
+
+
+document
+.getElementById(
+"finalPrice"
+)
+.textContent =
+"₹0";
+
+
+document
+.getElementById(
+"payButton"
+)
+.textContent =
+"🎉 Get Course Free";
+
+
+message.textContent =
+"🎉 FREE100 Coupon Applied Successfully!";
+
+
+message.style.color =
+"#16a34a";
+
+}
+
+else{
+
+finalAmount =
+selectedCourse.price;
+
+
+document
+.getElementById(
+"discount"
+)
+.textContent =
+"₹0";
+
+
+document
+.getElementById(
+"finalPrice"
+)
+.textContent =
+"₹" +
+selectedCourse.price;
+
+
+message.textContent =
+"❌ Invalid Coupon Code";
+
+
+message.style.color =
+"#dc2626";
+
+}
+
+};
+
+
+/* ================= CHECKOUT ================= */
+
+window.checkout =
+async function(){
+
+if(
+!selectedCourse ||
+!currentUser
+){
+
+return;
+
+}
+
+
+/* PAID COURSE */
+
+if(finalAmount > 0){
+
+localStorage.setItem(
+"pendingCourseId",
+selectedCourse.id
+);
+
+
+localStorage.setItem(
+"pendingCourseName",
+selectedCourse.name
+);
+
+
+localStorage.setItem(
+"pendingCoursePrice",
+selectedCourse.price
+);
+
+
+window.location.href =
+
+"payment.html?course=" +
+
+encodeURIComponent(
+selectedCourse.id
+)
+
++
+
+"&price=" +
+
+encodeURIComponent(
+finalAmount
+);
+
+
+return;
+
+}
+
+
+/* FREE COURSE */
+
+const button =
+
+document.getElementById(
+"payButton"
+);
+
+
+button.disabled =
+true;
+
+
+button.textContent =
+"Activating Course...";
+
+
+try{
+
+const userRef =
+
+doc(
+db,
+"users",
+currentUser.uid
+);
+
+
+await setDoc(
+
+userRef,
+
+{
+
+name:
+
+currentUser.displayName ||
+
+currentUser.email.split(
+"@"
+)[0],
+
+
+email:
+currentUser.email,
+
+
+referralActive:
+true,
+
+
+createdAt:
+serverTimestamp()
+
+},
+
+{
+merge:true
+}
+
+);
+
+
+/* COURSE SAVE */
+
+const courseRef =
+
+doc(
+
+db,
+
+"users",
+
+currentUser.uid,
+
+"courses",
+
+selectedCourse.id
+
+);
+
+
+await setDoc(
+
+courseRef,
+
+{
+
+courseId:
+selectedCourse.id,
+
+
+courseName:
+selectedCourse.name,
+
+
+paidAmount:
+0,
+
+
+status:
+"active",
+
+
+enrolledAt:
+serverTimestamp()
+
+}
+
+);
+
+
+/* DASHBOARD */
+
+window.location.href =
+"dashboard.html";
+
+
+}
+
+catch(error){
+
+console.error(error);
+
+
+alert(
+"Course activate नहीं हो पाया।"
+);
+
+
+button.disabled =
+false;
+
+
+button.textContent =
+"🎉 Get Course Free";
+
+}
+
+};
+
+</script>
 
 </body>
 </html>
