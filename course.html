@@ -1,13 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Courses - Padho Aur Kamao</title>
+<title>Course Packages - Padho Aur Kamao</title>
 
 <style>
+
+/* =========================
+   GLOBAL
+========================= */
 
 *{
     margin:0;
@@ -15,9 +21,13 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#f4f6fb;
+    background:#f5f6fb;
     color:#172033;
 }
 
@@ -25,9 +35,14 @@ a{
     text-decoration:none;
 }
 
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-    height:72px;
-    background:#fff;
+    height:70px;
+    background:#ffffff;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -42,20 +57,22 @@ header{
     display:flex;
     align-items:center;
     gap:10px;
+    color:#4f46e5;
     font-size:20px;
-    font-weight:bold;
-    color:#5b21b6;
+    font-weight:800;
 }
 
 .logo-icon{
     width:42px;
     height:42px;
+    border-radius:12px;
     display:flex;
     align-items:center;
     justify-content:center;
-    border-radius:12px;
-    background:linear-gradient(135deg,#5b21b6,#8b5cf6);
+    background:linear-gradient(135deg,#4f46e5,#9333ea);
     color:white;
+    font-size:21px;
+    box-shadow:0 8px 20px rgba(79,70,229,.25);
 }
 
 .nav-buttons{
@@ -65,131 +82,307 @@ header{
 
 .login-btn,
 .dashboard-btn{
-    padding:11px 18px;
+    padding:10px 18px;
     border-radius:10px;
-    border:1px solid #6526d7;
     font-weight:bold;
+    font-size:14px;
     cursor:pointer;
-    background:white;
-    color:#6526d7;
+    transition:.25s;
+}
+
+.login-btn{
+    border:1px solid #4f46e5;
+    color:#4f46e5;
+    background:#fff;
 }
 
 .dashboard-btn{
-    background:#6526d7;
-    color:white;
+    border:1px solid #4f46e5;
+    color:#fff;
+    background:#4f46e5;
 }
+
+.login-btn:hover,
+.dashboard-btn:hover{
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     text-align:center;
-    padding:50px 20px 25px;
+    padding:55px 20px 30px;
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:8px 16px;
+    border-radius:30px;
+    background:#ede9fe;
+    color:#6d28d9;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:18px;
 }
 
 .hero h1{
     font-size:42px;
     margin-bottom:12px;
+    font-weight:800;
+    color:#111827;
+}
+
+.hero h1 span{
+    color:#6d28d9;
 }
 
 .hero p{
     color:#64748b;
+    font-size:16px;
+    line-height:1.6;
 }
+
+
+/* =========================
+   COURSES
+========================= */
 
 .courses{
-    max-width:1100px;
+    width:100%;
+    max-width:1150px;
     margin:auto;
-    padding:25px 20px 70px;
+    padding:20px 20px 70px;
 }
+
+
+/* =========================
+   COURSE CARD
+========================= */
 
 .course-card{
-    background:white;
+    background:#fff;
     border-radius:24px;
     overflow:hidden;
-    margin-bottom:35px;
-    box-shadow:0 15px 40px rgba(15,23,42,.10);
+    margin-bottom:32px;
+    box-shadow:0 12px 40px rgba(15,23,42,.10);
+    transition:.3s;
+    border:1px solid #edf0f5;
 }
 
+.course-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 22px 50px rgba(15,23,42,.15);
+}
+
+
+/* =========================
+   CARD TOP
+========================= */
+
 .course-top{
-    min-height:260px;
-    padding:40px;
+    min-height:285px;
+    padding:38px 45px;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:30px;
     color:white;
-    gap:25px;
+    position:relative;
+    overflow:hidden;
 }
+
+
+/* STARTER */
 
 .starter{
-    background:linear-gradient(135deg,#7c4a1d,#3b2315,#171b35);
+    background:
+    radial-gradient(circle at top right,rgba(255,255,255,.14),transparent 30%),
+    linear-gradient(135deg,#402015,#7c3f1d,#1f2937);
 }
 
+
+/* PREMIUM */
+
 .premium{
-    background:linear-gradient(135deg,#075e63,#159a9c,#1e3a8a);
+    background:
+    radial-gradient(circle at top right,rgba(255,255,255,.15),transparent 30%),
+    linear-gradient(135deg,#064e3b,#0f766e,#1e3a8a);
+}
+
+
+.package-badge{
+    display:inline-block;
+    padding:7px 14px;
+    border-radius:20px;
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.25);
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:14px;
+    backdrop-filter:blur(8px);
 }
 
 .course-top h2{
-    font-size:42px;
-    margin-bottom:15px;
+    font-size:40px;
+    margin-bottom:14px;
 }
 
 .course-top p{
-    font-size:17px;
-    line-height:1.6;
-    opacity:.9;
+    font-size:16px;
+    line-height:1.7;
+    opacity:.92;
 }
 
+.rating{
+    margin-top:16px;
+    font-size:14px;
+}
+
+.rating span{
+    color:#fbbf24;
+    font-size:18px;
+}
+
+
+/* =========================
+   COURSE COVER
+========================= */
+
 .book{
-    width:170px;
-    height:220px;
-    border-radius:8px;
-    padding:22px;
+    width:180px;
+    height:230px;
+    border-radius:8px 14px 14px 8px;
+    padding:20px;
     display:flex;
+    flex-direction:column;
     align-items:center;
     justify-content:center;
     text-align:center;
-    font-weight:bold;
-    font-size:25px;
-    background:linear-gradient(135deg,#101828,#334155);
-    box-shadow:18px 20px 30px rgba(0,0,0,.35);
+    font-size:24px;
+    font-weight:900;
+    line-height:1.3;
+    position:relative;
+    overflow:hidden;
+    box-shadow:
+    18px 22px 30px rgba(0,0,0,.35),
+    -8px 0 0 rgba(255,255,255,.08) inset;
 }
+
+.book:before{
+    content:"PADHO AUR KAMAO";
+    position:absolute;
+    top:18px;
+    left:0;
+    width:100%;
+    text-align:center;
+    font-size:10px;
+    letter-spacing:1px;
+    color:rgba(255,255,255,.8);
+}
+
+.book:after{
+    content:"📚";
+    position:absolute;
+    bottom:16px;
+    font-size:28px;
+}
+
+
+/* STARTER BOOK */
+
+.starter-book{
+    background:
+    linear-gradient(145deg,#111827,#374151);
+    border:1px solid rgba(255,255,255,.2);
+}
+
+
+/* PREMIUM BOOK */
 
 .premium-book{
-    background:linear-gradient(135deg,#064e2c,#15803d);
+    background:
+    linear-gradient(145deg,#064e3b,#15803d,#14532d);
+    border:1px solid rgba(255,255,255,.2);
 }
 
+
+/* =========================
+   CARD BODY
+========================= */
+
 .course-body{
-    padding:30px;
+    padding:28px 32px 32px;
 }
 
 .course-info{
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
     gap:20px;
-    flex-wrap:wrap;
+}
+
+.price-label{
+    color:#94a3b8;
+    font-size:13px;
+    margin-bottom:5px;
 }
 
 .price{
     font-size:32px;
-    font-weight:bold;
-    color:#5b21b6;
+    font-weight:800;
+    color:#4f46e5;
 }
 
 .old-price{
     color:#94a3b8;
     text-decoration:line-through;
-    font-size:18px;
-    margin-left:8px;
+    font-size:17px;
+    margin-left:7px;
+    font-weight:normal;
 }
+
+.discount-badge{
+    display:inline-block;
+    margin-left:8px;
+    padding:4px 8px;
+    border-radius:7px;
+    background:#dcfce7;
+    color:#16a34a;
+    font-size:11px;
+    vertical-align:middle;
+}
+
+
+/* =========================
+   BUY BUTTON
+========================= */
 
 .buy-btn{
     border:none;
-    padding:16px 35px;
+    padding:16px 34px;
+    min-width:190px;
     border-radius:12px;
-    font-size:18px;
+    font-size:16px;
     font-weight:bold;
     color:white;
     cursor:pointer;
-    background:linear-gradient(135deg,#ec4899,#8b5cf6);
+    background:linear-gradient(135deg,#ec4899,#7c3aed);
+    box-shadow:0 10px 22px rgba(124,58,237,.25);
+    transition:.25s;
 }
+
+.buy-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 15px 28px rgba(124,58,237,.35);
+}
+
+
+/* =========================
+   FEATURES
+========================= */
 
 .features{
     margin-top:25px;
@@ -197,22 +390,35 @@ header{
     border-top:1px solid #e5e7eb;
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:12px;
+    gap:14px;
 }
 
 .feature{
-    background:#f5f3ff;
-    padding:14px;
-    border-radius:12px;
+    background:#f8fafc;
+    border:1px solid #eef2f7;
+    padding:16px 12px;
+    border-radius:14px;
     text-align:center;
     color:#475569;
+    font-size:14px;
 }
+
+.feature-icon{
+    display:block;
+    font-size:22px;
+    margin-bottom:7px;
+}
+
+
+/* =========================
+   MODAL
+========================= */
 
 .modal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(15,23,42,.65);
+    background:rgba(15,23,42,.70);
     z-index:5000;
     align-items:center;
     justify-content:center;
@@ -225,28 +431,35 @@ header{
 
 .popup{
     width:100%;
-    max-width:450px;
+    max-width:460px;
     background:white;
-    border-radius:22px;
+    border-radius:24px;
     padding:28px;
     position:relative;
+    box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+
+.popup h2{
+    color:#172033;
 }
 
 .close{
     position:absolute;
-    right:18px;
-    top:12px;
+    right:17px;
+    top:10px;
     border:none;
     background:none;
-    font-size:28px;
+    font-size:30px;
     cursor:pointer;
+    color:#64748b;
 }
 
 .selected{
     margin:20px 0;
-    padding:15px;
-    background:#f5f3ff;
-    border-radius:12px;
+    padding:16px;
+    background:linear-gradient(135deg,#f5f3ff,#faf5ff);
+    border-radius:14px;
+    border:1px solid #e9d5ff;
 }
 
 .coupon-row{
@@ -259,6 +472,11 @@ header{
     padding:14px;
     border:1px solid #d1d5db;
     border-radius:10px;
+    outline:none;
+}
+
+.coupon-row input:focus{
+    border-color:#7c3aed;
 }
 
 .apply-btn{
@@ -275,13 +493,14 @@ header{
     margin-top:20px;
     background:#f8fafc;
     padding:18px;
-    border-radius:12px;
+    border-radius:14px;
 }
 
 .row{
     display:flex;
     justify-content:space-between;
     margin-bottom:14px;
+    color:#475569;
 }
 
 .final{
@@ -289,6 +508,7 @@ header{
     padding-top:15px;
     font-size:20px;
     font-weight:bold;
+    color:#172033;
 }
 
 .pay-btn{
@@ -298,43 +518,100 @@ header{
     border:none;
     border-radius:12px;
     color:white;
-    background:#6526d7;
-    font-size:17px;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    font-size:16px;
     font-weight:bold;
     cursor:pointer;
 }
 
+
+/* =========================
+   MESSAGE
+========================= */
+
 .message{
     margin-top:10px;
     min-height:20px;
+    font-size:14px;
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:700px){
 
     header{
         padding:0 15px;
+        height:64px;
     }
 
     .logo{
         font-size:15px;
+        gap:7px;
+    }
+
+    .logo-icon{
+        width:38px;
+        height:38px;
+        border-radius:10px;
+    }
+
+    .login-btn,
+    .dashboard-btn{
+        padding:9px 12px;
+        font-size:12px;
+    }
+
+    .hero{
+        padding:35px 18px 18px;
     }
 
     .hero h1{
-        font-size:30px;
+        font-size:29px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .courses{
+        padding:15px 14px 50px;
+    }
+
+    .course-card{
+        border-radius:20px;
     }
 
     .course-top{
+        min-height:360px;
+        padding:28px 20px;
         flex-direction:column;
         text-align:center;
-        padding:35px 20px;
+        justify-content:center;
     }
 
     .course-top h2{
-        font-size:32px;
+        font-size:30px;
+    }
+
+    .course-top p{
+        font-size:14px;
+    }
+
+    .book{
+        width:145px;
+        height:190px;
+        font-size:20px;
+    }
+
+    .course-body{
+        padding:22px 18px;
     }
 
     .course-info{
-        flex-direction:column-reverse;
+        flex-direction:column;
         align-items:stretch;
     }
 
@@ -344,6 +621,10 @@ header{
 
     .features{
         grid-template-columns:1fr;
+    }
+
+    .feature{
+        padding:14px;
     }
 
     .coupon-row{
@@ -357,25 +638,46 @@ header{
 }
 
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
     <a href="course.html" class="logo">
+
         <div class="logo-icon">📚</div>
+
         <span>Padho Aur Kamao</span>
+
     </a>
+
 
     <div class="nav-buttons">
 
-        <a href="login.html" class="login-btn" id="loginLink">
+        <a href="login.html"
+           class="login-btn"
+           id="loginLink">
+
             Login
+
         </a>
 
-        <a href="dashboard.html" class="dashboard-btn" id="dashboardLink" style="display:none;">
+
+        <a href="dashboard.html"
+           class="dashboard-btn"
+           id="dashboardLink"
+           style="display:none;">
+
             Dashboard
+
         </a>
 
     </div>
@@ -383,199 +685,399 @@ header{
 </header>
 
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
-    <h1>Choose Your Perfect Course</h1>
+    <div class="hero-badge">
+        📚 PADHO • SEEKHO • KAMAO
+    </div>
+
+    <h1>
+        Choose Your Perfect
+        <span>Course Package</span>
+    </h1>
 
     <p>
-        पहले Course देखें • फिर Buy करें • सीखें और Earn करें
+        अपने लक्ष्य के अनुसार Course चुनें,
+        सीखें और अपने भविष्य को बेहतर बनाएं।
     </p>
 
 </section>
 
 
+
+<!-- =========================
+     COURSE PACKAGES
+========================= -->
+
 <main class="courses">
 
 
-    <!-- STARTER -->
+<!-- =========================
+     PACKAGE 1
+========================= -->
 
-    <section class="course-card">
+<section class="course-card">
 
-        <div class="course-top starter">
+    <div class="course-top starter">
+
+
+        <div>
+
+            <div class="package-badge">
+                STARTER PACKAGE
+            </div>
+
+
+            <h2>Study & Skill</h2>
+
+
+            <p>
+                Learning • Communication<br>
+                Maths • Reasoning • Hindi
+            </p>
+
+
+            <div class="rating">
+
+                <span>★★★★★</span>
+
+                &nbsp; 4.8 Rating
+
+                &nbsp; • &nbsp;
+
+                📚 2 Courses
+
+            </div>
+
+        </div>
+
+
+
+        <div class="book starter-book">
+
+            STUDY
+            <br>
+            &
+            <br>
+            SKILL
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="course-body">
+
+
+        <div class="course-info">
+
 
             <div>
 
-                <h2>Study & Skill</h2>
+                <div class="price-label">
+                    SPECIAL OFFER PRICE
+                </div>
 
-                <p>
-                    Learning • Communication<br>
-                    Maths • Reasoning • Hindi
-                </p>
+
+                <div class="price">
+
+                    ₹199
+
+                    <span class="old-price">
+                        ₹299
+                    </span>
+
+
+                    <span class="discount-badge">
+                        SAVE ₹100
+                    </span>
+
+                </div>
 
             </div>
 
-            <div class="book">
-                STUDY<br>
-                &<br>
-                SKILL
+
+
+            <button
+                class="buy-btn"
+                onclick="buyCourse(
+                'study-skill-starter',
+                'Study & Skill Starter',
+                199
+                )">
+
+                🛒 Buy Now
+
+            </button>
+
+
+        </div>
+
+
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <span class="feature-icon">
+                    📖
+                </span>
+
+                Study Material
+
+            </div>
+
+
+
+            <div class="feature">
+
+                <span class="feature-icon">
+                    🎯
+                </span>
+
+                Skill Learning
+
+            </div>
+
+
+
+            <div class="feature">
+
+                <span class="feature-icon">
+                    📚
+                </span>
+
+                2 Courses Access
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PACKAGE 2
+========================= -->
+
+<section class="course-card">
+
+    <div class="course-top premium">
+
+
+        <div>
+
+            <div class="package-badge">
+                PREMIUM PACKAGE
+            </div>
+
+
+            <h2>Skill & Success</h2>
+
+
+            <p>
+                Competitive Preparation<br>
+                Skills • Growth • Success
+            </p>
+
+
+            <div class="rating">
+
+                <span>★★★★★</span>
+
+                &nbsp; 4.9 Rating
+
+                &nbsp; • &nbsp;
+
+                🎓 Premium Access
+
             </div>
 
         </div>
 
 
-        <div class="course-body">
 
-            <div class="course-info">
+        <div class="book premium-book">
 
-                <div>
-                    <div class="price">
-                        ₹199
-                        <span class="old-price">₹299</span>
-                    </div>
-                </div>
-
-                <button
-                    class="buy-btn"
-                    onclick="buyCourse(
-                    'study-skill-starter',
-                    'Study & Skill Starter',
-                    199
-                    )">
-
-                    ❯ Buy Now
-
-                </button>
-
-            </div>
-
-
-            <div class="features">
-
-                <div class="feature">
-                    📖 Study Material
-                </div>
-
-                <div class="feature">
-                    🎯 Skill Learning
-                </div>
-
-                <div class="feature">
-                    📚 2 Courses Access
-                </div>
-
-            </div>
+            SKILL
+            <br>
+            &
+            <br>
+            SUCCESS
 
         </div>
 
-    </section>
+
+    </div>
 
 
 
-    <!-- PREMIUM -->
+    <div class="course-body">
 
-    <section class="course-card">
 
-        <div class="course-top premium">
+        <div class="course-info">
+
 
             <div>
 
-                <h2>Skill & Success</h2>
+                <div class="price-label">
+                    SPECIAL OFFER PRICE
+                </div>
 
-                <p>
-                    Competitive Preparation<br>
-                    Skills • Growth • Success
-                </p>
+
+                <div class="price">
+
+                    ₹399
+
+                    <span class="old-price">
+                        ₹499
+                    </span>
+
+
+                    <span class="discount-badge">
+                        SAVE ₹100
+                    </span>
+
+                </div>
 
             </div>
 
-            <div class="book premium-book">
-                SKILL<br>
-                &<br>
-                SUCCESS
-            </div>
+
+
+            <button
+                class="buy-btn"
+                onclick="buyCourse(
+                'skill-success-premium',
+                'Skill & Success Premium',
+                399
+                )">
+
+                🛒 Buy Now
+
+            </button>
+
 
         </div>
 
 
-        <div class="course-body">
 
-            <div class="course-info">
+        <div class="features">
 
-                <div>
-                    <div class="price">
-                        ₹399
-                        <span class="old-price">₹499</span>
-                    </div>
-                </div>
 
-                <button
-                    class="buy-btn"
-                    onclick="buyCourse(
-                    'skill-success-premium',
-                    'Skill & Success Premium',
-                    399
-                    )">
+            <div class="feature">
 
-                    ❯ Buy Now
+                <span class="feature-icon">
+                    🎓
+                </span>
 
-                </button>
+                Competitive Preparation
 
             </div>
 
 
-            <div class="features">
 
-                <div class="feature">
-                    🎓 Competitive Preparation
-                </div>
+            <div class="feature">
 
-                <div class="feature">
-                    🚀 Premium Skills
-                </div>
+                <span class="feature-icon">
+                    🚀
+                </span>
 
-                <div class="feature">
-                    ♾️ Full Course Access
-                </div>
+                Premium Skills
 
             </div>
+
+
+
+            <div class="feature">
+
+                <span class="feature-icon">
+                    ♾️
+                </span>
+
+                Full Course Access
+
+            </div>
+
 
         </div>
 
-    </section>
+
+    </div>
+
+</section>
+
 
 </main>
 
 
 
-<!-- PAYMENT / COUPON -->
+<!-- =========================
+     PAYMENT POPUP
+========================= -->
 
 <div class="modal" id="modal">
 
+
     <div class="popup">
 
-        <button class="close" onclick="closePopup()">×</button>
 
-        <h2>🎁 Apply Coupon</h2>
+        <button
+            class="close"
+            onclick="closePopup()">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            🎁 Apply Coupon
+        </h2>
+
+
 
         <div class="selected">
 
+
             <strong id="selectedName"></strong>
+
 
             <div
                 id="selectedPrice"
-                style="margin-top:8px;font-size:22px;color:#6526d7;font-weight:bold;">
+                style="
+                margin-top:8px;
+                font-size:22px;
+                color:#6526d7;
+                font-weight:bold;">
 
             </div>
+
 
         </div>
 
 
+
         <div class="coupon-row">
+
 
             <input
                 type="text"
                 id="coupon"
                 placeholder="Enter Coupon Code">
+
 
             <button
                 class="apply-btn"
@@ -585,7 +1087,9 @@ header{
 
             </button>
 
+
         </div>
+
 
 
         <div
@@ -595,24 +1099,47 @@ header{
         </div>
 
 
+
         <div class="price-box">
 
-            <div class="row">
-                <span>Original Price</span>
-                <span id="original">₹0</span>
-            </div>
 
             <div class="row">
-                <span>Discount</span>
-                <span id="discount">₹0</span>
+
+                <span>Original Price</span>
+
+                <span id="original">
+                    ₹0
+                </span>
+
             </div>
+
+
+
+            <div class="row">
+
+                <span>Discount</span>
+
+                <span id="discount">
+                    ₹0
+                </span>
+
+            </div>
+
+
 
             <div class="row final">
+
                 <span>Payable Amount</span>
-                <span id="finalPrice">₹0</span>
+
+                <span id="finalPrice">
+                    ₹0
+                </span>
+
             </div>
 
+
         </div>
+
 
 
         <button
@@ -624,31 +1151,44 @@ header{
 
         </button>
 
+
     </div>
+
 
 </div>
 
 
 
+<!-- =========================
+     FIREBASE SCRIPT
+========================= -->
+
 <script type="module">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
 
 import {
     getAuth,
     onAuthStateChanged
 }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
 
 import {
     getFirestore,
     doc,
-    getDoc,
     setDoc,
     serverTimestamp
 }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
 const firebaseConfig = {
@@ -668,11 +1208,17 @@ const firebaseConfig = {
 };
 
 
-const app = initializeApp(firebaseConfig);
+const app =
+initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
 
-const db = getFirestore(app);
+const auth =
+getAuth(app);
+
+
+const db =
+getFirestore(app);
+
 
 
 let currentUser = null;
@@ -682,35 +1228,62 @@ let selectedCourse = null;
 let finalAmount = 0;
 
 
+
+/* =========================
+   LOGIN CHECK
+========================= */
+
 onAuthStateChanged(auth,user=>{
+
 
     currentUser=user;
 
+
     if(user){
 
-        document.getElementById("loginLink").style.display="none";
+        document
+        .getElementById("loginLink")
+        .style.display="none";
 
-        document.getElementById("dashboardLink").style.display="inline-block";
+
+        document
+        .getElementById("dashboardLink")
+        .style.display="inline-block";
+
 
         checkPendingCourse();
 
     }
 
+
 });
 
 
+
+/* =========================
+   PENDING COURSE
+========================= */
+
 function checkPendingCourse(){
+
 
     const pending =
     localStorage.getItem("pendingCourse");
 
+
     if(pending){
+
 
         try{
 
-            const data=JSON.parse(pending);
 
-            localStorage.removeItem("pendingCourse");
+            const data =
+            JSON.parse(pending);
+
+
+            localStorage
+            .removeItem("pendingCourse");
+
 
             buyCourse(
                 data.id,
@@ -718,67 +1291,127 @@ function checkPendingCourse(){
                 data.price
             );
 
+
         }
-        catch(error){}
+
+        catch(error){
+
+            console.log(error);
+
+        }
+
 
     }
+
 
 }
 
 
-window.buyCourse = function(id,name,price){
+
+/* =========================
+   BUY COURSE
+========================= */
+
+window.buyCourse =
+function(id,name,price){
+
 
     if(!currentUser){
+
 
         localStorage.setItem(
 
             "pendingCourse",
 
             JSON.stringify({
+
                 id:id,
+
                 name:name,
+
                 price:price
+
             })
 
         );
 
-        window.location.href="login.html";
+
+        window.location.href=
+        "login.html";
+
 
         return;
 
     }
 
 
+
     selectedCourse={
+
         id:id,
+
         name:name,
+
         price:price
+
     };
 
 
     finalAmount=price;
 
 
-    document.getElementById("selectedName").textContent=name;
 
-    document.getElementById("selectedPrice").textContent=
+    document
+    .getElementById("selectedName")
+    .textContent=name;
+
+
+
+    document
+    .getElementById("selectedPrice")
+    .textContent=
     "₹"+price;
 
-    document.getElementById("original").textContent=
+
+
+    document
+    .getElementById("original")
+    .textContent=
     "₹"+price;
 
-    document.getElementById("discount").textContent=
+
+
+    document
+    .getElementById("discount")
+    .textContent=
     "₹0";
 
-    document.getElementById("finalPrice").textContent=
+
+
+    document
+    .getElementById("finalPrice")
+    .textContent=
     "₹"+price;
 
-    document.getElementById("coupon").value="";
 
-    document.getElementById("message").textContent="";
 
-    document.getElementById("payButton").textContent=
+    document
+    .getElementById("coupon")
+    .value="";
+
+
+
+    document
+    .getElementById("message")
+    .textContent="";
+
+
+
+    document
+    .getElementById("payButton")
+    .textContent=
     "Proceed to Payment";
+
 
 
     document
@@ -786,22 +1419,39 @@ window.buyCourse = function(id,name,price){
     .classList
     .add("active");
 
+
 };
 
 
-window.closePopup=function(){
+
+/* =========================
+   CLOSE POPUP
+========================= */
+
+window.closePopup=
+function(){
+
 
     document
     .getElementById("modal")
     .classList
     .remove("active");
 
+
 };
 
 
-window.applyCoupon=function(){
+
+/* =========================
+   APPLY COUPON
+========================= */
+
+window.applyCoupon=
+function(){
+
 
     const code=
+
     document
     .getElementById("coupon")
     .value
@@ -809,19 +1459,33 @@ window.applyCoupon=function(){
     .toUpperCase();
 
 
+
     const message=
+
     document
     .getElementById("message");
 
 
+
+    if(!selectedCourse){
+
+        return;
+
+    }
+
+
+
     if(code==="FREE100"){
 
+
         finalAmount=0;
+
 
         document
         .getElementById("discount")
         .textContent=
         "-₹"+selectedCourse.price;
+
 
 
         document
@@ -830,27 +1494,38 @@ window.applyCoupon=function(){
         "₹0";
 
 
+
         document
         .getElementById("payButton")
         .textContent=
         "🎉 Get Course Free";
 
 
+
         message.textContent=
         "🎉 FREE100 Coupon Applied Successfully!";
 
 
-        message.style.color="#16a34a";
+        message.style.color=
+        "#16a34a";
+
 
     }
 
+
     else{
 
-        finalAmount=selectedCourse.price;
+
+        finalAmount=
+        selectedCourse.price;
+
+
 
         document
         .getElementById("discount")
-        .textContent="₹0";
+        .textContent=
+        "₹0";
+
 
 
         document
@@ -859,75 +1534,130 @@ window.applyCoupon=function(){
         "₹"+selectedCourse.price;
 
 
+
+        document
+        .getElementById("payButton")
+        .textContent=
+        "Proceed to Payment";
+
+
+
         message.textContent=
         "❌ Invalid Coupon Code";
 
 
-        message.style.color="#dc2626";
+        message.style.color=
+        "#dc2626";
+
 
     }
+
 
 };
 
 
-window.checkout=async function(){
 
-    if(!selectedCourse || !currentUser) return;
+/* =========================
+   CHECKOUT
+========================= */
 
+window.checkout=
+async function(){
+
+
+    if(
+        !selectedCourse ||
+        !currentUser
+    ){
+        return;
+    }
+
+
+
+    /* PAID COURSE */
 
     if(finalAmount>0){
+
 
         localStorage.setItem(
 
             "pendingCourseId",
+
             selectedCourse.id
 
         );
 
+
         localStorage.setItem(
 
             "pendingCourseName",
+
             selectedCourse.name
 
         );
 
+
         localStorage.setItem(
 
             "pendingCoursePrice",
+
             selectedCourse.price
 
         );
 
 
+
         window.location.href=
+
         "payment.html?course="+
-        encodeURIComponent(selectedCourse.id)+
+
+        encodeURIComponent(
+            selectedCourse.id
+        )
+
+        +
+
         "&price="+
-        encodeURIComponent(finalAmount);
+
+        encodeURIComponent(
+            finalAmount
+        );
+
 
         return;
 
     }
 
 
+
+    /* FREE COURSE */
+
     const button=
-    document.getElementById("payButton");
+
+    document
+    .getElementById("payButton");
+
 
 
     button.disabled=true;
+
 
     button.textContent=
     "Activating Course...";
 
 
+
     try{
 
+
         const userRef=
+
         doc(
             db,
             "users",
             currentUser.uid
         );
+
 
 
         await setDoc(
@@ -937,32 +1667,52 @@ window.checkout=async function(){
             {
 
                 name:
+
                 currentUser.displayName ||
-                currentUser.email.split("@")[0],
+
+                currentUser.email
+                .split("@")[0],
+
 
                 email:
                 currentUser.email,
 
-                referralActive:true,
+
+                referralActive:
+                true,
+
 
                 createdAt:
                 serverTimestamp()
 
+
             },
 
-            {merge:true}
+
+            {
+                merge:true
+            }
 
         );
+
 
 
         const courseRef=
+
         doc(
+
             db,
+
             "users",
+
             currentUser.uid,
+
             "courses",
+
             selectedCourse.id
+
         );
+
 
 
         await setDoc(
@@ -971,20 +1721,30 @@ window.checkout=async function(){
 
             {
 
-                courseId:selectedCourse.id,
+                courseId:
+                selectedCourse.id,
 
-                courseName:selectedCourse.name,
 
-                paidAmount:0,
+                courseName:
+                selectedCourse.name,
 
-                status:"active",
+
+                paidAmount:
+                0,
+
+
+                status:
+                "active",
+
 
                 enrolledAt:
                 serverTimestamp()
 
+
             }
 
         );
+
 
 
         window.location.href=
@@ -993,22 +1753,34 @@ window.checkout=async function(){
 
     }
 
+
     catch(error){
+
 
         console.error(error);
 
-        alert("Course activate नहीं हो पाया।");
+
+        alert(
+            "Course activate नहीं हो पाया। कृपया दोबारा कोशिश करें।"
+        );
+
 
         button.disabled=false;
+
 
         button.textContent=
         "🎉 Get Course Free";
 
+
     }
+
 
 };
 
+
 </script>
 
+
 </body>
+
 </html>
