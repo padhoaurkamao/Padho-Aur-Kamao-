@@ -2,6 +2,7 @@
 <html lang="hi">
 
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -9,196 +10,591 @@ content="width=device-width,initial-scale=1">
 
 <title>Buy Course - Padho Aur Kamao</title>
 
-<script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
-
 <style>
 
+*{
+    box-sizing:border-box;
+}
+
 body{
-margin:0;
-font-family:Arial;
-background:#f4f7fb;
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
 }
 
 header{
-background:#2563eb;
-color:white;
-padding:18px;
-font-size:20px;
+    background:#2563eb;
+    color:white;
+    padding:18px;
+    font-size:20px;
+    font-weight:bold;
 }
 
 main{
-max-width:600px;
-margin:auto;
-padding:20px;
+    max-width:650px;
+    margin:auto;
+    padding:20px;
 }
 
 .box{
-background:white;
-padding:25px;
-border-radius:16px;
-box-shadow:0 3px 12px #0002;
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 3px 12px #0002;
 }
 
-button{
-width:100%;
-padding:15px;
-font-size:18px;
-border:none;
-border-radius:10px;
-background:#16a34a;
-color:white;
-cursor:pointer;
+#title{
+    margin-top:0;
+}
+
+#description{
+    color:#64748b;
+    line-height:1.6;
+}
+
+.price-box{
+    margin:20px 0;
+    padding:18px;
+    background:#f8fafc;
+    border-radius:12px;
+}
+
+.old-price{
+    font-size:14px;
+    color:#777;
+    margin-bottom:8px;
+}
+
+.final-price{
+    font-size:28px;
+    font-weight:bold;
+    color:#16a34a;
+}
+
+.discount{
+    margin-top:8px;
+    color:#16a34a;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.section{
+    margin-top:22px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+}
+
+input:focus{
+    border-color:#2563eb;
+}
+
+.coupon-row{
+    display:flex;
+    gap:10px;
+}
+
+.coupon-row input{
+    flex:1;
+}
+
+.apply-btn{
+    width:auto;
+    background:#2563eb;
+    padding:0 18px;
+    font-size:14px;
+    margin-top:0;
+}
+
+.coupon-message{
+    margin-top:8px;
+    font-size:13px;
+}
+
+.payment-box{
+    margin-top:20px;
+    padding:20px;
+    border:1px solid #dbeafe;
+    background:#eff6ff;
+    border-radius:14px;
+}
+
+.upi-id{
+    font-size:20px;
+    font-weight:bold;
+    color:#2563eb;
+    margin:12px 0;
+    word-break:break-all;
+}
+
+.note{
+    font-size:13px;
+    color:#475569;
+    line-height:1.6;
+}
+
+#buyBtn{
+    width:100%;
+    padding:15px;
+    font-size:17px;
+    border:none;
+    border-radius:10px;
+    background:#16a34a;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:15px;
 }
 
 button:disabled{
-background:#999;
+    background:#999 !important;
+    cursor:not-allowed;
+}
+
+#message{
+    text-align:center;
+    margin-top:15px;
+    font-size:14px;
+    color:#475569;
+}
+
+.success{
+    color:#16a34a !important;
+}
+
+.error{
+    color:#dc2626 !important;
+}
+
+@media(max-width:500px){
+
+    main{
+        padding:12px;
+    }
+
+    .box{
+        padding:18px;
+    }
+
+    .coupon-row{
+        flex-direction:column;
+    }
+
+    .apply-btn{
+        width:100%;
+        padding:14px;
+    }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
+
 <header>
+
 📚 Padho Aur Kamao
+
 </header>
+
 
 <main>
 
+
 <div class="box">
 
+
 <h2 id="title">
+
 ⏳ Course Loading...
+
 </h2>
+
 
 <p id="description"></p>
 
-<h2 id="price"></h2>
 
-<br>
 
-<button id="buyBtn">
-💳 Buy Now
+<div class="price-box">
+
+
+<div
+class="old-price"
+id="originalPrice">
+
+Original Price: ₹0
+
+</div>
+
+
+<div
+class="final-price"
+id="price">
+
+Payable Amount: ₹0
+
+</div>
+
+
+<div
+class="discount"
+id="discountText">
+
+</div>
+
+
+</div>
+
+
+
+<!-- COUPON CODE -->
+
+<div class="section">
+
+
+<label>
+
+🎟️ Coupon Code
+
+</label>
+
+
+<div class="coupon-row">
+
+
+<input
+type="text"
+id="couponCode"
+placeholder="Coupon Code डालें"
+style="text-transform:uppercase">
+
+
+<button
+type="button"
+class="apply-btn"
+id="applyCouponBtn">
+
+Apply
+
 </button>
+
+
+</div>
+
+
+<div
+class="coupon-message"
+id="couponMessage">
+
+</div>
+
+
+</div>
+
+
+
+<!-- UPI PAYMENT -->
+
+<div class="payment-box">
+
+
+<h3>
+
+📱 UPI Payment
+
+</h3>
+
+
+<p class="note">
+
+नीचे दिए गए UPI ID पर पहले Payment करें।
+
+</p>
+
+
+<div
+class="upi-id"
+id="upiId">
+
+9555838771-3@ybl
+
+</div>
+
+
+<p class="note">
+
+Payment करने के बाद अपना UTR / Transaction ID नीचे भरें और Payment Submit करें।
+
+</p>
+
+
+</div>
+
+
+
+<div class="section">
+
+
+<label>
+
+UTR / Transaction ID
+
+</label>
+
+
+<input
+type="text"
+id="utr"
+placeholder="Payment का UTR / Transaction ID">
+
+
+</div>
+
+
+
+<button
+id="buyBtn">
+
+💳 Payment Submit करें
+
+</button>
+
 
 <p id="message"></p>
 
+
 </div>
+
 
 </main>
 
 
+
 <script type="module">
 
+
 import {
+
 initializeApp
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
+
 import {
+
 getAuth,
 onAuthStateChanged
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
+
 import {
+
 getFirestore,
+
 doc,
-getDoc
+getDoc,
+
+collection,
+addDoc,
+
+query,
+where,
+getDocs,
+
+serverTimestamp
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-/* FIREBASE CONFIG */
+
+/* =================================
+   FIREBASE CONFIG
+================================= */
 
 const firebaseConfig={
 
-apiKey:"YOUR_API_KEY",
+apiKey:
+"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
 authDomain:
-"YOUR_PROJECT.firebaseapp.com",
+"padho-aur-kamao-3eeae.firebaseapp.com",
 
 projectId:
-"YOUR_PROJECT_ID",
+"padho-aur-kamao-3eeae",
 
 storageBucket:
-"YOUR_PROJECT.firebasestorage.app",
+"padho-aur-kamao-3eeae.firebasestorage.app",
 
 messagingSenderId:
-"YOUR_SENDER_ID",
+"670063905617",
 
 appId:
-"YOUR_APP_ID"
+"1:670063905617:web:9b3a7e62fdeea14fbfa170"
 
 };
 
 
+
 const app=
-initializeApp(firebaseConfig);
+
+initializeApp(
+firebaseConfig
+);
+
 
 
 const auth=
-getAuth(app);
+
+getAuth(
+app
+);
+
 
 
 const db=
-getFirestore(app);
+
+getFirestore(
+app
+);
 
 
-/* COURSE ID */
+
+/* =================================
+   UPI ID
+================================= */
+
+const UPI_ID=
+
+"9555838771-3@ybl";
+
+
+document
+.getElementById(
+"upiId"
+)
+.innerText=
+UPI_ID;
+
+
+
+/* =================================
+   COURSE ID
+================================= */
 
 const params=
+
 new URLSearchParams(
 location.search
 );
 
 
+
 const courseId=
-params.get("id");
+
+params.get(
+"id"
+);
 
 
-let currentUser=null;
 
-let courseData=null;
+let currentUser=
+null;
 
 
-/* CASHFREE MODE */
+let currentUserData=
+null;
 
-const cashfree=
-Cashfree({
 
-mode:"sandbox"
+let courseData=
+null;
 
-});
 
+let originalPrice=
+0;
+
+
+let finalAmount=
+0;
+
+
+let appliedCoupon=
+null;
+
+
+let discountAmount=
+0;
+
+
+
+/* =================================
+   AUTH CHECK
+================================= */
 
 onAuthStateChanged(
+
 auth,
 
 async user=>{
 
 
-if(!user){
+if(
+!user
+){
 
-location.href="login.html";
+location.href=
+"login.html";
 
 return;
 
 }
 
 
-currentUser=user;
+currentUser=
+user;
 
 
-if(!courseId){
 
-document.getElementById("title")
+if(
+!courseId
+){
+
+document
+.getElementById(
+"title"
+)
 .innerText=
 "❌ Course ID नहीं मिला";
 
@@ -207,23 +603,60 @@ return;
 }
 
 
-const courseRef=
+
+try{
+
+
+/* LOAD USER */
+
+const userSnap=
+
+await getDoc(
+
+doc(
+db,
+"users",
+currentUser.uid
+)
+
+);
+
+
+if(
+userSnap.exists()
+){
+
+currentUserData=
+userSnap.data();
+
+}
+
+
+
+/* LOAD COURSE */
+
+const courseSnap=
+
+await getDoc(
+
 doc(
 db,
 "courses",
 courseId
+)
+
 );
 
 
-const courseSnap=
-await getDoc(
-courseRef
-);
 
+if(
+!courseSnap.exists()
+){
 
-if(!courseSnap.exists()){
-
-document.getElementById("title")
+document
+.getElementById(
+"title"
+)
 .innerText=
 "❌ Course नहीं मिला";
 
@@ -232,42 +665,514 @@ return;
 }
 
 
+
 courseData=
+
 courseSnap.data();
 
 
-document.getElementById("title")
-.innerText=
-"🎓 "+courseData.title;
+
+originalPrice=
+
+Number(
+courseData.price||0
+);
 
 
-document.getElementById("description")
-.innerText=
-courseData.description || "";
 
+finalAmount=
 
-/*
-Firestore में price field होना चाहिए
+originalPrice;
 
-Example:
-
-price: 99
-
-*/
-
-document.getElementById("price")
-.innerText=
-"₹ "+courseData.price;
-
-
-});
-
-
-/* BUY BUTTON */
 
 
 document
-.getElementById("buyBtn")
+.getElementById(
+"title"
+)
+.innerText=
+"🎓 "+(
+courseData.title||
+"Course"
+);
+
+
+
+document
+.getElementById(
+"description"
+)
+.innerText=
+courseData.description||
+"";
+
+
+
+updatePrice();
+
+
+}
+catch(
+error
+){
+
+
+console.error(
+error
+);
+
+
+document
+.getElementById(
+"title"
+)
+.innerText=
+"❌ Course Load Error";
+
+
+}
+
+}
+
+);
+
+
+
+/* =================================
+   UPDATE PRICE
+================================= */
+
+function updatePrice(){
+
+
+document
+.getElementById(
+"originalPrice"
+)
+.innerText=
+"Original Price: ₹"+
+originalPrice.toLocaleString(
+"en-IN"
+);
+
+
+
+document
+.getElementById(
+"price"
+)
+.innerText=
+"Payable Amount: ₹"+
+finalAmount.toLocaleString(
+"en-IN"
+);
+
+
+
+if(
+discountAmount>0
+){
+
+document
+.getElementById(
+"discountText"
+)
+.innerText=
+"🎉 You Save ₹"+
+discountAmount.toLocaleString(
+"en-IN"
+);
+
+}
+else{
+
+document
+.getElementById(
+"discountText"
+)
+.innerText=
+"";
+
+}
+
+
+}
+
+
+
+/* =================================
+   APPLY COUPON
+================================= */
+
+document
+.getElementById(
+"applyCouponBtn"
+)
+.addEventListener(
+
+"click",
+
+async()=>{
+
+
+const couponInput=
+
+document
+.getElementById(
+"couponCode"
+);
+
+
+const couponCode=
+
+couponInput.value
+.trim()
+.toUpperCase();
+
+
+
+const message=
+
+document
+.getElementById(
+"couponMessage"
+);
+
+
+
+message.className=
+"coupon-message";
+
+
+message.innerText=
+"";
+
+
+
+if(
+!couponCode
+){
+
+message
+.classList
+.add(
+"error"
+);
+
+
+message.innerText=
+"Coupon Code डालें।";
+
+return;
+
+}
+
+
+
+if(
+!courseData
+){
+
+return;
+
+}
+
+
+try{
+
+
+message.innerText=
+"Checking Coupon...";
+
+
+
+const couponSnap=
+
+await getDoc(
+
+doc(
+db,
+"coupons",
+couponCode
+)
+
+);
+
+
+
+if(
+!couponSnap.exists()
+){
+
+appliedCoupon=
+null;
+
+discountAmount=
+0;
+
+finalAmount=
+originalPrice;
+
+
+updatePrice();
+
+
+message
+.classList
+.add(
+"error"
+);
+
+
+message.innerText=
+"❌ Invalid Coupon Code";
+
+return;
+
+}
+
+
+
+const coupon=
+
+couponSnap.data();
+
+
+
+if(
+coupon.active===false
+){
+
+message
+.classList
+.add(
+"error"
+);
+
+
+message.innerText=
+"❌ यह Coupon अभी Active नहीं है।";
+
+return;
+
+}
+
+
+
+/* MINIMUM AMOUNT */
+
+const minAmount=
+
+Number(
+coupon.minAmount||
+0
+);
+
+
+
+if(
+originalPrice<
+minAmount
+){
+
+message
+.classList
+.add(
+"error"
+);
+
+
+message.innerText=
+"❌ इस Coupon के लिए Minimum ₹"+
+minAmount+
+" का Course जरूरी है।";
+
+return;
+
+}
+
+
+
+/* DISCOUNT */
+
+const discountType=
+
+coupon.discountType||
+"percentage";
+
+
+const discountValue=
+
+Number(
+coupon.discountValue||
+0
+);
+
+
+
+if(
+discountValue<=0
+){
+
+message
+.classList
+.add(
+"error"
+);
+
+
+message.innerText=
+"❌ Coupon में सही Discount नहीं है।";
+
+return;
+
+}
+
+
+
+/* PERCENTAGE DISCOUNT */
+
+if(
+discountType===
+"percentage"
+){
+
+discountAmount=
+
+Math.round(
+
+originalPrice*
+discountValue/
+100
+
+);
+
+}
+
+
+
+/* FIXED DISCOUNT */
+
+if(
+discountType===
+"fixed"
+){
+
+discountAmount=
+discountValue;
+
+}
+
+
+
+/* MAX DISCOUNT */
+
+if(
+coupon.maxDiscount
+){
+
+discountAmount=
+
+Math.min(
+
+discountAmount,
+
+Number(
+coupon.maxDiscount
+)
+
+);
+
+}
+
+
+
+/* FINAL SAFETY */
+
+if(
+discountAmount>
+originalPrice
+){
+
+discountAmount=
+originalPrice;
+
+}
+
+
+
+finalAmount=
+
+Math.max(
+
+0,
+
+originalPrice-
+discountAmount
+
+);
+
+
+
+appliedCoupon=
+couponCode;
+
+
+updatePrice();
+
+
+
+message
+.classList
+.add(
+"success"
+);
+
+
+message.innerText=
+"✅ Coupon Applied Successfully!";
+
+
+}
+catch(
+error
+){
+
+
+console.error(
+error
+);
+
+
+message
+.classList
+.add(
+"error"
+);
+
+
+message.innerText=
+"❌ Coupon Check Error";
+
+
+}
+
+
+}
+
+);
+
+
+
+
+/* =================================
+   SUBMIT PAYMENT
+================================= */
+
+document
+.getElementById(
+"buyBtn"
+)
 .addEventListener(
 
 "click",
@@ -281,7 +1186,7 @@ if(
 ){
 
 alert(
-"पहले Login करें"
+"पहले Login करें।"
 );
 
 return;
@@ -289,115 +1194,297 @@ return;
 }
 
 
+
+const utr=
+
+document
+.getElementById(
+"utr"
+)
+.value
+.trim();
+
+
+
+if(
+!utr
+){
+
+alert(
+"Payment करने के बाद UTR / Transaction ID भरें।"
+);
+
+return;
+
+}
+
+
+
 const btn=
-document.getElementById(
+
+document
+.getElementById(
 "buyBtn"
 );
 
 
-btn.disabled=true;
+const message=
 
+document
+.getElementById(
+"message"
+);
 
-btn.innerText=
-"Payment शुरू हो रहा है...";
 
 
 try{
 
 
-/*
-
-IMPORTANT
-
-यह URL बाद में आपकी
-Firebase Function का होगा
-
-*/
-
-const response=
-await fetch(
-
-"https://YOUR_REGION-YOUR_PROJECT.cloudfunctions.net/createCashfreeOrder",
-
-{
-
-method:"POST",
-
-headers:{
-"Content-Type":
-"application/json"
-},
-
-body:
-JSON.stringify({
-
-uid:
-currentUser.uid,
-
-courseId:
-courseId
-
-})
-
-}
-
-);
-
-
-const data=
-await response.json();
-
-
-if(
-!response.ok
-){
-
-throw new Error(
-
-data.error ||
-"Payment order create नहीं हुआ"
-
-);
-
-}
-
-
-/* CASHFREE CHECKOUT */
-
-
-cashfree.checkout({
-
-paymentSessionId:
-data.paymentSessionId,
-
-redirectTarget:
-"_self"
-
-});
-
-
-}
-
-
-catch(error){
-
-
-console.error(error);
-
-
-alert(
-
-"Error: "+
-error.message
-
-);
-
-
-btn.disabled=false;
+btn.disabled=
+true;
 
 
 btn.innerText=
-"💳 Buy Now";
+"Checking...";
+
+
+
+/* CHECK DUPLICATE PENDING PAYMENT */
+
+const paymentQuery=
+
+query(
+
+collection(
+db,
+"paymentRequests"
+),
+
+where(
+"userId",
+"==",
+currentUser.uid
+),
+
+where(
+"courseId",
+"==",
+courseId
+),
+
+where(
+"status",
+"==",
+"pending"
+)
+
+);
+
+
+
+const existingPayments=
+
+await getDocs(
+paymentQuery
+);
+
+
+
+if(
+!existingPayments.empty
+){
+
+alert(
+"इस Course की Payment Request पहले से Pending है। Admin Approval का इंतजार करें।"
+);
+
+
+btn.disabled=
+false;
+
+
+btn.innerText=
+"💳 Payment Submit करें";
+
+return;
+
+}
+
+
+
+/* SUBMIT PAYMENT */
+
+btn.innerText=
+"Submitting...";
+
+
+
+await addDoc(
+
+collection(
+db,
+"paymentRequests"
+),
+
+{
+
+userId:
+currentUser.uid,
+
+
+userName:
+currentUserData?.name||
+currentUser.displayName||
+"Student",
+
+
+email:
+currentUser.email||
+"",
+
+
+courseId:
+courseId,
+
+
+courseName:
+courseData.title||
+"Course",
+
+
+originalAmount:
+originalPrice,
+
+
+discount:
+discountAmount,
+
+
+couponCode:
+appliedCoupon||
+"",
+
+
+amount:
+finalAmount,
+
+
+paymentMethod:
+"UPI",
+
+
+upiId:
+UPI_ID,
+
+
+utr:
+utr,
+
+
+status:
+"pending",
+
+
+createdAt:
+serverTimestamp()
+
+}
+
+);
+
+
+
+message.className=
+"success";
+
+
+message.innerText=
+"🎉 Payment Request Successfully Submit हो गई! Admin Verification के बाद Course Activate होगा।";
+
+
+alert(
+"🎉 Payment Request Submitted Successfully!"
+);
+
+
+
+/* CLEAR UTR */
+
+document
+.getElementById(
+"utr"
+)
+.value=
+"";
+
+
+
+setTimeout(
+
+()=>{
+
+
+location.href=
+"dashboard.html";
+
+
+},
+
+1500
+
+);
+
+
+}
+catch(
+error
+){
+
+
+console.error(
+"Payment Submit Error:",
+error
+);
+
+
+let errorMessage=
+
+"❌ Payment Request Submit नहीं हुई।";
+
+
+if(
+error.code===
+"permission-denied"
+){
+
+errorMessage=
+"❌ Firebase Permission Denied. Firestore Rules Check करें।";
+
+}
+
+
+
+message.className=
+"error";
+
+
+message.innerText=
+errorMessage;
+
+
+alert(
+errorMessage
+);
+
+
+
+btn.disabled=
+false;
+
+
+btn.innerText=
+"💳 Payment Submit करें";
+
 
 }
 
@@ -406,7 +1493,9 @@ btn.innerText=
 
 );
 
+
 </script>
+
 
 </body>
 
