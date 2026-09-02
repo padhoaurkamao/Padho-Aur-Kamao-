@@ -5,380 +5,254 @@
 
 <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Admin Panel - Padho Aur Kamao</title>
-
+<title>Payment - Padho Aur Kamao</title>
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f5f7fb;
-color:#172033;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fb;
+    color:#172033;
 }
 
-button{
-font-family:inherit;
-cursor:pointer;
-}
-
-.hidden{
-display:none !important;
-}
-
-
-/* LOADING */
-
-#loading{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:18px;
-font-weight:bold;
-color:#6526d7;
-}
-
-
-/* ACCESS DENIED */
-
-.denied{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
-}
-
-.denied-box{
-background:white;
-max-width:450px;
-width:100%;
-padding:35px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.denied-box h1{
-margin-bottom:15px;
-}
-
-.denied-box p{
-color:#777;
-margin-bottom:20px;
-}
-
-
-/* HEADER */
-
-.header{
-background:white;
-min-height:72px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:15px 30px;
-border-bottom:1px solid #e8eaf0;
-position:sticky;
-top:0;
-z-index:100;
+.topbar{
+    height:70px;
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    border-bottom:1px solid #e5e7eb;
 }
 
 .brand{
-display:flex;
-align-items:center;
-gap:10px;
-font-size:20px;
-font-weight:bold;
-color:#6526d7;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#6526d7;
+    font-size:20px;
+    font-weight:bold;
 }
 
-.admin-badge{
-background:#f1ebff;
-color:#6526d7;
-padding:8px 12px;
-border-radius:20px;
-font-size:12px;
+.brand-icon{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:linear-gradient(135deg,#4f46e5,#9333ea);
+    color:white;
 }
 
-.logout-top,
-.logout-btn{
-border:0;
-background:#172033;
-color:white;
-padding:10px 16px;
-border-radius:10px;
-font-weight:bold;
+.back-btn{
+    border:none;
+    background:#f1ebff;
+    color:#6526d7;
+    padding:10px 16px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
 }
-
-
-/* CONTENT */
 
 .container{
-max-width:1400px;
-margin:auto;
-padding:30px 20px;
+    max-width:600px;
+    margin:auto;
+    padding:35px 15px 60px;
 }
 
-.title{
-font-size:26px;
-margin-bottom:8px;
+.heading{
+    text-align:center;
+    margin-bottom:25px;
 }
 
-.subtitle{
-color:#777;
-font-size:14px;
-margin-bottom:25px;
+.heading h1{
+    font-size:28px;
+    margin-bottom:10px;
 }
 
-
-/* STATS */
-
-.stats{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:16px;
-margin-bottom:30px;
+.heading p{
+    color:#64748b;
+    font-size:14px;
+    line-height:1.6;
 }
 
-.stat{
-background:white;
-padding:20px;
-border-radius:16px;
-border:1px solid #edf0f5;
+.card{
+    background:#ffffff;
+    border:1px solid #edf0f5;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(15,23,42,.06);
+    margin-bottom:18px;
 }
 
-.stat-label{
-font-size:13px;
-color:#777;
+.card-title{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:18px;
 }
 
-.stat-value{
-font-size:28px;
-font-weight:bold;
-margin-top:10px;
-color:#6526d7;
+.course-name{
+    font-size:18px;
+    font-weight:bold;
+    color:#172033;
 }
 
-
-/* SECTION */
-
-.section{
-margin-top:30px;
+.price-box{
+    margin-top:18px;
+    padding:18px;
+    background:#f8fafc;
+    border-radius:14px;
 }
 
-.section-title{
-font-size:21px;
-margin-bottom:15px;
+.price-row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+    color:#64748b;
 }
 
-
-/* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
+.price-row.total{
+    border-top:1px solid #e5e7eb;
+    padding-top:14px;
+    margin-bottom:0;
+    color:#172033;
+    font-size:20px;
+    font-weight:bold;
 }
 
-
-/* REQUEST CARD */
-
-.request-card{
-background:white;
-border:1px solid #edf0f5;
-border-radius:16px;
-padding:20px;
+.upi-box{
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(135deg,#f5f3ff,#faf5ff);
+    border:1px solid #e9d5ff;
+    border-radius:16px;
 }
 
-.request-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-margin-bottom:15px;
+.upi-icon{
+    font-size:40px;
+    margin-bottom:10px;
 }
 
-.request-name{
-font-size:18px;
-font-weight:bold;
+.upi-id{
+    display:inline-block;
+    margin-top:10px;
+    padding:12px 18px;
+    background:#ffffff;
+    border:1px dashed #7c3aed;
+    border-radius:10px;
+    color:#6526d7;
+    font-weight:bold;
+    font-size:16px;
 }
 
-
-/* STATUS */
-
-.status{
-padding:6px 10px;
-border-radius:20px;
-font-size:11px;
-font-weight:bold;
+.note{
+    margin-top:15px;
+    padding:12px;
+    border-radius:10px;
+    background:#fff7ed;
+    color:#9a3412;
+    font-size:12px;
+    line-height:1.6;
 }
 
-.pending{
-background:#fff3cd;
-color:#b45309;
+.form-group{
+    margin-top:20px;
 }
 
-.approved{
-background:#dcfce7;
-color:#15803d;
+label{
+    display:block;
+    margin-bottom:8px;
+    font-size:13px;
+    font-weight:bold;
 }
 
-.rejected{
-background:#fee2e2;
-color:#dc2626;
+input{
+    width:100%;
+    padding:14px;
+    border:1px solid #dfe3ea;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
 }
 
-
-/* INFO */
-
-.info{
-margin:8px 0;
-font-size:13px;
-color:#596174;
-word-break:break-word;
+input:focus{
+    border-color:#6526d7;
 }
 
-.info strong{
-color:#172033;
+.submit-btn{
+    width:100%;
+    margin-top:22px;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-
-/* ACTIONS */
-
-.actions{
-display:flex;
-gap:10px;
-margin-top:18px;
+.submit-btn:disabled{
+    opacity:.6;
+    cursor:not-allowed;
 }
 
-.approve-btn{
-flex:1;
-border:0;
-padding:11px;
-border-radius:10px;
-background:#16a34a;
-color:white;
-font-weight:bold;
+.loading{
+    display:none;
+    text-align:center;
+    margin-top:15px;
+    color:#6526d7;
+    font-size:13px;
 }
 
-.reject-btn{
-flex:1;
-border:0;
-padding:11px;
-border-radius:10px;
-background:#dc2626;
-color:white;
-font-weight:bold;
+.status-message{
+    display:none;
+    margin-bottom:18px;
+    padding:14px;
+    border-radius:12px;
+    font-size:14px;
 }
 
-
-/* TABLE */
-
-.table-box{
-background:white;
-border-radius:16px;
-border:1px solid #edf0f5;
-overflow:auto;
+.status-message.success{
+    display:block;
+    background:#ecfdf5;
+    color:#166534;
+    border:1px solid #a7f3d0;
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-min-width:700px;
-}
-
-th,
-td{
-padding:15px;
-text-align:left;
-border-bottom:1px solid #eee;
-font-size:13px;
-}
-
-th{
-background:#fafafa;
-color:#777;
-}
-
-
-/* EMPTY */
-
-.empty{
-background:white;
-padding:25px;
-border-radius:14px;
-color:#777;
-text-align:center;
-}
-
-
-/* RESPONSIVE */
-
-@media(max-width:1100px){
-
-.stats{
-grid-template-columns:repeat(3,1fr);
-}
-
-}
-
-@media(max-width:800px){
-
-.stats{
-grid-template-columns:repeat(2,1fr);
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
+.status-message.error{
+    display:block;
+    background:#fef2f2;
+    color:#b91c1c;
+    border:1px solid #fecaca;
 }
 
 @media(max-width:600px){
 
-.header{
-padding:12px 15px;
-}
+    .topbar{
+        padding:0 15px;
+    }
 
-.brand{
-font-size:16px;
-}
+    .brand{
+        font-size:15px;
+    }
 
-.admin-badge{
-display:none;
-}
+    .container{
+        padding:25px 14px 50px;
+    }
 
-.stats{
-grid-template-columns:1fr 1fr;
-gap:10px;
-}
-
-.stat{
-padding:15px;
-}
-
-.stat-value{
-font-size:23px;
-}
-
-.container{
-padding:20px 12px;
-}
-
-.title{
-font-size:22px;
-}
+    .card{
+        padding:20px;
+    }
 
 }
 
@@ -390,993 +264,461 @@ font-size:22px;
 <body>
 
 
-<div id="loading">
+<header class="topbar">
 
-Checking Admin Access...
+    <div class="brand">
 
-</div>
+        <div class="brand-icon">
+            📚
+        </div>
 
+        Padho Aur Kamao
 
-
-<div
-id="accessDenied"
-class="denied hidden">
-
-<div class="denied-box">
-
-<h1>
-🚫 Access Denied
-</h1>
-
-<p>
-आपको इस Admin Panel को access करने की permission नहीं है।
-</p>
-
-<button
-class="logout-btn"
-id="deniedLogout">
-
-Logout
-
-</button>
-
-</div>
-
-</div>
+    </div>
 
 
+    <button
+        class="back-btn"
+        onclick="history.back()">
 
-<div
-id="adminPanel"
-class="hidden">
+        ← Back
 
-
-<header class="header">
-
-<div class="brand">
-
-🛡️ Padho Aur Kamao
-
-<span class="admin-badge">
-
-ADMIN PANEL
-
-</span>
-
-</div>
-
-
-<button
-class="logout-top"
-id="logoutBtn">
-
-Logout
-
-</button>
+    </button>
 
 </header>
 
 
 
-<div class="container">
+<main class="container">
 
 
-<h1 class="title">
+<div class="heading">
 
-Admin Dashboard 👋
+    <h1>📱 Complete Your Payment</h1>
 
-</h1>
-
-
-<p class="subtitle">
-
-KYC, Course Payment और Withdrawal Requests को manage करें।
-
-</p>
-
-
-
-<section class="stats">
-
-
-<div class="stat">
-
-<div class="stat-label">
-
-Total Users
+    <p>
+        UPI से payment करें और Transaction ID भरकर
+        payment request submit करें।
+    </p>
 
 </div>
-
-<div
-class="stat-value"
-id="totalUsers">
-
-0
-
-</div>
-
-</div>
-
-
-
-<div class="stat">
-
-<div class="stat-label">
-
-Pending KYC
-
-</div>
-
-<div
-class="stat-value"
-id="pendingKycCount">
-
-0
-
-</div>
-
-</div>
-
-
-
-<div class="stat">
-
-<div class="stat-label">
-
-Pending Course Payments
-
-</div>
-
-<div
-class="stat-value"
-id="pendingPaymentCount">
-
-0
-
-</div>
-
-</div>
-
-
-
-<div class="stat">
-
-<div class="stat-label">
-
-Pending Withdrawals
-
-</div>
-
-<div
-class="stat-value"
-id="pendingWithdrawalCount">
-
-0
-
-</div>
-
-</div>
-
-
-
-<div class="stat">
-
-<div class="stat-label">
-
-Approved Withdrawals
-
-</div>
-
-<div
-class="stat-value"
-id="approvedWithdrawalCount">
-
-0
-
-</div>
-
-</div>
-
-
-</section>
-
-
-
-<!-- PAYMENT REQUESTS -->
-
-<section class="section">
-
-<h2 class="section-title">
-
-💳 Pending Course Payments
-
-</h2>
 
 
 <div
-class="grid"
-id="paymentList">
-
-<div class="empty">
-
-Loading Payment Requests...
-
-</div>
+    id="statusMessage"
+    class="status-message">
 
 </div>
 
 
-</section>
+
+<!-- COURSE DETAILS -->
+
+<div class="card">
+
+    <div class="card-title">
+        📚 Course Details
+    </div>
 
 
+    <div
+        class="course-name"
+        id="courseName">
 
-<!-- KYC -->
+        Loading Course...
 
-<section class="section">
-
-<h2 class="section-title">
-
-🪪 Pending KYC Requests
-
-</h2>
+    </div>
 
 
-<div
-class="grid"
-id="kycList">
+    <div class="price-box">
 
-<div class="empty">
+        <div class="price-row">
 
-Loading KYC Requests...
+            <span>Course</span>
 
-</div>
+            <span id="coursePrice">
+                ₹0
+            </span>
 
-</div>
-
-
-</section>
+        </div>
 
 
+        <div class="price-row total">
 
-<!-- WITHDRAWALS -->
+            <span>Payable Amount</span>
 
-<section class="section">
+            <span id="finalPrice">
+                ₹0
+            </span>
 
-<h2 class="section-title">
+        </div>
 
-💸 Pending Withdrawal Requests
-
-</h2>
-
-
-<div
-class="grid"
-id="withdrawalList">
-
-<div class="empty">
-
-Loading Withdrawal Requests...
-
-</div>
+    </div>
 
 </div>
 
 
-</section>
+
+<!-- UPI PAYMENT -->
+
+<div class="card">
+
+    <div class="card-title">
+        📱 Pay Using UPI
+    </div>
 
 
+    <div class="upi-box">
 
-<!-- USERS -->
+        <div class="upi-icon">
+            💳
+        </div>
 
-<section class="section">
-
-<h2 class="section-title">
-
-👥 Registered Users
-
-</h2>
-
-
-<div class="table-box">
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>Name</th>
-
-<th>Email</th>
-
-<th>Referral Code</th>
-
-<th>KYC Status</th>
-
-<th>Account</th>
-
-</tr>
-
-</thead>
+        <strong>
+            अपना UPI App खोलें और नीचे दिए गए UPI ID पर payment करें
+        </strong>
 
 
-<tbody
-id="usersTable">
+        <!-- अपनी UPI ID यहाँ बदलें -->
 
-<tr>
+        <div class="upi-id">
 
-<td colspan="5">
+            yourupi@bank
 
-Loading Users...
+        </div>
 
-</td>
+    </div>
 
-</tr>
 
-</tbody>
+    <div class="note">
 
-</table>
+        ⚠️ Payment करने के बाद नीचे अपना UTR / Transaction ID जरूर भरें।
+        गलत UTR देने पर Course Activate नहीं किया जाएगा।
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>
+            UTR / Transaction ID
+        </label>
+
+
+        <input
+            type="text"
+            id="utr"
+            placeholder="Payment Transaction ID डालें">
+
+
+    </div>
+
+
+    <button
+        class="submit-btn"
+        id="submitPayment">
+
+        Submit Payment for Verification
+
+    </button>
+
+
+    <div
+        class="loading"
+        id="loading">
+
+        ⏳ Payment Request Submit हो रही है...
+
+    </div>
 
 </div>
 
 
-</section>
-
-
-</div>
-
-</div>
+</main>
 
 
 
 <script type="module">
 
 
-import{
-
-initializeApp
-
+import {
+    initializeApp
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
-import{
-
-getAuth,
-onAuthStateChanged,
-signOut
-
+import {
+    getAuth,
+    onAuthStateChanged
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
-import{
-
-getFirestore,
-
-collection,
-getDocs,
-
-doc,
-getDoc,
-
-query,
-where,
-
-updateDoc,
-setDoc,
-
-serverTimestamp
-
+import {
+    getFirestore,
+    doc,
+    getDoc,
+    setDoc,
+    serverTimestamp
 }
-
 from
-
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
 
-/* FIREBASE */
-
 const firebaseConfig={
 
-apiKey:
-"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+    apiKey:
+    "AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
-authDomain:
-"padho-aur-kamao-3eeae.firebaseapp.com",
+    authDomain:
+    "padho-aur-kamao-3eeae.firebaseapp.com",
 
-projectId:
-"padho-aur-kamao-3eeae",
+    projectId:
+    "padho-aur-kamao-3eeae",
 
-storageBucket:
-"padho-aur-kamao-3eeae.firebasestorage.app",
+    storageBucket:
+    "padho-aur-kamao-3eeae.firebasestorage.app",
 
-messagingSenderId:
-"670063905617",
+    messagingSenderId:
+    "670063905617",
 
-appId:
-"1:670063905617:web:9b3a7e62fdeea14fbfa170"
+    appId:
+    "1:670063905617:web:9b3a7e62fdeea14fbfa170"
 
 };
 
 
 
 const app=
-
-initializeApp(
-firebaseConfig
-);
+initializeApp(firebaseConfig);
 
 
 const auth=
-
-getAuth(
-app
-);
+getAuth(app);
 
 
 const db=
+getFirestore(app);
 
-getFirestore(
-app
+
+
+const $=
+id=>document.getElementById(id);
+
+
+
+let currentUser=null;
+
+let courseId="";
+let courseName="";
+let coursePrice=0;
+let finalAmount=0;
+
+
+
+/* =========================
+   GET COURSE DETAILS
+========================= */
+
+const params=
+new URLSearchParams(
+window.location.search
+);
+
+
+courseId=
+params.get("course")||
+localStorage.getItem(
+"pendingCourseId"
+)||
+"";
+
+
+const priceParam=
+params.get("price");
+
+
+if(
+priceParam
+){
+
+finalAmount=
+Number(priceParam);
+
+}
+
+
+const savedName=
+localStorage.getItem(
+"pendingCourseName"
+);
+
+
+const savedPrice=
+localStorage.getItem(
+"pendingCoursePrice"
 );
 
 
 
-/* ADMIN UID */
+/* COURSE NAME */
 
-const ADMIN_UID=
+if(courseId==="study-skill-starter"){
 
-"BwEY7fReQpddMVHsDcbCMhUXkb62";
+    courseName=
+    "Study & Skill Starter";
 
+    coursePrice=199;
 
-let currentAdmin=null;
+}
 
+else if(courseId==="skill-success-premium"){
 
+    courseName=
+    "Skill & Success Premium";
 
-const loading=
+    coursePrice=399;
 
-document.getElementById(
-"loading"
-);
+}
 
+else{
 
-const adminPanel=
-
-document.getElementById(
-"adminPanel"
-);
-
-
-const accessDenied=
-
-document.getElementById(
-"accessDenied"
-);
+    courseName=
+    savedName||
+    "Selected Course";
 
 
+    coursePrice=
+    Number(savedPrice)||
+    finalAmount;
 
-/* AUTH */
+}
+
+
+if(
+!finalAmount
+){
+
+    finalAmount=
+    coursePrice;
+
+}
+
+
+
+/* DISPLAY */
+
+$("courseName").innerText=
+courseName;
+
+
+$("coursePrice").innerText=
+"₹"+coursePrice;
+
+
+$("finalPrice").innerText=
+"₹"+finalAmount;
+
+
+
+/* =========================
+   AUTH
+========================= */
 
 onAuthStateChanged(
-
 auth,
-
 async user=>{
 
 
 if(!user){
 
-location.href=
-"login.html";
+    location.href=
+    "login.html";
 
-return;
-
-}
-
-
-if(
-user.uid!==ADMIN_UID
-){
-
-loading.classList.add(
-"hidden"
-);
-
-accessDenied.classList.remove(
-"hidden"
-);
-
-return;
+    return;
 
 }
 
 
-currentAdmin=user;
+currentUser=user;
 
 
-loading.classList.add(
-"hidden"
-);
+if(!courseId){
 
-
-adminPanel.classList.remove(
-"hidden"
-);
-
-
-await loadDashboard();
-
-
-}
-
-);
-
-
-
-/* LOAD ALL */
-
-async function loadDashboard(){
-
-await Promise.all([
-
-loadUsers(),
-
-loadPayments(),
-
-loadKYC(),
-
-loadWithdrawals()
-
-]);
+    showError(
+    "Course information नहीं मिली। कृपया Course Page से दोबारा Purchase करें।"
+    );
 
 }
 
 
-
-/* USERS */
-
-async function loadUsers(){
-
-try{
-
-const snap=
-
-await getDocs(
-
-collection(
-db,
-"users"
-)
-
-);
-
-
-document
-.getElementById(
-"totalUsers"
-)
-.innerText=
-snap.size;
-
-
-const table=
-
-document.getElementById(
-"usersTable"
-);
-
-
-table.innerHTML=
-"";
-
-
-if(
-snap.empty
-){
-
-table.innerHTML=
-
-`<tr>
-
-<td colspan="5">
-
-No users found.
-
-</td>
-
-</tr>`;
-
-return;
-
 }
-
-
-snap.forEach(
-item=>{
-
-
-const data=
-
-item.data();
-
-
-const row=
-
-document.createElement(
-"tr"
-);
-
-
-row.innerHTML=
-
-`
-
-<td>
-
-${escapeHTML(
-data.name||
-"Student"
-)}
-
-</td>
-
-
-<td>
-
-${escapeHTML(
-data.email||
-""
-)}
-
-</td>
-
-
-<td>
-
-${escapeHTML(
-data.referralCode||
-"-"
-)}
-
-</td>
-
-
-<td>
-
-${escapeHTML(
-data.kycStatus||
-"Pending"
-)}
-
-</td>
-
-
-<td>
-
-${escapeHTML(
-data.accountStatus||
-"Active"
-)}
-
-</td>
-
-`;
-
-
-table.appendChild(
-row
-);
-
-
-}
-
-);
-
-
-}catch(error){
-
-console.error(
-error
-);
-
-}
-
-}
-
-
-
-/* PAYMENT REQUESTS */
-
-async function loadPayments(){
-
-try{
-
-
-const snap=
-
-await getDocs(
-
-query(
-
-collection(
-db,
-"paymentRequests"
-),
-
-where(
-"status",
-"==",
-"pending"
-)
-
-)
-
-);
-
-
-document
-.getElementById(
-"pendingPaymentCount"
-)
-.innerText=
-snap.size;
-
-
-const list=
-
-document.getElementById(
-"paymentList"
-);
-
-
-list.innerHTML=
-"";
-
-
-if(
-snap.empty
-){
-
-list.innerHTML=
-
-`<div class="empty">
-
-🎉 कोई Pending Course Payment नहीं है।
-
-</div>`;
-
-return;
-
-}
-
-
-snap.forEach(
-item=>{
-
-
-const data=
-
-item.data();
-
-
-const card=
-
-document.createElement(
-"div"
-);
-
-
-card.className=
-"request-card";
-
-
-card.innerHTML=
-
-`
-
-<div class="request-header">
-
-<div class="request-name">
-
-${escapeHTML(
-data.userName||
-"Student"
-)}
-
-</div>
-
-
-<span class="status pending">
-
-Pending
-
-</span>
-
-</div>
-
-
-<div class="info">
-
-<strong>Course:</strong>
-
-${escapeHTML(
-data.courseName||
-"-"
-)}
-
-</div>
-
-
-<div class="info">
-
-<strong>Amount:</strong>
-
-₹${Number(
-data.amount||
-0
-).toLocaleString(
-"en-IN"
-)}
-
-</div>
-
-
-<div class="info">
-
-<strong>Email:</strong>
-
-${escapeHTML(
-data.email||
-"-"
-)}
-
-</div>
-
-
-<div class="info">
-
-<strong>Payment:</strong>
-
-${escapeHTML(
-data.paymentMethod||
-"UPI"
-)}
-
-</div>
-
-
-<div class="info">
-
-<strong>UTR / Transaction ID:</strong>
-
-${escapeHTML(
-data.utr||
-"-"
-)}
-
-</div>
-
-
-<div class="actions">
-
-<button
-class="approve-btn"
-data-payment-approve="${item.id}">
-
-Approve & Activate Course
-
-</button>
-
-
-<button
-class="reject-btn"
-data-payment-reject="${item.id}">
-
-Reject
-
-</button>
-
-</div>
-
-`;
-
-
-list.appendChild(
-card
-);
-
-
-}
-
 );
 
 
 
-document
-.querySelectorAll(
-"[data-payment-approve]"
-)
-.forEach(
-btn=>{
+/* =========================
+   SUBMIT PAYMENT
+========================= */
 
-
-btn.onclick=
-
+$("submitPayment")
+.addEventListener(
+"click",
 async()=>{
 
-await approvePayment(
 
-btn.dataset.paymentApprove
+if(!currentUser){
 
-);
+    alert(
+    "कृपया पहले Login करें।"
+    );
 
-};
-
-
-}
-);
-
-
-
-document
-.querySelectorAll(
-"[data-payment-reject]"
-)
-.forEach(
-btn=>{
-
-
-btn.onclick=
-
-async()=>{
-
-await rejectPayment(
-
-btn.dataset.paymentReject
-
-);
-
-};
-
-
-}
-);
-
-
-}catch(error){
-
-console.error(
-"Payment Error:",
-error
-);
-
-}
+    return;
 
 }
 
 
+if(!courseId){
 
-/* APPROVE PAYMENT */
+    showError(
+    "Course information नहीं मिली।"
+    );
 
-async function approvePayment(
-paymentId
-){
+    return;
+
+}
+
+
+const utr=
+$("utr")
+.value
+.trim();
+
+
+
+if(!utr){
+
+    alert(
+    "कृपया UTR / Transaction ID भरें।"
+    );
+
+    return;
+
+}
+
 
 if(
-!confirm(
-"Payment Approve करके Course Activate करना चाहते हैं?"
-)
+finalAmount<=0
 ){
 
-return;
+    alert(
+    "इस Course का payable amount ₹0 है। Course Page से Free Activation करें।"
+    );
+
+    return;
 
 }
 
@@ -1384,117 +726,92 @@ return;
 try{
 
 
-const paymentRef=
-
-doc(
-db,
-"paymentRequests",
-paymentId
-);
+$("submitPayment").disabled=true;
 
 
-const paymentSnap=
-
-await getDoc(
-paymentRef
-);
+$("submitPayment").innerText=
+"Submitting...";
 
 
-if(
-!paymentSnap.exists()
-){
-
-alert(
-"Payment request नहीं मिला।"
-);
-
-return;
-
-}
-
-
-const payment=
-
-paymentSnap.data();
-
-
-if(
-payment.status!=="pending"
-){
-
-alert(
-"यह request पहले ही process हो चुकी है।"
-);
-
-return;
-
-}
+$("loading").style.display=
+"block";
 
 
 
-/* ENROLLMENT ID */
+/* CREATE UNIQUE PAYMENT ID */
 
-const enrollmentId=
+const paymentId=
 
-payment.userId+
+currentUser.uid+
+
 "_"+
-payment.courseId;
+
+courseId;
 
 
 
-/* ACTIVATE COURSE */
+/* SAVE PAYMENT REQUEST */
 
 await setDoc(
 
 doc(
 db,
-"enrollments",
-enrollmentId
+"paymentRequests",
+paymentId
 ),
 
 {
 
 userId:
-payment.userId,
+currentUser.uid,
+
+
+userName:
+
+currentUser.displayName||
+
+currentUser.email
+.split("@")[0],
+
+
+email:
+currentUser.email||"",
+
 
 courseId:
-payment.courseId,
+courseId,
 
-courseTitle:
-payment.courseName||
-"Course",
+
+courseName:
+courseName,
+
+
+originalAmount:
+coursePrice,
+
 
 amount:
-Number(
-payment.amount||
-0
-),
+finalAmount,
 
-status:
-"active",
-
-paymentStatus:
-"paid",
 
 paymentMethod:
-payment.paymentMethod||
 "UPI",
 
+
 utr:
-payment.utr||
-"",
+utr,
 
-paymentRequestId:
-paymentId,
 
-purchasedAt:
+status:
+"pending",
+
+
+createdAt:
 serverTimestamp(),
 
-activatedAt:
-serverTimestamp(),
 
-activatedBy:
-currentAdmin.uid
+updatedAt:
+serverTimestamp()
 
 },
 
@@ -1508,1140 +825,197 @@ merge:true
 
 
 
-/* UPDATE PAYMENT */
+/* SAVE USER STATUS */
 
-await updateDoc(
-
-paymentRef,
-
-{
-
-status:
-"approved",
-
-approvedAt:
-serverTimestamp(),
-
-approvedBy:
-currentAdmin.uid,
-
-enrollmentId:
-enrollmentId
-
-}
-
-);
-
-
-alert(
-"🎉 Payment Approved! Course Activated Successfully."
-);
-
-
-await loadDashboard();
-
-
-}catch(error){
-
-console.error(
-error
-);
-
-
-alert(
-"Payment Approval Error: "+
-error.message
-);
-
-}
-
-}
-
-
-
-/* REJECT PAYMENT */
-
-async function rejectPayment(
-paymentId
-){
-
-if(
-!confirm(
-"क्या आप इस Payment Request को Reject करना चाहते हैं?"
-)
-){
-
-return;
-
-}
-
-
-try{
-
-
-await updateDoc(
-
-doc(
-db,
-"paymentRequests",
-paymentId
-),
-
-{
-
-status:
-"rejected",
-
-rejectedAt:
-serverTimestamp(),
-
-rejectedBy:
-currentAdmin.uid
-
-}
-
-);
-
-
-alert(
-"Payment Request Rejected"
-);
-
-
-await loadPayments();
-
-
-}catch(error){
-
-console.error(
-error
-);
-
-
-alert(
-"Reject Error: "+
-error.message
-);
-
-}
-
-}
-
-
-
-/* KYC */
-
-async function loadKYC(){
-
-try{
-
-
-const snap=
-
-await getDocs(
-
-query(
-
-collection(
-db,
-"kycRequests"
-),
-
-where(
-"status",
-"==",
-"pending"
-)
-
-)
-
-);
-
-
-document
-.getElementById(
-"pendingKycCount"
-)
-.innerText=
-snap.size;
-
-
-const list=
-
-document.getElementById(
-"kycList"
-);
-
-
-list.innerHTML=
-"";
-
-
-if(
-snap.empty
-){
-
-list.innerHTML=
-
-`<div class="empty">
-
-🎉 कोई Pending KYC नहीं है।
-
-</div>`;
-
-return;
-
-}
-
-
-snap.forEach(
-item=>{
-
-
-const data=
-item.data();
-
-
-const card=
-document.createElement(
-"div"
-);
-
-
-card.className=
-"request-card";
-
-
-card.innerHTML=
-
-`
-
-<div class="request-header">
-
-<div class="request-name">
-
-${escapeHTML(
-data.name||
-"Student"
-)}
-
-</div>
-
-
-<span class="status pending">
-
-Pending
-
-</span>
-
-</div>
-
-
-<div class="info">
-
-<strong>Email:</strong>
-
-${escapeHTML(
-data.email||
-"-"
-)}
-
-</div>
-
-
-<div class="info">
-
-<strong>Mobile:</strong>
-
-${escapeHTML(
-data.mobile||
-"-"
-)}
-
-</div>
-
-
-<div class="info">
-
-<strong>Bank:</strong>
-
-${escapeHTML(
-data.bankName||
-"-"
-)}
-
-</div>
-
-
-<div class="info">
-
-<strong>Account:</strong>
-
-${escapeHTML(
-maskAccount(
-data.accountNumber||
-""
-)
-)}
-
-</div>
-
-
-<div class="info">
-
-<strong>IFSC:</strong>
-
-${escapeHTML(
-data.ifscCode||
-"-"
-)}
-
-</div>
-
-
-<div class="actions">
-
-<button
-class="approve-btn"
-data-kyc-approve="${item.id}"
-data-user="${data.userId||""}">
-
-Approve
-
-</button>
-
-
-<button
-class="reject-btn"
-data-kyc-reject="${item.id}"
-data-user="${data.userId||""}">
-
-Reject
-
-</button>
-
-</div>
-
-`;
-
-
-list.appendChild(
-card
-);
-
-
-}
-
-);
-
-
-
-document
-.querySelectorAll(
-"[data-kyc-approve]"
-)
-.forEach(
-btn=>{
-
-
-btn.onclick=
-
-async()=>{
-
-await approveKYC(
-
-btn.dataset.kycApprove,
-
-btn.dataset.user
-
-);
-
-};
-
-
-}
-);
-
-
-
-document
-.querySelectorAll(
-"[data-kyc-reject]"
-)
-.forEach(
-btn=>{
-
-
-btn.onclick=
-
-async()=>{
-
-await rejectKYC(
-
-btn.dataset.kycReject,
-
-btn.dataset.user
-
-);
-
-};
-
-
-}
-);
-
-
-}catch(error){
-
-console.error(
-"KYC Error:",
-error
-);
-
-}
-
-}
-
-
-
-/* APPROVE KYC */
-
-async function approveKYC(
-requestId,
-userId
-){
-
-if(
-!confirm(
-"क्या आप इस KYC को Approve करना चाहते हैं?"
-)
-){
-
-return;
-
-}
-
-
-try{
-
-
-await updateDoc(
-
-doc(
-db,
-"kycRequests",
-requestId
-),
-
-{
-
-status:
-"approved",
-
-approvedAt:
-serverTimestamp(),
-
-approvedBy:
-currentAdmin.uid
-
-}
-
-);
-
-
-if(
-userId
-){
-
-await updateDoc(
+await setDoc(
 
 doc(
 db,
 "users",
-userId
+currentUser.uid
 ),
 
 {
 
-kycStatus:
-"Approved",
+name:
 
-kycApprovedAt:
+currentUser.displayName||
+
+currentUser.email
+.split("@")[0],
+
+
+email:
+currentUser.email||"",
+
+
+lastPaymentStatus:
+"pending",
+
+
+pendingCourseId:
+courseId,
+
+
+pendingCourseName:
+courseName,
+
+
+pendingCourseAmount:
+finalAmount,
+
+
+updatedAt:
 serverTimestamp()
 
-}
-
-);
-
-}
-
-
-alert(
-"KYC Approved Successfully"
-);
-
-
-await loadDashboard();
-
-
-}catch(error){
-
-console.error(
-error
-);
-
-
-alert(
-"KYC Approval Error: "+
-error.message
-);
-
-}
-
-}
-
-
-
-/* REJECT KYC */
-
-async function rejectKYC(
-requestId,
-userId
-){
-
-if(
-!confirm(
-"क्या आप इस KYC को Reject करना चाहते हैं?"
-)
-){
-
-return;
-
-}
-
-
-try{
-
-
-await updateDoc(
-
-doc(
-db,
-"kycRequests",
-requestId
-),
+},
 
 {
 
-status:
-"rejected",
-
-rejectedAt:
-serverTimestamp(),
-
-rejectedBy:
-currentAdmin.uid
+merge:true
 
 }
 
 );
 
 
-if(
-userId
-){
 
-await updateDoc(
-
-doc(
-db,
-"users",
-userId
-),
-
-{
-
-kycStatus:
-"Rejected"
-
-}
-
-);
-
-}
-
-
-alert(
-"KYC Rejected"
+localStorage.removeItem(
+"pendingCourseId"
 );
 
 
-await loadDashboard();
-
-
-}catch(error){
-
-console.error(
-error
+localStorage.removeItem(
+"pendingCourseName"
 );
 
 
-alert(
-"KYC Reject Error: "+
-error.message
-);
-
-}
-
-}
-
-
-
-/* WITHDRAWALS */
-
-async function loadWithdrawals(){
-
-try{
-
-
-const pendingSnap=
-
-await getDocs(
-
-query(
-
-collection(
-db,
-"withdrawals"
-),
-
-where(
-"status",
-"==",
-"pending"
-)
-
-)
-
+localStorage.removeItem(
+"pendingCoursePrice"
 );
 
 
 
-const approvedSnap=
-
-await getDocs(
-
-query(
-
-collection(
-db,
-"withdrawals"
-),
-
-where(
-"status",
-"==",
-"approved"
-)
-
-)
-
+showSuccess(
+"🎉 Payment Request Successfully Submitted! Admin verification के बाद आपका Course Activate होगा।"
 );
 
 
-document
-.getElementById(
-"pendingWithdrawalCount"
-)
-.innerText=
-pendingSnap.size;
+$("utr").value="";
 
 
-document
-.getElementById(
-"approvedWithdrawalCount"
-)
-.innerText=
-approvedSnap.size;
+$("submitPayment").innerText=
+"Payment Submitted";
 
 
-const list=
-
-document.getElementById(
-"withdrawalList"
-);
-
-
-list.innerHTML=
-"";
-
-
-if(
-pendingSnap.empty
-){
-
-list.innerHTML=
-
-`<div class="empty">
-
-🎉 कोई Pending Withdrawal Request नहीं है।
-
-</div>`;
-
-return;
-
-}
-
-
-pendingSnap.forEach(
-item=>{
-
-
-const data=
-item.data();
-
-
-const card=
-document.createElement(
-"div"
-);
-
-
-card.className=
-"request-card";
-
-
-card.innerHTML=
-
-`
-
-<div class="request-header">
-
-<div class="request-name">
-
-${escapeHTML(
-data.userName||
-"Student"
-)}
-
-</div>
-
-
-<span class="status pending">
-
-Pending
-
-</span>
-
-</div>
-
-
-<div class="info">
-
-<strong>Amount:</strong>
-
-₹${Number(
-data.amount||
-0
-).toLocaleString(
-"en-IN"
-)}
-
-</div>
-
-
-<div class="info">
-
-<strong>Email:</strong>
-
-${escapeHTML(
-data.email||
-"-"
-)}
-
-</div>
-
-
-<div class="info">
-
-<strong>Payment Method:</strong>
-
-${escapeHTML(
-data.paymentMethod||
-"-"
-)}
-
-</div>
-
-
-<div class="info">
-
-<strong>Payment Details:</strong>
-
-${escapeHTML(
-data.paymentDetails||
-"-"
-)}
-
-</div>
-
-
-<div class="actions">
-
-
-<button
-class="approve-btn"
-data-withdrawal-approve="${item.id}">
-
-Approve
-
-</button>
-
-
-<button
-class="reject-btn"
-data-withdrawal-reject="${item.id}">
-
-Reject
-
-</button>
-
-
-</div>
-
-`;
-
-
-list.appendChild(
-card
-);
-
-
-}
-
-);
-
-
-
-document
-.querySelectorAll(
-"[data-withdrawal-approve]"
-)
-.forEach(
-btn=>{
-
-
-btn.onclick=
-
-async()=>{
-
-await approveWithdrawal(
-
-btn.dataset.withdrawalApprove
-
-);
-
-};
-
-
-}
-);
-
-
-
-document
-.querySelectorAll(
-"[data-withdrawal-reject]"
-)
-.forEach(
-btn=>{
-
-
-btn.onclick=
-
-async()=>{
-
-await rejectWithdrawal(
-
-btn.dataset.withdrawalReject
-
-);
-
-};
-
-
-}
-);
-
-
-}catch(error){
-
-console.error(
-"Withdrawal Error:",
-error
-);
-
-}
-
-}
-
-
-
-/* APPROVE WITHDRAWAL */
-
-async function approveWithdrawal(
-requestId
-){
-
-if(
-!confirm(
-"क्या आप इस Withdrawal को Approve करना चाहते हैं?"
-)
-){
-
-return;
-
-}
-
-
-try{
-
-
-await updateDoc(
-
-doc(
-db,
-"withdrawals",
-requestId
-),
-
-{
-
-status:
-"approved",
-
-approvedAt:
-serverTimestamp(),
-
-approvedBy:
-currentAdmin.uid
-
-}
-
-);
-
-
-alert(
-"Withdrawal Approved Successfully"
-);
-
-
-await loadWithdrawals();
-
-
-}catch(error){
-
-console.error(
-error
-);
-
-
-alert(
-"Approval Error: "+
-error.message
-);
-
-}
-
-}
-
-
-
-/* REJECT WITHDRAWAL */
-
-async function rejectWithdrawal(
-requestId
-){
-
-if(
-!confirm(
-"क्या आप इस Withdrawal को Reject करना चाहते हैं?"
-)
-){
-
-return;
-
-}
-
-
-try{
-
-
-await updateDoc(
-
-doc(
-db,
-"withdrawals",
-requestId
-),
-
-{
-
-status:
-"rejected",
-
-rejectedAt:
-serverTimestamp(),
-
-rejectedBy:
-currentAdmin.uid
-
-}
-
-);
-
-
-alert(
-"Withdrawal Rejected"
-);
-
-
-await loadWithdrawals();
-
-
-}catch(error){
-
-console.error(
-error
-);
-
-
-alert(
-"Reject Error: "+
-error.message
-);
-
-}
-
-}
-
-
-
-/* MASK ACCOUNT */
-
-function maskAccount(
-value
-){
-
-if(
-!value
-){
-
-return
-"-";
-
-}
-
-
-const text=
-
-String(
-value
-);
-
-
-if(
-text.length<=4
-){
-
-return
-text;
-
-}
-
-
-return
-
-"XXXX XXXX "+
-text.slice(-4);
-
-}
-
-
-
-/* LOGOUT */
-
-document
-.getElementById(
-"logoutBtn"
-)
-.onclick=
-
-async()=>{
-
-
-await signOut(
-auth
-);
-
+setTimeout(
+()=>{
 
 location.href=
-"login.html";
+"dashboard.html";
 
-
-};
-
-
-
-document
-.getElementById(
-"deniedLogout"
-)
-.onclick=
-
-async()=>{
-
-
-await signOut(
-auth
+},
+2000
 );
 
 
-location.href=
-"login.html";
+}
+catch(error){
 
 
-};
+console.error(
+"Payment Submit Error:",
+error
+);
 
 
+let message=
 
-/* ESCAPE HTML */
+"⚠️ Payment Request Submit नहीं हुई। कृपया दोबारा कोशिश करें।";
 
-function escapeHTML(
-text
+
+if(
+error.code===
+"permission-denied"
 ){
 
-const div=
+message=
 
-document.createElement(
-"div"
+"⚠️ Firebase Permission Denied. Firestore Rules Check करें।";
+
+}
+
+
+showError(
+message
 );
 
 
-div.innerText=
+$("submitPayment").disabled=false;
 
-String(
-text
+
+$("submitPayment").innerText=
+"Submit Payment for Verification";
+
+
+}
+finally{
+
+
+$("loading").style.display=
+"none";
+
+
+}
+
+
+}
 );
 
 
-return
-div.innerHTML;
+
+/* =========================
+   SUCCESS / ERROR
+========================= */
+
+function showSuccess(
+message
+){
+
+const box=
+$("statusMessage");
+
+
+box.className=
+"status-message success";
+
+
+box.innerText=
+message;
+
+}
+
+
+function showError(
+message
+){
+
+const box=
+$("statusMessage");
+
+
+box.className=
+"status-message error";
+
+
+box.innerText=
+message;
 
 }
 
 
 </script>
+
 
 </body>
 
