@@ -5,35 +5,32 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Admin Panel - Padho Aur Kamao</title>
 
 <style>
 
-/* =========================
-   GLOBAL
-========================= */
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f7fb;
-    color:#172033;
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f7fb;
+color:#172033;
 }
 
 button{
-    font-family:inherit;
-    cursor:pointer;
+font-family:inherit;
+cursor:pointer;
 }
 
 .hidden{
-    display:none !important;
+display:none !important;
 }
 
 
@@ -42,13 +39,13 @@ button{
 ========================= */
 
 #loading{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:18px;
-    font-weight:bold;
-    color:#6526d7;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:18px;
+font-weight:bold;
+color:#6526d7;
 }
 
 
@@ -57,39 +54,30 @@ button{
 ========================= */
 
 .denied{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
 }
 
 .denied-box{
-    background:#fff;
-    max-width:450px;
-    width:100%;
-    padding:35px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+background:white;
+max-width:450px;
+width:100%;
+padding:35px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 .denied-box h1{
-    margin-bottom:15px;
+margin-bottom:15px;
 }
 
 .denied-box p{
-    color:#777;
-    margin-bottom:20px;
-}
-
-.logout-btn{
-    border:0;
-    background:#dc2626;
-    color:white;
-    padding:12px 20px;
-    border-radius:10px;
-    font-weight:bold;
+color:#777;
+margin-bottom:20px;
 }
 
 
@@ -98,41 +86,43 @@ button{
 ========================= */
 
 .header{
-    background:white;
-    min-height:72px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:15px 30px;
-    border-bottom:1px solid #e8eaf0;
-    position:sticky;
-    top:0;
-    z-index:100;
+background:white;
+min-height:72px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:15px 30px;
+border-bottom:1px solid #e8eaf0;
+position:sticky;
+top:0;
+z-index:100;
 }
 
 .brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:20px;
-    font-weight:bold;
-    color:#6526d7;
+display:flex;
+align-items:center;
+gap:10px;
+font-size:20px;
+font-weight:bold;
+color:#6526d7;
 }
 
 .admin-badge{
-    background:#f1ebff;
-    color:#6526d7;
-    padding:8px 12px;
-    border-radius:20px;
-    font-size:12px;
+background:#f1ebff;
+color:#6526d7;
+padding:8px 12px;
+border-radius:20px;
+font-size:12px;
 }
 
-.logout-top{
-    border:0;
-    background:#172033;
-    color:white;
-    padding:10px 16px;
-    border-radius:10px;
+.logout-top,
+.logout-btn{
+border:0;
+background:#172033;
+color:white;
+padding:10px 16px;
+border-radius:10px;
+font-weight:bold;
 }
 
 
@@ -141,20 +131,20 @@ button{
 ========================= */
 
 .container{
-    max-width:1400px;
-    margin:auto;
-    padding:30px 20px;
+max-width:1400px;
+margin:auto;
+padding:30px 20px;
 }
 
 .title{
-    font-size:26px;
-    margin-bottom:8px;
+font-size:26px;
+margin-bottom:8px;
 }
 
 .subtitle{
-    color:#777;
-    font-size:14px;
-    margin-bottom:25px;
+color:#777;
+font-size:14px;
+margin-bottom:25px;
 }
 
 
@@ -163,29 +153,29 @@ button{
 ========================= */
 
 .stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
-    margin-bottom:30px;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:16px;
+margin-bottom:30px;
 }
 
 .stat{
-    background:white;
-    padding:20px;
-    border-radius:16px;
-    border:1px solid #edf0f5;
+background:white;
+padding:20px;
+border-radius:16px;
+border:1px solid #edf0f5;
 }
 
 .stat-label{
-    font-size:13px;
-    color:#777;
+font-size:13px;
+color:#777;
 }
 
 .stat-value{
-    font-size:28px;
-    font-weight:bold;
-    margin-top:10px;
-    color:#6526d7;
+font-size:28px;
+font-weight:bold;
+margin-top:10px;
+color:#6526d7;
 }
 
 
@@ -194,43 +184,48 @@ button{
 ========================= */
 
 .section{
-    margin-top:30px;
+margin-top:30px;
 }
 
 .section-title{
-    font-size:21px;
-    margin-bottom:15px;
+font-size:21px;
+margin-bottom:15px;
 }
 
 
 /* =========================
-   REQUEST GRID
+   GRID
 ========================= */
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
 }
 
+
+/* =========================
+   REQUEST CARD
+========================= */
+
 .request-card{
-    background:white;
-    border:1px solid #edf0f5;
-    border-radius:16px;
-    padding:20px;
+background:white;
+border:1px solid #edf0f5;
+border-radius:16px;
+padding:20px;
 }
 
 .request-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:10px;
-    margin-bottom:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
 }
 
 .request-name{
-    font-size:18px;
-    font-weight:bold;
+font-size:18px;
+font-weight:bold;
 }
 
 
@@ -239,25 +234,25 @@ button{
 ========================= */
 
 .status{
-    padding:6px 10px;
-    border-radius:20px;
-    font-size:11px;
-    font-weight:bold;
+padding:6px 10px;
+border-radius:20px;
+font-size:11px;
+font-weight:bold;
 }
 
 .pending{
-    background:#fff3cd;
-    color:#b45309;
+background:#fff3cd;
+color:#b45309;
 }
 
 .approved{
-    background:#dcfce7;
-    color:#15803d;
+background:#dcfce7;
+color:#15803d;
 }
 
 .rejected{
-    background:#fee2e2;
-    color:#dc2626;
+background:#fee2e2;
+color:#dc2626;
 }
 
 
@@ -266,76 +261,76 @@ button{
 ========================= */
 
 .info{
-    margin:8px 0;
-    font-size:13px;
-    color:#596174;
-    word-break:break-word;
+margin:8px 0;
+font-size:13px;
+color:#596174;
+word-break:break-word;
 }
 
 .info strong{
-    color:#172033;
+color:#172033;
 }
 
 
 /* =========================
-   BUTTONS
+   ACTIONS
 ========================= */
 
 .actions{
-    display:flex;
-    gap:10px;
-    margin-top:18px;
+display:flex;
+gap:10px;
+margin-top:18px;
 }
 
 .approve-btn{
-    flex:1;
-    border:0;
-    padding:11px;
-    border-radius:10px;
-    background:#16a34a;
-    color:white;
-    font-weight:bold;
+flex:1;
+border:0;
+padding:11px;
+border-radius:10px;
+background:#16a34a;
+color:white;
+font-weight:bold;
 }
 
 .reject-btn{
-    flex:1;
-    border:0;
-    padding:11px;
-    border-radius:10px;
-    background:#dc2626;
-    color:white;
-    font-weight:bold;
+flex:1;
+border:0;
+padding:11px;
+border-radius:10px;
+background:#dc2626;
+color:white;
+font-weight:bold;
 }
 
 
 /* =========================
-   USERS TABLE
+   TABLE
 ========================= */
 
 .table-box{
-    background:white;
-    border-radius:16px;
-    border:1px solid #edf0f5;
-    overflow:auto;
+background:white;
+border-radius:16px;
+border:1px solid #edf0f5;
+overflow:auto;
 }
 
 table{
-    width:100%;
-    border-collapse:collapse;
-    min-width:700px;
+width:100%;
+border-collapse:collapse;
+min-width:700px;
 }
 
 th,
 td{
-    padding:15px;
-    text-align:left;
-    border-bottom:1px solid #eee;
-    font-size:13px;
+padding:15px;
+text-align:left;
+border-bottom:1px solid #eee;
+font-size:13px;
 }
 
 th{
-    background:#fafafa;
-    color:#777;
+background:#fafafa;
+color:#777;
 }
 
 
@@ -344,11 +339,11 @@ th{
 ========================= */
 
 .empty{
-    background:white;
-    padding:25px;
-    border-radius:14px;
-    color:#777;
-    text-align:center;
+background:white;
+padding:25px;
+border-radius:14px;
+color:#777;
+text-align:center;
 }
 
 
@@ -356,52 +351,60 @@ th{
    RESPONSIVE
 ========================= */
 
-@media(max-width:1000px){
+@media(max-width:1100px){
 
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-    }
+.stats{
+grid-template-columns:repeat(3,1fr);
+}
 
-    .grid{
-        grid-template-columns:1fr;
-    }
+}
+
+@media(max-width:800px){
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+.grid{
+grid-template-columns:1fr;
+}
 
 }
 
 @media(max-width:600px){
 
-    .header{
-        padding:12px 15px;
-    }
+.header{
+padding:12px 15px;
+}
 
-    .brand{
-        font-size:16px;
-    }
+.brand{
+font-size:16px;
+}
 
-    .admin-badge{
-        display:none;
-    }
+.admin-badge{
+display:none;
+}
 
-    .stats{
-        grid-template-columns:1fr 1fr;
-        gap:10px;
-    }
+.stats{
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
 
-    .stat{
-        padding:15px;
-    }
+.stat{
+padding:15px;
+}
 
-    .stat-value{
-        font-size:23px;
-    }
+.stat-value{
+font-size:23px;
+}
 
-    .container{
-        padding:20px 12px;
-    }
+.container{
+padding:20px 12px;
+}
 
-    .title{
-        font-size:22px;
-    }
+.title{
+font-size:22px;
+}
 
 }
 
@@ -413,71 +416,69 @@ th{
 <body>
 
 
-<!-- =========================
-     LOADING
-========================= -->
-
 <div id="loading">
-    Checking Admin Access...
-</div>
 
-
-
-<!-- =========================
-     ACCESS DENIED
-========================= -->
-
-<div id="accessDenied" class="denied hidden">
-
-    <div class="denied-box">
-
-        <h1>🚫 Access Denied</h1>
-
-        <p>
-            आपको इस Admin Panel को access करने की permission नहीं है।
-        </p>
-
-        <button
-        class="logout-btn"
-        id="deniedLogout">
-
-            Logout
-
-        </button>
-
-    </div>
+Checking Admin Access...
 
 </div>
 
 
 
-<!-- =========================
-     ADMIN PANEL
-========================= -->
+<div
+id="accessDenied"
+class="denied hidden">
 
-<div id="adminPanel" class="hidden">
+<div class="denied-box">
+
+<h1>
+🚫 Access Denied
+</h1>
+
+<p>
+आपको इस Admin Panel को access करने की permission नहीं है।
+</p>
+
+<button
+class="logout-btn"
+id="deniedLogout">
+
+Logout
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<div
+id="adminPanel"
+class="hidden">
 
 
 <header class="header">
 
-    <div class="brand">
+<div class="brand">
 
-        🛡️ Padho Aur Kamao
+🛡️ Padho Aur Kamao
 
-        <span class="admin-badge">
-            ADMIN PANEL
-        </span>
+<span class="admin-badge">
 
-    </div>
+ADMIN PANEL
+
+</span>
+
+</div>
 
 
-    <button
-    class="logout-top"
-    id="logoutBtn">
+<button
+class="logout-top"
+id="logoutBtn">
 
-        Logout
+Logout
 
-    </button>
+</button>
 
 </header>
 
@@ -487,32 +488,38 @@ th{
 
 
 <h1 class="title">
-    Admin Dashboard 👋
+
+Admin Dashboard 👋
+
 </h1>
 
 
 <p class="subtitle">
-    KYC और Withdrawal Requests को manage करें।
+
+KYC, Course Payment और Withdrawal Requests को manage करें।
+
 </p>
 
 
-
-<!-- =========================
-     STATS
-========================= -->
 
 <section class="stats">
 
 
 <div class="stat">
 
-    <div class="stat-label">
-        Total Users
-    </div>
+<div class="stat-label">
 
-    <div class="stat-value" id="totalUsers">
-        0
-    </div>
+Total Users
+
+</div>
+
+<div
+class="stat-value"
+id="totalUsers">
+
+0
+
+</div>
 
 </div>
 
@@ -520,13 +527,19 @@ th{
 
 <div class="stat">
 
-    <div class="stat-label">
-        Pending KYC
-    </div>
+<div class="stat-label">
 
-    <div class="stat-value" id="pendingKycCount">
-        0
-    </div>
+Pending KYC
+
+</div>
+
+<div
+class="stat-value"
+id="pendingKycCount">
+
+0
+
+</div>
 
 </div>
 
@@ -534,13 +547,19 @@ th{
 
 <div class="stat">
 
-    <div class="stat-label">
-        Pending Withdrawals
-    </div>
+<div class="stat-label">
 
-    <div class="stat-value" id="pendingWithdrawalCount">
-        0
-    </div>
+Pending Course Payments
+
+</div>
+
+<div
+class="stat-value"
+id="pendingPaymentCount">
+
+0
+
+</div>
 
 </div>
 
@@ -548,13 +567,39 @@ th{
 
 <div class="stat">
 
-    <div class="stat-label">
-        Approved Withdrawals
-    </div>
+<div class="stat-label">
 
-    <div class="stat-value" id="approvedWithdrawalCount">
-        0
-    </div>
+Pending Withdrawals
+
+</div>
+
+<div
+class="stat-value"
+id="pendingWithdrawalCount">
+
+0
+
+</div>
+
+</div>
+
+
+
+<div class="stat">
+
+<div class="stat-label">
+
+Approved Withdrawals
+
+</div>
+
+<div
+class="stat-value"
+id="approvedWithdrawalCount">
+
+0
+
+</div>
 
 </div>
 
@@ -563,22 +608,26 @@ th{
 
 
 
-<!-- =========================
-     KYC
-========================= -->
+<!-- PAYMENT REQUESTS -->
 
 <section class="section">
 
 <h2 class="section-title">
-    🪪 Pending KYC Requests
+
+💳 Pending Course Payments
+
 </h2>
 
 
-<div class="grid" id="kycList">
+<div
+class="grid"
+id="paymentList">
 
-    <div class="empty">
-        Loading KYC Requests...
-    </div>
+<div class="empty">
+
+Loading Payment Requests...
+
+</div>
 
 </div>
 
@@ -587,22 +636,26 @@ th{
 
 
 
-<!-- =========================
-     WITHDRAWALS
-========================= -->
+<!-- KYC -->
 
 <section class="section">
 
 <h2 class="section-title">
-    💸 Pending Withdrawal Requests
+
+🪪 Pending KYC Requests
+
 </h2>
 
 
-<div class="grid" id="withdrawalList">
+<div
+class="grid"
+id="kycList">
 
-    <div class="empty">
-        Loading Withdrawal Requests...
-    </div>
+<div class="empty">
+
+Loading KYC Requests...
+
+</div>
 
 </div>
 
@@ -611,14 +664,42 @@ th{
 
 
 
-<!-- =========================
-     USERS
-========================= -->
+<!-- WITHDRAWALS -->
 
 <section class="section">
 
 <h2 class="section-title">
-    👥 Registered Users
+
+💸 Pending Withdrawal Requests
+
+</h2>
+
+
+<div
+class="grid"
+id="withdrawalList">
+
+<div class="empty">
+
+Loading Withdrawal Requests...
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- USERS -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+👥 Registered Users
+
 </h2>
 
 
@@ -645,12 +726,15 @@ th{
 </thead>
 
 
-<tbody id="usersTable">
+<tbody
+id="usersTable">
 
 <tr>
 
 <td colspan="5">
+
 Loading Users...
+
 </td>
 
 </tr>
@@ -674,11 +758,7 @@ Loading Users...
 <script type="module">
 
 
-/* =========================
-   FIREBASE IMPORTS
-========================= */
-
-import {
+import{
 
 initializeApp
 
@@ -689,7 +769,7 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
-import {
+import{
 
 getAuth,
 onAuthStateChanged,
@@ -702,7 +782,7 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
-import {
+import{
 
 getFirestore,
 
@@ -716,6 +796,7 @@ query,
 where,
 
 updateDoc,
+setDoc,
 
 serverTimestamp
 
@@ -724,6 +805,7 @@ serverTimestamp
 from
 
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
 
 
 /* =========================
@@ -748,26 +830,23 @@ messagingSenderId:
 "670063905617",
 
 appId:
-"1:670063905617:web:9b3a7e62fdeea14fbfa170",
-
-measurementId:
-"G-7J1YV8HN3F"
+"1:670063905617:web:9b3a7e62fdeea14fbfa170"
 
 };
 
 
-/* =========================
-   INITIALIZE
-========================= */
 
 const app=
 initializeApp(firebaseConfig);
 
+
 const auth=
 getAuth(app);
 
+
 const db=
 getFirestore(app);
+
 
 
 /* =========================
@@ -781,18 +860,18 @@ const ADMIN_UID=
 let currentAdmin=null;
 
 
-/* =========================
-   ELEMENTS
-========================= */
 
 const loading=
 document.getElementById("loading");
 
+
 const adminPanel=
 document.getElementById("adminPanel");
 
+
 const accessDenied=
 document.getElementById("accessDenied");
+
 
 
 /* =========================
@@ -803,45 +882,45 @@ onAuthStateChanged(
 
 auth,
 
-async(user)=>{
-
-    if(!user){
-
-        location.href="login.html";
-
-        return;
-
-    }
+async user=>{
 
 
-    /*
-       ADMIN UID CHECK
-    */
+if(!user){
 
-    if(user.uid!==ADMIN_UID){
+location.href=
+"login.html";
 
-        loading.classList.add("hidden");
+return;
 
-        accessDenied.classList.remove("hidden");
-
-        return;
-
-    }
+}
 
 
-    currentAdmin=user;
+if(user.uid!==ADMIN_UID){
+
+loading.classList.add("hidden");
+
+accessDenied.classList.remove("hidden");
+
+return;
+
+}
 
 
-    loading.classList.add("hidden");
-
-    adminPanel.classList.remove("hidden");
+currentAdmin=user;
 
 
-    await loadDashboard();
+loading.classList.add("hidden");
+
+adminPanel.classList.remove("hidden");
+
+
+await loadDashboard();
+
 
 }
 
 );
+
 
 
 /* =========================
@@ -850,17 +929,20 @@ async(user)=>{
 
 async function loadDashboard(){
 
-    await Promise.all([
+await Promise.all([
 
-        loadUsers(),
+loadUsers(),
 
-        loadKYC(),
+loadPayments(),
 
-        loadWithdrawals()
+loadKYC(),
 
-    ]);
+loadWithdrawals()
+
+]);
 
 }
+
 
 
 /* =========================
@@ -871,9 +953,7 @@ async function loadUsers(){
 
 try{
 
-
 const snap=
-
 await getDocs(
 collection(db,"users")
 );
@@ -881,7 +961,8 @@ collection(db,"users")
 
 document
 .getElementById("totalUsers")
-.innerText=snap.size;
+.innerText=
+snap.size;
 
 
 const table=
@@ -893,13 +974,15 @@ table.innerHTML="";
 
 if(snap.empty){
 
-table.innerHTML=
+table.innerHTML=`
 
-`<tr>
+<tr>
 <td colspan="5">
 No users found.
 </td>
-</tr>`;
+</tr>
+
+`;
 
 return;
 
@@ -908,10 +991,7 @@ return;
 
 snap.forEach(item=>{
 
-
-const data=
-item.data();
-
+const data=item.data();
 
 const row=
 document.createElement("tr");
@@ -919,31 +999,198 @@ document.createElement("tr");
 
 row.innerHTML=`
 
-<td>
-${escapeHTML(data.name||"Student")}
-</td>
+<td>${escapeHTML(data.name||"Student")}</td>
 
-<td>
-${escapeHTML(data.email||"")}
-</td>
+<td>${escapeHTML(data.email||"")}</td>
 
-<td>
-${escapeHTML(data.referralCode||"-")}
-</td>
+<td>${escapeHTML(data.referralCode||"-")}</td>
 
-<td>
-${escapeHTML(data.kycStatus||"Pending")}
-</td>
+<td>${escapeHTML(data.kycStatus||"Not Submitted")}</td>
 
-<td>
-${escapeHTML(data.accountStatus||"Active")}
-</td>
+<td>${escapeHTML(data.accountStatus||"Active")}</td>
 
 `;
 
 
 table.appendChild(row);
 
+});
+
+
+}catch(error){
+
+console.error("Users Error:",error);
+
+}
+
+}
+
+
+
+/* =========================
+   PAYMENT REQUESTS
+========================= */
+
+async function loadPayments(){
+
+try{
+
+const snap=
+
+await getDocs(
+
+query(
+
+collection(db,"paymentRequests"),
+
+where("status","==","pending")
+
+)
+
+);
+
+
+document
+.getElementById("pendingPaymentCount")
+.innerText=
+snap.size;
+
+
+const list=
+document.getElementById("paymentList");
+
+
+list.innerHTML="";
+
+
+if(snap.empty){
+
+list.innerHTML=`
+
+<div class="empty">
+🎉 कोई Pending Course Payment नहीं है।
+</div>
+
+`;
+
+return;
+
+}
+
+
+snap.forEach(item=>{
+
+const data=item.data();
+
+const card=
+document.createElement("div");
+
+card.className=
+"request-card";
+
+
+card.innerHTML=`
+
+<div class="request-header">
+
+<div class="request-name">
+${escapeHTML(data.userName||"Student")}
+</div>
+
+<span class="status pending">
+Pending
+</span>
+
+</div>
+
+
+<div class="info">
+<strong>Course:</strong>
+${escapeHTML(data.courseName||"-")}
+</div>
+
+
+<div class="info">
+<strong>Amount:</strong>
+₹${Number(data.amount||0).toLocaleString("en-IN")}
+</div>
+
+
+<div class="info">
+<strong>Email:</strong>
+${escapeHTML(data.email||"-")}
+</div>
+
+
+<div class="info">
+<strong>Payment:</strong>
+${escapeHTML(data.paymentMethod||"UPI")}
+</div>
+
+
+<div class="info">
+<strong>UTR / Transaction ID:</strong>
+${escapeHTML(data.utr||"-")}
+</div>
+
+
+<div class="actions">
+
+<button
+class="approve-btn"
+data-payment-approve="${item.id}">
+
+Approve & Activate Course
+
+</button>
+
+
+<button
+class="reject-btn"
+data-payment-reject="${item.id}">
+
+Reject
+
+</button>
+
+</div>
+
+`;
+
+
+list.appendChild(card);
+
+});
+
+
+document
+.querySelectorAll("[data-payment-approve]")
+.forEach(btn=>{
+
+btn.onclick=
+async()=>{
+
+await approvePayment(
+btn.dataset.paymentApprove
+);
+
+};
+
+});
+
+
+document
+.querySelectorAll("[data-payment-reject]")
+.forEach(btn=>{
+
+btn.onclick=
+async()=>{
+
+await rejectPayment(
+btn.dataset.paymentReject
+);
+
+};
 
 });
 
@@ -951,13 +1198,276 @@ table.appendChild(row);
 }catch(error){
 
 console.error(
-"Users Error:",
+"Payment Error:",
 error
 );
 
 }
 
 }
+
+
+
+/* =========================
+   APPROVE PAYMENT
+========================= */
+
+async function approvePayment(paymentId){
+
+if(!confirm(
+"Payment Approve करके Course Activate करना चाहते हैं?"
+)){
+return;
+}
+
+
+try{
+
+const paymentRef=
+doc(db,"paymentRequests",paymentId);
+
+
+const paymentSnap=
+await getDoc(paymentRef);
+
+
+if(!paymentSnap.exists()){
+
+alert("Payment request नहीं मिला।");
+
+return;
+
+}
+
+
+const payment=
+paymentSnap.data();
+
+
+if(payment.status!=="pending"){
+
+alert(
+"यह request पहले ही process हो चुकी है।"
+);
+
+return;
+
+}
+
+
+const enrollmentId=
+payment.userId+
+"_"+
+payment.courseId;
+
+
+
+await setDoc(
+
+doc(
+db,
+"enrollments",
+enrollmentId
+),
+
+{
+
+userId:
+payment.userId,
+
+courseId:
+payment.courseId,
+
+courseTitle:
+payment.courseName||"Course",
+
+amount:
+Number(payment.amount||0),
+
+status:
+"active",
+
+paymentStatus:
+"paid",
+
+paymentMethod:
+payment.paymentMethod||"UPI",
+
+utr:
+payment.utr||"",
+
+paymentRequestId:
+paymentId,
+
+purchasedAt:
+serverTimestamp(),
+
+activatedAt:
+serverTimestamp(),
+
+activatedBy:
+currentAdmin.uid
+
+},
+
+{
+
+merge:true
+
+}
+
+);
+
+
+
+/* UPDATE USER */
+
+if(payment.userId){
+
+await setDoc(
+
+doc(
+db,
+"users",
+payment.userId
+),
+
+{
+
+coursePurchased:true,
+
+activeCourseId:
+payment.courseId,
+
+activeCourseName:
+payment.courseName||"Course",
+
+coursePurchasedAt:
+serverTimestamp()
+
+},
+
+{
+
+merge:true
+
+}
+
+);
+
+}
+
+
+
+/* UPDATE PAYMENT */
+
+await updateDoc(
+
+paymentRef,
+
+{
+
+status:
+"approved",
+
+approvedAt:
+serverTimestamp(),
+
+approvedBy:
+currentAdmin.uid,
+
+enrollmentId:
+enrollmentId
+
+}
+
+);
+
+
+
+alert(
+"🎉 Payment Approved! Course Activated Successfully."
+);
+
+
+await loadDashboard();
+
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Payment Approval Error: "+
+error.message
+);
+
+}
+
+}
+
+
+
+/* =========================
+   REJECT PAYMENT
+========================= */
+
+async function rejectPayment(paymentId){
+
+if(!confirm(
+"क्या आप इस Payment Request को Reject करना चाहते हैं?"
+)){
+return;
+}
+
+
+try{
+
+await updateDoc(
+
+doc(
+db,
+"paymentRequests",
+paymentId
+),
+
+{
+
+status:
+"rejected",
+
+rejectedAt:
+serverTimestamp(),
+
+rejectedBy:
+currentAdmin.uid
+
+}
+
+);
+
+
+alert(
+"Payment Request Rejected"
+);
+
+
+await loadDashboard();
+
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Reject Error: "+
+error.message
+);
+
+}
+
+}
+
 
 
 /* =========================
@@ -968,62 +1478,91 @@ async function loadKYC(){
 
 try{
 
+/*
+KYC DATA DIRECTLY
+FROM USERS COLLECTION
+*/
 
 const snap=
 
 await getDocs(
 
-query(
-
-collection(db,"kycRequests"),
-
-where(
-"status",
-"==",
-"pending"
-)
-
+collection(
+db,
+"users"
 )
 
 );
 
 
+const pendingUsers=[];
+
+
+snap.forEach(item=>{
+
+const data=
+item.data();
+
+
+if(
+data.kycStatus==="submitted"
+){
+
+pendingUsers.push({
+
+id:item.id,
+
+...data
+
+});
+
+}
+
+});
+
+
 document
-.getElementById("pendingKycCount")
-.innerText=snap.size;
+.getElementById(
+"pendingKycCount"
+)
+.innerText=
+pendingUsers.length;
 
 
 const list=
-document.getElementById("kycList");
+document.getElementById(
+"kycList"
+);
 
 
 list.innerHTML="";
 
 
-if(snap.empty){
+if(
+pendingUsers.length===0
+){
 
-list.innerHTML=
+list.innerHTML=`
 
-`<div class="empty">
+<div class="empty">
 
 🎉 कोई Pending KYC नहीं है।
 
-</div>`;
+</div>
+
+`;
 
 return;
 
 }
 
 
-snap.forEach(item=>{
-
-
-const data=
-item.data();
-
+pendingUsers.forEach(data=>{
 
 const card=
-document.createElement("div");
+document.createElement(
+"div"
+);
 
 
 card.className=
@@ -1036,7 +1575,11 @@ card.innerHTML=`
 
 <div class="request-name">
 
-${escapeHTML(data.name||"Student")}
+${escapeHTML(
+data.kycFullName||
+data.name||
+"Student"
+)}
 
 </div>
 
@@ -1054,7 +1597,10 @@ Pending
 
 <strong>Email:</strong>
 
-${escapeHTML(data.email||"-")}
+${escapeHTML(
+data.email||
+"-"
+)}
 
 </div>
 
@@ -1063,7 +1609,34 @@ ${escapeHTML(data.email||"-")}
 
 <strong>Mobile:</strong>
 
-${escapeHTML(data.mobile||"-")}
+${escapeHTML(
+data.kycMobile||
+"-"
+)}
+
+</div>
+
+
+<div class="info">
+
+<strong>Date of Birth:</strong>
+
+${escapeHTML(
+data.kycDOB||
+"-"
+)}
+
+</div>
+
+
+<div class="info">
+
+<strong>State:</strong>
+
+${escapeHTML(
+data.kycState||
+"-"
+)}
 
 </div>
 
@@ -1072,7 +1645,22 @@ ${escapeHTML(data.mobile||"-")}
 
 <strong>Bank:</strong>
 
-${escapeHTML(data.bankName||"-")}
+${escapeHTML(
+data.bankName||
+"-"
+)}
+
+</div>
+
+
+<div class="info">
+
+<strong>Account Holder:</strong>
+
+${escapeHTML(
+data.bankAccountHolder||
+"-"
+)}
 
 </div>
 
@@ -1083,7 +1671,8 @@ ${escapeHTML(data.bankName||"-")}
 
 ${escapeHTML(
 maskAccount(
-data.accountNumber||""
+data.bankAccountNumber||
+""
 )
 )}
 
@@ -1094,7 +1683,10 @@ data.accountNumber||""
 
 <strong>IFSC:</strong>
 
-${escapeHTML(data.ifscCode||"-")}
+${escapeHTML(
+data.bankIFSC||
+"-"
+)}
 
 </div>
 
@@ -1103,20 +1695,18 @@ ${escapeHTML(data.ifscCode||"-")}
 
 <button
 class="approve-btn"
-data-kyc-approve="${item.id}"
-data-user="${data.userId||""}">
+data-kyc-approve="${data.id}">
 
-Approve
+Approve KYC
 
 </button>
 
 
 <button
 class="reject-btn"
-data-kyc-reject="${item.id}"
-data-user="${data.userId||""}">
+data-kyc-reject="${data.id}">
 
-Reject
+Reject KYC
 
 </button>
 
@@ -1125,27 +1715,24 @@ Reject
 `;
 
 
-list.appendChild(card);
-
+list.appendChild(
+card
+);
 
 });
 
 
-/* APPROVE BUTTON */
-
 document
-.querySelectorAll("[data-kyc-approve]")
+.querySelectorAll(
+"[data-kyc-approve]"
+)
 .forEach(btn=>{
 
 btn.onclick=
 async()=>{
 
 await approveKYC(
-
-btn.dataset.kycApprove,
-
-btn.dataset.user
-
+btn.dataset.kycApprove
 );
 
 };
@@ -1153,21 +1740,17 @@ btn.dataset.user
 });
 
 
-/* REJECT BUTTON */
-
 document
-.querySelectorAll("[data-kyc-reject]")
+.querySelectorAll(
+"[data-kyc-reject]"
+)
 .forEach(btn=>{
 
 btn.onclick=
 async()=>{
 
 await rejectKYC(
-
-btn.dataset.kycReject,
-
-btn.dataset.user
-
+btn.dataset.kycReject
 );
 
 };
@@ -1187,14 +1770,12 @@ error
 }
 
 
+
 /* =========================
    APPROVE KYC
 ========================= */
 
-async function approveKYC(
-requestId,
-userId
-){
+async function approveKYC(userId){
 
 if(!confirm(
 "क्या आप इस KYC को Approve करना चाहते हैं?"
@@ -1204,33 +1785,6 @@ return;
 
 
 try{
-
-
-await updateDoc(
-
-doc(
-db,
-"kycRequests",
-requestId
-),
-
-{
-
-status:
-"approved",
-
-approvedAt:
-serverTimestamp(),
-
-approvedBy:
-currentAdmin.uid
-
-}
-
-);
-
-
-if(userId){
 
 await updateDoc(
 
@@ -1243,20 +1797,21 @@ userId
 {
 
 kycStatus:
-"Approved",
+"verified",
 
 kycApprovedAt:
-serverTimestamp()
+serverTimestamp(),
+
+kycApprovedBy:
+currentAdmin.uid
 
 }
 
 );
 
-}
-
 
 alert(
-"KYC Approved Successfully"
+"🎉 KYC Approved Successfully"
 );
 
 
@@ -1277,14 +1832,12 @@ error.message
 }
 
 
+
 /* =========================
    REJECT KYC
 ========================= */
 
-async function rejectKYC(
-requestId,
-userId
-){
+async function rejectKYC(userId){
 
 if(!confirm(
 "क्या आप इस KYC को Reject करना चाहते हैं?"
@@ -1294,33 +1847,6 @@ return;
 
 
 try{
-
-
-await updateDoc(
-
-doc(
-db,
-"kycRequests",
-requestId
-),
-
-{
-
-status:
-"rejected",
-
-rejectedAt:
-serverTimestamp(),
-
-rejectedBy:
-currentAdmin.uid
-
-}
-
-);
-
-
-if(userId){
 
 await updateDoc(
 
@@ -1333,13 +1859,17 @@ userId
 {
 
 kycStatus:
-"Rejected"
+"rejected",
+
+kycRejectedAt:
+serverTimestamp(),
+
+kycRejectedBy:
+currentAdmin.uid
 
 }
 
 );
-
-}
 
 
 alert(
@@ -1364,6 +1894,7 @@ error.message
 }
 
 
+
 /* =========================
    LOAD WITHDRAWALS
 ========================= */
@@ -1371,18 +1902,6 @@ error.message
 async function loadWithdrawals(){
 
 try{
-
-
-/*
-  IMPORTANT:
-
-  wallet.html uses:
-
-  withdrawals
-
-  NOT withdrawalRequests
-*/
-
 
 const pendingSnap=
 
@@ -1392,15 +1911,12 @@ query(
 
 collection(db,"withdrawals"),
 
-where(
-"status",
-"==",
-"pending"
-)
+where("status","==","pending")
 
 )
 
 );
+
 
 
 const approvedSnap=
@@ -1411,11 +1927,7 @@ query(
 
 collection(db,"withdrawals"),
 
-where(
-"status",
-"==",
-"approved"
-)
+where("status","==","approved")
 
 )
 
@@ -1423,33 +1935,43 @@ where(
 
 
 document
-.getElementById("pendingWithdrawalCount")
+.getElementById(
+"pendingWithdrawalCount"
+)
 .innerText=
 pendingSnap.size;
 
 
 document
-.getElementById("approvedWithdrawalCount")
+.getElementById(
+"approvedWithdrawalCount"
+)
 .innerText=
 approvedSnap.size;
 
 
 const list=
-document.getElementById("withdrawalList");
+document.getElementById(
+"withdrawalList"
+);
 
 
 list.innerHTML="";
 
 
-if(pendingSnap.empty){
+if(
+pendingSnap.empty
+){
 
-list.innerHTML=
+list.innerHTML=`
 
-`<div class="empty">
+<div class="empty">
 
 🎉 कोई Pending Withdrawal Request नहीं है।
 
-</div>`;
+</div>
+
+`;
 
 return;
 
@@ -1458,13 +1980,14 @@ return;
 
 pendingSnap.forEach(item=>{
 
-
 const data=
 item.data();
 
 
 const card=
-document.createElement("div");
+document.createElement(
+"div"
+);
 
 
 card.className=
@@ -1499,8 +2022,11 @@ Pending
 <strong>Amount:</strong>
 
 ₹${Number(
-data.amount||0
-).toLocaleString("en-IN")}
+data.amount||
+0
+).toLocaleString(
+"en-IN"
+)}
 
 </div>
 
@@ -1510,7 +2036,8 @@ data.amount||0
 <strong>Email:</strong>
 
 ${escapeHTML(
-data.email||"-"
+data.email||
+"-"
 )}
 
 </div>
@@ -1521,7 +2048,8 @@ data.email||"-"
 <strong>Payment Method:</strong>
 
 ${escapeHTML(
-data.paymentMethod||"-"
+data.paymentMethod||
+"-"
 )}
 
 </div>
@@ -1532,7 +2060,8 @@ data.paymentMethod||"-"
 <strong>Payment Details:</strong>
 
 ${escapeHTML(
-data.paymentDetails||"-"
+data.paymentDetails||
+"-"
 )}
 
 </div>
@@ -1564,13 +2093,12 @@ Reject
 `;
 
 
-list.appendChild(card);
-
+list.appendChild(
+card
+);
 
 });
 
-
-/* APPROVE */
 
 document
 .querySelectorAll(
@@ -1582,17 +2110,13 @@ btn.onclick=
 async()=>{
 
 await approveWithdrawal(
-
 btn.dataset.withdrawalApprove
-
 );
 
 };
 
 });
 
-
-/* REJECT */
 
 document
 .querySelectorAll(
@@ -1604,9 +2128,7 @@ btn.onclick=
 async()=>{
 
 await rejectWithdrawal(
-
 btn.dataset.withdrawalReject
-
 );
 
 };
@@ -1626,13 +2148,12 @@ error
 }
 
 
+
 /* =========================
    APPROVE WITHDRAWAL
 ========================= */
 
-async function approveWithdrawal(
-requestId
-){
+async function approveWithdrawal(requestId){
 
 if(!confirm(
 "क्या आप इस Withdrawal को Approve करना चाहते हैं?"
@@ -1642,7 +2163,6 @@ return;
 
 
 try{
-
 
 await updateDoc(
 
@@ -1680,7 +2200,6 @@ await loadWithdrawals();
 
 console.error(error);
 
-
 alert(
 "Approval Error: "+
 error.message
@@ -1691,13 +2210,12 @@ error.message
 }
 
 
+
 /* =========================
    REJECT WITHDRAWAL
 ========================= */
 
-async function rejectWithdrawal(
-requestId
-){
+async function rejectWithdrawal(requestId){
 
 if(!confirm(
 "क्या आप इस Withdrawal को Reject करना चाहते हैं?"
@@ -1707,7 +2225,6 @@ return;
 
 
 try{
-
 
 await updateDoc(
 
@@ -1745,7 +2262,6 @@ await loadWithdrawals();
 
 console.error(error);
 
-
 alert(
 "Reject Error: "+
 error.message
@@ -1756,6 +2272,7 @@ error.message
 }
 
 
+
 /* =========================
    MASK ACCOUNT
 ========================= */
@@ -1763,7 +2280,9 @@ error.message
 function maskAccount(value){
 
 if(!value){
+
 return "-";
+
 }
 
 
@@ -1772,7 +2291,9 @@ String(value);
 
 
 if(text.length<=4){
+
 return text;
+
 }
 
 
@@ -1783,46 +2304,61 @@ text.slice(-4);
 }
 
 
+
 /* =========================
    LOGOUT
 ========================= */
 
 document
-.getElementById("logoutBtn")
+.getElementById(
+"logoutBtn"
+)
 .onclick=
 
 async()=>{
 
+
 await signOut(auth);
+
 
 location.href=
 "login.html";
 
+
 };
+
 
 
 document
-.getElementById("deniedLogout")
+.getElementById(
+"deniedLogout"
+)
 .onclick=
 
 async()=>{
 
+
 await signOut(auth);
+
 
 location.href=
 "login.html";
 
+
 };
 
 
+
 /* =========================
-   HTML ESCAPE
+   ESCAPE HTML
 ========================= */
 
 function escapeHTML(text){
 
 const div=
-document.createElement("div");
+document.createElement(
+"div"
+);
 
 
 div.innerText=
