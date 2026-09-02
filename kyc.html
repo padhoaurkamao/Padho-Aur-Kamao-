@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
 
 <meta charset="UTF-8">
@@ -98,6 +99,12 @@ body{
     background:#ecfdf5;
     border-color:#a7f3d0;
     color:#166534;
+}
+
+.status-box.rejected{
+    background:#fef2f2;
+    border-color:#fecaca;
+    color:#b91c1c;
 }
 
 .card{
@@ -231,8 +238,6 @@ select:focus{
 <body>
 
 
-<!-- TOPBAR -->
-
 <header class="topbar">
 
 <div class="brand">
@@ -261,8 +266,6 @@ onclick="location.href='dashboard.html'">
 <div class="container">
 
 
-<!-- HEADING -->
-
 <div class="heading">
 
 <h1>
@@ -276,8 +279,6 @@ onclick="location.href='dashboard.html'">
 </div>
 
 
-
-<!-- STATUS -->
 
 <div
 class="status-box"
@@ -316,8 +317,7 @@ id="statusBox">
 <input
 type="text"
 id="fullName"
-placeholder="अपना पूरा नाम लिखें"
-required>
+placeholder="अपना पूरा नाम लिखें">
 
 </div>
 
@@ -366,81 +366,25 @@ State
 State Select करें
 </option>
 
-<option value="Andhra Pradesh">
-Andhra Pradesh
-</option>
-
-<option value="Arunachal Pradesh">
-Arunachal Pradesh
-</option>
-
-<option value="Assam">
-Assam
-</option>
-
-<option value="Bihar">
-Bihar
-</option>
-
-<option value="Chhattisgarh">
-Chhattisgarh
-</option>
-
-<option value="Delhi">
-Delhi
-</option>
-
-<option value="Gujarat">
-Gujarat
-</option>
-
-<option value="Haryana">
-Haryana
-</option>
-
-<option value="Jharkhand">
-Jharkhand
-</option>
-
-<option value="Karnataka">
-Karnataka
-</option>
-
-<option value="Madhya Pradesh">
-Madhya Pradesh
-</option>
-
-<option value="Maharashtra">
-Maharashtra
-</option>
-
-<option value="Punjab">
-Punjab
-</option>
-
-<option value="Rajasthan">
-Rajasthan
-</option>
-
-<option value="Tamil Nadu">
-Tamil Nadu
-</option>
-
-<option value="Uttar Pradesh">
-Uttar Pradesh
-</option>
-
-<option value="Uttarakhand">
-Uttarakhand
-</option>
-
-<option value="West Bengal">
-West Bengal
-</option>
-
-<option value="Other">
-Other
-</option>
+<option value="Andhra Pradesh">Andhra Pradesh</option>
+<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+<option value="Assam">Assam</option>
+<option value="Bihar">Bihar</option>
+<option value="Chhattisgarh">Chhattisgarh</option>
+<option value="Delhi">Delhi</option>
+<option value="Gujarat">Gujarat</option>
+<option value="Haryana">Haryana</option>
+<option value="Jharkhand">Jharkhand</option>
+<option value="Karnataka">Karnataka</option>
+<option value="Madhya Pradesh">Madhya Pradesh</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Punjab">Punjab</option>
+<option value="Rajasthan">Rajasthan</option>
+<option value="Tamil Nadu">Tamil Nadu</option>
+<option value="Uttar Pradesh">Uttar Pradesh</option>
+<option value="Uttarakhand">Uttarakhand</option>
+<option value="West Bengal">West Bengal</option>
+<option value="Other">Other</option>
 
 </select>
 
@@ -561,8 +505,6 @@ inputmode="numeric">
 
 
 
-<!-- SUBMIT -->
-
 <button
 class="submit-btn"
 id="submitBtn">
@@ -585,9 +527,8 @@ id="loading">
 
 
 
-<!-- FIREBASE -->
-
 <script type="module">
+
 
 import {
 initializeApp
@@ -609,10 +550,11 @@ getFirestore,
 doc,
 getDoc,
 setDoc,
-updateDoc
+serverTimestamp
 }
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
 
 
 /* =========================
@@ -643,6 +585,7 @@ measurementId:
 "G-7J1YV8HN3F"
 
 };
+
 
 
 /* =========================
@@ -714,6 +657,7 @@ async function loadUserData(){
 
 try{
 
+
 const userRef=
 doc(
 db,
@@ -730,12 +674,8 @@ userRef
 
 if(!snap.exists()){
 
-alert(
-"User account नहीं मिला। कृपया दोबारा Login करें।"
-);
-
-location.href=
-"login.html";
+$("statusBox").innerText=
+"⚠️ User account नहीं मिला।";
 
 return;
 
@@ -746,7 +686,8 @@ userData=
 snap.data();
 
 
-/* Course Purchase Check */
+
+/* COURSE CHECK */
 
 if(
 userData.coursePurchased!==true
@@ -764,78 +705,110 @@ return;
 }
 
 
-/* Existing Data */
+
+/* EXISTING DATA */
 
 $("fullName").value=
-userData.kycFullName||
-userData.name||
-currentUser.displayName||
+userData.kycFullName ||
+userData.name ||
+currentUser.displayName ||
 "";
 
 
 $("mobile").value=
-userData.kycMobile||
+userData.kycMobile ||
 "";
 
 
 $("dob").value=
-userData.kycDOB||
+userData.kycDOB ||
 "";
 
 
 $("state").value=
-userData.kycState||
+userData.kycState ||
 "";
 
 
 $("accountHolder").value=
-userData.bankAccountHolder||
+userData.bankAccountHolder ||
 "";
 
 
 $("bankName").value=
-userData.bankName||
+userData.bankName ||
 "";
 
 
 $("ifscCode").value=
-userData.bankIFSC||
+userData.bankIFSC ||
 "";
 
 
-/* Status */
 
-if(
-userData.kycStatus==="submitted"
-){
+/* =========================
+   KYC STATUS
+========================= */
 
-$("statusBox")
-.classList
-.add("success");
+const status=
+userData.kycStatus || "";
 
 
-$("statusBox").innerText=
-
-"✅ आपकी KYC Successfully Submitted है। आवश्यकता होने पर आप अपनी जानकारी Update कर सकते हैं।";
-
-
-}else if(
-userData.kycStatus==="verified"
-){
-
-$("statusBox")
-.classList
-.add("success");
-
+if(status==="pending"){
 
 $("statusBox").innerText=
 
-"🎉 आपकी KYC Verified है। Commission withdrawal के लिए Bank Details उपलब्ध हैं।";
+"⏳ आपकी KYC Admin Review में है। Approval के बाद आपको जानकारी मिलेगी।";
+
+
+$("submitBtn").innerText=
+"Update KYC Details";
 
 }
 
 
-}catch(error){
+else if(
+status==="approved" ||
+status==="verified"
+){
+
+$("statusBox")
+.classList
+.add("success");
+
+
+$("statusBox").innerText=
+
+"🎉 आपकी KYC Approved है। आप Commission Withdrawal के लिए eligible हैं।";
+
+
+$("submitBtn").disabled=true;
+
+
+}
+
+
+else if(status==="rejected"){
+
+$("statusBox")
+.classList
+.add("rejected");
+
+
+$("statusBox").innerText=
+
+"❌ आपकी KYC Reject हुई है। कृपया सही जानकारी भरकर दोबारा Submit करें।";
+
+
+$("submitBtn").innerText=
+"Resubmit KYC";
+
+}
+
+
+}
+catch(error){
+
 
 console.error(
 "Load KYC Error:",
@@ -845,7 +818,8 @@ error
 
 $("statusBox").innerText=
 
-"⚠️ जानकारी Load नहीं हुई। कृपया इंटरनेट Check करके Page Refresh करें।";
+"⚠️ जानकारी Load नहीं हुई। कृपया Page Refresh करें।";
+
 
 }
 
@@ -874,7 +848,7 @@ this.value.replace(
 
 
 /* =========================
-   ACCOUNT NUMBER VALIDATION
+   ACCOUNT VALIDATION
 ========================= */
 
 $("accountNumber")
@@ -946,7 +920,8 @@ return;
 }
 
 
-/* Get Values */
+
+/* GET VALUES */
 
 const fullName=
 $("fullName").value.trim();
@@ -981,13 +956,13 @@ $("confirmAccountNumber").value.trim();
 
 
 const ifscCode=
-$("ifscCode").value.trim().toUpperCase();
+$("ifscCode").value
+.trim()
+.toUpperCase();
 
 
 
-/* =========================
-   VALIDATION
-========================= */
+/* VALIDATION */
 
 if(!fullName){
 
@@ -1000,9 +975,7 @@ return;
 }
 
 
-if(
-mobile.length!==10
-){
+if(mobile.length!==10){
 
 alert(
 "⚠️ कृपया सही 10 Digit Mobile Number भरें।"
@@ -1057,9 +1030,7 @@ return;
 }
 
 
-if(
-accountNumber.length<9
-){
+if(accountNumber.length<9){
 
 alert(
 "⚠️ कृपया सही Account Number भरें।"
@@ -1083,7 +1054,8 @@ return;
 }
 
 
-/* Basic IFSC Validation */
+
+/* IFSC VALIDATION */
 
 const ifscPattern=
 /^[A-Z]{4}0[A-Z0-9]{6}$/;
@@ -1106,7 +1078,7 @@ return;
 
 
 /* =========================
-   SAVE
+   SAVE KYC
 ========================= */
 
 try{
@@ -1114,12 +1086,14 @@ try{
 
 $("submitBtn").disabled=true;
 
+
 $("submitBtn").innerText=
 "Saving...";
 
 
 $("loading").style.display=
 "block";
+
 
 
 const userRef=
@@ -1130,18 +1104,36 @@ currentUser.uid
 );
 
 
+
+/* =========================
+   SAVE USER KYC DATA
+========================= */
+
 await setDoc(
+
 userRef,
+
 {
+
+name:
+fullName,
+
+
+email:
+currentUser.email || "",
+
 
 kycFullName:
 fullName,
 
+
 kycMobile:
 mobile,
 
+
 kycDOB:
 dob,
+
 
 kycState:
 state,
@@ -1150,33 +1142,134 @@ state,
 bankAccountHolder:
 accountHolder,
 
+
 bankName:
 bankName,
 
+
 bankAccountNumber:
 accountNumber,
+
 
 bankIFSC:
 ifscCode,
 
 
+/* IMPORTANT */
+
 kycStatus:
-"submitted",
+"pending",
+
 
 kycSubmittedAt:
-new Date()
-
+serverTimestamp()
 
 },
 
 {
-
 merge:true
-
 }
 
 );
 
+
+
+/* =========================
+   CREATE ADMIN KYC REQUEST
+========================= */
+
+/*
+Admin Panel exactly reads:
+
+collection(db,"kycRequests")
+
+and
+
+status == "pending"
+*/
+
+
+const kycRef=
+doc(
+db,
+"kycRequests",
+currentUser.uid
+);
+
+
+
+await setDoc(
+
+kycRef,
+
+{
+
+userId:
+currentUser.uid,
+
+
+name:
+fullName,
+
+
+email:
+currentUser.email || "",
+
+
+mobile:
+mobile,
+
+
+dob:
+dob,
+
+
+state:
+state,
+
+
+accountHolder:
+accountHolder,
+
+
+bankName:
+bankName,
+
+
+accountNumber:
+accountNumber,
+
+
+ifscCode:
+ifscCode,
+
+
+status:
+"pending",
+
+
+submittedAt:
+serverTimestamp(),
+
+
+updatedAt:
+serverTimestamp()
+
+},
+
+{
+merge:true
+}
+
+);
+
+
+
+/* SUCCESS */
+
+$("statusBox")
+.classList
+.remove("rejected");
 
 
 $("statusBox")
@@ -1186,7 +1279,8 @@ $("statusBox")
 
 $("statusBox").innerText=
 
-"✅ आपकी KYC और Bank Details Successfully Submitted हो गई हैं।";
+"⏳ आपकी KYC Successfully Submitted हो गई है और अब Admin Review में है।";
+
 
 
 alert(
@@ -1194,7 +1288,8 @@ alert(
 );
 
 
-/* Hide Account Numbers */
+
+/* CLEAR SENSITIVE INPUTS */
 
 $("accountNumber").value=
 "";
@@ -1202,6 +1297,7 @@ $("accountNumber").value=
 
 $("confirmAccountNumber").value=
 "";
+
 
 
 setTimeout(
@@ -1215,7 +1311,8 @@ location.href=
 );
 
 
-}catch(error){
+}
+catch(error){
 
 
 console.error(
@@ -1251,11 +1348,13 @@ message;
 
 $("submitBtn").disabled=false;
 
+
 $("submitBtn").innerText=
 "Submit KYC & Bank Details";
 
 
-}finally{
+}
+finally{
 
 
 $("loading").style.display=
@@ -1268,7 +1367,9 @@ $("loading").style.display=
 
 );
 
+
 </script>
 
 </body>
+
 </html>
