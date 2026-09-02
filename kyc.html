@@ -10,6 +10,7 @@ content="width=device-width, initial-scale=1.0">
 
 <title>KYC Verification - Padho Aur Kamao</title>
 
+
 <style>
 
 *{
@@ -24,8 +25,17 @@ body{
     color:#172033;
 }
 
+button{
+    font-family:inherit;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
 .topbar{
-    height:70px;
+    min-height:70px;
     background:#fff;
     border-bottom:1px solid #e8eaf0;
     display:flex;
@@ -51,7 +61,11 @@ body{
     align-items:center;
     justify-content:center;
     color:#fff;
-    background:linear-gradient(135deg,#6025d7,#8b5cf6);
+    background:linear-gradient(
+        135deg,
+        #6025d7,
+        #8b5cf6
+    );
 }
 
 .back-btn{
@@ -63,6 +77,11 @@ body{
     font-weight:bold;
     cursor:pointer;
 }
+
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
     max-width:850px;
@@ -85,11 +104,17 @@ body{
     line-height:1.6;
 }
 
+
+/* =========================
+   STATUS BOX
+========================= */
+
 .status-box{
     padding:16px;
     border-radius:14px;
     margin-bottom:20px;
     font-size:14px;
+    line-height:1.6;
     background:#fff7ed;
     border:1px solid #fed7aa;
     color:#9a3412;
@@ -100,6 +125,17 @@ body{
     border-color:#a7f3d0;
     color:#166534;
 }
+
+.status-box.error{
+    background:#fef2f2;
+    border-color:#fecaca;
+    color:#b91c1c;
+}
+
+
+/* =========================
+   CARD
+========================= */
 
 .card{
     background:#fff;
@@ -122,6 +158,11 @@ body{
     line-height:1.6;
     margin-bottom:22px;
 }
+
+
+/* =========================
+   FORM
+========================= */
 
 .form-grid{
     display:grid;
@@ -161,6 +202,17 @@ select:focus{
     box-shadow:0 0 0 3px rgba(101,38,215,.08);
 }
 
+input:disabled,
+select:disabled{
+    background:#f3f4f6;
+    cursor:not-allowed;
+}
+
+
+/* =========================
+   NOTE
+========================= */
+
 .note{
     margin-top:16px;
     padding:14px;
@@ -171,13 +223,22 @@ select:focus{
     line-height:1.6;
 }
 
+
+/* =========================
+   BUTTON
+========================= */
+
 .submit-btn{
     width:100%;
     margin-top:5px;
     padding:15px;
     border:0;
     border-radius:11px;
-    background:linear-gradient(135deg,#6025d7,#8b5cf6);
+    background:linear-gradient(
+        135deg,
+        #6025d7,
+        #8b5cf6
+    );
     color:#fff;
     font-size:15px;
     font-weight:bold;
@@ -196,6 +257,11 @@ select:focus{
     color:#6526d7;
     font-size:13px;
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px){
 
@@ -229,269 +295,308 @@ select:focus{
 
 </head>
 
+
 <body>
 
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="topbar">
 
-<div class="brand">
+    <div class="brand">
 
-<div class="brand-icon">
-📚
-</div>
+        <div class="brand-icon">
+            📚
+        </div>
 
-Padho Aur Kamao
+        Padho Aur Kamao
 
-</div>
+    </div>
 
 
-<button
-class="back-btn"
-onclick="location.href='dashboard.html'">
+    <button
+    class="back-btn"
+    onclick="location.href='dashboard.html'">
 
-← Dashboard
+        ← Dashboard
 
-</button>
+    </button>
 
 </header>
 
 
 
+<!-- =========================
+     MAIN
+========================= -->
+
 <div class="container">
 
 
-<div class="heading">
+    <div class="heading">
 
-<h1>
-🪪 KYC & Bank Details
-</h1>
+        <h1>
+            🪪 KYC & Bank Details
+        </h1>
 
-<p>
-अपनी Basic KYC और Commission प्राप्त करने के लिए Bank Details भरें।
-</p>
+        <p>
+            अपनी KYC और Commission प्राप्त करने के लिए Bank Details भरें।
+        </p>
 
-</div>
+    </div>
 
 
 
-<div
-class="status-box"
-id="statusBox">
+    <!-- STATUS -->
 
-⏳ आपकी KYC अभी शुरू नहीं हुई है।
+    <div
+    class="status-box"
+    id="statusBox">
 
-</div>
+        ⏳ आपकी जानकारी Check की जा रही है...
 
+    </div>
 
 
-<!-- BASIC KYC -->
 
-<div class="card">
+    <!-- =========================
+         BASIC KYC
+    ========================= -->
 
-<div class="card-title">
-👤 Basic KYC Details
-</div>
+    <div class="card">
 
-<div class="card-desc">
-कृपया अपनी सही जानकारी भरें।
-</div>
+        <div class="card-title">
+            👤 Basic KYC Details
+        </div>
 
+        <div class="card-desc">
+            कृपया अपनी सही जानकारी भरें।
+        </div>
 
-<div class="form-grid">
 
+        <div class="form-grid">
 
-<div class="form-group full">
 
-<label>पूरा नाम</label>
+            <div class="form-group full">
 
-<input
-type="text"
-id="fullName"
-placeholder="अपना पूरा नाम लिखें">
+                <label>
+                    पूरा नाम
+                </label>
 
-</div>
+                <input
+                type="text"
+                id="fullName"
+                placeholder="अपना पूरा नाम लिखें">
 
+            </div>
 
 
-<div class="form-group">
 
-<label>Mobile Number</label>
+            <div class="form-group">
 
-<input
-type="tel"
-id="mobile"
-placeholder="10 Digit Mobile Number"
-maxlength="10"
-inputmode="numeric">
+                <label>
+                    Mobile Number
+                </label>
 
-</div>
+                <input
+                type="tel"
+                id="mobile"
+                placeholder="10 Digit Mobile Number"
+                maxlength="10"
+                inputmode="numeric">
 
+            </div>
 
 
-<div class="form-group">
 
-<label>Date of Birth</label>
+            <div class="form-group">
 
-<input
-type="date"
-id="dob">
+                <label>
+                    Date of Birth
+                </label>
 
-</div>
+                <input
+                type="date"
+                id="dob">
 
+            </div>
 
 
-<div class="form-group full">
 
-<label>State</label>
+            <div class="form-group full">
 
-<select id="state">
+                <label>
+                    State
+                </label>
 
-<option value="">
-State Select करें
-</option>
+                <select id="state">
 
-<option value="Andhra Pradesh">Andhra Pradesh</option>
-<option value="Arunachal Pradesh">Arunachal Pradesh</option>
-<option value="Assam">Assam</option>
-<option value="Bihar">Bihar</option>
-<option value="Chhattisgarh">Chhattisgarh</option>
-<option value="Delhi">Delhi</option>
-<option value="Gujarat">Gujarat</option>
-<option value="Haryana">Haryana</option>
-<option value="Jharkhand">Jharkhand</option>
-<option value="Karnataka">Karnataka</option>
-<option value="Madhya Pradesh">Madhya Pradesh</option>
-<option value="Maharashtra">Maharashtra</option>
-<option value="Punjab">Punjab</option>
-<option value="Rajasthan">Rajasthan</option>
-<option value="Tamil Nadu">Tamil Nadu</option>
-<option value="Uttar Pradesh">Uttar Pradesh</option>
-<option value="Uttarakhand">Uttarakhand</option>
-<option value="West Bengal">West Bengal</option>
-<option value="Other">Other</option>
+                    <option value="">
+                        State Select करें
+                    </option>
 
-</select>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Other">Other</option>
 
-</div>
+                </select>
 
-</div>
+            </div>
 
-</div>
 
+        </div>
 
+    </div>
 
-<!-- BANK DETAILS -->
 
-<div class="card">
 
-<div class="card-title">
-💰 Commission Bank Details
-</div>
+    <!-- =========================
+         BANK DETAILS
+    ========================= -->
 
-<div class="card-desc">
-Commission withdrawal के लिए अपना सही बैंक विवरण भरें।
-</div>
+    <div class="card">
 
+        <div class="card-title">
+            💰 Commission Bank Details
+        </div>
 
-<div class="form-grid">
+        <div class="card-desc">
+            Commission withdrawal के लिए अपना सही Bank Details भरें।
+        </div>
 
 
-<div class="form-group full">
+        <div class="form-grid">
 
-<label>Account Holder Name</label>
 
-<input
-type="text"
-id="accountHolder"
-placeholder="Bank Account Holder Name">
+            <div class="form-group full">
 
-</div>
+                <label>
+                    Account Holder Name
+                </label>
 
+                <input
+                type="text"
+                id="accountHolder"
+                placeholder="Bank Account Holder Name">
 
+            </div>
 
-<div class="form-group">
 
-<label>Bank Name</label>
 
-<input
-type="text"
-id="bankName"
-placeholder="Bank Name">
+            <div class="form-group">
 
-</div>
+                <label>
+                    Bank Name
+                </label>
 
+                <input
+                type="text"
+                id="bankName"
+                placeholder="Bank Name">
 
+            </div>
 
-<div class="form-group">
 
-<label>IFSC Code</label>
 
-<input
-type="text"
-id="ifscCode"
-placeholder="Example: SBIN0001234"
-style="text-transform:uppercase">
+            <div class="form-group">
 
-</div>
+                <label>
+                    IFSC Code
+                </label>
 
+                <input
+                type="text"
+                id="ifscCode"
+                placeholder="Example: SBIN0001234"
+                maxlength="11"
+                style="text-transform:uppercase">
 
+            </div>
 
-<div class="form-group">
 
-<label>Account Number</label>
 
-<input
-type="password"
-id="accountNumber"
-placeholder="Account Number"
-inputmode="numeric">
+            <div class="form-group">
 
-</div>
+                <label>
+                    Account Number
+                </label>
 
+                <input
+                type="password"
+                id="accountNumber"
+                placeholder="Account Number"
+                inputmode="numeric">
 
+            </div>
 
-<div class="form-group">
 
-<label>Confirm Account Number</label>
 
-<input
-type="password"
-id="confirmAccountNumber"
-placeholder="Account Number फिर से लिखें"
-inputmode="numeric">
+            <div class="form-group">
 
-</div>
+                <label>
+                    Confirm Account Number
+                </label>
 
+                <input
+                type="password"
+                id="confirmAccountNumber"
+                placeholder="Account Number फिर से लिखें"
+                inputmode="numeric">
 
-</div>
+            </div>
 
 
-<div class="note">
+        </div>
 
-⚠️ कभी भी OTP, ATM PIN, UPI PIN, CVV या Net Banking Password शेयर न करें।
 
-</div>
+        <div class="note">
 
-</div>
+            ⚠️ कभी भी OTP, ATM PIN, UPI PIN, CVV या Net Banking Password शेयर न करें।
 
+        </div>
 
+    </div>
 
-<button
-class="submit-btn"
-id="submitBtn">
 
-Submit KYC & Bank Details
 
-</button>
+    <!-- SUBMIT -->
 
+    <button
+    class="submit-btn"
+    id="submitBtn">
 
-<div
-class="loading"
-id="loading">
+        Submit KYC & Bank Details
 
-⏳ कृपया प्रतीक्षा करें...
+    </button>
 
-</div>
+
+    <div
+    class="loading"
+    id="loading">
+
+        ⏳ KYC Submit हो रही है, कृपया प्रतीक्षा करें...
+
+    </div>
 
 
 </div>
@@ -501,59 +606,91 @@ id="loading">
 <script type="module">
 
 
+/* =========================
+   FIREBASE IMPORTS
+========================= */
+
 import {
-initializeApp
+
+    initializeApp
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
 import {
-getAuth,
-onAuthStateChanged
+
+    getAuth,
+    onAuthStateChanged
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
 import {
-getFirestore,
-doc,
-getDoc,
-setDoc,
-serverTimestamp
+
+    getFirestore,
+
+    doc,
+    getDoc,
+
+    setDoc,
+
+    collection,
+    query,
+    where,
+    getDocs,
+
+    serverTimestamp
+
 }
+
 from
+
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
 
+/* =========================
+   FIREBASE CONFIG
+========================= */
+
 const firebaseConfig={
 
-apiKey:
-"AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
+    apiKey:
+    "AIzaSyDhYPTmWOqYgUOk3a0QK0WJBFIYlGZdWA0",
 
-authDomain:
-"padho-aur-kamao-3eeae.firebaseapp.com",
+    authDomain:
+    "padho-aur-kamao-3eeae.firebaseapp.com",
 
-projectId:
-"padho-aur-kamao-3eeae",
+    projectId:
+    "padho-aur-kamao-3eeae",
 
-storageBucket:
-"padho-aur-kamao-3eeae.firebasestorage.app",
+    storageBucket:
+    "padho-aur-kamao-3eeae.firebasestorage.app",
 
-messagingSenderId:
-"670063905617",
+    messagingSenderId:
+    "670063905617",
 
-appId:
-"1:670063905617:web:9b3a7e62fdeea14fbfa170",
+    appId:
+    "1:670063905617:web:9b3a7e62fdeea14fbfa170",
 
-measurementId:
-"G-7J1YV8HN3F"
+    measurementId:
+    "G-7J1YV8HN3F"
 
 };
 
 
+
+/* =========================
+   INITIALIZE
+========================= */
 
 const app=
 initializeApp(firebaseConfig);
@@ -568,617 +705,1035 @@ getFirestore(app);
 
 
 
+/* =========================
+   SHORTCUT
+========================= */
+
 const $=
 id=>document.getElementById(id);
+
 
 
 let currentUser=null;
 
 let userData={};
 
+let courseEligible=false;
 
 
-/* AUTH CHECK */
+
+/* =========================
+   AUTH CHECK
+========================= */
 
 onAuthStateChanged(
-auth,
-async user=>{
 
-if(!user){
+    auth,
 
-location.href="login.html";
+    async user=>{
 
-return;
+        if(!user){
 
-}
+            location.href=
+            "login.html";
 
+            return;
 
-currentUser=user;
+        }
 
-await loadUserData();
 
-}
+        currentUser=user;
 
-);
 
+        await loadUserData();
 
-
-/* LOAD USER */
-
-async function loadUserData(){
-
-try{
-
-
-const userRef=
-doc(
-db,
-"users",
-currentUser.uid
-);
-
-
-const snap=
-await getDoc(userRef);
-
-
-if(!snap.exists()){
-
-$("statusBox").innerText=
-"⚠️ User Account नहीं मिला।";
-
-return;
-
-}
-
-
-userData=
-snap.data();
-
-
-
-/* COURSE CHECK */
-
-if(userData.coursePurchased!==true){
-
-$("statusBox").innerText=
-"🔒 KYC करने के लिए पहले कोई Course Purchase करना जरूरी है।";
-
-
-$("submitBtn").disabled=true;
-
-return;
-
-}
-
-
-
-/* FILL EXISTING DATA */
-
-$("fullName").value=
-userData.kycFullName||
-userData.name||
-currentUser.displayName||
-"";
-
-
-$("mobile").value=
-userData.kycMobile||
-"";
-
-
-$("dob").value=
-userData.kycDOB||
-"";
-
-
-$("state").value=
-userData.kycState||
-"";
-
-
-$("accountHolder").value=
-userData.bankAccountHolder||
-"";
-
-
-$("bankName").value=
-userData.bankName||
-"";
-
-
-$("ifscCode").value=
-userData.bankIFSC||
-"";
-
-
-
-/* STATUS */
-
-if(
-userData.kycStatus==="submitted" ||
-userData.kycStatus==="Pending"
-){
-
-$("statusBox").innerText=
-"⏳ आपकी KYC Admin Review के लिए Pending है।";
-
-
-}
-
-
-if(
-userData.kycStatus==="Approved" ||
-userData.kycStatus==="approved" ||
-userData.kycStatus==="verified"
-){
-
-$("statusBox")
-.classList
-.add("success");
-
-
-$("statusBox").innerText=
-"🎉 आपकी KYC Approved है।";
-
-
-$("submitBtn").innerText=
-"KYC Approved";
-
-
-}
-
-
-if(
-userData.kycStatus==="Rejected" ||
-userData.kycStatus==="rejected"
-){
-
-$("statusBox").innerText=
-"❌ आपकी KYC Reject हो गई है। आप जानकारी सही करके दोबारा Submit कर सकते हैं।";
-
-}
-
-
-}catch(error){
-
-console.error(error);
-
-
-$("statusBox").innerText=
-"⚠️ जानकारी Load नहीं हुई।";
-
-}
-
-}
-
-
-
-/* MOBILE VALIDATION */
-
-$("mobile")
-.addEventListener(
-"input",
-function(){
-
-this.value=
-this.value.replace(
-/[^0-9]/g,
-""
-);
-
-}
-);
-
-
-
-/* ACCOUNT NUMBER */
-
-$("accountNumber")
-.addEventListener(
-"input",
-function(){
-
-this.value=
-this.value.replace(
-/[^0-9]/g,
-""
-);
-
-}
-);
-
-
-$("confirmAccountNumber")
-.addEventListener(
-"input",
-function(){
-
-this.value=
-this.value.replace(
-/[^0-9]/g,
-""
-);
-
-}
-);
-
-
-
-/* IFSC */
-
-$("ifscCode")
-.addEventListener(
-"input",
-function(){
-
-this.value=
-this.value.toUpperCase();
-
-}
-);
-
-
-
-/* SUBMIT KYC */
-
-$("submitBtn")
-.addEventListener(
-"click",
-async()=>{
-
-
-if(!currentUser){
-
-alert("कृपया पहले Login करें।");
-
-return;
-
-}
-
-
-
-const fullName=
-$("fullName").value.trim();
-
-
-const mobile=
-$("mobile").value.trim();
-
-
-const dob=
-$("dob").value;
-
-
-const state=
-$("state").value;
-
-
-const accountHolder=
-$("accountHolder").value.trim();
-
-
-const bankName=
-$("bankName").value.trim();
-
-
-const accountNumber=
-$("accountNumber").value.trim();
-
-
-const confirmAccountNumber=
-$("confirmAccountNumber").value.trim();
-
-
-const ifscCode=
-$("ifscCode").value.trim().toUpperCase();
-
-
-
-/* VALIDATION */
-
-if(!fullName){
-
-alert("पूरा नाम भरें।");
-
-return;
-
-}
-
-
-if(mobile.length!==10){
-
-alert("सही 10 Digit Mobile Number भरें।");
-
-return;
-
-}
-
-
-if(!dob){
-
-alert("Date of Birth भरें।");
-
-return;
-
-}
-
-
-if(!state){
-
-alert("State Select करें।");
-
-return;
-
-}
-
-
-if(!accountHolder){
-
-alert("Account Holder Name भरें।");
-
-return;
-
-}
-
-
-if(!bankName){
-
-alert("Bank Name भरें।");
-
-return;
-
-}
-
-
-if(accountNumber.length<9){
-
-alert("सही Account Number भरें।");
-
-return;
-
-}
-
-
-if(accountNumber!==confirmAccountNumber){
-
-alert("दोनों Account Number समान नहीं हैं।");
-
-return;
-
-}
-
-
-const ifscPattern=
-/^[A-Z]{4}0[A-Z0-9]{6}$/;
-
-
-if(!ifscPattern.test(ifscCode)){
-
-alert("सही IFSC Code भरें।");
-
-return;
-
-}
-
-
-
-/* SAVE */
-
-try{
-
-
-$("submitBtn").disabled=true;
-
-
-$("submitBtn").innerText=
-"Submitting...";
-
-
-$("loading").style.display=
-"block";
-
-
-
-/* USERS COLLECTION */
-
-await setDoc(
-
-doc(
-db,
-"users",
-currentUser.uid
-),
-
-{
-
-kycFullName:
-fullName,
-
-kycMobile:
-mobile,
-
-kycDOB:
-dob,
-
-kycState:
-state,
-
-bankAccountHolder:
-accountHolder,
-
-bankName:
-bankName,
-
-bankAccountNumber:
-accountNumber,
-
-bankIFSC:
-ifscCode,
-
-kycStatus:
-"Pending",
-
-kycSubmittedAt:
-serverTimestamp()
-
-},
-
-{
-merge:true
-}
+    }
 
 );
 
 
 
 /* =========================
-   KYC REQUEST COLLECTION
-
-   ADMIN PANEL इसी को पढ़ेगा
+   LOAD USER
 ========================= */
 
-await setDoc(
+async function loadUserData(){
 
-doc(
-db,
-"kycRequests",
-currentUser.uid
-),
+    try{
 
-{
 
-userId:
-currentUser.uid,
+        const userRef=
 
-name:
-fullName,
+        doc(
+            db,
+            "users",
+            currentUser.uid
+        );
 
-email:
-currentUser.email||"",
 
-mobile:
-mobile,
+        const userSnap=
 
-dob:
-dob,
+        await getDoc(
+            userRef
+        );
 
-state:
-state,
 
-accountHolder:
-accountHolder,
+        if(
+            userSnap.exists()
+        ){
 
-bankName:
-bankName,
+            userData=
+            userSnap.data();
 
-accountNumber:
-accountNumber,
+        }
+        else{
 
-ifscCode:
-ifscCode,
+            userData={
 
-status:
-"pending",
+                name:
+                currentUser.displayName||"",
 
-submittedAt:
-serverTimestamp()
+                email:
+                currentUser.email||""
 
-},
+            };
 
-{
-merge:true
+        }
+
+
+
+        /* =========================
+           CHECK COURSE ELIGIBILITY
+
+           1. users.coursePurchased
+           OR
+           2. ACTIVE ENROLLMENT
+
+           यही मुख्य FIX है
+        ========================= */
+
+        courseEligible=false;
+
+
+
+        if(
+            userData.coursePurchased===true
+        ){
+
+            courseEligible=true;
+
+        }
+
+
+
+        if(
+            !courseEligible
+        ){
+
+            try{
+
+
+                const enrollmentQuery=
+
+                query(
+
+                    collection(
+                        db,
+                        "enrollments"
+                    ),
+
+                    where(
+                        "userId",
+                        "==",
+                        currentUser.uid
+                    )
+
+                );
+
+
+                const enrollmentSnap=
+
+                await getDocs(
+                    enrollmentQuery
+                );
+
+
+                enrollmentSnap.forEach(
+                    enrollment=>{
+
+                        const data=
+                        enrollment.data();
+
+
+                        if(
+                            data.status==="active"
+                        ){
+
+                            courseEligible=true;
+
+                        }
+
+                    }
+                );
+
+
+            }
+            catch(error){
+
+                console.error(
+                    "Enrollment Check Error:",
+                    error
+                );
+
+            }
+
+        }
+
+
+
+        /* =========================
+           IF NO COURSE
+        ========================= */
+
+        if(
+            !courseEligible
+        ){
+
+            $("statusBox").innerText=
+
+            "🔒 KYC करने के लिए पहले कोई Course Purchase करना जरूरी है।";
+
+
+            $("submitBtn").disabled=
+            true;
+
+
+            return;
+
+        }
+
+
+
+        /* =========================
+           FILL EXISTING DATA
+        ========================= */
+
+        $("fullName").value=
+
+        userData.kycFullName||
+        userData.name||
+        currentUser.displayName||
+        "";
+
+
+        $("mobile").value=
+
+        userData.kycMobile||
+        "";
+
+
+        $("dob").value=
+
+        userData.kycDOB||
+        "";
+
+
+        $("state").value=
+
+        userData.kycState||
+        "";
+
+
+        $("accountHolder").value=
+
+        userData.bankAccountHolder||
+        "";
+
+
+        $("bankName").value=
+
+        userData.bankName||
+        "";
+
+
+        $("ifscCode").value=
+
+        userData.bankIFSC||
+        "";
+
+
+
+        /* =========================
+           KYC STATUS
+        ========================= */
+
+        const kycStatus=
+
+        String(
+            userData.kycStatus||
+            ""
+        ).toLowerCase();
+
+
+
+        /* PENDING */
+
+        if(
+            kycStatus==="pending" ||
+            kycStatus==="submitted"
+        ){
+
+            $("statusBox").innerText=
+
+            "⏳ आपकी KYC Admin Review के लिए Pending है।";
+
+        }
+
+
+
+        /* APPROVED */
+
+        if(
+            kycStatus==="approved" ||
+            kycStatus==="verified"
+        ){
+
+            $("statusBox")
+            .classList
+            .add(
+                "success"
+            );
+
+
+            $("statusBox").innerText=
+
+            "🎉 आपकी KYC Approved है।";
+
+
+            $("submitBtn").innerText=
+
+            "KYC Approved";
+
+
+            $("submitBtn").disabled=
+            true;
+
+
+            disableForm();
+
+        }
+
+
+
+        /* REJECTED */
+
+        if(
+            kycStatus==="rejected"
+        ){
+
+            $("statusBox")
+            .classList
+            .add(
+                "error"
+            );
+
+
+            $("statusBox").innerText=
+
+            "❌ आपकी KYC Reject हो गई है। जानकारी सही करके दोबारा Submit करें।";
+
+        }
+
+
+
+        /* NO KYC */
+
+        if(
+            !kycStatus
+        ){
+
+            $("statusBox").innerText=
+
+            "📝 अपनी KYC और Bank Details भरकर Submit करें।";
+
+        }
+
+
+    }
+    catch(error){
+
+
+        console.error(
+            "Load User Error:",
+            error
+        );
+
+
+        $("statusBox")
+        .classList
+        .add(
+            "error"
+        );
+
+
+        $("statusBox").innerText=
+
+        "⚠️ जानकारी Load नहीं हुई। कृपया Page Refresh करें।";
+
+    }
+
 }
+
+
+
+/* =========================
+   DISABLE FORM
+========================= */
+
+function disableForm(){
+
+    const fields=[
+
+        "fullName",
+        "mobile",
+        "dob",
+        "state",
+        "accountHolder",
+        "bankName",
+        "ifscCode",
+        "accountNumber",
+        "confirmAccountNumber"
+
+    ];
+
+
+    fields.forEach(
+        id=>{
+
+            $(id).disabled=
+            true;
+
+        }
+    );
+
+}
+
+
+
+/* =========================
+   MOBILE VALIDATION
+========================= */
+
+$("mobile")
+.addEventListener(
+
+    "input",
+
+    function(){
+
+        this.value=
+
+        this.value.replace(
+            /[^0-9]/g,
+            ""
+        );
+
+    }
 
 );
 
 
 
-$("statusBox")
-.classList
-.add("success");
+/* =========================
+   ACCOUNT VALIDATION
+========================= */
 
+$("accountNumber")
+.addEventListener(
 
-$("statusBox").innerText=
-"✅ आपकी KYC Successfully Submit हो गई है। अब Admin Panel में Review के लिए दिखाई देगी।";
+    "input",
 
+    function(){
 
-alert(
-"🎉 KYC Successfully Submitted!"
+        this.value=
+
+        this.value.replace(
+            /[^0-9]/g,
+            ""
+        );
+
+    }
+
 );
 
 
 
-$("accountNumber").value="";
+$("confirmAccountNumber")
+.addEventListener(
 
-$("confirmAccountNumber").value="";
+    "input",
 
+    function(){
 
-setTimeout(
-()=>{
+        this.value=
 
-location.href=
-"dashboard.html";
+        this.value.replace(
+            /[^0-9]/g,
+            ""
+        );
 
-},
-1200
+    }
+
 );
 
 
-}
-catch(error){
 
+/* =========================
+   IFSC UPPERCASE
+========================= */
 
-console.error(
-"KYC Submit Error:",
-error
+$("ifscCode")
+.addEventListener(
+
+    "input",
+
+    function(){
+
+        this.value=
+
+        this.value.toUpperCase();
+
+    }
+
 );
 
 
-let message=
-"⚠️ KYC Submit नहीं हुई। कृपया दोबारा कोशिश करें।";
+
+/* =========================
+   SUBMIT KYC
+========================= */
+
+$("submitBtn")
+.addEventListener(
+
+    "click",
+
+    async()=>{
 
 
-if(
-error.code==="permission-denied"
-){
+        if(
+            !currentUser
+        ){
 
-message=
-"⚠️ Firebase Permission Denied. Firestore Rules Check करें।";
+            alert(
+                "कृपया पहले Login करें।"
+            );
 
-}
+            return;
 
-
-alert(message);
-
-
-$("statusBox").innerText=
-message;
+        }
 
 
-$("submitBtn").disabled=false;
+
+        if(
+            !courseEligible
+        ){
+
+            alert(
+                "KYC के लिए पहले Course Purchase करना जरूरी है।"
+            );
+
+            return;
+
+        }
 
 
-$("submitBtn").innerText=
-"Submit KYC & Bank Details";
+
+        /* GET VALUES */
+
+        const fullName=
+
+        $("fullName")
+        .value
+        .trim();
 
 
-}
-finally{
+        const mobile=
+
+        $("mobile")
+        .value
+        .trim();
 
 
-$("loading").style.display=
-"none";
+        const dob=
+
+        $("dob")
+        .value;
 
 
-}
+        const state=
 
-}
+        $("state")
+        .value;
+
+
+        const accountHolder=
+
+        $("accountHolder")
+        .value
+        .trim();
+
+
+        const bankName=
+
+        $("bankName")
+        .value
+        .trim();
+
+
+        const accountNumber=
+
+        $("accountNumber")
+        .value
+        .trim();
+
+
+        const confirmAccountNumber=
+
+        $("confirmAccountNumber")
+        .value
+        .trim();
+
+
+        const ifscCode=
+
+        $("ifscCode")
+        .value
+        .trim()
+        .toUpperCase();
+
+
+
+        /* =========================
+           VALIDATION
+        ========================= */
+
+        if(
+            !fullName
+        ){
+
+            alert(
+                "पूरा नाम भरें।"
+            );
+
+            return;
+
+        }
+
+
+
+        if(
+            mobile.length!==10
+        ){
+
+            alert(
+                "सही 10 Digit Mobile Number भरें।"
+            );
+
+            return;
+
+        }
+
+
+
+        if(
+            !dob
+        ){
+
+            alert(
+                "Date of Birth भरें।"
+            );
+
+            return;
+
+        }
+
+
+
+        if(
+            !state
+        ){
+
+            alert(
+                "State Select करें।"
+            );
+
+            return;
+
+        }
+
+
+
+        if(
+            !accountHolder
+        ){
+
+            alert(
+                "Account Holder Name भरें।"
+            );
+
+            return;
+
+        }
+
+
+
+        if(
+            !bankName
+        ){
+
+            alert(
+                "Bank Name भरें।"
+            );
+
+            return;
+
+        }
+
+
+
+        if(
+            accountNumber.length<9
+        ){
+
+            alert(
+                "सही Account Number भरें।"
+            );
+
+            return;
+
+        }
+
+
+
+        if(
+            accountNumber!==
+            confirmAccountNumber
+        ){
+
+            alert(
+                "दोनों Account Number समान नहीं हैं।"
+            );
+
+            return;
+
+        }
+
+
+
+        const ifscPattern=
+
+        /^[A-Z]{4}0[A-Z0-9]{6}$/;
+
+
+
+        if(
+            !ifscPattern.test(
+                ifscCode
+            )
+        ){
+
+            alert(
+                "सही IFSC Code भरें।"
+            );
+
+            return;
+
+        }
+
+
+
+        /* =========================
+           START LOADING
+        ========================= */
+
+        try{
+
+
+            $("submitBtn").disabled=
+            true;
+
+
+            $("submitBtn").innerText=
+
+            "Submitting...";
+
+
+            $("loading").style.display=
+
+            "block";
+
+
+
+            /* =========================
+               SAVE USER DATA
+            ========================= */
+
+            await setDoc(
+
+                doc(
+                    db,
+                    "users",
+                    currentUser.uid
+                ),
+
+                {
+
+                    name:
+                    fullName,
+
+                    email:
+                    currentUser.email||
+                    "",
+
+                    kycFullName:
+                    fullName,
+
+                    kycMobile:
+                    mobile,
+
+                    kycDOB:
+                    dob,
+
+                    kycState:
+                    state,
+
+                    bankAccountHolder:
+                    accountHolder,
+
+                    bankName:
+                    bankName,
+
+                    bankAccountNumber:
+                    accountNumber,
+
+                    bankIFSC:
+                    ifscCode,
+
+                    kycStatus:
+                    "Pending",
+
+                    kycSubmittedAt:
+                    serverTimestamp()
+
+                },
+
+                {
+
+                    merge:true
+
+                }
+
+            );
+
+
+
+            /* =========================
+               SAVE KYC REQUEST
+
+               ADMIN PANEL इसी को पढ़ेगा
+            ========================= */
+
+            await setDoc(
+
+                doc(
+                    db,
+                    "kycRequests",
+                    currentUser.uid
+                ),
+
+                {
+
+                    userId:
+                    currentUser.uid,
+
+                    name:
+                    fullName,
+
+                    email:
+                    currentUser.email||
+                    "",
+
+                    mobile:
+                    mobile,
+
+                    dob:
+                    dob,
+
+                    state:
+                    state,
+
+                    accountHolder:
+                    accountHolder,
+
+                    bankName:
+                    bankName,
+
+                    accountNumber:
+                    accountNumber,
+
+                    ifscCode:
+                    ifscCode,
+
+                    status:
+                    "pending",
+
+                    submittedAt:
+                    serverTimestamp(),
+
+                    updatedAt:
+                    serverTimestamp()
+
+                },
+
+                {
+
+                    merge:true
+
+                }
+
+            );
+
+
+
+            /* =========================
+               SUCCESS
+            ========================= */
+
+            $("statusBox")
+            .classList
+            .remove(
+                "error"
+            );
+
+
+            $("statusBox")
+            .classList
+            .add(
+                "success"
+            );
+
+
+            $("statusBox").innerText=
+
+            "✅ आपकी KYC Successfully Submit हो गई है। अब Admin Panel में Review के लिए दिखाई देगी।";
+
+
+            $("submitBtn").innerText=
+
+            "KYC Submitted";
+
+
+            $("accountNumber").value=
+            "";
+
+
+            $("confirmAccountNumber").value=
+            "";
+
+
+
+            alert(
+                "🎉 KYC Successfully Submitted!"
+            );
+
+
+            setTimeout(
+
+                ()=>{
+
+                    location.href=
+                    "dashboard.html";
+
+                },
+
+                1200
+
+            );
+
+
+        }
+        catch(error){
+
+
+            console.error(
+                "KYC Submit Error:",
+                error
+            );
+
+
+            let message=
+
+            "⚠️ KYC Submit नहीं हुई। कृपया दोबारा कोशिश करें।";
+
+
+
+            if(
+                error.code===
+                "permission-denied"
+            ){
+
+                message=
+
+                "⚠️ Firebase Permission Denied. Firestore Rules में users और kycRequests की permission Check करें।";
+
+            }
+
+
+
+            $("statusBox")
+            .classList
+            .add(
+                "error"
+            );
+
+
+            $("statusBox").innerText=
+            message;
+
+
+            alert(
+                message
+            );
+
+
+            $("submitBtn").disabled=
+            false;
+
+
+            $("submitBtn").innerText=
+
+            "Submit KYC & Bank Details";
+
+
+        }
+        finally{
+
+
+            $("loading").style.display=
+
+            "none";
+
+        }
+
+
+    }
 
 );
 
 
 </script>
+
 
 </body>
 
