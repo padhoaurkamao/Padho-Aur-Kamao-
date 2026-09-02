@@ -21,6 +21,10 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
     background:#f4f6fb;
@@ -31,13 +35,19 @@ a{
     text-decoration:none;
 }
 
+button,
+input,
+select{
+    font-family:inherit;
+}
+
 
 /* ===============================
    HEADER
 ================================ */
 
 header{
-    height:72px;
+    height:82px;
     background:#ffffff;
     display:flex;
     align-items:center;
@@ -49,46 +59,71 @@ header{
     z-index:1000;
 }
 
-
 .logo{
     display:flex;
     align-items:center;
     gap:10px;
-    font-size:21px;
+    font-size:22px;
     font-weight:bold;
     color:#5b21b6;
 }
 
-
 .logo-icon{
-    width:42px;
-    height:42px;
+    width:48px;
+    height:48px;
     display:flex;
     align-items:center;
     justify-content:center;
-    border-radius:12px;
+    border-radius:14px;
     background:linear-gradient(
         135deg,
-        #5b21b6,
-        #8b5cf6
+        #ec008c,
+        #6d28d9,
+        #2563eb
     );
     color:white;
+    font-size:25px;
+}
+
+.logo small{
+    display:block;
+    font-size:11px;
+    color:#64748b;
+    margin-top:2px;
 }
 
 
 /* ===============================
-   MENU BUTTON
+   PROFILE HEADER
 ================================ */
 
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.header-avatar{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    background:#f0ecff;
+    border:2px solid #ede9fe;
+}
+
 .menu-btn{
-    width:46px;
-    height:46px;
+    width:52px;
+    height:52px;
     border:none;
-    border-radius:12px;
+    border-left:1px solid #e5e7eb;
     cursor:pointer;
-    background:#f5f3ff;
-    color:#5b21b6;
-    font-size:27px;
+    background:white;
+    color:#172033;
+    font-size:30px;
 }
 
 
@@ -104,17 +139,15 @@ header{
     z-index:4000;
 }
 
-
 .menu-overlay.active{
     display:block;
 }
 
-
 .side-menu{
     position:fixed;
     top:0;
-    right:-320px;
-    width:300px;
+    right:-330px;
+    width:310px;
     height:100vh;
     background:white;
     z-index:5000;
@@ -122,7 +155,6 @@ header{
     transition:.3s;
     overflow-y:auto;
 }
-
 
 .side-menu.active{
     right:0;
@@ -134,29 +166,28 @@ header{
 ================================ */
 
 .menu-header{
-    padding:25px 20px;
+    padding:24px 20px;
     color:white;
     background:linear-gradient(
         135deg,
-        #5b21b6,
-        #8b5cf6
+        #ec008c,
+        #7c3aed,
+        #2563eb
     );
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
-
 .menu-header h2{
-    font-size:20px;
+    font-size:21px;
 }
-
 
 .close-menu{
     border:none;
     background:none;
     color:white;
-    font-size:30px;
+    font-size:32px;
     cursor:pointer;
 }
 
@@ -173,28 +204,26 @@ header{
     border-bottom:1px solid #e5e7eb;
 }
 
-
 .avatar{
-    width:48px;
-    height:48px;
+    width:52px;
+    height:52px;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:22px;
+    font-size:25px;
     background:#ede9fe;
 }
-
 
 .menu-user h3{
     font-size:16px;
 }
 
-
 .menu-user p{
     margin-top:4px;
     color:#64748b;
     font-size:12px;
+    word-break:break-all;
 }
 
 
@@ -206,10 +235,8 @@ header{
     padding:12px;
 }
 
-
 .menu-links a,
 .menu-links button{
-
     width:100%;
     display:flex;
     align-items:center;
@@ -225,24 +252,17 @@ header{
     cursor:pointer;
 }
 
-
 .menu-links a:hover,
 .menu-links button:hover{
-
     background:#f5f3ff;
     color:#5b21b6;
 }
 
-
 .menu-links .active-link{
-
     background:#ede9fe;
     color:#5b21b6;
     font-weight:bold;
 }
-
-
-/* ADMIN LINK */
 
 .admin-link{
     background:#fff7ed !important;
@@ -250,18 +270,15 @@ header{
     font-weight:bold;
 }
 
-
 .admin-link:hover{
     background:#ffedd5 !important;
 }
-
 
 .menu-divider{
     border:none;
     border-top:1px solid #e5e7eb;
     margin:10px 0;
 }
-
 
 .logout-btn{
     color:#dc2626 !important;
@@ -274,206 +291,290 @@ header{
 ================================ */
 
 main{
-    max-width:1100px;
+    max-width:760px;
     margin:auto;
     padding:25px 20px 80px;
 }
 
 
 /* ===============================
-   WELCOME
+   PROFILE CARD
 ================================ */
 
-.welcome{
-
-    border-radius:22px;
-    padding:28px;
-    color:white;
-    margin-bottom:25px;
-
-    background:linear-gradient(
-        135deg,
-        #5b21b6,
-        #7c3aed,
-        #8b5cf6
-    );
-
-    box-shadow:
-    0 15px 35px
-    rgba(91,33,182,.25);
-
+.profile-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:28px;
+    box-shadow:0 10px 25px rgba(15,23,42,.10);
 }
 
+.package-banner{
+    text-align:right;
+    padding:14px 25px;
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    background:linear-gradient(
+        135deg,
+        #9d174d,
+        #6b21a8,
+        #4c1d95
+    );
+}
 
-.welcome h1{
-    font-size:30px;
+.profile-content{
+    padding:20px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.profile-image{
+    width:105px;
+    height:105px;
+    min-width:105px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:52px;
+    background:#eeeaf8;
+    border:5px solid #37335d;
+}
+
+.profile-info{
+    flex:1;
+}
+
+.profile-info h1{
+    font-size:25px;
+    text-transform:uppercase;
     margin-bottom:10px;
 }
 
+.user-id-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:18px;
+    flex-wrap:wrap;
+}
 
-.welcome p{
-    opacity:.9;
-    line-height:1.5;
+.copy-id-btn{
+    border:none;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    cursor:pointer;
+    color:white;
+    font-size:21px;
+    background:#6d28d9;
 }
 
 
 /* ===============================
-   SECTION TITLE
+   REVENUE TITLE
 ================================ */
 
-.section-title{
+.dashboard-title{
+    font-size:28px;
+    color:#5b216e;
+    margin-bottom:20px;
+}
 
+
+/* ===============================
+   REVENUE CARDS
+================================ */
+
+.revenue-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:22px;
+}
+
+.revenue-card{
+    min-height:190px;
+    padding:30px;
+    border-radius:28px;
+    color:white;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 12px 25px rgba(15,23,42,.13);
+}
+
+.revenue-card::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    right:-70px;
+    top:-80px;
+    background:rgba(255,255,255,.10);
+}
+
+.revenue-card::after{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    right:40px;
+    bottom:-45px;
+    background:rgba(255,255,255,.08);
+}
+
+.today-card{
+    background:linear-gradient(
+        135deg,
+        #8b3f86,
+        #610c7b,
+        #7e2f94
+    );
+}
+
+.week-card{
+    background:linear-gradient(
+        135deg,
+        #55369c,
+        #362073,
+        #4b2494
+    );
+}
+
+.month-card{
+    background:linear-gradient(
+        135deg,
+        #8a0057,
+        #d60088
+    );
+}
+
+.alltime-card{
+    background:linear-gradient(
+        135deg,
+        #17466b,
+        #166da1
+    );
+}
+
+.revenue-amount{
+    font-size:48px;
+    font-weight:bold;
+    position:relative;
+    z-index:2;
+}
+
+.revenue-label{
+    font-size:22px;
+    margin-top:10px;
+    opacity:.9;
+    position:relative;
+    z-index:2;
+}
+
+.revenue-line{
+    height:2px;
+    background:linear-gradient(
+        90deg,
+        #eab308 0%,
+        #eab308 90%,
+        rgba(255,255,255,.7) 90%
+    );
+    margin:22px 0 14px;
+    position:relative;
+    z-index:2;
+}
+
+.revenue-details{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin:25px 0 15px;
-
-}
-
-
-.section-title h2{
-    font-size:22px;
-}
-
-
-.view-all{
-    color:#5b21b6;
+    font-size:21px;
     font-weight:bold;
-    font-size:14px;
+    position:relative;
+    z-index:2;
+}
+
+.revenue-arrow{
+    font-size:34px;
 }
 
 
 /* ===============================
-   STATS
+   SECTION
 ================================ */
 
-.stats{
-
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-
+.section-title{
+    margin:38px 0 18px;
 }
 
-
-.stat{
-
-    background:white;
-    padding:20px;
-    border-radius:18px;
-
-    box-shadow:
-    0 8px 25px
-    rgba(15,23,42,.06);
-
-}
-
-
-.stat-icon{
-    font-size:24px;
-    margin-bottom:10px;
-}
-
-
-.stat p{
-    color:#64748b;
-    font-size:13px;
-}
-
-
-.stat h3{
-    margin-top:8px;
-    color:#5b21b6;
-    font-size:24px;
+.section-title h2{
+    font-size:25px;
+    color:#5b216e;
 }
 
 
 /* ===============================
-   COURSE SUMMARY
+   COURSES
 ================================ */
 
 .course-summary{
-
     background:white;
     padding:22px;
     border-radius:20px;
-
-    box-shadow:
-    0 8px 25px
-    rgba(15,23,42,.07);
-
+    box-shadow:0 8px 25px rgba(15,23,42,.07);
 }
 
-
 .course-row{
-
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:16px 0;
-
-    border-bottom:
-    1px solid #e5e7eb;
-
+    border-bottom:1px solid #e5e7eb;
 }
-
 
 .course-row:last-child{
     border-bottom:none;
 }
 
-
 .course-name{
-
     display:flex;
     align-items:center;
     gap:12px;
-
 }
 
-
 .course-icon{
-
     width:45px;
     height:45px;
     border-radius:12px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     background:#f5f3ff;
     font-size:22px;
-
 }
-
 
 .course-name h3{
     font-size:16px;
 }
 
-
 .course-name p{
-
     color:#64748b;
     font-size:13px;
     margin-top:4px;
-
 }
 
-
 .access-btn{
-
     border:none;
     padding:10px 15px;
     border-radius:9px;
     cursor:pointer;
-
     color:white;
     font-weight:bold;
-
     background:#5b21b6;
-
 }
 
 
@@ -482,103 +583,105 @@ main{
 ================================ */
 
 .empty{
-
     text-align:center;
     padding:30px 15px;
     color:#64748b;
-
 }
 
-
 .buy-course-btn{
-
     display:inline-block;
-
     margin-top:15px;
     padding:12px 22px;
-
     border-radius:10px;
-
     background:#5b21b6;
     color:white;
-
     font-weight:bold;
-
 }
 
 
 /* ===============================
-   REFERRAL
+   AFFILIATE
 ================================ */
 
-.referral-card{
+.page-section{
+    display:none;
+}
 
-    margin-top:25px;
-    padding:22px;
-    border-radius:20px;
-    color:white;
+.page-section.active{
+    display:block;
+}
 
+.form-card{
     background:linear-gradient(
         135deg,
-        #ec4899,
-        #8b5cf6
+        rgba(255,255,255,.95),
+        rgba(247,241,255,.95)
     );
-
+    padding:38px;
+    border-radius:28px;
+    box-shadow:0 10px 28px rgba(91,33,182,.10);
 }
 
-
-.referral-card h2{
-    margin-bottom:8px;
+.form-group{
+    margin-bottom:30px;
 }
 
-
-.referral-card p{
-
-    opacity:.9;
-    margin-bottom:15px;
-
+.form-group label{
+    display:block;
+    font-size:20px;
+    font-weight:500;
+    margin-bottom:12px;
+    color:#374151;
 }
 
-
-.referral-link-box{
-
-    display:flex;
-    gap:10px;
-
+.form-control{
+    width:100%;
+    padding:18px 20px;
+    border:2px solid #cbd5e1;
+    border-radius:15px;
+    background:#fff;
+    color:#374151;
+    font-size:20px;
+    outline:none;
 }
 
-
-.referral-link{
-
-    flex:1;
-
-    background:white;
-    color:#334155;
-
-    padding:13px;
-    border-radius:10px;
-
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-
-    font-size:13px;
-
+.form-control:focus{
+    border-color:#7c3aed;
 }
 
-
-.copy-btn{
-
+.gradient-btn{
     border:none;
-    padding:0 16px;
-    border-radius:10px;
+    padding:17px 35px;
+    border-radius:40px;
     cursor:pointer;
+    color:white;
+    font-size:18px;
+    background:linear-gradient(
+        90deg,
+        #ec008c,
+        #7c2bd8
+    );
+    box-shadow:0 8px 18px rgba(124,43,216,.25);
+}
 
-    color:#5b21b6;
-    font-weight:bold;
+.copy-button-large{
+    margin-top:18px;
+}
 
-    background:white;
+.affiliate-divider{
+    border:none;
+    border-top:1px solid #cbd5e1;
+    margin:32px 0;
+}
 
+
+/* ===============================
+   KYC
+================================ */
+
+.save-btn{
+    margin-top:10px;
+    min-width:200px;
 }
 
 
@@ -586,19 +689,10 @@ main{
    MOBILE
 ================================ */
 
-@media(max-width:800px){
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-
 @media(max-width:600px){
 
     header{
-        padding:0 15px;
+        padding:0 14px;
     }
 
     .logo{
@@ -606,38 +700,66 @@ main{
     }
 
     .logo-icon{
-        width:38px;
-        height:38px;
+        width:42px;
+        height:42px;
+        font-size:21px;
+    }
+
+    .header-avatar{
+        width:48px;
+        height:48px;
     }
 
     main{
         padding:18px 14px 60px;
     }
 
-    .welcome{
-        padding:22px;
-    }
-
-    .welcome h1{
-        font-size:24px;
-    }
-
-    .stat{
-        padding:16px;
-    }
-
-    .stat h3{
-        font-size:20px;
-    }
-
-    .course-row{
-        align-items:flex-start;
+    .profile-content{
         gap:12px;
     }
 
-    .access-btn{
-        font-size:12px;
-        padding:9px 10px;
+    .profile-image{
+        width:85px;
+        height:85px;
+        min-width:85px;
+        font-size:42px;
+    }
+
+    .package-banner{
+        font-size:19px;
+    }
+
+    .profile-info h1{
+        font-size:20px;
+    }
+
+    .user-id-row{
+        font-size:15px;
+    }
+
+    .revenue-card{
+        min-height:170px;
+        padding:27px;
+    }
+
+    .revenue-amount{
+        font-size:43px;
+    }
+
+    .revenue-label{
+        font-size:18px;
+    }
+
+    .form-card{
+        padding:26px 18px;
+    }
+
+    .form-group label{
+        font-size:18px;
+    }
+
+    .form-control{
+        font-size:17px;
     }
 
     .side-menu{
@@ -664,16 +786,25 @@ main{
 📚
 </div>
 
-<span>
+<div>
 Padho Aur Kamao
-</span>
+<small>Skill to Success</small>
+</div>
 
 </div>
 
 
+<div class="header-right">
+
+<div class="header-avatar">
+👤
+</div>
+
 <button class="menu-btn" id="menuBtn">
 ☰
 </button>
+
+</div>
 
 </header>
 
@@ -692,10 +823,7 @@ Padho Aur Kamao
 
 <div class="menu-header">
 
-<h2>
-Padho Aur Kamao
-</h2>
-
+<h2>Padho Aur Kamao</h2>
 
 <button class="close-menu" id="closeMenu">
 ×
@@ -712,7 +840,6 @@ Padho Aur Kamao
 <div class="avatar">
 👤
 </div>
-
 
 <div>
 
@@ -735,14 +862,14 @@ Loading...
 <div class="menu-links">
 
 
-<a href="dashboard.html" class="active-link">
+<button class="active-link" id="dashboardMenu">
 🏠 Dashboard
-</a>
+</button>
 
 
-<a href="#" id="myCoursesMenu">
+<button id="myCoursesMenu">
 🎓 My Courses
-</a>
+</button>
 
 
 <a href="index.html">
@@ -755,9 +882,14 @@ Loading...
 </a>
 
 
-<a href="#" id="referralMenu">
-🔗 Referral Link
-</a>
+<button id="affiliateMenu">
+🔗 Affiliate Links
+</button>
+
+
+<button id="kycMenu">
+💳 KYC / Bank Details
+</button>
 
 
 <a href="leaderboard.html">
@@ -771,11 +903,11 @@ Loading...
 
 
 <a href="wallet.html">
-💳 Wallet / Withdrawal
+💰 Wallet / Withdrawal
 </a>
 
 
-<!-- ADMIN PANEL - ONLY ADMIN CAN SEE -->
+<!-- ADMIN PANEL -->
 
 <a
 href="admin.html"
@@ -802,120 +934,217 @@ style="display:none;">
 
 
 
-<!-- MAIN -->
+<!-- ===============================
+     DASHBOARD PAGE
+================================ -->
 
-<main>
+<main id="dashboardPage">
 
 
-<!-- WELCOME -->
+<!-- PROFILE CARD -->
 
-<section class="welcome">
+<section class="profile-card">
 
-<h1>
+<div class="package-banner" id="packageName">
+Member Package
+</div>
 
-👋 Welcome,
 
-<span id="name">
-Student
-</span>
+<div class="profile-content">
 
+<div class="profile-image">
+👤
+</div>
+
+
+<div class="profile-info">
+
+<h1 id="profileName">
+STUDENT
 </h1>
 
 
-<p>
-सीखें • आगे बढ़ें • अपने Skills को बेहतर बनाएं
-</p>
+<div class="user-id-row">
+
+<strong>
+ID:
+<span id="userReferralCode">
+Loading...
+</span>
+</strong>
+
+
+<button
+class="copy-id-btn"
+id="copyUserCode">
+
+⧉
+
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 
-<!-- EARNINGS -->
+<!-- REVENUE -->
 
-<div class="section-title">
-
-<h2>
-💰 Earnings Overview
+<h2 class="dashboard-title">
+Revenue Overview
 </h2>
 
 
-<a href="commission.html" class="view-all">
-View Details →
-</a>
-
-</div>
+<div class="revenue-grid">
 
 
-<div class="stats">
+<!-- TODAY -->
 
+<div class="revenue-card today-card">
 
-<div class="stat">
+<div
+class="revenue-amount"
+id="todayEarnings">
 
-<div class="stat-icon">
-💰
-</div>
-
-<p>
-Total Earnings
-</p>
-
-<h3 id="totalEarnings">
 ₹0
-</h3>
+
+</div>
+
+
+<div class="revenue-label">
+Today's Revenue
+</div>
+
+
+<div class="revenue-line"></div>
+
+
+<div class="revenue-details">
+
+<span>
+View Details
+</span>
+
+<span class="revenue-arrow">
+›
+</span>
+
+</div>
 
 </div>
 
 
 
-<div class="stat">
+<!-- 7 DAYS -->
 
-<div class="stat-icon">
-📅
-</div>
+<div class="revenue-card week-card">
 
-<p>
-This Week
-</p>
+<div
+class="revenue-amount"
+id="weekEarnings">
 
-<h3 id="weekEarnings">
 ₹0
-</h3>
+
+</div>
+
+
+<div class="revenue-label">
+7 Days Revenue
+</div>
+
+
+<div class="revenue-line"></div>
+
+
+<div class="revenue-details">
+
+<span>
+View Details
+</span>
+
+<span class="revenue-arrow">
+›
+</span>
+
+</div>
 
 </div>
 
 
 
-<div class="stat">
+<!-- 30 DAYS -->
 
-<div class="stat-icon">
-📆
-</div>
+<div class="revenue-card month-card">
 
-<p>
-This Month
-</p>
+<div
+class="revenue-amount"
+id="monthEarnings">
 
-<h3 id="monthEarnings">
 ₹0
-</h3>
+
+</div>
+
+
+<div class="revenue-label">
+30 Days Revenue
+</div>
+
+
+<div class="revenue-line"></div>
+
+
+<div class="revenue-details">
+
+<span>
+View Details
+</span>
+
+<span class="revenue-arrow">
+›
+</span>
+
+</div>
 
 </div>
 
 
 
-<div class="stat">
+<!-- ALL TIME -->
 
-<div class="stat-icon">
-📈
-</div>
+<div class="revenue-card alltime-card">
 
-<p>
-All Time
-</p>
+<div
+class="revenue-amount"
+id="allTimeEarnings">
 
-<h3 id="allTimeEarnings">
 ₹0
-</h3>
+
+</div>
+
+
+<div class="revenue-label">
+All Time Revenue
+</div>
+
+
+<div class="revenue-line"></div>
+
+
+<div class="revenue-details">
+
+<span>
+View Details
+</span>
+
+<span class="revenue-arrow">
+›
+</span>
+
+</div>
 
 </div>
 
@@ -926,21 +1155,20 @@ All Time
 
 <!-- MY COURSES -->
 
-<div class="section-title" id="myCoursesSection">
+<div
+class="section-title"
+id="myCoursesSection">
 
 <h2>
 🎓 My Courses
 </h2>
 
-
-<a href="#" class="view-all" id="buyMore">
-Buy More →
-</a>
-
 </div>
 
 
-<div class="course-summary" id="myCoursesList">
+<div
+class="course-summary"
+id="myCoursesList">
 
 <div class="empty">
 Loading your courses...
@@ -949,37 +1177,229 @@ Loading your courses...
 </div>
 
 
+</main>
 
-<!-- REFERRAL -->
 
-<section class="referral-card" id="referralSection">
 
+<!-- ===============================
+     AFFILIATE PAGE
+================================ -->
+
+<main
+class="page-section"
+id="affiliatePage">
+
+
+<div class="section-title">
 
 <h2>
-🔗 Refer & Earn
+Affiliate Links
 </h2>
 
-
-<p>
-अपने दोस्तों के साथ Referral Link share करें।
-</p>
-
-
-<div class="referral-link-box">
-
-<div class="referral-link" id="referralLink">
-Login करके Referral Link प्राप्त करें
 </div>
 
 
-<button class="copy-btn" id="copyReferral">
-Copy
+<div class="form-card">
+
+
+<div class="form-group">
+
+<label>
+My Referral Link
+</label>
+
+
+<input
+type="text"
+class="form-control"
+id="affiliateLink"
+readonly>
+
+<button
+class="gradient-btn copy-button-large"
+id="copyAffiliateLink">
+
+Copy Referral Link
+
 </button>
 
 </div>
 
 
-</section>
+
+<div class="form-group">
+
+<label>
+My Referral Code
+</label>
+
+
+<input
+type="text"
+class="form-control"
+id="affiliateCode"
+readonly>
+
+<button
+class="gradient-btn copy-button-large"
+id="copyAffiliateCode">
+
+Copy Referral Code
+
+</button>
+
+</div>
+
+
+<hr class="affiliate-divider">
+
+
+<div class="form-group">
+
+<label>
+Generate Link For
+</label>
+
+
+<select
+class="form-control"
+id="packageSelect">
+
+<option value="all">
+All Packages
+</option>
+
+</select>
+
+</div>
+
+
+<button
+class="gradient-btn"
+id="generatePackageLink">
+
+Generate Link
+
+</button>
+
+
+</div>
+
+
+</main>
+
+
+
+<!-- ===============================
+     KYC PAGE
+================================ -->
+
+<main
+class="page-section"
+id="kycPage">
+
+
+<div class="section-title">
+
+<h2>
+KYC / Bank Details
+</h2>
+
+</div>
+
+
+<div class="form-card">
+
+
+<div class="form-group">
+
+<label>
+Holder Name
+</label>
+
+<input
+type="text"
+class="form-control"
+id="holderName"
+placeholder="Holder Name...">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+IFSC Code
+</label>
+
+<input
+type="text"
+class="form-control"
+id="ifscCode"
+placeholder="IFSC Code...">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Account Number
+</label>
+
+<input
+type="text"
+class="form-control"
+id="accountNumber"
+placeholder="Account Number...">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Bank Name
+</label>
+
+<input
+type="text"
+class="form-control"
+id="bankName"
+placeholder="Bank Name...">
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+UPI ID
+</label>
+
+<input
+type="text"
+class="form-control"
+id="upiId"
+placeholder="UPI ID...">
+
+</div>
+
+
+<button
+class="gradient-btn save-btn"
+id="saveKyc">
+
+Save Changes
+
+</button>
+
+
+</div>
 
 
 </main>
@@ -1015,7 +1435,12 @@ import {
 
 getFirestore,
 collection,
-getDocs
+getDocs,
+doc,
+getDoc,
+setDoc,
+updateDoc,
+serverTimestamp
 
 }
 from
@@ -1053,11 +1478,16 @@ appId:
    INITIALIZE
 ================================ */
 
-const app = initializeApp(firebaseConfig);
+const app =
+initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
 
-const db = getFirestore(app);
+const auth =
+getAuth(app);
+
+
+const db =
+getFirestore(app);
 
 
 /* ===============================
@@ -1070,6 +1500,8 @@ const ADMIN_UID =
 
 let currentUser = null;
 
+let currentReferralCode = "";
+
 
 /* ===============================
    AUTH CHECK
@@ -1079,9 +1511,11 @@ onAuthStateChanged(
 auth,
 async user => {
 
+
 if(!user){
 
-window.location.href = "login.html";
+window.location.href =
+"login.html";
 
 return;
 
@@ -1091,7 +1525,7 @@ return;
 currentUser = user;
 
 
-/* DISPLAY NAME */
+/* USER NAME */
 
 const displayName =
 user.displayName ||
@@ -1100,7 +1534,7 @@ user.email?.split("@")[0] ||
 
 
 document
-.getElementById("name")
+.getElementById("profileName")
 .textContent =
 displayName;
 
@@ -1117,27 +1551,219 @@ document
 user.email || "";
 
 
-/* ===============================
-   SHOW ADMIN MENU ONLY FOR ADMIN
-================================ */
+/* ADMIN */
 
 if(user.uid === ADMIN_UID){
 
 document
 .getElementById("adminMenu")
-.style.display = "flex";
+.style.display =
+"flex";
 
 }
 
 
-/* LOAD DATA */
+/* LOAD USER DATA */
+
+await loadOrCreateUserData();
+
+
+/* LOAD COURSES */
 
 await loadMyCourses();
 
-loadReferralLink();
+
+/* LOAD KYC */
+
+await loadKyc();
+
 
 }
 );
+
+
+
+/* ===============================
+   CREATE REFERRAL CODE
+================================ */
+
+function generateReferralCode(){
+
+const chars =
+"ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+
+
+let randomPart =
+"";
+
+
+for(
+let i = 0;
+i < 6;
+i++
+){
+
+randomPart +=
+
+chars.charAt(
+
+Math.floor(
+Math.random() *
+chars.length
+)
+
+);
+
+}
+
+
+return
+"PAK" +
+randomPart;
+
+}
+
+
+
+/* ===============================
+   LOAD OR CREATE USER DATA
+================================ */
+
+async function loadOrCreateUserData(){
+
+
+const userRef =
+doc(
+db,
+"users",
+currentUser.uid
+);
+
+
+try{
+
+
+const userSnap =
+await getDoc(userRef);
+
+
+let userData =
+{};
+
+
+if(userSnap.exists()){
+
+userData =
+userSnap.data();
+
+}
+
+
+/* CREATE REFERRAL CODE IF NOT EXIST */
+
+if(!userData.referralCode){
+
+const newReferralCode =
+generateReferralCode();
+
+
+await setDoc(
+userRef,
+{
+
+referralCode:
+newReferralCode,
+
+email:
+currentUser.email || "",
+
+name:
+currentUser.displayName ||
+currentUser.email?.split("@")[0] ||
+"Student",
+
+createdAt:
+serverTimestamp()
+
+},
+
+{
+merge:true
+}
+
+);
+
+
+currentReferralCode =
+newReferralCode;
+
+
+}
+else{
+
+currentReferralCode =
+userData.referralCode;
+
+}
+
+
+/* DISPLAY CODE */
+
+document
+.getElementById(
+"userReferralCode"
+)
+.textContent =
+currentReferralCode;
+
+
+document
+.getElementById(
+"affiliateCode"
+)
+value =
+currentReferralCode;
+
+
+/* CREATE REFERRAL LINK */
+
+const baseUrl =
+window.location.origin +
+window.location.pathname
+.replace(
+"dashboard.html",
+"index.html"
+);
+
+
+const referralLink =
+baseUrl +
+"?ref=" +
+encodeURIComponent(
+currentReferralCode
+);
+
+
+document
+.getElementById(
+"affiliateLink"
+)
+value =
+referralLink;
+
+
+}
+catch(error){
+
+console.error(error);
+
+alert(
+"User data load नहीं हो पाया।"
+);
+
+}
+
+}
 
 
 
@@ -1146,32 +1772,51 @@ loadReferralLink();
 ================================ */
 
 const menuBtn =
-document.getElementById("menuBtn");
+document.getElementById(
+"menuBtn"
+);
+
 
 const sideMenu =
-document.getElementById("sideMenu");
+document.getElementById(
+"sideMenu"
+);
+
 
 const menuOverlay =
-document.getElementById("menuOverlay");
+document.getElementById(
+"menuOverlay"
+);
+
 
 const closeMenu =
-document.getElementById("closeMenu");
+document.getElementById(
+"closeMenu"
+);
 
 
 function openMenu(){
 
-sideMenu.classList.add("active");
+sideMenu.classList.add(
+"active"
+);
 
-menuOverlay.classList.add("active");
+menuOverlay.classList.add(
+"active"
+);
 
 }
 
 
 function closeSideMenu(){
 
-sideMenu.classList.remove("active");
+sideMenu.classList.remove(
+"active"
+);
 
-menuOverlay.classList.remove("active");
+menuOverlay.classList.remove(
+"active"
+);
 
 }
 
@@ -1196,10 +1841,231 @@ closeSideMenu
 
 
 /* ===============================
+   SHOW DASHBOARD
+================================ */
+
+document
+.getElementById(
+"dashboardMenu"
+)
+.addEventListener(
+"click",
+() => {
+
+
+document
+.getElementById(
+"dashboardPage"
+)
+.style.display =
+"block";
+
+
+document
+.getElementById(
+"affiliatePage"
+)
+.classList.remove(
+"active"
+);
+
+
+document
+.getElementById(
+"kycPage"
+)
+.classList.remove(
+"active"
+);
+
+
+window.scrollTo(
+0,
+0
+);
+
+
+closeSideMenu();
+
+}
+);
+
+
+
+/* ===============================
+   SHOW AFFILIATE PAGE
+================================ */
+
+document
+.getElementById(
+"affiliateMenu"
+)
+.addEventListener(
+"click",
+() => {
+
+
+document
+.getElementById(
+"dashboardPage"
+)
+.style.display =
+"none";
+
+
+document
+.getElementById(
+"affiliatePage"
+)
+.classList.add(
+"active"
+);
+
+
+document
+.getElementById(
+"kycPage"
+)
+.classList.remove(
+"active"
+);
+
+
+window.scrollTo(
+0,
+0
+);
+
+
+closeSideMenu();
+
+}
+);
+
+
+
+/* ===============================
+   SHOW KYC PAGE
+================================ */
+
+document
+.getElementById(
+"kycMenu"
+)
+.addEventListener(
+"click",
+() => {
+
+
+document
+.getElementById(
+"dashboardPage"
+)
+.style.display =
+"none";
+
+
+document
+.getElementById(
+"affiliatePage"
+)
+.classList.remove(
+"active"
+);
+
+
+document
+.getElementById(
+"kycPage"
+)
+.classList.add(
+"active"
+);
+
+
+window.scrollTo(
+0,
+0
+);
+
+
+closeSideMenu();
+
+}
+);
+
+
+
+/* ===============================
+   MY COURSES MENU
+================================ */
+
+document
+.getElementById(
+"myCoursesMenu"
+)
+.addEventListener(
+"click",
+() => {
+
+
+document
+.getElementById(
+"dashboardPage"
+)
+.style.display =
+"block";
+
+
+document
+.getElementById(
+"affiliatePage"
+)
+.classList.remove(
+"active"
+);
+
+
+document
+.getElementById(
+"kycPage"
+)
+.classList.remove(
+"active"
+);
+
+
+closeSideMenu();
+
+
+setTimeout(
+() => {
+
+document
+.getElementById(
+"myCoursesSection"
+)
+.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+},
+100
+);
+
+}
+);
+
+
+
+/* ===============================
    MY COURSES
 ================================ */
 
 async function loadMyCourses(){
+
 
 const container =
 document.getElementById(
@@ -1218,7 +2084,6 @@ try{
 
 
 const coursesRef =
-
 collection(
 db,
 "users",
@@ -1228,13 +2093,17 @@ currentUser.uid,
 
 
 const snapshot =
-await getDocs(coursesRef);
+await getDocs(
+coursesRef
+);
 
 
-container.innerHTML = "";
+container.innerHTML =
+"";
 
 
 if(snapshot.empty){
+
 
 container.innerHTML = `
 
@@ -1260,6 +2129,7 @@ class="buy-course-btn">
 
 `;
 
+
 return;
 
 }
@@ -1267,7 +2137,8 @@ return;
 
 /* SHOW COURSES */
 
-snapshot.forEach(courseDoc => {
+snapshot.forEach(
+courseDoc => {
 
 
 const course =
@@ -1285,7 +2156,9 @@ courseDoc.id;
 
 
 const row =
-document.createElement("div");
+document.createElement(
+"div"
+);
 
 
 row.className =
@@ -1299,7 +2172,6 @@ row.innerHTML = `
 <div class="course-icon">
 📚
 </div>
-
 
 <div>
 
@@ -1324,28 +2196,38 @@ Access →
 
 
 row
-.querySelector(".access-btn")
+.querySelector(
+".access-btn"
+)
 .addEventListener(
 "click",
 () => {
 
 window.location.href =
 "course.html?id=" +
-encodeURIComponent(courseId);
+encodeURIComponent(
+courseId
+);
 
 }
 );
 
 
-container.appendChild(row);
+container.appendChild(
+row
+);
 
-});
+}
+
+);
 
 
 }
 catch(error){
 
-console.error(error);
+console.error(
+error
+);
 
 
 container.innerHTML = `
@@ -1365,75 +2247,59 @@ Course load नहीं हो पाया।
 
 
 /* ===============================
-   REFERRAL LINK
-================================ */
-
-function loadReferralLink(){
-
-const referralLink =
-
-window.location.origin +
-
-window.location.pathname
-.replace(
-"dashboard.html",
-"index.html"
-)
-
-+
-
-"?ref=" +
-
-encodeURIComponent(
-currentUser.uid
-);
-
-
-document
-.getElementById(
-"referralLink"
-)
-.textContent =
-referralLink;
-
-}
-
-
-
-/* ===============================
-   COPY REFERRAL
+   COPY USER CODE
 ================================ */
 
 document
 .getElementById(
-"copyReferral"
+"copyUserCode"
 )
 .addEventListener(
 "click",
 async () => {
 
+await copyText(
+currentReferralCode
+);
 
-const link =
+alert(
+"Referral Code copied!"
+);
+
+}
+);
+
+
+
+/* ===============================
+   COPY AFFILIATE LINK
+================================ */
 
 document
 .getElementById(
-"referralLink"
+"copyAffiliateLink"
 )
-.textContent;
+.addEventListener(
+async () => {
 
 
-try{
+const link =
+document
+.getElementById(
+"affiliateLink"
+)
+.value;
 
 
-await navigator
-.clipboard
-.writeText(link);
+await copyText(
+link
+);
 
 
 const button =
 document
 .getElementById(
-"copyReferral"
+"copyAffiliateLink"
 );
 
 
@@ -1445,7 +2311,364 @@ setTimeout(
 () => {
 
 button.textContent =
-"Copy";
+"Copy Referral Link";
+
+},
+2000
+);
+
+}
+);
+
+
+
+/* ===============================
+   COPY AFFILIATE CODE
+================================ */
+
+document
+.getElementById(
+"copyAffiliateCode"
+)
+.addEventListener(
+async () => {
+
+
+await copyText(
+currentReferralCode
+);
+
+
+const button =
+document
+.getElementById(
+"copyAffiliateCode"
+);
+
+
+button.textContent =
+"Copied ✓";
+
+
+setTimeout(
+() => {
+
+button.textContent =
+"Copy Referral Code";
+
+},
+2000
+);
+
+}
+);
+
+
+
+/* ===============================
+   GENERATE PACKAGE LINK
+================================ */
+
+document
+.getElementById(
+"generatePackageLink"
+)
+.addEventListener(
+() => {
+
+
+const selectedPackage =
+document
+.getElementById(
+"packageSelect"
+)
+.value;
+
+
+const baseUrl =
+window.location.origin +
+window.location.pathname
+.replace(
+"dashboard.html",
+"index.html"
+);
+
+
+let link =
+baseUrl +
+"?ref=" +
+encodeURIComponent(
+currentReferralCode
+);
+
+
+if(
+selectedPackage !== "all"
+){
+
+link +=
+"&package=" +
+encodeURIComponent(
+selectedPackage
+);
+
+}
+
+
+document
+.getElementById(
+"affiliateLink"
+)
+.value =
+link;
+
+
+alert(
+"Referral Link generated successfully!"
+);
+
+}
+);
+
+
+
+/* ===============================
+   LOAD KYC
+================================ */
+
+async function loadKyc(){
+
+
+try{
+
+
+const kycRef =
+doc(
+db,
+"users",
+currentUser.uid,
+"kyc",
+"bankDetails"
+);
+
+
+const kycSnap =
+await getDoc(
+kycRef
+);
+
+
+if(!kycSnap.exists()){
+
+return;
+
+}
+
+
+const data =
+kycSnap.data();
+
+
+document
+.getElementById(
+"holderName"
+)
+.value =
+data.holderName || "";
+
+
+document
+.getElementById(
+"ifscCode"
+)
+.value =
+data.ifscCode || "";
+
+
+document
+.getElementById(
+"accountNumber"
+)
+.value =
+data.accountNumber || "";
+
+
+document
+.getElementById(
+"bankName"
+)
+.value =
+data.bankName || "";
+
+
+document
+.getElementById(
+"upiId"
+)
+.value =
+data.upiId || "";
+
+
+}
+catch(error){
+
+console.error(
+error
+);
+
+}
+
+}
+
+
+
+/* ===============================
+   SAVE KYC
+================================ */
+
+document
+.getElementById(
+"saveKyc"
+)
+.addEventListener(
+"click",
+async () => {
+
+
+const holderName =
+document
+.getElementById(
+"holderName"
+)
+.value
+.trim();
+
+
+const ifscCode =
+document
+.getElementById(
+"ifscCode"
+)
+.value
+.trim()
+.toUpperCase();
+
+
+const accountNumber =
+document
+.getElementById(
+"accountNumber"
+)
+.value
+.trim();
+
+
+const bankName =
+document
+.getElementById(
+"bankName"
+)
+.value
+.trim();
+
+
+const upiId =
+document
+.getElementById(
+"upiId"
+)
+.value
+.trim();
+
+
+if(
+!holderName ||
+!ifscCode ||
+!accountNumber ||
+!bankName ||
+!upiId
+){
+
+alert(
+"कृपया सभी Bank Details भरें।"
+);
+
+return;
+
+}
+
+
+const button =
+document
+.getElementById(
+"saveKyc"
+);
+
+
+button.disabled =
+true;
+
+
+button.textContent =
+"Saving...";
+
+
+try{
+
+
+const kycRef =
+doc(
+db,
+"users",
+currentUser.uid,
+"kyc",
+"bankDetails"
+);
+
+
+await setDoc(
+kycRef,
+{
+
+holderName:
+holderName,
+
+ifscCode:
+ifscCode,
+
+accountNumber:
+accountNumber,
+
+bankName:
+bankName,
+
+upiId:
+upiId,
+
+updatedAt:
+serverTimestamp()
+
+},
+
+{
+merge:true
+}
+
+);
+
+
+button.textContent =
+"Saved ✓";
+
+
+setTimeout(
+() => {
+
+button.textContent =
+"Save Changes";
+
+button.disabled =
+false;
 
 },
 2000
@@ -1455,9 +2678,22 @@ button.textContent =
 }
 catch(error){
 
+console.error(
+error
+);
+
+
 alert(
-"Referral Link copy नहीं हो पाया।"
+"Details save नहीं हो पाया। दोबारा कोशिश करें।"
 );
+
+
+button.textContent =
+"Save Changes";
+
+
+button.disabled =
+false;
 
 }
 
@@ -1467,94 +2703,52 @@ alert(
 
 
 /* ===============================
-   MENU MY COURSES
+   COPY FUNCTION
 ================================ */
 
-document
-.getElementById(
-"myCoursesMenu"
-)
-.addEventListener(
-"click",
-event => {
+async function copyText(text){
 
+try{
 
-event.preventDefault();
-
-
-closeSideMenu();
-
-
-document
-.getElementById(
-"myCoursesSection"
-)
-.scrollIntoView({
-
-behavior:"smooth"
-
-});
+await navigator
+.clipboard
+.writeText(
+text
+);
 
 }
+catch(error){
+
+const textarea =
+document.createElement(
+"textarea"
 );
 
 
-
-/* ===============================
-   MENU REFERRAL
-================================ */
-
-document
-.getElementById(
-"referralMenu"
-)
-.addEventListener(
-"click",
-event => {
+textarea.value =
+text;
 
 
-event.preventDefault();
-
-
-closeSideMenu();
-
-
-document
-.getElementById(
-"referralSection"
-)
-.scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-}
+document.body.appendChild(
+textarea
 );
 
 
-
-/* ===============================
-   BUY MORE
-================================ */
-
-document
-.getElementById(
-"buyMore"
-)
-.addEventListener(
-"click",
-event => {
+textarea.select();
 
 
-event.preventDefault();
+document.execCommand(
+"copy"
+);
 
 
-window.location.href =
-"index.html";
+document.body.removeChild(
+textarea
+);
 
 }
-);
+
+}
 
 
 
@@ -1574,7 +2768,9 @@ async () => {
 try{
 
 
-await signOut(auth);
+await signOut(
+auth
+);
 
 
 window.location.href =
@@ -1585,7 +2781,9 @@ window.location.href =
 catch(error){
 
 
-console.error(error);
+console.error(
+error
+);
 
 
 alert(
@@ -1605,11 +2803,16 @@ alert(
 
 function escapeHTML(value){
 
+
 const div =
-document.createElement("div");
+document.createElement(
+"div"
+);
+
 
 div.textContent =
 value;
+
 
 return div.innerHTML;
 
